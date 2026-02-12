@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: LotToPhase
+label: Lot Phase
+description: Référence Lot vers Phase
+fromRoleDocumentation: |
+  Cette référence associe un **Lot** à sa **Phase** dans le cycle de vie.
+  
+  La phase permet de suivre l'état d'avancement du lot dans le projet immobilier.
+physicalName: LOT_PHASE_REF
+
+fromEntity: Batiments.entities.Lot.Lot
+fromRoleLabel: Lot
+fromRoleName: Lot
+fromRolePluralLabel: Lots
+
+toEntity: Batiments.entities.Phase.Phase
+toRoleLabel: Phase
+toRoleName: Phase
+toRolePhysicalName: PHASE_ID
+
+oneToMany: false
+deletePropagation: RESTRICT
+validationScope: PRE_CONSO
+mandatoryValidationLabel: La phase est obligatoire pour un lot
+brokenValidationLabel: La phase sélectionnée est invalide pour ce lot
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Phase
+  label: Phase
+  physicalName: PHASE_ID
+  searchable: true
+  entity: Batiments.entities.Lot.Lot

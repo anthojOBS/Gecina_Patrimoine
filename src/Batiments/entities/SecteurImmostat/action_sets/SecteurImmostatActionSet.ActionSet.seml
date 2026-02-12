@@ -1,0 +1,63 @@
+_package: Batiments.entities.SecteurImmostat.action_sets
+_type: ActionSet
+_name: SecteurImmostatActionSet
+entity: Batiments.entities.SecteurImmostat.SecteurImmostat
+label: Secteur Immostat Action Set
+defaultActionSet: true
+actions:
+  - _type: CreateAction
+    _name: CreateAuthorSecteurImmostats
+    label: Create
+    useCustomLabel: true
+    stepper: Batiments.entities.SecteurImmostat.steppers.AuthorSecteurImmostats
+    createMultiple: false
+    createdRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: EditAction
+    _name: EditAuthorSecteurImmostats
+    label: Edit
+    useCustomLabel: true
+    stepper: Batiments.entities.SecteurImmostat.steppers.AuthorSecteurImmostats
+    multipleSelectionAllowed: true
+    availableForGoldenData: true
+    availableForMasterData: false
+    availableForErrorData: true
+    waitDialogEnabled: false
+  - _type: MassUpdateAction
+    _name: MassUpdateAuthorSecteurImmostats
+    label: Mass Update
+    useCustomLabel: true
+    stepper: Batiments.entities.SecteurImmostat.steppers.AuthorSecteurImmostats
+    availableForGoldenData: true
+    availableForErrorData: true
+    availableForMasterData: false
+    waitDialogEnabled: false
+  - _type: DeleteAction
+    _name: Delete
+    label: Delete
+    useCustomLabel: true
+    multipleSelectionAllowed: true
+    deleteType: HARD_DELETE
+    waitDialogEnabled: false
+    availableForGoldenData: true
+    availableForMasterData: false
+  - _type: ExportAction
+    _name: Export
+    label: Export
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: ImportAuthorSecteurImmostats
+    label: Import
+    useCustomLabel: true
+    importMode: CREATE_AND_UPDATE
+    stepper: Batiments.entities.SecteurImmostat.steppers.AuthorSecteurImmostats
+    importedRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: BrowseGraphAction
+    _name: BrowseGraph
+    label: Browse Graph
+    useCustomLabel: true
+    waitDialogEnabled: false

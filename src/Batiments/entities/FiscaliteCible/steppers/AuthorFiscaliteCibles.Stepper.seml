@@ -1,0 +1,33 @@
+_package: Batiments.entities.FiscaliteCible.steppers
+_type: Stepper
+_name: AuthorFiscaliteCibles
+entity: Batiments.entities.FiscaliteCible.FiscaliteCible
+label: FiscaliteCibles
+rootStep:
+  _type: CollectionStep
+  _name: FiscaliteCibles
+  label: FiscaliteCibles
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.FiscaliteCible.collection_views.FiscaliteCibleCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: FiscaliteCible
+      label: FiscaliteCible
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.FiscaliteCible.forms.FiscaliteCibleForm.FiscaliteCible

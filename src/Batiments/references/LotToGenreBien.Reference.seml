@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: LotToGenreBien
+label: Lot Genre de Bien
+description: Référence Lot vers Genre de Bien
+fromRoleDocumentation: |
+  Cette référence permet de classifier un **Lot** selon son **Genre de Bien**.
+  
+  Le genre de bien caractérise la nature du lot (commercial, résidentiel, etc.).
+physicalName: LOT_GENRE_BIEN_REF
+
+fromEntity: Batiments.entities.Lot.Lot
+fromRoleLabel: Lot
+fromRoleName: Lot
+fromRolePluralLabel: Lots
+
+toEntity: Batiments.entities.GenreBien.GenreBien
+toRoleLabel: Genre de Bien
+toRoleName: GenreBien
+toRolePhysicalName: GENRE_BIEN_ID
+
+oneToMany: false
+deletePropagation: RESTRICT
+validationScope: PRE_CONSO
+mandatoryValidationLabel: Le genre de bien est obligatoire pour un lot
+brokenValidationLabel: Le genre de bien sélectionné est invalide pour ce lot
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: GenreBien
+  label: Genre de Bien
+  physicalName: GENRE_BIEN_ID
+  searchable: true
+  entity: Batiments.entities.Lot.Lot

@@ -1,0 +1,185 @@
+_package: Batiments.model_diagrams
+_type: ModelDiagram
+_name: PatrimoineDiagram
+label: Diagramme Modèle Patrimoine
+description: Diagramme du modèle Patrimoine
+entityNameFormat: NAME
+attributeNameFormat: LABEL
+referenceNameFormat: NAME
+referenceRoleNameFormat: NAME
+showAttributeDataType: true
+showInheritLinkName: false
+showInheritedAttributes: true
+showReferenceCardinality: true
+showReferenceRoles: true
+showReferenceName: true
+showForeignAttribute: true
+entityShapes:
+  - _type: EntityShape
+    _name: ImmeubleShape
+    entity: Batiments.entities.Immeuble.Immeuble
+    borderColor: "#1d2b7e"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 44
+      y: 482
+  - _type: EntityShape
+    _name: BatimentShape
+    entity: Batiments.entities.Batiment.Batiment
+    borderColor: "#0e7c86"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 349.76930533117934
+      y: -233.7518376413571
+  - _type: EntityShape
+    _name: LotShape
+    entity: Batiments.entities.Lot.Lot
+    borderColor: "#006064"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 1489.0791599353795
+      y: 668.0431340872375
+  - _type: EntityShape
+    _name: PhaseShape
+    entity: Batiments.entities.Phase.Phase
+    borderColor: "#673ab7"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 843.9056542810986
+      y: 789.2597738287561
+  - _type: EntityShape
+    _name: ZoneGeographiqueShape
+    entity: Batiments.entities.ZoneGeographique.ZoneGeographique
+    borderColor: "#ff5722"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -496.2938610662358
+      y: 115.13231017770624
+  - _type: EntityShape
+    _name: RegimeJuridiqueShape
+    entity: Batiments.entities.RegimeJuridique.RegimeJuridique
+    borderColor: "#d84315"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -462
+      y: 786
+  - _type: EntityShape
+    _name: GenreBienShape
+    entity: Batiments.entities.GenreBien.GenreBien
+    borderColor: "#4caf50"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 2021.1735056542811
+      y: 722.1544426494346
+  - _type: EntityShape
+    _name: EtageShape
+    entity: Batiments.entities.Etage.Etage
+    borderColor: "#607d8b"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 1053.3067851373182
+      y: 266.52956381260105
+  - _type: EntityShape
+    _name: TypeBatimentShape
+    entity: Batiments.entities.TypeBatiment.TypeBatiment
+    borderColor: "#8e24aa"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 1232
+      y: -32.5
+  - _type: EntityShape
+    _name: UsageLotShape
+    entity: Batiments.entities.UsageLot.UsageLot
+    borderColor: "#00695c"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 1856.1744749596123
+      y: 1136.2507269789985
+  - _type: EntityShape
+    _name: PortefeuilleShape
+    entity: Batiments.entities.Portefeuille.Portefeuille
+    borderColor: "#c2185b"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 764.4864297253636
+      y: 1143.3229402261713
+referenceLinks:
+  - reference: Batiments.references.ImmeubleToPhase
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.PhaseShape
+    bendPoints: []
+  - reference: Batiments.references.BatimentToPhase
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.PhaseShape
+    bendPoints: []
+  - reference: Batiments.references.LotToPhase
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.PhaseShape
+    bendPoints: []
+  - reference: Batiments.references.ImmeubleToZoneGeographique
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ZoneGeographiqueShape
+    bendPoints: []
+  - reference: Batiments.references.BatimentToZoneGeographique
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ZoneGeographiqueShape
+    bendPoints: []
+  - reference: Batiments.references.ImmeubleToRegimeJuridique
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RegimeJuridiqueShape
+    bendPoints: []
+  - reference: Batiments.references.BatimentToImmeuble
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    bendPoints: []
+  - reference: Batiments.references.BatimentToTypeBatiment
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.TypeBatimentShape
+    bendPoints: []
+  - reference: Batiments.references.EtageToBatiment
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.EtageShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
+    bendPoints: []
+  - reference: Batiments.references.LotToEtage
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.EtageShape
+    bendPoints: []
+  - reference: Batiments.references.LotToBatiment
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
+    bendPoints: []
+  - reference: Batiments.references.LotToGenreBien
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.GenreBienShape
+    bendPoints: []
+  - reference: Batiments.references.LotToUsageLot
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.UsageLotShape
+    bendPoints: []
+  - reference: Batiments.references.ImmeubleToPortefeuille
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.PortefeuilleShape
+    bendPoints: []
+inheritLinks: []

@@ -1,0 +1,32 @@
+_package: Batiments.entities.FiscaliteCible.forms
+_type: Form
+_name: FiscaliteCibleForm
+entity: Batiments.entities.FiscaliteCible.FiscaliteCible
+default: true
+formTabs:
+  - _type: FormTab
+    _name: FiscaliteCible
+    label: Fiscalite Cible
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: IdField
+        _name: FiscaliteCibleCode
+        value: FiscaliteCibleCode
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: FiscaliteCibleLibelle
+        value: FiscaliteCibleLibelle
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

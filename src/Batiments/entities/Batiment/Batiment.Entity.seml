@@ -1,0 +1,169 @@
+_package: Batiments.entities.Batiment
+_type: Entity
+_name: Batiment
+label: Batiment
+pluralLabel: Batiments
+entityType: FUZZY_MATCHED
+physicalTableName: BATIMENT
+iconUrl: images://mdi/domain.svg
+description: ""
+documentation: |
+  Le **Bâtiment** représente une structure physique au sein d'un immeuble.
+  
+  Un bâtiment est une unité architecturale qui fait partie d'un immeuble. Il peut contenir plusieurs étages et est caractérisé par son type (bureaux, résidentiel, etc.) et sa zone géographique.
+  
+  Cette entité permet de gérer la structure physique du patrimoine immobilier et d'organiser les espaces de manière hiérarchique.
+historizeGolden: true
+historizeMaster: true
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: BatimentID
+    label: Batiment ID
+    physicalName: BATIMENT_ID
+    dataType: LongInteger
+    precision: 38
+    mandatory: true
+    searchable: true
+
+  - _type: EntityAttribute
+    _name: IdentifiantREF
+    label: Identifiant REF
+    physicalName: IDENTIFIANT_REF
+    dataType: String
+    length: 100
+    mandatory: false
+    searchable: true
+
+  - _type: EntityAttribute
+    _name: IdentifiantsERP
+    label: Identifiants ERP
+    physicalName: IDENTIFIANTS_ERP
+    dataType: String
+    length: 100
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: Libelle_Batiment
+    label: Libellé
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+
+  - _type: EntityAttribute
+    _name: Adresse
+    label: Adresse
+    physicalName: ADRESSE
+    dataType: String
+    length: 255
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: CodePostal
+    label: Code Postal
+    physicalName: CODE_POSTAL
+    dataType: String
+    length: 255
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: Ville
+    label: Ville
+    physicalName: VILLE
+    dataType: String
+    length: 255
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: AdresseEnrichie
+    label: Adresse Enrichie
+    physicalName: ADRESSE_ENRICHIE
+    dataType: String
+    length: 255
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: DateAcquisition
+    label: Date d'acquisition
+    physicalName: DATE_ACQUISITION
+    dataType: Date
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: DateConstruction
+    label: Date de construction
+    physicalName: DATE_CONSTRUCTION
+    dataType: Date
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: DateLivraison
+    label: Date de livraison
+    physicalName: DATE_LIVRAISON
+    dataType: Date
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: Proprietaire
+    label: Propriétaire
+    physicalName: PROPRIETAIRE
+    dataType: String
+    length: 150
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: BatimentPrincipal
+    label: Flag batiment principal
+    physicalName: BATIMENT_PRINCIPAL
+    dataType: Boolean
+    mandatory: false
+    
+  - _type: EntityAttribute
+    _name: SuperficieUtile
+    label: SuperficieUtile
+    physicalName: SUPERFICIE_UTILE
+    dataType: Decimal
+    precision: 18
+    scale: 2 
+    mandatory: false
+    searchable: false
+
+sourceIdGeneration:
+  mode: MANUAL
+
+primaryKey: Batiments.entities.Batiment.Batiment.BatimentID
+
+goldenIdGeneration:
+  mode: SEQUENCE
+  startWith: 1
+
+matcher:
+  _type: SemQLMatcher
+  _name: Matcher
+  description: BatimentSemQLMatcher
+  matchRules:
+    - _type: SemQLMatchRule
+      _name: NewRule
+      label: NewRuleLabel
+      condition: Record1.IdentifiantsERP = Record2.IdentifiantsERP and Record1.FID_Immeuble = Record2.FID_Immeuble
+      matchScore: 100
+      usingMatchOn: false
+    - _type: SemQLMatchRule
+      _name: Address
+      label: NewRuleLabel
+      condition: Record1.AdresseEnrichie = Record2.AdresseEnrichie
+      matchScore: 80
+      usingMatchOn: false
+  useTransitiveMatchScore: true
+  useMultiIterationGrouping: true
+  mergeThresholdNewGroup: 90
+  mergeThresholdMergingUnconfirmed: 90
+  mergeThresholdMergingConfirmed: 90
+  mergeThresholdMergingConfirmedWithUnconfirmed: 90
+  mergeThresholdMergingUnconfirmedWithNewMasters: 90
+  mergeThresholdMergingConfirmedWithNewMasters: 90
+  mergeThresholdRemergingPreviouslySplit: 100
+  autoConfirmGoldenThreshold: 99
+  autoConfirmSingletons: false

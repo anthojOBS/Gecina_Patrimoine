@@ -1,0 +1,16 @@
+_package: Batiments.entities.SocieteProprietaire.display_cards
+_type: DisplayCard
+_name: SocieteProprietaireDisplayCard
+entity: Batiments.entities.SocieteProprietaire.SocieteProprietaire
+default: true
+primaryTextExpression:   SocieteProprietaireCode || ' - ' || SocieteProprietaireLibelle
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT

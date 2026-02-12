@@ -1,0 +1,50 @@
+_package: Batiments.entities.ZoneGeographique.collection_views
+_type: CollectionView
+_name: ZoneGeographiqueCollectionView
+entity: Batiments.entities.ZoneGeographique.ZoneGeographique
+default: true
+displayCard: Batiments.entities.ZoneGeographique.display_cards.ZoneGeographiqueDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Zone Geographique
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: IdColumn
+    _name: ZoneGeoCode
+    value: ZoneGeoCode
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: ZoneGeoLibelle
+    value: ZoneGeoLibelle
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: UpdateDate
+    value: UpdateDate
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+    
+  - _type: TextColumn
+    _name: Updator
+    value: Updator
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true

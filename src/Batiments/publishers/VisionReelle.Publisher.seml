@@ -1,0 +1,8 @@
+_package: Batiments.publishers
+_type: Publisher
+_name: VisionReelle
+label: Vision Réelle
+description: Vision Réelle Publisher
+active: true
+code: VR
+color: md:blue

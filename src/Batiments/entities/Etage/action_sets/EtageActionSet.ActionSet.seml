@@ -1,0 +1,99 @@
+_package: Batiments.entities.Etage.action_sets
+_type: ActionSet
+_name: EtageActionSet
+entity: Batiments.entities.Etage.Etage
+label: Etage Action Set
+defaultActionSet: true
+actions:
+  - _type: CreateAction
+    _name: CreateAuthorEtages
+    label: Create
+    useCustomLabel: true
+    stepper: Batiments.entities.Etage.steppers.AuthorEtages
+    createMultiple: false
+    createdRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: EditAction
+    _name: EditAuthorEtages
+    label: Edit
+    useCustomLabel: true
+    stepper: Batiments.entities.Etage.steppers.AuthorEtages
+    multipleSelectionAllowed: true
+    availableForGoldenData: true
+    availableForMasterData: true
+    availableForErrorData: true
+    waitDialogEnabled: false
+  - _type: MassUpdateAction
+    _name: MassUpdateAuthorEtages
+    label: Mass Update
+    useCustomLabel: true
+    stepper: Batiments.entities.Etage.steppers.AuthorEtages
+    availableForGoldenData: true
+    availableForErrorData: true
+    availableForMasterData: true
+    waitDialogEnabled: false
+  - _type: DeleteAction
+    _name: Delete
+    label: Delete
+    useCustomLabel: true
+    multipleSelectionAllowed: true
+    deleteType: HARD_DELETE
+    waitDialogEnabled: false
+    availableForGoldenData: true
+    availableForMasterData: true
+  - _type: ExportAction
+    _name: Export
+    label: Export
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: ImportAuthorEtages
+    label: Import
+    useCustomLabel: true
+    importMode: CREATE_AND_UPDATE
+    stepper: Batiments.entities.Etage.steppers.AuthorEtages
+    importedRecordType: MASTER
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: BrowseGraphAction
+    _name: BrowseGraph
+    label: Browse Graph
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: DirectConfirmDupsAction
+    _name: DirectConfirmDuplicates
+    label: Direct Confirm Duplicates
+    useCustomLabel: false
+    waitDialogEnabled: false
+  - _type: ReviewAndConfirm
+    _name: ReviewAndConfirmDuplicatesManageDuplicatesOnEtage
+    label: Review and Confirm Duplicates
+    useCustomLabel: true
+    dupsManager: Batiments.entities.Etage.dups_managers.ManageDuplicatesOnEtage
+    enableEdit: true
+    mandateConfirmAll: false
+    waitDialogEnabled: false
+  - _type: MergeOrSplit
+    _name: MergeOrSplitDuplicatesManageDuplicatesOnEtage
+    label: Merge Or Split Duplicates
+    useCustomLabel: true
+    dupsManager: Batiments.entities.Etage.dups_managers.ManageDuplicatesOnEtage
+    enableEdit: true
+    waitDialogEnabled: false
+  - _type: ReviewSuggestions
+    _name: ReviewSuggestionsDuplicatesManageDuplicatesOnEtage
+    label: Review Duplicates Suggestions
+    useCustomLabel: true
+    dupsManager: Batiments.entities.Etage.dups_managers.ManageDuplicatesOnEtage
+    enableEdit: true
+    waitDialogEnabled: false
+    onAcceptPromptGoldenId: false
+    mandateResolveAllSuggestions: false
+  - _type: ExplainRecordAction
+    _name: ExplainRecord
+    label: Explain Record
+    useCustomLabel: true
+    displayCard: Batiments.entities.Etage.display_cards.EtageDisplayCard
+    formTab: Batiments.entities.Etage.forms.EtageForm.Etage
+    waitDialogEnabled: false

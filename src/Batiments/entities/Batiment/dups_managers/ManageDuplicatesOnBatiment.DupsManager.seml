@@ -1,0 +1,14 @@
+_package: Batiments.entities.Batiment.dups_managers
+_type: DupsManager
+_name: ManageDuplicatesOnBatiment
+entity: Batiments.entities.Batiment.Batiment
+enableMasterValuePicking: true
+displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
+formTab: Batiments.entities.Batiment.forms.BatimentForm.Batiment
+collectionView: Batiments.entities.Batiment.collection_views.BatimentCollectionView
+checkoutCustomSortEnabled: false
+checkoutUserDefinedSortEnabled: true
+checkoutDefaultDisplayType: TABLE
+checkoutDisplayGridAllowed: false
+checkoutDisplayListAllowed: true
+checkoutDisplayTableAllowed: true

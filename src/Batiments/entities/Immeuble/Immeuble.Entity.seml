@@ -1,0 +1,304 @@
+_package: Batiments.entities.Immeuble
+_type: Entity
+_name: Immeuble
+label: Immeuble
+pluralLabel: Immeuble
+entityType: FUZZY_MATCHED
+physicalTableName: IMMEUBLE
+iconUrl: images://mdi/office-building-marker.svg
+description: ""
+documentation: |
+  L'**Immeuble** représente un actif immobilier dans le patrimoine de Gecina.
+  
+  Un immeuble est une unité de propriété qui peut contenir un ou plusieurs bâtiments.
+  Il est caractérisé par son identifiant, sa localisation géographique, son régime juridique et sa phase dans le cycle de vie du projet.
+  
+  Cette entité est centrale dans la gestion du patrimoine immobilier et permet de suivre l'évolution des actifs de leur acquisition à leur exploitation.
+historizeGolden: true
+historizeMaster: true
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: ImmeubleID
+    label: Immeuble ID
+    physicalName: IMMEUBLE_ID
+    dataType: LongInteger
+    precision: 38
+    mandatory: true
+    searchable: true
+    description: "Identifiant unique de l'immeuble"
+
+  - _type: EntityAttribute
+    _name: IdentifiantREF
+    label: Identifiant REF
+    physicalName: IDENTIFIANT_REF
+    dataType: String
+    length: 100
+    mandatory: false
+    description: "Identifiant de référence de l'immeuble"
+
+  - _type: EntityAttribute
+    _name: IdentifiantsERP
+    label: Numéro immeuble
+    physicalName: IDENTIFIANTS_ERP
+    dataType: String
+    length: 100
+    mandatory: false
+    description: "Numéro de l'immeuble"
+
+  - _type: EntityAttribute
+    _name: Libelle
+    label: Libellé
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: true
+    mandatoryValidationLabel: "Libellé de l'immeuble est obligatoire"
+    mandatoryValidationScope: PRE_CONSO
+    
+  - _type: EntityAttribute
+    _name: Adresse
+    label: Adresse
+    physicalName: ADRESSE
+    dataType: String
+    length: 255
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: AdresseLieuDit
+    label: Adresse Lieu Dit
+    physicalName: ADRESSE_LIEU_DIT
+    dataType: String
+    length: 255
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: CodePostal
+    label: Code Postal
+    physicalName: CODE_POSTAL
+    dataType: String
+    length: 20
+    mandatory: false 
+
+  - _type: EntityAttribute
+    _name: Ville
+    label: Ville
+    physicalName: VILLE
+    dataType: String
+    length: 150
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: AdresseEnrichie
+    label: Adresse Enrichie
+    physicalName: ADRESSE_ENRICHIE
+    dataType: String
+    length: 255
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: ConcatAddress
+    label: Adresse Concaténée
+    physicalName: ADRESSE_CONCATENEE
+    dataType: String
+    length: 255
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: DateAcquisition
+    label: Date acquisition
+    physicalName: DATE_ACQUISITION
+    dataType: Date
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: DateDebutConstruction
+    label: Date de début de construction
+    physicalName: DATE_DEBUT_CONSTRUCTION
+    dataType: Date
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: DateFinConstruction
+    label: Date de fin de construction
+    physicalName: DATE_FIN_CONSTRUCTION
+    dataType: Date
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: DateLivraison
+    label: Date de livraison
+    physicalName: DATE_LIVRAISON
+    dataType: Date
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: DateRestructuration
+    label: Date de restructuration
+    physicalName: DATE_RESTRUCTURATION
+    dataType: Date
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: FlagAscenseur
+    label: Flag Ascenseur
+    physicalName: FLAG_ASCENSEUR
+    dataType: Boolean
+    mandatory: false
+
+  # référence
+  - _type: EntityAttribute
+    _name: SecteurGeographique
+    label: Secteur géographique
+    physicalName: SECTEUR_GEOGRAPHIQUE
+    dataType: String
+    length: 150
+    mandatory: false
+
+
+  # référence
+  - _type: EntityAttribute
+    _name: PortefeuilleGestion
+    label: Portefeuille de gestion
+    physicalName: PORTEFEUILLE_GESTION
+    dataType: String
+    length: 150
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: CertificationESG
+    label: Certification ESG
+    physicalName: CERTIFICATION_ESG
+    dataType: String
+    length: 150
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: DateFinValidite
+    label: Date de fin de validité
+    physicalName: DATE_FIN_VALIDITE
+    dataType: Date
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: PhaseCertification
+    label: Phase certification
+    physicalName: PHASE_CERTIFICATION
+    dataType: String
+    length: 100
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: NiveauCertification
+    label: Niveau de certification
+    physicalName: NIVEAU_CERTIFICATION
+    dataType: String
+    length: 100
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: Proprietaire
+    label: Propriétaire
+    physicalName: PROPRIETAIRE
+    dataType: String
+    length: 150
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: Photo
+    label: Photo
+    physicalName: PHOTO
+    dataType: Binary
+    mandatory: false
+    searchable: false
+	
+  - _type: EntityAttribute
+    _name: SuperficieUtile
+    label: SuperficieUtile
+    description: Surface totale de l’actif exprimée en m²
+    documentation: Addition de toutes les surfaces utiles avec QP
+    physicalName: SUPERFICIE_UTILE
+    dataType: Decimal
+    precision: 18
+    scale: 2 
+    mandatory: false
+    searchable: false
+
+  # booleen
+  - _type: EntityAttribute
+    _name: IGH
+    label: IGH 
+    physicalName: IGH
+    dataType: Boolean
+    mandatory: false
+    
+  # booleen
+  - _type: EntityAttribute
+    _name: FlagRestructuration
+    label: Flag Restructuration
+    physicalName: FLAG_RESTRUCTURATION
+    dataType: Boolean
+    mandatory: false	
+
+  - _type: EntityAttribute
+    _name: ReleveGeometre
+    label: Relevé géomètre
+    physicalName: RELEVE_GEOMETRE
+    dataType: String
+    length: 150
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: BinaryContent
+    label: Binary Content
+    physicalName: BINARY_CONTENT
+    dataType: Binary
+    mandatory: false
+    searchable: true
+
+
+  - _type: EntityAttribute
+    _name: SousPortefeuille
+    label: Sous portefeuille 
+    physicalName: SOUS_PORTEFEUILLE
+    dataType: String
+    length: 150
+    mandatory: false
+
+sourceIdGeneration:
+  mode: MANUAL
+
+primaryKey: Batiments.entities.Immeuble.Immeuble.ImmeubleID
+
+goldenIdGeneration:
+  mode: SEQUENCE
+  startWith: 1
+
+matcher:
+  _type: SemQLMatcher
+  _name: Matcher
+  description: ImmeubleSemQLMatcher
+  matchRules:
+    - _type: SemQLMatchRule
+      _name: NewRule
+      label: NewRuleLabel
+      condition: Record1.IdentifiantsERP = Record2.IdentifiantsERP 
+      matchScore: 100
+      usingMatchOn: false
+    - _type: SemQLMatchRule
+      _name: Address
+      label: NewRuleLabel
+      condition: Record1.AdresseEnrichie = Record2.AdresseEnrichie
+      matchScore: 80
+      usingMatchOn: false
+  useTransitiveMatchScore: true
+  useMultiIterationGrouping: true
+  mergeThresholdNewGroup: 90
+  mergeThresholdMergingUnconfirmed: 90
+  mergeThresholdMergingConfirmed: 90
+  mergeThresholdMergingConfirmedWithUnconfirmed: 90
+  mergeThresholdMergingUnconfirmedWithNewMasters: 90
+  mergeThresholdMergingConfirmedWithNewMasters: 90
+  mergeThresholdRemergingPreviouslySplit: 100
+  autoConfirmGoldenThreshold: 99
+  autoConfirmSingletons: true

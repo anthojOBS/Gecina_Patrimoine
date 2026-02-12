@@ -1,0 +1,33 @@
+_package: Batiments.references
+_type: Reference
+_name: ImmeubleToFiscaliteCible
+label: Immeuble Fiscalite Cible
+description: Référence Immeuble vers FiscaliteCible
+fromRoleDocumentation: |
+  Cette référence détermine la **FiscaliteCible** d'un **Immeuble** dans son cycle de vie.
+  La FiscaliteCible indique l'état d'avancement du projet immobilier (en construction, livré, etc.).
+physicalName: IMM_FISCALITE_CIBLE_REF
+
+fromEntity: Batiments.entities.Immeuble.Immeuble
+fromRoleLabel: Immeuble
+fromRoleName: Immeuble
+fromRolePluralLabel: Immeubles
+
+toEntity: Batiments.entities.FiscaliteCible.FiscaliteCible
+toRoleLabel: Fiscalite
+toRoleName: FiscaliteCible
+toRolePhysicalName: FISCALITE_CIBLE_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: La FiscaliteCible est obligatoire pour un immeuble
+brokenValidationLabel: La FiscaliteCible sélectionnée est invalide pour cet immeuble
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Fiscalite
+  label: Fiscalite Cible
+  physicalName: FISCALITE_CIBLE_ID
+  searchable: true
+  entity: Batiments.entities.Immeuble.Immeuble

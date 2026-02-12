@@ -1,0 +1,51 @@
+_package: Batiments.entities.ZoneImmostat.collection_views
+_type: CollectionView
+_name: ZoneImmostatCollectionView
+entity: Batiments.entities.ZoneImmostat.ZoneImmostat
+default: true
+displayCard: Batiments.entities.ZoneImmostat.display_cards.ZoneImmostatDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: ZoneImmostat
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: IdColumn
+    _name: ZoneImmostatCode
+    value: ZoneImmostatCode
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: ZoneImmostatLibelle
+    value: ZoneImmostatLibelle
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: UpdateDate
+    value: UpdateDate
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+    
+  - _type: TextColumn
+    _name: Updator
+    value: Updator
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+

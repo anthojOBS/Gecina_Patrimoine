@@ -1,0 +1,34 @@
+_package: Batiments.entities.SocieteAutre.collection_views
+_type: CollectionView
+_name: SocieteAutreCollectionView
+entity: Batiments.entities.SocieteAutre.SocieteAutre
+default: true
+displayCard: Batiments.entities.SocieteAutre.display_cards.SocieteAutreDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Société Autre
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: IdColumn
+    _name: SocieteAutreCode
+    value: SocieteAutreCode
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: SocieteAutreLibelle
+    value: SocieteAutreLibelle
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true

@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: ImmeubleToPortefeuille
+label: Immeuble Portefeuille
+description: Référence Immeuble vers Portefeuille
+fromRoleDocumentation: |
+  Cette référence détermine le **Portefeuille** auquel appartient un **Immeuble**.
+  Le portefeuille représente un regroupement stratégique d'actifs immobiliers pour faciliter 
+  la gestion et le reporting par segments d'activité ou zones de marché.
+physicalName: IMMEUBLE_PORTEFEUILLE_REF
+
+fromEntity: Batiments.entities.Immeuble.Immeuble
+fromRoleLabel: Immeuble
+fromRoleName: Immeuble
+fromRolePluralLabel: Immeubles
+
+toEntity: Batiments.entities.Portefeuille.Portefeuille
+toRoleLabel: Portefeuille
+toRoleName: Portefeuille
+toRolePhysicalName: PORTEFEUILLE_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: Le portefeuille est obligatoire pour un immeuble
+brokenValidationLabel: Le portefeuille sélectionné est invalide pour cet immeuble
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Portefeuille
+  label: Portefeuille
+  physicalName: PORTEFEUILLE_ID
+  searchable: true
+  entity: Batiments.entities.Immeuble.Immeuble

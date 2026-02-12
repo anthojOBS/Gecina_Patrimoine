@@ -1,0 +1,36 @@
+_package: Batiments.entities.TypeEtage
+_type: Entity
+_name: TypeEtage
+label: Type d'Etage
+pluralLabel: Type d'Etage
+entityType: BASIC
+physicalTableName: TYPE_ETAGE
+iconUrl: images://mdi/stairs.svg
+description: ""
+documentation: |
+  Le **type etage** représente les étages composant le batiment.
+
+  Cette entité facilite l'intégration des fichiers.
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: EtageCode
+    label: Code Etage
+    physicalName: ETAGE_ID
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: EtageLibelle
+    label: Libellé Etage
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.TypeEtage.TypeEtage.EtageCode

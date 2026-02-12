@@ -1,0 +1,32 @@
+_package: Batiments.references
+_type: Reference
+_name: EtageToTypeEtage
+label: Etage TypeEtage
+description: Référence Etage vers TypeEtage
+fromRoleDocumentation: |
+  Cette référence détermine le **Type Etage** d'un **Etage** dans son cycle de vie.
+physicalName: ETAGE_TYPE_ETAGE_REF
+
+fromEntity: Batiments.entities.Etage.Etage
+fromRoleLabel: Etage
+fromRoleName: Etage
+fromRolePluralLabel: Etages
+
+toEntity: Batiments.entities.TypeEtage.TypeEtage
+toRoleLabel: TypeEtage
+toRoleName: TypeEtage
+toRolePhysicalName: TYPE_ETAGE_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: La TypeEtage est obligatoire pour un Etage
+brokenValidationLabel: La TypeEtage sélectionnée est invalide pour cet Etage
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: TypeEtage
+  label: TypeEtage
+  physicalName: TYPE_ETAGE_ID
+  searchable: true
+  entity: Batiments.entities.Etage.Etage

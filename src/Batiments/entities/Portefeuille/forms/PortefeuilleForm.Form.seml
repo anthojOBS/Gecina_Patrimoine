@@ -1,0 +1,32 @@
+_package: Batiments.entities.Portefeuille.forms
+_type: Form
+_name: PortefeuilleForm
+entity: Batiments.entities.Portefeuille.Portefeuille
+default: true
+formTabs:
+  - _type: FormTab
+    _name: Portefeuille
+    label: Portefeuille
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: IdField
+        _name: PortefeuilleCode
+        value: PortefeuilleCode
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: PortefeuilleLibelle
+        value: PortefeuilleLibelle
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

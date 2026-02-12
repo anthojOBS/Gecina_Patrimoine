@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: EtageToBatiment
+label: Etage Batiment
+description: Lien hiérarchique Batiment vers Etage
+fromRoleDocumentation: |
+  Cette référence établit le lien hiérarchique entre un **Étage** et son **Bâtiment** parent.
+  
+  Chaque étage appartient à un bâtiment dans la structure organisationnelle du patrimoine.
+physicalName: ETAGE_BATIMENT_REF
+
+fromEntity: Batiments.entities.Etage.Etage
+fromRoleLabel: Etage
+fromRoleName: Etage
+fromRolePluralLabel: Etages
+
+toEntity: Batiments.entities.Batiment.Batiment
+toRoleLabel: Batiment
+toRoleName: Batiment
+toRolePhysicalName: BATIMENT_ID
+
+oneToMany: false
+deletePropagation: RESTRICT
+validationScope: PRE_CONSO
+mandatoryValidationLabel: Le batiment est obligatoire pour un etage
+brokenValidationLabel: Le batiment sélectionné est invalide pour cet etage
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Batiment
+  label: Batiment
+  physicalName: BATIMENT_ID
+  searchable: true
+  entity: Batiments.entities.Etage.Etage

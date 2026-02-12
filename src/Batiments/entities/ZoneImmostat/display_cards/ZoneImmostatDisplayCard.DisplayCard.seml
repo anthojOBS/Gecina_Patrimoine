@@ -1,0 +1,16 @@
+_package: Batiments.entities.ZoneImmostat.display_cards
+_type: DisplayCard
+_name: ZoneImmostatDisplayCard
+entity: Batiments.entities.ZoneImmostat.ZoneImmostat
+default: true
+primaryTextExpression: ZoneImmostatCode || ' - ' || ZoneImmostatLibelle
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT

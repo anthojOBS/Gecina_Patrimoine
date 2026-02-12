@@ -1,0 +1,38 @@
+_package: Batiments.entities.SousSecteurImmostat
+_type: Entity
+_name: SousSecteurImmostat
+label: Sous Secteur Immostat
+pluralLabel: Sous Secteur Immostat
+entityType: BASIC
+physicalTableName: SOUS_SECTEUR_IMMOSTAT
+iconUrl: images://mdi/timeline-text.svg
+description: ""
+documentation: |
+  La **SousSecteurImmostat** représente l'état d'avancement d'un actif immobilier dans son cycle de vie.
+  
+  Une SousSecteurImmostat permet de suivre l'évolution d'un immeuble, d'un bâtiment ou d'un lot depuis sa conception jusqu'à son exploitation (en projet, en construction, livré, en exploitation, etc.).
+  
+  Cette entité est essentielle pour le pilotage des projets immobiliers et la gestion du portefeuille.
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: SousSecteurImmostatCode
+    label: Code Sous Secteur Immostat
+    physicalName: SOUS_SECTEUR_IMMOSTAT_ID
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: SousSecteurImmostatLibelle
+    label: Libellé Sous Secteur Immostat
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.SousSecteurImmostat.SousSecteurImmostat.SousSecteurImmostatCode

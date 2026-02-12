@@ -1,0 +1,63 @@
+_package: Batiments.entities.FiscaliteCible.action_sets
+_type: ActionSet
+_name: FiscaliteCibleActionSet
+entity: Batiments.entities.FiscaliteCible.FiscaliteCible
+label: FiscaliteCible Action Set
+defaultActionSet: true
+actions:
+  - _type: CreateAction
+    _name: CreateAuthorFiscaliteCibles
+    label: Create
+    useCustomLabel: true
+    stepper: Batiments.entities.FiscaliteCible.steppers.AuthorFiscaliteCibles
+    createMultiple: false
+    createdRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: EditAction
+    _name: EditAuthorFiscaliteCibles
+    label: Edit
+    useCustomLabel: true
+    stepper: Batiments.entities.FiscaliteCible.steppers.AuthorFiscaliteCibles
+    multipleSelectionAllowed: true
+    availableForGoldenData: true
+    availableForMasterData: false
+    availableForErrorData: true
+    waitDialogEnabled: false
+  - _type: MassUpdateAction
+    _name: MassUpdateAuthorFiscaliteCibles
+    label: Mass Update
+    useCustomLabel: true
+    stepper: Batiments.entities.FiscaliteCible.steppers.AuthorFiscaliteCibles
+    availableForGoldenData: true
+    availableForErrorData: true
+    availableForMasterData: false
+    waitDialogEnabled: false
+  - _type: DeleteAction
+    _name: Delete
+    label: Delete
+    useCustomLabel: true
+    multipleSelectionAllowed: true
+    deleteType: HARD_DELETE
+    waitDialogEnabled: false
+    availableForGoldenData: true
+    availableForMasterData: false
+  - _type: ExportAction
+    _name: Export
+    label: Export
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: ImportAuthorFiscaliteCibles
+    label: Import
+    useCustomLabel: true
+    importMode: CREATE_AND_UPDATE
+    stepper: Batiments.entities.FiscaliteCible.steppers.AuthorFiscaliteCibles
+    importedRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: BrowseGraphAction
+    _name: BrowseGraph
+    label: Browse Graph
+    useCustomLabel: true
+    waitDialogEnabled: false

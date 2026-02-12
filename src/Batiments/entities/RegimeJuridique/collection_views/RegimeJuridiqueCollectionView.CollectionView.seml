@@ -1,0 +1,50 @@
+_package: Batiments.entities.RegimeJuridique.collection_views
+_type: CollectionView
+_name: RegimeJuridiqueCollectionView
+entity: Batiments.entities.RegimeJuridique.RegimeJuridique
+default: true
+displayCard: Batiments.entities.RegimeJuridique.display_cards.RegimeJuridiqueDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Regime Juridique
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: IdColumn
+    _name: RegimeJuridiqueCode
+    value: RegimeJuridiqueCode
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: RegimeJuridiqueLibelle
+    value: RegimeJuridiqueLibelle
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: UpdateDate
+    value: UpdateDate
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+    
+  - _type: TextColumn
+    _name: Updator
+    value: Updator
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true

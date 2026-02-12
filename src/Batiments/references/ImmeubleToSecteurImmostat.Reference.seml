@@ -1,0 +1,33 @@
+_package: Batiments.references
+_type: Reference
+_name: ImmeubleToSecteurImmostat
+label: Immeuble SecteurImmostat
+description: Référence Immeuble vers SecteurImmostat
+fromRoleDocumentation: |
+  Cette référence détermine la **SecteurImmostat** d'un **Immeuble** dans son cycle de vie.
+  La SecteurImmostat indique l'état d'avancement du projet immobilier (en construction, livré, etc.).
+physicalName: IMM_SECTEUR_IMMOSTAT_REF
+
+fromEntity: Batiments.entities.Immeuble.Immeuble
+fromRoleLabel: Immeuble
+fromRoleName: Immeuble
+fromRolePluralLabel: Immeubles
+
+toEntity: Batiments.entities.SecteurImmostat.SecteurImmostat
+toRoleLabel: SecteurImmostat
+toRoleName: SecteurImmostat
+toRolePhysicalName: SECTEUR_IMMOSTAT_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: La SecteurImmostat est obligatoire pour un immeuble
+brokenValidationLabel: La SecteurImmostat sélectionnée est invalide pour cet immeuble
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Secteur_Immostat
+  label: SecteurImmostat
+  physicalName: SECTEUR_IMMOSTAT_ID
+  searchable: true
+  entity: Batiments.entities.Immeuble.Immeuble

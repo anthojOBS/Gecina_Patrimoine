@@ -1,0 +1,32 @@
+_package: Batiments.entities.TypeEtage.forms
+_type: Form
+_name: TypeEtageForm
+entity: Batiments.entities.TypeEtage.TypeEtage
+default: true
+formTabs:
+  - _type: FormTab
+    _name: TypeEtage
+    label: TypeEtage
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: IdField
+        _name: EtageCode
+        value: EtageCode
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: EtageLibelle
+        value: EtageLibelle
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

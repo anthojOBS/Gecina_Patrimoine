@@ -1,0 +1,50 @@
+_package: Batiments.entities.Portefeuille.collection_views
+_type: CollectionView
+_name: PortefeuilleCollectionView
+entity: Batiments.entities.Portefeuille.Portefeuille
+default: true
+displayCard: Batiments.entities.Portefeuille.display_cards.PortefeuilleDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Portefeuille
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: IdColumn
+    _name: PortefeuilleCode
+    value: PortefeuilleCode
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: PortefeuilleLibelle
+    value: PortefeuilleLibelle
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: UpdateDate
+    value: UpdateDate
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+    
+  - _type: TextColumn
+    _name: Updator
+    value: Updator
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true

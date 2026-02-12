@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: BatimentToImmeuble
+label: Batiment Immeuble
+description: Lien hiérarchique Immeuble vers Batiment
+fromRoleDocumentation: |
+  Cette référence établit le lien hiérarchique entre un **Bâtiment** et son **Immeuble** parent.
+  
+  Un bâtiment fait partie d'un immeuble dans la structure du patrimoine immobilier.
+physicalName: BATIMENT_IMMEUBLE_REF
+
+fromEntity: Batiments.entities.Batiment.Batiment
+fromRoleLabel: Batiment
+fromRoleName: Batiment
+fromRolePluralLabel: Batiments
+
+toEntity: Batiments.entities.Immeuble.Immeuble
+toRoleLabel: Immeuble
+toRoleName: Immeuble
+toRolePhysicalName: IMMEUBLE_ID
+
+oneToMany: false
+deletePropagation: RESTRICT
+validationScope: PRE_CONSO
+mandatoryValidationLabel: L'immeuble est obligatoire pour un batiment
+brokenValidationLabel: L'immeuble sélectionné est invalide pour ce batiment
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Immeuble
+  label: Immeuble
+  physicalName: IMMEUBLE_ID
+  searchable: true
+  entity: Batiments.entities.Batiment.Batiment

@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: BatimentToPhase
+label: Batiment Phase
+description: Référence Batiment vers Phase
+fromRoleDocumentation: |
+  Cette référence détermine la **Phase** d'un **Bâtiment** dans son cycle de vie.
+  
+  La phase indique l'état d'avancement du projet (en construction, livré, rénové, etc.).
+physicalName: BATIMENT_PHASE_REF
+
+fromEntity: Batiments.entities.Batiment.Batiment
+fromRoleLabel: Batiment
+fromRoleName: Batiment
+fromRolePluralLabel: Batiments
+
+toEntity: Batiments.entities.Phase.Phase
+toRoleLabel: Phase
+toRoleName: Phase
+toRolePhysicalName: PHASE_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: La phase est obligatoire pour un batiment
+brokenValidationLabel: La phase sélectionnée est invalide pour ce batiment
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Phase
+  label: Phase
+  physicalName: PHASE_ID
+  searchable: true
+  entity: Batiments.entities.Batiment.Batiment

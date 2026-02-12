@@ -1,0 +1,36 @@
+_package: Batiments.entities.FiscaliteCible
+_type: Entity
+_name: FiscaliteCible
+label: Fiscalite Cible
+pluralLabel: FiscaliteCibles
+entityType: BASIC
+physicalTableName: FISCALITE_CIBLE
+iconUrl: images://mdi/timeline-text.svg
+description: ""
+documentation: |
+  La **FiscaliteCible** représente le Régime fiscal applicable  pour l’actif.
+  
+  Cette entité est essentielle pour le pilotage des projets immobiliers et la gestion de immeuble.
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: FiscaliteCibleCode
+    label: Code Fiscalite Cible
+    physicalName: FISCALITE_CIBLE_ID
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: FiscaliteCibleLibelle
+    label: Libellé Fiscalite Cible
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.FiscaliteCible.FiscaliteCible.FiscaliteCibleCode

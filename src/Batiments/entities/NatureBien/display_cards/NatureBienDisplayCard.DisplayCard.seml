@@ -1,0 +1,16 @@
+_package: Batiments.entities.NatureBien.display_cards
+_type: DisplayCard
+_name: NatureBienDisplayCard
+entity: Batiments.entities.NatureBien.NatureBien
+default: true
+primaryTextExpression: Code || ' - ' || Libelle
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT

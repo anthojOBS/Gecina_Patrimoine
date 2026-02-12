@@ -1,0 +1,59 @@
+_package: Batiments.entities.SousSecteurImmostat.business_views
+_type: BusinessView
+_name: SousSecteurImmostatBusinessView
+entity: Batiments.entities.SousSecteurImmostat.SousSecteurImmostat
+rootLabel: Sous Secteur Immostat
+rootPluralLabel: Sous Secteur Immostat
+displayRootNodeAs: ICON_LABEL
+label: Sous Secteur Immostat
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: SousSecteurImmostat
+  displayCard: Batiments.entities.SousSecteurImmostat.display_cards.SousSecteurImmostatDisplayCard
+  entity: Batiments.entities.SousSecteurImmostat.SousSecteurImmostat
+  actionSet: Batiments.entities.SousSecteurImmostat.action_sets.SousSecteurImmostatActionSet
+  collection: Batiments.entities.SousSecteurImmostat.collection_views.SousSecteurImmostatCollectionView
+  form: Batiments.entities.SousSecteurImmostat.forms.SousSecteurImmostatForm
+  outlineVisible: false
+  displayRecordCount: ALWAYS
+  businessEntitySearchConfigs:
+    - _name: TextConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: TEXT
+    - _name: FormConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: BY_FORM
+    - _name: AdvancedConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: ADVANCED
+    - _name: SemqlConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: SEMQL
+  overrideDefaultSort: false
+  enableUserDefinedSort: true
+  listAllowed: true
+  tableAllowed: true
+  gridAllowed: true
+
+  transitions:
+    - _name: GoldenHistoryRecords
+      _type: BusinessViewTransition
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      enableHierarchy: '0'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: false
+      iconUrl: images://mdi/history.svg
+      label: History
+      pluralLabel: History
+      transitionPath: GoldenHistoryRecords
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '1'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      businessViewEntity: 
+        _type: BusinessViewEntityReference
+        ref: Batiments.entities.SousSecteurImmostat.business_views.SousSecteurImmostatBusinessView.SousSecteurImmostat
+      filter: 1 = 1
+enableHierarchyView: false
+useHierarchyOnOpen: false

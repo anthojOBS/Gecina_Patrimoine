@@ -1,0 +1,32 @@
+_package: Batiments.entities.Phase.forms
+_type: Form
+_name: PhaseForm
+entity: Batiments.entities.Phase.Phase
+default: true
+formTabs:
+  - _type: FormTab
+    _name: Phase
+    label: Phase
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: IdField
+        _name: PhaseCode
+        value: PhaseCode
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: PhaseLibelle
+        value: PhaseLibelle
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

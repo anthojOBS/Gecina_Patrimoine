@@ -1,0 +1,34 @@
+_package: Batiments.entities.Usage.collection_views
+_type: CollectionView
+_name: UsageCollectionView
+entity: Batiments.entities.Usage.Usage
+default: true
+displayCard: Batiments.entities.Usage.display_cards.UsageDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Usage
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: IdColumn
+    _name: UsageCode
+    value: UsageCode
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: UsageLibelle
+    value: UsageLibelle
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true

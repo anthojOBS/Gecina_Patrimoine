@@ -1,0 +1,33 @@
+_package: Batiments.entities.QuartierParis.steppers
+_type: Stepper
+_name: AuthorQuartierParis
+entity: Batiments.entities.QuartierParis.QuartierParis
+label: Quartier Paris
+rootStep:
+  _type: CollectionStep
+  _name: QuartierPariss
+  label: Quartier Paris
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.QuartierParis.collection_views.QuartierParisCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: QuartierParis
+      label: Quartier Paris
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.QuartierParis.forms.QuartierParisForm.QuartierParis

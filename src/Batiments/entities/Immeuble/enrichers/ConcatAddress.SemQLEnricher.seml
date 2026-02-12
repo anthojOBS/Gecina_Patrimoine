@@ -1,0 +1,10 @@
+_package: Batiments.entities.Immeuble.enrichers
+_name: ConcatAddress
+_type: SemQLEnricher
+entity: Batiments.entities.Immeuble.Immeuble
+label: Concat Address
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: ConcatAddress
+    expression: UPPER(Adresse ||' '||CodePostal ||' '|| Ville)
+condition: Adresse is NOT NULL

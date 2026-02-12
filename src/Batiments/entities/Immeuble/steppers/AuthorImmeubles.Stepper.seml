@@ -1,0 +1,108 @@
+_package: Batiments.entities.Immeuble.steppers
+_type: Stepper
+_name: AuthorImmeubles
+entity: Batiments.entities.Immeuble.Immeuble
+label: Immeubles
+
+stepperFinishValidations:
+  - onStepperFinish: WARN
+    validationType: DETECT_DUPS
+   
+rootStep:
+  _type: CollectionStep
+  _name: Immeubles
+  label: Immeubles
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Immeuble
+      label: Immeuble
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble
+
+      formStepEnrichers:  
+        - enricher: Batiments.entities.Immeuble.enrichers.StandardizeAddress
+          executedOnButtonClick: true
+          executedOnDataChange: false
+          executedOnFormOpen: false
+
+      formStepValidations:  
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Immeuble.Immeuble.Libelle
+
+        - validator: Batiments.entities.Immeuble.validations.CheckLongLibelle
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.entities.Immeuble.Immeuble.Libelle
+
+
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Immeuble.Immeuble.Libelle
+          
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckLongLibelle
+
+          
+        - onStepExit: WARN
+          validationType: DETECT_DUPS
+          matcher: Batiments.entities.Immeuble.Immeuble.Matcher
+
+    - _type: FormStep
+      _name: CycleDeVie
+      label: Cycle de vie de l'immeuble
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleForm.CycleVieImmeuble
+ 
+    - _type: FormStep
+      _name: ESGcertifications
+      label: ESG certifications
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications
+
+    - _type: FormStep
+      _name: FiscaliteJuridique
+      label: Fiscalité et Juridique
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleForm.FiscaliteJuridique
+
+      formStepEnrichers:  
+        - enricher: Batiments.entities.Immeuble.enrichers.StandardizeAddress
+          executedOnButtonClick: true
+          executedOnDataChange: false
+          executedOnFormOpen: false
+

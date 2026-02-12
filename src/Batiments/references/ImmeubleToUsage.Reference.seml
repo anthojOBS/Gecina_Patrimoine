@@ -1,0 +1,32 @@
+_package: Batiments.references
+_type: Reference
+_name: ImmeubleToUsage
+label: Immeuble Usage
+description: Référence Immeuble vers Usage
+fromRoleDocumentation: |
+  Cette référence relie un **Immeuble** à une **Société Autre**.
+physicalName: IMMEUBLE_USAGE_REF
+
+fromEntity: Batiments.entities.Immeuble.Immeuble
+fromRoleLabel: Immeuble
+fromRoleName: Immeuble
+fromRolePluralLabel: Immeubles
+
+toEntity: Batiments.entities.Usage.Usage
+toRoleLabel: Usage
+toRoleName: Usage
+toRolePhysicalName: USAGE_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: La société autre est obligatoire pour un immeuble
+brokenValidationLabel: La société autre sélectionnée est invalide pour cet immeuble
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Usage_Immeuble
+  label: Usage
+  physicalName: USAGE_ID
+  searchable: true
+  entity: Batiments.entities.Immeuble.Immeuble

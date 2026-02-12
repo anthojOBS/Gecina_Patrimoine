@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: LotToEtage
+label: Lot Etage
+description: Lien hiérarchique Etage vers Lot
+fromRoleDocumentation: |
+  Cette référence établit le lien hiérarchique entre un **Lot** et son **Étage**.
+  
+  Chaque lot doit être rattaché à un étage dans la structure du patrimoine immobilier.
+physicalName: LOT_ETAGE_REF
+
+fromEntity: Batiments.entities.Lot.Lot
+fromRoleLabel: Lot
+fromRoleName: Lot
+fromRolePluralLabel: Lots
+
+toEntity: Batiments.entities.Etage.Etage
+toRoleLabel: Etage
+toRoleName: Etage
+toRolePhysicalName: ETAGE_ID
+
+oneToMany: false
+deletePropagation: RESTRICT
+validationScope: NONE  #pour alimenter sans etage
+mandatoryValidationLabel: L'etage est obligatoire pour un lot
+brokenValidationLabel: L'etage sélectionné est invalide pour ce lot
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Etage
+  label: Etage
+  physicalName: ETAGE_ID
+  searchable: true
+  entity: Batiments.entities.Lot.Lot

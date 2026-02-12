@@ -1,0 +1,33 @@
+_package: Batiments.entities.Portefeuille.steppers
+_type: Stepper
+_name: AuthorPortefeuilles
+entity: Batiments.entities.Portefeuille.Portefeuille
+label: Portefeuilles
+rootStep:
+  _type: CollectionStep
+  _name: Portefeuilles
+  label: Portefeuilles
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.Portefeuille.collection_views.PortefeuilleCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Portefeuille
+      label: Portefeuille
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Portefeuille.forms.PortefeuilleForm.Portefeuille

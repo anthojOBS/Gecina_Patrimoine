@@ -1,0 +1,239 @@
+_package: Batiments.entities.Lot.collection_views
+_type: CollectionView
+_name: LotCollectionView
+entity: Batiments.entities.Lot.Lot
+default: true
+displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Lot
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: IdColumn
+    _name: LotCode
+    value: LotCode
+    useCustomLabel: false
+    dataType: LONG_INTEGER
+    columnAlign: LEFT
+    visibleByDefault: true
+  # - _type: TextColumn
+  #   _name: IdentifiantREF
+  #   value: IdentifiantREF
+  #   useCustomLabel: false
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: true
+  - _type: TextColumn
+    _name: IdentifiantsERP
+    value: IdentifiantsERP
+    label: Numéro du lot
+    useCustomLabel: true
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  # - _type: TextColumn
+  #   _name: Libelle
+  #   value: Libelle
+  #   useCustomLabel: false
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: true
+  - _type: TextColumn
+    _name: Usage
+    value: Usage
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: SuperficieUtile
+    value: SuperficieUtile
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: SuperficieUtileQP
+    value: SuperficieUtileQP
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: SuperficieUtilePonderee
+    value: SuperficieUtilePonderee
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: Adresse
+    #value: Etage.Batiment.Adresse
+    value: CASE WHEN Etage.Batiment.Adresse is null THEN Batiment.Adresse ELSE Etage.Batiment.Adresse END
+    label: Adresse du bâtiment
+    useCustomLabel: true
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+
+  - _type: TextColumn
+    _name: Immeuble_identifiantsERP
+    #value: Etage.Batiment.Immeuble.IdentifiantsERP
+    value: CASE WHEN Etage.Batiment.Immeuble.IdentifiantsERP is null THEN Batiment.Immeuble.IdentifiantsERP ELSE Etage.Batiment.Immeuble.IdentifiantsERP END
+    label: Numéro de l'immeuble
+    useCustomLabel: true
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+
+  - _type: TextColumn
+    _name: Batiments_identifiantsERP
+    #value: Etage.Batiment.IdentifiantsERP
+    value: CASE WHEN Etage.Batiment.IdentifiantsERP is null THEN Batiment.IdentifiantsERP ELSE Etage.Batiment.IdentifiantsERP END
+    label: Numéro de bâtiment
+    useCustomLabel: true
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+
+
+  - _type: ReferenceColumn
+    _name: FDN_Etage
+    value: FDN_Etage
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Etage.Etage
+
+  - _type: ReferenceColumn
+    _name: FDN_Batiment
+    value: FDN_Batiment
+   # value: CASE WHEN Etage.FDN_Batiment is null THEN FDN_Batiment ELSE Etage.FDN_Batiment END
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Batiment.Batiment
+
+  - _type: ReferenceColumn
+    _name: FDN_GenreBien
+    value: FDN_GenreBien
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.GenreBien.GenreBien
+  - _type: ReferenceColumn
+    _name: FDN_NatureBien
+    value: FDN_NatureBien
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.NatureBien.NatureBien
+  - _type: ReferenceColumn
+    _name: FDN_Phase
+    value: FDN_Phase
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Phase.Phase
+  - _type: ReferenceColumn
+    _name: FDN_UsageLot
+    value: FDN_UsageLot
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.UsageLot.UsageLot
+
+ 
+  - _type: ReferenceColumn
+    _name: FDN_DestinationReelle
+    value: FDN_DestinationReelle
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.DestinationReelle.DestinationReelle
+    
+
+  - _type: ReferenceColumn
+    _name: FDN_SocieteAutre
+    value: FDN_SocieteAutre
+    label: Société exploitante
+    useCustomLabel: true
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.SocieteAutre.SocieteAutre
+
+  - _type: TextColumn
+    _name: ConfirmationStatus
+    columnAlign: LEFT
+    dataType: STRING
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: ConfirmationStatus
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: ConfidenceScore
+    columnAlign: LEFT
+    dataType: LONG_INTEGER
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: ConfidenceScore
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: MastersCount
+    columnAlign: LEFT
+    dataType: LONG_INTEGER
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: MastersCount
+    visibleByDefault: true
+    
+  - _type: CheckboxColumn
+    _name: HasSuggestedMerge
+    columnAlign: LEFT
+    dataType: BOOLEAN
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: HasSuggestedMerge
+    visibleByDefault: true
+  
+  - _type: TextColumn
+    _name: UpdateDate
+    value: UpdateDate
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+    
+  - _type: TextColumn
+    _name: Updator
+    value: Updator
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true

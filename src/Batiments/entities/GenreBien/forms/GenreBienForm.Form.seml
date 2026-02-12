@@ -1,0 +1,33 @@
+_package: Batiments.entities.GenreBien.forms
+_type: Form
+_name: GenreBienForm
+entity: Batiments.entities.GenreBien.GenreBien
+default: true
+formTabs:
+  - _type: FormTab
+    _name: GenreBien
+    label: Genre Bien
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: IdField
+        _name: GenreBienCode
+        value: GenreBienCode
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+          alignment: left
+      - _type: TextField
+        _name: GenreBienLibelle
+        value: GenreBienLibelle
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

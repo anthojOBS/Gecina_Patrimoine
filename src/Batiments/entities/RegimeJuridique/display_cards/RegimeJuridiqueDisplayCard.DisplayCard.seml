@@ -1,0 +1,17 @@
+_package: Batiments.entities.RegimeJuridique.display_cards
+_type: DisplayCard
+_name: RegimeJuridiqueDisplayCard
+entity: Batiments.entities.RegimeJuridique.RegimeJuridique
+default: true
+primaryTextExpression: RegimeJuridiqueCode || ' - ' || RegimeJuridiqueLibelle
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageValue: images://mdi/gavel.svg

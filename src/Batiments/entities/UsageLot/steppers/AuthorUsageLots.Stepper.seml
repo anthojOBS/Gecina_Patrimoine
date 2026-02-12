@@ -1,0 +1,33 @@
+_package: Batiments.entities.UsageLot.steppers
+_type: Stepper
+_name: AuthorUsageLots
+entity: Batiments.entities.UsageLot.UsageLot
+label: Usage Lots
+rootStep:
+  _type: CollectionStep
+  _name: UsageLots
+  label: Usage Lots
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.UsageLot.collection_views.UsageLotCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: UsageLot
+      label: Usage Lot
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.UsageLot.forms.UsageLotForm.UsageLot

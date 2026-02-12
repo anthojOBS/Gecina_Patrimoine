@@ -1,0 +1,54 @@
+_package: Batiments.entities.Pays
+_type: Entity
+_name: Pays
+label: Pays
+pluralLabel: Pays
+entityType: BASIC
+physicalTableName: PAYS
+iconUrl: images://mdi/flag.svg
+description: ""
+documentation: ""
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: PaysID
+    label: Pays ID
+    physicalName: PAYS_ID_ISO3
+    dataType: String
+    length: 3
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: iso2
+    label: Code ISO2 
+    physicalName: CODE_ISO2
+    dataType: String
+    length: 2
+    mandatory: true
+    mandatoryValidationScope: PRE_CONSO
+    searchable: true
+  - _type: EntityAttribute
+    _name: iso3
+    label: Code ISO3 
+    physicalName: CODE_ISO3
+    dataType: String
+    length: 3
+    mandatory: true
+    mandatoryValidationScope: PRE_CONSO
+    searchable: true
+  - _type: EntityAttribute
+    _name: nom
+    label: Nom 
+    physicalName: NOM
+    dataType: String
+    length: 128
+    mandatory: true
+    mandatoryValidationScope: PRE_CONSO
+    searchable: true
+
+sourceIdGeneration:
+  mode: MANUAL
+
+primaryKey: Batiments.entities.Pays.Pays.PaysID

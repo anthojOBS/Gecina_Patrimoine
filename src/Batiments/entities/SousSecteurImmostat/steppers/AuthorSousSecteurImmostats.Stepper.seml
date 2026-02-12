@@ -1,0 +1,33 @@
+_package: Batiments.entities.SousSecteurImmostat.steppers
+_type: Stepper
+_name: AuthorSousSecteurImmostats
+entity: Batiments.entities.SousSecteurImmostat.SousSecteurImmostat
+label: Sous Secteur Immostat
+rootStep:
+  _type: CollectionStep
+  _name: SousSecteurImmostats
+  label: Sous Secteur Immostat
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.SousSecteurImmostat.collection_views.SousSecteurImmostatCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: SousSecteurImmostat
+      label: Sous Secteur Immostat
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.SousSecteurImmostat.forms.SousSecteurImmostatForm.SousSecteurImmostat

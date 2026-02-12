@@ -1,0 +1,429 @@
+_package: Batiments.applications
+_type: Application
+_name: Patrimoine
+label: Patrimoine
+visibility: VISIBLE
+avatarImageUrl: images://GECINA/pr-default.jpg
+logoUrl: images://GECINA/Gecina_logo-RVB.png
+coverImageUrl: images://GECINA/Image_accueil.png
+favIcon: images://GECINA/gecina-logo-whiteblue.png
+sortStrategy: POSITION
+historyBrowsingEnabled: true
+historyBrowsingRequiredRole: ""
+
+titleBarDefaultColor: "#122843"
+
+defaultAction: Batiments.applications.Patrimoine.Root.GlobalSearch
+
+documentationConfig:
+  documentation: ""
+  documentationConfigDiagrams:
+    - _type: DocumentationConfigDiagram
+      _name: Diagram
+      label: Patrimoine Diagram
+      modelDiagram: Batiments.model_diagrams.PatrimoineDiagram
+
+globalSearchConfig:
+  displaySearchForDropdown: true
+  sortBusinessViewsAlphabetically: false
+  globalSearchBusinessViews:
+    - _type: GlobalSearchBoView
+      _name: Immeubles
+      viewType: GD
+      businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
+      searchTypeConfig: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView.Immeuble.TextConfig
+      maxResults: 5
+    - _type: GlobalSearchBoView
+      _name: Batiments
+      viewType: GD
+      businessView: Batiments.entities.Batiment.business_views.BatimentBusinessView
+      searchTypeConfig: Batiments.entities.Batiment.business_views.BatimentBusinessView.Batiment.TextConfig
+      maxResults: 5
+    - _type: GlobalSearchBoView
+      _name: Lots
+      viewType: GD
+      businessView: Batiments.entities.Lot.business_views.LotBusinessView
+      searchTypeConfig: Batiments.entities.Lot.business_views.LotBusinessView.Lot.TextConfig
+      maxResults: 5
+    - _type: GlobalSearchBoView
+      _name: Etages
+      viewType: GD
+      businessView: Batiments.entities.Etage.business_views.EtageBusinessView
+      searchTypeConfig: Batiments.entities.Etage.business_views.EtageBusinessView.Etage.TextConfig
+      maxResults: 5
+    - _type: GlobalSearchBoView
+      _name: ZoneGeographiques
+      viewType: GD
+      businessView: Batiments.entities.ZoneGeographique.business_views.ZoneGeographiqueBusinessView
+      searchTypeConfig: Batiments.entities.ZoneGeographique.business_views.ZoneGeographiqueBusinessView.ZoneGeographique.TextConfig
+      maxResults: 5
+    
+
+
+navDrawer:
+  - _type: NavigationGroup
+    _name: RootFolder
+    label: Root Folder
+    dividerVisible: false
+    labelVisible: false
+    actions:
+      - appAction: Batiments.applications.Patrimoine.Root.MyTasks
+      # - appAction: Batiments.applications.Patrimoine.Root.GlobalSearch
+      - appAction: Batiments.applications.Patrimoine.Root.Entities
+      - appAction: Batiments.applications.Patrimoine.Root.Dashboard
+
+  - _type: NavigationGroup
+    _name: Patrimoine
+    label: Patrimoine
+    dividerVisible: true
+    labelVisible: false
+    actions:
+      - appAction: Batiments.applications.Patrimoine.Root.Immeubles
+      - appAction: Batiments.applications.Patrimoine.Root.Batiments
+      # - appAction: Batiments.applications.Patrimoine.Root.Etages
+      - appAction: Batiments.applications.Patrimoine.Root.Lots
+      - appAction: Batiments.applications.Patrimoine.Root.ImmeublesErrors
+      - appAction: Batiments.applications.Patrimoine.Root.ImmeublesErrorsGolden
+      - appAction: Batiments.applications.Patrimoine.Root.ImmeublesSuggestedMatches
+      - appAction: Batiments.applications.Patrimoine.Root.BatimentsErrors
+      - appAction: Batiments.applications.Patrimoine.Root.BatimentsErrorsGolden
+      - appAction: Batiments.applications.Patrimoine.Root.BatimentsSuggestedMatches
+
+  - _type: NavigationGroup
+    _name: ReferenceData
+    label: Reference Data
+    dividerVisible: false 
+    labelVisible: false
+    actions:
+      - appAction: Batiments.applications.Patrimoine.Root.ReferenceData
+
+  - _type: NavigationGroup
+    _name: QuickActions
+    label: Quick Actions
+    dividerVisible: false 
+    labelVisible: false
+    actions:
+      - appAction: Batiments.applications.Patrimoine.Root.QuickActions
+
+
+rootFolder:
+  _type: FolderAction
+  _name: Root
+  label: Root Folder
+  image: images://mdi/folder.svg
+  imageAlign: MIDDLE_CENTER
+  imageMode: FIT
+  appActions:
+    - _type: GlobalSearchAction
+      _name: GlobalSearch
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+
+    - _type: MyTasksAction
+      _name: MyTasks
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      badgeVisible: true
+
+    - _type: BrowseEntitiesFolderAction
+      _name: Entities
+      lineageEnabled: true
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      label: Entities (database view)
+      requiredRole: semarchyAdmin
+
+    - _type: OpenDashboardAction
+      _name: Dashboard
+      label: Dashboard
+      dashboardApplication: SuiviErreurs
+      dashboard: TableauDeBord
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      icon: images://mdi/view-dashboard.svg
+      iconColor: '#3F51B5'
+      requiredRole: semarchyAdmin
+
+    - _type: BrowseBusinessViewAction
+      _name: Immeubles
+      businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      nbRecordsBadgeVisible: false
+      nbRecordsBadgeBackgroundColor: "#FF9800"
+      icon: images://mdi/office-building-marker.svg
+      label: Immeubles
+
+    - _type: BrowseBusinessViewAction
+      _name: Batiments
+      businessView: Batiments.entities.Batiment.business_views.BatimentBusinessView
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      label: Bâtiments
+      nbRecordsBadgeVisible: false
+      icon: images://mdi/domain.svg
+
+    - _type: BrowseBusinessViewAction
+      _name: Etages
+      businessView: Batiments.entities.Etage.business_views.EtageBusinessView
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      label: Etages
+      nbRecordsBadgeVisible: false
+      icon: images://mdi/stairs.svg
+
+    - _type: BrowseBusinessViewAction
+      _name: Lots
+      businessView: Batiments.entities.Lot.business_views.LotBusinessView
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      label: Lots
+      nbRecordsBadgeVisible: false
+      icon: images://mdi/floor-plan.svg
+
+    - _type: BrowseBusinessViewAction
+      _name: ImmeublesErrors
+      label: Immeubles Erreurs
+      businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      nbRecordsBadgeVisible: true
+      iconColor: red
+      icon: images://mdi/office-building-marker.svg
+      viewType: SDWE
+      labelColor: red
+      nbRecordsBadgeBackgroundColor: md:red
+      requiredRole: semarchyAdmin
+
+    - _type: BrowseBusinessViewAction
+      _name: ImmeublesErrorsGolden
+      label: Immeubles Erreurs Golden
+      businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      nbRecordsBadgeVisible: true
+      iconColor: red
+      icon: images://mdi/office-building-marker.svg
+      viewType: GDWE
+      labelColor: red
+      nbRecordsBadgeBackgroundColor: md:red
+      requiredRole: semarchyAdmin
+
+    - _type: BrowseBusinessViewAction
+      _name: ImmeublesSuggestedMatches
+      label: Immeubles Suggestions
+      businessView: Batiments.entities.Immeuble.business_views.ImmeubleSuggestedMatchesBusinessView
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      nbRecordsBadgeVisible: true
+      icon: images://mdi/office-building-marker-outline.svg
+      requiredRole: semarchyAdmin
+
+    - _type: BrowseBusinessViewAction
+      _name: BatimentsErrors
+      label: Bâtiments Erreurs
+      businessView: Batiments.entities.Batiment.business_views.BatimentBusinessView
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      nbRecordsBadgeVisible: true
+      iconColor: red
+      icon: images://mdi/domain.svg
+      viewType: SDWE
+      labelColor: red
+      nbRecordsBadgeBackgroundColor: md:red
+      requiredRole: semarchyAdmin
+
+    - _type: BrowseBusinessViewAction
+      _name: BatimentsErrorsGolden
+      label: Bâtiments Erreurs Golden
+      businessView: Batiments.entities.Batiment.business_views.BatimentBusinessView
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      nbRecordsBadgeVisible: true
+      iconColor: red
+      icon: images://mdi/domain.svg
+      viewType: GDWE
+      labelColor: red
+      nbRecordsBadgeBackgroundColor: md:red
+      requiredRole: semarchyAdmin
+
+    - _type: BrowseBusinessViewAction
+      _name: BatimentsSuggestedMatches
+      label: Bâtiments Suggestions
+      businessView: Batiments.entities.Batiment.business_views.BatimentSuggestedMatchesBusinessView
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      nbRecordsBadgeVisible: true
+      icon: images://mdi/domain-plus.svg
+      requiredRole: semarchyAdmin
+
+    - _type: FolderAction
+      _name: ReferenceData
+      label: Données de Référence
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      icon: images://mdi/database.svg
+      appActions:
+        - _type: BrowseBusinessViewAction
+          _name: DestinationReelle
+          businessView: Batiments.entities.DestinationReelle.business_views.DestinationReelleBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
+          _name: FiscaliteCible
+          businessView: Batiments.entities.FiscaliteCible.business_views.FiscaliteCibleBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          nbRecordsBadgeVisible: false         
+        - _type: BrowseBusinessViewAction
+          _name: GenreBiens
+          businessView: Batiments.entities.GenreBien.business_views.GenreBienBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/home-city.svg
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
+          _name: NatureBiens
+          businessView: Batiments.entities.NatureBien.business_views.NatureBienBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/home-city.svg
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
+          _name: Pays
+          businessView: Batiments.entities.Pays.business_views.PaysBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/map-marker.svg
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
+          _name: Phases
+          businessView: Batiments.entities.Phase.business_views.PhaseBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/timeline-text.svg
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
+          _name: Portefeuille
+          businessView: Batiments.entities.Portefeuille.business_views.PortefeuilleBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/briefcase.svg
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
+          _name: QuartierParis
+          businessView: Batiments.entities.QuartierParis.business_views.QuartierParisBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/briefcase.svg
+          nbRecordsBadgeVisible: false
+
+        - _type: BrowseBusinessViewAction
+          _name: RegimeJuridiques
+          businessView: Batiments.entities.RegimeJuridique.business_views.RegimeJuridiqueBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/gavel.svg
+          nbRecordsBadgeVisible: false
+
+        - _type: BrowseBusinessViewAction
+          _name: Secteur
+          businessView: Batiments.entities.SecteurImmostat.business_views.SecteurImmostatBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
+          _name: SousSecteur
+          businessView: Batiments.entities.SousSecteurImmostat.business_views.SousSecteurImmostatBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          nbRecordsBadgeVisible: false
+
+        - _type: BrowseBusinessViewAction
+          _name: SocieteAutre
+          businessView: Batiments.entities.SocieteAutre.business_views.SocieteAutreBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
+          _name: SocieteProprietaire
+          businessView: Batiments.entities.SocieteProprietaire.business_views.SocieteProprietaireBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          nbRecordsBadgeVisible: false
+
+        - _type: BrowseBusinessViewAction
+          _name: TypeBatiment
+          businessView: Batiments.entities.TypeBatiment.business_views.TypeBatimentBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/office-building.svg
+          nbRecordsBadgeVisible: false
+
+        - _type: BrowseBusinessViewAction
+          _name: Usage
+          businessView: Batiments.entities.Usage.business_views.UsageBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
+          _name: UsageLots
+          businessView: Batiments.entities.UsageLot.business_views.UsageLotBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/tag.svg
+          nbRecordsBadgeVisible: false
+          
+        - _type: BrowseBusinessViewAction
+          _name: ZoneGeographiques
+          businessView: Batiments.entities.ZoneGeographique.business_views.ZoneGeographiqueBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/map-marker.svg
+          nbRecordsBadgeVisible: false
+
+        - _type: BrowseBusinessViewAction
+          _name: ZoneImmostat
+          businessView: Batiments.entities.ZoneImmostat.business_views.ZoneImmostatBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          nbRecordsBadgeVisible: false
+
+    - _type: FolderAction
+      _name: QuickActions
+      label: Actions
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      icon: images://mdi/folder.svg
+      appActions:
+      - _type: ImportDataAppAction
+        _name: ImportImmeubles
+        label: Importer Immeubles
+        imageAlign: MIDDLE_CENTER
+        imageMode: FIT
+        importAction: Batiments.entities.Immeuble.action_sets.ImmeubleActionSet.ImportAuthorImmeubles
+        description: Importer Immeuble depuis un fichier
+      - _type: ImportDataAppAction
+        _name: ImportBatiments
+        label: Importer Bâtiments
+        imageAlign: MIDDLE_CENTER
+        imageMode: FIT
+        importAction: Batiments.entities.Batiment.action_sets.BatimentActionSet.ImportAuthorBatiments
+        description: Importer Bâtiment depuis un fichier
+      - _type: ImportDataAppAction
+        _name: ImportEtages
+        label: Importer Etages
+        imageAlign: MIDDLE_CENTER
+        imageMode: FIT
+        importAction: Batiments.entities.Etage.action_sets.EtageActionSet.ImportAuthorEtages
+        description: Importer Etage depuis un fichier
+      - _type: ImportDataAppAction
+        _name: ImportLots
+        label: Importer Lots
+        imageAlign: MIDDLE_CENTER
+        imageMode: FIT
+        importAction: Batiments.entities.Lot.action_sets.LotActionSet.ImportAuthorLots
+        description: Importer Lot depuis un fichier
+
+applicationTitle: Référentiel Patrimoine

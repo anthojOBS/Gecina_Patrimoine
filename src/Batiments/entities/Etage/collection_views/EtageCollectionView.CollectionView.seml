@@ -1,0 +1,105 @@
+_package: Batiments.entities.Etage.collection_views
+_type: CollectionView
+_name: EtageCollectionView
+entity: Batiments.entities.Etage.Etage
+default: true
+displayCard: Batiments.entities.Etage.display_cards.EtageDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Etage
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: IdColumn
+    _name: EtageCode
+    value: EtageCode
+    useCustomLabel: false
+    dataType: LONG_INTEGER
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: CodeEtage
+    value: CodeEtage
+    label: Etage
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: Libelle
+    value: Libelle
+    label: Libellé  
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    
+  - _type: ReferenceColumn
+    _name: FDN_Batiment
+    value: FDN_Batiment
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Batiment.Batiment
+  - _type: TextColumn
+    _name: ConfirmationStatus
+    columnAlign: LEFT
+    dataType: STRING
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: ConfirmationStatus
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: ConfidenceScore
+    columnAlign: LEFT
+    dataType: LONG_INTEGER
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: ConfidenceScore
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: MastersCount
+    columnAlign: LEFT
+    dataType: LONG_INTEGER
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: MastersCount
+    visibleByDefault: true
+    
+  - _type: CheckboxColumn
+    _name: HasSuggestedMerge
+    columnAlign: LEFT
+    dataType: BOOLEAN
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: HasSuggestedMerge
+    visibleByDefault: true
+  
+  - _type: TextColumn
+    _name: UpdateDate
+    value: UpdateDate
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+    
+  - _type: TextColumn
+    _name: Updator
+    value: Updator
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true

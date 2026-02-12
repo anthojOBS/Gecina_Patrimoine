@@ -1,0 +1,50 @@
+_package: Batiments.named_queries
+_name: PatrimoineHierarchie
+_type: NamedQuery
+active: true
+rootQueryObject: Batiments.named_queries.PatrimoineHierarchie.Immeuble
+# filter: LocalName = :QUERY_PARAM_IMMEUBLE_CODE
+
+# queryParameters:
+#   - _type: QueryParameter
+#     _name: Immeuble
+#     bindingName: QUERY_PARAM_IMMEUBLE_CODE
+#     dataType: STRING
+#     mandatory: true
+
+queryObjects:
+  - _name: Immeuble
+    _type: QueryObject
+    entity: Batiments.entities.Immeuble.Immeuble
+    objectProperties:
+      - _name: Libelle
+        _type: ObjectProperty
+        targetObject: Batiments.named_queries.PatrimoineHierarchie.Immeuble
+        type: VALUE
+        semQlExpression: Libelle
+      - _name: AdresseEnrichie
+        _type: ObjectProperty
+        targetObject: Batiments.named_queries.PatrimoineHierarchie.Immeuble
+        type: VALUE
+        semQlExpression: AdresseEnrichie
+      - _name: CodePostal
+        _type: ObjectProperty
+        targetObject: Batiments.named_queries.PatrimoineHierarchie.Immeuble
+        type: VALUE
+        semQlExpression: CodePostal
+      - _name: Ville
+        _type: ObjectProperty
+        targetObject: Batiments.named_queries.PatrimoineHierarchie.Immeuble
+        type: VALUE
+        semQlExpression: Ville
+      - _name: DateAcquisition
+        _type: ObjectProperty
+        targetObject: Batiments.named_queries.PatrimoineHierarchie.Immeuble
+        type: VALUE
+        semQlExpression: DateAcquisition
+      - _name: DateLivraison
+        _type: ObjectProperty
+        targetObject: Batiments.named_queries.PatrimoineHierarchie.Immeuble
+        type: VALUE
+        semQlExpression: DateLivraison
+      

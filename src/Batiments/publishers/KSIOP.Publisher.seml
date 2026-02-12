@@ -1,0 +1,8 @@
+_package: Batiments.publishers
+_type: Publisher
+_name: KSIOP
+label: KSIOP
+description: KSIOP Publisher
+active: true
+code: KSIOP
+color: md:red

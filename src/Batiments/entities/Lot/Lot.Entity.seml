@@ -1,0 +1,129 @@
+_package: Batiments.entities.Lot
+_type: Entity
+_name: Lot
+label: Lot
+pluralLabel: Lots
+entityType: FUZZY_MATCHED
+physicalTableName: LOT
+iconUrl: images://mdi/floor-plan.svg
+description: ""
+documentation: |
+  Le **Lot** représente une unité locative ou de copropriété au sein d'un étage.
+  
+  Un lot est la plus petite unité de gestion du patrimoine immobilier. Il est caractérisé par son genre de bien (commercial, résidentiel, etc.), son usage (habitation, bureau, commerce, etc.) et sa surface.
+  
+  Cette entité permet de gérer finement les espaces locatifs et de suivre leur occupation et leur rentabilité.
+historizeGolden: true
+historizeMaster: true
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: LotCode
+    label: Lot Code
+    physicalName: LOT_CODE
+    dataType: LongInteger
+    precision: 38
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: IdentifiantREF
+    label: Identifiant REF
+    physicalName: IDENTIFIANT_REF
+    dataType: String
+    length: 100
+    mandatory: false
+    searchable: true
+  - _type: EntityAttribute
+    _name: IdentifiantsERP
+    label: Identifiants ERP
+    physicalName: IDENTIFIANTS_ERP
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: Libelle
+    label: Libellé
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+  - _type: EntityAttribute
+    _name: Usage
+    label: Usage
+    physicalName: USAGE_LOT
+    dataType: String
+    length: 150
+    mandatory: false
+  - _type: EntityAttribute
+    _name: Proprietaire
+    label: Locataire
+    physicalName: PROPRIETAIRE
+    dataType: String
+    length: 150
+    mandatory: false
+  - _type: EntityAttribute
+    _name: SuperficieUtile
+    label: Superficie Utile
+    physicalName: SUPERFICIE_UTILE
+    dataType: Decimal
+    precision: 15
+    scale: 2
+    mandatory: false
+  - _type: EntityAttribute
+    _name: SuperficieUtileQP
+    label: Superficie Utile avec QP
+    physicalName: SUPERFICIE_UTILE_QP
+    dataType: Decimal
+    precision: 15
+    scale: 2
+    mandatory: false
+  - _type: EntityAttribute
+    _name: SuperficieUtilePonderee
+    label: Superficie Utile pondérée
+    physicalName: SUPERFICIE_UTILE_PONDEREE
+    dataType: Decimal
+    precision: 15
+    scale: 2
+    mandatory: false
+
+
+  # - _type: EntityAttribute
+  #   _name: DestinationReelle
+  #   label: DestinationReelle
+  #   physicalName: DESTINATION_REELLE
+  #   dataType: String
+  #   length: 150
+  #   mandatory: false
+
+sourceIdGeneration:
+  mode: MANUAL
+
+primaryKey: Batiments.entities.Lot.Lot.LotCode
+
+goldenIdGeneration:
+  mode: SEQUENCE
+  startWith: 1
+
+matcher:
+  _type: SemQLMatcher
+  _name: Matcher
+  description: BatimentSemQLMatcher
+  matchRules:
+    - _type: SemQLMatchRule
+      _name: NewRule
+      label: NewRuleLabel
+      condition:   Record1.IdentifiantsERP = Record2.IdentifiantsERP and ( (Record1.FID_Etage = Record2.FID_Etage) or ( Record1.FID_Etage is null ) or ( Record1.FID_Etage is null ) ) and Record1.FID_Batiment = Record2.FID_Batiment
+      matchScore: 100
+      usingMatchOn: false
+  useTransitiveMatchScore: true
+  useMultiIterationGrouping: true
+  mergeThresholdNewGroup: 90
+  mergeThresholdMergingUnconfirmed: 90
+  mergeThresholdMergingConfirmed: 90
+  mergeThresholdMergingConfirmedWithUnconfirmed: 90
+  mergeThresholdMergingUnconfirmedWithNewMasters: 90
+  mergeThresholdMergingConfirmedWithNewMasters: 90
+  mergeThresholdRemergingPreviouslySplit: 100
+  autoConfirmGoldenThreshold: 99
+  autoConfirmSingletons: false

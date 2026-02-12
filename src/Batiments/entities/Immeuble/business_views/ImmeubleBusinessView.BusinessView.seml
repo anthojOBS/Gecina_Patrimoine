@@ -1,0 +1,298 @@
+_package: Batiments.entities.Immeuble.business_views
+_type: BusinessView
+_name: ImmeubleBusinessView
+entity: Batiments.entities.Immeuble.Immeuble
+rootLabel: Immeubles
+rootPluralLabel: Immeubles
+displayRootNodeAs: ICON_LABEL
+label: Immeubles
+rootIconUrl: images://mdi/office-building-marker.svg
+
+enableHierarchyView: true
+useHierarchyOnOpen: false
+
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: Immeuble
+  displayCard: Batiments.entities.Immeuble.display_cards.ImmeubleDisplayCard
+  entity: Batiments.entities.Immeuble.Immeuble
+  actionSet: Batiments.entities.Immeuble.action_sets.ImmeubleActionSet
+  collection: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView
+  form: Batiments.entities.Immeuble.forms.ImmeubleForm
+  outlineVisible: false
+  # referenceAttributeNavigationConfigs:
+  #   - formField: Batiments.entities.Batiment.forms.BatimentForm.Batiment.SectionHaut.SectionGauche.IdentiteBatiment.FDN_Immeuble
+  #     navigationMode: MODAL_FORM
+
+  # referenceAttributeNavigationConfigs:
+  #   - _type: BusinessViewEntityReferenceAttributeNavigationConfig
+  #     formField: Batiments.entities.Batiment.forms.BatimentForm.Batiment.SectionHaut.SectionGauche.IdentiteBatiment.FDN_Immeuble
+  #     navigationMode: BUSINESS_OBJECT_VIEW
+  #     businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
+
+
+  displayRecordCount: ALWAYS
+  businessEntitySearchConfigs:
+    - _name: TextConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: TEXT
+    - _name: FormConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: BY_FORM
+    - _name: AdvancedConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: ADVANCED
+    - _name: SemqlConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: SEMQL
+  overrideDefaultSort: false
+  enableUserDefinedSort: true
+  listAllowed: true
+  tableAllowed: true
+  gridAllowed: true
+
+  transitions:
+    - _name: RelatedBatiments
+      _type: BusinessViewTransition
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      enableHierarchy: '1'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: false
+      # iconUrl: images://mdi/file-document-multiple-outline.svg
+      label: Batiments
+      pluralLabel: Batiments
+      transitionPath: Batiment
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '0'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      businessViewEntity: 
+        _type: BusinessViewEntity
+        _name: BatimentsRelantionship
+        entity: Batiments.entities.Batiment.Batiment
+        actionSet: Batiments.entities.Batiment.action_sets.BatimentActionSet
+        collection: Batiments.entities.Batiment.collection_views.BatimentCollectionView
+        form: Batiments.entities.Batiment.forms.BatimentForm
+        displayRecordCount: ALWAYS
+        displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
+        gridAllowed: false
+        listAllowed: true
+        overrideDefaultSort: false
+        tableAllowed: true
+        enableUserDefinedSort: true
+        outlineVisible: false
+        sortExpression: Libelle_Batiment ASC
+
+
+        referenceAttributeNavigationConfigs:
+        - formField: Batiments.entities.Batiment.forms.BatimentForm.Batiment.SectionHaut.SectionGauche.IdentiteBatiment.FDN_Immeuble
+          navigationMode: BUSINESS_OBJECT_VIEW
+          businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
+          form: Batiments.entities.Immeuble.forms.ImmeubleForm
+        
+        transitions:
+          - _type: BusinessViewTransition
+            _name: MasterRecordsBatiments
+            displayFormTabAs: ICON_LABEL
+            useCustomLabel: false
+            enableHierarchyInterpreter: LITERAL
+            filter: 1=1
+            iconUrl: images://mdi/puzzle.svg
+            label: Masters Records
+            pluralLabel: Masters Records
+            transitionType: FULLY_QUALIFIED
+            transitionPath:  MasterRecords 
+            businessViewEntity: 
+              _type: BusinessViewEntity
+              _name: MasterRecordsBatiments
+              displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
+              entity: Batiments.entities.Batiment.Batiment
+              actionSet: Batiments.entities.Batiment.action_sets.BatimentActionSet
+              collection: Batiments.entities.Batiment.collection_views.BatimentCollectionView
+              form: Batiments.entities.Batiment.forms.BatimentForm
+              displayRecordCount: ALWAYS
+              outlineVisible: false
+              enableUserDefinedSort: true
+              gridAllowed: true
+              listAllowed: true
+              overrideDefaultSort: false
+              tableAllowed: true
+              sortExpression: Libelle_Batiment ASC
+
+
+          - _type: BusinessViewTransition
+            _name: Etages
+            label: Etages
+            displayFormTabAs: ICON_LABEL
+            displayTransitionNodeAs: ICON_LABEL
+            # visibleInFormTabCondition: any Etage have (BatimentID IS NOT NULL)
+            # enableHierarchy: any Etages has (1 = 1)
+            # enableHierarchyInterpreter: SEMQL
+            enableHierarchy: '1'
+            enableHierarchyInterpreter: LITERAL
+            expandHierarchyByDefault: true
+
+            iconUrl: images://mdi/file-tree.svg
+            transitionPath: Etage
+            transitionType: FULLY_QUALIFIED
+            transitionVisible: '0'
+            transitionVisibleInterpreter: LITERAL
+            useCustomLabel: true
+            pluralLabel: Etages
+            businessViewEntity: 
+              _type: BusinessViewEntity
+              _name: Etage
+              displayCard: Batiments.entities.Etage.display_cards.EtageDisplayCard
+              displayRecordCount: ALWAYS
+              enableUserDefinedSort: true
+              gridAllowed: false
+              listAllowed: true
+              outlineVisible: false
+              overrideDefaultSort: true
+              tableAllowed: true
+              sortExpression: CodeEtage ASC
+
+              entity: Batiments.entities.Etage.Etage
+              form: Batiments.entities.Etage.forms.EtageForm
+              collection: Batiments.entities.Etage.collection_views.EtageCollectionView
+              transitions:
+
+
+              - _type: BusinessViewTransition
+                _name: MasterRecordsEtages
+                displayFormTabAs: ICON_LABEL
+                useCustomLabel: false
+                enableHierarchyInterpreter: LITERAL
+                filter: 1=1
+                iconUrl: images://mdi/puzzle.svg
+                label: Masters Records
+                pluralLabel: Masters Records
+                transitionType: FULLY_QUALIFIED
+                transitionPath:  MasterRecords 
+                businessViewEntity: 
+                  _type: BusinessViewEntity
+                  _name: MasterRecordsEtages
+                  displayCard: Batiments.entities.Etage.display_cards.EtageDisplayCard
+                  entity: Batiments.entities.Etage.Etage  
+                  actionSet: Batiments.entities.Etage.action_sets.EtageActionSet
+                  collection: Batiments.entities.Etage.collection_views.EtageCollectionView
+                  form: Batiments.entities.Etage.forms.EtageForm
+                  displayRecordCount: ALWAYS
+                  outlineVisible: false
+                  enableUserDefinedSort: true
+                  gridAllowed: true
+                  listAllowed: true
+                  overrideDefaultSort: false
+                  tableAllowed: true
+
+
+              - _type: BusinessViewTransition
+                _name: Lots
+                label: Lots
+                displayFormTabAs: ICON_LABEL
+                displayTransitionNodeAs: ICON_LABEL
+                # visibleInFormTabCondition: any Etage have (BatimentID IS NOT NULL)
+                # enableHierarchy: any Lot has (1 = 1)
+                # enableHierarchyInterpreter: SEMQL
+                enableHierarchy: '1'
+                enableHierarchyInterpreter: LITERAL
+                expandHierarchyByDefault: true
+                iconUrl: images://mdi/file-tree.svg
+                transitionPath: Lot
+                transitionType: FULLY_QUALIFIED
+                transitionVisible: '0'
+                transitionVisibleInterpreter: LITERAL
+                useCustomLabel: true
+                pluralLabel: Lots
+                businessViewEntity: 
+                  _type: BusinessViewEntity
+                  _name: Lot
+                  displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
+                  displayRecordCount: ALWAYS
+                  enableUserDefinedSort: true
+                  gridAllowed: false
+                  listAllowed: true
+                  outlineVisible: false
+                  overrideDefaultSort: false
+                  tableAllowed: true
+                  entity: Batiments.entities.Lot.Lot
+                  form: Batiments.entities.Lot.forms.LotForm
+                  collection: Batiments.entities.Lot.collection_views.LotCollectionView
+        
+                  transitions:
+
+                    - _type: BusinessViewTransition
+                      _name: MasterRecordsLots
+                      displayFormTabAs: ICON_LABEL
+                      useCustomLabel: false
+                      enableHierarchyInterpreter: LITERAL
+                      filter: 1=1
+                      iconUrl: images://mdi/puzzle.svg
+                      label: Masters Records
+                      pluralLabel: Masters Records
+                      transitionType: FULLY_QUALIFIED
+                      transitionPath:  MasterRecords 
+                      businessViewEntity: 
+                        _type: BusinessViewEntity
+                        _name: MasterRecordsLots
+                        displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
+                        entity: Batiments.entities.Lot.Lot
+                        actionSet: Batiments.entities.Lot.action_sets.LotActionSet
+                        collection: Batiments.entities.Lot.collection_views.LotCollectionView
+                        form: Batiments.entities.Lot.forms.LotForm
+                        displayRecordCount: ALWAYS
+                        outlineVisible: false
+                        enableUserDefinedSort: true
+                        gridAllowed: true
+                        listAllowed: true
+                        overrideDefaultSort: false
+                        tableAllowed: true
+
+
+    - _name: GoldenHistoryRecords
+      _type: BusinessViewTransition
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      enableHierarchy: '0'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: false
+      iconUrl: images://mdi/history.svg
+      label: History
+      pluralLabel: History
+      transitionPath: GoldenHistoryRecords
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '1'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      businessViewEntity: 
+        _type: BusinessViewEntityReference
+        ref: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView.Immeuble
+      filter: 1 = 1
+
+    - _type: BusinessViewTransition
+      _name: MasterRecords
+      displayFormTabAs: ICON_LABEL
+      useCustomLabel: false
+      enableHierarchyInterpreter: LITERAL
+      filter: 1=1
+      iconUrl: images://mdi/puzzle.svg
+      label: Masters Records
+      pluralLabel: Masters Records
+      transitionType: FULLY_QUALIFIED
+      transitionPath:  MasterRecords 
+      businessViewEntity: 
+        _type: BusinessViewEntity
+        _name: MasterRecord
+        displayCard: Batiments.entities.Immeuble.display_cards.ImmeubleDisplayCard
+        entity: Batiments.entities.Immeuble.Immeuble
+        actionSet: Batiments.entities.Immeuble.action_sets.ImmeubleActionSet
+        collection: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView
+        form: Batiments.entities.Immeuble.forms.ImmeubleForm
+        displayRecordCount: ALWAYS
+        outlineVisible: false
+        enableUserDefinedSort: true
+        gridAllowed: true
+        listAllowed: true
+        overrideDefaultSort: false
+        tableAllowed: true

@@ -1,0 +1,33 @@
+_package: Batiments.entities.RegimeJuridique.steppers
+_type: Stepper
+_name: AuthorRegimeJuridiques
+entity: Batiments.entities.RegimeJuridique.RegimeJuridique
+label: Regime Juridiques
+rootStep:
+  _type: CollectionStep
+  _name: RegimeJuridiques
+  label: Regime Juridiques
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.RegimeJuridique.collection_views.RegimeJuridiqueCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: RegimeJuridique
+      label: Regime Juridique
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.RegimeJuridique.forms.RegimeJuridiqueForm.RegimeJuridique

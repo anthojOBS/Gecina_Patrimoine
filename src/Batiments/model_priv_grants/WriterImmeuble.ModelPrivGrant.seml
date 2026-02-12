@@ -1,0 +1,24 @@
+_package: Batiments.model_priv_grants
+_name: WriterImmeuble
+_type: ModelPrivGrant
+roleName: WriterImmeuble
+label: Writer Immeuble
+entityPrivGrants:
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.Immeuble.Immeuble
+    _name: Immeuble
+    checkoutAllowed: false
+    createAllowed: true
+    deleteAllowed: false
+    exportAllowed: true
+    removeAllowed: false
+    defaultAccessType: READ_WRITE
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.Batiment.Batiment
+    _name: Batiment
+    checkoutAllowed: false
+    createAllowed: true
+    deleteAllowed: false
+    exportAllowed: true
+    removeAllowed: false
+    defaultAccessType: READ_WRITE

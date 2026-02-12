@@ -1,0 +1,38 @@
+_package: Batiments.entities.Portefeuille
+_type: Entity
+_name: Portefeuille
+label: Portefeuille
+pluralLabel: Portefeuilles
+entityType: BASIC
+physicalTableName: PORTEFEUILLE
+iconUrl: images://mdi/briefcase.svg
+description: ""
+documentation: |
+  Le **Portefeuille** représente un regroupement stratégique d'actifs immobiliers.
+  
+  Un portefeuille permet d'organiser et de piloter les actifs selon des critères stratégiques, financiers ou opérationnels.
+  
+  Cette entité facilite la gestion et le reporting par segments d'activité ou zones de marché.
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: PortefeuilleCode
+    label: Code Portefeuille
+    physicalName: PORTEFEUILLE_ID
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: PortefeuilleLibelle
+    label: Libellé Portefeuille
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.Portefeuille.Portefeuille.PortefeuilleCode

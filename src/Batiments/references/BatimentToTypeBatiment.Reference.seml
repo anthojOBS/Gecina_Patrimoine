@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: BatimentToTypeBatiment
+label: Batiment Type de Batiment
+description: Référence Batiment vers Type de Batiment
+fromRoleDocumentation: |
+  Cette référence catégorise un **Bâtiment** selon son **Type**.
+  
+  Le type de bâtiment caractérise l'usage et la nature architecturale du bâtiment.
+physicalName: BATI_TYPE_BATIMENT_REF
+
+fromEntity: Batiments.entities.Batiment.Batiment
+fromRoleLabel: Batiment
+fromRoleName: Batiment
+fromRolePluralLabel: Batiments
+
+toEntity: Batiments.entities.TypeBatiment.TypeBatiment
+toRoleLabel: Type de Batiment
+toRoleName: TypeBatiment
+toRolePhysicalName: TYPE_BATIMENT_ID
+
+oneToMany: false
+deletePropagation: RESTRICT
+validationScope: PRE_CONSO
+mandatoryValidationLabel: Le type de batiment est obligatoire pour un batiment
+brokenValidationLabel: Le type de batiment sélectionné est invalide pour ce batiment
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: TypeBatiment
+  label: Type de Batiment
+  physicalName: TYPE_BATIMENT_ID
+  searchable: true
+  entity: Batiments.entities.Batiment.Batiment

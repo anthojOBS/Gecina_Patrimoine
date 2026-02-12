@@ -1,0 +1,295 @@
+_package: Batiments.entities.Lot.forms
+_type: Form
+_name: LotFormValidation
+entity: Batiments.entities.Lot.Lot
+default: false
+formTabs:
+  - _type: FormTab
+    _name: Lot
+    label: Lot
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: ICON_LABEL
+    content:
+      - _type: FormContainer
+        _name: Container1
+        layoutDirection: ROW
+        content:
+          - _type: FormSection
+            _name: CurrentGolden
+            label: Current Golden Record
+            layoutDirection: COLUMN
+            visibleValue: '1'
+            visibleValueInterpreter: LITERAL
+            content:
+              - _type: IdField
+                _name: LotCodeGolden
+                value: GoldenRecord.LotCode
+                useCustomLabel: false
+                dataType: LONG_INTEGER
+                authoringModeValueInterpreter: LITERAL
+                authoringMode: force_read_only
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                  alignment: left
+              - _type: TextField
+                _name: IdentifiantREFGolden
+                value: GoldenRecord.IdentifiantREF
+                useCustomLabel: false
+                dataType: STRING
+                authoringModeValueInterpreter: LITERAL
+                authoringMode: force_read_only
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+              - _type: TextField
+                _name: IdentifiantsERPGolden
+                value: GoldenRecord.IdentifiantsERP
+                useCustomLabel: false
+                dataType: STRING
+                authoringModeValueInterpreter: LITERAL
+                authoringMode: force_read_only
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+              - _type: TextField
+                _name: LibelleGolden
+                value: GoldenRecord.Libelle
+                useCustomLabel: false
+                dataType: STRING
+                authoringModeValueInterpreter: LITERAL
+                authoringMode: force_read_only
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+              - _type: TextField
+                _name: UsageGolden
+                value: GoldenRecord.Usage
+                useCustomLabel: false
+                dataType: STRING
+                authoringModeValueInterpreter: LITERAL
+                authoringMode: force_read_only
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+              - _type: TextField
+                _name: ProprietaireGolden
+                value: GoldenRecord.Proprietaire
+                useCustomLabel: false
+                dataType: STRING
+                authoringModeValueInterpreter: LITERAL
+                authoringMode: force_read_only
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+              - _type: TextField
+                _name: SuperficieGolden
+                value: GoldenRecord.SuperficieUtile
+                useCustomLabel: false
+                dataType: DECIMAL
+                authoringModeValueInterpreter: LITERAL
+                authoringMode: force_read_only
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+              - _type: ReferenceField
+                _name: FDN_EtageGolden
+                value: FDN_Etage
+                useCustomLabel: false
+                dataType: STRING
+                referencedEntity: Batiments.entities.Etage.Etage
+                authoringModeValueInterpreter: LITERAL
+                authoringMode: force_read_only
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+              - _type: ReferenceField
+                _name: FDN_GenreBienGolden
+                value: FDN_GenreBien
+                useCustomLabel: false
+                dataType: STRING
+                referencedEntity: Batiments.entities.GenreBien.GenreBien
+                authoringModeValueInterpreter: LITERAL
+                authoringMode: force_read_only
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+              - _type: ReferenceField
+                _name: FDN_PhaseGolden
+                value: FDN_Phase
+                useCustomLabel: false
+                dataType: STRING
+                referencedEntity: Batiments.entities.Phase.Phase
+                authoringModeValueInterpreter: LITERAL
+                authoringMode: force_read_only
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+              - _type: ReferenceField
+                _name: FDN_UsageLotGolden
+                value: FDN_UsageLot
+                useCustomLabel: false
+                dataType: STRING
+                referencedEntity: Batiments.entities.UsageLot.UsageLot
+                authoringModeValueInterpreter: LITERAL
+                authoringMode: force_read_only
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+
+          - _type: FormSection
+            _name: NewGolden
+            label: Golden Record Edition
+            layoutDirection: COLUMN
+            visibleValue: '1'
+            visibleValueInterpreter: LITERAL
+            content:
+              - _type: IdField
+                _name: LotCode
+                value: LotCode
+                useCustomLabel: false
+                dataType: LONG_INTEGER
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                componentProperties:
+                  contentBackgroundColorValueInterpreter: SEMQL
+                  contentBackgroundColor: case when LotCode != GoldenRecord.LotCode or (GoldenRecord.LotCode is null and LotCode is not null) then 'css:yellow' else 'css:white' end
+              - _type: TextField
+                _name: IdentifiantREF
+                value: IdentifiantREF
+                useCustomLabel: false
+                dataType: STRING
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                componentProperties:
+                  contentBackgroundColorValueInterpreter: SEMQL
+                  contentBackgroundColor: case when IdentifiantREF != GoldenRecord.IdentifiantREF or (GoldenRecord.IdentifiantREF is null and IdentifiantREF is not null) then 'css:yellow' else 'css:white' end
+              - _type: TextField
+                _name: IdentifiantsERP
+                value: IdentifiantsERP
+                useCustomLabel: false
+                dataType: STRING
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                componentProperties:
+                  contentBackgroundColorValueInterpreter: SEMQL
+                  contentBackgroundColor: case when IdentifiantsERP != GoldenRecord.IdentifiantsERP or (GoldenRecord.IdentifiantsERP is null and IdentifiantsERP is not null) then 'css:yellow' else 'css:white' end
+              - _type: TextField
+                _name: Libelle
+                value: Libelle
+                useCustomLabel: false
+                dataType: STRING
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                componentProperties:
+                  contentBackgroundColorValueInterpreter: SEMQL
+                  contentBackgroundColor: case when Libelle != GoldenRecord.Libelle or (GoldenRecord.Libelle is null and Libelle is not null) then 'css:yellow' else 'css:white' end
+              - _type: TextField
+                _name: Usage
+                value: Usage
+                useCustomLabel: false
+                dataType: STRING
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                componentProperties:
+                  contentBackgroundColorValueInterpreter: SEMQL
+                  contentBackgroundColor: case when Usage != GoldenRecord.Usage or (GoldenRecord.Usage is null and Usage is not null) then 'css:yellow' else 'css:white' end
+              - _type: TextField
+                _name: Proprietaire
+                value: Proprietaire
+                useCustomLabel: false
+                dataType: STRING
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                componentProperties:
+                  contentBackgroundColorValueInterpreter: SEMQL
+                  contentBackgroundColor: case when Proprietaire != GoldenRecord.Proprietaire or (GoldenRecord.Proprietaire is null and Proprietaire is not null) then 'css:yellow' else 'css:white' end
+              - _type: TextField
+                _name: SuperficieUtile
+                value: SuperficieUtile
+                useCustomLabel: false
+                dataType: DECIMAL
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                componentProperties:
+                  contentBackgroundColorValueInterpreter: SEMQL
+                  contentBackgroundColor: case when Superficie != GoldenRecord.Superficie or (GoldenRecord.Superficie is null and Superficie is not null) then 'css:yellow' else 'css:white' end
+              - _type: ReferenceField
+                _name: FDN_Etage
+                value: FDN_Etage
+                useCustomLabel: false
+                dataType: STRING
+                referencedEntity: Batiments.entities.Etage.Etage
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                componentProperties:
+                  contentBackgroundColorValueInterpreter: SEMQL
+                  contentBackgroundColor: case when FDN_Etage != GoldenRecord.FDN_Etage or (GoldenRecord.FDN_Etage is null and FDN_Etage is not null) then 'css:yellow' else 'css:white' end
+              - _type: ReferenceField
+                _name: FDN_GenreBien
+                value: FDN_GenreBien
+                useCustomLabel: false
+                dataType: STRING
+                referencedEntity: Batiments.entities.GenreBien.GenreBien
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                componentProperties:
+                  contentBackgroundColorValueInterpreter: SEMQL
+                  contentBackgroundColor: case when FDN_GenreBien != GoldenRecord.FDN_GenreBien or (GoldenRecord.FDN_GenreBien is null and FDN_GenreBien is not null) then 'css:yellow' else 'css:white' end
+              - _type: ReferenceField
+                _name: FDN_Phase
+                value: FDN_Phase
+                useCustomLabel: false
+                dataType: STRING
+                referencedEntity: Batiments.entities.Phase.Phase
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                componentProperties:
+                  contentBackgroundColorValueInterpreter: SEMQL
+                  contentBackgroundColor: case when FDN_Phase != GoldenRecord.FDN_Phase or (GoldenRecord.FDN_Phase is null and FDN_Phase is not null) then 'css:yellow' else 'css:white' end
+              - _type: ReferenceField
+                _name: FDN_UsageLot
+                value: FDN_UsageLot
+                useCustomLabel: false
+                dataType: STRING
+                referencedEntity: Batiments.entities.UsageLot.UsageLot
+                labelProperties:
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                componentProperties:
+                  contentBackgroundColorValueInterpreter: SEMQL
+                  contentBackgroundColor: case when FDN_UsageLot != GoldenRecord.FDN_UsageLot or (GoldenRecord.FDN_UsageLot is null and FDN_UsageLot is not null) then 'css:yellow' else 'css:white' end

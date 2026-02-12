@@ -1,0 +1,33 @@
+_package: Batiments.entities.ZoneGeographique.steppers
+_type: Stepper
+_name: AuthorZoneGeographiques
+entity: Batiments.entities.ZoneGeographique.ZoneGeographique
+label: Zone Geographiques
+rootStep:
+  _type: CollectionStep
+  _name: ZoneGeographiques
+  label: Zone Geographiques
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.ZoneGeographique.collection_views.ZoneGeographiqueCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: ZoneGeographique
+      label: Zone Geographique
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.ZoneGeographique.forms.ZoneGeographiqueForm.ZoneGeographique

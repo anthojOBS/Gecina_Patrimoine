@@ -1,0 +1,33 @@
+_package: Batiments.entities.Phase.steppers
+_type: Stepper
+_name: AuthorPhases
+entity: Batiments.entities.Phase.Phase
+label: Phases
+rootStep:
+  _type: CollectionStep
+  _name: Phases
+  label: Phases
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.Phase.collection_views.PhaseCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Phase
+      label: Phase
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Phase.forms.PhaseForm.Phase

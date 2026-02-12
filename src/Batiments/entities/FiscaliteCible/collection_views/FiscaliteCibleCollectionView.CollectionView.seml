@@ -1,0 +1,51 @@
+_package: Batiments.entities.FiscaliteCible.collection_views
+_type: CollectionView
+_name: FiscaliteCibleCollectionView
+entity: Batiments.entities.FiscaliteCible.FiscaliteCible
+default: true
+displayCard: Batiments.entities.FiscaliteCible.display_cards.FiscaliteCibleDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: FiscaliteCible
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: IdColumn
+    _name: FiscaliteCibleCode
+    value: FiscaliteCibleCode
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: FiscaliteCibleLibelle
+    value: FiscaliteCibleLibelle
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: UpdateDate
+    value: UpdateDate
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+    
+  - _type: TextColumn
+    _name: Updator
+    value: Updator
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+

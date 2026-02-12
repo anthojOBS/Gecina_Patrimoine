@@ -1,0 +1,33 @@
+_package: Batiments.entities.SocieteAutre.steppers
+_type: Stepper
+_name: AuthorSocieteAutre
+entity: Batiments.entities.SocieteAutre.SocieteAutre
+label: Sociétés Autres
+rootStep:
+  _type: CollectionStep
+  _name: SocietesAutres
+  label: Sociétés Autres
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.SocieteAutre.collection_views.SocieteAutreCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: SocieteAutre
+      label: Société Autre
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.SocieteAutre.forms.SocieteAutreForm.SocieteAutre

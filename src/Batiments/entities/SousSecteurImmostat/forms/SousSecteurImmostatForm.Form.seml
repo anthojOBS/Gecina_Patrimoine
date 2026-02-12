@@ -1,0 +1,32 @@
+_package: Batiments.entities.SousSecteurImmostat.forms
+_type: Form
+_name: SousSecteurImmostatForm
+entity: Batiments.entities.SousSecteurImmostat.SousSecteurImmostat
+default: true
+formTabs:
+  - _type: FormTab
+    _name: SousSecteurImmostat
+    label: Sous Secteur Immostat
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: IdField
+        _name: SousSecteurImmostatCode
+        value: SousSecteurImmostatCode
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: SousSecteurImmostatLibelle
+        value: SousSecteurImmostatLibelle
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

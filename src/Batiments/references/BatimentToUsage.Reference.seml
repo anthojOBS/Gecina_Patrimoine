@@ -1,0 +1,33 @@
+_package: Batiments.references
+_type: Reference
+_name: BatimentToUsage
+label: Batiment Usage
+description: Référence Batiment vers Usage
+fromRoleDocumentation: |
+  Cette référence détermine l'**Usage** d'un **Bâtiment**.
+  L'usage permet de catégoriser le bâtiment selon sa fonction (bureau, commerce, etc.).
+physicalName: BATIMENT_USAGE_REF
+
+fromEntity: Batiments.entities.Batiment.Batiment
+fromRoleLabel: Batiment
+fromRoleName: Batiment
+fromRolePluralLabel: Batiments
+
+toEntity: Batiments.entities.Usage.Usage
+toRoleLabel: Usage
+toRoleName: Usage
+toRolePhysicalName: USAGE_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: L'usage est obligatoire pour un batiment
+brokenValidationLabel: L'usage sélectionné est invalide pour ce batiment
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Usage
+  label: Usage
+  physicalName: USAGE_ID
+  searchable: true
+  entity: Batiments.entities.Batiment.Batiment

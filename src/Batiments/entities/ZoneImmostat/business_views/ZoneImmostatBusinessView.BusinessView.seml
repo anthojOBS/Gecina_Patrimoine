@@ -1,0 +1,59 @@
+_package: Batiments.entities.ZoneImmostat.business_views
+_type: BusinessView
+_name: ZoneImmostatBusinessView
+entity: Batiments.entities.ZoneImmostat.ZoneImmostat
+rootLabel: Zone Immostat
+rootPluralLabel: Zone Immostat
+displayRootNodeAs: ICON_LABEL
+label: Zone Immostat
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: ZoneImmostat
+  displayCard: Batiments.entities.ZoneImmostat.display_cards.ZoneImmostatDisplayCard
+  entity: Batiments.entities.ZoneImmostat.ZoneImmostat
+  actionSet: Batiments.entities.ZoneImmostat.action_sets.ZoneImmostatActionSet
+  collection: Batiments.entities.ZoneImmostat.collection_views.ZoneImmostatCollectionView
+  form: Batiments.entities.ZoneImmostat.forms.ZoneImmostatForm
+  outlineVisible: false
+  displayRecordCount: ALWAYS
+  businessEntitySearchConfigs:
+    - _name: TextConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: TEXT
+    - _name: FormConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: BY_FORM
+    - _name: AdvancedConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: ADVANCED
+    - _name: SemqlConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: SEMQL
+  overrideDefaultSort: false
+  enableUserDefinedSort: true
+  listAllowed: true
+  tableAllowed: true
+  gridAllowed: true
+
+  transitions:
+    - _name: GoldenHistoryRecords
+      _type: BusinessViewTransition
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      enableHierarchy: '0'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: false
+      iconUrl: images://mdi/history.svg
+      label: History
+      pluralLabel: History
+      transitionPath: GoldenHistoryRecords
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '1'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      businessViewEntity: 
+        _type: BusinessViewEntityReference
+        ref: Batiments.entities.ZoneImmostat.business_views.ZoneImmostatBusinessView.ZoneImmostat
+      filter: 1 = 1
+enableHierarchyView: false
+useHierarchyOnOpen: false

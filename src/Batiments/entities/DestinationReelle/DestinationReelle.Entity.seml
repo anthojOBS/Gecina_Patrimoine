@@ -1,0 +1,38 @@
+_package: Batiments.entities.DestinationReelle
+_type: Entity
+_name: DestinationReelle
+label: Destination Réelle
+pluralLabel: DestinationReelles
+entityType: BASIC
+physicalTableName: DESTINATION_REELLE
+iconUrl: images://mdi/timeline-text.svg
+description: ""
+documentation: |
+  La **DestinationReelle** représente l'état d'avancement d'un actif immobilier dans son cycle de vie.
+  
+  Une DestinationReelle permet de suivre l'évolution d'un immeuble, d'un bâtiment ou d'un lot depuis sa conception jusqu'à son exploitation (en projet, en construction, livré, en exploitation, etc.).
+  
+  Cette entité est essentielle pour le pilotage des projets immobiliers et la gestion du portefeuille.
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: DestinationReelleCode
+    label: Code destination réelle
+    physicalName: DESTINATION_REEL_ID
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: DestinationReelleLibelle
+    label: Libellé destination réelle
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.DestinationReelle.DestinationReelle.DestinationReelleCode

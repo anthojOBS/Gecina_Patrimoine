@@ -1,0 +1,56 @@
+_package: Batiments.entities.Etage.forms
+_type: Form
+_name: EtageForm
+entity: Batiments.entities.Etage.Etage
+default: true
+formTabs:
+  - _type: FormTab
+    _name: Etage
+    label: Etage
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: ICON_LABEL
+    labelWidth: 200px
+    content:
+      - _type: IdField
+        _name: EtageCode
+        value: EtageCode
+        useCustomLabel: false
+        dataType: LONG_INTEGER
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+          alignment: left
+      - _type: TextField
+        _name: CodeEtage
+        value: CodeEtage
+        label: Etage
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: Libelle
+        value: Libelle
+        label: Libellé
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+
+      - _type: ReferenceField
+        _name: FDN_Batiment
+        value: FDN_Batiment
+        useCustomLabel: false
+        dataType: STRING
+        referencedEntity: Batiments.entities.Batiment.Batiment
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

@@ -1,0 +1,38 @@
+_package: Batiments.entities.ZoneImmostat
+_type: Entity
+_name: ZoneImmostat
+label: Zone Immostat
+pluralLabel: Zone Immostat
+entityType: BASIC
+physicalTableName: ZONE_IMMOSTAT
+iconUrl: images://mdi/timeline-text.svg
+description: ""
+documentation: |
+  La **ZoneImmostat** représente l'état d'avancement d'un actif immobilier dans son cycle de vie.
+  
+  Une ZoneImmostat permet de suivre l'évolution d'un immeuble, d'un bâtiment ou d'un lot depuis sa conception jusqu'à son exploitation (en projet, en construction, livré, en exploitation, etc.).
+  
+  Cette entité est essentielle pour le pilotage des projets immobiliers et la gestion du portefeuille.
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: ZoneImmostatCode
+    label: Code Zone Immostat
+    physicalName: ZONE_IMMOSTAT_ID
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: ZoneImmostatLibelle
+    label: Libellé Zone Immostat
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.ZoneImmostat.ZoneImmostat.ZoneImmostatCode

@@ -1,0 +1,33 @@
+_package: Batiments.entities.GenreBien.steppers
+_type: Stepper
+_name: AuthorGenreBiens
+entity: Batiments.entities.GenreBien.GenreBien
+label: Genre Biens
+rootStep:
+  _type: CollectionStep
+  _name: GenreBiens
+  label: Genre Biens
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.GenreBien.collection_views.GenreBienCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: GenreBien
+      label: Genre Bien
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.GenreBien.forms.GenreBienForm.GenreBien

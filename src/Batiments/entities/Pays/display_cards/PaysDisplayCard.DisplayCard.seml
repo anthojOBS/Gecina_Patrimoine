@@ -1,0 +1,21 @@
+_package: Batiments.entities.Pays.display_cards
+_type: DisplayCard
+_name: PaysDisplayCard
+entity: Batiments.entities.Pays.Pays
+default: true
+
+primaryTextExpression: nom
+
+primaryImageValueInterpreter: SEMQL
+primaryImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: CONTAIN
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+primaryImageValue: "'https://semarchy-tutorials.s3.amazonaws.com/iso-3166/' || LOWER(iso2) || '.svg'"
+
+avatarImageValueInterpreter: SEMQL
+avatarImageValue: "'https://semarchy-tutorials.s3.amazonaws.com/iso-3166/' || LOWER(iso2) || '.svg'"
+avatarImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: CONTAIN

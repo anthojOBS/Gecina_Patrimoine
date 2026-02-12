@@ -1,0 +1,146 @@
+_package: Batiments.model_priv_grants
+_name: Reader
+_type: ModelPrivGrant
+roleName: Reader
+label: Reader
+dataAdminRole: false
+integrationWsRole: false
+allowApiPublishingAsUser: false
+allowDataQualityDocumentation: false
+allowEnrichmentDocumentation: false
+entityPrivGrants:
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.Batiment.Batiment
+    _name: Batiment
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.Etage.Etage
+    _name: Etage
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.GenreBien.GenreBien
+    _name: GenreBien
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.Immeuble.Immeuble
+    _name: Immeuble
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.Lot.Lot
+    _name: Lot
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.Phase.Phase
+    _name: Phase
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.Portefeuille.Portefeuille
+    _name: Portefeuille
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.RegimeJuridique.RegimeJuridique
+    _name: RegimeJuridique
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.TypeBatiment.TypeBatiment
+    _name: TypeBatiment
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.UsageLot.UsageLot
+    _name: UsageLot
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.ZoneGeographique.ZoneGeographique
+    _name: ZoneGeographique
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.Usage.Usage
+    _name: Usage
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.TypeEtage.TypeEtage
+    _name: TypeEtage
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.SocieteAutre.SocieteAutre
+    _name: SocieteAutre
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.SocieteProprietaire.SocieteProprietaire
+    _name: SocieteProprietaire
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ

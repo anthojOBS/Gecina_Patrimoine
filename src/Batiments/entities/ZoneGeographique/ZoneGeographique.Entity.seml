@@ -1,0 +1,38 @@
+_package: Batiments.entities.ZoneGeographique
+_type: Entity
+_name: ZoneGeographique
+label: Zone Geographique
+pluralLabel: Zone Geographiques
+entityType: BASIC
+physicalTableName: ZONE_GEOGRAPHIQUE
+iconUrl: images://mdi/map-marker.svg
+description: ""
+documentation: |
+  La **Zone Géographique** représente une localisation ou une zone de marché pour les actifs immobiliers.
+  
+  Une zone géographique permet de segmenter et d'organiser le patrimoine immobilier selon des critères géographiques (ville, quartier, région, etc.).
+  
+  Cette entité est utile pour l'analyse de portefeuille, les études de marché et le pilotage stratégique du patrimoine.
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: ZoneGeoCode
+    label: Code Zone Géographique
+    physicalName: ZONE_GEOGRAPHIQUE_ID
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: ZoneGeoLibelle
+    label: Libellé Zone Géographique
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.ZoneGeographique.ZoneGeographique.ZoneGeoCode

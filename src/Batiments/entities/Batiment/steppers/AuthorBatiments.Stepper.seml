@@ -1,0 +1,39 @@
+_package: Batiments.entities.Batiment.steppers
+_type: Stepper
+_name: AuthorBatiments
+entity: Batiments.entities.Batiment.Batiment
+label: Batiments
+rootStep:
+  _type: CollectionStep
+  _name: Batiments
+  label: Batiments
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.Batiment.collection_views.BatimentCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Batiment
+      label: Batiment
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Batiment.forms.BatimentForm.Batiment
+
+      formStepEnrichers:  
+        - enricher: Batiments.entities.Batiment.enrichers.StandardizeAddress
+          executedOnButtonClick: true
+          executedOnDataChange: false
+          executedOnFormOpen: false

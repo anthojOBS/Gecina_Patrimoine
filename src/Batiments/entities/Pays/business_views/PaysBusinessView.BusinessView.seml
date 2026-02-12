@@ -1,0 +1,38 @@
+_package: Batiments.entities.Pays.business_views
+_type: BusinessView
+_name: PaysBusinessView
+entity: Batiments.entities.Pays.Pays
+label: Pays
+rootLabel: Pays
+rootPluralLabel: Pays
+displayRootNodeAs: ICON_LABEL
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: Pays
+  displayCard: Batiments.entities.Pays.display_cards.PaysDisplayCard
+  entity: Batiments.entities.Pays.Pays
+  actionSet: Batiments.entities.Pays.action_sets.PaysActionSet
+  collection: Batiments.entities.Pays.collection_views.PaysCollectionView
+  form: Batiments.entities.Pays.forms.PaysForm
+  outlineVisible: false
+  displayRecordCount: ALWAYS
+  businessEntitySearchConfigs:
+    - _name: TextConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: TEXT
+    - _name: FormConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: BY_FORM
+    - _name: AdvancedConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: ADVANCED
+    - _name: SemqlConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: SEMQL
+  overrideDefaultSort: false
+  enableUserDefinedSort: true
+  listAllowed: true
+  tableAllowed: true
+  gridAllowed: true
+enableHierarchyView: false
+useHierarchyOnOpen: false

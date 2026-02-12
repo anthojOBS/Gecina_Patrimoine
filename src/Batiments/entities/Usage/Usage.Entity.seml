@@ -1,0 +1,35 @@
+_package: Batiments.entities.Usage
+_type: Entity
+_name: Usage
+label: Usage
+pluralLabel: Usages
+entityType: BASIC
+physicalTableName: USAGE_BATIMENT
+iconUrl: images://mdi/domain.svg
+description: ""
+documentation: |
+  L'entité **Usage** représente le type d'usage ou d'affectation d'un bâtiment, d'un lot ou d'un espace immobilier.
+  Elle permet de catégoriser les biens selon leur fonction (bureau, commerce, habitation, etc.).
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: UsageCode
+    label: Code Usage
+    physicalName: USAGE_ID
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: UsageLibelle
+    label: Libellé Usage
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.Usage.Usage.UsageCode

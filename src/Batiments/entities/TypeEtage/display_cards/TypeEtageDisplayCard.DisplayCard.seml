@@ -1,0 +1,17 @@
+_package: Batiments.entities.TypeEtage.display_cards
+_type: DisplayCard
+_name: TypeEtageDisplayCard
+entity: Batiments.entities.TypeEtage.TypeEtage
+default: true
+primaryTextExpression: EtageLibelle
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageValue: images://mdi/stairs.svg

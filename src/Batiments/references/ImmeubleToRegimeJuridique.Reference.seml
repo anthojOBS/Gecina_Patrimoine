@@ -1,0 +1,33 @@
+_package: Batiments.references
+_type: Reference
+_name: ImmeubleToRegimeJuridique
+label: Immeuble Régime Juridique
+description: Référence Immeuble vers Régime Juridique
+fromRoleDocumentation: |
+  Cette référence associe un **Immeuble** à son **Régime Juridique**.
+  Le régime juridique définit le statut légal et les modalités de gestion de l'immeuble.
+physicalName: IMMEUBLE_REGIME_JUR_REF
+
+fromEntity: Batiments.entities.Immeuble.Immeuble
+fromRoleLabel: Immeuble
+fromRoleName: Immeuble
+fromRolePluralLabel: Immeubles
+
+toEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
+toRoleLabel: Régime Juridique
+toRoleName: RegimeJuridique
+toRolePhysicalName: REGIME_JURIDIQUE_ID
+
+oneToMany: false
+deletePropagation: RESTRICT
+validationScope: PRE_CONSO
+mandatoryValidationLabel: Le régime juridique est obligatoire pour un immeuble
+brokenValidationLabel: Le régime juridique sélectionné est invalide pour cet immeuble
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: ImmeubleRegimeJuridique
+  label: Régime Juridique de l'Immeuble
+  physicalName: REGIME_JURIDIQUE_ID
+  searchable: true
+  entity: Batiments.entities.Immeuble.Immeuble

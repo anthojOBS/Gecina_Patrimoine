@@ -1,0 +1,90 @@
+_package: Batiments.entities.Etage
+_type: Entity
+_name: Etage
+label: Etage
+pluralLabel: Etages
+entityType: FUZZY_MATCHED
+physicalTableName: ETAGE
+iconUrl: images://mdi/stairs.svg
+description: ""
+documentation: |
+  L'**Étage** représente un niveau dans un bâtiment.
+  
+  Un étage est une subdivision horizontale d'un bâtiment qui peut contenir plusieurs lots. Il est identifié par un code et un libellé qui permettent de le situer dans la structure du bâtiment (RDC, 1er étage, sous-sol, etc.).
+  
+  Cette entité facilite l'organisation spatiale des lots au sein d'un bâtiment.
+historizeGolden: true
+historizeMaster: true
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: EtageCode
+    label: Etage Code
+    physicalName: ETAGE_CODE
+    dataType: LongInteger
+    precision: 38
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: IdentifiantREF
+    label: Identifiant REF
+    physicalName: IDENTIFIANT_REF
+    dataType: String
+    length: 100
+    mandatory: false
+    searchable: true
+  - _type: EntityAttribute
+    _name: IdentifiantsERP
+    label: Identifiants ERP
+    physicalName: IDENTIFIANTS_ERP
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: CodeEtage
+    label: Code étage
+    physicalName: CODE_ETAGE
+    dataType: String
+    length: 50
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: Libelle
+    label: Libellé
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+
+sourceIdGeneration:
+  mode: MANUAL
+
+primaryKey: Batiments.entities.Etage.Etage.EtageCode
+
+goldenIdGeneration:
+  mode: SEQUENCE
+  startWith: 1
+
+matcher:
+  _type: SemQLMatcher
+  _name: Matcher
+  description: EtageSemQLMatcher
+  matchRules:
+    - _type: SemQLMatchRule
+      _name: NewRule
+      label: NewRuleLabel
+      condition: Record1.FID_Batiment = Record2.FID_Batiment AND Record1.CodeEtage = Record2.CodeEtage
+      matchScore: 100
+      usingMatchOn: false
+  useTransitiveMatchScore: true
+  useMultiIterationGrouping: true
+  mergeThresholdNewGroup: 90
+  mergeThresholdMergingUnconfirmed: 90
+  mergeThresholdMergingConfirmed: 90
+  mergeThresholdMergingConfirmedWithUnconfirmed: 90
+  mergeThresholdMergingUnconfirmedWithNewMasters: 90
+  mergeThresholdMergingConfirmedWithNewMasters: 90
+  mergeThresholdRemergingPreviouslySplit: 100
+  autoConfirmGoldenThreshold: 99
+  autoConfirmSingletons: true

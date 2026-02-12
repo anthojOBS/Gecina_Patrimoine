@@ -1,0 +1,394 @@
+_package: Batiments.entities.Immeuble.collection_views
+_type: CollectionView
+_name: ImmeubleCollectionView
+entity: Batiments.entities.Immeuble.Immeuble
+default: true
+displayCard: Batiments.entities.Immeuble.display_cards.ImmeubleDisplayCard
+gridAllowed: true
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: true
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Immeuble
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: IdColumn
+    _name: ImmeubleID
+    value: ImmeubleID
+    useCustomLabel: false
+    dataType: LONG_INTEGER
+    columnAlign: LEFT
+    visibleByDefault: true
+  # - _type: TextColumn
+  #   _name: IdentifiantREF
+  #   value: IdentifiantREF
+  #   useCustomLabel: false
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: true
+  - _type: TextColumn
+    _name: IdentifiantsERP
+    value: IdentifiantsERP
+    label: Numéro immeuble
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: Libelle
+    value: Libelle
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: Adresse
+    value: Adresse
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: AdresseLieuDit
+    value: AdresseLieuDit
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: CodePostal
+    value: CodePostal
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: Ville
+    value: Ville
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: AdresseEnrichie
+    value: AdresseEnrichie
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: DateAcquisition
+    value: DateAcquisition
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: DateDebutConstruction
+    value: DateDebutConstruction
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: DateFinConstruction
+    value: DateFinConstruction
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: DateLivraison
+    value: DateLivraison
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: DateRestructuration
+    value: DateRestructuration
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: SecteurGeographique
+    value: SecteurGeographique
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: ReferenceColumn
+    _name: FiscaliteCible
+    value: FDN_FiscaliteCible
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.FiscaliteCible.FiscaliteCible
+
+  - _type: TextColumn
+    _name: FlagAscenseur
+    value: FlagAscenseur
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: CertificationESG
+    value: CertificationESG
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: DateFinValidite
+    value: DateFinValidite
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: PhaseCertification
+    value: PhaseCertification
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: NiveauCertification
+    value: NiveauCertification
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: Proprietaire
+    value: Proprietaire
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: ReferenceColumn
+    _name: FDN_Phase
+    value: FDN_Phase
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Phase.Phase
+  - _type: ReferenceColumn
+    _name: FDN_RegimeJuridique
+    value: FDN_RegimeJuridique
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
+  - _type: ReferenceColumn
+    _name: FDN_ZoneGeographique
+    value: FDN_ZoneGeographique
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.ZoneGeographique.ZoneGeographique
+  - _type: ReferenceColumn
+    _name: FDN_Portefeuille
+    value: FDN_Portefeuille
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Portefeuille.Portefeuille
+  - _type: ReferenceColumn
+    _name: FDN_Pays
+    value: FDN_Pays
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Pays.Pays
+
+  - _type: ReferenceColumn
+    _name: FDN_Usage
+    value: FDN_Usage
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Usage.Usage
+
+  - _type: TextColumn
+    _name: ConfirmationStatus
+    columnAlign: LEFT
+    dataType: STRING
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: ConfirmationStatus
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: ConfidenceScore
+    columnAlign: LEFT
+    dataType: LONG_INTEGER
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: ConfidenceScore
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: MastersCount
+    columnAlign: LEFT
+    dataType: LONG_INTEGER
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: MastersCount
+    visibleByDefault: true
+    
+  - _type: CheckboxColumn
+    _name: HasSuggestedMerge
+    columnAlign: LEFT
+    dataType: BOOLEAN
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: HasSuggestedMerge
+    visibleByDefault: true
+  
+  - _type: TextColumn
+    _name: UpdateDate
+    value: UpdateDate
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+    
+  - _type: TextColumn
+    _name: Updator
+    value: Updator
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  # Nouveaux attributs ajoutés
+  - _type: TextColumn
+    _name: SuperficieUtile
+    value: SuperficieUtile
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: ReferenceColumn
+    _name: FDN_ZoneImmostat
+    value: FDN_ZoneImmostat
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.ZoneImmostat.ZoneImmostat
+
+  - _type: ReferenceColumn
+    _name: FDN_SecteurImmostat
+    value: FDN_SecteurImmostat
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.SecteurImmostat.SecteurImmostat
+
+  - _type: ReferenceColumn
+    _name: FDN_SousSecteurImmostat
+    value: FDN_SousSecteurImmostat
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.SousSecteurImmostat.SousSecteurImmostat
+
+  - _type: ReferenceColumn
+    _name: FDN_QuartierParis
+    value: FDN_QuartierParis
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.QuartierParis.QuartierParis
+  - _type: TextColumn
+    _name: IGH
+    value: IGH
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: FlagRestructuration
+    value: FlagRestructuration
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: ReferenceColumn
+    _name: FDN_SocieteProprietaire
+    value: FDN_SocieteProprietaire
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.SocieteProprietaire.SocieteProprietaire
+
+  - _type: ReferenceColumn
+    _name: FDN_SocieteAutre
+    value: FDN_SocieteAutre
+    label: Société exploitante
+    useCustomLabel: true
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.SocieteAutre.SocieteAutre
+
+
+  - _type: TextColumn
+    _name: SousPortefeuille
+    value: SousPortefeuille
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+
+  - _type: HyperlinkColumn
+    _name: BinaryContent
+    value: BinaryContent
+    label: Relevé géomètre
+    useCustomLabel: true
+    dataType: BINARY
+    columnAlign: LEFT
+    visibleByDefault: false
+    componentProperties:
+      linkSourceType: url
+      linkDisplayText: Télécharger le document
+
+
+
+  # - _type: TextColumn
+  #   _name: BinaryContent
+  #   value: BinaryContent
+  #   label: Relevé géomètre
+  #   useCustomLabel: true
+  #   dataType: BINARY
+  #   columnAlign: LEFT
+  #   visibleByDefault: false

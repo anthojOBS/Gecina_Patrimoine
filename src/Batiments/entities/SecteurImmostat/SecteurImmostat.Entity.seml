@@ -1,0 +1,38 @@
+_package: Batiments.entities.SecteurImmostat
+_type: Entity
+_name: SecteurImmostat
+label: Secteur Immostat
+pluralLabel: Secteur Immostat
+entityType: BASIC
+physicalTableName: SECTEUR_IMMOSTAT
+iconUrl: images://mdi/timeline-text.svg
+description: ""
+documentation: |
+  La **SecteurImmostat** représente l'état d'avancement d'un actif immobilier dans son cycle de vie.
+  
+  Une Secteur Immostat permet de suivre l'évolution d'un immeuble, d'un bâtiment ou d'un lot depuis sa conception jusqu'à son exploitation (en projet, en construction, livré, en exploitation, etc.).
+  
+  Cette entité est essentielle pour le pilotage des projets immobiliers et la gestion du portefeuille.
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: SecteurImmostatCode
+    label: Code Secteur Immostat
+    physicalName: SECTEUR_IMMOSTAT_ID
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: SecteurImmostatLibelle
+    label: Libellé Secteur Immostat
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.SecteurImmostat.SecteurImmostat.SecteurImmostatCode

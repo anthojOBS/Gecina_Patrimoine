@@ -1,0 +1,48 @@
+_package: Batiments.entities.Pays.collection_views
+_type: CollectionView
+_name: PaysCollectionView
+entity: Batiments.entities.Pays.Pays
+default: true
+displayCard: Batiments.entities.Pays.display_cards.PaysDisplayCard
+gridAllowed: true
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: true
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Pays
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: IdColumn
+    _name: PaysID
+    value: PaysID
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: iso2
+    value: iso2
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: iso3
+    value: iso3
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: nom
+    value: nom
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true

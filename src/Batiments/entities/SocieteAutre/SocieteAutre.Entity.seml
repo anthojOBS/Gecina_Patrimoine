@@ -1,0 +1,34 @@
+_package: Batiments.entities.SocieteAutre
+_type: Entity
+_name: SocieteAutre
+label: Société Autre
+pluralLabel: Sociétés Autres
+entityType: BASIC
+physicalTableName: SOCIETE_AUTRE
+iconUrl: images://mdi/domain.svg
+description: ""
+documentation: |
+  L'entité **Société exploitante** représente les sociétés exploitante que Gecina, avec leur code et leur libellé.
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: SocieteAutreCode
+    label: Code Société exploitante
+    physicalName: SOCIETE_AUTRE_CODE
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: SocieteAutreLibelle
+    label: Libellé Société exploitante
+    physicalName: SOCIETE_AUTRE_LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.SocieteAutre.SocieteAutre.SocieteAutreCode

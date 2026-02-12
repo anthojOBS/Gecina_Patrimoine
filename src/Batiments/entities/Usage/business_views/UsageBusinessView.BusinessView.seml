@@ -1,0 +1,59 @@
+_package: Batiments.entities.Usage.business_views
+_type: BusinessView
+_name: UsageBusinessView
+entity: Batiments.entities.Usage.Usage
+rootLabel: Usage
+rootPluralLabel: Usage
+displayRootNodeAs: ICON_LABEL
+label: Usage
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: Usage
+  displayCard: Batiments.entities.Usage.display_cards.UsageDisplayCard
+  entity: Batiments.entities.Usage.Usage
+  actionSet: Batiments.entities.Usage.action_sets.UsageActionSet
+  collection: Batiments.entities.Usage.collection_views.UsageCollectionView
+  form: Batiments.entities.Usage.forms.UsageForm
+  outlineVisible: false
+  displayRecordCount: ALWAYS
+  businessEntitySearchConfigs:
+    - _name: TextConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: TEXT
+    - _name: FormConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: BY_FORM
+    - _name: AdvancedConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: ADVANCED
+    - _name: SemqlConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: SEMQL
+  overrideDefaultSort: false
+  enableUserDefinedSort: true
+  listAllowed: true
+  tableAllowed: true
+  gridAllowed: true
+
+  transitions:
+    - _name: GoldenHistoryRecords
+      _type: BusinessViewTransition
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      enableHierarchy: '0'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: false
+      iconUrl: images://mdi/history.svg
+      label: History
+      pluralLabel: History
+      transitionPath: GoldenHistoryRecords
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '1'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      businessViewEntity: 
+        _type: BusinessViewEntityReference
+        ref: Batiments.entities.Usage.business_views.UsageBusinessView.Usage
+      filter: 1 = 1
+enableHierarchyView: false
+useHierarchyOnOpen: false

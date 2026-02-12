@@ -1,0 +1,16 @@
+_package: Batiments.entities.Usage.display_cards
+_type: DisplayCard
+_name: UsageDisplayCard
+entity: Batiments.entities.Usage.Usage
+default: true
+primaryTextExpression: UsageCode || ' - ' || UsageLibelle
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT

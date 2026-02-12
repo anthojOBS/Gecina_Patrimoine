@@ -1,0 +1,38 @@
+_package: Batiments.entities.QuartierParis
+_type: Entity
+_name: QuartierParis
+label: Quartier Paris
+pluralLabel: Quartier Paris
+entityType: BASIC
+physicalTableName: QUARTIER_PARIS
+iconUrl: images://mdi/timeline-text.svg
+description: ""
+documentation: |
+  La **QuartierParis** représente l'état d'avancement d'un actif immobilier dans son cycle de vie.
+  
+  Une QuartierParis permet de suivre l'évolution d'un immeuble, d'un bâtiment ou d'un lot depuis sa conception jusqu'à son exploitation (en projet, en construction, livré, en exploitation, etc.).
+  
+  Cette entité est essentielle pour le pilotage des projets immobiliers et la gestion du portefeuille.
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: QuartierParisCode
+    label: Code QuartierParis
+    physicalName: QUARTIER_PARIS_ID
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: QuartierParisLibelle
+    label: Libellé QuartierParis
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.QuartierParis.QuartierParis.QuartierParisCode

@@ -1,0 +1,32 @@
+_package: Batiments.entities.QuartierParis.forms
+_type: Form
+_name: QuartierParisForm
+entity: Batiments.entities.QuartierParis.QuartierParis
+default: true
+formTabs:
+  - _type: FormTab
+    _name: QuartierParis
+    label: Quartier Paris
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: IdField
+        _name: QuartierParisCode
+        value: QuartierParisCode
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: QuartierParisLibelle
+        value: QuartierParisLibelle
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

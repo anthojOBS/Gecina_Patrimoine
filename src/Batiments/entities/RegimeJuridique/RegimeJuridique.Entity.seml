@@ -1,0 +1,38 @@
+_package: Batiments.entities.RegimeJuridique
+_type: Entity
+_name: RegimeJuridique
+label: Régimes Juridique
+pluralLabel: Régimes Juridique
+entityType: BASIC
+physicalTableName: REGIME_JURIDIQUE
+iconUrl: images://mdi/gavel.svg
+description: ""
+documentation: |
+  Le **Régime Juridique** définit le statut légal et les modalités de gestion d'un immeuble.
+  
+  Le régime juridique caractérise la forme de propriété et le mode de détention d'un actif immobilier (pleine propriété, usufruit, démembrement, etc.).
+  
+  Cette entité est importante pour la gestion juridique et fiscale du patrimoine immobilier.
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: RegimeJuridiqueCode
+    label: Code Régime Juridique
+    physicalName: REGIME_JURIDIQUE_ID
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: RegimeJuridiqueLibelle
+    label: Libellé Régime Juridique
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.RegimeJuridique.RegimeJuridique.RegimeJuridiqueCode

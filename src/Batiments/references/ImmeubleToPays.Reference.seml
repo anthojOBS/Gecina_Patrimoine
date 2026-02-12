@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: ImmeubleToPays
+label: Immeuble Pays
+description: Référence Immeuble vers Pays
+fromRoleDocumentation: |
+  Cette référence détermine le **Pays** dans lequel est situé un **Immeuble**.
+  Le pays permet d'identifier la localisation géographique au niveau national de l'actif immobilier
+  et facilite le reporting et l'analyse par zone géographique.
+physicalName: IMMEUBLE_PAYS_REF
+
+fromEntity: Batiments.entities.Immeuble.Immeuble
+fromRoleLabel: Immeuble
+fromRoleName: Immeuble
+fromRolePluralLabel: Immeubles
+
+toEntity: Batiments.entities.Pays.Pays
+toRoleLabel: Pays
+toRoleName: Pays
+toRolePhysicalName: PAYS_ID_ISO3
+
+oneToMany: false
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: Le pays est obligatoire pour un immeuble
+brokenValidationLabel: Le pays sélectionné est invalide pour cet immeuble
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Pays
+  label: Pays
+  physicalName: PAYS_ID_ISO3
+  searchable: true
+  entity: Batiments.entities.Immeuble.Immeuble

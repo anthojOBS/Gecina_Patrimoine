@@ -1,0 +1,7 @@
+{
+    "semarchy.dxp.experimental": true,
+    "semarchy.dm.apiKey": "JuThVXc.hEvtGbLPGizdUuJHVNLHIPRGVEOErhAu_G5",
+    "semarchy.dm.dataLocation": "GecinaBatiments_BACKUP",
+    "semarchy.dm.datasource": "datasource1",
+    "semarchy.dm.instanceUrl": "https://semarchy-gecina-poc.eu.semarchy.net/dm"
+}

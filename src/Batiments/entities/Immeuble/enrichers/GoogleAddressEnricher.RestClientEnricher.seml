@@ -1,0 +1,21 @@
+_package: Batiments.entities.Immeuble.enrichers
+_name: GoogleAddressEnricher
+_type: RestClientEnricher
+entity: Batiments.entities.Immeuble.Immeuble
+label: Google Address Enricher
+enricherExecutionScope: NONE
+afterEnrichers: [
+  Batiments.entities.Immeuble.enrichers.ConcatAddress
+]
+numberOfRetry: 1
+onErrorBehavior: FAIL_JOB
+pluginId: GoogleApi
+pluginOutputs: 
+  - attributeName: AdresseEnrichie
+    outputName: enrichedAddress
+pluginInputs:
+  - expression:  ConcatAddress
+    inputName: Adresse
+# condition: length(Adresse) >= 10
+processingBatchSize: 1000
+threadPoolSize: 1

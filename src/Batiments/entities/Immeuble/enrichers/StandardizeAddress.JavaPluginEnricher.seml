@@ -1,0 +1,31 @@
+_package: Batiments.entities.Immeuble.enrichers
+_name: StandardizeAddress
+_type: JavaPluginEnricher
+entity: Batiments.entities.Immeuble.Immeuble
+label: Standardize Address Enricher
+enricherExecutionScope: PRE_CONSO
+batchUpdateSize: 1000
+processingBatchSize: 1
+threadPoolSize: 1
+pluginId: com.semarchy.integration.rowTransformers.googleMapsEnricher
+numberOfRetry: 0
+onErrorBehavior: SKIP_RECORDS
+description: Google Address Enricher
+condition: Adresse is not null
+pluginParams:
+  - paramName: PARAM_CLIENT_ID
+    value: AIzaSyB_Yyr4bb_JPuAM9gPp2GyXYCxUwl3vpkI
+pluginInputs:
+  - expression: Adresse
+    inputName: IN_ADDRESSLINE
+  - expression: Ville
+    inputName: IN_CITY
+  - expression: CodePostal
+    inputName: IN_POSTAL_CODE
+pluginOutputs:
+- attributeName: AdresseEnrichie
+  outputName: FORMATTED_ADDRESS
+- attributeName: Ville
+  outputName: LOCALITY_LONGNAME
+- attributeName: CodePostal
+  outputName: POSTALCODE_SHORTNAME

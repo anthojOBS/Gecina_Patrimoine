@@ -1,0 +1,51 @@
+_package: Batiments.entities.SousSecteurImmostat.collection_views
+_type: CollectionView
+_name: SousSecteurImmostatCollectionView
+entity: Batiments.entities.SousSecteurImmostat.SousSecteurImmostat
+default: true
+displayCard: Batiments.entities.SousSecteurImmostat.display_cards.SousSecteurImmostatDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: SousSecteurImmostat
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: IdColumn
+    _name: SousSecteurImmostatCode
+    value: SousSecteurImmostatCode
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: SousSecteurImmostatLibelle
+    value: SousSecteurImmostatLibelle
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: UpdateDate
+    value: UpdateDate
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+    
+  - _type: TextColumn
+    _name: Updator
+    value: Updator
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+

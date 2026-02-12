@@ -1,0 +1,123 @@
+_package: Batiments.model_jobs
+_name: INTEGRATE_ALL_REFS
+_type: ModelJob
+jobType: INTEGRATION
+queueName: Default
+modelTasks:
+  - _type: ModelJobTask
+    entity: Batiments.entities.GenreBien.GenreBien
+    _name: GenreBien
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - _type: ModelJobTask
+    entity: Batiments.entities.NatureBien.NatureBien
+    _name: NatureBien
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - _type: ModelJobTask
+    entity: Batiments.entities.Pays.Pays
+    _name: Pays
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - _type: ModelJobTask
+    entity: Batiments.entities.Phase.Phase
+    _name: Phase
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - _type: ModelJobTask
+    entity: Batiments.entities.Portefeuille.Portefeuille
+    _name: Portefeuille
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - _type: ModelJobTask
+    entity: Batiments.entities.RegimeJuridique.RegimeJuridique
+    _name: RegimeJuridique
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - _type: ModelJobTask
+    entity: Batiments.entities.SocieteAutre.SocieteAutre
+    _name: SocieteAutre
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - _type: ModelJobTask
+    entity: Batiments.entities.SocieteProprietaire.SocieteProprietaire
+    _name: SocieteProprietaire
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - _type: ModelJobTask
+    entity: Batiments.entities.TypeBatiment.TypeBatiment
+    _name: TypeBatiment
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - _type: ModelJobTask
+    entity: Batiments.entities.TypeEtage.TypeEtage
+    _name: TypeEtage
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - _type: ModelJobTask
+    entity: Batiments.entities.Usage.Usage
+    _name: Usage
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - _type: ModelJobTask
+    entity: Batiments.entities.UsageLot.UsageLot
+    _name: UsageLot
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
+  - _type: ModelJobTask
+    entity: Batiments.entities.ZoneGeographique.ZoneGeographique
+    _name: ZoneGeographique
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true
