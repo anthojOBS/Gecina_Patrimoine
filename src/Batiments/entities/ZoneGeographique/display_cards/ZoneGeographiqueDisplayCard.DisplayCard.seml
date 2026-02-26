@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: ZoneGeographiqueDisplayCard
 entity: Batiments.entities.ZoneGeographique.ZoneGeographique
 default: true
-primaryTextExpression: ZoneGeoCode
+primaryTextExpression: ZoneGeoLibelle
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: SocieteAutreDisplayCard
 entity: Batiments.entities.SocieteAutre.SocieteAutre
 default: true
-primaryTextExpression: SocieteAutreCode || ' - ' || SocieteAutreLibelle
+primaryTextExpression:  SocieteAutreLibelle
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

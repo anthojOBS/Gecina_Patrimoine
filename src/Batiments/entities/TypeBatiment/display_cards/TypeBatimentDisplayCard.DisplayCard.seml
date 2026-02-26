@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: TypeBatimentDisplayCard
 entity: Batiments.entities.TypeBatiment.TypeBatiment
 default: true
-primaryTextExpression: TypeBatimentCode
+primaryTextExpression: TypeBatimentLibelle
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

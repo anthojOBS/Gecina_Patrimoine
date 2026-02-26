@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: DestinationReelleDisplayCard
 entity: Batiments.entities.DestinationReelle.DestinationReelle
 default: true
-primaryTextExpression: DestinationReelleCode || ' - ' || DestinationReelleLibelle
+primaryTextExpression: DestinationReelleLibelle
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

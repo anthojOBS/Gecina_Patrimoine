@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: RegimeJuridiqueDisplayCard
 entity: Batiments.entities.RegimeJuridique.RegimeJuridique
 default: true
-primaryTextExpression: RegimeJuridiqueCode || ' - ' || RegimeJuridiqueLibelle
+primaryTextExpression:  RegimeJuridiqueLibelle
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

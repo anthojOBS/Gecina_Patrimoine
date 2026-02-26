@@ -9255,8 +9255,8 @@
                                 "label": "Ville",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse",
                                 "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
+                                "visibleValue": "Ville ='FRA'",
+                                "visibleValueInterpreter": "SEMQL",
                                 "componentProperties": [
                                     {
                                         "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.Ville.labelColor",
@@ -9544,7 +9544,7 @@
                                 "label": "IGH",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.CaracteristiquesImmeuble",
                                 "valueDataType": "BOOLEAN",
-                                "visibleValue": "1",
+                                "visibleValue": "IGH is not null",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
@@ -9563,6 +9563,12 @@
                                         "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.CaracteristiquesImmeuble.IGH.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.CaracteristiquesImmeuble.IGH.isLabelVisible",
+                                        "dataType": "BOOLEAN",
+                                        "value": "IGH is not null",
                                         "valueInterpreter": "LITERAL"
                                     }
                                 ]
@@ -10334,18 +10340,6 @@
                                 "formFieldsMode": "AUTO",
                                 "formTab": "Batiments.entities.Immeuble.forms.ImmeubleForm.CycleVieImmeuble",
                                 "label": "Cycle de vie de l'immeuble",
-                                "parentCollectionStep": "Batiments.entities.Immeuble.steppers.AuthorImmeubles.Immeubles"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Immeuble.steppers.AuthorImmeubles.Immeubles.ESGcertifications",
-                                "_type": "FormStep",
-                                "canFinishSubLevel": true,
-                                "enabledOnParentCreate": true,
-                                "enabledOnParentEdit": true,
-                                "enableMasterValuePicking": false,
-                                "formFieldsMode": "AUTO",
-                                "formTab": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications",
-                                "label": "ESG certifications",
                                 "parentCollectionStep": "Batiments.entities.Immeuble.steppers.AuthorImmeubles.Immeubles"
                             },
                             {
@@ -18639,7 +18633,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "UsageCode || ' - ' || UsageLibelle"
+                        "primaryTextExpression": "UsageLibelle"
                     }
                 ],
                 "dupsManagers": [],

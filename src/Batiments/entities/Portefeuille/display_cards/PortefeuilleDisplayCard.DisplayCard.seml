@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: PortefeuilleDisplayCard
 entity: Batiments.entities.Portefeuille.Portefeuille
 default: true
-primaryTextExpression: PortefeuilleCode || ' - ' || PortefeuilleLibelle
+primaryTextExpression:  PortefeuilleLibelle
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

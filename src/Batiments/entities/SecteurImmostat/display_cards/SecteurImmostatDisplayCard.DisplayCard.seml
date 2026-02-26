@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: SecteurImmostatDisplayCard
 entity: Batiments.entities.SecteurImmostat.SecteurImmostat
 default: true
-primaryTextExpression: SecteurImmostatCode || ' - ' || SecteurImmostatLibelle
+primaryTextExpression: SecteurImmostatLibelle
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

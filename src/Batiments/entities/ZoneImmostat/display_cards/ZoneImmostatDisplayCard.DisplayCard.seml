@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: ZoneImmostatDisplayCard
 entity: Batiments.entities.ZoneImmostat.ZoneImmostat
 default: true
-primaryTextExpression: ZoneImmostatCode || ' - ' || ZoneImmostatLibelle
+primaryTextExpression:  ZoneImmostatLibelle
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

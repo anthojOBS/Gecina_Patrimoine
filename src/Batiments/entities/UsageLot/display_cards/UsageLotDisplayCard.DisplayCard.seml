@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: UsageLotDisplayCard
 entity: Batiments.entities.UsageLot.UsageLot
 default: true
-primaryTextExpression: UsageLotCode || ' - ' || UsageLotLibelle
+primaryTextExpression:  UsageLotLibelle
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

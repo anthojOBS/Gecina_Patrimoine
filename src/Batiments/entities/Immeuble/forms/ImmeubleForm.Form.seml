@@ -123,6 +123,8 @@ formTabs:
                       typography: body-2
                       color: md:black             
                     useCustomLabel: true
+                    visibleValue: Ville ='FRA'
+                    visibleValueInterpreter: SEMQL
                     dataType: STRING
 
                   - _type: ReferenceField
@@ -296,7 +298,9 @@ formTabs:
                       alignment: left
                       typography: body-2
                       color: md:black 
+                      isVisible:  IGH is not null
                 useCustomLabel: true
+                visibleValue:  IGH is not null
                 dataType: BOOLEAN
               - _type: TextField
                 _name: FDN_Usage

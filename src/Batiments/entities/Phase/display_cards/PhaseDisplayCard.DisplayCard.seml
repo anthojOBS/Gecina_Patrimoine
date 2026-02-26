@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: PhaseDisplayCard
 entity: Batiments.entities.Phase.Phase
 default: true
-primaryTextExpression: PhaseCode || ' - ' || PhaseLibelle
+primaryTextExpression:  PhaseLibelle
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

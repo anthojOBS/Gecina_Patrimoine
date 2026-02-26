@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: FiscaliteCibleDisplayCard
 entity: Batiments.entities.FiscaliteCible.FiscaliteCible
 default: true
-primaryTextExpression: FiscaliteCibleCode || ' - ' || FiscaliteCibleLibelle
+primaryTextExpression:  FiscaliteCibleLibelle
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

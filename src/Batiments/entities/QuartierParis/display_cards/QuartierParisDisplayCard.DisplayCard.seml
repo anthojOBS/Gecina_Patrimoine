@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: QuartierParisDisplayCard
 entity: Batiments.entities.QuartierParis.QuartierParis
 default: true
-primaryTextExpression: QuartierParisCode || ' - ' || QuartierParisLibelle
+primaryTextExpression: QuartierParisLibelle
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

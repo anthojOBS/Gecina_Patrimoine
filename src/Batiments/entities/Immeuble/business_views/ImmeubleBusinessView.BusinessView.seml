@@ -296,3 +296,10 @@ rootBusinessViewEntity:
         listAllowed: true
         overrideDefaultSort: false
         tableAllowed: true
+
+# rootFilter:  FID_Portefeuille in SEM_F_SPLIT(
+#   case 
+#   when :V_USER_ROLES like '%Reader%' then 'P1A'
+#   when :V_USER_ROLES like '%ResponsablePropertyManager%' and FID_Portefeuille like 'P%' then FID_Portefeuille 
+#   end, ','
+#  )

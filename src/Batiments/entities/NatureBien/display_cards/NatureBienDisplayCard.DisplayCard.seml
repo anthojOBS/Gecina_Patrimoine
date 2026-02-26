@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: NatureBienDisplayCard
 entity: Batiments.entities.NatureBien.NatureBien
 default: true
-primaryTextExpression: Code || ' - ' || Libelle
+primaryTextExpression: Libelle
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

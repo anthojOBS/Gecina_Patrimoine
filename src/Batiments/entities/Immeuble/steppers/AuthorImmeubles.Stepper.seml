@@ -80,15 +80,15 @@ rootStep:
       enableMasterValuePicking: false
       formTab: Batiments.entities.Immeuble.forms.ImmeubleForm.CycleVieImmeuble
  
-    - _type: FormStep
-      _name: ESGcertifications
-      label: ESG certifications
-      canFinishSubLevel: true
-      enabledOnParentCreate: true
-      enabledOnParentEdit: true
-      formFieldsMode: AUTO
-      enableMasterValuePicking: false
-      formTab: Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications
+    # - _type: FormStep
+    #   _name: ESGcertifications
+    #   label: ESG certifications
+    #   canFinishSubLevel: true
+    #   enabledOnParentCreate: true
+    #   enabledOnParentEdit: true
+    #   formFieldsMode: AUTO
+    #   enableMasterValuePicking: false
+    #   formTab: Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications
 
     - _type: FormStep
       _name: FiscaliteJuridique
