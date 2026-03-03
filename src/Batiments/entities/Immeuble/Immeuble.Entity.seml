@@ -134,10 +134,11 @@ attributes:
 
   - _type: EntityAttribute
     _name: DateRestructuration
-    label: Date de restructuration
+    label: Date dernière restructuration
     physicalName: DATE_RESTRUCTURATION
     dataType: Date
     mandatory: false
+
 
   - _type: EntityAttribute
     _name: FlagAscenseur
@@ -180,13 +181,6 @@ attributes:
     dataType: Date
     mandatory: false
 
-  - _type: EntityAttribute
-    _name: PhaseCertification
-    label: Phase certification
-    physicalName: PHASE_CERTIFICATION
-    dataType: String
-    length: 100
-    mandatory: false
 
   - _type: EntityAttribute
     _name: NiveauCertification

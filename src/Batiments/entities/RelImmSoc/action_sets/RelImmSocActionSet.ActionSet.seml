@@ -1,0 +1,90 @@
+_package: Batiments.entities.RelImmSoc.action_sets
+_type: ActionSet
+_name: RelImmSocActionSet
+entity: Batiments.entities.RelImmSoc.RelImmSoc
+label: RelImmSoc Action Set
+defaultActionSet: true
+actions:
+  - _type: CreateAction
+    _name: CreateAuthorRelImmSoc
+    label: Create
+    useCustomLabel: true
+    stepper: Batiments.entities.RelImmSoc.steppers.AuthorRelImmSoc
+    createMultiple: false
+    createdRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: EditAction
+    _name: EditAuthorRelImmSoc
+    label: Edit
+    useCustomLabel: true
+    stepper: Batiments.entities.RelImmSoc.steppers.AuthorRelImmSoc
+    multipleSelectionAllowed: true
+    availableForGoldenData: true
+    availableForMasterData: true
+    availableForErrorData: true
+    waitDialogEnabled: false
+  - _type: DeleteAction
+    _name: Delete
+    label: Delete
+    useCustomLabel: true
+    multipleSelectionAllowed: true
+    deleteType: HARD_DELETE
+    waitDialogEnabled: false
+    availableForGoldenData: true
+    availableForMasterData: true
+  - _type: ExportAction
+    _name: Export
+    label: Export
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: ImportAuthorRelImmSoc
+    label: Import
+    useCustomLabel: true
+    importMode: CREATE_AND_UPDATE
+    stepper: Batiments.entities.RelImmSoc.steppers.AuthorRelImmSoc
+    importedRecordType: MASTER
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: BrowseGraphAction
+    _name: BrowseGraph
+    label: Browse Graph
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: DirectConfirmDupsAction
+    _name: DirectConfirmDuplicates
+    label: Direct Confirm Duplicates
+    useCustomLabel: false
+    waitDialogEnabled: false
+  - _type: ReviewAndConfirm
+    _name: ReviewAndConfirmDuplicatesManageDuplicatesOnRelImmSoc
+    label: Review and Confirm Duplicates
+    useCustomLabel: true
+    dupsManager: Batiments.entities.RelImmSoc.dups_managers.ManageDuplicatesOnRelImmSoc
+    enableEdit: true
+    mandateConfirmAll: false
+    waitDialogEnabled: false
+  - _type: MergeOrSplit
+    _name: MergeOrSplitDuplicatesManageDuplicatesOnRelImmSoc
+    label: Merge Or Split Duplicates
+    useCustomLabel: true
+    dupsManager: Batiments.entities.RelImmSoc.dups_managers.ManageDuplicatesOnRelImmSoc
+    enableEdit: true
+    waitDialogEnabled: false
+  - _type: ReviewSuggestions
+    _name: ReviewSuggestionsDuplicatesManageDuplicatesOnRelImmSoc
+    label: Review Duplicates Suggestions
+    useCustomLabel: true
+    dupsManager: Batiments.entities.RelImmSoc.dups_managers.ManageDuplicatesOnRelImmSoc
+    enableEdit: true
+    waitDialogEnabled: false
+    onAcceptPromptGoldenId: false
+    mandateResolveAllSuggestions: false
+  - _type: ExplainRecordAction
+    _name: ExplainRecord
+    label: Explain Record
+    useCustomLabel: true
+    displayCard: Batiments.entities.RelImmSoc.display_cards.RelImmSocDisplayCard
+    formTab: Batiments.entities.RelImmSoc.forms.RelImmSocForm.RelImmSoc
+    waitDialogEnabled: false

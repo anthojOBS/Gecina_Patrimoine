@@ -1,0 +1,59 @@
+_package: Batiments.entities.OrganisationResponsable.business_views
+_type: BusinessView
+_name: OrgaRespBusinessView
+entity: Batiments.entities.OrganisationResponsable.OrganisationResponsable
+rootLabel: Organisation responsable
+rootPluralLabel: Organisations responsables
+displayRootNodeAs: ICON_LABEL
+label: Organisation responsable
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: OrganisationResponsable
+  displayCard: Batiments.entities.OrganisationResponsable.display_cards.OrganisationResponsableDisplayCard
+  entity: Batiments.entities.OrganisationResponsable.OrganisationResponsable
+  actionSet: Batiments.entities.OrganisationResponsable.action_sets.OrganisationResponsableActionSet
+  collection: Batiments.entities.OrganisationResponsable.collection_views.OrganisationResponsableCollectionView
+  form: Batiments.entities.OrganisationResponsable.forms.OrganisationResponsableForm
+  outlineVisible: false
+  displayRecordCount: ALWAYS
+  businessEntitySearchConfigs:
+    - _name: TextConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: TEXT
+    - _name: FormConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: BY_FORM
+    - _name: AdvancedConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: ADVANCED
+    - _name: SemqlConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: SEMQL
+  overrideDefaultSort: false
+  enableUserDefinedSort: true
+  listAllowed: true
+  tableAllowed: true
+  gridAllowed: true
+
+  transitions:
+    - _name: GoldenHistoryRecords
+      _type: BusinessViewTransition
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      enableHierarchy: '0'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: false
+      iconUrl: images://mdi/history.svg
+      label: History
+      pluralLabel: History
+      transitionPath: GoldenHistoryRecords
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '1'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      businessViewEntity: 
+        _type: BusinessViewEntityReference
+        ref: Batiments.entities.OrganisationResponsable.business_views.OrgaRespBusinessView.OrganisationResponsable
+      filter: 1 = 1
+enableHierarchyView: false
+useHierarchyOnOpen: false

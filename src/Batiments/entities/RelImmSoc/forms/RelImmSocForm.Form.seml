@@ -1,0 +1,24 @@
+_package: Batiments.entities.RelImmSoc.forms
+_type: Form
+_name: RelImmSocForm
+entity: Batiments.entities.RelImmSoc.RelImmSoc
+default: true
+formTabs:
+  - _type: FormTab
+    _name: RelImmSoc
+    label: RelImmSoc 
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: IdField
+        _name: RelImmSocCode
+        value: RelImmSocCode
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+          alignment: left

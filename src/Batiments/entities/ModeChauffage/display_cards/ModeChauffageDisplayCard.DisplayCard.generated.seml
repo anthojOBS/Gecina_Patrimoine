@@ -1,0 +1,19 @@
+_package: Batiments.entities.ModeChauffage.display_cards
+_type: DisplayCard
+_name: ModeChauffageDisplayCard
+entity: Batiments.entities.ModeChauffage.ModeChauffage
+default: true
+primaryTextExpression: Code
+secondaryTextExpression: Libelle
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageValue: images://mdi/domain.svg
+

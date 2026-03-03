@@ -139,10 +139,37 @@ rootBusinessViewEntity:
       label: Masters Records
       pluralLabel: Masters Records
       transitionType: FULLY_QUALIFIED
-      transitionPath:  MasterRecords 
-      businessViewEntity: 
+      transitionPath:  MasterRecords
+      businessViewEntity:
         _type: BusinessViewEntity
         _name: MasterRecord
+        displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
+        entity: Batiments.entities.Batiment.Batiment
+        actionSet: Batiments.entities.Batiment.action_sets.BatimentActionSet
+        collection: Batiments.entities.Batiment.collection_views.BatimentCollectionView
+        form: Batiments.entities.Batiment.forms.BatimentForm
+        displayRecordCount: ALWAYS
+        outlineVisible: false
+        enableUserDefinedSort: true
+        gridAllowed: true
+        listAllowed: true
+        overrideDefaultSort: false
+        tableAllowed: true
+
+    - _type: BusinessViewTransition
+      _name: MasterRecordsPrincipaux
+      displayFormTabAs: ICON_LABEL
+      useCustomLabel: false
+      enableHierarchyInterpreter: LITERAL
+      filter: BatimentPrincipal = '1'
+      iconUrl: images://mdi/puzzle.svg
+      label: Masters Records (Principaux)
+      pluralLabel: Masters Records (Principaux)
+      transitionType: FULLY_QUALIFIED
+      transitionPath:  MasterRecords
+      businessViewEntity:
+        _type: BusinessViewEntity
+        _name: MasterRecordPrincipaux
         displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
         entity: Batiments.entities.Batiment.Batiment
         actionSet: Batiments.entities.Batiment.action_sets.BatimentActionSet

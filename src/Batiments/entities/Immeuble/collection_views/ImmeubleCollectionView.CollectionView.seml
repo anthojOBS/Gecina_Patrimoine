@@ -144,13 +144,7 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
 
-  - _type: TextColumn
-    _name: CertificationESG
-    value: CertificationESG
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
+
   - _type: TextColumn
     _name: DateFinValidite
     value: DateFinValidite
@@ -158,27 +152,7 @@ tableColumns:
     dataType: DATE
     columnAlign: LEFT
     visibleByDefault: true
-  - _type: TextColumn
-    _name: PhaseCertification
-    value: PhaseCertification
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-  - _type: TextColumn
-    _name: NiveauCertification
-    value: NiveauCertification
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-  - _type: TextColumn
-    _name: Proprietaire
-    value: Proprietaire
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
+
   - _type: ReferenceColumn
     _name: FDN_Phase
     value: FDN_Phase
@@ -341,24 +315,24 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
 
-  - _type: ReferenceColumn
-    _name: FDN_SocieteProprietaire
-    value: FDN_SocieteProprietaire
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-    referencedEntity: Batiments.entities.SocieteProprietaire.SocieteProprietaire
+  # - _type: ReferenceColumn
+  #   _name: FDN_SocieteProprietaire
+  #   value: FDN_SocieteProprietaire
+  #   useCustomLabel: false
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: true
+  #   referencedEntity: Batiments.entities.SocieteProprietaire.SocieteProprietaire
 
-  - _type: ReferenceColumn
-    _name: FDN_SocieteAutre
-    value: FDN_SocieteAutre
-    label: Société exploitante
-    useCustomLabel: true
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-    referencedEntity: Batiments.entities.SocieteAutre.SocieteAutre
+  # - _type: ReferenceColumn
+  #   _name: FDN_SocieteAutre
+  #   value: FDN_SocieteAutre
+  #   label: Société exploitante
+  #   useCustomLabel: true
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: true
+  #   referencedEntity: Batiments.entities.SocieteAutre.SocieteAutre
 
 
   - _type: TextColumn

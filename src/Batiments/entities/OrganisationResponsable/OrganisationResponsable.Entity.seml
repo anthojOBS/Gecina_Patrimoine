@@ -1,0 +1,35 @@
+_package: Batiments.entities.OrganisationResponsable
+_type: Entity
+_name: OrganisationResponsable
+label: Organisation responsable
+pluralLabel: Organisation responsable
+entityType: BASIC
+physicalTableName: ORGANISATION_RESPONSABLE
+description: Organisation responsable
+documentation: |
+  Organisation responsable
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: Code
+    label: Organisation responsable
+    physicalName: CODE
+    dataType: String
+    length: 50
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: Libelle
+    label: Libellé Organisation responsable
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
+
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.OrganisationResponsable.OrganisationResponsable.Code

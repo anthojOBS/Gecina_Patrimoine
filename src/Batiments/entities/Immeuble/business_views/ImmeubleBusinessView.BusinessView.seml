@@ -195,7 +195,7 @@ rootBusinessViewEntity:
                 # visibleInFormTabCondition: any Etage have (BatimentID IS NOT NULL)
                 # enableHierarchy: any Lot has (1 = 1)
                 # enableHierarchyInterpreter: SEMQL
-                enableHierarchy: '0'
+                enableHierarchy: '1'
                 enableHierarchyInterpreter: LITERAL
                 expandHierarchyByDefault: true
                 iconUrl: images://mdi/file-tree.svg
@@ -250,6 +250,39 @@ rootBusinessViewEntity:
                         tableAllowed: true
 
 
+    - _type: BusinessViewTransition
+      _name: Lots_global
+      label: Lots global
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      # visibleInFormTabCondition: any Etage have (BatimentID IS NOT NULL)
+      # enableHierarchy: any Lot has (1 = 1)
+      # enableHierarchyInterpreter: SEMQL
+      enableHierarchy: '0'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: true
+      iconUrl: images://mdi/floor-plan.svg
+      transitionPath: Batiment.Etage.Lot
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '0'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      pluralLabel: Lots
+      businessViewEntity: 
+        _type: BusinessViewEntity
+        _name: LotsGlobal
+        displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
+        displayRecordCount: ALWAYS
+        enableUserDefinedSort: true
+        gridAllowed: false
+        listAllowed: true
+        outlineVisible: false
+        overrideDefaultSort: false
+        tableAllowed: true
+        entity: Batiments.entities.Lot.Lot
+        form: Batiments.entities.Lot.forms.LotForm
+        collection: Batiments.entities.Lot.collection_views.LotCollectionView
+
 
 
     - _name: GoldenHistoryRecords
@@ -299,39 +332,6 @@ rootBusinessViewEntity:
         overrideDefaultSort: false
         tableAllowed: true
 
-
-    - _type: BusinessViewTransition
-      _name: Lots_global
-      label: Lots global
-      displayFormTabAs: ICON_LABEL
-      displayTransitionNodeAs: ICON_LABEL
-      # visibleInFormTabCondition: any Etage have (BatimentID IS NOT NULL)
-      # enableHierarchy: any Lot has (1 = 1)
-      # enableHierarchyInterpreter: SEMQL
-      enableHierarchy: '1'
-      enableHierarchyInterpreter: LITERAL
-      expandHierarchyByDefault: true
-      iconUrl: images://mdi/floor-plan.svg
-      transitionPath: Batiment.Etage.Lot
-      transitionType: FULLY_QUALIFIED
-      transitionVisible: '0'
-      transitionVisibleInterpreter: LITERAL
-      useCustomLabel: true
-      pluralLabel: Lots
-      businessViewEntity: 
-        _type: BusinessViewEntity
-        _name: LotsGlobal
-        displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
-        displayRecordCount: ALWAYS
-        enableUserDefinedSort: true
-        gridAllowed: false
-        listAllowed: true
-        outlineVisible: false
-        overrideDefaultSort: false
-        tableAllowed: true
-        entity: Batiments.entities.Lot.Lot
-        form: Batiments.entities.Lot.forms.LotForm
-        collection: Batiments.entities.Lot.collection_views.LotCollectionView
 
 # rootFilter:  FID_Portefeuille in SEM_F_SPLIT(
 #   case

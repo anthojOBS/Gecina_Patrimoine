@@ -265,6 +265,13 @@ rootFolder:
       icon: images://mdi/database.svg
       appActions:
         - _type: BrowseBusinessViewAction
+          _name: CategorieERP
+          businessView: Batiments.entities.CategorieERP.business_views.CategorieERPBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/timeline-text.svg
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
           _name: DestinationReelle
           businessView: Batiments.entities.DestinationReelle.business_views.DestinationReelleBusinessView
           imageAlign: MIDDLE_CENTER
@@ -284,11 +291,25 @@ rootFolder:
           icon: images://mdi/home-city.svg
           nbRecordsBadgeVisible: false
         - _type: BrowseBusinessViewAction
+          _name: ModeChauffage
+          businessView: Batiments.entities.ModeChauffage.business_views.ModeChauffageBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/timeline-text.svg
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
           _name: NatureBiens
           businessView: Batiments.entities.NatureBien.business_views.NatureBienBusinessView
           imageAlign: MIDDLE_CENTER
           imageMode: FIT
           icon: images://mdi/home-city.svg
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
+          _name: OrganisationResponsable
+          businessView: Batiments.entities.OrganisationResponsable.business_views.OrgaRespBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/map-marker.svg
           nbRecordsBadgeVisible: false
         - _type: BrowseBusinessViewAction
           _name: Pays
@@ -360,6 +381,21 @@ rootFolder:
           imageMode: FIT
           icon: images://mdi/office-building.svg
           nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
+          _name: TypeEnergie
+          businessView: Batiments.entities.TypeEnergie.business_views.TypeEnergieBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/office-building.svg
+          nbRecordsBadgeVisible: false
+
+        - _type: BrowseBusinessViewAction
+          _name: TypeSociete
+          businessView: Batiments.entities.TypeSociete.business_views.TypeSocieteBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/office-building.svg
+          nbRecordsBadgeVisible: false
 
         - _type: BrowseBusinessViewAction
           _name: Usage
@@ -425,5 +461,12 @@ rootFolder:
         imageMode: FIT
         importAction: Batiments.entities.Lot.action_sets.LotActionSet.ImportAuthorLots
         description: Importer Lot depuis un fichier
+      - _type: ImportDataAppAction
+        _name: ImportSociete
+        label: Importer Societés 
+        imageAlign: MIDDLE_CENTER
+        imageMode: FIT
+        importAction: Batiments.entities.RelImmSoc.action_sets.RelImmSocActionSet.ImportAuthorRelImmSoc
+        description: Importer Société depuis un fichier
 
 applicationTitle: Référentiel Patrimoine

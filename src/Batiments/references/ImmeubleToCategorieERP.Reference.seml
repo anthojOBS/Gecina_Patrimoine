@@ -1,0 +1,33 @@
+_package: Batiments.references
+_type: Reference
+_name: ImmeubleToCategorieERP
+label: Immeuble CategorieERP
+description: Référence Immeuble vers CategorieERP
+fromRoleDocumentation: |
+  Cette référence détermine la **CategorieERP** d'un **Immeuble** dans son cycle de vie.
+  La CategorieERP indique l'état d'avancement du projet immobilier (en construction, livré, etc.).
+physicalName: IMMEUBLE_CATEGORIEERP_REF
+
+fromEntity: Batiments.entities.Immeuble.Immeuble
+fromRoleLabel: Immeuble
+fromRoleName: Immeuble
+fromRolePluralLabel: Immeuble
+
+toEntity: Batiments.entities.CategorieERP.CategorieERP
+toRoleLabel: Categorie ERP
+toRoleName: CategorieERP
+toRolePhysicalName: CATEGORIEERP_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: La Categorie ERP est obligatoire pour un immeuble
+brokenValidationLabel: La Categorie ERP sélectionnée est invalide pour cet immeuble
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: CategorieERP
+  label: Categorie ERP
+  physicalName: CATEGORIEERP_ID
+  searchable: true
+  entity: Batiments.entities.Immeuble.Immeuble

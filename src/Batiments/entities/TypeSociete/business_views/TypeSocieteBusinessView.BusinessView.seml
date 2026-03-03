@@ -1,0 +1,59 @@
+_package: Batiments.entities.TypeSociete.business_views
+_type: BusinessView
+_name: TypeSocieteBusinessView
+entity: Batiments.entities.TypeSociete.TypeSociete
+rootLabel: Types de société
+rootPluralLabel: Types de société
+displayRootNodeAs: ICON_LABEL
+label: Types de société
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: TypeSociete
+  displayCard: Batiments.entities.TypeSociete.display_cards.TypeSocieteDisplayCard
+  entity: Batiments.entities.TypeSociete.TypeSociete
+  actionSet: Batiments.entities.TypeSociete.action_sets.TypeSocieteActionSet
+  collection: Batiments.entities.TypeSociete.collection_views.TypeSocieteCollectionView
+  form: Batiments.entities.TypeSociete.forms.TypeSocieteForm
+  outlineVisible: false
+  displayRecordCount: ALWAYS
+  businessEntitySearchConfigs:
+    - _name: TextConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: TEXT
+    - _name: FormConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: BY_FORM
+    - _name: AdvancedConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: ADVANCED
+    - _name: SemqlConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: SEMQL
+  overrideDefaultSort: false
+  enableUserDefinedSort: true
+  listAllowed: true
+  tableAllowed: true
+  gridAllowed: true
+
+  transitions:
+    - _name: GoldenHistoryRecords
+      _type: BusinessViewTransition
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      enableHierarchy: '0'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: false
+      iconUrl: images://mdi/history.svg
+      label: History
+      pluralLabel: History
+      transitionPath: GoldenHistoryRecords
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '1'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      businessViewEntity: 
+        _type: BusinessViewEntityReference
+        ref: Batiments.entities.TypeSociete.business_views.TypeSocieteBusinessView.TypeSociete
+      filter: 1 = 1
+enableHierarchyView: false
+useHierarchyOnOpen: false

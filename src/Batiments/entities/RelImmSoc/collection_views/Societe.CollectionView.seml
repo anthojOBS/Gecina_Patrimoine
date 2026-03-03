@@ -1,0 +1,37 @@
+_package: Batiments.entities.RelImmSoc.collection_views
+_type: CollectionView
+_name: Societe
+entity: Batiments.entities.RelImmSoc.RelImmSoc
+default: false
+displayCard: Batiments.entities.RelImmSoc.display_cards.RelImmSocDisplayCard
+gridAllowed: false
+# gridColumns: 4
+# gridTextPosition: BOTTOM
+# gridTileHeight: 1:1
+# gridTileLines: 1
+listAllowed: false
+# listItemLines: 1
+# listShowDisplayCardAvatar: false
+# listShowDivider: true
+tableAllowed: true
+# tableDisplayCardColumnLabel: Societe
+tableRowLines: 1
+# tableShowDisplayCard: true
+tableColumns:
+
+  - _type: ReferenceColumn
+    _name: FDN_TypeSociete
+    value: FDN_TypeSociete
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.TypeSociete.TypeSociete
+  - _type: ReferenceColumn
+    _name: FDN_SocieteAutre 
+    value: FDN_SocieteAutre
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.SocieteAutre.SocieteAutre

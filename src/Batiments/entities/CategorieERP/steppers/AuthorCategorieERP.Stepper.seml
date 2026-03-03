@@ -1,0 +1,33 @@
+_package: Batiments.entities.CategorieERP.steppers
+_type: Stepper
+_name: AuthorCategorieERP
+entity: Batiments.entities.CategorieERP.CategorieERP
+label: Destination Réelle
+rootStep:
+  _type: CollectionStep
+  _name: CategorieERPs
+  label: Catégories ERP
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.CategorieERP.collection_views.CategorieERPCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: CategorieERP
+      label: Destination Réelle
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.CategorieERP.forms.CategorieERPForm.CategorieERP

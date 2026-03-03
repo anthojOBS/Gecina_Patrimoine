@@ -1,0 +1,33 @@
+_package: Batiments.references
+_type: Reference
+_name: ImmeubleToOrgaResp
+label: Immeuble Organisation Responsable
+description: Référence Immeuble vers OrgaResp
+fromRoleDocumentation: |
+  Cette référence détermine la **OrgaResp** d'un **Immeuble** dans son cycle de vie.
+  La OrgaResp indique l'état d'avancement du projet immobilier (en construction, livré, etc.).
+physicalName: IMMEUBLE_ORGARESP_REF
+
+fromEntity: Batiments.entities.Immeuble.Immeuble
+fromRoleLabel: Immeuble
+fromRoleName: Immeuble
+fromRolePluralLabel: Immeuble
+
+toEntity: Batiments.entities.OrganisationResponsable.OrganisationResponsable
+toRoleLabel: Organisation Responsable
+toRoleName: OrgaResp
+toRolePhysicalName: ORGARESP_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: La OrgaResp est obligatoire pour un immeuble
+brokenValidationLabel: La OrgaResp sélectionnée est invalide pour cet immeuble
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: OrgaResp
+  label: Organisation Responsable
+  physicalName: ORGARESP_ID
+  searchable: true
+  entity: Batiments.entities.Immeuble.Immeuble

@@ -1,0 +1,35 @@
+_package: Batiments.entities.TypeSociete
+_type: Entity
+_name: TypeSociete
+label: Type de société
+pluralLabel: Types de société
+entityType: BASIC
+physicalTableName: TYPESOCIETE
+iconUrl: images://mdi/timeline-text.svg
+description: "table ref type de société"
+documentation: |
+  Le **Type de société** représente la catégorie d'une société (ex. SAS, SA, SCI, etc.).
+  Cette entité est utilisée comme table de référence pour qualifier les sociétés.
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: TypeSocieteCode
+    label: Type de société
+    physicalName: TYPESOCIETE_ID
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: TypeSocieteLibelle
+    label: Libellé Type de société
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.TypeSociete.TypeSociete.TypeSocieteCode

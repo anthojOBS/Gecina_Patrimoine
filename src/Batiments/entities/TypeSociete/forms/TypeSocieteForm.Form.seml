@@ -1,0 +1,32 @@
+_package: Batiments.entities.TypeSociete.forms
+_type: Form
+_name: TypeSocieteForm
+entity: Batiments.entities.TypeSociete.TypeSociete
+default: true
+formTabs:
+  - _type: FormTab
+    _name: TypeSociete
+    label: Type de société
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: IdField
+        _name: TypeSocieteCode
+        value: TypeSocieteCode
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: TypeSocieteLibelle
+        value: TypeSocieteLibelle
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

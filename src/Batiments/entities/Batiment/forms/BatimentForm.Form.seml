@@ -174,38 +174,39 @@ formTabs:
                       dataType: STRING
                       referencedEntity: Batiments.entities.Usage.Usage
 
-              - _type: FormSection
-                _name: GestionBatiment
-                label: Gestion bâtiment
-                layoutDirection: COLUMN
-                visibleValue: '1'
-                visibleValueInterpreter: LITERAL
-                labelWidth: 200px
-                content:
-                    - _type: ReferenceField
-                      _name: FDN_SocieteProprietaire
-                      value: FDN_SocieteProprietaire
-                      label: Société propriétaire 
-                      labelProperties:
-                        alignment: left
-                        typographyValueInterpreter: LITERAL
-                        typography: body-2
-                        color: md:black
-                      useCustomLabel: true
-                      dataType: STRING
-                      referencedEntity: Batiments.entities.SocieteProprietaire.SocieteProprietaire
+              # - _type: FormSection
+              #   _name: GestionBatiment
+              #   label: Gestion bâtiment
+              #   layoutDirection: COLUMN
+              #   visibleValue: '1'
+              #   visibleValueInterpreter: LITERAL
+              #   labelWidth: 200px
+              #   content:
+              #       - _type: ReferenceField
+              #         _name: FDN_SocieteProprietaire
+              #         value: FDN_SocieteProprietaire
+              #         label: Société propriétaire 
+              #         labelProperties:
+              #           alignment: left
+              #           typographyValueInterpreter: LITERAL
+              #           typography: body-2
+              #           color: md:black
+              #         useCustomLabel: true
+              #         dataType: STRING
+              #         referencedEntity: Batiments.entities.SocieteProprietaire.SocieteProprietaire
                   
-                    - _type: ReferenceField
-                      _name: FDN_SocieteAutre
-                      value: FDN_SocieteAutre
-                      label: Société exploitante
-                      labelProperties:
-                            alignment: left
-                            typography: body-2
-                            color: md:black 
-                      useCustomLabel: true
-                      dataType: STRING
-                      referencedEntity: Batiments.entities.SocieteAutre.SocieteAutre                 
+              #       - _type: ReferenceField
+              #         _name: FDN_SocieteAutre
+              #         value: FDN_SocieteAutre
+              #         label: Société exploitante
+              #         labelProperties:
+              #               alignment: left
+              #               typography: body-2
+              #               color: md:black 
+              #         useCustomLabel: true
+              #         dataType: STRING
+              #         referencedEntity: Batiments.entities.SocieteAutre.SocieteAutre                 
+
   - _type: FormTab
     _name: CycleVieBatiment
     label: Cycle de vie bâtiment
@@ -268,68 +269,6 @@ formTabs:
               color: md:black
             useCustomLabel: true
             dataType: DATE
-
-  - _type: FormTab
-    _name: ESGcertifications
-    label: ESG et certifications
-    iconUrl: images://mdi/sprout.svg
-    documentationInterpreter: LITERAL
-    visibleValue: "1"
-    visibleValueInterpreter: LITERAL
-    displayFormTabAs: ICON_LABEL
-    content:
-      - _type: FormSection
-        _name: ESGcertifications
-        label: ESG et certifications
-        layoutDirection: COLUMN
-        visibleValue: '1'
-        visibleValueInterpreter: LITERAL
-        labelWidth: 200px
-        content:
-          - _type: TextField
-            _name: CertificationESG
-            value: Immeuble.CertificationESG
-            label: Certification ESG
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: STRING
-          - _type: TextField
-            _name: DateFinValidite
-            value: Immeuble.DateFinValidite
-            label: Date de fin de validité
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: DATE
-          - _type: TextField
-            _name: PhaseCertification
-            value: Immeuble.PhaseCertification
-            label: Phase de certification
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: STRING
-          - _type: TextField
-            _name: NiveauCertification
-            value: Immeuble.NiveauCertification
-            label: Niveau de certification
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: STRING
 
   - _type: FormTab
     _name: FiscaliteJuridique

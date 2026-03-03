@@ -1,0 +1,35 @@
+_package: Batiments.entities.ModeChauffage
+_type: Entity
+_name: ModeChauffage
+label: Mode chauffage
+pluralLabel: Mode chauffage
+entityType: BASIC
+physicalTableName: MODE_CHAUFFAGE
+description: Mode de chauffage
+documentation: |
+  Mode de chauffage
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: Code
+    label: Mode chauffage
+    physicalName: CODE
+    dataType: String
+    length: 50
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: Libelle
+    label: Libellé Mode chauffage
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
+
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.ModeChauffage.ModeChauffage.Code

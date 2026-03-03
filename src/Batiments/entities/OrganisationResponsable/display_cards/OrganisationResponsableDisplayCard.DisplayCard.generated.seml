@@ -1,0 +1,19 @@
+_package: Batiments.entities.OrganisationResponsable.display_cards
+_type: DisplayCard
+_name: OrganisationResponsableDisplayCard
+entity: Batiments.entities.OrganisationResponsable.OrganisationResponsable
+default: true
+primaryTextExpression: Code
+secondaryTextExpression: Libelle
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageValue: images://mdi/domain.svg
+

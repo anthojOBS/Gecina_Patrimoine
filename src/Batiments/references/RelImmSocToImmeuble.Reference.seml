@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: RelImmSocToImmeuble
+label: Societe Immeuble
+description: Lien hiérarchique Immeuble vers Societe
+fromRoleDocumentation: |
+  Cette référence établit le lien hiérarchique entre un **Bâtiment** et son **Immeuble** parent.
+  
+  Un bâtiment fait partie d'un immeuble dans la structure du patrimoine immobilier.
+physicalName: REL_IMM_REF
+
+fromEntity: Batiments.entities.RelImmSoc.RelImmSoc
+fromRoleLabel: RelImmSoc
+fromRoleName: RelImmSoc
+fromRolePluralLabel: RelImmSoc
+
+toEntity: Batiments.entities.Immeuble.Immeuble
+toRoleLabel: Immeuble
+toRoleName: Immeuble
+toRolePhysicalName: IMMEUBLE_ID
+
+oneToMany: false
+deletePropagation: RESTRICT
+validationScope: PRE_CONSO
+mandatoryValidationLabel: L'immeuble est obligatoire pour une société
+brokenValidationLabel: L'immeuble sélectionné est invalide pour cette société
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Immeuble
+  label: Immeuble
+  physicalName: IMMEUBLE_ID
+  searchable: true
+  entity: Batiments.entities.RelImmSoc.RelImmSoc
