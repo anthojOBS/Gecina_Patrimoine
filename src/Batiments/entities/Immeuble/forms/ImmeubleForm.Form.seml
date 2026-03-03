@@ -7,6 +7,7 @@ formTabs:
   - _type: FormTab
     _name: Immeuble
     label: Fiche immeuble
+    # labelWidth: 2px
     documentationInterpreter: LITERAL
     visibleValue: "1"
     visibleValueInterpreter: LITERAL
@@ -15,7 +16,7 @@ formTabs:
       # SECTION HAUT (encadré rouge)
       - _type: FormContainer
         _name: SectionHaut
-        layoutDirection: ROW
+        layoutDirection: COLUMN
         content:
 
         - _type: FormContainer
@@ -55,26 +56,12 @@ formTabs:
                 useCustomLabel: true
                 dataType: STRING
 
-              # - _type: TextField
-              #   _name: SuperficieUtile
-              #   value: SuperficieUtile
-              #   label: Superficie utile
-              #   labelProperties:
-              #     alignment: left
-              #     typographyValueInterpreter: LITERAL
-              #     typography: body-2
-              #     color: md:black
-              #   useCustomLabel: true
-              #   dataType: DECIMAL
-
               - _type: TextField
                 _name: SuperficieUtile_m2
                 value: case when SuperficieUtile is not null then SuperficieUtile || ' m²' else null end  
-                label: Superficie utile
-
+                label: Superficie totale avec QP
                 documentation: Addition de toutes les surfaces utiles avec QP
-                 Surface totale de l’actif exprimée en m²
-                 
+                  Surface totale de l’actif exprimée en m²                  
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -85,9 +72,14 @@ formTabs:
 
           # Bloc Localisation immeuble (encadré vert)
 
+        - _type: FormContainer
+          _name: SectionDroit
+          layoutDirection: ROW
+          content:
+
           - _type: FormSection
             _name: LocalisationImmeuble
-            label: Localisation immeuble
+            label: Localisation
             layoutDirection: ROW
             visibleValue: '1'
             visibleValueInterpreter: LITERAL
@@ -115,49 +107,6 @@ formTabs:
                     dataType: STRING
 
                   - _type: TextField
-                    _name: Ville
-                    value: Ville
-                    label: Ville
-                    labelProperties:
-                      alignment: left
-                      typography: body-2
-                      color: md:black             
-                    useCustomLabel: true
-                    visibleValue: Ville ='FRA'
-                    visibleValueInterpreter: SEMQL
-                    dataType: STRING
-
-                  - _type: ReferenceField
-                    _name: FDN_ZoneImmostat
-                    value: FDN_ZoneImmostat
-                    label: Zone immostat
-                    labelProperties:
-                      alignment: left
-                      typography: body-2
-                      color: md:black 
-                    useCustomLabel: true
-                    dataType: STRING
-                    referencedEntity: Batiments.entities.Pays.Pays
-
-                  - _type: ReferenceField
-                    _name: FDN_SousSecteurImmostat
-                    value: FDN_SousSecteurImmostat
-                    label: Sous secteur immostat
-                    labelProperties:
-                      alignment: left
-                      typography: body-2
-                      color: md:black 
-                    useCustomLabel: true
-                    dataType: STRING 
-                    referencedEntity: Batiments.entities.SousSecteurImmostat.SousSecteurImmostat
-
-               # Sous-bloc Pays/Ville (encadré jaune)
-              - _type: FormContainer
-                _name: BlocAdresseBis
-                layoutDirection: COLUMN
-                content:
-
-                  - _type: TextField
                     _name: CodePostal
                     value: CodePostal
                     label: Code postal
@@ -167,6 +116,19 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
+                    dataType: STRING
+                      
+                  - _type: TextField
+                    _name: Ville
+                    value: Ville
+                    label: Ville
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black             
+                    useCustomLabel: true
+                    # visibleValue: Ville ='FRA'
+                    # visibleValueInterpreter: SEMQL
                     dataType: STRING
 
                   - _type: ReferenceField
@@ -181,7 +143,17 @@ formTabs:
                     dataType: STRING
                     referencedEntity: Batiments.entities.Pays.Pays
 
-             #Sous-bloc Immostat (encadré jaune)
+                  - _type: ReferenceField
+                    _name: FDN_ZoneImmostat
+                    value: FDN_ZoneImmostat
+                    label: Zone immostat
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black 
+                    useCustomLabel: true
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.Pays.Pays
 
                   - _type: ReferenceField
                     _name: FDN_SecteurImmostat
@@ -195,6 +167,19 @@ formTabs:
                     dataType: STRING
                     referencedEntity: Batiments.entities.SecteurImmostat.SecteurImmostat
 
+                  - _type: ReferenceField
+                    _name: FDN_SousSecteurImmostat
+                    value: FDN_SousSecteurImmostat
+                    label: Sous secteur immostat
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black 
+                    useCustomLabel: true
+                    dataType: STRING 
+                    referencedEntity: Batiments.entities.SousSecteurImmostat.SousSecteurImmostat
+
+
                   - _type: TextField
                     _name: FDN_QuartierParis
                     value: FDN_QuartierParis
@@ -206,18 +191,11 @@ formTabs:
                     useCustomLabel: true
                     dataType: STRING
                     referencedEntity: Batiments.entities.QuartierParis.QuartierParis
-
-          # Bloc Carte (encadré vert)
-
-        - _type: FormContainer
-          _name: SectionDroit
-          layoutDirection: COLUMN
-          content:
-
+                    
           - _type: FormSection
             _name: BlocCarte
             label: Carte
-            layoutDirection: COLUMN
+            layoutDirection: ROW
             visibleValue: '1'
             visibleValueInterpreter: LITERAL
             content:
@@ -447,7 +425,8 @@ formTabs:
 
   - _type: FormTab
     _name: CycleVieImmeuble
-    label: Cycle de vie immeuble
+    label: Cycle de vie
+    labelWidth: 15%
     iconUrl: images://mdi/sync-circle.svg
     documentationInterpreter: LITERAL
     visibleValue: "1"
@@ -527,73 +506,73 @@ formTabs:
 #########################################
 
 
-  - _type: FormTab
-    _name: ESGcertifications
-    label: ESG et certifications
-    iconUrl: images://mdi/sprout.svg
-    documentationInterpreter: LITERAL
-    visibleValue: "1"
-    visibleValueInterpreter: LITERAL
-    displayFormTabAs: ICON_LABEL
-    content:
-      # SECTION HAUT (encadré rouge)
-          # Bloc Identité immeuble (encadré vert)
-          - _type: FormSection
-            _name: ESGcertifications
-            label: ESG et certifications
-            layoutDirection: COLUMN
-            visibleValue: '1'
-            visibleValueInterpreter: LITERAL
-            labelWidth: 200px
-            content:
-              - _type: TextField
-                _name: CertificationESG
-                value: CertificationESG
-                label: Certification ESG
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: STRING
-           #     referencedEntity: Batiments.entities.CertificationESG.CertificationESG
+  # - _type: FormTab
+  #   _name: ESGcertifications
+  #   label: ESG et certifications
+  #   iconUrl: images://mdi/sprout.svg
+  #   documentationInterpreter: LITERAL
+  #   visibleValue: "1"
+  #   visibleValueInterpreter: LITERAL
+  #   displayFormTabAs: ICON_LABEL
+  #   content:
+  #     # SECTION HAUT (encadré rouge)
+  #         # Bloc Identité immeuble (encadré vert)
+  #         - _type: FormSection
+  #           _name: ESGcertifications
+  #           label: ESG et certifications
+  #           layoutDirection: COLUMN
+  #           visibleValue: '1'
+  #           visibleValueInterpreter: LITERAL
+  #           labelWidth: 200px
+  #           content:
+  #             - _type: TextField
+  #               _name: CertificationESG
+  #               value: CertificationESG
+  #               label: Certification ESG
+  #               labelProperties:
+  #                 alignment: left
+  #                 typographyValueInterpreter: LITERAL
+  #                 typography: body-2
+  #                 color: md:black
+  #               useCustomLabel: true
+  #               dataType: STRING
+  #          #     referencedEntity: Batiments.entities.CertificationESG.CertificationESG
 
-              - _type: TextField
-                _name: DateFinValidite
-                value: DateFinValidite
-                label: Date de fin de validité
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
+  #             - _type: TextField
+  #               _name: DateFinValidite
+  #               value: DateFinValidite
+  #               label: Date de fin de validité
+  #               labelProperties:
+  #                 alignment: left
+  #                 typographyValueInterpreter: LITERAL
+  #                 typography: body-2
+  #                 color: md:black
+  #               useCustomLabel: true
+  #               dataType: DATE
 
-              - _type: TextField                
-                _name: PhaseCertification
-                value: PhaseCertification 
-                label: Phase de certification
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: STRING
+  #             - _type: TextField                
+  #               _name: PhaseCertification
+  #               value: PhaseCertification 
+  #               label: Phase de certification
+  #               labelProperties:
+  #                 alignment: left
+  #                 typographyValueInterpreter: LITERAL
+  #                 typography: body-2
+  #                 color: md:black
+  #               useCustomLabel: true
+  #               dataType: STRING
                              
-              - _type: TextField                
-                _name: NiveauCertification
-                value: NiveauCertification 
-                label: Niveau de certification
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: STRING
+  #             - _type: TextField                
+  #               _name: NiveauCertification
+  #               value: NiveauCertification 
+  #               label: Niveau de certification
+  #               labelProperties:
+  #                 alignment: left
+  #                 typographyValueInterpreter: LITERAL
+  #                 typography: body-2
+  #                 color: md:black
+  #               useCustomLabel: true
+  #               dataType: STRING
 
 
 
@@ -604,7 +583,8 @@ formTabs:
 
   - _type: FormTab
     _name: FiscaliteJuridique
-    label: Fiscalité et juridique
+    label: Juridique et propriété
+    # labelWidth: 15%
     iconUrl: images://mdi/bank.svg
     documentationInterpreter: LITERAL
     visibleValue: "1"

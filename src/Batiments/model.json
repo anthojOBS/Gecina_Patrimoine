@@ -5189,7 +5189,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "DestinationReelleCode || ' - ' || DestinationReelleLibelle"
+                        "primaryTextExpression": "DestinationReelleLibelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -6433,7 +6433,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "FiscaliteCibleCode || ' - ' || FiscaliteCibleLibelle"
+                        "primaryTextExpression": "FiscaliteCibleLibelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -6886,7 +6886,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "GenreBienCode || ' - ' || GenreBienLibelle"
+                        "primaryTextExpression": "GenreBienLibelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -7823,6 +7823,24 @@
                                         "label": "Masters Records",
                                         "pluralLabel": "Masters Records",
                                         "transitionType": "FULLY_QUALIFIED"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Immeuble.business_views.ImmeubleBusinessView.Immeuble.Lots_global",
+                                        "enableHierarchyInterpreter": "LITERAL",
+                                        "expandHierarchyByDefault": true,
+                                        "filter": "1 = 1",
+                                        "targetBoViewEntity": "Batiments.entities.Immeuble.business_views.ImmeubleBusinessView.Immeuble.Lots_global.LotsGlobal",
+                                        "transitionPath": "Batiment.Etage.Lot",
+                                        "useCustomLabel": true,
+                                        "displayFormTabAs": "ICON_LABEL",
+                                        "displayTransitionNodeAs": "ICON_LABEL",
+                                        "enableHierarchy": "1",
+                                        "iconUrl": "images://mdi/floor-plan.svg",
+                                        "label": "Lots global",
+                                        "pluralLabel": "Lots",
+                                        "transitionType": "FULLY_QUALIFIED",
+                                        "transitionVisible": "0",
+                                        "transitionVisibleInterpreter": "LITERAL"
                                     }
                                 ]
                             },
@@ -7939,7 +7957,7 @@
                                         "useCustomLabel": true,
                                         "displayFormTabAs": "ICON_LABEL",
                                         "displayTransitionNodeAs": "ICON_LABEL",
-                                        "enableHierarchy": "1",
+                                        "enableHierarchy": "0",
                                         "iconUrl": "images://mdi/file-tree.svg",
                                         "label": "Lots",
                                         "pluralLabel": "Lots",
@@ -8027,6 +8045,21 @@
                                 "tableAllowed": true,
                                 "actionSet": "Batiments.entities.Immeuble.action_sets.ImmeubleActionSet",
                                 "displayCard": "Batiments.entities.Immeuble.display_cards.ImmeubleDisplayCard"
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Immeuble.business_views.ImmeubleBusinessView.Immeuble.Lots_global.LotsGlobal",
+                                "collection": "Batiments.entities.Lot.collection_views.LotCollectionView",
+                                "displayRecordCount": "ALWAYS",
+                                "enableUserDefinedSort": true,
+                                "entity": "Batiments.entities.Lot.Lot",
+                                "form": "Batiments.entities.Lot.forms.LotForm",
+                                "gridAllowed": false,
+                                "listAllowed": true,
+                                "outlineVisible": false,
+                                "overrideDefaultSort": false,
+                                "sortExpression": "",
+                                "tableAllowed": true,
+                                "displayCard": "Batiments.entities.Lot.display_cards.LotDisplayCard"
                             }
                         ]
                     },
@@ -8907,7 +8940,7 @@
                             {
                                 "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut",
                                 "_type": "FormContainer",
-                                "layoutDirection": "ROW",
+                                "layoutDirection": "COLUMN",
                                 "posInParent": 0,
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble"
                             },
@@ -8931,44 +8964,37 @@
                                 "visibleValue": "1"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit",
+                                "_type": "FormContainer",
+                                "layoutDirection": "ROW",
+                                "posInParent": 1,
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut"
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "ROW",
-                                "posInParent": 1,
+                                "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Localisation immeuble",
+                                "label": "Localisation",
                                 "labelWidth": "200px",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit",
                                 "visibleValue": "1"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse",
                                 "_type": "FormContainer",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 0,
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis",
-                                "_type": "FormContainer",
-                                "layoutDirection": "COLUMN",
-                                "posInParent": 1,
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit",
-                                "_type": "FormContainer",
-                                "layoutDirection": "COLUMN",
-                                "posInParent": 1,
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut"
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble"
                             },
                             {
                                 "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.BlocCarte",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
-                                "layoutDirection": "COLUMN",
-                                "posInParent": 0,
+                                "layoutDirection": "ROW",
+                                "posInParent": 1,
                                 "visibleValueInterpreter": "LITERAL",
                                 "label": "Carte",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit",
@@ -9013,7 +9039,8 @@
                                 "visibleValueInterpreter": "LITERAL",
                                 "displayFormTabAs": "ICON_LABEL",
                                 "iconUrl": "images://mdi/sync-circle.svg",
-                                "label": "Cycle de vie immeuble",
+                                "label": "Cycle de vie",
+                                "labelWidth": "15%",
                                 "visibleValue": "1"
                             },
                             {
@@ -9029,37 +9056,14 @@
                                 "visibleValue": "1"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.FiscaliteJuridique",
                                 "_type": "FormTab",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 2,
                                 "visibleValueInterpreter": "LITERAL",
                                 "displayFormTabAs": "ICON_LABEL",
-                                "iconUrl": "images://mdi/sprout.svg",
-                                "label": "ESG et certifications",
-                                "visibleValue": "1"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications",
-                                "_type": "FormSection2",
-                                "documentationInterpreter": "LITERAL",
-                                "layoutDirection": "COLUMN",
-                                "posInParent": 0,
-                                "visibleValueInterpreter": "LITERAL",
-                                "label": "ESG et certifications",
-                                "labelWidth": "200px",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications",
-                                "visibleValue": "1"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.FiscaliteJuridique",
-                                "_type": "FormTab",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 3,
-                                "visibleValueInterpreter": "LITERAL",
-                                "displayFormTabAs": "ICON_LABEL",
                                 "iconUrl": "images://mdi/bank.svg",
-                                "label": "Fiscalité et juridique",
+                                "label": "Juridique et propriété",
                                 "visibleValue": "1"
                             },
                             {
@@ -9166,7 +9170,7 @@
                                 "useCustomLabel": true,
                                 "value": "case when SuperficieUtile is not null then SuperficieUtile || ' m²' else null end",
                                 "documentation": "Addition de toutes les surfaces utiles avec QP Surface totale de l’actif exprimée en m²",
-                                "label": "Superficie utile",
+                                "label": "Superficie totale avec QP",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.IdentiteImmeuble",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
@@ -9193,7 +9197,7 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.Adresse",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.Adresse",
                                 "_type": "FormField",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
@@ -9201,43 +9205,43 @@
                                 "useCustomLabel": true,
                                 "value": "Adresse",
                                 "label": "Adresse",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.Adresse.isMultiline",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.Adresse.isMultiline",
                                         "dataType": "BOOLEAN",
                                         "value": "1",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.Adresse.multilineMaxLines",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.Adresse.multilineMaxLines",
                                         "dataType": "DECIMAL",
                                         "value": "3",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.Adresse.multilineMinLines",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.Adresse.multilineMinLines",
                                         "dataType": "DECIMAL",
                                         "value": "1",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.Adresse.labelColor",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.Adresse.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.Adresse.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.Adresse.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.Adresse.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.Adresse.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -9245,68 +9249,33 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.Ville",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.CodePostal",
                                 "_type": "FormField",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 1,
                                 "useCustomLabel": true,
-                                "value": "Ville",
-                                "label": "Ville",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse",
-                                "valueDataType": "STRING",
-                                "visibleValue": "Ville ='FRA'",
-                                "visibleValueInterpreter": "SEMQL",
-                                "componentProperties": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.Ville.labelColor",
-                                        "dataType": "STRING",
-                                        "value": "md:black",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.Ville.labelTextAlign",
-                                        "dataType": "STRING",
-                                        "value": "left",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.Ville.labelTypography",
-                                        "dataType": "STRING",
-                                        "value": "body-2",
-                                        "valueInterpreter": "LITERAL"
-                                    }
-                                ]
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.FDN_ZoneImmostat",
-                                "_type": "FormField",
-                                "componentName": "semReferenceField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 2,
-                                "useCustomLabel": true,
-                                "value": "FDN_ZoneImmostat",
-                                "label": "Zone immostat",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse",
-                                "referencedEntity": "Batiments.entities.Pays.Pays",
+                                "value": "CodePostal",
+                                "label": "Code postal",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.FDN_ZoneImmostat.labelColor",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.CodePostal.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.FDN_ZoneImmostat.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.CodePostal.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.FDN_ZoneImmostat.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.CodePostal.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -9314,103 +9283,68 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.FDN_SousSecteurImmostat",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.Ville",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 2,
+                                "useCustomLabel": true,
+                                "value": "Ville",
+                                "label": "Ville",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.Ville.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.Ville.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.Ville.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_Pays",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 3,
                                 "useCustomLabel": true,
-                                "value": "FDN_SousSecteurImmostat",
-                                "label": "Sous secteur immostat",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse",
-                                "referencedEntity": "Batiments.entities.SousSecteurImmostat.SousSecteurImmostat",
-                                "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
-                                "componentProperties": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.FDN_SousSecteurImmostat.labelColor",
-                                        "dataType": "STRING",
-                                        "value": "md:black",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.FDN_SousSecteurImmostat.labelTextAlign",
-                                        "dataType": "STRING",
-                                        "value": "left",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresse.FDN_SousSecteurImmostat.labelTypography",
-                                        "dataType": "STRING",
-                                        "value": "body-2",
-                                        "valueInterpreter": "LITERAL"
-                                    }
-                                ]
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.CodePostal",
-                                "_type": "FormField",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 0,
-                                "useCustomLabel": true,
-                                "value": "CodePostal",
-                                "label": "Code postal",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis",
-                                "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
-                                "componentProperties": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.CodePostal.labelColor",
-                                        "dataType": "STRING",
-                                        "value": "md:black",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.CodePostal.labelTextAlign",
-                                        "dataType": "STRING",
-                                        "value": "left",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.CodePostal.labelTypography",
-                                        "dataType": "STRING",
-                                        "value": "body-2",
-                                        "valueInterpreter": "LITERAL"
-                                    }
-                                ]
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.FDN_Pays",
-                                "_type": "FormField",
-                                "componentName": "semReferenceField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 1,
-                                "useCustomLabel": true,
                                 "value": "FDN_Pays",
                                 "label": "Pays",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse",
                                 "referencedEntity": "Batiments.entities.Pays.Pays",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.FDN_Pays.labelColor",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_Pays.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.FDN_Pays.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_Pays.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.FDN_Pays.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_Pays.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -9418,34 +9352,69 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.FDN_SecteurImmostat",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_ZoneImmostat",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 2,
+                                "posInParent": 4,
+                                "useCustomLabel": true,
+                                "value": "FDN_ZoneImmostat",
+                                "label": "Zone immostat",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse",
+                                "referencedEntity": "Batiments.entities.Pays.Pays",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_ZoneImmostat.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_ZoneImmostat.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_ZoneImmostat.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_SecteurImmostat",
+                                "_type": "FormField",
+                                "componentName": "semReferenceField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 5,
                                 "useCustomLabel": true,
                                 "value": "FDN_SecteurImmostat",
                                 "label": "Secteur immostat",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse",
                                 "referencedEntity": "Batiments.entities.SecteurImmostat.SecteurImmostat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.FDN_SecteurImmostat.labelColor",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_SecteurImmostat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.FDN_SecteurImmostat.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_SecteurImmostat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.FDN_SecteurImmostat.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_SecteurImmostat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -9453,34 +9422,69 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.FDN_QuartierParis",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_SousSecteurImmostat",
+                                "_type": "FormField",
+                                "componentName": "semReferenceField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 6,
+                                "useCustomLabel": true,
+                                "value": "FDN_SousSecteurImmostat",
+                                "label": "Sous secteur immostat",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse",
+                                "referencedEntity": "Batiments.entities.SousSecteurImmostat.SousSecteurImmostat",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_SousSecteurImmostat.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_SousSecteurImmostat.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_SousSecteurImmostat.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_QuartierParis",
                                 "_type": "FormField",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 3,
+                                "posInParent": 7,
                                 "useCustomLabel": true,
                                 "value": "FDN_QuartierParis",
                                 "label": "Quartier Paris libellé",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse",
                                 "referencedEntity": "Batiments.entities.QuartierParis.QuartierParis",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.FDN_QuartierParis.labelColor",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_QuartierParis.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.FDN_QuartierParis.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_QuartierParis.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionGauche.LocalisationImmeuble.BlocAdresseBis.FDN_QuartierParis.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionHaut.SectionDroit.LocalisationImmeuble.BlocAdresse.FDN_QuartierParis.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -10003,142 +10007,6 @@
                                     },
                                     {
                                         "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.CycleVieImmeuble.CycleVieImmeuble.DateLivraison.labelTypography",
-                                        "dataType": "STRING",
-                                        "value": "body-2",
-                                        "valueInterpreter": "LITERAL"
-                                    }
-                                ]
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.CertificationESG",
-                                "_type": "FormField",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 0,
-                                "useCustomLabel": true,
-                                "value": "CertificationESG",
-                                "label": "Certification ESG",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications",
-                                "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
-                                "componentProperties": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.CertificationESG.labelColor",
-                                        "dataType": "STRING",
-                                        "value": "md:black",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.CertificationESG.labelTextAlign",
-                                        "dataType": "STRING",
-                                        "value": "left",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.CertificationESG.labelTypography",
-                                        "dataType": "STRING",
-                                        "value": "body-2",
-                                        "valueInterpreter": "LITERAL"
-                                    }
-                                ]
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.DateFinValidite",
-                                "_type": "FormField",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 1,
-                                "useCustomLabel": true,
-                                "value": "DateFinValidite",
-                                "label": "Date de fin de validité",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications",
-                                "valueDataType": "DATE",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
-                                "componentProperties": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.DateFinValidite.labelColor",
-                                        "dataType": "STRING",
-                                        "value": "md:black",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.DateFinValidite.labelTextAlign",
-                                        "dataType": "STRING",
-                                        "value": "left",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.DateFinValidite.labelTypography",
-                                        "dataType": "STRING",
-                                        "value": "body-2",
-                                        "valueInterpreter": "LITERAL"
-                                    }
-                                ]
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.PhaseCertification",
-                                "_type": "FormField",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 2,
-                                "useCustomLabel": true,
-                                "value": "PhaseCertification",
-                                "label": "Phase de certification",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications",
-                                "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
-                                "componentProperties": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.PhaseCertification.labelColor",
-                                        "dataType": "STRING",
-                                        "value": "md:black",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.PhaseCertification.labelTextAlign",
-                                        "dataType": "STRING",
-                                        "value": "left",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.PhaseCertification.labelTypography",
-                                        "dataType": "STRING",
-                                        "value": "body-2",
-                                        "valueInterpreter": "LITERAL"
-                                    }
-                                ]
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.NiveauCertification",
-                                "_type": "FormField",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 3,
-                                "useCustomLabel": true,
-                                "value": "NiveauCertification",
-                                "label": "Niveau de certification",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications",
-                                "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
-                                "componentProperties": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.NiveauCertification.labelColor",
-                                        "dataType": "STRING",
-                                        "value": "md:black",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.NiveauCertification.labelTextAlign",
-                                        "dataType": "STRING",
-                                        "value": "left",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.ESGcertifications.ESGcertifications.NiveauCertification.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -13154,7 +13022,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "Code || ' - ' || Libelle"
+                        "primaryTextExpression": "Libelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -14179,7 +14047,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "PhaseCode || ' - ' || PhaseLibelle"
+                        "primaryTextExpression": "PhaseLibelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -14632,7 +14500,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "PortefeuilleCode || ' - ' || PortefeuilleLibelle"
+                        "primaryTextExpression": "PortefeuilleLibelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -15085,7 +14953,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "QuartierParisCode || ' - ' || QuartierParisLibelle"
+                        "primaryTextExpression": "QuartierParisLibelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -15539,7 +15407,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "RegimeJuridiqueCode || ' - ' || RegimeJuridiqueLibelle"
+                        "primaryTextExpression": "RegimeJuridiqueLibelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -15992,7 +15860,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "SecteurImmostatCode || ' - ' || SecteurImmostatLibelle"
+                        "primaryTextExpression": "SecteurImmostatLibelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -16419,7 +16287,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "SocieteAutreCode || ' - ' || SocieteAutreLibelle"
+                        "primaryTextExpression": "SocieteAutreLibelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -16846,7 +16714,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "SocieteProprietaireCode || ' - ' || SocieteProprietaireLibelle"
+                        "primaryTextExpression": "SocieteProprietaireLibelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -17299,7 +17167,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "SousSecteurImmostatCode || ' - ' || SousSecteurImmostatLibelle"
+                        "primaryTextExpression": "SousSecteurImmostatLibelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -17752,7 +17620,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "TypeBatimentCode"
+                        "primaryTextExpression": "TypeBatimentLibelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -19086,7 +18954,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "UsageLotCode || ' - ' || UsageLotLibelle"
+                        "primaryTextExpression": "UsageLotLibelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -19539,7 +19407,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "ZoneGeoCode"
+                        "primaryTextExpression": "ZoneGeoLibelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -19992,7 +19860,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "ZoneImmostatCode || ' - ' || ZoneImmostatLibelle"
+                        "primaryTextExpression": "ZoneImmostatLibelle"
                     }
                 ],
                 "dupsManagers": [],
