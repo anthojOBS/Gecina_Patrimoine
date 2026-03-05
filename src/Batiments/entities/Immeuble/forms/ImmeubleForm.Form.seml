@@ -6,7 +6,7 @@ default: true
 formTabs:
   - _type: FormTab
     _name: Immeuble
-    label: Fiche immeuble
+    label: Fiche
     documentationInterpreter: LITERAL
     visibleValue: "1"
     visibleValueInterpreter: LITERAL
@@ -180,13 +180,6 @@ formTabs:
             _name: SectionD2
             layoutDirection: COLUMN
             content:
-              - _type: FormSection
-                _name: BlocCarte
-                label: Carte
-                layoutDirection: COLUMN
-                visibleValue: "1"
-                visibleValueInterpreter: LITERAL
-                content:
                   - _type: ObjectField
                     _name: GoogleMaps
                     dataType: STRING
@@ -260,9 +253,7 @@ formTabs:
                     componentProperties:
                       sourceType: content
                       textTypography: body-1
-
-
-   
+  
       - _type: FormContainer
         _name: Sectiontrois
         layoutDirection: ROW
@@ -348,11 +339,91 @@ formTabs:
                   alignment: left
                   typography: body-2
                   color: md:black
-                  isVisible: IGH is not null
+                #  isVisible: IGH is not null
                 useCustomLabel: true
-                visibleValue: IGH is not null
+                #visibleValue: IGH is not null
                 dataType: BOOLEAN
 
+              - _type: TextField
+                _name: ERP
+                value: ERP
+                label: ERP
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                 # isVisible: IGH is not null
+                useCustomLabel: true
+               # visibleValue: IGH is not null
+                dataType: BOOLEAN
+              - _type: ReferenceField
+                _name: FDN_CategorieERP
+                value: FDN_CategorieERP
+                label: Catégorie ERP
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+                referencedEntity: Batiments.entities.CategorieERP.CategorieERP
+
+              - _type: TextField
+                _name: FlagAscenseur
+                value: FlagAscenseur
+                label: Statut ascenseur
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+
+              - _type: ReferenceField
+                _name: FDN_ModeChauffage
+                value: FDN_ModeChauffage
+                label: Mode chauffage
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+                referencedEntity: Batiments.entities.ModeChauffage.ModeChauffage
+
+              - _type: ReferenceField
+                _name: FDN_TypeEnergie
+                value: FDN_TypeEnergie
+                label: Type d'énergie
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+                referencedEntity: Batiments.entities.TypeEnergie.TypeEnergie
+
+              - _type: TextField
+                _name: CapaciteAccueil
+                value: CapaciteAccueil
+                label: Capacité d'accueil
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: INTEGER
+
+              - _type: TextField
+                _name: PosteTravail
+                value: PosteTravail
+                label: Poste de travail
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: INTEGER
 
           - _type: FormSection
             _name: GestionInterne
@@ -362,6 +433,17 @@ formTabs:
             visibleValueInterpreter: LITERAL
             labelWidth: 200px
             content:
+              - _type: ReferenceField
+                _name: FDN_OrgaResp
+                value: FDN_OrgaResp
+                label: Organisation responsable
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+                referencedEntity: Batiments.entities.OrganisationResponsable.OrganisationResponsable
               - _type: ReferenceField
                 _name: FDN_Portefeuille
                 value: FDN_Portefeuille
@@ -394,69 +476,159 @@ formTabs:
     visibleValueInterpreter: LITERAL
     displayFormTabAs: ICON_LABEL
     content:
-      - _type: FormSection
-        _name: CycleVieImmeuble
-        label: Cycle de vie immeuble
+      - _type: FormContainer
+        _name: ContainerCycleVie
         layoutDirection: COLUMN
-        visibleValue: "1"
-        visibleValueInterpreter: LITERAL
-        labelWidth: 200px
         content:
 
-          - _type: TextField
-            _name: DateAcquisition
-            value: DateAcquisition
-            label: Date d'acquisition
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: DATE
-          - _type: TextField
-            _name: DateDebutConstruction
-            value: DateDebutConstruction
-            label: Date de début de construction
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: DATE
-          - _type: TextField
-            _name: DateFinConstruction
-            value: DateFinConstruction
-            label: Date de fin de construction
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: DATE
-          - _type: TextField
-            _name: DateLivraison
-            value: DateLivraison
-            label: Date de livraison
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: DATE
-          - _type: TextField
-            _name: FlagRestructuration
-            value: FlagRestructuration
-            label: Restructuration en cours
-            labelProperties:
-              alignment: left
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: BOOLEAN
+          - _type: FormSection
+            _name: Phase
+            label: Phase
+            layoutDirection: COLUMN
+            visibleValue: "1"
+            visibleValueInterpreter: LITERAL
+            labelWidth: 200px
+            content:
+              - _type: ReferenceField
+                _name: FDN_Phase
+                value: FDN_Phase
+                label: Phase
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+                referencedEntity: Batiments.entities.Phase.Phase
+
+              - _type: TextField
+                _name: DateDebPhase
+                value: DateDebPhase
+                label: Date début phase
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: DATE
+
+          - _type: FormSection
+            _name: Restructuration
+            label: Restructuration
+            layoutDirection: COLUMN
+            visibleValue: "1"
+            visibleValueInterpreter: LITERAL
+            labelWidth: 200px
+            content:
+              - _type: TextField
+                _name: FlagRestructuration
+                value: FlagRestructuration
+                label: Restructuration en cours
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+
+              - _type: TextField
+                _name: DateRestructuration
+                value: DateRestructuration
+                label: Date dernière restructuration
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: DATE
+
+          - _type: FormSection
+            _name: AcquisitionCession
+            label: Acquisition/Cession
+            layoutDirection: COLUMN
+            visibleValue: "1"
+            visibleValueInterpreter: LITERAL
+            labelWidth: 200px
+            content:
+
+              - _type: TextField
+                _name: DateAcquisition
+                value: DateAcquisition
+                label: Date d'acquisition
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: DATE
+              - _type: TextField
+                _name: DateVente
+                value: DateVente
+                label: Date vente
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: DATE
+
+          - _type: FormSection
+            _name: Construction
+            label: Construction
+            layoutDirection: COLUMN
+            visibleValue: "1"
+            visibleValueInterpreter: LITERAL
+            labelWidth: 200px
+            content:
+              - _type: ReferenceField
+                _name: FDN_PeriodeConstruction
+                value: FDN_PeriodeConstruction
+                label: Période de construction
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+                referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
+              - _type: TextField
+                _name: DateDebutConstruction
+                value: DateDebutConstruction
+                label: Date de début de construction
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: DATE
+              - _type: TextField
+                _name: DateFinConstruction
+                value: DateFinConstruction
+                label: Date de fin de construction
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: DATE
+              - _type: TextField
+                _name: DateLivraison
+                value: DateLivraison
+                label: Date de livraison
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: DATE
+
 
 
   - _type: FormTab
@@ -499,8 +671,6 @@ formTabs:
             useCustomLabel: true
             dataType: STRING
             referencedEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
-
-
       - _type: FormSection
         _name: SocietesProprietaires
         label: Sociétés Propriétaires
@@ -521,7 +691,7 @@ formTabs:
             enableUserDefinedSort: true
             transitionPath: RelImmSoc
             sortExpression: 1 DESC
-            filter: 1=1
+            filter:  1=1
             targetEntity: Batiments.entities.RelImmSoc.RelImmSoc
 
       - _type: FormSection

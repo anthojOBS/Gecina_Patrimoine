@@ -1,0 +1,33 @@
+_package: Batiments.references
+_type: Reference
+_name: ImmeubleToPeriodeConstruction
+label: Immeuble Periode Construction
+description: Référence Immeuble vers PeriodeConstruction
+fromRoleDocumentation: |
+  Cette référence détermine la **PeriodeConstruction** d'un **Immeuble** dans son cycle de vie.
+  La PeriodeConstruction indique l'état d'avancement du projet immobilier (en construction, livré, etc.).
+physicalName: IMMEUBLE_PERIODECONST_REF
+
+fromEntity: Batiments.entities.Immeuble.Immeuble
+fromRoleLabel: Immeuble
+fromRoleName: Immeuble
+fromRolePluralLabel: Immeuble
+
+toEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
+toRoleLabel: Periode Construction
+toRoleName: PeriodeConstruction
+toRolePhysicalName: PERIODECONSTRUCTION_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: La PeriodeConstruction est obligatoire pour un immeuble
+brokenValidationLabel: La Periode Construction sélectionnée est invalide pour cet immeuble
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: PeriodeConstruction
+  label: PeriodeConstruction
+  physicalName: PERIODECONSTRUCTION_ID
+  searchable: true
+  entity: Batiments.entities.Immeuble.Immeuble

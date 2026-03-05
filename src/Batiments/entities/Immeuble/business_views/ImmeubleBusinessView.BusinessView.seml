@@ -86,7 +86,7 @@ rootBusinessViewEntity:
 
 
         referenceAttributeNavigationConfigs:
-        - formField: Batiments.entities.Batiment.forms.BatimentForm.Batiment.SectionHaut.SectionGauche.IdentiteBatiment.FDN_Immeuble
+        - formField: Batiments.entities.Batiment.forms.BatimentForm.Batiment.SectionHaut.IdentiteBatiment.FDN_Immeuble
           navigationMode: BUSINESS_OBJECT_VIEW
           businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
           form: Batiments.entities.Immeuble.forms.ImmeubleForm

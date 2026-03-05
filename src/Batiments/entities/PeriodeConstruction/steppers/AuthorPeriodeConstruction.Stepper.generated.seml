@@ -1,0 +1,33 @@
+_package: Batiments.entities.PeriodeConstruction.steppers
+_type: Stepper
+_name: AuthorPeriodeConstruction
+entity:  Batiments.entities.PeriodeConstruction.PeriodeConstruction
+label: Période de construction
+rootStep:
+  _type: CollectionStep
+  _name: PeriodeConstructions
+  label: Période de construction
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.PeriodeConstruction.collection_views.PeriodeConstructionCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: PeriodeConstruction
+      label: PeriodeConstruction
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.PeriodeConstruction.forms.PeriodeConstructionForm.PeriodeConstruction

@@ -463,10 +463,17 @@ rootFolder:
         description: Importer Lot depuis un fichier
       - _type: ImportDataAppAction
         _name: ImportSociete
-        label: Importer Societés 
+        label: Importer relation Societés & Immeubles
         imageAlign: MIDDLE_CENTER
         imageMode: FIT
         importAction: Batiments.entities.RelImmSoc.action_sets.RelImmSocActionSet.ImportAuthorRelImmSoc
         description: Importer Société depuis un fichier
-
+      - _type: ImportDataAppAction
+        _name: ImportSocieteBatiment
+        label: Importer relation Societés & Bâtiment
+        imageAlign: MIDDLE_CENTER
+        imageMode: FIT
+        importAction: Batiments.entities.RelBatSoc.action_sets.RelBatSocActionSet.ImportAuthorRelBatSoc
+        description: Importer Société depuis un fichier
+        
 applicationTitle: Référentiel Patrimoine

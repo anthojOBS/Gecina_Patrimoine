@@ -1,0 +1,35 @@
+_package: Batiments.entities.PeriodeConstruction.collection_views
+_type: CollectionView
+_name: PeriodeConstructionCollectionView
+entity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
+default: true
+displayCard: Batiments.entities.PeriodeConstruction.display_cards.PeriodeConstructionDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Lot
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: TextColumn
+    _name: PeriodeConstruction
+    value: PeriodeConstruction
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: LibellePeriodeConstruction
+    value: LibellePeriodeConstruction
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+ 

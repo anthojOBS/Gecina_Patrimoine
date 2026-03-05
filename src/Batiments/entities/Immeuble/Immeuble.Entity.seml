@@ -112,6 +112,15 @@ attributes:
     mandatory: false
 
   - _type: EntityAttribute
+    _name: DateVente
+    label: Date vente
+    physicalName: DATE_VENTE
+    dataType: Date
+    mandatory: false
+
+
+
+  - _type: EntityAttribute
     _name: DateDebutConstruction
     label: Date de début de construction
     physicalName: DATE_DEBUT_CONSTRUCTION
@@ -139,6 +148,13 @@ attributes:
     dataType: Date
     mandatory: false
 
+  - _type: EntityAttribute
+    _name: DateDebPhase
+    label: Date début phase
+    physicalName: DATE_DEBUT_PHASE
+    dataType: Date
+    mandatory: false
+
 
   - _type: EntityAttribute
     _name: FlagAscenseur
@@ -147,7 +163,6 @@ attributes:
     dataType: Boolean
     mandatory: false
 
-  # référence
   - _type: EntityAttribute
     _name: SecteurGeographique
     label: Secteur géographique
@@ -156,6 +171,21 @@ attributes:
     length: 150
     mandatory: false
 
+  - _type: EntityAttribute
+    _name: CapaciteAccueil
+    label: Capacité d'accueil
+    physicalName: CAPACITE_ACCUEIL
+    dataType: String
+    length: 150
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: PosteTravail
+    label: Postes de travail
+    physicalName: POSTE_TRAVAIL
+    dataType: String
+    length: 150
+    mandatory: false
 
   # référence
   - _type: EntityAttribute
@@ -221,12 +251,18 @@ attributes:
   # booleen
   - _type: EntityAttribute
     _name: IGH
-    label: IGH 
+    label: Statut IGH 
     physicalName: IGH
     dataType: Boolean
     mandatory: false
-    
-  # booleen
+
+  - _type: EntityAttribute
+    _name: ERP
+    label: Statut ERP 
+    physicalName: STATUT_ERP
+    dataType: Boolean
+    mandatory: false  
+
   - _type: EntityAttribute
     _name: FlagRestructuration
     label: Flag Restructuration

@@ -1,0 +1,14 @@
+_package: Batiments.entities.RelBatSoc.dups_managers
+_type: DupsManager
+_name: ManageDuplicatesOnRelBatSoc
+entity: Batiments.entities.RelBatSoc.RelBatSoc
+enableMasterValuePicking: true
+displayCard: Batiments.entities.RelBatSoc.display_cards.RelBatSocDisplayCard
+formTab: Batiments.entities.RelBatSoc.forms.RelBatSocForm.RelBatSoc
+collectionView: Batiments.entities.RelBatSoc.collection_views.RelBatSocCollectionView
+checkoutCustomSortEnabled: false
+checkoutUserDefinedSortEnabled: true
+checkoutDefaultDisplayType: TABLE
+checkoutDisplayGridAllowed: false
+checkoutDisplayListAllowed: true
+checkoutDisplayTableAllowed: true

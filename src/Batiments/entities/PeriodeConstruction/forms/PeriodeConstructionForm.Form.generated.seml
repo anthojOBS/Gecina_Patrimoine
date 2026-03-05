@@ -1,0 +1,32 @@
+_package: Batiments.entities.PeriodeConstruction.forms
+_type: Form
+_name: PeriodeConstructionForm
+entity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
+default: true
+formTabs:
+  - _type: FormTab
+    _name: PeriodeConstruction
+    label: PeriodeConstruction
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: TextField
+        _name: PeriodeConstruction
+        value: PeriodeConstruction
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: LibellePeriodeConstruction
+        value: LibellePeriodeConstruction
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

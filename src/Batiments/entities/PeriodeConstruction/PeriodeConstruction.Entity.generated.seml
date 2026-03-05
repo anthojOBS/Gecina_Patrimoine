@@ -1,0 +1,35 @@
+_package: Batiments.entities.PeriodeConstruction
+_type: Entity
+_name: PeriodeConstruction
+label: Période de construction
+pluralLabel: Période de construction
+entityType: BASIC
+physicalTableName: PERIODE_CONSTRUCTION
+description: Période de construction
+documentation: |
+  Période de construction
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: PeriodeConstruction
+    label: Période de construction
+    physicalName: PERIODE_CONSTRUCTION
+    dataType: String
+    length: 50
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: LibellePeriodeConstruction
+    label: Libellé Période de construction
+    physicalName: LIB_PERIODE_CONSTRUCTION
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
+
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.PeriodeConstruction.PeriodeConstruction.PeriodeConstruction

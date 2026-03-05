@@ -1,0 +1,24 @@
+_package: Batiments.entities.RelBatSoc.forms
+_type: Form
+_name: RelBatSocForm
+entity: Batiments.entities.RelBatSoc.RelBatSoc
+default: true
+formTabs:
+  - _type: FormTab
+    _name: RelBatSoc
+    label: RelBatSoc 
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: IdField
+        _name: RelBatSocCode
+        value: RelBatSocCode
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+          alignment: left

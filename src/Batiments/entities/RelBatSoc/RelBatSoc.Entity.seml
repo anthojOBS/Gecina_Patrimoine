@@ -1,0 +1,54 @@
+_package: Batiments.entities.RelBatSoc
+_type: Entity
+_name: RelBatSoc
+label: RelBatSoc
+pluralLabel: RelBatSoc
+entityType: FUZZY_MATCHED
+physicalTableName: REL_BATIMENT_SOC
+iconUrl: images://mdi/floor-plan.svg
+description: ""
+documentation: ""
+historizeGolden: true
+historizeMaster: true
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: RelBatSocCode
+    label: RelBatSoc Code
+    physicalName: REL_BAT_SOC_CODE
+    dataType: LongInteger
+    precision: 38
+    mandatory: true
+    searchable: true
+    
+sourceIdGeneration:
+  mode: MANUAL
+
+primaryKey: Batiments.entities.RelBatSoc.RelBatSoc.RelBatSocCode
+
+goldenIdGeneration:
+  mode: SEQUENCE
+  startWith: 1
+
+matcher:
+  _type: SemQLMatcher
+  _name: Matcher
+  description: BatimentSemQLMatcher
+  matchRules:
+    - _type: SemQLMatchRule
+      _name: NewRule
+      label: NewRuleLabel
+      condition:   Record1.RelBatSocCode = Record2.RelBatSocCode 
+      matchScore: 100
+      usingMatchOn: false
+  useTransitiveMatchScore: true
+  useMultiIterationGrouping: true
+  mergeThresholdNewGroup: 90
+  mergeThresholdMergingUnconfirmed: 90
+  mergeThresholdMergingConfirmed: 90
+  mergeThresholdMergingConfirmedWithUnconfirmed: 90
+  mergeThresholdMergingUnconfirmedWithNewMasters: 90
+  mergeThresholdMergingConfirmedWithNewMasters: 90
+  mergeThresholdRemergingPreviouslySplit: 100
+  autoConfirmGoldenThreshold: 99
+  autoConfirmSingletons: false

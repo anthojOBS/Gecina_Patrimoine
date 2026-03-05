@@ -109,6 +109,40 @@ rootBusinessViewEntity:
             collection: Batiments.entities.Lot.collection_views.LotCollectionView
 
 
+    - _type: BusinessViewTransition
+      _name: Lots_global
+      label: Lots global
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      # visibleInFormTabCondition: any Etage have (BatimentID IS NOT NULL)
+      # enableHierarchy: any Lot has (1 = 1)
+      # enableHierarchyInterpreter: SEMQL
+      enableHierarchy: '0'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: true
+      iconUrl: images://mdi/floor-plan.svg
+      transitionPath: Etage.Lot
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '0'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      pluralLabel: Lots
+      businessViewEntity: 
+        _type: BusinessViewEntity
+        _name: LotsGlobal
+        displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
+        displayRecordCount: ALWAYS
+        enableUserDefinedSort: true
+        gridAllowed: false
+        listAllowed: true
+        outlineVisible: false
+        overrideDefaultSort: false
+        tableAllowed: true
+        entity: Batiments.entities.Lot.Lot
+        form: Batiments.entities.Lot.forms.LotForm
+        collection: Batiments.entities.Lot.collection_views.LotCollectionView
+
+
     - _name: GoldenHistoryRecords
       _type: BusinessViewTransition
       displayFormTabAs: ICON_LABEL
@@ -155,31 +189,3 @@ rootBusinessViewEntity:
         listAllowed: true
         overrideDefaultSort: false
         tableAllowed: true
-
-    - _type: BusinessViewTransition
-      _name: MasterRecordsPrincipaux
-      displayFormTabAs: ICON_LABEL
-      useCustomLabel: false
-      enableHierarchyInterpreter: LITERAL
-      filter: BatimentPrincipal = '1'
-      iconUrl: images://mdi/puzzle.svg
-      label: Masters Records (Principaux)
-      pluralLabel: Masters Records (Principaux)
-      transitionType: FULLY_QUALIFIED
-      transitionPath:  MasterRecords
-      businessViewEntity:
-        _type: BusinessViewEntity
-        _name: MasterRecordPrincipaux
-        displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
-        entity: Batiments.entities.Batiment.Batiment
-        actionSet: Batiments.entities.Batiment.action_sets.BatimentActionSet
-        collection: Batiments.entities.Batiment.collection_views.BatimentCollectionView
-        form: Batiments.entities.Batiment.forms.BatimentForm
-        displayRecordCount: ALWAYS
-        outlineVisible: false
-        enableUserDefinedSort: true
-        gridAllowed: true
-        listAllowed: true
-        overrideDefaultSort: false
-        tableAllowed: true
-

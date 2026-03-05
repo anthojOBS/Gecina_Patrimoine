@@ -83,41 +83,6 @@ tableColumns:
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
-  - _type: TextColumn
-    _name: DateAcquisition
-    value: Immeuble.DateAcquisition
-    useCustomLabel: false
-    dataType: DATE
-    columnAlign: LEFT
-    visibleByDefault: true
-  - _type: TextColumn
-    _name: DateDebutConstruction
-    value: Immeuble.DateDebutConstruction
-    useCustomLabel: false
-    dataType: DATE
-    columnAlign: LEFT
-    visibleByDefault: true
-  - _type: TextColumn
-    _name: DateFinConstruction
-    value: Immeuble.DateFinConstruction
-    useCustomLabel: false
-    dataType: DATE
-    columnAlign: LEFT
-    visibleByDefault: true
-  - _type: TextColumn
-    _name: DateLivraison
-    value: Immeuble.DateLivraison
-    useCustomLabel: false
-    dataType: DATE
-    columnAlign: LEFT
-    visibleByDefault: true
-  - _type: TextColumn
-    _name: Proprietaire
-    value: Proprietaire
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
   - _type: CheckboxColumn
     _name: BatimentPrincipal
     value: BatimentPrincipal
@@ -167,25 +132,6 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
     referencedEntity: Batiments.entities.Usage.Usage
-
-  # - _type: ReferenceColumn
-  #   _name: FDN_SocieteProprietaire
-  #   value: FDN_SocieteProprietaire
-  #   useCustomLabel: false
-  #   dataType: STRING
-  #   columnAlign: LEFT
-  #   visibleByDefault: true
-  #   referencedEntity: Batiments.entities.SocieteProprietaire.SocieteProprietaire
-
-  # - _type: ReferenceColumn
-  #   _name: FDN_SocieteAutre
-  #   value: FDN_SocieteAutre
-  #   label: Société exploitante
-  #   useCustomLabel: true
-  #   dataType: STRING
-  #   columnAlign: LEFT
-  #   visibleByDefault: true
-  #   referencedEntity: Batiments.entities.SocieteAutre.SocieteAutre
 
   - _type: ReferenceColumn
     _name: FDN_Immeuble
