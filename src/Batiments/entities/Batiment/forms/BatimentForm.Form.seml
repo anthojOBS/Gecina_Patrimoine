@@ -6,7 +6,7 @@ default: true
 formTabs:
   - _type: FormTab
     _name: Batiment
-    label: Fiche
+    label: Fiche bâtiment
     documentationInterpreter: LITERAL
     visibleValue: "1"
     visibleValueInterpreter: LITERAL
@@ -29,7 +29,7 @@ formTabs:
                   - _type: TextField
                     _name: IdentifiantsERP
                     value: IdentifiantsERP
-                    label: Numéro de bâtiment
+                    label: Numéro bâtiment
                     labelProperties:
                       alignment: left
                       typographyValueInterpreter: LITERAL
@@ -174,6 +174,27 @@ formTabs:
                       referencedEntity: Batiments.entities.Usage.Usage
 
 
+          # Usage
+              - _type: FormSection
+                _name: Caracteristiques
+                label: Caractéristiques générales
+                layoutDirection: COLUMN
+                visibleValue: '1'
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
+                  - _type: CheckboxField
+                    _name: FlagAscenseur
+                    value: FlagAscenseur
+                    label: Statut ascenseur
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: BOOLEAN
+
           # Gestion interne
               - _type: FormSection
                 _name: GestionInterne
@@ -262,6 +283,38 @@ formTabs:
             dataType: DATE
 
       - _type: FormSection
+        _name: AcquisitionCession
+        label: Acquisition/Cession
+        layoutDirection: COLUMN
+        visibleValue: "1"
+        visibleValueInterpreter: LITERAL
+        labelWidth: 200px
+        content:
+
+              - _type: TextField
+                _name: DateAcquisition
+                value: Immeuble.DateAcquisition
+                label: Date acquisition
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: DATE
+              - _type: TextField
+                _name: DateVente
+                value: Immeuble.DateVente
+                label: Date vente
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: DATE
+
+      - _type: FormSection
         _name: Construction
         label: Construction
         layoutDirection: COLUMN
@@ -283,7 +336,7 @@ formTabs:
               - _type: TextField
                 _name: DateDebutConstruction
                 value: Immeuble.DateDebutConstruction
-                label: Date de début de construction
+                label: Date début construction
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -294,7 +347,7 @@ formTabs:
               - _type: TextField
                 _name: DateFinConstruction
                 value: Immeuble.DateFinConstruction
-                label: Date de fin de construction
+                label: Date fin construction
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -305,7 +358,7 @@ formTabs:
               - _type: TextField
                 _name: DateLivraison
                 value: Immeuble.DateLivraison
-                label: Date de livraison
+                label: Date livraison
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -315,42 +368,11 @@ formTabs:
                 dataType: DATE
 
 
-
-      - _type: FormSection
-        _name: AcquisitionCession
-        label: Acquisition/Cession
-        layoutDirection: COLUMN
-        visibleValue: "1"
-        visibleValueInterpreter: LITERAL
-        labelWidth: 200px
-        content:
-
-              - _type: TextField
-                _name: DateAcquisition
-                value: Immeuble.DateAcquisition
-                label: Date d'acquisition
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
-              - _type: TextField
-                _name: DateVente
-                value: Immeuble.DateVente
-                label: Date vente
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
+  
 
   - _type: FormTab
     _name: FiscaliteJuridique
-    label: Fiscalité et juridique
+    label: Juridique et propriété
     iconUrl: images://mdi/bank.svg
     documentationInterpreter: LITERAL
     visibleValue: "1"
@@ -358,17 +380,17 @@ formTabs:
     displayFormTabAs: ICON_LABEL
     content:
       - _type: FormSection
-        _name: Fiscalite
-        label: Fiscalité
+        _name: Juridique
+        label: Juridique
         layoutDirection: COLUMN
-        visibleValue: '1'
+        visibleValue: "1"
         visibleValueInterpreter: LITERAL
-        labelWidth: 200px
+        # labelWidth: 200px
         content:
           - _type: TextField
-            _name: FiscaliteCible
+            _name: FDN_FiscaliteCible
             value: Immeuble.FDN_FiscaliteCible
-            label: Fiscalite Cible
+            label: Régime TVA
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL
@@ -376,14 +398,6 @@ formTabs:
               color: md:black
             useCustomLabel: true
             dataType: STRING
-      - _type: FormSection
-        _name: Juridique
-        label: Juridique
-        layoutDirection: COLUMN
-        visibleValue: '1'
-        visibleValueInterpreter: LITERAL
-        labelWidth: 200px
-        content:
           - _type: TextField
             _name: Juridique
             value: Immeuble.FDN_RegimeJuridique
@@ -396,3 +410,48 @@ formTabs:
             useCustomLabel: true
             dataType: STRING
             referencedEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
+      - _type: FormSection
+        _name: SocietesProprietaires
+        label: Société propriétaire
+        layoutDirection: COLUMN
+        visibleValue: "1"
+        visibleValueInterpreter: LITERAL
+        # labelWidth: 200px
+        content:
+          - _type: FormCollection
+            _name: SocietesProprietaires
+            label: Société propriétaire
+            useCustomLabel: true
+            collection: Batiments.entities.RelBatSoc.collection_views.Societe
+            tableAllowed: true
+            listAllowed: false
+            gridAllowed: false
+            displayRecordCount: ALWAYS
+            enableUserDefinedSort: true
+            transitionPath: RelBatSoc
+            sortExpression: 1 DESC
+            filter:  1=1
+            targetEntity: Batiments.entities.RelBatSoc.RelBatSoc
+
+      - _type: FormSection
+        _name: SocietesExploitantes
+        label: Société exploitante
+        layoutDirection: COLUMN
+        visibleValue: "1"
+        visibleValueInterpreter: LITERAL
+        labelWidth: 200px
+        content:
+          - _type: FormCollection
+            _name: SocietesExploitante
+            label: Société exploitante
+            useCustomLabel: true
+            collection: Batiments.entities.RelBatSoc.collection_views.Societe
+            tableAllowed: true
+            listAllowed: false
+            gridAllowed: false
+            displayRecordCount: ALWAYS
+            enableUserDefinedSort: true
+            transitionPath: RelBatSoc
+            sortExpression: 1 DESC
+            filter: 1=1
+            targetEntity: Batiments.entities.RelBatSoc.RelBatSoc

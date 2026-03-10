@@ -1,0 +1,16 @@
+_package: Batiments.entities.Societe.display_cards
+_type: DisplayCard
+_name: SocieteDisplayCard
+entity: Batiments.entities.Societe.Societe
+default: true
+primaryTextExpression:  SocieteLibelle
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT

@@ -1,0 +1,34 @@
+_package: Batiments.entities.Societe.collection_views
+_type: CollectionView
+_name: SocieteCollectionView
+entity: Batiments.entities.Societe.Societe
+default: true
+displayCard: Batiments.entities.Societe.display_cards.SocieteDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Société
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: IdColumn
+    _name: SocieteCode
+    value: SocieteCode
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: SocieteLibelle
+    value: SocieteLibelle
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true

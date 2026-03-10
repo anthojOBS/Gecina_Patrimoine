@@ -1,0 +1,16 @@
+_package: Batiments.entities.TypologieLot.display_cards
+_type: DisplayCard
+_name: TypologieLotDisplayCard
+entity: Batiments.entities.TypologieLot.TypologieLot
+default: true
+primaryTextExpression: Libelle
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT

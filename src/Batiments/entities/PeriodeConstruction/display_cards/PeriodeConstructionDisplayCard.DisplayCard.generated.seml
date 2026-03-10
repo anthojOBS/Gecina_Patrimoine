@@ -3,8 +3,7 @@ _type: DisplayCard
 _name: PeriodeConstructionDisplayCard
 entity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
 default: true
-primaryTextExpression: PeriodeConstruction
-secondaryTextExpression: LibellePeriodeConstruction
+primaryTextExpression: LibellePeriodeConstruction
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

@@ -1,0 +1,63 @@
+_package: Batiments.entities.GenreLot.action_sets
+_type: ActionSet
+_name: GenreLotActionSet
+entity: Batiments.entities.GenreLot.GenreLot
+label: Genre Lot Action Set
+defaultActionSet: true
+actions:
+  - _type: CreateAction
+    _name: CreateAuthorGenreLots
+    label: Create
+    useCustomLabel: true
+    stepper: Batiments.entities.GenreLot.steppers.AuthorGenreLots
+    createMultiple: false
+    createdRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: EditAction
+    _name: EditAuthorGenreLots
+    label: Edit
+    useCustomLabel: true
+    stepper: Batiments.entities.GenreLot.steppers.AuthorGenreLots
+    multipleSelectionAllowed: true
+    availableForGoldenData: true
+    availableForMasterData: false
+    availableForErrorData: true
+    waitDialogEnabled: false
+  - _type: MassUpdateAction
+    _name: MassUpdateAuthorGenreLots
+    label: Mass Update
+    useCustomLabel: true
+    stepper: Batiments.entities.GenreLot.steppers.AuthorGenreLots
+    availableForGoldenData: true
+    availableForErrorData: true
+    availableForMasterData: false
+    waitDialogEnabled: false
+  - _type: DeleteAction
+    _name: Delete
+    label: Delete
+    useCustomLabel: true
+    multipleSelectionAllowed: true
+    deleteType: HARD_DELETE
+    waitDialogEnabled: false
+    availableForGoldenData: true
+    availableForMasterData: false
+  - _type: ExportAction
+    _name: Export
+    label: Export
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: ImportAuthorGenreLots
+    label: Import
+    useCustomLabel: true
+    importMode: CREATE_AND_UPDATE
+    stepper: Batiments.entities.GenreLot.steppers.AuthorGenreLots
+    importedRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: BrowseGraphAction
+    _name: BrowseGraph
+    label: Browse Graph
+    useCustomLabel: true
+    waitDialogEnabled: false

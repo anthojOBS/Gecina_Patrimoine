@@ -1,0 +1,34 @@
+_package: Batiments.entities.RaisonNonLouable.collection_views
+_type: CollectionView
+_name: RaisonNonLouableCollectionView
+entity: Batiments.entities.RaisonNonLouable.RaisonNonLouable
+default: true
+displayCard: Batiments.entities.RaisonNonLouable.display_cards.RaisonNonLouableDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Lot
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: TextColumn
+    _name: RaisonNonLouable
+    value: RaisonNonLouable
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: LibelleRaisonNonLouable
+    value: LibelleRaisonNonLouable
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true

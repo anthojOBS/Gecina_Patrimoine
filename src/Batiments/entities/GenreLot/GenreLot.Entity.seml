@@ -1,0 +1,38 @@
+_package: Batiments.entities.GenreLot
+_type: Entity
+_name: GenreLot
+label: Genre de Lot
+pluralLabel: Genres de Lot
+entityType: BASIC
+physicalTableName: GENRE_LOT
+iconUrl: images://mdi/home-city.svg
+description: ""
+documentation: |
+  Le **Genre de Lot** caractérise la nature d'un lot selon sa classification immobilière.
+  
+  Le genre de Lot permet de distinguer les différentes catégories d'actifs (commercial, résidentiel, mixte, etc.) et facilite la segmentation du patrimoine.
+  
+  Cette entité est importante pour l'analyse financière et la gestion locative du portefeuille.
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: GenreLotCode
+    label: Code Genre Lot
+    physicalName: GENRE_LOT_ID
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: GenreLotLibelle
+    label: Libellé Genre Lot
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.GenreLot.GenreLot.GenreLotCode

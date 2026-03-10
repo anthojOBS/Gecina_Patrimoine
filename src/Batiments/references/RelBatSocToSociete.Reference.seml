@@ -13,11 +13,11 @@ physicalName: REL_BATIMENT_SOC_REF
 fromEntity: Batiments.entities.RelBatSoc.RelBatSoc
 fromRoleLabel: RelBatSoc
 fromRoleName: RelBatSoc
-fromRolePluralLabel: RelBatSocs
+fromRolePluralLabel: RelBatSoc
 
-toEntity: Batiments.entities.SocieteAutre.SocieteAutre
-toRoleLabel: SocieteAutre
-toRoleName: SocieteAutre
+toEntity: Batiments.entities.Societe.Societe
+toRoleLabel: Societe
+toRoleName: Societe
 toRolePhysicalName: SOCIETE_ID
 
 oneToMany: false
@@ -28,7 +28,7 @@ brokenValidationLabel: L'immeuble sélectionné est invalide pour cette sociét�
 
 foreignAttribute:
   _type: ForeignAttribute
-  _name: SocieteAutre
+  _name: Societe
   label: Société
   physicalName: SOCIETE_ID
   searchable: true

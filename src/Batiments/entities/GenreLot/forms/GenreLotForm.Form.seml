@@ -1,0 +1,33 @@
+_package: Batiments.entities.GenreLot.forms
+_type: Form
+_name: GenreLotForm
+entity: Batiments.entities.GenreLot.GenreLot
+default: true
+formTabs:
+  - _type: FormTab
+    _name: GenreLot
+    label: Genre Lot
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: IdField
+        _name: GenreLotCode
+        value: GenreLotCode
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+          alignment: left
+      - _type: TextField
+        _name: GenreLotLibelle
+        value: GenreLotLibelle
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

@@ -42,7 +42,7 @@ attributes:
     mandatory: false
   - _type: EntityAttribute
     _name: Libelle
-    label: Libellé
+    label: Libellé lot
     physicalName: LIBELLE
     dataType: String
     length: 255
@@ -56,13 +56,6 @@ attributes:
     length: 150
     mandatory: false
   - _type: EntityAttribute
-    _name: Proprietaire
-    label: Locataire
-    physicalName: PROPRIETAIRE
-    dataType: String
-    length: 150
-    mandatory: false
-  - _type: EntityAttribute
     _name: SuperficieUtile
     label: Superficie Utile
     physicalName: SUPERFICIE_UTILE
@@ -70,6 +63,14 @@ attributes:
     precision: 15
     scale: 2
     mandatory: false
+  - _type: EntityAttribute
+    _name: SuperficieUtileSansQP
+    label: Superficie Utile sans QP
+    physicalName: SUPERFICIE_UTILE_SANS_QP
+    dataType: Decimal
+    precision: 15
+    scale: 2
+    mandatory: false    
   - _type: EntityAttribute
     _name: SuperficieUtileQP
     label: Superficie Utile avec QP
@@ -86,15 +87,95 @@ attributes:
     precision: 15
     scale: 2
     mandatory: false
+  - _type: EntityAttribute
+    _name: IdentifiantPhysique
+    label: Identifiant physique
+    physicalName: IDENTIFIANT_PHYSIQUE
+    dataType: String
+    length: 150
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: DateDebUsage
+    label: Date début usage
+    physicalName: DATE_DEB_USAGE
+    dataType: Date
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: DateDebStatut
+    label: Date début statut
+    physicalName: DATE_DEB_STATUT
+    dataType: Date
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: StatutLouable
+    label: Statut louable
+    physicalName: STATUT_LOUABLE
+    dataType: Boolean
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: StatutSousLocation
+    label: Statut sous-location
+    physicalName: STATUT_SOUS_LOCATION
+    dataType: Boolean
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: StatutLogementSocial
+    label: Statut logement social
+    physicalName: STATUT_LOGEMENT_SOCIAL
+    dataType: Boolean
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: StatutMeuble
+    label: Statut meuble
+    physicalName: STATUT_MEUBLE
+    dataType: Boolean
+    mandatory: false
 
 
-  # - _type: EntityAttribute
-  #   _name: DestinationReelle
-  #   label: DestinationReelle
-  #   physicalName: DESTINATION_REELLE
-  #   dataType: String
-  #   length: 150
-  #   mandatory: false
+  - _type: EntityAttribute
+    _name: StatutPMR
+    label: Statut PMR
+    physicalName: STATUT_PMR
+    dataType: Boolean
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: StatutCopropriete
+    label: Statut copropriété
+    physicalName: STATUT_COPROPRIOETE
+    dataType: Boolean
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: IdentifiantFiscal
+    label: Identifiant Fiscal
+    physicalName: IDENTIFIANT_FISCAL
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: NumeroCopropriete
+    label: Numéro copropriété
+    physicalName: NUMERO_COPROPRIOETE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: DateRegimeTVA 
+    label: Date régime TVA
+    physicalName: DATE_REGIME_TVA
+    dataType: Date
+    mandatory: false
 
 sourceIdGeneration:
   mode: MANUAL

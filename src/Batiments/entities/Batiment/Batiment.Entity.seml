@@ -129,6 +129,13 @@ attributes:
     scale: 2 
     mandatory: false
     searchable: false
+    
+  - _type: EntityAttribute
+    _name: FlagAscenseur
+    label: Flag Ascenseur
+    physicalName: FLAG_ASCENSEUR
+    dataType: Boolean
+    mandatory: false
 
 sourceIdGeneration:
   mode: MANUAL

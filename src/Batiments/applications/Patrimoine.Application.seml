@@ -284,8 +284,8 @@ rootFolder:
           imageMode: FIT
           nbRecordsBadgeVisible: false         
         - _type: BrowseBusinessViewAction
-          _name: GenreBiens
-          businessView: Batiments.entities.GenreBien.business_views.GenreBienBusinessView
+          _name: GenreLots
+          businessView: Batiments.entities.GenreLot.business_views.GenreLotBusinessView
           imageAlign: MIDDLE_CENTER
           imageMode: FIT
           icon: images://mdi/home-city.svg
@@ -296,13 +296,6 @@ rootFolder:
           imageAlign: MIDDLE_CENTER
           imageMode: FIT
           icon: images://mdi/timeline-text.svg
-          nbRecordsBadgeVisible: false
-        - _type: BrowseBusinessViewAction
-          _name: NatureBiens
-          businessView: Batiments.entities.NatureBien.business_views.NatureBienBusinessView
-          imageAlign: MIDDLE_CENTER
-          imageMode: FIT
-          icon: images://mdi/home-city.svg
           nbRecordsBadgeVisible: false
         - _type: BrowseBusinessViewAction
           _name: OrganisationResponsable
@@ -340,6 +333,14 @@ rootFolder:
           icon: images://mdi/briefcase.svg
           nbRecordsBadgeVisible: false
 
+
+        - _type: BrowseBusinessViewAction
+          _name: RaisonNonLouable
+          businessView: Batiments.entities.RaisonNonLouable.business_views.RaisonNonLouableBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          nbRecordsBadgeVisible: false
+
         - _type: BrowseBusinessViewAction
           _name: RegimeJuridiques
           businessView: Batiments.entities.RegimeJuridique.business_views.RegimeJuridiqueBusinessView
@@ -362,14 +363,8 @@ rootFolder:
           nbRecordsBadgeVisible: false
 
         - _type: BrowseBusinessViewAction
-          _name: SocieteAutre
-          businessView: Batiments.entities.SocieteAutre.business_views.SocieteAutreBusinessView
-          imageAlign: MIDDLE_CENTER
-          imageMode: FIT
-          nbRecordsBadgeVisible: false
-        - _type: BrowseBusinessViewAction
-          _name: SocieteProprietaire
-          businessView: Batiments.entities.SocieteProprietaire.business_views.SocieteProprietaireBusinessView
+          _name: Societe
+          businessView: Batiments.entities.Societe.business_views.SocieteBusinessView
           imageAlign: MIDDLE_CENTER
           imageMode: FIT
           nbRecordsBadgeVisible: false
@@ -396,7 +391,13 @@ rootFolder:
           imageMode: FIT
           icon: images://mdi/office-building.svg
           nbRecordsBadgeVisible: false
-
+        - _type: BrowseBusinessViewAction
+          _name: TypologieLots
+          businessView: Batiments.entities.TypologieLot.business_views.TypologieLotBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/home-city.svg
+          nbRecordsBadgeVisible: false
         - _type: BrowseBusinessViewAction
           _name: Usage
           businessView: Batiments.entities.Usage.business_views.UsageBusinessView
@@ -475,5 +476,12 @@ rootFolder:
         imageMode: FIT
         importAction: Batiments.entities.RelBatSoc.action_sets.RelBatSocActionSet.ImportAuthorRelBatSoc
         description: Importer Société depuis un fichier
-        
+      # - _type: ImportDataAppAction
+      #   _name: ImportLotsBatiment
+      #   label: Importer relation Societés & Lots
+      #   imageAlign: MIDDLE_CENTER
+      #   imageMode: FIT
+      #   importAction: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet.ImportAuthorRelLotSoc
+      #   description: Importer Société depuis un fichier
+
 applicationTitle: Référentiel Patrimoine

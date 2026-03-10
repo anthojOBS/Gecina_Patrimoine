@@ -1,0 +1,63 @@
+_package: Batiments.entities.RaisonNonLouable.action_sets
+_type: ActionSet
+_name: RaisonNonLouableActionSet
+entity: Batiments.entities.RaisonNonLouable.RaisonNonLouable
+label: RaisonNonLouable Action Set
+defaultActionSet: true
+actions:
+  - _type: CreateAction
+    _name: CreateAuthorRaisonNonLouable
+    label: Create
+    useCustomLabel: true
+    stepper: Batiments.entities.RaisonNonLouable.steppers.AuthorRaisonNonLouable
+    createMultiple: false
+    createdRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: EditAction
+    _name: EditAuthorRaisonNonLouable
+    label: Edit
+    useCustomLabel: true
+    stepper: Batiments.entities.RaisonNonLouable.steppers.AuthorRaisonNonLouable
+    multipleSelectionAllowed: true
+    availableForGoldenData: true
+    availableForMasterData: false
+    availableForErrorData: true
+    waitDialogEnabled: false
+  - _type: MassUpdateAction
+    _name: MassUpdateAuthorRaisonNonLouable
+    label: Mass Update
+    useCustomLabel: true
+    stepper: Batiments.entities.RaisonNonLouable.steppers.AuthorRaisonNonLouable
+    availableForGoldenData: true
+    availableForErrorData: true
+    availableForMasterData: false
+    waitDialogEnabled: false
+  - _type: DeleteAction
+    _name: Delete
+    label: Delete
+    useCustomLabel: true
+    multipleSelectionAllowed: true
+    deleteType: HARD_DELETE
+    waitDialogEnabled: false
+    availableForGoldenData: true
+    availableForMasterData: false
+  - _type: ExportAction
+    _name: Export
+    label: Export
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: ImportAuthorRaisonNonLouable
+    label: Import
+    useCustomLabel: true
+    importMode: CREATE_AND_UPDATE
+    stepper: Batiments.entities.RaisonNonLouable.steppers.AuthorRaisonNonLouable
+    importedRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: BrowseGraphAction
+    _name: BrowseGraph
+    label: Browse Graph
+    useCustomLabel: true
+    waitDialogEnabled: false

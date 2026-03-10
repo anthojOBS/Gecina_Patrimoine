@@ -1,0 +1,33 @@
+_package: Batiments.entities.RaisonNonLouable
+_type: Entity
+_name: RaisonNonLouable
+label: Raison non louable
+pluralLabel: Raison non louable
+entityType: BASIC
+physicalTableName: RAISON_NON_LOUABLE
+description: Raison non louable
+documentation: Raison non louable
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: RaisonNonLouable
+    label: Raison non louable
+    physicalName: RAISON_NON_LOUABLE
+    dataType: String
+    length: 50
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: LibelleRaisonNonLouable
+    label: Libellé raison non louable
+    physicalName: LIB_RAISON_NON_LOUABLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.RaisonNonLouable.RaisonNonLouable.RaisonNonLouable

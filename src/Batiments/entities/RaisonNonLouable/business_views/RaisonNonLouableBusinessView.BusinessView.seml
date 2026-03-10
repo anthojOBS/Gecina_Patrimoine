@@ -1,0 +1,59 @@
+_package: Batiments.entities.RaisonNonLouable.business_views
+_type: BusinessView
+_name: RaisonNonLouableBusinessView
+entity: Batiments.entities.RaisonNonLouable.RaisonNonLouable
+rootLabel: Raison non louable
+rootPluralLabel: Raison non louable
+displayRootNodeAs: ICON_LABEL
+label: Raison non louable
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: RaisonNonLouable
+  displayCard: Batiments.entities.RaisonNonLouable.display_cards.RaisonNonLouableDisplayCard
+  entity: Batiments.entities.RaisonNonLouable.RaisonNonLouable
+  actionSet: Batiments.entities.RaisonNonLouable.action_sets.RaisonNonLouableActionSet
+  collection: Batiments.entities.RaisonNonLouable.collection_views.RaisonNonLouableCollectionView
+  form: Batiments.entities.RaisonNonLouable.forms.RaisonNonLouableForm
+  outlineVisible: false
+  displayRecordCount: ALWAYS
+  businessEntitySearchConfigs:
+    - _name: TextConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: TEXT
+    - _name: FormConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: BY_FORM
+    - _name: AdvancedConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: ADVANCED
+    - _name: SemqlConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: SEMQL
+  overrideDefaultSort: false
+  enableUserDefinedSort: true
+  listAllowed: true
+  tableAllowed: true
+  gridAllowed: true
+
+  transitions:
+    - _name: GoldenHistoryRecords
+      _type: BusinessViewTransition
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      enableHierarchy: '0'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: false
+      iconUrl: images://mdi/history.svg
+      label: History
+      pluralLabel: History
+      transitionPath: GoldenHistoryRecords
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '1'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      businessViewEntity: 
+        _type: BusinessViewEntityReference
+        ref: Batiments.entities.RaisonNonLouable.business_views.RaisonNonLouableBusinessView.RaisonNonLouable
+      filter: 1 = 1
+enableHierarchyView: false
+useHierarchyOnOpen: false

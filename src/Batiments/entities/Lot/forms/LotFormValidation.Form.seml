@@ -80,17 +80,6 @@ formTabs:
                   typography: body-2
                   color: md:black
               - _type: TextField
-                _name: ProprietaireGolden
-                value: GoldenRecord.Proprietaire
-                useCustomLabel: false
-                dataType: STRING
-                authoringModeValueInterpreter: LITERAL
-                authoringMode: force_read_only
-                labelProperties:
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-              - _type: TextField
                 _name: SuperficieGolden
                 value: GoldenRecord.SuperficieUtile
                 useCustomLabel: false
@@ -114,11 +103,11 @@ formTabs:
                   typography: body-2
                   color: md:black
               - _type: ReferenceField
-                _name: FDN_GenreBienGolden
-                value: FDN_GenreBien
+                _name: FDN_GenreLotGolden
+                value: FDN_GenreLot
                 useCustomLabel: false
                 dataType: STRING
-                referencedEntity: Batiments.entities.GenreBien.GenreBien
+                referencedEntity: Batiments.entities.GenreLot.GenreLot
                 authoringModeValueInterpreter: LITERAL
                 authoringMode: force_read_only
                 labelProperties:
@@ -217,18 +206,7 @@ formTabs:
                 componentProperties:
                   contentBackgroundColorValueInterpreter: SEMQL
                   contentBackgroundColor: case when Usage != GoldenRecord.Usage or (GoldenRecord.Usage is null and Usage is not null) then 'css:yellow' else 'css:white' end
-              - _type: TextField
-                _name: Proprietaire
-                value: Proprietaire
-                useCustomLabel: false
-                dataType: STRING
-                labelProperties:
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                componentProperties:
-                  contentBackgroundColorValueInterpreter: SEMQL
-                  contentBackgroundColor: case when Proprietaire != GoldenRecord.Proprietaire or (GoldenRecord.Proprietaire is null and Proprietaire is not null) then 'css:yellow' else 'css:white' end
+              
               - _type: TextField
                 _name: SuperficieUtile
                 value: SuperficieUtile
@@ -255,18 +233,18 @@ formTabs:
                   contentBackgroundColorValueInterpreter: SEMQL
                   contentBackgroundColor: case when FDN_Etage != GoldenRecord.FDN_Etage or (GoldenRecord.FDN_Etage is null and FDN_Etage is not null) then 'css:yellow' else 'css:white' end
               - _type: ReferenceField
-                _name: FDN_GenreBien
-                value: FDN_GenreBien
+                _name: FDN_GenreLot
+                value: FDN_GenreLot
                 useCustomLabel: false
                 dataType: STRING
-                referencedEntity: Batiments.entities.GenreBien.GenreBien
+                referencedEntity: Batiments.entities.GenreLot.GenreLot
                 labelProperties:
                   typographyValueInterpreter: LITERAL
                   typography: body-2
                   color: md:black
                 componentProperties:
                   contentBackgroundColorValueInterpreter: SEMQL
-                  contentBackgroundColor: case when FDN_GenreBien != GoldenRecord.FDN_GenreBien or (GoldenRecord.FDN_GenreBien is null and FDN_GenreBien is not null) then 'css:yellow' else 'css:white' end
+                  contentBackgroundColor: case when FDN_GenreLot != GoldenRecord.FDN_GenreLot or (GoldenRecord.FDN_GenreLot is null and FDN_GenreLot is not null) then 'css:yellow' else 'css:white' end
               - _type: ReferenceField
                 _name: FDN_Phase
                 value: FDN_Phase

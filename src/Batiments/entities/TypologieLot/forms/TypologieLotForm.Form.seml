@@ -1,0 +1,33 @@
+_package: Batiments.entities.TypologieLot.forms
+_type: Form
+_name: TypologieLotForm
+entity: Batiments.entities.TypologieLot.TypologieLot
+default: true
+formTabs:
+  - _type: FormTab
+    _name: TypologieLot
+    label: Typologie de Lot
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: IdField
+        _name: Code
+        value: Code
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+          alignment: left
+      - _type: TextField
+        _name: Libelle
+        value: Libelle
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

@@ -3,8 +3,7 @@ _type: DisplayCard
 _name: TypeEnergieDisplayCard
 entity: Batiments.entities.TypeEnergie.TypeEnergie
 default: true
-primaryTextExpression: Code
-secondaryTextExpression: Libelle
+primaryTextExpression: Libelle
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

@@ -1,0 +1,33 @@
+_package: Batiments.entities.GenreLot.steppers
+_type: Stepper
+_name: AuthorGenreLots
+entity: Batiments.entities.GenreLot.GenreLot
+label: Genre Lots
+rootStep:
+  _type: CollectionStep
+  _name: GenreLots
+  label: Genre Lots
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.GenreLot.collection_views.GenreLotCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: GenreLot
+      label: Genre Lot
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.GenreLot.forms.GenreLotForm.GenreLot

@@ -1,0 +1,33 @@
+_package: Batiments.entities.TypologieLot.steppers
+_type: Stepper
+_name: AuthorTypologieLot
+entity: Batiments.entities.TypologieLot.TypologieLot
+label: Typologie de Lot
+rootStep:
+  _type: CollectionStep
+  _name: TypologieLotCollection
+  label: Typologie de Lot
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.TypologieLot.collection_views.TypologieLotCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: TypologieLotForm
+      label: Nature Bien
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.TypologieLot.forms.TypologieLotForm.TypologieLot

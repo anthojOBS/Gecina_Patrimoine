@@ -1,0 +1,59 @@
+_package: Batiments.entities.GenreLot.business_views
+_type: BusinessView
+_name: GenreLotBusinessView
+entity: Batiments.entities.GenreLot.GenreLot
+rootLabel: Genre de Lot
+rootPluralLabel: Genres de Lot
+displayRootNodeAs: ICON_LABEL
+label: Genres de Lot
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: GenreLot
+  displayCard: Batiments.entities.GenreLot.display_cards.GenreLotDisplayCard
+  entity: Batiments.entities.GenreLot.GenreLot
+  actionSet: Batiments.entities.GenreLot.action_sets.GenreLotActionSet
+  collection: Batiments.entities.GenreLot.collection_views.GenreLotCollectionView
+  form: Batiments.entities.GenreLot.forms.GenreLotForm
+  outlineVisible: false
+  displayRecordCount: ALWAYS
+  businessEntitySearchConfigs:
+    - _name: TextConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: TEXT
+    - _name: FormConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: BY_FORM
+    - _name: AdvancedConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: ADVANCED
+    - _name: SemqlConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: SEMQL
+  overrideDefaultSort: false
+  enableUserDefinedSort: true
+  listAllowed: true
+  tableAllowed: true
+  gridAllowed: true
+
+  transitions:
+    - _name: GoldenHistoryRecords
+      _type: BusinessViewTransition
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      enableHierarchy: '0'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: false
+      iconUrl: images://mdi/history.svg
+      label: History
+      pluralLabel: History
+      transitionPath: GoldenHistoryRecords
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '1'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      businessViewEntity: 
+        _type: BusinessViewEntityReference
+        ref: Batiments.entities.GenreLot.business_views.GenreLotBusinessView.GenreLot
+      filter: 1 = 1
+enableHierarchyView: false
+useHierarchyOnOpen: false

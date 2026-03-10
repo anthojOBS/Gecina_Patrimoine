@@ -28,8 +28,8 @@ entityPrivGrants:
     removeAllowed: false
     defaultAccessType: READ
   - _type: EntityPrivGrant
-    entity: Batiments.entities.GenreBien.GenreBien
-    _name: GenreBien
+    entity: Batiments.entities.GenreLot.GenreLot
+    _name: GenreLot
     checkoutAllowed: false
     createAllowed: false
     deleteAllowed: false
@@ -127,17 +127,8 @@ entityPrivGrants:
     removeAllowed: false
     defaultAccessType: READ
   - _type: EntityPrivGrant
-    entity: Batiments.entities.SocieteAutre.SocieteAutre
-    _name: SocieteAutre
-    checkoutAllowed: false
-    createAllowed: false
-    deleteAllowed: false
-    exportAllowed: false
-    removeAllowed: false
-    defaultAccessType: READ
-  - _type: EntityPrivGrant
-    entity: Batiments.entities.SocieteProprietaire.SocieteProprietaire
-    _name: SocieteProprietaire
+    entity: Batiments.entities.Societe.Societe
+    _name: Societe
     checkoutAllowed: false
     createAllowed: false
     deleteAllowed: false

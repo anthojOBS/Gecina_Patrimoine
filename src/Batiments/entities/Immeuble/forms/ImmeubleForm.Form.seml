@@ -6,7 +6,7 @@ default: true
 formTabs:
   - _type: FormTab
     _name: Immeuble
-    label: Fiche
+    label: Fiche immeuble
     documentationInterpreter: LITERAL
     visibleValue: "1"
     visibleValueInterpreter: LITERAL
@@ -641,8 +641,8 @@ formTabs:
     displayFormTabAs: ICON_LABEL
     content:
       - _type: FormSection
-        _name: Fiscalite
-        label: Fiscalité
+        _name: Juridique
+        label: Juridique
         layoutDirection: COLUMN
         visibleValue: "1"
         visibleValueInterpreter: LITERAL
@@ -673,15 +673,15 @@ formTabs:
             referencedEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
       - _type: FormSection
         _name: SocietesProprietaires
-        label: Sociétés Propriétaires
+        label: Société propriétaire
         layoutDirection: COLUMN
         visibleValue: "1"
         visibleValueInterpreter: LITERAL
-        # labelWidth: 200px
+
         content:
           - _type: FormCollection
             _name: SocietesProprietaires
-            label: Sociétés propriétaires
+            label: Société propriétaire
             useCustomLabel: true
             collection: Batiments.entities.RelImmSoc.collection_views.Societe
             tableAllowed: true
@@ -693,10 +693,10 @@ formTabs:
             sortExpression: 1 DESC
             filter:  1=1
             targetEntity: Batiments.entities.RelImmSoc.RelImmSoc
-
+            height: 200
       - _type: FormSection
         _name: SocietesExploitantes
-        label: Sociétés Exploitantes
+        label: Société exploitante
         layoutDirection: COLUMN
         visibleValue: "1"
         visibleValueInterpreter: LITERAL
@@ -713,6 +713,7 @@ formTabs:
             displayRecordCount: ALWAYS
             enableUserDefinedSort: true
             transitionPath: RelImmSoc
-            sortExpression: 1 DESC
-            filter: 1=1
+            sortExpression: 2 ASC
+            filter:  1 = 1
+            #filter: lookup first FDN_TypeSociete from RelImmSoc where FID_Immeuble=Immeuble.ImmeubleID end is not null
             targetEntity: Batiments.entities.RelImmSoc.RelImmSoc

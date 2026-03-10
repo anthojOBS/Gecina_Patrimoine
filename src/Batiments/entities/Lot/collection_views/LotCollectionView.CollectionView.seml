@@ -40,24 +40,26 @@ tableColumns:
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
-  # - _type: TextColumn
-  #   _name: Libelle
-  #   value: Libelle
-  #   useCustomLabel: false
-  #   dataType: STRING
-  #   columnAlign: LEFT
-  #   visibleByDefault: true
   - _type: TextColumn
-    _name: Usage
-    value: Usage
+    _name: Libelle
+    value: Libelle
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
 
+
   - _type: TextColumn
     _name: SuperficieUtile
     value: SuperficieUtile
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: SuperficieUtileSansQP
+    value: SuperficieUtileSansQP
     useCustomLabel: false
     dataType: DECIMAL
     columnAlign: LEFT
@@ -76,6 +78,14 @@ tableColumns:
     value: SuperficieUtilePonderee
     useCustomLabel: false
     dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: IdentifiantPhysique
+    value: IdentifiantPhysique
+    useCustomLabel: false
+    dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
 
@@ -111,8 +121,6 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
 
-
-
   - _type: ReferenceColumn
     _name: FDN_Etage
     value: FDN_Etage
@@ -133,21 +141,21 @@ tableColumns:
     referencedEntity: Batiments.entities.Batiment.Batiment
 
   - _type: ReferenceColumn
-    _name: FDN_GenreBien
-    value: FDN_GenreBien
+    _name: FDN_GenreLot
+    value: FDN_GenreLot
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
-    referencedEntity: Batiments.entities.GenreBien.GenreBien
+    referencedEntity: Batiments.entities.GenreLot.GenreLot
   - _type: ReferenceColumn
-    _name: FDN_NatureBien
-    value: FDN_NatureBien
+    _name: FDN_TypologieLot
+    value: FDN_TypologieLot
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
-    referencedEntity: Batiments.entities.NatureBien.NatureBien
+    referencedEntity: Batiments.entities.TypologieLot.TypologieLot
   - _type: ReferenceColumn
     _name: FDN_Phase
     value: FDN_Phase
@@ -156,6 +164,7 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
     referencedEntity: Batiments.entities.Phase.Phase
+
   - _type: ReferenceColumn
     _name: FDN_UsageLot
     value: FDN_UsageLot
@@ -165,27 +174,103 @@ tableColumns:
     visibleByDefault: true
     referencedEntity: Batiments.entities.UsageLot.UsageLot
 
- 
+  - _type: TextColumn
+    _name: DateDebUsage
+    value: DateDebUsage
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: DateDebStatut
+    value: DateDebStatut
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+
   - _type: ReferenceColumn
-    _name: FDN_DestinationReelle
-    value: FDN_DestinationReelle
+    _name: FDN_RaisonNonLouable
+    value: FDN_RaisonNonLouable
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
-    referencedEntity: Batiments.entities.DestinationReelle.DestinationReelle
+    referencedEntity: Batiments.entities.RaisonNonLouable.RaisonNonLouable
     
+  - _type: TextColumn
+    _name: StatutLouable
+    value: StatutLouable
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+    
+  - _type: TextColumn
+    _name: StatutSousLocation
+    value: StatutSousLocation
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+        
+  - _type: TextColumn
+    _name: StatutLogementSocial
+    value: StatutLogementSocial
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+        
+  - _type: TextColumn
+    _name: StatutMeuble
+    value: StatutMeuble
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+        
+  - _type: TextColumn
+    _name: StatutPMR
+    value: StatutPMR
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+        
+  - _type: TextColumn
+    _name: StatutCopropriete
+    value: StatutCopropriete
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
 
-  - _type: ReferenceColumn
-    _name: FDN_SocieteAutre
-    value: FDN_SocieteAutre
-    label: Société exploitante
-    useCustomLabel: true
+  - _type: TextColumn
+    _name: IdentifiantFiscal
+    value: IdentifiantFiscal
+    useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
-    referencedEntity: Batiments.entities.SocieteAutre.SocieteAutre
 
+  - _type: TextColumn
+    _name: NumeroCopropriete
+    value: NumeroCopropriete
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: DateRegimeTVA
+    value: DateRegimeTVA
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+ 
   - _type: TextColumn
     _name: ConfirmationStatus
     columnAlign: LEFT

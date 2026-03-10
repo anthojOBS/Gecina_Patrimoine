@@ -76,8 +76,8 @@ entityShapes:
       x: -462
       y: 786
   - _type: EntityShape
-    _name: GenreBienShape
-    entity: Batiments.entities.GenreBien.GenreBien
+    _name: GenreLotShape
+    entity: Batiments.entities.GenreLot.GenreLot
     borderColor: "#4caf50"
     fontTitleColor: ""
     width: -1
@@ -170,9 +170,9 @@ referenceLinks:
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
     toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
     bendPoints: []
-  - reference: Batiments.references.LotToGenreBien
+  - reference: Batiments.references.LotToGenreLot
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
-    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.GenreBienShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.GenreLotShape
     bendPoints: []
   - reference: Batiments.references.LotToUsageLot
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape

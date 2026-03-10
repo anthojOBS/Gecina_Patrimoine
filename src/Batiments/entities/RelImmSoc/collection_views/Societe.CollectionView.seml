@@ -28,10 +28,10 @@ tableColumns:
     visibleByDefault: true
     referencedEntity: Batiments.entities.TypeSociete.TypeSociete
   - _type: ReferenceColumn
-    _name: FDN_SocieteAutre 
-    value: FDN_SocieteAutre
+    _name: FDN_Societe 
+    value: FDN_Societe
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
-    referencedEntity: Batiments.entities.SocieteAutre.SocieteAutre
+    referencedEntity: Batiments.entities.Societe.Societe

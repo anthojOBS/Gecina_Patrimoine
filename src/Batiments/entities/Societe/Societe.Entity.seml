@@ -1,0 +1,34 @@
+_package: Batiments.entities.Societe
+_type: Entity
+_name: Societe
+label: Société 
+pluralLabel: Sociétés 
+entityType: BASIC
+physicalTableName: SOCIETE
+iconUrl: images://mdi/domain.svg
+description: ""
+documentation: |
+  L'entité **Société** représente les sociétés  que Gecina, avec leur code et leur libellé.
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: SocieteCode
+    label: Code Société
+    physicalName: SOCIETE_CODE
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: SocieteLibelle
+    label: Libellé Société
+    physicalName: SOCIETE_LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.Societe.Societe.SocieteCode

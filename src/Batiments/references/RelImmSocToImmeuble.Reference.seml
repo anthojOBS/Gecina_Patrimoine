@@ -12,14 +12,14 @@ physicalName: REL_IMM_REF
 fromEntity: Batiments.entities.RelImmSoc.RelImmSoc
 fromRoleLabel: RelImmSoc
 fromRoleName: RelImmSoc
-fromRolePluralLabel: RelImmSoc
+fromRolePluralLabel: RelImmSocs
 
 toEntity: Batiments.entities.Immeuble.Immeuble
 toRoleLabel: Immeuble
 toRoleName: Immeuble
 toRolePhysicalName: IMMEUBLE_ID
 
-oneToMany: false
+oneToMany: true
 deletePropagation: RESTRICT
 validationScope: PRE_CONSO
 mandatoryValidationLabel: L'immeuble est obligatoire pour une société

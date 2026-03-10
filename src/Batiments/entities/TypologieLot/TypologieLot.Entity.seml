@@ -1,0 +1,35 @@
+_package: Batiments.entities.TypologieLot
+_type: Entity
+_name: TypologieLot
+label: Typologie de Lot
+pluralLabel: Typologie de Lot
+entityType: BASIC
+physicalTableName: TYPOLOGIE_LOT
+iconUrl: images://mdi/book.svg
+description: ""
+documentation: ""
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: Code
+    label: Code
+    physicalName: TYPOLOGIE_LOT_CODE
+    dataType: String
+    length: 10
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: Libelle
+    label: Libellé
+    physicalName: TYPOLOGIE_LOT_LIBELLE
+    dataType: String
+    length: 200
+    mandatory: false
+    searchable: true
+
+sourceIdGeneration:
+  mode: MANUAL
+
+primaryKey: Batiments.entities.TypologieLot.TypologieLot.Code
