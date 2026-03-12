@@ -255,7 +255,7 @@ formTabs:
         layoutDirection: COLUMN
         visibleValue: '1'
         visibleValueInterpreter: LITERAL
-        labelWidth: 200px
+        labelWidth: 300px
         content:
           - _type: ReferenceField
             _name: FDN_Phase
@@ -288,7 +288,7 @@ formTabs:
         layoutDirection: COLUMN
         visibleValue: "1"
         visibleValueInterpreter: LITERAL
-        labelWidth: 200px
+        labelWidth: 300px
         content:
 
               - _type: TextField
@@ -320,7 +320,7 @@ formTabs:
         layoutDirection: COLUMN
         visibleValue: '1'
         visibleValueInterpreter: LITERAL
-        labelWidth: 200px
+        labelWidth: 300px
         content:
               - _type: ReferenceField
                 _name: FDN_PeriodeConstruction
@@ -385,7 +385,7 @@ formTabs:
         layoutDirection: COLUMN
         visibleValue: "1"
         visibleValueInterpreter: LITERAL
-        # labelWidth: 200px
+        labelWidth: 300px
         content:
           - _type: TextField
             _name: FDN_FiscaliteCible
@@ -411,16 +411,16 @@ formTabs:
             dataType: STRING
             referencedEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
       - _type: FormSection
-        _name: SocietesProprietaires
-        label: Société propriétaire
+        _name: Societes
+        label: Société 
         layoutDirection: COLUMN
         visibleValue: "1"
         visibleValueInterpreter: LITERAL
-        # labelWidth: 200px
+        labelWidth: 300px
         content:
           - _type: FormCollection
-            _name: SocietesProprietaires
-            label: Société propriétaire
+            _name: Societes
+            label: Société 
             useCustomLabel: true
             collection: Batiments.entities.RelBatSoc.collection_views.Societe
             tableAllowed: true
@@ -431,27 +431,4 @@ formTabs:
             transitionPath: RelBatSoc
             sortExpression: 1 DESC
             filter:  1=1
-            targetEntity: Batiments.entities.RelBatSoc.RelBatSoc
-
-      - _type: FormSection
-        _name: SocietesExploitantes
-        label: Société exploitante
-        layoutDirection: COLUMN
-        visibleValue: "1"
-        visibleValueInterpreter: LITERAL
-        labelWidth: 200px
-        content:
-          - _type: FormCollection
-            _name: SocietesExploitante
-            label: Société exploitante
-            useCustomLabel: true
-            collection: Batiments.entities.RelBatSoc.collection_views.Societe
-            tableAllowed: true
-            listAllowed: false
-            gridAllowed: false
-            displayRecordCount: ALWAYS
-            enableUserDefinedSort: true
-            transitionPath: RelBatSoc
-            sortExpression: 1 DESC
-            filter: 1=1
             targetEntity: Batiments.entities.RelBatSoc.RelBatSoc

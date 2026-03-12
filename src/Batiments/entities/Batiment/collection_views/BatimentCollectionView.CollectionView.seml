@@ -24,14 +24,14 @@ tableColumns:
     useCustomLabel: false
     dataType: LONG_INTEGER
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   # - _type: TextColumn
   #   _name: IdentifiantREF
   #   value: IdentifiantREF
   #   useCustomLabel: false
   #   dataType: STRING
   #   columnAlign: LEFT
-  #   visibleByDefault: true
+  #   visibleByDefault: false
   - _type: TextColumn
     _name: IdentifiantsERP
     value: IdentifiantsERP
@@ -39,42 +39,42 @@ tableColumns:
     useCustomLabel: true
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: TextColumn
     _name: Libelle_Batiment
     value: Libelle_Batiment
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: TextColumn
     _name: Adresse
     value: Adresse
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: TextColumn
     _name: CodePostal
     value: CodePostal
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: TextColumn
     _name: Ville
     value: Ville
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: ReferenceColumn
     _name: FDN_Pays
     value: FDN_Pays
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.Pays.Pays
   - _type: TextColumn
     _name: AdresseEnrichie
@@ -82,14 +82,14 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: CheckboxColumn
     _name: BatimentPrincipal
     value: BatimentPrincipal
     useCustomLabel: false
     dataType: BOOLEAN
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     
   - _type: TextColumn
     _name: FlagAscenseur
@@ -97,7 +97,7 @@ tableColumns:
     useCustomLabel: false
     dataType: BOOLEAN
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: ReferenceColumn
     _name: FDN_Phase
@@ -105,7 +105,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.Phase.Phase
 
   - _type: ReferenceColumn
@@ -114,7 +114,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.ZoneGeographique.ZoneGeographique
 
       # Nouveaux attributs ajoutés
@@ -123,6 +123,15 @@ tableColumns:
     value: SuperficieUtile
     useCustomLabel: false
     dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: SousPortefeuille
+    value: Immeuble.SousPortefeuille
+    label: Sous-portefeuille
+    useCustomLabel: true
+    dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
 
@@ -141,7 +150,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.Immeuble.Immeuble
 
 
@@ -152,7 +161,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: ConfirmationStatus
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: ConfidenceScore
@@ -161,7 +170,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: ConfidenceScore
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: MastersCount
@@ -170,7 +179,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: MastersCount
-    visibleByDefault: true
+    visibleByDefault: false
     
   - _type: CheckboxColumn
     _name: HasSuggestedMerge
@@ -179,7 +188,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: HasSuggestedMerge
-    visibleByDefault: true
+    visibleByDefault: false
   
   - _type: TextColumn
     _name: UpdateDate
@@ -187,7 +196,7 @@ tableColumns:
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     
   - _type: TextColumn
     _name: Updator
@@ -195,5 +204,5 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 

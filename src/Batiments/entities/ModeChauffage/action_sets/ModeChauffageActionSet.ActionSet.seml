@@ -2,7 +2,7 @@ _package: Batiments.entities.ModeChauffage.action_sets
 _type: ActionSet
 _name: ModeChauffageActionSet
 entity: Batiments.entities.ModeChauffage.ModeChauffage
-label: ModeChauffage Action Set
+label: Mode Chauffage Action Set
 defaultActionSet: true
 actions:
   - _type: CreateAction

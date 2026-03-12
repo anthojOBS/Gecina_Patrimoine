@@ -411,7 +411,7 @@ formTabs:
         layoutDirection: COLUMN
         visibleValue: '1'
         visibleValueInterpreter: LITERAL
-        labelWidth: 200px
+        labelWidth: 300px
         content:
           - _type: ReferenceField
             _name: FDN_Phase
@@ -444,7 +444,7 @@ formTabs:
         layoutDirection: COLUMN
         visibleValue: "1"
         visibleValueInterpreter: LITERAL
-        labelWidth: 200px
+        labelWidth: 300px
         content:
 
               - _type: TextField

@@ -2,10 +2,10 @@ _package: Batiments.entities.Phase.business_views
 _type: BusinessView
 _name: PhaseBusinessView
 entity: Batiments.entities.Phase.Phase
-rootLabel: Phases
-rootPluralLabel: Phases
+rootLabel: Phase
+rootPluralLabel: Phase
 displayRootNodeAs: ICON_LABEL
-label: Phases
+label: Phase
 rootBusinessViewEntity:
   _type: BusinessViewEntity
   _name: Phase

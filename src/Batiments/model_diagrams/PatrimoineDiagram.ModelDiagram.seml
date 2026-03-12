@@ -96,16 +96,6 @@ entityShapes:
       x: 1053.3067851373182
       y: 266.52956381260105
   - _type: EntityShape
-    _name: TypeBatimentShape
-    entity: Batiments.entities.TypeBatiment.TypeBatiment
-    borderColor: "#8e24aa"
-    fontTitleColor: ""
-    width: -1
-    height: -1
-    position:
-      x: 1232
-      y: -32.5
-  - _type: EntityShape
     _name: UsageLotShape
     entity: Batiments.entities.UsageLot.UsageLot
     borderColor: "#00695c"
@@ -153,10 +143,6 @@ referenceLinks:
   - reference: Batiments.references.BatimentToImmeuble
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
     toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
-    bendPoints: []
-  - reference: Batiments.references.BatimentToTypeBatiment
-    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
-    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.TypeBatimentShape
     bendPoints: []
   - reference: Batiments.references.EtageToBatiment
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.EtageShape

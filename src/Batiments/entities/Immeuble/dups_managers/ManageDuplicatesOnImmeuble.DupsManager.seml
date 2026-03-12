@@ -1,6 +1,7 @@
 _package: Batiments.entities.Immeuble.dups_managers
 _type: DupsManager
 _name: ManageDuplicatesOnImmeuble
+label: Manage Duplicates on Immeuble
 entity: Batiments.entities.Immeuble.Immeuble
 enableMasterValuePicking: true
 displayCard: Batiments.entities.Immeuble.display_cards.ImmeubleDisplayCard

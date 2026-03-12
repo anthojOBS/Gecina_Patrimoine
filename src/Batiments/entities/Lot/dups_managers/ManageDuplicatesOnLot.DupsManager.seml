@@ -1,6 +1,7 @@
 _package: Batiments.entities.Lot.dups_managers
 _type: DupsManager
 _name: ManageDuplicatesOnLot
+label: Manage Duplicates on Lot
 entity: Batiments.entities.Lot.Lot
 enableMasterValuePicking: true
 displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard

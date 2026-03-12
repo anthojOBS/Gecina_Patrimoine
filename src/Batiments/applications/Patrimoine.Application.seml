@@ -162,7 +162,8 @@ rootFolder:
       label: Bâtiments
       nbRecordsBadgeVisible: false
       icon: images://mdi/domain.svg
-
+      requiredRole: semarchyAdmin
+      
     - _type: BrowseBusinessViewAction
       _name: Etages
       businessView: Batiments.entities.Etage.business_views.EtageBusinessView
@@ -171,6 +172,7 @@ rootFolder:
       label: Etages
       nbRecordsBadgeVisible: false
       icon: images://mdi/stairs.svg
+      requiredRole: semarchyAdmin
 
     - _type: BrowseBusinessViewAction
       _name: Lots
@@ -180,6 +182,7 @@ rootFolder:
       label: Lots
       nbRecordsBadgeVisible: false
       icon: images://mdi/floor-plan.svg
+      requiredRole: semarchyAdmin
 
     - _type: BrowseBusinessViewAction
       _name: ImmeublesErrors
@@ -272,12 +275,6 @@ rootFolder:
           icon: images://mdi/timeline-text.svg
           nbRecordsBadgeVisible: false
         - _type: BrowseBusinessViewAction
-          _name: DestinationReelle
-          businessView: Batiments.entities.DestinationReelle.business_views.DestinationReelleBusinessView
-          imageAlign: MIDDLE_CENTER
-          imageMode: FIT
-          nbRecordsBadgeVisible: false
-        - _type: BrowseBusinessViewAction
           _name: FiscaliteCible
           businessView: Batiments.entities.FiscaliteCible.business_views.FiscaliteCibleBusinessView
           imageAlign: MIDDLE_CENTER
@@ -332,15 +329,12 @@ rootFolder:
           imageMode: FIT
           icon: images://mdi/briefcase.svg
           nbRecordsBadgeVisible: false
-
-
         - _type: BrowseBusinessViewAction
           _name: RaisonNonLouable
           businessView: Batiments.entities.RaisonNonLouable.business_views.RaisonNonLouableBusinessView
           imageAlign: MIDDLE_CENTER
           imageMode: FIT
           nbRecordsBadgeVisible: false
-
         - _type: BrowseBusinessViewAction
           _name: RegimeJuridiques
           businessView: Batiments.entities.RegimeJuridique.business_views.RegimeJuridiqueBusinessView
@@ -348,7 +342,6 @@ rootFolder:
           imageMode: FIT
           icon: images://mdi/gavel.svg
           nbRecordsBadgeVisible: false
-
         - _type: BrowseBusinessViewAction
           _name: Secteur
           businessView: Batiments.entities.SecteurImmostat.business_views.SecteurImmostatBusinessView
@@ -361,20 +354,11 @@ rootFolder:
           imageAlign: MIDDLE_CENTER
           imageMode: FIT
           nbRecordsBadgeVisible: false
-
         - _type: BrowseBusinessViewAction
           _name: Societe
           businessView: Batiments.entities.Societe.business_views.SocieteBusinessView
           imageAlign: MIDDLE_CENTER
           imageMode: FIT
-          nbRecordsBadgeVisible: false
-
-        - _type: BrowseBusinessViewAction
-          _name: TypeBatiment
-          businessView: Batiments.entities.TypeBatiment.business_views.TypeBatimentBusinessView
-          imageAlign: MIDDLE_CENTER
-          imageMode: FIT
-          icon: images://mdi/office-building.svg
           nbRecordsBadgeVisible: false
         - _type: BrowseBusinessViewAction
           _name: TypeEnergie
@@ -383,7 +367,6 @@ rootFolder:
           imageMode: FIT
           icon: images://mdi/office-building.svg
           nbRecordsBadgeVisible: false
-
         - _type: BrowseBusinessViewAction
           _name: TypeSociete
           businessView: Batiments.entities.TypeSociete.business_views.TypeSocieteBusinessView

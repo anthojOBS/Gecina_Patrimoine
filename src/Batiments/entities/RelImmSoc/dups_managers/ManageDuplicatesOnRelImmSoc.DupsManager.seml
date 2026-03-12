@@ -1,6 +1,7 @@
 _package: Batiments.entities.RelImmSoc.dups_managers
 _type: DupsManager
 _name: ManageDuplicatesOnRelImmSoc
+label: Manage Duplicates on RelImmSoc
 entity: Batiments.entities.RelImmSoc.RelImmSoc
 enableMasterValuePicking: true
 displayCard: Batiments.entities.RelImmSoc.display_cards.RelImmSocDisplayCard

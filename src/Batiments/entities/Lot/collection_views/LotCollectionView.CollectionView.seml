@@ -24,14 +24,8 @@ tableColumns:
     useCustomLabel: false
     dataType: LONG_INTEGER
     columnAlign: LEFT
-    visibleByDefault: true
-  # - _type: TextColumn
-  #   _name: IdentifiantREF
-  #   value: IdentifiantREF
-  #   useCustomLabel: false
-  #   dataType: STRING
-  #   columnAlign: LEFT
-  #   visibleByDefault: true
+    visibleByDefault: false
+
   - _type: TextColumn
     _name: IdentifiantsERP
     value: IdentifiantsERP
@@ -39,87 +33,7 @@ tableColumns:
     useCustomLabel: true
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
-  - _type: TextColumn
-    _name: Libelle
-    value: Libelle
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-
-
-  - _type: TextColumn
-    _name: SuperficieUtile
-    value: SuperficieUtile
-    useCustomLabel: false
-    dataType: DECIMAL
-    columnAlign: LEFT
-    visibleByDefault: true
-
-  - _type: TextColumn
-    _name: SuperficieUtileSansQP
-    value: SuperficieUtileSansQP
-    useCustomLabel: false
-    dataType: DECIMAL
-    columnAlign: LEFT
-    visibleByDefault: true
-
-  - _type: TextColumn
-    _name: SuperficieUtileQP
-    value: SuperficieUtileQP
-    useCustomLabel: false
-    dataType: DECIMAL
-    columnAlign: LEFT
-    visibleByDefault: true
-
-  - _type: TextColumn
-    _name: SuperficieUtilePonderee
-    value: SuperficieUtilePonderee
-    useCustomLabel: false
-    dataType: DECIMAL
-    columnAlign: LEFT
-    visibleByDefault: true
-
-  - _type: TextColumn
-    _name: IdentifiantPhysique
-    value: IdentifiantPhysique
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-
-  - _type: TextColumn
-    _name: Adresse
-    #value: Etage.Batiment.Adresse
-    value: CASE WHEN Etage.Batiment.Adresse is null THEN Batiment.Adresse ELSE Etage.Batiment.Adresse END
-    label: Adresse du bâtiment
-    useCustomLabel: true
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-
-
-  - _type: TextColumn
-    _name: Immeuble_identifiantsERP
-    #value: Etage.Batiment.Immeuble.IdentifiantsERP
-    value: CASE WHEN Etage.Batiment.Immeuble.IdentifiantsERP is null THEN Batiment.Immeuble.IdentifiantsERP ELSE Etage.Batiment.Immeuble.IdentifiantsERP END
-    label: Numéro de l'immeuble
-    useCustomLabel: true
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-
-
-  - _type: TextColumn
-    _name: Batiments_identifiantsERP
-    #value: Etage.Batiment.IdentifiantsERP
-    value: CASE WHEN Etage.Batiment.IdentifiantsERP is null THEN Batiment.IdentifiantsERP ELSE Etage.Batiment.IdentifiantsERP END
-    label: Numéro de bâtiment
-    useCustomLabel: true
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: ReferenceColumn
     _name: FDN_Etage
@@ -130,6 +44,57 @@ tableColumns:
     visibleByDefault: true
     referencedEntity: Batiments.entities.Etage.Etage
 
+
+
+  - _type: TextColumn
+    _name: Libelle
+    value: Libelle
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: IdentifiantPhysique
+    value: IdentifiantPhysique
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  # - _type: TextColumn
+  #   _name: Adresse
+  #   #value: Etage.Batiment.Adresse
+  #   value: CASE WHEN Etage.Batiment.Adresse is null THEN Batiment.Adresse ELSE Etage.Batiment.Adresse END
+  #   label: Adresse du bâtiment
+  #   useCustomLabel: true
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: true
+
+
+  # - _type: TextColumn
+  #   _name: Immeuble_identifiantsERP
+  #   #value: Etage.Batiment.Immeuble.IdentifiantsERP
+  #   value: CASE WHEN Etage.Batiment.Immeuble.IdentifiantsERP is null THEN Batiment.Immeuble.IdentifiantsERP ELSE Etage.Batiment.Immeuble.IdentifiantsERP END
+  #   label: Numéro de l'immeuble
+  #   useCustomLabel: true
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: false
+
+
+  # - _type: TextColumn
+  #   _name: Batiments_identifiantsERP
+  #   #value: Etage.Batiment.IdentifiantsERP
+  #   value: CASE WHEN Etage.Batiment.IdentifiantsERP is null THEN Batiment.IdentifiantsERP ELSE Etage.Batiment.IdentifiantsERP END
+  #   label: Numéro de bâtiment
+  #   useCustomLabel: true
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: false
+
+
   - _type: ReferenceColumn
     _name: FDN_Batiment
     value: FDN_Batiment
@@ -137,7 +102,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.Batiment.Batiment
 
   - _type: ReferenceColumn
@@ -146,8 +111,19 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.GenreLot.GenreLot
+    
+  - _type: ReferenceColumn
+    _name: FDN_UsageLot
+    value: FDN_UsageLot
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.UsageLot.UsageLot
+
+
   - _type: ReferenceColumn
     _name: FDN_TypologieLot
     value: FDN_TypologieLot
@@ -162,17 +138,8 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.Phase.Phase
-
-  - _type: ReferenceColumn
-    _name: FDN_UsageLot
-    value: FDN_UsageLot
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-    referencedEntity: Batiments.entities.UsageLot.UsageLot
 
   - _type: TextColumn
     _name: DateDebUsage
@@ -180,7 +147,7 @@ tableColumns:
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: DateDebStatut
@@ -188,7 +155,7 @@ tableColumns:
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: ReferenceColumn
     _name: FDN_RaisonNonLouable
@@ -196,7 +163,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.RaisonNonLouable.RaisonNonLouable
     
   - _type: TextColumn
@@ -205,7 +172,7 @@ tableColumns:
     useCustomLabel: false
     dataType: BOOLEAN
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     
   - _type: TextColumn
     _name: StatutSousLocation
@@ -213,7 +180,7 @@ tableColumns:
     useCustomLabel: false
     dataType: BOOLEAN
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
         
   - _type: TextColumn
     _name: StatutLogementSocial
@@ -221,7 +188,7 @@ tableColumns:
     useCustomLabel: false
     dataType: BOOLEAN
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
         
   - _type: TextColumn
     _name: StatutMeuble
@@ -229,7 +196,7 @@ tableColumns:
     useCustomLabel: false
     dataType: BOOLEAN
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
         
   - _type: TextColumn
     _name: StatutPMR
@@ -237,7 +204,7 @@ tableColumns:
     useCustomLabel: false
     dataType: BOOLEAN
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
         
   - _type: TextColumn
     _name: StatutCopropriete
@@ -245,7 +212,7 @@ tableColumns:
     useCustomLabel: false
     dataType: BOOLEAN
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: IdentifiantFiscal
@@ -253,7 +220,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: NumeroCopropriete
@@ -261,7 +228,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: DateRegimeTVA
@@ -269,8 +236,41 @@ tableColumns:
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: SuperficieUtile
+    value: SuperficieUtile
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: SuperficieUtileQP
+    value: SuperficieUtileQP
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
     visibleByDefault: true
- 
+
+  - _type: TextColumn
+    _name: SuperficieUtileSansQP
+    value: SuperficieUtileSansQP
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+
+  - _type: TextColumn
+    _name: SuperficieUtilePonderee
+    value: SuperficieUtilePonderee
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+
   - _type: TextColumn
     _name: ConfirmationStatus
     columnAlign: LEFT
@@ -278,7 +278,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: ConfirmationStatus
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: ConfidenceScore
@@ -287,7 +287,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: ConfidenceScore
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: MastersCount
@@ -296,7 +296,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: MastersCount
-    visibleByDefault: true
+    visibleByDefault: false
     
   - _type: CheckboxColumn
     _name: HasSuggestedMerge
@@ -305,7 +305,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: HasSuggestedMerge
-    visibleByDefault: true
+    visibleByDefault: false
   
   - _type: TextColumn
     _name: UpdateDate
@@ -313,7 +313,7 @@ tableColumns:
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     
   - _type: TextColumn
     _name: Updator
@@ -321,4 +321,4 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false

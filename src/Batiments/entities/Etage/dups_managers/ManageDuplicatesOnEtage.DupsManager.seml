@@ -1,6 +1,7 @@
 _package: Batiments.entities.Etage.dups_managers
 _type: DupsManager
 _name: ManageDuplicatesOnEtage
+label: Manage Duplicates on Etage
 entity: Batiments.entities.Etage.Etage
 enableMasterValuePicking: true
 displayCard: Batiments.entities.Etage.display_cards.EtageDisplayCard

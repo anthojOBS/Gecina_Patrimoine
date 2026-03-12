@@ -24,7 +24,7 @@ tableColumns:
     useCustomLabel: false
     dataType: LONG_INTEGER
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: CodeEtage
@@ -33,7 +33,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: Libelle
@@ -42,7 +42,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     
   - _type: ReferenceColumn
     _name: FDN_Batiment
@@ -50,7 +50,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.Batiment.Batiment
   - _type: TextColumn
     _name: ConfirmationStatus
@@ -59,7 +59,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: ConfirmationStatus
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: ConfidenceScore
@@ -68,7 +68,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: ConfidenceScore
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: MastersCount
@@ -77,7 +77,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: MastersCount
-    visibleByDefault: true
+    visibleByDefault: false
     
   - _type: CheckboxColumn
     _name: HasSuggestedMerge
@@ -86,7 +86,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: HasSuggestedMerge
-    visibleByDefault: true
+    visibleByDefault: false
   
   - _type: TextColumn
     _name: UpdateDate
@@ -94,7 +94,7 @@ tableColumns:
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     
   - _type: TextColumn
     _name: Updator
@@ -102,4 +102,4 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false

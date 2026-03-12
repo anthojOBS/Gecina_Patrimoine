@@ -68,15 +68,6 @@ modelTasks:
     sourceDataEnrichmentEnabled: true
     sourceValidationEnabled: true
   - _type: ModelJobTask
-    entity: Batiments.entities.TypeBatiment.TypeBatiment
-    _name: TypeBatiment
-    consolidatedDataEnrichmentEnabled: true
-    consolidationEnabled: true
-    matchEnabled: true
-    postConsoValidationEnabled: true
-    sourceDataEnrichmentEnabled: true
-    sourceValidationEnabled: true
-  - _type: ModelJobTask
     entity: Batiments.entities.TypeEtage.TypeEtage
     _name: TypeEtage
     consolidatedDataEnrichmentEnabled: true

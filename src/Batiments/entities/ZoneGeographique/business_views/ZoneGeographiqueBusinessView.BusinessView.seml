@@ -2,10 +2,10 @@ _package: Batiments.entities.ZoneGeographique.business_views
 _type: BusinessView
 _name: ZoneGeographiqueBusinessView
 entity: Batiments.entities.ZoneGeographique.ZoneGeographique
-rootLabel: Zone Geographiques
-rootPluralLabel: Zones Géographiques
+rootLabel: Zone Geographique
+rootPluralLabel: Zone Géographique
 displayRootNodeAs: ICON_LABEL
-label: Zones Géographiques
+label: Zone Géographique
 rootBusinessViewEntity:
   _type: BusinessViewEntity
   _name: ZoneGeographique

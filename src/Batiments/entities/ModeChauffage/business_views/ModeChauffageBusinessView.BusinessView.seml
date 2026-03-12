@@ -2,10 +2,10 @@ _package: Batiments.entities.ModeChauffage.business_views
 _type: BusinessView
 _name: ModeChauffageBusinessView
 entity: Batiments.entities.ModeChauffage.ModeChauffage
-rootLabel: ModeChauffages
-rootPluralLabel: ModeChauffages
+rootLabel: Mode Chauffage
+rootPluralLabel: Mode Chauffage
 displayRootNodeAs: ICON_LABEL
-label: ModeChauffages
+label: Mode Chauffage
 rootBusinessViewEntity:
   _type: BusinessViewEntity
   _name: ModeChauffage

@@ -2,10 +2,10 @@ _package: Batiments.entities.TypeSociete.business_views
 _type: BusinessView
 _name: TypeSocieteBusinessView
 entity: Batiments.entities.TypeSociete.TypeSociete
-rootLabel: Types de société
-rootPluralLabel: Types de société
+rootLabel: Type de société
+rootPluralLabel: Type de société
 displayRootNodeAs: ICON_LABEL
-label: Types de société
+label: Type de société
 rootBusinessViewEntity:
   _type: BusinessViewEntity
   _name: TypeSociete

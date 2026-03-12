@@ -24,14 +24,14 @@ tableColumns:
     useCustomLabel: false
     dataType: LONG_INTEGER
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   # - _type: TextColumn
   #   _name: IdentifiantREF
   #   value: IdentifiantREF
   #   useCustomLabel: false
   #   dataType: STRING
   #   columnAlign: LEFT
-  #   visibleByDefault: true
+  #   visibleByDefault: false
   - _type: TextColumn
     _name: IdentifiantsERP
     value: IdentifiantsERP
@@ -39,14 +39,14 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: TextColumn
     _name: Libelle
     value: Libelle
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: Adresse
@@ -54,35 +54,35 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: TextColumn
     _name: AdresseLieuDit
     value: AdresseLieuDit
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: TextColumn
     _name: CodePostal
     value: CodePostal
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: TextColumn
     _name: Ville
     value: Ville
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: TextColumn
     _name: AdresseEnrichie
     value: AdresseEnrichie
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: DateAcquisition
@@ -90,14 +90,14 @@ tableColumns:
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: TextColumn
     _name: DateVente
     value: DateVente
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: ReferenceColumn
     _name: PeriodeConstruction
@@ -105,7 +105,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
 
   - _type: TextColumn
@@ -114,35 +114,35 @@ tableColumns:
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: TextColumn
     _name: DateFinConstruction
     value: DateFinConstruction
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: TextColumn
     _name: DateLivraison
     value: DateLivraison
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: TextColumn
     _name: DateRestructuration
     value: DateRestructuration
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
   - _type: TextColumn
     _name: SecteurGeographique
     value: SecteurGeographique
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: ReferenceColumn
     _name: FiscaliteCible
@@ -150,7 +150,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.FiscaliteCible.FiscaliteCible
 
   - _type: TextColumn
@@ -159,7 +159,7 @@ tableColumns:
     useCustomLabel: false
     dataType: BOOLEAN
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
 
   - _type: TextColumn
@@ -168,7 +168,7 @@ tableColumns:
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: ReferenceColumn
     _name: FDN_Phase
@@ -176,7 +176,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.Phase.Phase
     
   - _type: TextColumn
@@ -185,7 +185,7 @@ tableColumns:
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: ReferenceColumn
     _name: FDN_RegimeJuridique
@@ -193,7 +193,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
   - _type: ReferenceColumn
     _name: FDN_ZoneGeographique
@@ -201,7 +201,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.ZoneGeographique.ZoneGeographique
   - _type: ReferenceColumn
     _name: FDN_Portefeuille
@@ -209,7 +209,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.Portefeuille.Portefeuille
   - _type: ReferenceColumn
     _name: FDN_Pays
@@ -217,17 +217,9 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.Pays.Pays
 
-  - _type: ReferenceColumn
-    _name: FDN_Usage
-    value: FDN_Usage
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-    referencedEntity: Batiments.entities.Usage.Usage
 
   - _type: ReferenceColumn
     _name: FDN_CategorieERP
@@ -235,7 +227,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.CategorieERP.CategorieERP
 
   - _type: ReferenceColumn
@@ -244,7 +236,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.ModeChauffage.ModeChauffage
 
   - _type: ReferenceColumn
@@ -253,7 +245,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.TypeEnergie.TypeEnergie
 
   - _type: ReferenceColumn
@@ -262,7 +254,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.OrganisationResponsable.OrganisationResponsable
 
   - _type: TextColumn
@@ -271,7 +263,7 @@ tableColumns:
     useCustomLabel: false
     dataType: INTEGER
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: PosteTravail
@@ -279,7 +271,7 @@ tableColumns:
     useCustomLabel: false
     dataType: INTEGER
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: ConfirmationStatus
@@ -288,7 +280,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: ConfirmationStatus
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: ConfidenceScore
@@ -297,7 +289,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: ConfidenceScore
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: MastersCount
@@ -306,7 +298,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: MastersCount
-    visibleByDefault: true
+    visibleByDefault: false
     
   - _type: CheckboxColumn
     _name: HasSuggestedMerge
@@ -315,7 +307,7 @@ tableColumns:
     documentationInterpreter: LITERAL
     useCustomLabel: false
     value: HasSuggestedMerge
-    visibleByDefault: true
+    visibleByDefault: false
   
   - _type: TextColumn
     _name: UpdateDate
@@ -323,7 +315,7 @@ tableColumns:
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     
   - _type: TextColumn
     _name: Updator
@@ -331,7 +323,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   # Nouveaux attributs ajoutés
   - _type: TextColumn
@@ -340,7 +332,7 @@ tableColumns:
     useCustomLabel: false
     dataType: DECIMAL
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: ReferenceColumn
     _name: FDN_ZoneImmostat
@@ -348,7 +340,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.ZoneImmostat.ZoneImmostat
 
   - _type: ReferenceColumn
@@ -357,7 +349,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.SecteurImmostat.SecteurImmostat
 
   - _type: ReferenceColumn
@@ -366,7 +358,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.SousSecteurImmostat.SousSecteurImmostat
 
   - _type: ReferenceColumn
@@ -375,7 +367,7 @@ tableColumns:
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     referencedEntity: Batiments.entities.QuartierParis.QuartierParis
   - _type: TextColumn
     _name: IGH
@@ -383,7 +375,7 @@ tableColumns:
     useCustomLabel: false
     dataType: BOOLEAN
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: ERP
@@ -391,7 +383,7 @@ tableColumns:
     useCustomLabel: false
     dataType: BOOLEAN
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: FlagRestructuration
@@ -399,7 +391,7 @@ tableColumns:
     useCustomLabel: false
     dataType: BOOLEAN
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
 
   # - _type: ReferenceColumn
   #   _name: FDN_SocieteProprietaire
@@ -407,7 +399,7 @@ tableColumns:
   #   useCustomLabel: false
   #   dataType: STRING
   #   columnAlign: LEFT
-  #   visibleByDefault: true
+  #   visibleByDefault: false
   #   referencedEntity: Batiments.entities.SocieteProprietaire.SocieteProprietaire
 
   # - _type: ReferenceColumn
@@ -417,7 +409,7 @@ tableColumns:
   #   useCustomLabel: true
   #   dataType: STRING
   #   columnAlign: LEFT
-  #   visibleByDefault: true
+  #   visibleByDefault: false
   #   referencedEntity: Batiments.entities.SocieteAutre.SocieteAutre
 
 
@@ -430,6 +422,15 @@ tableColumns:
     visibleByDefault: true
 
 
+  - _type: ReferenceColumn
+    _name: FDN_Usage
+    value: FDN_Usage
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Usage.Usage
+    
   - _type: HyperlinkColumn
     _name: BinaryContent
     value: BinaryContent

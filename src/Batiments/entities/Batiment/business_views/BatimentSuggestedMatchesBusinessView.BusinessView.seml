@@ -10,7 +10,7 @@ rootFilter: HasSuggestedMerge = '1'
 
 rootBusinessViewEntity:
   _type: BusinessViewEntity
-  _name: Batiment
+  _name: BatimentSugg
   displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
   entity: Batiments.entities.Batiment.Batiment
   actionSet: Batiments.entities.Batiment.action_sets.BatimentActionSet
@@ -55,7 +55,7 @@ rootBusinessViewEntity:
       useCustomLabel: true
       businessViewEntity: 
         _type: BusinessViewEntityReference
-        ref: Batiments.entities.Batiment.business_views.BatimentSuggestedMatchesBusinessView.Batiment
+        ref: Batiments.entities.Batiment.business_views.BatimentSuggestedMatchesBusinessView.BatimentSugg
       filter: 1 = 1
     - _type: BusinessViewTransition
       _name: MasterRecords

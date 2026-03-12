@@ -281,7 +281,8 @@
                         "icon": "images://mdi/domain.svg",
                         "imageAlign": "MIDDLE_CENTER",
                         "imageMode": "FIT",
-                        "label": "Bâtiments"
+                        "label": "Bâtiments",
+                        "requiredRole": "semarchyAdmin"
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.Etages",
@@ -294,7 +295,8 @@
                         "icon": "images://mdi/stairs.svg",
                         "imageAlign": "MIDDLE_CENTER",
                         "imageMode": "FIT",
-                        "label": "Etages"
+                        "label": "Etages",
+                        "requiredRole": "semarchyAdmin"
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.Lots",
@@ -307,7 +309,8 @@
                         "icon": "images://mdi/floor-plan.svg",
                         "imageAlign": "MIDDLE_CENTER",
                         "imageMode": "FIT",
-                        "label": "Lots"
+                        "label": "Lots",
+                        "requiredRole": "semarchyAdmin"
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ImmeublesErrors",
@@ -444,19 +447,8 @@
                         "imageMode": "FIT"
                     },
                     {
-                        "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.DestinationReelle",
-                        "posInFolder": 1,
-                        "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
-                        "_type": "BrowseBusinessViewAction",
-                        "businessObjectView": "Batiments.entities.DestinationReelle.business_views.DestinationReelleBusinessView",
-                        "nbRecordsBadgeVisible": false,
-                        "useCustomLabel": false,
-                        "imageAlign": "MIDDLE_CENTER",
-                        "imageMode": "FIT"
-                    },
-                    {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.FiscaliteCible",
-                        "posInFolder": 2,
+                        "posInFolder": 1,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.FiscaliteCible.business_views.FiscaliteCibleBusinessView",
@@ -467,7 +459,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.GenreLots",
-                        "posInFolder": 3,
+                        "posInFolder": 2,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.GenreLot.business_views.GenreLotBusinessView",
@@ -479,7 +471,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.ModeChauffage",
-                        "posInFolder": 4,
+                        "posInFolder": 3,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.ModeChauffage.business_views.ModeChauffageBusinessView",
@@ -491,7 +483,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.OrganisationResponsable",
-                        "posInFolder": 5,
+                        "posInFolder": 4,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.OrganisationResponsable.business_views.OrgaRespBusinessView",
@@ -503,7 +495,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.Pays",
-                        "posInFolder": 6,
+                        "posInFolder": 5,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.Pays.business_views.PaysBusinessView",
@@ -515,7 +507,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.Phases",
-                        "posInFolder": 7,
+                        "posInFolder": 6,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.Phase.business_views.PhaseBusinessView",
@@ -527,7 +519,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.Portefeuille",
-                        "posInFolder": 8,
+                        "posInFolder": 7,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.Portefeuille.business_views.PortefeuilleBusinessView",
@@ -539,7 +531,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.QuartierParis",
-                        "posInFolder": 9,
+                        "posInFolder": 8,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.QuartierParis.business_views.QuartierParisBusinessView",
@@ -551,7 +543,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.RaisonNonLouable",
-                        "posInFolder": 10,
+                        "posInFolder": 9,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.RaisonNonLouable.business_views.RaisonNonLouableBusinessView",
@@ -562,7 +554,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.RegimeJuridiques",
-                        "posInFolder": 11,
+                        "posInFolder": 10,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.RegimeJuridique.business_views.RegimeJuridiqueBusinessView",
@@ -574,7 +566,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.Secteur",
-                        "posInFolder": 12,
+                        "posInFolder": 11,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.SecteurImmostat.business_views.SecteurImmostatBusinessView",
@@ -585,7 +577,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.SousSecteur",
-                        "posInFolder": 13,
+                        "posInFolder": 12,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.SousSecteurImmostat.business_views.SousSecteurImmostatBusinessView",
@@ -596,7 +588,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.Societe",
-                        "posInFolder": 14,
+                        "posInFolder": 13,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.Societe.business_views.SocieteBusinessView",
@@ -606,20 +598,8 @@
                         "imageMode": "FIT"
                     },
                     {
-                        "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.TypeBatiment",
-                        "posInFolder": 15,
-                        "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
-                        "_type": "BrowseBusinessViewAction",
-                        "businessObjectView": "Batiments.entities.TypeBatiment.business_views.TypeBatimentBusinessView",
-                        "nbRecordsBadgeVisible": false,
-                        "useCustomLabel": false,
-                        "icon": "images://mdi/office-building.svg",
-                        "imageAlign": "MIDDLE_CENTER",
-                        "imageMode": "FIT"
-                    },
-                    {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.TypeEnergie",
-                        "posInFolder": 16,
+                        "posInFolder": 14,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.TypeEnergie.business_views.TypeEnergieBusinessView",
@@ -631,7 +611,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.TypeSociete",
-                        "posInFolder": 17,
+                        "posInFolder": 15,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.TypeSociete.business_views.TypeSocieteBusinessView",
@@ -643,7 +623,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.TypologieLots",
-                        "posInFolder": 18,
+                        "posInFolder": 16,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.TypologieLot.business_views.TypologieLotBusinessView",
@@ -655,7 +635,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.Usage",
-                        "posInFolder": 19,
+                        "posInFolder": 17,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.Usage.business_views.UsageBusinessView",
@@ -666,7 +646,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.UsageLots",
-                        "posInFolder": 20,
+                        "posInFolder": 18,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.UsageLot.business_views.UsageLotBusinessView",
@@ -678,7 +658,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.ZoneGeographiques",
-                        "posInFolder": 21,
+                        "posInFolder": 19,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.ZoneGeographique.business_views.ZoneGeographiqueBusinessView",
@@ -690,7 +670,7 @@
                     },
                     {
                         "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.ZoneImmostat",
-                        "posInFolder": 22,
+                        "posInFolder": 20,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
                         "businessObjectView": "Batiments.entities.ZoneImmostat.business_views.ZoneImmostatBusinessView",
@@ -883,18 +863,6 @@
                         "fontTitleColor": ""
                     },
                     {
-                        "qualifiedName": "Batiments.model_diagrams.PatrimoineDiagram.TypeBatimentShape",
-                        "entity": "Batiments.entities.TypeBatiment.TypeBatiment",
-                        "position": {
-                            "x": 1232,
-                            "y": -32.5
-                        },
-                        "width": -1,
-                        "height": -1,
-                        "borderColor": "142,36,170",
-                        "fontTitleColor": ""
-                    },
-                    {
                         "qualifiedName": "Batiments.model_diagrams.PatrimoineDiagram.UsageLotShape",
                         "entity": "Batiments.entities.UsageLot.UsageLot",
                         "position": {
@@ -961,12 +929,6 @@
                         "reference": "Batiments.references.BatimentToImmeuble",
                         "fromEntityShape": "Batiments.model_diagrams.PatrimoineDiagram.BatimentShape",
                         "toEntityShape": "Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape",
-                        "bendPoints": []
-                    },
-                    {
-                        "reference": "Batiments.references.BatimentToTypeBatiment",
-                        "fromEntityShape": "Batiments.model_diagrams.PatrimoineDiagram.BatimentShape",
-                        "toEntityShape": "Batiments.model_diagrams.PatrimoineDiagram.TypeBatimentShape",
                         "bendPoints": []
                     },
                     {
@@ -1087,16 +1049,6 @@
                     {
                         "qualifiedName": "Batiments.model_jobs.INTEGRATE_ALL_REFS.Societe",
                         "entity": "Batiments.entities.Societe.Societe",
-                        "consolidatedDataEnrichmentEnabled": true,
-                        "consolidationEnabled": true,
-                        "matchEnabled": true,
-                        "postConsoValidationEnabled": true,
-                        "sourceDataEnrichmentEnabled": true,
-                        "sourceValidationEnabled": true
-                    },
-                    {
-                        "qualifiedName": "Batiments.model_jobs.INTEGRATE_ALL_REFS.TypeBatiment",
-                        "entity": "Batiments.entities.TypeBatiment.TypeBatiment",
                         "consolidatedDataEnrichmentEnabled": true,
                         "consolidationEnabled": true,
                         "matchEnabled": true,
@@ -1258,16 +1210,6 @@
                     {
                         "qualifiedName": "Batiments.model_priv_grants.Reader.RegimeJuridique",
                         "entity": "Batiments.entities.RegimeJuridique.RegimeJuridique",
-                        "checkoutAllowed": false,
-                        "createAllowed": false,
-                        "defaultAccessType": "READ",
-                        "deleteAllowed": false,
-                        "exportAllowed": false,
-                        "removeAllowed": false
-                    },
-                    {
-                        "qualifiedName": "Batiments.model_priv_grants.Reader.TypeBatiment",
-                        "entity": "Batiments.entities.TypeBatiment.TypeBatiment",
                         "checkoutAllowed": false,
                         "createAllowed": false,
                         "defaultAccessType": "READ",
@@ -1552,35 +1494,6 @@
                     "physicalName": "PHASE_ID",
                     "entity": "Batiments.entities.Batiment.Batiment",
                     "label": "Phase",
-                    "searchable": true
-                }
-            },
-            {
-                "qualifiedName": "Batiments.references.BatimentToTypeBatiment",
-                "brokenValidationLabel": "Le type de batiment sélectionné est invalide pour ce batiment",
-                "deletePropagation": "RESTRICT",
-                "fromEntity": "Batiments.entities.Batiment.Batiment",
-                "fromRoleName": "Batiment",
-                "mandatoryValidationLabel": "Le type de batiment est obligatoire pour un batiment",
-                "oneToMany": false,
-                "physicalName": "BATI_TYPE_BATIMENT_REF",
-                "splitDuplicatePropagation": "NONE",
-                "toEntity": "Batiments.entities.TypeBatiment.TypeBatiment",
-                "toRoleName": "TypeBatiment",
-                "toRolePhysicalName": "TYPE_BATIMENT_ID",
-                "validationScope": "PRE_CONSO",
-                "description": "Référence Batiment vers Type de Batiment",
-                "fromRoleDocumentation": "Cette référence catégorise un **Bâtiment** selon son **Type**.\n\nLe type de bâtiment caractérise l'usage et la nature architecturale du bâtiment.\n",
-                "fromRoleLabel": "Batiment",
-                "fromRolePluralLabel": "Batiments",
-                "label": "Batiment Type de Batiment",
-                "toRoleLabel": "Type de Batiment",
-                "foreignAttribute": {
-                    "qualifiedName": "Batiments.references.BatimentToTypeBatiment.TypeBatiment",
-                    "_type": "ForeignAttribute",
-                    "physicalName": "TYPE_BATIMENT_ID",
-                    "entity": "Batiments.entities.Batiment.Batiment",
-                    "label": "Type de Batiment",
                     "searchable": true
                 }
             },
@@ -2194,35 +2107,6 @@
                 }
             },
             {
-                "qualifiedName": "Batiments.references.LotToDestinationReelle",
-                "brokenValidationLabel": "Le genre de bien sélectionné est invalide pour ce lot",
-                "deletePropagation": "RESTRICT",
-                "fromEntity": "Batiments.entities.Lot.Lot",
-                "fromRoleName": "Lot",
-                "mandatoryValidationLabel": "Le genre de bien est obligatoire pour un lot",
-                "oneToMany": false,
-                "physicalName": "LOT_DEST_REELLE_REF",
-                "splitDuplicatePropagation": "NONE",
-                "toEntity": "Batiments.entities.DestinationReelle.DestinationReelle",
-                "toRoleName": "DestinationReelle",
-                "toRolePhysicalName": "DESTINATION_REEL_ID",
-                "validationScope": "PRE_CONSO",
-                "description": "Référence Lot vers Destiantion réelle",
-                "fromRoleDocumentation": "Cette référence permet de classifier un **Lot** selon son **Genre de Bien**.\n\nLe genre de bien caractérise la nature du lot (commercial, résidentiel, etc.).\n",
-                "fromRoleLabel": "Lot",
-                "fromRolePluralLabel": "Lots",
-                "label": "Lot Distanation réeelle",
-                "toRoleLabel": "Destination Réelle",
-                "foreignAttribute": {
-                    "qualifiedName": "Batiments.references.LotToDestinationReelle.DestinationReelle",
-                    "_type": "ForeignAttribute",
-                    "physicalName": "DESTINATION_REEL_ID",
-                    "entity": "Batiments.entities.Lot.Lot",
-                    "label": "Destination Réelle",
-                    "searchable": true
-                }
-            },
-            {
                 "qualifiedName": "Batiments.references.LotToEtage",
                 "brokenValidationLabel": "L'etage sélectionné est invalide pour ce lot",
                 "deletePropagation": "RESTRICT",
@@ -2369,30 +2253,30 @@
             },
             {
                 "qualifiedName": "Batiments.references.LotToTypologieLot",
-                "brokenValidationLabel": "Le Nature de bien sélectionné est invalide pour ce lot",
+                "brokenValidationLabel": "La typologie de lot sélectionnée est invalide pour ce lot",
                 "deletePropagation": "RESTRICT",
                 "fromEntity": "Batiments.entities.Lot.Lot",
                 "fromRoleName": "Lot",
-                "mandatoryValidationLabel": "Le Nature de bien est obligatoire pour un lot",
+                "mandatoryValidationLabel": "La typologie de lot est obligatoire pour un lot",
                 "oneToMany": false,
-                "physicalName": "LOT_NATURE_BIEN_REF",
+                "physicalName": "LOT_TYPOLOGIE_LOT_REF",
                 "splitDuplicatePropagation": "NONE",
                 "toEntity": "Batiments.entities.TypologieLot.TypologieLot",
                 "toRoleName": "TypologieLot",
-                "toRolePhysicalName": "NATURE_BIEN_ID",
+                "toRolePhysicalName": "TYPOLOGIE_LOT_ID",
                 "validationScope": "PRE_CONSO",
-                "description": "Référence Lot vers Nature de Bien",
-                "fromRoleDocumentation": "Cette référence permet de classifier un **Lot** selon son **Nature de Bien**.\n\nLe Nature de bien caractérise la nature du lot (commercial, résidentiel, etc.).\n",
+                "description": "Référence Lot vers Typologie de Lot",
+                "fromRoleDocumentation": "Cette référence permet de classifier un **Lot** selon son **Typologie de Lot**.\n\nLa Typologie de lot caractérise la typologie du lot (commercial, résidentiel, etc.).\n",
                 "fromRoleLabel": "Lot",
                 "fromRolePluralLabel": "Lots",
-                "label": "Lot Nature de Bien",
-                "toRoleLabel": "Nature de Bien",
+                "label": "Lot Typologie de Lot",
+                "toRoleLabel": "Typologie de Lot",
                 "foreignAttribute": {
                     "qualifiedName": "Batiments.references.LotToTypologieLot.TypologieLot",
                     "_type": "ForeignAttribute",
-                    "physicalName": "NATURE_BIEN_ID",
+                    "physicalName": "TYPOLOGIE_LOT_ID",
                     "entity": "Batiments.entities.Lot.Lot",
-                    "label": "Nature de Bien",
+                    "label": "Typologie de Lot",
                     "searchable": true
                 }
             },
@@ -3687,7 +3571,7 @@
                                 "posInParent": 0,
                                 "useCustomLabel": false,
                                 "value": "BatimentID",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "LONG_INTEGER",
                                 "componentProperties": []
                             },
@@ -3700,7 +3584,7 @@
                                 "posInParent": 1,
                                 "useCustomLabel": true,
                                 "value": "IdentifiantsERP",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "label": "Numéro de bâtiment",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -3714,7 +3598,7 @@
                                 "posInParent": 2,
                                 "useCustomLabel": false,
                                 "value": "Libelle_Batiment",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -3727,7 +3611,7 @@
                                 "posInParent": 3,
                                 "useCustomLabel": false,
                                 "value": "Adresse",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -3740,7 +3624,7 @@
                                 "posInParent": 4,
                                 "useCustomLabel": false,
                                 "value": "CodePostal",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -3753,7 +3637,7 @@
                                 "posInParent": 5,
                                 "useCustomLabel": false,
                                 "value": "Ville",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -3766,7 +3650,7 @@
                                 "posInParent": 6,
                                 "useCustomLabel": false,
                                 "value": "FDN_Pays",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.Pays.Pays",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -3780,7 +3664,7 @@
                                 "posInParent": 7,
                                 "useCustomLabel": false,
                                 "value": "AdresseEnrichie",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -3793,7 +3677,7 @@
                                 "posInParent": 8,
                                 "useCustomLabel": false,
                                 "value": "BatimentPrincipal",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -3806,7 +3690,7 @@
                                 "posInParent": 9,
                                 "useCustomLabel": false,
                                 "value": "FlagAscenseur",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -3819,7 +3703,7 @@
                                 "posInParent": 10,
                                 "useCustomLabel": false,
                                 "value": "FDN_Phase",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.Phase.Phase",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -3833,7 +3717,7 @@
                                 "posInParent": 11,
                                 "useCustomLabel": false,
                                 "value": "FDN_ZoneGeographique",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.ZoneGeographique.ZoneGeographique",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -3847,8 +3731,22 @@
                                 "posInParent": 12,
                                 "useCustomLabel": false,
                                 "value": "SuperficieUtile",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DECIMAL",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Batiment.collection_views.BatimentCollectionView.SousPortefeuille",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 13,
+                                "useCustomLabel": true,
+                                "value": "Immeuble.SousPortefeuille",
+                                "visibleByDefault": true,
+                                "label": "Sous-portefeuille",
+                                "valueDataType": "STRING",
                                 "componentProperties": []
                             },
                             {
@@ -3857,7 +3755,7 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 13,
+                                "posInParent": 14,
                                 "useCustomLabel": false,
                                 "value": "FDN_Usage",
                                 "visibleByDefault": true,
@@ -3871,10 +3769,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 14,
+                                "posInParent": 15,
                                 "useCustomLabel": false,
                                 "value": "FDN_Immeuble",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.Immeuble.Immeuble",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -3885,10 +3783,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 15,
+                                "posInParent": 16,
                                 "useCustomLabel": false,
                                 "value": "ConfirmationStatus",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -3898,10 +3796,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 16,
+                                "posInParent": 17,
                                 "useCustomLabel": false,
                                 "value": "ConfidenceScore",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "LONG_INTEGER",
                                 "componentProperties": []
                             },
@@ -3911,10 +3809,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 17,
+                                "posInParent": 18,
                                 "useCustomLabel": false,
                                 "value": "MastersCount",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "LONG_INTEGER",
                                 "componentProperties": []
                             },
@@ -3924,10 +3822,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semCheckboxField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 18,
+                                "posInParent": 19,
                                 "useCustomLabel": false,
                                 "value": "HasSuggestedMerge",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -3937,10 +3835,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 19,
+                                "posInParent": 20,
                                 "useCustomLabel": false,
                                 "value": "UpdateDate",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
                             },
@@ -3950,10 +3848,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 20,
+                                "posInParent": 21,
                                 "useCustomLabel": false,
                                 "value": "Updator",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             }
@@ -4055,7 +3953,7 @@
                         "formCharts": [],
                         "formCollections": [
                             {
-                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentForm.FiscaliteJuridique.SocietesProprietaires.SocietesProprietaires",
+                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentForm.FiscaliteJuridique.Societes.Societes",
                                 "displayRecordCount": "ALWAYS",
                                 "documentationInterpreter": "LITERAL",
                                 "enableUserDefinedSort": true,
@@ -4069,27 +3967,8 @@
                                 "useCustomLabel": true,
                                 "visibleValueInterpreter": "LITERAL",
                                 "collection": "Batiments.entities.RelBatSoc.collection_views.Societe",
-                                "label": "Société propriétaire",
-                                "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentForm.FiscaliteJuridique.SocietesProprietaires",
-                                "targetEntity": "Batiments.entities.RelBatSoc.RelBatSoc"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentForm.FiscaliteJuridique.SocietesExploitantes.SocietesExploitante",
-                                "displayRecordCount": "ALWAYS",
-                                "documentationInterpreter": "LITERAL",
-                                "enableUserDefinedSort": true,
-                                "filter": "1=1",
-                                "gridAllowed": false,
-                                "listAllowed": false,
-                                "posInParent": 0,
-                                "sortExpression": "1 DESC",
-                                "tableAllowed": true,
-                                "transitionPath": "RelBatSoc",
-                                "useCustomLabel": true,
-                                "visibleValueInterpreter": "LITERAL",
-                                "collection": "Batiments.entities.RelBatSoc.collection_views.Societe",
-                                "label": "Société exploitante",
-                                "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentForm.FiscaliteJuridique.SocietesExploitantes",
+                                "label": "Société",
+                                "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentForm.FiscaliteJuridique.Societes",
                                 "targetEntity": "Batiments.entities.RelBatSoc.RelBatSoc"
                             }
                         ],
@@ -4190,7 +4069,7 @@
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
                                 "label": "Phase",
-                                "labelWidth": "200px",
+                                "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentForm.CycleVieBatiment",
                                 "visibleValue": "1"
                             },
@@ -4202,7 +4081,7 @@
                                 "posInParent": 1,
                                 "visibleValueInterpreter": "LITERAL",
                                 "label": "Acquisition/Cession",
-                                "labelWidth": "200px",
+                                "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentForm.CycleVieBatiment",
                                 "visibleValue": "1"
                             },
@@ -4214,7 +4093,7 @@
                                 "posInParent": 2,
                                 "visibleValueInterpreter": "LITERAL",
                                 "label": "Construction",
-                                "labelWidth": "200px",
+                                "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentForm.CycleVieBatiment",
                                 "visibleValue": "1"
                             },
@@ -4237,29 +4116,19 @@
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
                                 "label": "Juridique",
+                                "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentForm.FiscaliteJuridique",
                                 "visibleValue": "1"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentForm.FiscaliteJuridique.SocietesProprietaires",
+                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentForm.FiscaliteJuridique.Societes",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 1,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Société propriétaire",
-                                "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentForm.FiscaliteJuridique",
-                                "visibleValue": "1"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentForm.FiscaliteJuridique.SocietesExploitantes",
-                                "_type": "FormSection2",
-                                "documentationInterpreter": "LITERAL",
-                                "layoutDirection": "COLUMN",
-                                "posInParent": 2,
-                                "visibleValueInterpreter": "LITERAL",
-                                "label": "Société exploitante",
-                                "labelWidth": "200px",
+                                "label": "Société",
+                                "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentForm.FiscaliteJuridique",
                                 "visibleValue": "1"
                             }
@@ -5696,459 +5565,6 @@
                 "uniqueKeys": []
             },
             {
-                "qualifiedName": "Batiments.entities.DestinationReelle.DestinationReelle",
-                "dataEntryAllowed": true,
-                "historizeGolden": true,
-                "historizeMaster": false,
-                "description": "",
-                "documentation": "La **DestinationReelle** représente l'état d'avancement d'un actif immobilier dans son cycle de vie.\n\nUne DestinationReelle permet de suivre l'évolution d'un immeuble, d'un bâtiment ou d'un lot depuis sa conception jusqu'à son exploitation (en projet, en construction, livré, en exploitation, etc.).\n\nCette entité est essentielle pour le pilotage des projets immobiliers et la gestion du portefeuille.\n",
-                "enableDelete": true,
-                "entityType": "BASIC",
-                "iconUrl": "images://mdi/timeline-text.svg",
-                "label": "Destination Réelle",
-                "physicalTableName": "DESTINATION_REELLE",
-                "pluralLabel": "DestinationReelles",
-                "pkAttributes": [
-                    {
-                        "qualifiedName": "Batiments.entities.DestinationReelle.DestinationReelle.DestinationReelleCode",
-                        "_type": "PKAttribute",
-                        "abstractAtomicType": "String",
-                        "goldenAttribute": true,
-                        "i18ned": false,
-                        "mandatory": true,
-                        "multiValued": false,
-                        "physicalColName": "DESTINATION_REEL_ID",
-                        "valueSeparator": "",
-                        "idGenerationType": "MANUAL",
-                        "label": "Code destination réelle",
-                        "length": 50,
-                        "searchable": true
-                    }
-                ],
-                "atomicAttributes": [
-                    {
-                        "qualifiedName": "Batiments.entities.DestinationReelle.DestinationReelle.DestinationReelleLibelle",
-                        "_type": "AtomicAttribute",
-                        "abstractAtomicType": "String",
-                        "goldenAttribute": true,
-                        "i18ned": false,
-                        "lovValidationScope": "NONE",
-                        "mandatory": false,
-                        "mandatoryValidationLabel": "",
-                        "mandatoryValidationScope": "NONE",
-                        "multiValued": false,
-                        "physicalColName": "LIBELLE",
-                        "valueSeparator": "",
-                        "label": "Libellé destination réelle",
-                        "length": 255,
-                        "searchable": true
-                    }
-                ],
-                "complexAttributes": [],
-                "abstractRowCheckConstraints": [],
-                "actionSets": [
-                    {
-                        "qualifiedName": "Batiments.entities.DestinationReelle.action_sets.DestinationReelleActionSet",
-                        "defaultActionSet": true,
-                        "description": "",
-                        "label": "Destination Réelle Action Set",
-                        "actions": [
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.action_sets.DestinationReelleActionSet.CreateAuthorDestinationReelles",
-                                "_type": "CreateAction",
-                                "description": "",
-                                "label": "Create",
-                                "useCustomLabel": true,
-                                "waitDialogEnabled": false,
-                                "allowOtherPublishers": true,
-                                "createdRecordType": "GOLDEN",
-                                "createMultiple": false,
-                                "stepper": "Batiments.entities.DestinationReelle.steppers.AuthorDestinationReelle"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.action_sets.DestinationReelleActionSet.EditAuthorDestinationReelles",
-                                "_type": "EditAction",
-                                "description": "",
-                                "label": "Edit",
-                                "useCustomLabel": true,
-                                "waitDialogEnabled": false,
-                                "multipleSelectionAllowed": true,
-                                "availableForErrorData": true,
-                                "availableForGoldenData": true,
-                                "availableForMasterData": false,
-                                "stepper": "Batiments.entities.DestinationReelle.steppers.AuthorDestinationReelle"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.action_sets.DestinationReelleActionSet.MassUpdateAuthorDestinationReelles",
-                                "_type": "MassUpdateAction",
-                                "description": "",
-                                "label": "Mass Update",
-                                "useCustomLabel": true,
-                                "waitDialogEnabled": false,
-                                "stepper": "Batiments.entities.DestinationReelle.steppers.AuthorDestinationReelle",
-                                "availableForErrorData": true,
-                                "availableForGoldenData": true,
-                                "availableForMasterData": false
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.action_sets.DestinationReelleActionSet.Delete",
-                                "_type": "DeleteAction",
-                                "description": "",
-                                "label": "Delete",
-                                "useCustomLabel": true,
-                                "waitDialogEnabled": false,
-                                "deleteType": "HARD_DELETE",
-                                "multipleSelectionAllowed": true,
-                                "availableForGoldenData": true,
-                                "availableForMasterData": false
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.action_sets.DestinationReelleActionSet.Export",
-                                "_type": "ExportAction",
-                                "description": "",
-                                "label": "Export",
-                                "useCustomLabel": true,
-                                "waitDialogEnabled": false
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.action_sets.DestinationReelleActionSet.ImportAuthorDestinationReelles",
-                                "_type": "ImportAction",
-                                "description": "",
-                                "label": "Import",
-                                "useCustomLabel": true,
-                                "waitDialogEnabled": false,
-                                "allowOtherPublishers": true,
-                                "importedRecordType": "GOLDEN",
-                                "importMode": "CREATE_AND_UPDATE",
-                                "stepper": "Batiments.entities.DestinationReelle.steppers.AuthorDestinationReelle"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.action_sets.DestinationReelleActionSet.BrowseGraph",
-                                "_type": "BrowseGraphAction",
-                                "description": "",
-                                "label": "Browse Graph",
-                                "useCustomLabel": true,
-                                "waitDialogEnabled": false
-                            }
-                        ]
-                    }
-                ],
-                "businessObjectViews": [
-                    {
-                        "qualifiedName": "Batiments.entities.DestinationReelle.business_views.DestinationReelleBusinessView",
-                        "displayRootNodeAs": "ICON_LABEL",
-                        "enableHierarchyView": false,
-                        "filter": "1 = 1",
-                        "rootBoViewEntity": "Batiments.entities.DestinationReelle.business_views.DestinationReelleBusinessView.DestinationReelle",
-                        "rootDescription": "",
-                        "rootLabel": "Destination Réelle",
-                        "rootPluralLabel": "Destination Réelle",
-                        "useHierarchyOnOpen": false,
-                        "visible": true,
-                        "label": "Destination Réelle",
-                        "boViewEntities": [
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.business_views.DestinationReelleBusinessView.DestinationReelle",
-                                "collection": "Batiments.entities.DestinationReelle.collection_views.DestinationReelleCollectionView",
-                                "displayRecordCount": "ALWAYS",
-                                "enableUserDefinedSort": true,
-                                "entity": "Batiments.entities.DestinationReelle.DestinationReelle",
-                                "form": "Batiments.entities.DestinationReelle.forms.DestinationReelleForm",
-                                "gridAllowed": true,
-                                "listAllowed": true,
-                                "outlineVisible": false,
-                                "overrideDefaultSort": false,
-                                "sortExpression": "",
-                                "tableAllowed": true,
-                                "actionSet": "Batiments.entities.DestinationReelle.action_sets.DestinationReelleActionSet",
-                                "businessEntitySearchConfigs": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.DestinationReelle.business_views.DestinationReelleBusinessView.DestinationReelle.TextConfig",
-                                        "searchTypeConfig": {
-                                            "searchType": "TEXT"
-                                        }
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.DestinationReelle.business_views.DestinationReelleBusinessView.DestinationReelle.FormConfig",
-                                        "searchTypeConfig": {
-                                            "searchType": "BY_FORM"
-                                        }
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.DestinationReelle.business_views.DestinationReelleBusinessView.DestinationReelle.AdvancedConfig",
-                                        "searchTypeConfig": {
-                                            "searchType": "ADVANCED"
-                                        }
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.DestinationReelle.business_views.DestinationReelleBusinessView.DestinationReelle.SemqlConfig",
-                                        "searchTypeConfig": {
-                                            "searchType": "SEMQL"
-                                        }
-                                    }
-                                ],
-                                "displayCard": "Batiments.entities.DestinationReelle.display_cards.DestinationReelleDisplayCard",
-                                "transitions": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.DestinationReelle.business_views.DestinationReelleBusinessView.DestinationReelle.GoldenHistoryRecords",
-                                        "enableHierarchyInterpreter": "LITERAL",
-                                        "expandHierarchyByDefault": false,
-                                        "filter": "1 = 1",
-                                        "targetBoViewEntity": "Batiments.entities.DestinationReelle.business_views.DestinationReelleBusinessView.DestinationReelle",
-                                        "transitionPath": "GoldenHistoryRecords",
-                                        "useCustomLabel": true,
-                                        "displayFormTabAs": "ICON_LABEL",
-                                        "displayTransitionNodeAs": "ICON_LABEL",
-                                        "enableHierarchy": "0",
-                                        "iconUrl": "images://mdi/history.svg",
-                                        "label": "History",
-                                        "pluralLabel": "History",
-                                        "transitionType": "FULLY_QUALIFIED",
-                                        "transitionVisible": "1",
-                                        "transitionVisibleInterpreter": "LITERAL"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "collections": [
-                    {
-                        "qualifiedName": "Batiments.entities.DestinationReelle.collection_views.DestinationReelleCollectionView",
-                        "default": true,
-                        "gridAllowed": false,
-                        "gridColumns": 4,
-                        "gridTextPosition": "BOTTOM",
-                        "gridTileHeight": "1:1",
-                        "gridTileLines": 1,
-                        "listAllowed": true,
-                        "listItemLines": 1,
-                        "listShowDisplayCardAvatar": false,
-                        "listShowDivider": true,
-                        "tableAllowed": true,
-                        "tableDisplayCardColumnLabel": "DestinationReelle",
-                        "tableRowLines": 1,
-                        "tableShowDisplayCard": true,
-                        "displayCard": "Batiments.entities.DestinationReelle.display_cards.DestinationReelleDisplayCard",
-                        "tableColumns": [
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.collection_views.DestinationReelleCollectionView.DestinationReelleCode",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semIdField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 0,
-                                "useCustomLabel": false,
-                                "value": "DestinationReelleCode",
-                                "visibleByDefault": true,
-                                "valueDataType": "STRING",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.collection_views.DestinationReelleCollectionView.DestinationReelleLibelle",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 1,
-                                "useCustomLabel": false,
-                                "value": "DestinationReelleLibelle",
-                                "visibleByDefault": true,
-                                "valueDataType": "STRING",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.collection_views.DestinationReelleCollectionView.UpdateDate",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 2,
-                                "useCustomLabel": false,
-                                "value": "UpdateDate",
-                                "visibleByDefault": true,
-                                "valueDataType": "DATE",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.collection_views.DestinationReelleCollectionView.Updator",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 3,
-                                "useCustomLabel": false,
-                                "value": "Updator",
-                                "visibleByDefault": true,
-                                "valueDataType": "STRING",
-                                "componentProperties": []
-                            }
-                        ]
-                    }
-                ],
-                "displayCards": [
-                    {
-                        "qualifiedName": "Batiments.entities.DestinationReelle.display_cards.DestinationReelleDisplayCard",
-                        "avatarImageValueInterpreter": "LITERAL",
-                        "default": true,
-                        "primaryImageFallbackValueInterpreter": "LITERAL",
-                        "primaryImageValueInterpreter": "LITERAL",
-                        "avatarImageAlign": "MIDDLE_CENTER",
-                        "avatarImageMode": "FIT",
-                        "avatarImageSourceType": "URL",
-                        "primaryImageAlign": "MIDDLE_CENTER",
-                        "primaryImageFallbackSourceType": "URL",
-                        "primaryImageMode": "FIT",
-                        "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "DestinationReelleLibelle"
-                    }
-                ],
-                "dupsManagers": [],
-                "enrichers": [],
-                "forms": [
-                    {
-                        "default": true,
-                        "qualifiedName": "Batiments.entities.DestinationReelle.forms.DestinationReelleForm",
-                        "formCharts": [],
-                        "formCollections": [],
-                        "formContainers": [
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.forms.DestinationReelleForm.DestinationReelle",
-                                "_type": "FormTab",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 0,
-                                "visibleValueInterpreter": "LITERAL",
-                                "displayFormTabAs": "LABEL",
-                                "label": "Destination Réelle",
-                                "visibleValue": "1"
-                            }
-                        ],
-                        "formDashboards": [],
-                        "formFields": [
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.forms.DestinationReelleForm.DestinationReelle.DestinationReelleCode",
-                                "_type": "FormField",
-                                "componentName": "semIdField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 0,
-                                "useCustomLabel": false,
-                                "value": "DestinationReelleCode",
-                                "parentFormContainer": "Batiments.entities.DestinationReelle.forms.DestinationReelleForm.DestinationReelle",
-                                "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
-                                "componentProperties": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.DestinationReelle.forms.DestinationReelleForm.DestinationReelle.DestinationReelleCode.labelColor",
-                                        "dataType": "STRING",
-                                        "value": "md:black",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.DestinationReelle.forms.DestinationReelleForm.DestinationReelle.DestinationReelleCode.labelTypography",
-                                        "dataType": "STRING",
-                                        "value": "body-2",
-                                        "valueInterpreter": "LITERAL"
-                                    }
-                                ]
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.forms.DestinationReelleForm.DestinationReelle.DestinationReelleLibelle",
-                                "_type": "FormField",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 1,
-                                "useCustomLabel": false,
-                                "value": "DestinationReelleLibelle",
-                                "parentFormContainer": "Batiments.entities.DestinationReelle.forms.DestinationReelleForm.DestinationReelle",
-                                "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
-                                "componentProperties": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.DestinationReelle.forms.DestinationReelleForm.DestinationReelle.DestinationReelleLibelle.labelColor",
-                                        "dataType": "STRING",
-                                        "value": "md:black",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.DestinationReelle.forms.DestinationReelleForm.DestinationReelle.DestinationReelleLibelle.labelTypography",
-                                        "dataType": "STRING",
-                                        "value": "body-2",
-                                        "valueInterpreter": "LITERAL"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "searchForms": [],
-                "steppers": [
-                    {
-                        "qualifiedName": "Batiments.entities.DestinationReelle.steppers.AuthorDestinationReelle",
-                        "label": "Destination Réelle",
-                        "rootCollectionStep": "Batiments.entities.DestinationReelle.steppers.AuthorDestinationReelle.DestinationReelles",
-                        "steps": [
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.steppers.AuthorDestinationReelle.DestinationReelles",
-                                "_type": "CollectionStep",
-                                "canFinishSubLevel": true,
-                                "childDeleteType": "HARD_DELETE",
-                                "childImportModeOnParentEdit": "CREATE_AND_UPDATE",
-                                "collectionView": "Batiments.entities.DestinationReelle.collection_views.DestinationReelleCollectionView",
-                                "createChildUsingManyToManyPicker": false,
-                                "customSortEnabled": false,
-                                "defaultDisplayType": "TABLE",
-                                "displayGridAllowed": false,
-                                "displayListAllowed": true,
-                                "displayTableAllowed": true,
-                                "enableChildCopyOnParentCreate": false,
-                                "enableChildCopyOnParentEdit": false,
-                                "enableChildCreationOnParentCreate": false,
-                                "enableChildCreationOnParentEdit": false,
-                                "enableChildDeleteOnParentEdit": false,
-                                "enableChildEditOnParentCreate": false,
-                                "enableChildEditOnParentEdit": false,
-                                "enableChildExport": false,
-                                "enableChildImportOnParentCreate": true,
-                                "enableChildImportOnParentEdit": false,
-                                "enableChildRemoveOnParentCreate": false,
-                                "enableChildRemoveOnParentEdit": false,
-                                "enabledOnParentCreate": true,
-                                "enabledOnParentEdit": true,
-                                "formFieldsMode": "AUTO",
-                                "linear": false,
-                                "manyToManyCustomSortEnabled": false,
-                                "manyToManyDefaultDisplayType": "GRID",
-                                "manyToManyDisplayGridAllowed": false,
-                                "manyToManyDisplayListAllowed": false,
-                                "manyToManyDisplayTableAllowed": false,
-                                "manyToManyUserDefinedSortEnabled": false,
-                                "skipToChildCreationOnParentCreate": false,
-                                "skipToChildEditingOnParentEdit": false,
-                                "useCustomCollectionLabel": false,
-                                "userDefinedSortEnabled": true,
-                                "label": "DestinationReelles"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.DestinationReelle.steppers.AuthorDestinationReelle.DestinationReelles.DestinationReelle",
-                                "_type": "FormStep",
-                                "canFinishSubLevel": true,
-                                "enabledOnParentCreate": true,
-                                "enabledOnParentEdit": true,
-                                "enableMasterValuePicking": false,
-                                "formFieldsMode": "AUTO",
-                                "formTab": "Batiments.entities.DestinationReelle.forms.DestinationReelleForm.DestinationReelle",
-                                "label": "Destination Réelle",
-                                "parentCollectionStep": "Batiments.entities.DestinationReelle.steppers.AuthorDestinationReelle.DestinationReelles"
-                            }
-                        ]
-                    }
-                ],
-                "survivorshipRules": [],
-                "uniqueKeys": []
-            },
-            {
                 "qualifiedName": "Batiments.entities.Etage.Etage",
                 "dataEntryAllowed": true,
                 "historizeGolden": true,
@@ -6550,7 +5966,7 @@
                                 "posInParent": 0,
                                 "useCustomLabel": false,
                                 "value": "EtageCode",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "LONG_INTEGER",
                                 "componentProperties": []
                             },
@@ -6563,7 +5979,7 @@
                                 "posInParent": 1,
                                 "useCustomLabel": false,
                                 "value": "CodeEtage",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "label": "Etage",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -6577,7 +5993,7 @@
                                 "posInParent": 2,
                                 "useCustomLabel": false,
                                 "value": "Libelle",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "label": "Libellé",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -6591,7 +6007,7 @@
                                 "posInParent": 3,
                                 "useCustomLabel": false,
                                 "value": "FDN_Batiment",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.Batiment.Batiment",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -6605,7 +6021,7 @@
                                 "posInParent": 4,
                                 "useCustomLabel": false,
                                 "value": "ConfirmationStatus",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -6618,7 +6034,7 @@
                                 "posInParent": 5,
                                 "useCustomLabel": false,
                                 "value": "ConfidenceScore",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "LONG_INTEGER",
                                 "componentProperties": []
                             },
@@ -6631,7 +6047,7 @@
                                 "posInParent": 6,
                                 "useCustomLabel": false,
                                 "value": "MastersCount",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "LONG_INTEGER",
                                 "componentProperties": []
                             },
@@ -6644,7 +6060,7 @@
                                 "posInParent": 7,
                                 "useCustomLabel": false,
                                 "value": "HasSuggestedMerge",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -6657,7 +6073,7 @@
                                 "posInParent": 8,
                                 "useCustomLabel": false,
                                 "value": "UpdateDate",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
                             },
@@ -6670,7 +6086,7 @@
                                 "posInParent": 9,
                                 "useCustomLabel": false,
                                 "value": "Updator",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             }
@@ -8404,7 +7820,7 @@
                         "multiValued": false,
                         "physicalColName": "SOUS_PORTEFEUILLE",
                         "valueSeparator": "",
-                        "label": "Sous portefeuille",
+                        "label": "Sous-portefeuille",
                         "length": 150
                     }
                 ],
@@ -9071,7 +8487,7 @@
                                 "posInParent": 0,
                                 "useCustomLabel": false,
                                 "value": "ImmeubleID",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "LONG_INTEGER",
                                 "componentProperties": []
                             },
@@ -9084,7 +8500,7 @@
                                 "posInParent": 1,
                                 "useCustomLabel": false,
                                 "value": "IdentifiantsERP",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "label": "Numéro immeuble",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -9098,7 +8514,7 @@
                                 "posInParent": 2,
                                 "useCustomLabel": false,
                                 "value": "Libelle",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -9111,7 +8527,7 @@
                                 "posInParent": 3,
                                 "useCustomLabel": false,
                                 "value": "Adresse",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -9124,7 +8540,7 @@
                                 "posInParent": 4,
                                 "useCustomLabel": false,
                                 "value": "AdresseLieuDit",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -9137,7 +8553,7 @@
                                 "posInParent": 5,
                                 "useCustomLabel": false,
                                 "value": "CodePostal",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -9150,7 +8566,7 @@
                                 "posInParent": 6,
                                 "useCustomLabel": false,
                                 "value": "Ville",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -9163,7 +8579,7 @@
                                 "posInParent": 7,
                                 "useCustomLabel": false,
                                 "value": "AdresseEnrichie",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -9176,7 +8592,7 @@
                                 "posInParent": 8,
                                 "useCustomLabel": false,
                                 "value": "DateAcquisition",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
                             },
@@ -9189,7 +8605,7 @@
                                 "posInParent": 9,
                                 "useCustomLabel": false,
                                 "value": "DateVente",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
                             },
@@ -9202,7 +8618,7 @@
                                 "posInParent": 10,
                                 "useCustomLabel": false,
                                 "value": "FDN_PeriodeConstruction",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.PeriodeConstruction.PeriodeConstruction",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -9216,7 +8632,7 @@
                                 "posInParent": 11,
                                 "useCustomLabel": false,
                                 "value": "DateDebutConstruction",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
                             },
@@ -9229,7 +8645,7 @@
                                 "posInParent": 12,
                                 "useCustomLabel": false,
                                 "value": "DateFinConstruction",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
                             },
@@ -9242,7 +8658,7 @@
                                 "posInParent": 13,
                                 "useCustomLabel": false,
                                 "value": "DateLivraison",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
                             },
@@ -9255,7 +8671,7 @@
                                 "posInParent": 14,
                                 "useCustomLabel": false,
                                 "value": "DateRestructuration",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
                             },
@@ -9268,7 +8684,7 @@
                                 "posInParent": 15,
                                 "useCustomLabel": false,
                                 "value": "SecteurGeographique",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -9281,7 +8697,7 @@
                                 "posInParent": 16,
                                 "useCustomLabel": false,
                                 "value": "FDN_FiscaliteCible",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.FiscaliteCible.FiscaliteCible",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -9295,7 +8711,7 @@
                                 "posInParent": 17,
                                 "useCustomLabel": false,
                                 "value": "FlagAscenseur",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -9308,7 +8724,7 @@
                                 "posInParent": 18,
                                 "useCustomLabel": false,
                                 "value": "DateFinValidite",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
                             },
@@ -9321,7 +8737,7 @@
                                 "posInParent": 19,
                                 "useCustomLabel": false,
                                 "value": "FDN_Phase",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.Phase.Phase",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -9335,7 +8751,7 @@
                                 "posInParent": 20,
                                 "useCustomLabel": false,
                                 "value": "DateDebPhase",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
                             },
@@ -9348,7 +8764,7 @@
                                 "posInParent": 21,
                                 "useCustomLabel": false,
                                 "value": "FDN_RegimeJuridique",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.RegimeJuridique.RegimeJuridique",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -9362,7 +8778,7 @@
                                 "posInParent": 22,
                                 "useCustomLabel": false,
                                 "value": "FDN_ZoneGeographique",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.ZoneGeographique.ZoneGeographique",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -9376,7 +8792,7 @@
                                 "posInParent": 23,
                                 "useCustomLabel": false,
                                 "value": "FDN_Portefeuille",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.Portefeuille.Portefeuille",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -9390,22 +8806,8 @@
                                 "posInParent": 24,
                                 "useCustomLabel": false,
                                 "value": "FDN_Pays",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.Pays.Pays",
-                                "valueDataType": "STRING",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView.FDN_Usage",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semReferenceField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 25,
-                                "useCustomLabel": false,
-                                "value": "FDN_Usage",
-                                "visibleByDefault": true,
-                                "referencedEntity": "Batiments.entities.Usage.Usage",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -9415,10 +8817,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 26,
+                                "posInParent": 25,
                                 "useCustomLabel": false,
                                 "value": "FDN_CategorieERP",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.CategorieERP.CategorieERP",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -9429,10 +8831,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 27,
+                                "posInParent": 26,
                                 "useCustomLabel": false,
                                 "value": "FDN_ModeChauffage",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.ModeChauffage.ModeChauffage",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -9443,10 +8845,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 28,
+                                "posInParent": 27,
                                 "useCustomLabel": false,
                                 "value": "FDN_TypeEnergie",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.TypeEnergie.TypeEnergie",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -9457,10 +8859,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 29,
+                                "posInParent": 28,
                                 "useCustomLabel": false,
                                 "value": "FDN_OrgaResp",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.OrganisationResponsable.OrganisationResponsable",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -9471,10 +8873,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 30,
+                                "posInParent": 29,
                                 "useCustomLabel": false,
                                 "value": "CapaciteAccueil",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "INTEGER",
                                 "componentProperties": []
                             },
@@ -9484,10 +8886,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 31,
+                                "posInParent": 30,
                                 "useCustomLabel": false,
                                 "value": "PosteTravail",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "INTEGER",
                                 "componentProperties": []
                             },
@@ -9497,10 +8899,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 32,
+                                "posInParent": 31,
                                 "useCustomLabel": false,
                                 "value": "ConfirmationStatus",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -9510,10 +8912,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 33,
+                                "posInParent": 32,
                                 "useCustomLabel": false,
                                 "value": "ConfidenceScore",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "LONG_INTEGER",
                                 "componentProperties": []
                             },
@@ -9523,10 +8925,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 34,
+                                "posInParent": 33,
                                 "useCustomLabel": false,
                                 "value": "MastersCount",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "LONG_INTEGER",
                                 "componentProperties": []
                             },
@@ -9536,10 +8938,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semCheckboxField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 35,
+                                "posInParent": 34,
                                 "useCustomLabel": false,
                                 "value": "HasSuggestedMerge",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -9549,10 +8951,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 36,
+                                "posInParent": 35,
                                 "useCustomLabel": false,
                                 "value": "UpdateDate",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
                             },
@@ -9562,10 +8964,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 37,
+                                "posInParent": 36,
                                 "useCustomLabel": false,
                                 "value": "Updator",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -9575,10 +8977,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 38,
+                                "posInParent": 37,
                                 "useCustomLabel": false,
                                 "value": "SuperficieUtile",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DECIMAL",
                                 "componentProperties": []
                             },
@@ -9588,10 +8990,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 39,
+                                "posInParent": 38,
                                 "useCustomLabel": false,
                                 "value": "FDN_ZoneImmostat",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.ZoneImmostat.ZoneImmostat",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -9602,10 +9004,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 40,
+                                "posInParent": 39,
                                 "useCustomLabel": false,
                                 "value": "FDN_SecteurImmostat",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.SecteurImmostat.SecteurImmostat",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -9616,10 +9018,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 41,
+                                "posInParent": 40,
                                 "useCustomLabel": false,
                                 "value": "FDN_SousSecteurImmostat",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.SousSecteurImmostat.SousSecteurImmostat",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -9630,10 +9032,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 42,
+                                "posInParent": 41,
                                 "useCustomLabel": false,
                                 "value": "FDN_QuartierParis",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.QuartierParis.QuartierParis",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -9644,10 +9046,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 43,
+                                "posInParent": 42,
                                 "useCustomLabel": false,
                                 "value": "IGH",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -9657,10 +9059,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 44,
+                                "posInParent": 43,
                                 "useCustomLabel": false,
                                 "value": "ERP",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -9670,10 +9072,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 45,
+                                "posInParent": 44,
                                 "useCustomLabel": false,
                                 "value": "FlagRestructuration",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -9683,10 +9085,24 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 46,
+                                "posInParent": 45,
                                 "useCustomLabel": false,
                                 "value": "SousPortefeuille",
                                 "visibleByDefault": true,
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView.FDN_Usage",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semReferenceField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 46,
+                                "useCustomLabel": false,
+                                "value": "FDN_Usage",
+                                "visibleByDefault": true,
+                                "referencedEntity": "Batiments.entities.Usage.Usage",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -9853,7 +9269,7 @@
                         "formCharts": [],
                         "formCollections": [
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.FiscaliteJuridique.SocietesProprietaires.SocietesProprietaires",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.FiscaliteJuridique.Societes.Societes",
                                 "displayRecordCount": "ALWAYS",
                                 "documentationInterpreter": "LITERAL",
                                 "enableUserDefinedSort": true,
@@ -9868,27 +9284,8 @@
                                 "visibleValueInterpreter": "LITERAL",
                                 "collection": "Batiments.entities.RelImmSoc.collection_views.Societe",
                                 "height": 200,
-                                "label": "Société propriétaire",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.FiscaliteJuridique.SocietesProprietaires",
-                                "targetEntity": "Batiments.entities.RelImmSoc.RelImmSoc"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.FiscaliteJuridique.SocietesExploitantes.SocietesExploitante",
-                                "displayRecordCount": "ALWAYS",
-                                "documentationInterpreter": "LITERAL",
-                                "enableUserDefinedSort": true,
-                                "filter": "1 = 1",
-                                "gridAllowed": false,
-                                "listAllowed": false,
-                                "posInParent": 0,
-                                "sortExpression": "2 ASC",
-                                "tableAllowed": true,
-                                "transitionPath": "RelImmSoc",
-                                "useCustomLabel": true,
-                                "visibleValueInterpreter": "LITERAL",
-                                "collection": "Batiments.entities.RelImmSoc.collection_views.Societe",
-                                "label": "Société exploitante",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.FiscaliteJuridique.SocietesExploitantes",
+                                "label": "Société",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.FiscaliteJuridique.Societes",
                                 "targetEntity": "Batiments.entities.RelImmSoc.RelImmSoc"
                             }
                         ],
@@ -10068,7 +9465,7 @@
                                 "displayFormTabAs": "ICON_LABEL",
                                 "iconUrl": "images://mdi/sync-circle.svg",
                                 "label": "Cycle de vie",
-                                "labelWidth": "15%",
+                                "labelWidth": "300px",
                                 "visibleValue": "1"
                             },
                             {
@@ -10086,7 +9483,7 @@
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
                                 "label": "Phase",
-                                "labelWidth": "200px",
+                                "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.CycleVieImmeuble.ContainerCycleVie",
                                 "visibleValue": "1"
                             },
@@ -10098,7 +9495,7 @@
                                 "posInParent": 1,
                                 "visibleValueInterpreter": "LITERAL",
                                 "label": "Restructuration",
-                                "labelWidth": "200px",
+                                "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.CycleVieImmeuble.ContainerCycleVie",
                                 "visibleValue": "1"
                             },
@@ -10110,7 +9507,7 @@
                                 "posInParent": 2,
                                 "visibleValueInterpreter": "LITERAL",
                                 "label": "Acquisition/Cession",
-                                "labelWidth": "200px",
+                                "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.CycleVieImmeuble.ContainerCycleVie",
                                 "visibleValue": "1"
                             },
@@ -10122,7 +9519,7 @@
                                 "posInParent": 3,
                                 "visibleValueInterpreter": "LITERAL",
                                 "label": "Construction",
-                                "labelWidth": "200px",
+                                "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.CycleVieImmeuble.ContainerCycleVie",
                                 "visibleValue": "1"
                             },
@@ -10145,29 +9542,18 @@
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
                                 "label": "Juridique",
+                                "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.FiscaliteJuridique",
                                 "visibleValue": "1"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.FiscaliteJuridique.SocietesProprietaires",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.FiscaliteJuridique.Societes",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 1,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Société propriétaire",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.FiscaliteJuridique",
-                                "visibleValue": "1"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.FiscaliteJuridique.SocietesExploitantes",
-                                "_type": "FormSection2",
-                                "documentationInterpreter": "LITERAL",
-                                "layoutDirection": "COLUMN",
-                                "posInParent": 2,
-                                "visibleValueInterpreter": "LITERAL",
-                                "label": "Société exploitante",
-                                "labelWidth": "200px",
+                                "label": "Société",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.FiscaliteJuridique",
                                 "visibleValue": "1"
                             }
@@ -11230,7 +10616,7 @@
                             {
                                 "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.CycleVieImmeuble.ContainerCycleVie.AcquisitionCession.DateAcquisition",
                                 "_type": "FormField",
-                                "componentName": "semTextField",
+                                "componentName": "semDateField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": true,
@@ -12432,7 +11818,7 @@
                                 "posInParent": 0,
                                 "useCustomLabel": false,
                                 "value": "LotCode",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "LONG_INTEGER",
                                 "componentProperties": []
                             },
@@ -12445,128 +11831,8 @@
                                 "posInParent": 1,
                                 "useCustomLabel": true,
                                 "value": "IdentifiantsERP",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "label": "Numéro du lot",
-                                "valueDataType": "STRING",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.Libelle",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 2,
-                                "useCustomLabel": false,
-                                "value": "Libelle",
-                                "visibleByDefault": true,
-                                "valueDataType": "STRING",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.SuperficieUtile",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 3,
-                                "useCustomLabel": false,
-                                "value": "SuperficieUtile",
-                                "visibleByDefault": true,
-                                "valueDataType": "DECIMAL",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.SuperficieUtileSansQP",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 4,
-                                "useCustomLabel": false,
-                                "value": "SuperficieUtileSansQP",
-                                "visibleByDefault": true,
-                                "valueDataType": "DECIMAL",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.SuperficieUtileQP",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 5,
-                                "useCustomLabel": false,
-                                "value": "SuperficieUtileQP",
-                                "visibleByDefault": true,
-                                "valueDataType": "DECIMAL",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.SuperficieUtilePonderee",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 6,
-                                "useCustomLabel": false,
-                                "value": "SuperficieUtilePonderee",
-                                "visibleByDefault": true,
-                                "valueDataType": "DECIMAL",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.IdentifiantPhysique",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 7,
-                                "useCustomLabel": false,
-                                "value": "IdentifiantPhysique",
-                                "visibleByDefault": true,
-                                "valueDataType": "STRING",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.Adresse",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 8,
-                                "useCustomLabel": true,
-                                "value": "CASE WHEN Etage.Batiment.Adresse is null THEN Batiment.Adresse ELSE Etage.Batiment.Adresse END",
-                                "visibleByDefault": true,
-                                "label": "Adresse du bâtiment",
-                                "valueDataType": "STRING",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.Immeuble_identifiantsERP",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 9,
-                                "useCustomLabel": true,
-                                "value": "CASE WHEN Etage.Batiment.Immeuble.IdentifiantsERP is null THEN Batiment.Immeuble.IdentifiantsERP ELSE Etage.Batiment.Immeuble.IdentifiantsERP END",
-                                "visibleByDefault": true,
-                                "label": "Numéro de l'immeuble",
-                                "valueDataType": "STRING",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.Batiments_identifiantsERP",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 10,
-                                "useCustomLabel": true,
-                                "value": "CASE WHEN Etage.Batiment.IdentifiantsERP is null THEN Batiment.IdentifiantsERP ELSE Etage.Batiment.IdentifiantsERP END",
-                                "visibleByDefault": true,
-                                "label": "Numéro de bâtiment",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -12576,11 +11842,37 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 11,
+                                "posInParent": 2,
                                 "useCustomLabel": false,
                                 "value": "FDN_Etage",
                                 "visibleByDefault": true,
                                 "referencedEntity": "Batiments.entities.Etage.Etage",
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.Libelle",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 3,
+                                "useCustomLabel": false,
+                                "value": "Libelle",
+                                "visibleByDefault": false,
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.IdentifiantPhysique",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 4,
+                                "useCustomLabel": false,
+                                "value": "IdentifiantPhysique",
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -12590,10 +11882,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 12,
+                                "posInParent": 5,
                                 "useCustomLabel": false,
                                 "value": "FDN_Batiment",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.Batiment.Batiment",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -12604,11 +11896,25 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 13,
+                                "posInParent": 6,
                                 "useCustomLabel": false,
                                 "value": "FDN_GenreLot",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.GenreLot.GenreLot",
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.FDN_UsageLot",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semReferenceField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 7,
+                                "useCustomLabel": false,
+                                "value": "FDN_UsageLot",
+                                "visibleByDefault": true,
+                                "referencedEntity": "Batiments.entities.UsageLot.UsageLot",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -12618,7 +11924,7 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 14,
+                                "posInParent": 8,
                                 "useCustomLabel": false,
                                 "value": "FDN_TypologieLot",
                                 "visibleByDefault": true,
@@ -12632,25 +11938,11 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 15,
+                                "posInParent": 9,
                                 "useCustomLabel": false,
                                 "value": "FDN_Phase",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.Phase.Phase",
-                                "valueDataType": "STRING",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.FDN_UsageLot",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semReferenceField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 16,
-                                "useCustomLabel": false,
-                                "value": "FDN_UsageLot",
-                                "visibleByDefault": true,
-                                "referencedEntity": "Batiments.entities.UsageLot.UsageLot",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -12660,10 +11952,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 17,
+                                "posInParent": 10,
                                 "useCustomLabel": false,
                                 "value": "DateDebUsage",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
                             },
@@ -12673,10 +11965,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 18,
+                                "posInParent": 11,
                                 "useCustomLabel": false,
                                 "value": "DateDebStatut",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
                             },
@@ -12686,10 +11978,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 19,
+                                "posInParent": 12,
                                 "useCustomLabel": false,
                                 "value": "FDN_RaisonNonLouable",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "referencedEntity": "Batiments.entities.RaisonNonLouable.RaisonNonLouable",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
@@ -12700,10 +11992,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 20,
+                                "posInParent": 13,
                                 "useCustomLabel": false,
                                 "value": "StatutLouable",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -12713,10 +12005,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 21,
+                                "posInParent": 14,
                                 "useCustomLabel": false,
                                 "value": "StatutSousLocation",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -12726,10 +12018,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 22,
+                                "posInParent": 15,
                                 "useCustomLabel": false,
                                 "value": "StatutLogementSocial",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -12739,10 +12031,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 23,
+                                "posInParent": 16,
                                 "useCustomLabel": false,
                                 "value": "StatutMeuble",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -12752,10 +12044,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 24,
+                                "posInParent": 17,
                                 "useCustomLabel": false,
                                 "value": "StatutPMR",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -12765,10 +12057,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 25,
+                                "posInParent": 18,
                                 "useCustomLabel": false,
                                 "value": "StatutCopropriete",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -12778,10 +12070,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 26,
+                                "posInParent": 19,
                                 "useCustomLabel": false,
                                 "value": "IdentifiantFiscal",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -12791,10 +12083,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 27,
+                                "posInParent": 20,
                                 "useCustomLabel": false,
                                 "value": "NumeroCopropriete",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -12804,11 +12096,63 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 28,
+                                "posInParent": 21,
                                 "useCustomLabel": false,
                                 "value": "DateRegimeTVA",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DATE",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.SuperficieUtile",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 22,
+                                "useCustomLabel": false,
+                                "value": "SuperficieUtile",
+                                "visibleByDefault": false,
+                                "valueDataType": "DECIMAL",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.SuperficieUtileQP",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 23,
+                                "useCustomLabel": false,
+                                "value": "SuperficieUtileQP",
+                                "visibleByDefault": true,
+                                "valueDataType": "DECIMAL",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.SuperficieUtileSansQP",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 24,
+                                "useCustomLabel": false,
+                                "value": "SuperficieUtileSansQP",
+                                "visibleByDefault": true,
+                                "valueDataType": "DECIMAL",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.SuperficieUtilePonderee",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 25,
+                                "useCustomLabel": false,
+                                "value": "SuperficieUtilePonderee",
+                                "visibleByDefault": false,
+                                "valueDataType": "DECIMAL",
                                 "componentProperties": []
                             },
                             {
@@ -12817,10 +12161,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 29,
+                                "posInParent": 26,
                                 "useCustomLabel": false,
                                 "value": "ConfirmationStatus",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -12830,10 +12174,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 30,
+                                "posInParent": 27,
                                 "useCustomLabel": false,
                                 "value": "ConfidenceScore",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "LONG_INTEGER",
                                 "componentProperties": []
                             },
@@ -12843,10 +12187,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 31,
+                                "posInParent": 28,
                                 "useCustomLabel": false,
                                 "value": "MastersCount",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "LONG_INTEGER",
                                 "componentProperties": []
                             },
@@ -12856,10 +12200,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semCheckboxField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 32,
+                                "posInParent": 29,
                                 "useCustomLabel": false,
                                 "value": "HasSuggestedMerge",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "BOOLEAN",
                                 "componentProperties": []
                             },
@@ -12869,10 +12213,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 33,
+                                "posInParent": 30,
                                 "useCustomLabel": false,
                                 "value": "UpdateDate",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
                             },
@@ -12882,10 +12226,10 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 34,
+                                "posInParent": 31,
                                 "useCustomLabel": false,
                                 "value": "Updator",
-                                "visibleByDefault": true,
+                                "visibleByDefault": false,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             }
@@ -13041,7 +12385,7 @@
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
                                 "label": "Phase",
-                                "labelWidth": "200px",
+                                "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotForm.CycleVie",
                                 "visibleValue": "1"
                             },
@@ -13053,7 +12397,7 @@
                                 "posInParent": 1,
                                 "visibleValueInterpreter": "LITERAL",
                                 "label": "Acquisition/Cession",
-                                "labelWidth": "200px",
+                                "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotForm.CycleVie",
                                 "visibleValue": "1"
                             },
@@ -15295,7 +14639,7 @@
                         "qualifiedName": "Batiments.entities.ModeChauffage.action_sets.ModeChauffageActionSet",
                         "defaultActionSet": true,
                         "description": "",
-                        "label": "ModeChauffage Action Set",
+                        "label": "Mode Chauffage Action Set",
                         "actions": [
                             {
                                 "qualifiedName": "Batiments.entities.ModeChauffage.action_sets.ModeChauffageActionSet.CreateAuthorModeChauffages",
@@ -15385,11 +14729,11 @@
                         "filter": "1 = 1",
                         "rootBoViewEntity": "Batiments.entities.ModeChauffage.business_views.ModeChauffageBusinessView.ModeChauffage",
                         "rootDescription": "",
-                        "rootLabel": "ModeChauffages",
-                        "rootPluralLabel": "ModeChauffages",
+                        "rootLabel": "Mode Chauffage",
+                        "rootPluralLabel": "Mode Chauffage",
                         "useHierarchyOnOpen": false,
                         "visible": true,
-                        "label": "ModeChauffages",
+                        "label": "Mode Chauffage",
                         "boViewEntities": [
                             {
                                 "qualifiedName": "Batiments.entities.ModeChauffage.business_views.ModeChauffageBusinessView.ModeChauffage",
@@ -17233,11 +16577,11 @@
                         "filter": "1 = 1",
                         "rootBoViewEntity": "Batiments.entities.Phase.business_views.PhaseBusinessView.Phase",
                         "rootDescription": "",
-                        "rootLabel": "Phases",
-                        "rootPluralLabel": "Phases",
+                        "rootLabel": "Phase",
+                        "rootPluralLabel": "Phase",
                         "useHierarchyOnOpen": false,
                         "visible": true,
-                        "label": "Phases",
+                        "label": "Phase",
                         "boViewEntities": [
                             {
                                 "qualifiedName": "Batiments.entities.Phase.business_views.PhaseBusinessView.Phase",
@@ -21855,459 +21199,6 @@
                 "uniqueKeys": []
             },
             {
-                "qualifiedName": "Batiments.entities.TypeBatiment.TypeBatiment",
-                "dataEntryAllowed": true,
-                "historizeGolden": true,
-                "historizeMaster": false,
-                "description": "",
-                "documentation": "Le **Type de Bâtiment** caractérise la nature et l'usage architectural d'un bâtiment.\n\nLe type de bâtiment permet de classifier les structures selon leur fonction principale et leurs caractéristiques architecturales (tour de bureaux, immeuble résidentiel, centre commercial, etc.).\n\nCette entité facilite la segmentation et l'analyse du patrimoine immobilier par typologie d'actifs.\n",
-                "enableDelete": true,
-                "entityType": "BASIC",
-                "iconUrl": "images://mdi/office-building.svg",
-                "label": "Type Batiment",
-                "physicalTableName": "TYPE_BATIMENT",
-                "pluralLabel": "Type Batiments",
-                "pkAttributes": [
-                    {
-                        "qualifiedName": "Batiments.entities.TypeBatiment.TypeBatiment.TypeBatimentCode",
-                        "_type": "PKAttribute",
-                        "abstractAtomicType": "String",
-                        "goldenAttribute": true,
-                        "i18ned": false,
-                        "mandatory": true,
-                        "multiValued": false,
-                        "physicalColName": "TYPE_BATIMENT_ID",
-                        "valueSeparator": "",
-                        "idGenerationType": "MANUAL",
-                        "label": "Code Type Batiment",
-                        "length": 50,
-                        "searchable": true
-                    }
-                ],
-                "atomicAttributes": [
-                    {
-                        "qualifiedName": "Batiments.entities.TypeBatiment.TypeBatiment.TypeBatimentLibelle",
-                        "_type": "AtomicAttribute",
-                        "abstractAtomicType": "String",
-                        "goldenAttribute": true,
-                        "i18ned": false,
-                        "lovValidationScope": "NONE",
-                        "mandatory": false,
-                        "mandatoryValidationLabel": "",
-                        "mandatoryValidationScope": "NONE",
-                        "multiValued": false,
-                        "physicalColName": "LIBELLE",
-                        "valueSeparator": "",
-                        "label": "Libellé Type Batiment",
-                        "length": 255,
-                        "searchable": true
-                    }
-                ],
-                "complexAttributes": [],
-                "abstractRowCheckConstraints": [],
-                "actionSets": [
-                    {
-                        "qualifiedName": "Batiments.entities.TypeBatiment.action_sets.TypeBatimentActionSet",
-                        "defaultActionSet": true,
-                        "description": "",
-                        "label": "Type Batiment Action Set",
-                        "actions": [
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.action_sets.TypeBatimentActionSet.CreateAuthorTypeBatiments",
-                                "_type": "CreateAction",
-                                "description": "",
-                                "label": "Create",
-                                "useCustomLabel": true,
-                                "waitDialogEnabled": false,
-                                "allowOtherPublishers": true,
-                                "createdRecordType": "GOLDEN",
-                                "createMultiple": false,
-                                "stepper": "Batiments.entities.TypeBatiment.steppers.AuthorTypeBatiments"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.action_sets.TypeBatimentActionSet.EditAuthorTypeBatiments",
-                                "_type": "EditAction",
-                                "description": "",
-                                "label": "Edit",
-                                "useCustomLabel": true,
-                                "waitDialogEnabled": false,
-                                "multipleSelectionAllowed": true,
-                                "availableForErrorData": true,
-                                "availableForGoldenData": true,
-                                "availableForMasterData": false,
-                                "stepper": "Batiments.entities.TypeBatiment.steppers.AuthorTypeBatiments"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.action_sets.TypeBatimentActionSet.MassUpdateAuthorTypeBatiments",
-                                "_type": "MassUpdateAction",
-                                "description": "",
-                                "label": "Mass Update",
-                                "useCustomLabel": true,
-                                "waitDialogEnabled": false,
-                                "stepper": "Batiments.entities.TypeBatiment.steppers.AuthorTypeBatiments",
-                                "availableForErrorData": true,
-                                "availableForGoldenData": true,
-                                "availableForMasterData": false
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.action_sets.TypeBatimentActionSet.Delete",
-                                "_type": "DeleteAction",
-                                "description": "",
-                                "label": "Delete",
-                                "useCustomLabel": true,
-                                "waitDialogEnabled": false,
-                                "deleteType": "HARD_DELETE",
-                                "multipleSelectionAllowed": true,
-                                "availableForGoldenData": true,
-                                "availableForMasterData": false
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.action_sets.TypeBatimentActionSet.Export",
-                                "_type": "ExportAction",
-                                "description": "",
-                                "label": "Export",
-                                "useCustomLabel": true,
-                                "waitDialogEnabled": false
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.action_sets.TypeBatimentActionSet.ImportAuthorTypeBatiments",
-                                "_type": "ImportAction",
-                                "description": "",
-                                "label": "Import",
-                                "useCustomLabel": true,
-                                "waitDialogEnabled": false,
-                                "allowOtherPublishers": true,
-                                "importedRecordType": "GOLDEN",
-                                "importMode": "CREATE_AND_UPDATE",
-                                "stepper": "Batiments.entities.TypeBatiment.steppers.AuthorTypeBatiments"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.action_sets.TypeBatimentActionSet.BrowseGraph",
-                                "_type": "BrowseGraphAction",
-                                "description": "",
-                                "label": "Browse Graph",
-                                "useCustomLabel": true,
-                                "waitDialogEnabled": false
-                            }
-                        ]
-                    }
-                ],
-                "businessObjectViews": [
-                    {
-                        "qualifiedName": "Batiments.entities.TypeBatiment.business_views.TypeBatimentBusinessView",
-                        "displayRootNodeAs": "ICON_LABEL",
-                        "enableHierarchyView": false,
-                        "filter": "1 = 1",
-                        "rootBoViewEntity": "Batiments.entities.TypeBatiment.business_views.TypeBatimentBusinessView.TypeBatiment",
-                        "rootDescription": "",
-                        "rootLabel": "Type Bâtiment",
-                        "rootPluralLabel": "Type Bâtiment",
-                        "useHierarchyOnOpen": false,
-                        "visible": true,
-                        "label": "Type Bâtiment",
-                        "boViewEntities": [
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.business_views.TypeBatimentBusinessView.TypeBatiment",
-                                "collection": "Batiments.entities.TypeBatiment.collection_views.TypeBatimentCollectionView",
-                                "displayRecordCount": "ALWAYS",
-                                "enableUserDefinedSort": true,
-                                "entity": "Batiments.entities.TypeBatiment.TypeBatiment",
-                                "form": "Batiments.entities.TypeBatiment.forms.TypeBatimentForm",
-                                "gridAllowed": true,
-                                "listAllowed": true,
-                                "outlineVisible": false,
-                                "overrideDefaultSort": false,
-                                "sortExpression": "",
-                                "tableAllowed": true,
-                                "actionSet": "Batiments.entities.TypeBatiment.action_sets.TypeBatimentActionSet",
-                                "businessEntitySearchConfigs": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.TypeBatiment.business_views.TypeBatimentBusinessView.TypeBatiment.TextConfig",
-                                        "searchTypeConfig": {
-                                            "searchType": "TEXT"
-                                        }
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.TypeBatiment.business_views.TypeBatimentBusinessView.TypeBatiment.FormConfig",
-                                        "searchTypeConfig": {
-                                            "searchType": "BY_FORM"
-                                        }
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.TypeBatiment.business_views.TypeBatimentBusinessView.TypeBatiment.AdvancedConfig",
-                                        "searchTypeConfig": {
-                                            "searchType": "ADVANCED"
-                                        }
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.TypeBatiment.business_views.TypeBatimentBusinessView.TypeBatiment.SemqlConfig",
-                                        "searchTypeConfig": {
-                                            "searchType": "SEMQL"
-                                        }
-                                    }
-                                ],
-                                "displayCard": "Batiments.entities.TypeBatiment.display_cards.TypeBatimentDisplayCard",
-                                "transitions": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.TypeBatiment.business_views.TypeBatimentBusinessView.TypeBatiment.GoldenHistoryRecords",
-                                        "enableHierarchyInterpreter": "LITERAL",
-                                        "expandHierarchyByDefault": false,
-                                        "filter": "1 = 1",
-                                        "targetBoViewEntity": "Batiments.entities.TypeBatiment.business_views.TypeBatimentBusinessView.TypeBatiment",
-                                        "transitionPath": "GoldenHistoryRecords",
-                                        "useCustomLabel": true,
-                                        "displayFormTabAs": "ICON_LABEL",
-                                        "displayTransitionNodeAs": "ICON_LABEL",
-                                        "enableHierarchy": "0",
-                                        "iconUrl": "images://mdi/history.svg",
-                                        "label": "History",
-                                        "pluralLabel": "History",
-                                        "transitionType": "FULLY_QUALIFIED",
-                                        "transitionVisible": "1",
-                                        "transitionVisibleInterpreter": "LITERAL"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "collections": [
-                    {
-                        "qualifiedName": "Batiments.entities.TypeBatiment.collection_views.TypeBatimentCollectionView",
-                        "default": true,
-                        "gridAllowed": false,
-                        "gridColumns": 4,
-                        "gridTextPosition": "BOTTOM",
-                        "gridTileHeight": "1:1",
-                        "gridTileLines": 1,
-                        "listAllowed": true,
-                        "listItemLines": 1,
-                        "listShowDisplayCardAvatar": false,
-                        "listShowDivider": true,
-                        "tableAllowed": true,
-                        "tableDisplayCardColumnLabel": "Type Batiment",
-                        "tableRowLines": 1,
-                        "tableShowDisplayCard": true,
-                        "displayCard": "Batiments.entities.TypeBatiment.display_cards.TypeBatimentDisplayCard",
-                        "tableColumns": [
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.collection_views.TypeBatimentCollectionView.TypeBatimentCode",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semIdField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 0,
-                                "useCustomLabel": false,
-                                "value": "TypeBatimentCode",
-                                "visibleByDefault": true,
-                                "valueDataType": "STRING",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.collection_views.TypeBatimentCollectionView.TypeBatimentLibelle",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 1,
-                                "useCustomLabel": false,
-                                "value": "TypeBatimentLibelle",
-                                "visibleByDefault": true,
-                                "valueDataType": "STRING",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.collection_views.TypeBatimentCollectionView.UpdateDate",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 2,
-                                "useCustomLabel": false,
-                                "value": "UpdateDate",
-                                "visibleByDefault": true,
-                                "valueDataType": "DATE",
-                                "componentProperties": []
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.collection_views.TypeBatimentCollectionView.Updator",
-                                "_type": "TableColumn",
-                                "columnAlign": "LEFT",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 3,
-                                "useCustomLabel": false,
-                                "value": "Updator",
-                                "visibleByDefault": true,
-                                "valueDataType": "STRING",
-                                "componentProperties": []
-                            }
-                        ]
-                    }
-                ],
-                "displayCards": [
-                    {
-                        "qualifiedName": "Batiments.entities.TypeBatiment.display_cards.TypeBatimentDisplayCard",
-                        "avatarImageValueInterpreter": "LITERAL",
-                        "default": true,
-                        "primaryImageFallbackValueInterpreter": "LITERAL",
-                        "primaryImageValueInterpreter": "LITERAL",
-                        "avatarImageAlign": "MIDDLE_CENTER",
-                        "avatarImageMode": "FIT",
-                        "avatarImageSourceType": "URL",
-                        "primaryImageAlign": "MIDDLE_CENTER",
-                        "primaryImageFallbackSourceType": "URL",
-                        "primaryImageMode": "FIT",
-                        "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "TypeBatimentLibelle"
-                    }
-                ],
-                "dupsManagers": [],
-                "enrichers": [],
-                "forms": [
-                    {
-                        "default": true,
-                        "qualifiedName": "Batiments.entities.TypeBatiment.forms.TypeBatimentForm",
-                        "formCharts": [],
-                        "formCollections": [],
-                        "formContainers": [
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.forms.TypeBatimentForm.TypeBatiment",
-                                "_type": "FormTab",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 0,
-                                "visibleValueInterpreter": "LITERAL",
-                                "displayFormTabAs": "LABEL",
-                                "label": "Type Batiment",
-                                "visibleValue": "1"
-                            }
-                        ],
-                        "formDashboards": [],
-                        "formFields": [
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.forms.TypeBatimentForm.TypeBatiment.TypeBatimentCode",
-                                "_type": "FormField",
-                                "componentName": "semIdField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 0,
-                                "useCustomLabel": false,
-                                "value": "TypeBatimentCode",
-                                "parentFormContainer": "Batiments.entities.TypeBatiment.forms.TypeBatimentForm.TypeBatiment",
-                                "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
-                                "componentProperties": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.TypeBatiment.forms.TypeBatimentForm.TypeBatiment.TypeBatimentCode.labelColor",
-                                        "dataType": "STRING",
-                                        "value": "md:black",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.TypeBatiment.forms.TypeBatimentForm.TypeBatiment.TypeBatimentCode.labelTypography",
-                                        "dataType": "STRING",
-                                        "value": "body-2",
-                                        "valueInterpreter": "LITERAL"
-                                    }
-                                ]
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.forms.TypeBatimentForm.TypeBatiment.TypeBatimentLibelle",
-                                "_type": "FormField",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 1,
-                                "useCustomLabel": false,
-                                "value": "TypeBatimentLibelle",
-                                "parentFormContainer": "Batiments.entities.TypeBatiment.forms.TypeBatimentForm.TypeBatiment",
-                                "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
-                                "componentProperties": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.TypeBatiment.forms.TypeBatimentForm.TypeBatiment.TypeBatimentLibelle.labelColor",
-                                        "dataType": "STRING",
-                                        "value": "md:black",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.TypeBatiment.forms.TypeBatimentForm.TypeBatiment.TypeBatimentLibelle.labelTypography",
-                                        "dataType": "STRING",
-                                        "value": "body-2",
-                                        "valueInterpreter": "LITERAL"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "searchForms": [],
-                "steppers": [
-                    {
-                        "qualifiedName": "Batiments.entities.TypeBatiment.steppers.AuthorTypeBatiments",
-                        "label": "Type Batiments",
-                        "rootCollectionStep": "Batiments.entities.TypeBatiment.steppers.AuthorTypeBatiments.TypeBatiments",
-                        "steps": [
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.steppers.AuthorTypeBatiments.TypeBatiments",
-                                "_type": "CollectionStep",
-                                "canFinishSubLevel": true,
-                                "childDeleteType": "HARD_DELETE",
-                                "childImportModeOnParentEdit": "CREATE_AND_UPDATE",
-                                "collectionView": "Batiments.entities.TypeBatiment.collection_views.TypeBatimentCollectionView",
-                                "createChildUsingManyToManyPicker": false,
-                                "customSortEnabled": false,
-                                "defaultDisplayType": "TABLE",
-                                "displayGridAllowed": false,
-                                "displayListAllowed": true,
-                                "displayTableAllowed": true,
-                                "enableChildCopyOnParentCreate": false,
-                                "enableChildCopyOnParentEdit": false,
-                                "enableChildCreationOnParentCreate": false,
-                                "enableChildCreationOnParentEdit": false,
-                                "enableChildDeleteOnParentEdit": false,
-                                "enableChildEditOnParentCreate": false,
-                                "enableChildEditOnParentEdit": false,
-                                "enableChildExport": false,
-                                "enableChildImportOnParentCreate": true,
-                                "enableChildImportOnParentEdit": false,
-                                "enableChildRemoveOnParentCreate": false,
-                                "enableChildRemoveOnParentEdit": false,
-                                "enabledOnParentCreate": true,
-                                "enabledOnParentEdit": true,
-                                "formFieldsMode": "AUTO",
-                                "linear": false,
-                                "manyToManyCustomSortEnabled": false,
-                                "manyToManyDefaultDisplayType": "GRID",
-                                "manyToManyDisplayGridAllowed": false,
-                                "manyToManyDisplayListAllowed": false,
-                                "manyToManyDisplayTableAllowed": false,
-                                "manyToManyUserDefinedSortEnabled": false,
-                                "skipToChildCreationOnParentCreate": false,
-                                "skipToChildEditingOnParentEdit": false,
-                                "useCustomCollectionLabel": false,
-                                "userDefinedSortEnabled": true,
-                                "label": "Type Batiments"
-                            },
-                            {
-                                "qualifiedName": "Batiments.entities.TypeBatiment.steppers.AuthorTypeBatiments.TypeBatiments.TypeBatiment",
-                                "_type": "FormStep",
-                                "canFinishSubLevel": true,
-                                "enabledOnParentCreate": true,
-                                "enabledOnParentEdit": true,
-                                "enableMasterValuePicking": false,
-                                "formFieldsMode": "AUTO",
-                                "formTab": "Batiments.entities.TypeBatiment.forms.TypeBatimentForm.TypeBatiment",
-                                "label": "Type Batiment",
-                                "parentCollectionStep": "Batiments.entities.TypeBatiment.steppers.AuthorTypeBatiments.TypeBatiments"
-                            }
-                        ]
-                    }
-                ],
-                "survivorshipRules": [],
-                "uniqueKeys": []
-            },
-            {
                 "qualifiedName": "Batiments.entities.TypeEnergie.TypeEnergie",
                 "dataEntryAllowed": true,
                 "historizeGolden": true,
@@ -23334,11 +22225,11 @@
                         "filter": "1 = 1",
                         "rootBoViewEntity": "Batiments.entities.TypeSociete.business_views.TypeSocieteBusinessView.TypeSociete",
                         "rootDescription": "",
-                        "rootLabel": "Types de société",
-                        "rootPluralLabel": "Types de société",
+                        "rootLabel": "Type de société",
+                        "rootPluralLabel": "Type de société",
                         "useHierarchyOnOpen": false,
                         "visible": true,
-                        "label": "Types de société",
+                        "label": "Type de société",
                         "boViewEntities": [
                             {
                                 "qualifiedName": "Batiments.entities.TypeSociete.business_views.TypeSocieteBusinessView.TypeSociete",
@@ -25106,11 +23997,11 @@
                         "filter": "1 = 1",
                         "rootBoViewEntity": "Batiments.entities.ZoneGeographique.business_views.ZoneGeographiqueBusinessView.ZoneGeographique",
                         "rootDescription": "",
-                        "rootLabel": "Zone Geographiques",
-                        "rootPluralLabel": "Zones Géographiques",
+                        "rootLabel": "Zone Geographique",
+                        "rootPluralLabel": "Zone Géographique",
                         "useHierarchyOnOpen": false,
                         "visible": true,
-                        "label": "Zones Géographiques",
+                        "label": "Zone Géographique",
                         "boViewEntities": [
                             {
                                 "qualifiedName": "Batiments.entities.ZoneGeographique.business_views.ZoneGeographiqueBusinessView.ZoneGeographique",

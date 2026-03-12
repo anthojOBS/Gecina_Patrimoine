@@ -289,7 +289,7 @@ attributes:
 
   - _type: EntityAttribute
     _name: SousPortefeuille
-    label: Sous portefeuille 
+    label: Sous-portefeuille 
     physicalName: SOUS_PORTEFEUILLE
     dataType: String
     length: 150

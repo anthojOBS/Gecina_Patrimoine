@@ -1,13 +1,13 @@
 _package: Batiments.references
 _type: Reference
 _name: LotToTypologieLot
-label: Lot Nature de Bien
-description: Référence Lot vers Nature de Bien
+label: Lot Typologie de Lot
+description: Référence Lot vers Typologie de Lot
 fromRoleDocumentation: |
-  Cette référence permet de classifier un **Lot** selon son **Nature de Bien**.
+  Cette référence permet de classifier un **Lot** selon son **Typologie de Lot**.
   
-  Le Nature de bien caractérise la nature du lot (commercial, résidentiel, etc.).
-physicalName: LOT_NATURE_BIEN_REF
+  La Typologie de lot caractérise la typologie du lot (commercial, résidentiel, etc.).
+physicalName: LOT_TYPOLOGIE_LOT_REF
 
 fromEntity: Batiments.entities.Lot.Lot
 fromRoleLabel: Lot
@@ -15,20 +15,20 @@ fromRoleName: Lot
 fromRolePluralLabel: Lots
 
 toEntity: Batiments.entities.TypologieLot.TypologieLot
-toRoleLabel: Nature de Bien
+toRoleLabel: Typologie de Lot
 toRoleName: TypologieLot
-toRolePhysicalName: NATURE_BIEN_ID
+toRolePhysicalName: TYPOLOGIE_LOT_ID
 
 oneToMany: false
 deletePropagation: RESTRICT
 validationScope: PRE_CONSO
-mandatoryValidationLabel: Le Nature de bien est obligatoire pour un lot
-brokenValidationLabel: Le Nature de bien sélectionné est invalide pour ce lot
+mandatoryValidationLabel: La typologie de lot est obligatoire pour un lot
+brokenValidationLabel: La typologie de lot sélectionnée est invalide pour ce lot
 
 foreignAttribute:
   _type: ForeignAttribute
   _name: TypologieLot
-  label: Nature de Bien
-  physicalName: NATURE_BIEN_ID
+  label: Typologie de Lot
+  physicalName: TYPOLOGIE_LOT_ID
   searchable: true
   entity: Batiments.entities.Lot.Lot

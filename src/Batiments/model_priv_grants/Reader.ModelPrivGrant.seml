@@ -82,15 +82,6 @@ entityPrivGrants:
     removeAllowed: false
     defaultAccessType: READ
   - _type: EntityPrivGrant
-    entity: Batiments.entities.TypeBatiment.TypeBatiment
-    _name: TypeBatiment
-    checkoutAllowed: false
-    createAllowed: false
-    deleteAllowed: false
-    exportAllowed: false
-    removeAllowed: false
-    defaultAccessType: READ
-  - _type: EntityPrivGrant
     entity: Batiments.entities.UsageLot.UsageLot
     _name: UsageLot
     checkoutAllowed: false
