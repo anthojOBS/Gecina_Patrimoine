@@ -18,6 +18,11 @@ formTabs:
         layoutDirection: COLUMN
         content:
               # Identité bâtiment
+                    # SECTION 1 (FormContainer)
+          - _type: FormContainer
+            _name: haut
+            layoutDirection: ROW
+            content:
               - _type: FormSection
                 _name: IdentiteLot
                 label: Identité lot
@@ -53,7 +58,7 @@ formTabs:
                   - _type: ReferenceField
                     _name: FDN_Batiment
                     value: CASE WHEN Etage.FDN_Batiment is null THEN FDN_Batiment ELSE Etage.FDN_Batiment END
-                    label: Batiment parent
+                    label: Bâtiment parent
                     authoringMode: auto
                     labelProperties:
                       alignment: left
@@ -77,19 +82,6 @@ formTabs:
                     useCustomLabel: true
                     dataType: STRING
                     referencedEntity: Batiments.entities.Etage.Etage
-
-                  - _type: TextField
-                    _name: SuperficieUtile
-                    value: case when SuperficieUtile is not null then SuperficieUtile || ' m²' else null end
-                    label: Superficie utile
-                    documentation: m² à usage privatif des locataires (plateaux de bureaux par exemple)
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
 
                   - _type: TextField
                     _name: SuperficieUtileSansQP
@@ -193,7 +185,12 @@ formTabs:
                           useCustomLabel: true
                           dataType: STRING
                           referencedEntity: Batiments.entities.Pays.Pays
-                          
+
+          - _type: FormContainer
+            _name: milieu
+            layoutDirection: ROW
+            content:
+
               - _type: FormSection
                 _name: Usage
                 label: Usage
@@ -252,6 +249,58 @@ formTabs:
                       referencedEntity: Batiments.entities.GenreLot.GenreLot
 
                           
+
+          # Gestion interne
+              - _type: FormSection
+                _name: GestionInterne
+                label: Gestion interne
+                layoutDirection: COLUMN
+                visibleValue: '1'
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
+                  - _type: TextField
+                    _name: FDN_OrgaResp
+                    value: Etage.Batiment.Immeuble.FDN_OrgaResp
+                    label: Organisation responsable
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+
+                  - _type: TextField
+                    _name: FDN_Portefeuille
+                    value: Etage.Batiment.Immeuble.FDN_Portefeuille
+                    label: Portefeuille gestion
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+
+                  - _type: TextField
+                    _name: SousPortefeuille
+                    value: Etage.Batiment.Immeuble.FDN_SousPortefeuille
+                    label: Sous-portefeuille gestion
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+
+          - _type: FormContainer
+            _name: bas
+            layoutDirection: ROW
+            content:
+          # Caractéristiques générales
+
               - _type: FormSection
                 _name: SituationLocative
                 label: Situation locative
@@ -296,17 +345,7 @@ formTabs:
                     dataType: STRING
                     referencedEntity: Batiments.entities.GenreLot.GenreLot
 
-                  - _type: CheckboxField
-                    _name: StatutSousLocation
-                    value: StatutSousLocation
-                    label: Statut sous location
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: BOOLEAN
+
                   - _type: CheckboxField
                     _name: StatutLogementSocial
                     value: StatutLogementSocial
@@ -318,7 +357,7 @@ formTabs:
                       color: md:black
                     useCustomLabel: true
                     dataType: BOOLEAN   
-          # Caractéristiques générales
+
               - _type: FormSection
                 _name: CaracteristiquesGenerales
                 label: Caractéristiques générales
@@ -330,7 +369,7 @@ formTabs:
                   - _type: CheckboxField
                     _name: StatutMeuble
                     value: StatutMeuble
-                    label: Statut meuble
+                    label: Statut meublé
                     labelProperties:
                       alignment: left
                       typographyValueInterpreter: LITERAL
@@ -350,51 +389,6 @@ formTabs:
                       color: md:black
                     useCustomLabel: true
                     dataType: BOOLEAN
-          # Gestion interne
-              - _type: FormSection
-                _name: GestionInterne
-                label: Gestion interne
-                layoutDirection: COLUMN
-                visibleValue: '1'
-                visibleValueInterpreter: LITERAL
-                labelWidth: 200px
-                content:
-                  - _type: TextField
-                    _name: FDN_OrgaResp
-                    value: Etage.Batiment.Immeuble.FDN_OrgaResp
-                    label: Organisation responsable
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
-
-                  - _type: TextField
-                    _name: FDN_Portefeuille
-                    value: Etage.Batiment.Immeuble.FDN_Portefeuille
-                    label: Portefeuille
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
-
-                  - _type: TextField
-                    _name: SousPortefeuille
-                    value: Etage.Batiment.Immeuble.SousPortefeuille
-                    label: Sous-portefeuille
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
-
 
   - _type: FormTab
     _name: CycleVie
@@ -537,6 +531,7 @@ formTabs:
             useCustomLabel: true
             dataType: BOOLEAN
 
+
           - _type: TextField
             _name: NumeroCopropriete
             value: NumeroCopropriete
@@ -549,48 +544,37 @@ formTabs:
             useCustomLabel: true
             dataType: STRING
 
-      # - _type: FormSection
-      #   _name: Societeproprietaire
-      #   label: Société propriétaire
-      #   layoutDirection: COLUMN
-      #   visibleValue: "1"
-      #   visibleValueInterpreter: LITERAL
-      #   labelWidth: 200px
-      #   content:
-      #     - _type: FormCollection
-      #       _name: Societesproprietaire
-      #       label: Société propriétaire
-      #       useCustomLabel: true
-      #       collection: Batiments.entities.RelLotSoc.collection_views.Societe
-      #       tableAllowed: true
-      #       listAllowed: false
-      #       gridAllowed: false
-      #       displayRecordCount: ALWAYS
-      #       enableUserDefinedSort: true
-      #       transitionPath: RelLotSoc
-      #       sortExpression: 1 DESC
-      #       filter: 1=1
-      #       targetEntity: Batiments.entities.RelLotSoc.RelLotSoc
+          - _type: CheckboxField
+            _name: StatutSousLocation
+            value: StatutSousLocation
+            label: Statut sous location
+            labelProperties:
+              alignment: left
+              typographyValueInterpreter: LITERAL
+              typography: body-2
+              color: md:black
+            useCustomLabel: true
+            dataType: BOOLEAN
 
-      # - _type: FormSection
-      #   _name: SocietesExploitantes
-      #   label: Société exploitante
-      #   layoutDirection: COLUMN
-      #   visibleValue: "1"
-      #   visibleValueInterpreter: LITERAL
-      #   labelWidth: 200px
-      #   content:
-      #     - _type: FormCollection
-      #       _name: SocietesExploitante
-      #       label: Société exploitante
-      #       useCustomLabel: true
-      #       collection: Batiments.entities.RelLotSoc.collection_views.Societe
-      #       tableAllowed: true
-      #       listAllowed: false
-      #       gridAllowed: false
-      #       displayRecordCount: ALWAYS
-      #       enableUserDefinedSort: true
-      #       transitionPath: RelLotSoc
-      #       sortExpression: 1 DESC
-      #       filter: 1=1
-      #       targetEntity: Batiments.entities.RelLotSoc.RelLotSoc
+      - _type: FormSection
+        _name: Societe
+        label: Sociétés
+        layoutDirection: COLUMN
+        visibleValue: "1"
+        visibleValueInterpreter: LITERAL
+        labelWidth: 200px
+        content:
+          - _type: FormCollection
+            _name: Societes
+            label: Sociétés 
+            useCustomLabel: true
+            collection: Batiments.entities.RelLotSoc.collection_views.Societe
+            tableAllowed: true
+            listAllowed: false
+            gridAllowed: false
+            displayRecordCount: ALWAYS
+            enableUserDefinedSort: true
+            transitionPath: RelLotSoc
+            sortExpression: 1 DESC
+            filter: 1=1
+            targetEntity: Batiments.entities.RelLotSoc.RelLotSoc

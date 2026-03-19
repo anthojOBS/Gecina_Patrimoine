@@ -23,8 +23,8 @@ entityShapes:
     width: -1
     height: -1
     position:
-      x: 44
-      y: 482
+      x: 0
+      y: 0
   - _type: EntityShape
     _name: BatimentShape
     entity: Batiments.entities.Batiment.Batiment
@@ -33,8 +33,8 @@ entityShapes:
     width: -1
     height: -1
     position:
-      x: 349.76930533117934
-      y: -233.7518376413571
+      x: 400
+      y: 0
   - _type: EntityShape
     _name: LotShape
     entity: Batiments.entities.Lot.Lot
@@ -43,8 +43,8 @@ entityShapes:
     width: -1
     height: -1
     position:
-      x: 1489.0791599353795
-      y: 668.0431340872375
+      x: 1200
+      y: 0
   - _type: EntityShape
     _name: PhaseShape
     entity: Batiments.entities.Phase.Phase
@@ -53,8 +53,8 @@ entityShapes:
     width: -1
     height: -1
     position:
-      x: 843.9056542810986
-      y: 789.2597738287561
+      x: 400
+      y: 400
   - _type: EntityShape
     _name: ZoneGeographiqueShape
     entity: Batiments.entities.ZoneGeographique.ZoneGeographique
@@ -63,8 +63,8 @@ entityShapes:
     width: -1
     height: -1
     position:
-      x: -496.2938610662358
-      y: 115.13231017770624
+      x: -800
+      y: -400
   - _type: EntityShape
     _name: RegimeJuridiqueShape
     entity: Batiments.entities.RegimeJuridique.RegimeJuridique
@@ -73,8 +73,8 @@ entityShapes:
     width: -1
     height: -1
     position:
-      x: -462
-      y: 786
+      x: -400
+      y: -400
   - _type: EntityShape
     _name: GenreLotShape
     entity: Batiments.entities.GenreLot.GenreLot
@@ -83,8 +83,8 @@ entityShapes:
     width: -1
     height: -1
     position:
-      x: 2021.1735056542811
-      y: 722.1544426494346
+      x: 1600
+      y: -200
   - _type: EntityShape
     _name: EtageShape
     entity: Batiments.entities.Etage.Etage
@@ -93,8 +93,8 @@ entityShapes:
     width: -1
     height: -1
     position:
-      x: 1053.3067851373182
-      y: 266.52956381260105
+      x: 800
+      y: 0
   - _type: EntityShape
     _name: UsageLotShape
     entity: Batiments.entities.UsageLot.UsageLot
@@ -103,8 +103,8 @@ entityShapes:
     width: -1
     height: -1
     position:
-      x: 1856.1744749596123
-      y: 1136.2507269789985
+      x: 1600
+      y: 0
   - _type: EntityShape
     _name: PortefeuilleShape
     entity: Batiments.entities.Portefeuille.Portefeuille
@@ -113,8 +113,198 @@ entityShapes:
     width: -1
     height: -1
     position:
-      x: 764.4864297253636
-      y: 1143.3229402261713
+      x: 200
+      y: 600
+  - _type: EntityShape
+    _name: PaysShape
+    entity: Batiments.entities.Pays.Pays
+    borderColor: "#1565c0"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -800
+      y: -200
+  - _type: EntityShape
+    _name: UsageShape
+    entity: Batiments.entities.Usage.Usage
+    borderColor: "#2e7d32"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 200
+      y: -600
+  - _type: EntityShape
+    _name: TypeEtageShape
+    entity: Batiments.entities.TypeEtage.TypeEtage
+    borderColor: "#00897b"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 800
+      y: 200
+  - _type: EntityShape
+    _name: TypologieLotShape
+    entity: Batiments.entities.TypologieLot.TypologieLot
+    borderColor: "#9e9d24"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 1600
+      y: 200
+  - _type: EntityShape
+    _name: SocieteShape
+    entity: Batiments.entities.Societe.Societe
+    borderColor: "#5d4037"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 2000
+      y: 200
+  - _type: EntityShape
+    _name: TypeSocieteShape
+    entity: Batiments.entities.TypeSociete.TypeSociete
+    borderColor: "#4e342e"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 2000
+      y: 400
+  - _type: EntityShape
+    _name: RelBatSocShape
+    entity: Batiments.entities.RelBatSoc.RelBatSoc
+    borderColor: "#3e2723"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 2000
+      y: -200
+  - _type: EntityShape
+    _name: RelImmSocShape
+    entity: Batiments.entities.RelImmSoc.RelImmSoc
+    borderColor: "#37474f"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 2000
+      y: 0
+  - _type: EntityShape
+    _name: ModeChauffageShape
+    entity: Batiments.entities.ModeChauffage.ModeChauffage
+    borderColor: "#ef6c00"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -400
+      y: 400
+  - _type: EntityShape
+    _name: CategorieERPShape
+    entity: Batiments.entities.CategorieERP.CategorieERP
+    borderColor: "#ad1457"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -400
+      y: -200
+  - _type: EntityShape
+    _name: FiscaliteCibleShape
+    entity: Batiments.entities.FiscaliteCible.FiscaliteCible
+    borderColor: "#6a1b9a"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -400
+      y: 0
+  - _type: EntityShape
+    _name: PeriodeConstructionShape
+    entity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
+    borderColor: "#8e24aa"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -400
+      y: 200
+  - _type: EntityShape
+    _name: TypeEnergieShape
+    entity: Batiments.entities.TypeEnergie.TypeEnergie
+    borderColor: "#1b5e20"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -400
+      y: 600
+  - _type: EntityShape
+    _name: QuartierParisShape
+    entity: Batiments.entities.QuartierParis.QuartierParis
+    borderColor: "#283593"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -800
+      y: 0
+  - _type: EntityShape
+    _name: OrganisationResponsableShape
+    entity: Batiments.entities.OrganisationResponsable.OrganisationResponsable
+    borderColor: "#006064"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -400
+      y: 800
+  - _type: EntityShape
+    _name: RaisonNonLouableShape
+    entity: Batiments.entities.RaisonNonLouable.RaisonNonLouable
+    borderColor: "#c62828"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 1600
+      y: 400
+  - _type: EntityShape
+    _name: SecteurImmostatShape
+    entity: Batiments.entities.SecteurImmostat.SecteurImmostat
+    borderColor: "#2e7d32"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -800
+      y: 200
+  - _type: EntityShape
+    _name: SousSecteurImmostatShape
+    entity: Batiments.entities.SousSecteurImmostat.SousSecteurImmostat
+    borderColor: "#558b2f"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -800
+      y: 400
+  - _type: EntityShape
+    _name: ZoneImmostatShape
+    entity: Batiments.entities.ZoneImmostat.ZoneImmostat
+    borderColor: "#6d4c41"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -800
+      y: 600
 referenceLinks:
   - reference: Batiments.references.ImmeubleToPhase
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
@@ -167,5 +357,101 @@ referenceLinks:
   - reference: Batiments.references.ImmeubleToPortefeuille
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
     toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.PortefeuilleShape
+    bendPoints: []
+  - reference: Batiments.references.ImmeubleToFiscaliteCible
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.FiscaliteCibleShape
+    bendPoints: []
+  - reference: Batiments.references.ImmeubleToOrgaResp
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.OrganisationResponsableShape
+    bendPoints: []
+  - reference: Batiments.references.ImmeubleToPeriodeConstruction
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.PeriodeConstructionShape
+    bendPoints: []
+  - reference: Batiments.references.ImmeubleToSousSecteurImmostat
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.SousSecteurImmostatShape
+    bendPoints: []
+  - reference: Batiments.references.ImmeubleToZoneImmostat
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ZoneImmostatShape
+    bendPoints: []
+  - reference: Batiments.references.LotToSociete
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.SocieteShape
+    bendPoints: []
+  - reference: Batiments.references.LotToTypologieLot
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.TypologieLotShape
+    bendPoints: []
+  - reference: Batiments.references.RelBatSocToBatiment
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RelBatSocShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
+    bendPoints: []
+  - reference: Batiments.references.RelBatSocToTypeSociete
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RelBatSocShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.TypeSocieteShape
+    bendPoints: []
+  - reference: Batiments.references.RelBatSocToSociete
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RelBatSocShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.SocieteShape
+    bendPoints: []
+  - reference: Batiments.references.RelImmSocToTypeSociete
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RelImmSocShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.TypeSocieteShape
+    bendPoints: []
+  - reference: Batiments.references.RelImmSocToImmeuble
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RelImmSocShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    bendPoints: []
+  - reference: Batiments.references.RelImmSocToSociete
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RelImmSocShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.SocieteShape
+    bendPoints: []
+  - reference: Batiments.references.LotToRaison
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RaisonNonLouableShape
+    bendPoints: []
+  - reference: Batiments.references.ImmeubleToUsage
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.UsageShape
+    bendPoints: []
+  - reference: Batiments.references.ImmeubleToTypeEnergie
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.TypeEnergieShape
+    bendPoints: []
+  - reference: Batiments.references.ImmeubleToQuartierParis
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.QuartierParisShape
+    bendPoints: []
+  - reference: Batiments.references.ImmeubleToSecteurImmostat
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.SecteurImmostatShape
+    bendPoints: []
+  - reference: Batiments.references.ImmeubleToModeChauffage
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ModeChauffageShape
+    bendPoints: []
+  - reference: Batiments.references.ImmeubleToPays
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.PaysShape
+    bendPoints: []
+  - reference: Batiments.references.ImmeubleToCategorieERP
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.CategorieERPShape
+    bendPoints: []
+  - reference: Batiments.references.EtageToTypeEtage
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.EtageShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.TypeEtageShape
+    bendPoints: []
+  - reference: Batiments.references.BatimentToUsage
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.UsageShape
+    bendPoints: []
+  - reference: Batiments.references.BatimentToPays
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.PaysShape
     bendPoints: []
 inheritLinks: []

@@ -1,0 +1,55 @@
+_package: Batiments.entities.RelLotSoc
+_type: Entity
+_name: RelLotSoc
+label: RelLotSoc
+pluralLabel: RelLotSoc
+entityType: FUZZY_MATCHED
+physicalTableName: REL_LOT_SOCIETE
+iconUrl: images://mdi/floor-plan.svg
+description: ""
+documentation: ""
+historizeGolden: true
+historizeMaster: true
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: RelLotSocCode
+    label: RelLotSoc Code
+    physicalName: REL_LOT_SOC_CODE
+    dataType: LongInteger
+    precision: 38
+    mandatory: true
+    searchable: true
+    
+sourceIdGeneration:
+  mode: MANUAL
+
+primaryKey: Batiments.entities.RelLotSoc.RelLotSoc.RelLotSocCode
+
+goldenIdGeneration:
+  mode: SEQUENCE
+  startWith: 1
+
+matcher:
+  _type: SemQLMatcher
+  _name: Matcher
+  description: BatimentSemQLMatcher
+  matchRules:
+    - _type: SemQLMatchRule
+      _name: NewRule
+      label: NewRuleLabel
+      condition:   Record1.FID_Lot = Record2.FID_Lot and Record1.FID_TypeSociete = Record2.FID_TypeSociete and Record1.FID_Societe = Record2.FID_Societe
+ 
+      matchScore: 100
+      usingMatchOn: false
+  useTransitiveMatchScore: true
+  useMultiIterationGrouping: true
+  mergeThresholdNewGroup: 90
+  mergeThresholdMergingUnconfirmed: 90
+  mergeThresholdMergingConfirmed: 90
+  mergeThresholdMergingConfirmedWithUnconfirmed: 90
+  mergeThresholdMergingUnconfirmedWithNewMasters: 90
+  mergeThresholdMergingConfirmedWithNewMasters: 90
+  mergeThresholdRemergingPreviouslySplit: 100
+  autoConfirmGoldenThreshold: 99
+  autoConfirmSingletons: false

@@ -20,8 +20,8 @@ toRolePhysicalName: USAGE_ID
 oneToMany: true
 deletePropagation: RESTRICT
 validationScope: POST_CONSO
-mandatoryValidationLabel: La société autre est obligatoire pour un immeuble
-brokenValidationLabel: La société autre sélectionnée est invalide pour cet immeuble
+mandatoryValidationLabel: L'usage est obligatoire pour un immeuble
+brokenValidationLabel: L'usage sélectionnée est invalide pour cet immeuble
 
 foreignAttribute:
   _type: ForeignAttribute

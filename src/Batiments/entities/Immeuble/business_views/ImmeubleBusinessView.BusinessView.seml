@@ -86,7 +86,7 @@ rootBusinessViewEntity:
 
 
         referenceAttributeNavigationConfigs:
-        - formField: Batiments.entities.Batiment.forms.BatimentForm.Batiment.SectionHaut.IdentiteBatiment.FDN_Immeuble
+        - formField: Batiments.entities.Batiment.forms.BatimentForm.Batiment.SectionHaut.SectionHautGauche.IdentiteBatiment.FDN_Immeuble
           navigationMode: BUSINESS_OBJECT_VIEW
           businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
           form: Batiments.entities.Immeuble.forms.ImmeubleForm
@@ -255,6 +255,7 @@ rootBusinessViewEntity:
       label: Lots global
       displayFormTabAs: ICON_LABEL
       displayTransitionNodeAs: ICON_LABEL
+
       # visibleInFormTabCondition: any Etage have (BatimentID IS NOT NULL)
       # enableHierarchy: any Lot has (1 = 1)
       # enableHierarchyInterpreter: SEMQL
@@ -282,7 +283,19 @@ rootBusinessViewEntity:
         entity: Batiments.entities.Lot.Lot
         form: Batiments.entities.Lot.forms.LotForm
         collection: Batiments.entities.Lot.collection_views.LotCollectionView
-
+        businessEntitySearchConfigs:
+          - _name: TextConfig
+            _type: BusinessEntitySearchTypeConfig
+            searchType: TEXT
+          - _name: FormConfig
+            _type: BusinessEntitySearchTypeConfig
+            searchType: BY_FORM
+          - _name: AdvancedConfig
+            _type: BusinessEntitySearchTypeConfig
+            searchType: ADVANCED
+          - _name: SemqlConfig
+            _type: BusinessEntitySearchTypeConfig
+            searchType: SEMQL
 
 
     - _name: GoldenHistoryRecords
@@ -301,8 +314,20 @@ rootBusinessViewEntity:
       transitionVisibleInterpreter: LITERAL
       useCustomLabel: true
       businessViewEntity:
-        _type: BusinessViewEntityReference
-        ref: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView.Immeuble
+        _type: BusinessViewEntity
+        _name: GoldenRecord
+        displayCard: Batiments.entities.Immeuble.display_cards.ImmeubleDisplayCard
+        entity: Batiments.entities.Immeuble.Immeuble
+        actionSet: Batiments.entities.Immeuble.action_sets.ImmeubleActionSet
+        collection: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView_history
+        form: Batiments.entities.Immeuble.forms.ImmeubleForm
+        displayRecordCount: ALWAYS
+        outlineVisible: false
+        enableUserDefinedSort: true
+        gridAllowed: true
+        listAllowed: true
+        overrideDefaultSort: false
+        tableAllowed: true
       filter: 1 = 1
 
     - _type: BusinessViewTransition

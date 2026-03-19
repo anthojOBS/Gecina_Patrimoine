@@ -40,15 +40,20 @@ attributes:
   - _type: EntityAttribute
     _name: IdentifiantsERP
     label: Numéro immeuble
+    documentation: Identifiant fonctionnel utilisé au quotidien par les équipes opérationnelles.
+    
     physicalName: IDENTIFIANTS_ERP
     dataType: String
     length: 100
-    mandatory: false
     description: "Numéro de l'immeuble"
+    mandatory: true
+    mandatoryValidationLabel: "Numéro immeuble est obligatoire"
+    mandatoryValidationScope: PRE_CONSO
 
   - _type: EntityAttribute
     _name: Libelle
-    label: Libellé
+    label: Libellé immeuble
+    documentation: Nom usuel de l’immeuble, tel qu’il apparaît dans les communications métiers.
     physicalName: LIBELLE
     dataType: String
     length: 255
@@ -59,6 +64,7 @@ attributes:
   - _type: EntityAttribute
     _name: Adresse
     label: Adresse
+    documentation: Adresse postale complète de l’actif (numéro, voie, complément éventuel).
     physicalName: ADRESSE
     dataType: String
     length: 255
@@ -75,6 +81,7 @@ attributes:
   - _type: EntityAttribute
     _name: CodePostal
     label: Code Postal
+    documentation: Code postal de la commune où est situé l’actif.
     physicalName: CODE_POSTAL
     dataType: String
     length: 20
@@ -83,6 +90,7 @@ attributes:
   - _type: EntityAttribute
     _name: Ville
     label: Ville
+    documentation: Commune dans laquelle se situe l’actif.
     physicalName: VILLE
     dataType: String
     length: 150
@@ -109,7 +117,9 @@ attributes:
     label: Date acquisition
     physicalName: DATE_ACQUISITION
     dataType: Date
-    mandatory: false
+    mandatory: true
+    mandatoryValidationLabel: "Date acquisition est obligatoire"
+    mandatoryValidationScope: PRE_CONSO
 
   - _type: EntityAttribute
     _name: DateVente
@@ -153,7 +163,9 @@ attributes:
     label: Date début phase
     physicalName: DATE_DEBUT_PHASE
     dataType: Date
-    mandatory: false
+    mandatory: true
+    mandatoryValidationLabel: "Date début phase est obligatoire"
+    mandatoryValidationScope: PRE_CONSO
 
 
   - _type: EntityAttribute
@@ -187,45 +199,12 @@ attributes:
     length: 150
     mandatory: false
 
-  # référence
-  - _type: EntityAttribute
-    _name: PortefeuilleGestion
-    label: Portefeuille de gestion
-    physicalName: PORTEFEUILLE_GESTION
-    dataType: String
-    length: 150
-    mandatory: false
-
-  - _type: EntityAttribute
-    _name: CertificationESG
-    label: Certification ESG
-    physicalName: CERTIFICATION_ESG
-    dataType: String
-    length: 150
-    mandatory: false
 
   - _type: EntityAttribute
     _name: DateFinValidite
     label: Date de fin de validité
     physicalName: DATE_FIN_VALIDITE
     dataType: Date
-    mandatory: false
-
-
-  - _type: EntityAttribute
-    _name: NiveauCertification
-    label: Niveau de certification
-    physicalName: NIVEAU_CERTIFICATION
-    dataType: String
-    length: 100
-    mandatory: false
-
-  - _type: EntityAttribute
-    _name: Proprietaire
-    label: Propriétaire
-    physicalName: PROPRIETAIRE
-    dataType: String
-    length: 150
     mandatory: false
 
   - _type: EntityAttribute
@@ -270,6 +249,20 @@ attributes:
     dataType: Boolean
     mandatory: false	
 
+  # - _type: EntityAttribute
+  #   _name: NombreAscenceurs
+  #   label: Nombre ascenceurs
+  #   physicalName: NOMBRE_ASCENCEURS
+  #   dataType: Integer
+  #   mandatory: false	
+
+  # - _type: EntityAttribute
+  #   _name: NombreParkings
+  #   label: Nombre parkings
+  #   physicalName: NOMBRE_PARKINGS
+  #   dataType: Integer
+  #   mandatory: false		
+
   - _type: EntityAttribute
     _name: ReleveGeometre
     label: Relevé géomètre
@@ -285,15 +278,6 @@ attributes:
     dataType: Binary
     mandatory: false
     searchable: true
-
-
-  - _type: EntityAttribute
-    _name: SousPortefeuille
-    label: Sous-portefeuille 
-    physicalName: SOUS_PORTEFEUILLE
-    dataType: String
-    length: 150
-    mandatory: false
 
 sourceIdGeneration:
   mode: MANUAL

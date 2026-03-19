@@ -349,6 +349,12 @@ rootFolder:
           imageMode: FIT
           nbRecordsBadgeVisible: false
         - _type: BrowseBusinessViewAction
+          _name: SousPortefeuille
+          businessView: Batiments.entities.SousPortefeuille.business_views.SousPortefeuilleBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
           _name: SousSecteur
           businessView: Batiments.entities.SousSecteurImmostat.business_views.SousSecteurImmostatBusinessView
           imageAlign: MIDDLE_CENTER
@@ -459,12 +465,12 @@ rootFolder:
         imageMode: FIT
         importAction: Batiments.entities.RelBatSoc.action_sets.RelBatSocActionSet.ImportAuthorRelBatSoc
         description: Importer Société depuis un fichier
-      # - _type: ImportDataAppAction
-      #   _name: ImportLotsBatiment
-      #   label: Importer relation Societés & Lots
-      #   imageAlign: MIDDLE_CENTER
-      #   imageMode: FIT
-      #   importAction: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet.ImportAuthorRelLotSoc
-      #   description: Importer Société depuis un fichier
+      - _type: ImportDataAppAction
+        _name: ImportLotsBatiment
+        label: Importer relation Societés & Lots
+        imageAlign: MIDDLE_CENTER
+        imageMode: FIT
+        importAction: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet.ImportAuthorRelLotSoc
+        description: Importer Société depuis un fichier
 
 applicationTitle: Référentiel Patrimoine

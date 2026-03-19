@@ -1,0 +1,42 @@
+_package: Batiments.entities.SousPortefeuille.forms
+_type: Form
+_name: SousPortefeuilleForm
+entity: Batiments.entities.SousPortefeuille.SousPortefeuille
+default: true
+formTabs:
+  - _type: FormTab
+    _name: SousPortefeuille
+    label: SousPortefeuille
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: TextField
+        _name: SousPortefeuille
+        value: SousPortefeuille
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: LibelleSousPortefeuille
+        value: LibelleSousPortefeuille
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: ReferenceField
+        _name: FDN_Portefeuille
+        value: FDN_Portefeuille
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+        referencedEntity: Batiments.entities.Portefeuille.Portefeuille

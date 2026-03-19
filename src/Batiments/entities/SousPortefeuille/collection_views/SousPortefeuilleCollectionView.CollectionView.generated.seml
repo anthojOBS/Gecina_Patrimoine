@@ -1,0 +1,42 @@
+_package: Batiments.entities.SousPortefeuille.collection_views
+_type: CollectionView
+_name: SousPortefeuilleCollectionView
+entity: Batiments.entities.SousPortefeuille.SousPortefeuille
+default: true
+displayCard: Batiments.entities.SousPortefeuille.display_cards.SousPortefeuilleDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Lot
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: TextColumn
+    _name: SousPortefeuille
+    value: SousPortefeuille
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: LibelleSousPortefeuille
+    value: LibelleSousPortefeuille
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: ReferenceColumn
+    _name: FDN_Portefeuille
+    value: FDN_Portefeuille
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Portefeuille.Portefeuille

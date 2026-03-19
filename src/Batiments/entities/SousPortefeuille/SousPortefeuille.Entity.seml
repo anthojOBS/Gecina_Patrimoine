@@ -1,0 +1,35 @@
+_package: Batiments.entities.SousPortefeuille
+_type: Entity
+_name: SousPortefeuille
+label: Sous-portefeuille
+pluralLabel: Sous-portefeuille
+entityType: BASIC
+physicalTableName: SOUS_PORTEFEUILLE
+description: Sous-portefeuille
+documentation: |
+  Sous-portefeuille
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: SousPortefeuille
+    label: Sous-portefeuille
+    physicalName: SOUS_PORTEFEUILLE
+    dataType: String
+    length: 50
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: LibelleSousPortefeuille
+    label: Libellé sous portefeuille
+    physicalName: LIB_SOUS_PORTEFEUILLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
+
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.SousPortefeuille.SousPortefeuille.SousPortefeuille

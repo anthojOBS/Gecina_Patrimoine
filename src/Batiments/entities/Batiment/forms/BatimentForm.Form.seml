@@ -15,230 +15,235 @@ formTabs:
       # SECTION HAUT (FormContainer)
       - _type: FormContainer
         _name: SectionHaut
-        layoutDirection: COLUMN
+        layoutDirection: ROW
         content:
               # Identité bâtiment
-              - _type: FormSection
-                _name: IdentiteBatiment
-                label: Identité bâtiment
+              - _type: FormContainer
+                _name: SectionHautGauche
                 layoutDirection: COLUMN
-                visibleValue: '1'
-                visibleValueInterpreter: LITERAL
-                labelWidth: 200px
                 content:
-                  - _type: TextField
-                    _name: IdentifiantsERP
-                    value: IdentifiantsERP
-                    label: Numéro bâtiment
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
-                  - _type: TextField
-                    _name: Libelle_Batiment
-                    value: Libelle_Batiment
-                    label: Libellé bâtiment
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
+                  - _type: FormSection
+                    _name: IdentiteBatiment
+                    label: Identité bâtiment
+                    layoutDirection: COLUMN
+                    visibleValue: '1'
+                    visibleValueInterpreter: LITERAL
+                    labelWidth: 200px
+                    content:
+                      - _type: TextField
+                        _name: IdentifiantsERP
+                        value: IdentifiantsERP
+                        label: Numéro bâtiment
+                        labelProperties:
+                          alignment: left
+                          typographyValueInterpreter: LITERAL
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: STRING
+                      - _type: TextField
+                        _name: Libelle_Batiment
+                        value: Libelle_Batiment
+                        label: Libellé bâtiment
+                        labelProperties:
+                          alignment: left
+                          typographyValueInterpreter: LITERAL
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: STRING
 
-                  - _type: CheckboxField
-                    _name: BatimentPrincipal
-                    value: BatimentPrincipal
-                    label: Statut bâtiment principal
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: BOOLEAN
+                      - _type: CheckboxField
+                        _name: BatimentPrincipal
+                        value: BatimentPrincipal
+                        label: Statut bâtiment principal
+                        labelProperties:
+                          alignment: left
+                          typographyValueInterpreter: LITERAL
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: BOOLEAN
 
-                  - _type: ReferenceField
-                    _name: FDN_Immeuble
-                    value: FDN_Immeuble
-                    label: Immeuble parent
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
-                    referencedEntity: Batiments.entities.Immeuble.Immeuble
-                    
-                  - _type: TextField
-                    _name: SuperficieUtile
-                    # value: SuperficieUtile
-                    value: case when SuperficieUtile is not null then SuperficieUtile || ' m²' else null end
-                    label: Superficie totale avec QP
-                    documentation: Addition de toutes les surfaces utiles avec QP
-                     Surface totale du bâtiment exprimée en m²
-                 
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
+                      - _type: ReferenceField
+                        _name: FDN_Immeuble
+                        value: FDN_Immeuble
+                        label: Immeuble parent
+                        labelProperties:
+                          alignment: left
+                          typographyValueInterpreter: LITERAL
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: STRING
+                        referencedEntity: Batiments.entities.Immeuble.Immeuble
+                        
+                      - _type: TextField
+                        _name: SuperficieUtile
+                        # value: SuperficieUtile
+                        value: case when SuperficieUtile is not null then SuperficieUtile || ' m²' else null end
+                        label: Superficie totale avec QP
+                        documentation: Addition de toutes les surfaces utiles avec QP Surface totale du bâtiment exprimée en m²
+                        labelProperties:
+                          alignment: left
+                          typographyValueInterpreter: LITERAL
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: STRING
 
 
 
               # Localisation immeuble
-              - _type: FormSection
-                _name: LocalisationImmeuble
-                label: Localisation 
+              - _type: FormContainer
+                _name: SectionHautDroite
                 layoutDirection: COLUMN
-                visibleValue: '1'
-                visibleValueInterpreter: LITERAL
-                labelWidth: 200px
                 content:
-                  # Bloc Adresse/Ville
-                      - _type: TextField
-                        _name: Adresse
-                        value: Adresse
-                        label: Adresse
-                        labelProperties:
-                          alignment: left
-                          typographyValueInterpreter: LITERAL
-                          typography: body-2
-                          color: md:black
-                        useCustomLabel: true
-                        dataType: STRING
+                  - _type: FormSection
+                    _name: LocalisationImmeuble
+                    label: Localisation 
+                    layoutDirection: COLUMN
+                    visibleValue: '1'
+                    visibleValueInterpreter: LITERAL
+                    labelWidth: 200px
+                    content:
+                      # Bloc Adresse/Ville
+                          - _type: TextField
+                            _name: Adresse
+                            value: Adresse
+                            label: Adresse
+                            documentation: Adresse postale complète de l’actif (numéro, voie, complément éventuel).
+                            labelProperties:
+                              alignment: left
+                              typographyValueInterpreter: LITERAL
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: STRING
 
-                      - _type: TextField
-                        _name: CodePostal
-                        value: CodePostal
-                        label: Code postal
-                        labelProperties:
-                          alignment: left
-                          typographyValueInterpreter: LITERAL
-                          typography: body-2
-                          color: md:black
-                        useCustomLabel: true
-                        dataType: STRING
+                          - _type: TextField
+                            _name: CodePostal
+                            value: CodePostal
+                            label: Code postal
+                            documentation: Code postal de la commune où est situé l’actif.
+                            labelProperties:
+                              alignment: left
+                              typographyValueInterpreter: LITERAL
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: STRING
 
-                      - _type: TextField
-                        _name: Ville
-                        value: Ville
-                        label: Ville
-                        labelProperties:
-                          alignment: left
-                          typography: body-2
-                          color: md:black
-                        useCustomLabel: true
-                        dataType: STRING
+                          - _type: TextField
+                            _name: Ville
+                            value: Ville
+                            label: Ville
+                            documentation: Commune dans laquelle se situe l’actif.
+                            labelProperties:
+                              alignment: left
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: STRING
 
-                      - _type: ReferenceField
-                        _name: FDN_Pays
-                        value: FDN_Pays
-                        label: Pays
-                        labelProperties:
-                          alignment: left
-                          typography: body-2
-                          color: md:black    
-                        useCustomLabel: true
-                        dataType: STRING
-                        referencedEntity: Batiments.entities.Pays.Pays
+                          - _type: ReferenceField
+                            _name: FDN_Pays
+                            value: FDN_Pays
+                            label: Pays
+                            labelProperties:
+                              alignment: left
+                              typography: body-2
+                              color: md:black    
+                            useCustomLabel: true
+                            dataType: STRING
+                            referencedEntity: Batiments.entities.Pays.Pays
 
 
 
           # Usage
-              - _type: FormSection
-                _name: Usage
-                label: Usage
+      # SECTION HAUT (FormContainer)
+      - _type: FormContainer
+        _name: SectionBas
+        layoutDirection: ROW
+        content:
+              # Identité bâtiment
+              - _type: FormContainer
+                _name: SectionBasGauche
                 layoutDirection: COLUMN
-                visibleValue: '1'
-                visibleValueInterpreter: LITERAL
-                labelWidth: 200px
                 content:
-                    - _type: ReferenceField
-                      _name: FDN_Usage
-                      value: FDN_Usage
-                      label: Usage
-                      labelProperties:
-                        alignment: left
-                        typographyValueInterpreter: LITERAL
-                        typography: body-2
-                        color: md:black
-                      useCustomLabel: true
-                      dataType: STRING
-                      referencedEntity: Batiments.entities.Usage.Usage
 
-
-          # Usage
-              - _type: FormSection
-                _name: Caracteristiques
-                label: Caractéristiques générales
-                layoutDirection: COLUMN
-                visibleValue: '1'
-                visibleValueInterpreter: LITERAL
-                labelWidth: 200px
-                content:
-                  - _type: CheckboxField
-                    _name: FlagAscenseur
-                    value: FlagAscenseur
-                    label: Statut ascenseur
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: BOOLEAN
+                  - _type: FormSection
+                    _name: Usage
+                    label: Usage
+                    layoutDirection: COLUMN
+                    visibleValue: '1'
+                    visibleValueInterpreter: LITERAL
+                    labelWidth: 200px
+                    content:
+                        - _type: ReferenceField
+                          _name: FDN_Usage
+                          value: FDN_Usage
+                          label: Usage
+                          documentation: Usage principal de l’immeuble, indiquant s’il est destiné à une activité d’entreprise, à de l’habitation ou au deux.
+                          labelProperties:
+                            alignment: left
+                            typographyValueInterpreter: LITERAL
+                            typography: body-2
+                            color: md:black
+                          useCustomLabel: true
+                          dataType: STRING
+                          referencedEntity: Batiments.entities.Usage.Usage
 
           # Gestion interne
-              - _type: FormSection
-                _name: GestionInterne
-                label: Gestion interne
+              - _type: FormContainer
+                _name: SectionBasDroite
                 layoutDirection: COLUMN
-                visibleValue: '1'
-                visibleValueInterpreter: LITERAL
-                labelWidth: 200px
                 content:
-                  - _type: TextField
-                    _name: FDN_OrgaResp
-                    value: Immeuble.FDN_OrgaResp
-                    label: Organisation responsable
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
+                  - _type: FormSection
+                    _name: GestionInterne
+                    label: Gestion interne
+                    layoutDirection: COLUMN
+                    visibleValue: '1'
+                    visibleValueInterpreter: LITERAL
+                    labelWidth: 200px
+                    content:
+                      - _type: TextField
+                        _name: FDN_OrgaResp
+                        value: Immeuble.FDN_OrgaResp
+                        label: Organisation responsable
+                        documentation: Direction métier en charge de la gestion opérationnelle de l’actif (Direction Résidentielle / Bureaux).
+                        labelProperties:
+                          alignment: left
+                          typographyValueInterpreter: LITERAL
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: STRING
 
-                  - _type: TextField
-                    _name: FDN_Portefeuille
-                    value: Immeuble.FDN_Portefeuille
-                    label: Portefeuille
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
+                      - _type: TextField
+                        _name: FDN_Portefeuille
+                        value: Immeuble.FDN_Portefeuille
+                        label: Portefeuille gestion
+                        documentation: Ensemble d’actifs rattachés à une même équipe opérationnelle (ex. Portefeuille 1, Portefeuille 2…).
+                        labelProperties:
+                          alignment: left
+                          typographyValueInterpreter: LITERAL
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: STRING
 
-                  - _type: TextField
-                    _name: SousPortefeuille
-                    value: Immeuble.SousPortefeuille
-                    label: Sous-portefeuille
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
+                      - _type: TextField
+                        _name: SousPortefeuille
+                        value: Immeuble.FDN_SousPortefeuille
+                        label: Sous-portefeuille gestion
+                        labelProperties:
+                          alignment: left
+                          typographyValueInterpreter: LITERAL
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: STRING
 
   - _type: FormTab
     _name: CycleVieBatiment
@@ -261,6 +266,7 @@ formTabs:
             _name: FDN_Phase
             value: Immeuble.FDN_Phase
             label: Phase
+            documentation: Statut du bien dans son cycle de vie (initiale, active, terminée).
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL
@@ -274,6 +280,7 @@ formTabs:
             _name: DateDebPhase
             value: Immeuble.DateDebPhase
             label: Date début phase
+            documentation: Date à partir de laquelle la phase actuelle est effective.
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL
@@ -295,6 +302,7 @@ formTabs:
                 _name: DateAcquisition
                 value: Immeuble.DateAcquisition
                 label: Date acquisition
+                documentation: Date d’achat de l’immeuble par la société propriétaire.
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -306,6 +314,7 @@ formTabs:
                 _name: DateVente
                 value: Immeuble.DateVente
                 label: Date vente
+                documentation: Date effective de cession juridique (si applicable).
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -337,6 +346,7 @@ formTabs:
                 _name: DateDebutConstruction
                 value: Immeuble.DateDebutConstruction
                 label: Date début construction
+                documentation: Date de démarrage des travaux de construction de l’actif.
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -348,6 +358,7 @@ formTabs:
                 _name: DateFinConstruction
                 value: Immeuble.DateFinConstruction
                 label: Date fin construction
+                documentation: Date de fin des travaux de construction.
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -359,6 +370,7 @@ formTabs:
                 _name: DateLivraison
                 value: Immeuble.DateLivraison
                 label: Date livraison
+                documentation: Date de mise à disposition de l’actif après construction. (uniquement pour les VEFA). Ne pas afficher si pas d'info. Afficher que si VEFA et si on a l'info
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -391,6 +403,7 @@ formTabs:
             _name: FDN_FiscaliteCible
             value: Immeuble.FDN_FiscaliteCible
             label: Régime TVA
+            documentation: Régime de taxation du bien (non soumis, prorata, soumis 100%).
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL
@@ -401,7 +414,8 @@ formTabs:
           - _type: TextField
             _name: Juridique
             value: Immeuble.FDN_RegimeJuridique
-            label: Régime juridique
+            label: Régime juridique           
+            documentation: monopropriété, copropriété, ASL, bail emphytéotique, réserve foncière, prise à bail, etc.
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL

@@ -128,7 +128,7 @@ tableColumns:
 
   - _type: TextColumn
     _name: SousPortefeuille
-    value: Immeuble.SousPortefeuille
+    value: Immeuble.FDN_SousPortefeuille
     label: Sous-portefeuille
     useCustomLabel: true
     dataType: STRING

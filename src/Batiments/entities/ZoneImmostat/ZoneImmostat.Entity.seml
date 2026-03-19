@@ -19,7 +19,8 @@ enableDelete: true
 attributes:
   - _type: EntityAttribute
     _name: ZoneImmostatCode
-    label: Code Zone Immostat
+    label: Zone immostat
+    documentation: Découpage géographique de gestion 
     physicalName: ZONE_IMMOSTAT_ID
     dataType: String
     length: 50

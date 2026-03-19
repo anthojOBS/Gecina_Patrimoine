@@ -42,7 +42,11 @@ rootStep:
           executedOnButtonClick: true
           executedOnDataChange: false
           executedOnFormOpen: false
-
+        - enricher: Batiments.entities.Immeuble.enrichers.Portefeuille
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false
+# clik pour le bouton , change si maj de entree, form pour ouverture du formulaire sens si autre onglet 
       formStepValidations:  
         - executedOnDataChange: true
           executedOnFormOpen: true

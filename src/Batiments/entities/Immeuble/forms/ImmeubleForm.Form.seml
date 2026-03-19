@@ -37,7 +37,7 @@ formTabs:
                       typographyValueInterpreter: LITERAL
                       typography: body-2
                       color: md:black
-                    useCustomLabel: true
+                    useCustomLabel: false
                     dataType: STRING
                   - _type: TextField
                     _name: Libelle
@@ -48,7 +48,7 @@ formTabs:
                       typographyValueInterpreter: LITERAL
                       typography: body-2
                       color: md:black
-                    useCustomLabel: true
+                    useCustomLabel: false
                     dataType: STRING
                   - _type: TextField
                     _name: SuperficieUtile_m2
@@ -64,15 +64,8 @@ formTabs:
                       color: md:black
                     useCustomLabel: true
                     dataType: STRING
-   
-      - _type: FormContainer
-        _name: SectionSecond
-        layoutDirection: ROW
-        content:
-          - _type: FormContainer
-            _name: SectionG2
-            layoutDirection: COLUMN
-            content:
+
+
               - _type: FormSection
                 _name: LocalisationImmeuble
                 label: Localisation
@@ -98,7 +91,7 @@ formTabs:
                           typographyValueInterpreter: LITERAL
                           typography: body-2
                           color: md:black
-                        useCustomLabel: true
+                        useCustomLabel: false
                         dataType: STRING
                       - _type: TextField
                         _name: CodePostal
@@ -109,7 +102,7 @@ formTabs:
                           typographyValueInterpreter: LITERAL
                           typography: body-2
                           color: md:black
-                        useCustomLabel: true
+                        useCustomLabel: false
                         dataType: STRING
                       - _type: TextField
                         _name: Ville
@@ -119,12 +112,13 @@ formTabs:
                           alignment: left
                           typography: body-2
                           color: md:black
-                        useCustomLabel: true
+                        useCustomLabel: false
                         dataType: STRING
                       - _type: ReferenceField
                         _name: FDN_Pays
                         value: FDN_Pays
                         label: Pays
+                        documentation: Pays dans lequel se situe l’actif.
                         labelProperties:
                           alignment: left
                           typography: body-2
@@ -136,6 +130,7 @@ formTabs:
                         _name: FDN_ZoneImmostat
                         value: FDN_ZoneImmostat
                         label: Zone immostat
+                        documentation: Découpage géographique de gestion 
                         labelProperties:
                           alignment: left
                           typography: body-2
@@ -147,6 +142,7 @@ formTabs:
                         _name: FDN_SecteurImmostat
                         value: FDN_SecteurImmostat
                         label: Secteur immostat
+                        documentation: Découpage géographique de gestion
                         labelProperties:
                           alignment: left
                           typography: body-2
@@ -158,6 +154,7 @@ formTabs:
                         _name: FDN_SousSecteurImmostat
                         value: FDN_SousSecteurImmostat
                         label: Sous secteur immostat
+                        documentation: Découpage géographique de gestion
                         labelProperties:
                           alignment: left
                           typography: body-2
@@ -169,6 +166,7 @@ formTabs:
                         _name: FDN_QuartierParis
                         value: FDN_QuartierParis
                         label: Quartier Paris libellé
+                        documentation: Quartier de la ville de Paris lorsque applicable.
                         labelProperties:
                           alignment: left
                           typography: body-2
@@ -176,12 +174,23 @@ formTabs:
                         useCustomLabel: true
                         dataType: STRING
                         referencedEntity: Batiments.entities.QuartierParis.QuartierParis
+       
+
           - _type: FormContainer
             _name: SectionD2
             layoutDirection: COLUMN
             content:
+              - _type: FormSection
+                _name: Carte
+                label: Carte
+                layoutDirection: ROW
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
                   - _type: ObjectField
                     _name: GoogleMaps
+
                     dataType: STRING
                     label: Google Maps View
                     useCustomLabel: true
@@ -253,6 +262,7 @@ formTabs:
                     componentProperties:
                       sourceType: content
                       textTypography: body-1
+                      objectHeight: 600px # permet agrandir la carte
   
       - _type: FormContainer
         _name: Sectiontrois
@@ -278,6 +288,7 @@ formTabs:
                         _name: FDN_Usage
                         value: FDN_Usage
                         label: Usage
+                        documentation: Usage principal de l’immeuble, indiquant s’il est destiné à une activité d’entreprise, à de l’habitation ou au deux.
                         labelProperties:
                           alignment: left
                           typography: body-2
@@ -334,7 +345,8 @@ formTabs:
               - _type: TextField
                 _name: IGH
                 value: IGH
-                label: IGH
+                label: Statut IGH
+                documentation: Statut IGH
                 labelProperties:
                   alignment: left
                   typography: body-2
@@ -347,7 +359,9 @@ formTabs:
               - _type: TextField
                 _name: ERP
                 value: ERP
-                label: ERP
+                label: Statut ERP
+                documentation: Indique si un immeuble est autorisé à recevoir du public selon la réglementation ERP (Établissement Recevant du Public).
+                  Cet attribut précise si des démarches administratives ont été effectuées auprès de la préfecture et si l’autorisation a été accordée.
                 labelProperties:
                   alignment: left
                   typography: body-2
@@ -372,6 +386,7 @@ formTabs:
                 _name: FlagAscenseur
                 value: FlagAscenseur
                 label: Statut ascenseur
+                documentation: Indique si l'immeuble dispose au moins d'un ascenseur.
                 labelProperties:
                   alignment: left
                   typography: body-2
@@ -383,6 +398,8 @@ formTabs:
                 _name: FDN_ModeChauffage
                 value: FDN_ModeChauffage
                 label: Mode chauffage
+                documentation: Caractérise l’organisation du système de production et de distribution de chaleur au sein d’un immeuble.
+                  Il indique si le chauffage est assuré par une installation commune à plusieurs lots (collectif), par des installations propres à chaque lot (individuel), ou par une combinaison des deux (mixte).
                 labelProperties:
                   alignment: left
                   typography: body-2
@@ -395,6 +412,7 @@ formTabs:
                 _name: FDN_TypeEnergie
                 value: FDN_TypeEnergie
                 label: Type d'énergie
+                documentation: Désigne la source d’énergie utilisée pour produire la chaleur nécessaire au chauffage.
                 labelProperties:
                   alignment: left
                   typography: body-2
@@ -407,6 +425,7 @@ formTabs:
                 _name: CapaciteAccueil
                 value: CapaciteAccueil
                 label: Capacité d'accueil
+                documentation: Nombre maximal de personnes pouvant être présentes simultanément dans l’immeuble.
                 labelProperties:
                   alignment: left
                   typography: body-2
@@ -417,7 +436,8 @@ formTabs:
               - _type: TextField
                 _name: PosteTravail
                 value: PosteTravail
-                label: Poste de travail
+                label: Postes de travail
+                documentation: Nombre maximal de postes de travail pouvant être installés et utilisés simultanément dans l’immeuble selon son aménagement actuel.
                 labelProperties:
                   alignment: left
                   typography: body-2
@@ -437,6 +457,7 @@ formTabs:
                 _name: FDN_OrgaResp
                 value: FDN_OrgaResp
                 label: Organisation responsable
+                documentation: Direction métier en charge de la gestion opérationnelle de l’actif (Direction Résidentielle / Bureaux).
                 labelProperties:
                   alignment: left
                   typography: body-2
@@ -447,7 +468,8 @@ formTabs:
               - _type: ReferenceField
                 _name: FDN_Portefeuille
                 value: FDN_Portefeuille
-                label: Portefeuille
+                label: Portefeuille gestion
+                documentation: Ensemble d’actifs rattachés à une même équipe opérationnelle (ex. Portefeuille 1, Portefeuille 2…).
                 labelProperties:
                   alignment: left
                   typography: body-2
@@ -455,16 +477,17 @@ formTabs:
                 useCustomLabel: true
                 dataType: STRING
                 referencedEntity: Batiments.entities.Portefeuille.Portefeuille
-              - _type: TextField
-                _name: SousPortefeuille
-                value: SousPortefeuille
-                label: Sous Portefeuille
+              - _type: ReferenceField
+                _name: FDN_SousPortefeuille
+                value: FDN_SousPortefeuille
+                label: Sous-portefeuille gestion
                 labelProperties:
                   alignment: left
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
                 dataType: STRING
+                referencedEntity: Batiments.entities.SousPortefeuille.SousPortefeuille
 
   - _type: FormTab
     _name: CycleVieImmeuble
@@ -493,6 +516,7 @@ formTabs:
                 _name: FDN_Phase
                 value: FDN_Phase
                 label: Phase
+                documentation: Statut du bien dans son cycle de vie (initiale, active, terminée).
                 labelProperties:
                   alignment: left
                   typography: body-2
@@ -525,6 +549,7 @@ formTabs:
                 _name: FlagRestructuration
                 value: FlagRestructuration
                 label: Restructuration en cours
+                documentation: Indique que l'immeuble est actuellement soumis à des travaux lourds ou à une réorganisation structurelle importante.
                 labelProperties:
                   alignment: left
                   typography: body-2
@@ -536,6 +561,7 @@ formTabs:
                 _name: DateRestructuration
                 value: DateRestructuration
                 label: Date dernière restructuration
+                documentation: Date à laquelle s’est achevée la dernière opération de restructuration lourde de l’immeuble. Cette date correspond à la fin effective du chantier, lorsque l’immeuble est de nouveau disponible pour une exploitation normale.
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -556,7 +582,8 @@ formTabs:
               - _type: DateField
                 _name: DateAcquisition
                 value: DateAcquisition
-                label: Date d'acquisition
+                label: Date acquisition
+                documentation: Date d’achat de l’immeuble par la société propriétaire.
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -568,6 +595,7 @@ formTabs:
                 _name: DateVente
                 value: DateVente
                 label: Date vente
+                documentation: Date effective de cession juridique (si applicable).
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -598,7 +626,8 @@ formTabs:
               - _type: TextField
                 _name: DateDebutConstruction
                 value: DateDebutConstruction
-                label: Date de début de construction
+                label: Date début construction
+                documentation: Date de démarrage des travaux de construction de l’actif.
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -609,7 +638,8 @@ formTabs:
               - _type: TextField
                 _name: DateFinConstruction
                 value: DateFinConstruction
-                label: Date de fin de construction
+                label: Date fin construction
+                documentation: Date de fin des travaux de construction.
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -620,7 +650,8 @@ formTabs:
               - _type: TextField
                 _name: DateLivraison
                 value: DateLivraison
-                label: Date de livraison
+                label: Date livraison
+                documentation: Date de mise à disposition de l’actif après construction. (uniquement pour les VEFA). Ne pas afficher si pas d'info. Afficher que si VEFA et si on a l'info
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -652,6 +683,7 @@ formTabs:
             _name: FDN_FiscaliteCible
             value: FDN_FiscaliteCible
             label: Régime TVA
+            documentation: Régime de taxation du bien (non soumis, prorata, soumis 100%).
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL
@@ -663,6 +695,7 @@ formTabs:
             _name: Juridique
             value: FDN_RegimeJuridique
             label: Régime juridique
+            documentation: monopropriété, copropriété, ASL, bail emphytéotique, réserve foncière, prise à bail, etc.
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL
@@ -673,7 +706,7 @@ formTabs:
             referencedEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
       - _type: FormSection
         _name: Societes
-        label: Société 
+        label: Sociétés
         layoutDirection: COLUMN
         visibleValue: "1"
         visibleValueInterpreter: LITERAL
@@ -681,7 +714,7 @@ formTabs:
         content:
           - _type: FormCollection
             _name: Societes
-            label: Société
+            label: Sociétés
             useCustomLabel: true
             collection: Batiments.entities.RelImmSoc.collection_views.Societe
             tableAllowed: true
@@ -693,4 +726,8 @@ formTabs:
             sortExpression: 1 DESC
             filter:  1=1
             targetEntity: Batiments.entities.RelImmSoc.RelImmSoc
-            height: 200
+            height: 300
+            formCollectionSearchConfigs:
+             -  enabled: true 
+                searchType: TEXT
+

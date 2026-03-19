@@ -1,0 +1,19 @@
+_package: Batiments.entities.SousPortefeuille.display_cards
+_type: DisplayCard
+_name: SousPortefeuilleDisplayCard
+entity: Batiments.entities.SousPortefeuille.SousPortefeuille
+default: true
+primaryTextExpression: SousPortefeuille
+secondaryTextExpression: LibelleSousPortefeuille
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageValue: images://mdi/domain.svg
+

@@ -1,0 +1,32 @@
+_package: Batiments.references
+_type: Reference
+_name: RelLotSocToTypeSociete
+label: Relation ImmSoc et Type Societe
+description: Lien hiérarchique Type Societe vers Relation ImmSoc
+fromRoleDocumentation: |
+  Cette référence établit le lien hiérarchique entre Lien hiérarchique Type Societe vers Relation Societe immeuble.
+physicalName: REL_LOT_SOC_TYPE_REF
+
+fromEntity: Batiments.entities.RelLotSoc.RelLotSoc
+fromRoleLabel: Relation ImmSoc Type Societe
+fromRoleName: RelLotSocTypeSociete
+fromRolePluralLabel: RelLotSocType Societes
+
+toEntity: Batiments.entities.TypeSociete.TypeSociete
+toRoleLabel: Type Societe
+toRoleName: TypeSociete
+toRolePhysicalName: TYPE_SOCIETE_ID
+
+oneToMany: false
+deletePropagation: RESTRICT
+validationScope: PRE_CONSO
+mandatoryValidationLabel: L'Type Societe est obligatoire pour une société
+brokenValidationLabel: L'Type Societe sélectionné est invalide pour cette société
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: TypeSociete
+  label: Type Société
+  physicalName: TYPE_SOCIETE_ID
+  searchable: true
+  entity: Batiments.entities.RelLotSoc.RelLotSoc

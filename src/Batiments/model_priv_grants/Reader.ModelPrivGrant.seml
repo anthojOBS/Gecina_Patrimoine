@@ -73,6 +73,15 @@ entityPrivGrants:
     removeAllowed: false
     defaultAccessType: READ
   - _type: EntityPrivGrant
+    entity: Batiments.entities.SousPortefeuille.SousPortefeuille
+    _name: SousPortefeuilleu
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+  - _type: EntityPrivGrant
     entity: Batiments.entities.RegimeJuridique.RegimeJuridique
     _name: RegimeJuridique
     checkoutAllowed: false
@@ -117,6 +126,26 @@ entityPrivGrants:
     exportAllowed: false
     removeAllowed: false
     defaultAccessType: READ
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.TypeSociete.TypeSociete
+    _name: TypeSociete
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.FiscaliteCible.FiscaliteCible
+    _name: FiscaliteCible
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+
   - _type: EntityPrivGrant
     entity: Batiments.entities.Societe.Societe
     _name: Societe

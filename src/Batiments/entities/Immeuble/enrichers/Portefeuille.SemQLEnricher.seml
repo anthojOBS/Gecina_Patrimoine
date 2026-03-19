@@ -1,0 +1,39 @@
+_package: Batiments.entities.Immeuble.enrichers
+_name: Portefeuille
+_type: JavaPluginEnricher
+entity: Batiments.entities.Immeuble.Immeuble
+label: Alignement Portefeuille depuis sous-portefeuille
+# enricherExecutionScope: NONE
+# semQlEnricherExpressions: 
+#   - attributeName: FID_Portefeuille
+#     expression: SousPortefeuille.FID_Portefeuille
+#    # expression: lookup max(FID_Portefeuille) from SousPortefeuille end 
+# condition: FID_Portefeuille is NULL 
+# # and SousPortefeuille.FID_Portefeuille = Immeuble.FID_SousPortefeuille
+
+enricherExecutionScope: PRE_CONSO
+numberOfRetry: 0
+onErrorBehavior: SKIP_RECORDS
+processingBatchSize: 1000
+threadPoolSize: 100
+
+
+pluginId: com.semarchy.engine.plugins.convergence.lookup
+
+pluginParams:
+  - paramName: PARAM_CACHE
+    value: NO_CACHE
+  - paramName: PARAM_CUSTOM_SQL
+    value: select sous_portefeuille LOOKUP_COLUMN,f_portefeuille_id OUTPUT_COLUMN1
+          from GD_SOUS_PORTEFEUILLE
+          # where SousPortefeuille.FID_SousPortefeuille = Immeuble.FID_SousPortefeuille
+
+pluginInputs:
+  - inputName: IN_LOOKUP_VALUE
+    expression: FID_SousPortefeuille
+
+pluginOutputs:
+  - attributeName: FID_Portefeuille
+    outputName: OUT_RESULT1
+
+condition: FID_Portefeuille is NULL and FID_SousPortefeuille is not NULL

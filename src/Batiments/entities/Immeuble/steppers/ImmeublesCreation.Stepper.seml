@@ -1,0 +1,124 @@
+_package: Batiments.entities.Immeuble.steppers
+_type: Stepper
+_name: ImmeublesCreation
+entity: Batiments.entities.Immeuble.Immeuble
+label: Immeubles
+
+stepperFinishValidations:
+  - onStepperFinish: WARN
+    validationType: DETECT_DUPS
+   
+rootStep:
+  _type: CollectionStep
+  _name: Immeubles
+  label: Immeubles
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Immeuble
+      label: Immeuble
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleCREATION.Immeuble
+
+      # referenceFormFieldConfigs:
+      #   - enableCreateReference: false
+      #     enableUserSort: true
+      #     fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCREATION.Immeuble.SectionBas.GestionInterne.FDN_SousPortefeuille
+      #     referenceFilter: Referenced.Immeuble.Portefeuille = 'P1'
+          # referenceFilter: Referenced.Immeuble.FDN_Portefeuille = Record.SousPortefeuille.FDN_Portefeuille
+          # referenceFilter: Referenced.Immeuble.Portefeuille = Record.SousPortefeuille.FID_Portefeuille
+
+
+      formStepEnrichers:  
+        - enricher: Batiments.entities.Immeuble.enrichers.StandardizeAddress
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false
+        - enricher: Batiments.entities.Immeuble.enrichers.Portefeuille
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false
+# clik pour le bouton , change si maj de entree, form pour ouverture du formulaire sens si autre onglet 
+      formStepValidations:  
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Immeuble.Immeuble.Libelle
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Immeuble.Immeuble.IdentifiantsERP
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Immeuble.Immeuble.DateAcquisition
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Immeuble.Immeuble.DateDebPhase
+        # - executedOnDataChange: true
+        #   executedOnFormOpen: true
+        #   validationType: MANDATORY
+        #   attribute: Batiments.entities.Immeuble.Immeuble.FDN_SousPortefeuille
+        # - executedOnDataChange: true
+        #   executedOnFormOpen: true
+        #   validationType: FOREIGN
+
+        - validator: Batiments.entities.Immeuble.validations.CheckLongLibelle
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.entities.Immeuble.Immeuble.Libelle
+
+
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Immeuble.Immeuble.Libelle
+          
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckLongLibelle
+
+          
+        - onStepExit: WARN
+          validationType: DETECT_DUPS
+          matcher: Batiments.entities.Immeuble.Immeuble.Matcher
+
+    - _type: FormStep
+      _name: CycleDeVie
+      label: Cycle de vie de l'immeuble
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleCREATION.CycleVieImmeuble
+ 
+    - _type: FormStep
+      _name: FiscaliteJuridique
+      label: Fiscalité et Juridique
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleCREATION.FiscaliteJuridique
+

@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: ImmeubleToSousPortefeuille
+label: Immeuble Sous Portefeuille
+description: Référence Immeuble vers Sous Portefeuille
+fromRoleDocumentation: |
+  Cette référence détermine le **Sous Portefeuille** auquel appartient un **Immeuble**.
+  Le Sous Portefeuille représente un regroupement stratégique d'actifs immobiliers pour faciliter 
+  la gestion et le reporting par segments d'activité ou zones de marché.
+physicalName: IMMEUBLE_SS_PORTEF_REF
+
+fromEntity: Batiments.entities.Immeuble.Immeuble
+fromRoleLabel: Immeuble
+fromRoleName: Immeuble
+fromRolePluralLabel: Immeubles
+
+toEntity: Batiments.entities.SousPortefeuille.SousPortefeuille
+toRoleLabel: Sous Portefeuille
+toRoleName: SousPortefeuille
+toRolePhysicalName: SOUS_PORTEFEUILLE_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: Le SousPortefeuille est obligatoire pour un immeuble
+brokenValidationLabel: Le SousPortefeuille sélectionné est invalide pour cet immeuble
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: SsPortefeuille
+  label: Sous-portefeuille
+  physicalName: SOUS_PORTEFEUILLE_ID
+  searchable: true
+  entity: Batiments.entities.Immeuble.Immeuble

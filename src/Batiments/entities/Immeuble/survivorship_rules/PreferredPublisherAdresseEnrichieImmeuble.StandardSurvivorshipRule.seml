@@ -15,7 +15,7 @@ attributes:
   - attributeName: CodePostal 
   - attributeName: Ville
   - attributeName: Pays
-  - attributeName: Portefeuille #toRoleName de la ref
+  # - attributeName: Portefeuille #toRoleName de la ref
   
 publisherRankings:
   - _type: ConsoPublisherRanking

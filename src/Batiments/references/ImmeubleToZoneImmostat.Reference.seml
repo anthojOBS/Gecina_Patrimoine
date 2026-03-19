@@ -3,9 +3,8 @@ _type: Reference
 _name: ImmeubleToZoneImmostat
 label: Immeuble ZoneImmostat
 description: Référence Immeuble vers ZoneImmostat
-fromRoleDocumentation: |
-  Cette référence détermine la **ZoneImmostat** d'un **Immeuble** dans son cycle de vie.
-  La ZoneImmostat indique l'état d'avancement du projet immobilier (en construction, livré, etc.).
+documentation: Découpage géographique de gestion 
+fromRoleDocumentation: Découpage géographique de gestion 
 physicalName: IMM_ZONE_IMMOSTAT_REF
 
 fromEntity: Batiments.entities.Immeuble.Immeuble
@@ -14,15 +13,15 @@ fromRoleName: Immeuble
 fromRolePluralLabel: Immeubles
 
 toEntity: Batiments.entities.ZoneImmostat.ZoneImmostat
-toRoleLabel: ZoneImmostat
+toRoleLabel: Zone immostat
 toRoleName: ZoneImmostat
 toRolePhysicalName: ZONE_IMMOSTAT_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
 validationScope: POST_CONSO
-mandatoryValidationLabel: La ZoneImmostat est obligatoire pour un immeuble
-brokenValidationLabel: La ZoneImmostat sélectionnée est invalide pour cet immeuble
+mandatoryValidationLabel: La zone immostat est obligatoire pour un immeuble
+brokenValidationLabel: La zone immostat sélectionnée est invalide pour cet immeuble
 
 foreignAttribute:
   _type: ForeignAttribute

@@ -9,7 +9,7 @@ actions:
     _name: CreateAuthorImmeubles
     label: Create
     useCustomLabel: true
-    stepper: Batiments.entities.Immeuble.steppers.AuthorImmeubles
+    stepper: Batiments.entities.Immeuble.steppers.ImmeublesCreation
     createMultiple: false
     createdRecordType: GOLDEN
     waitDialogEnabled: false
