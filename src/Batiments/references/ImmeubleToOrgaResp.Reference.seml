@@ -21,8 +21,8 @@ toRolePhysicalName: ORGARESP_ID
 oneToMany: true
 deletePropagation: RESTRICT
 validationScope: POST_CONSO
-mandatoryValidationLabel: La OrgaResp est obligatoire pour un immeuble
-brokenValidationLabel: La OrgaResp sélectionnée est invalide pour cet immeuble
+mandatoryValidationLabel: L'organisation responsable est obligatoire pour un immeuble
+brokenValidationLabel: L'organisation responsable est invalide pour cet immeuble
 
 foreignAttribute:
   _type: ForeignAttribute

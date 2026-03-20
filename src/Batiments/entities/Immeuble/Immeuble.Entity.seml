@@ -217,15 +217,16 @@ attributes:
 	
   - _type: EntityAttribute
     _name: SuperficieUtile
-    label: SuperficieUtile
+    label: Superficie Utile
     description: Surface totale de l’actif exprimée en m²
     documentation: Addition de toutes les surfaces utiles avec QP
     physicalName: SUPERFICIE_UTILE
     dataType: Decimal
     precision: 18
     scale: 2 
-    mandatory: false
-    searchable: false
+    mandatory: true
+    mandatoryValidationLabel: "La superficie totale avec QP est obligatoire"
+    mandatoryValidationScope: PRE_CONSO
 
   # booleen
   - _type: EntityAttribute

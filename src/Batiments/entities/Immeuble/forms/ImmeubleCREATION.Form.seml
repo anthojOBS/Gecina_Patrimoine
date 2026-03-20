@@ -517,7 +517,7 @@ formTabs:
                 dataType: STRING
                 referencedEntity: Batiments.entities.Phase.Phase
 
-              - _type: TextField
+              - _type: DateField
                 _name: DateDebPhase
                 value: DateDebPhase
                 label: Date début phase
@@ -549,7 +549,7 @@ formTabs:
                 useCustomLabel: true
                 dataType: BOOLEAN
 
-              - _type: TextField
+              - _type: DateField
                 _name: DateRestructuration
                 value: DateRestructuration
                 label: Date dernière restructuration
@@ -583,7 +583,7 @@ formTabs:
                   color: md:black
                 useCustomLabel: true
                 dataType: DATE
-              - _type: TextField
+              - _type: DateField
                 _name: DateVente
                 value: DateVente
                 label: Date vente
@@ -615,7 +615,7 @@ formTabs:
                 useCustomLabel: true
                 dataType: STRING
                 referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
-              - _type: TextField
+              - _type: DateField
                 _name: DateDebutConstruction
                 value: DateDebutConstruction
                 label: Date début construction
@@ -627,7 +627,7 @@ formTabs:
                   color: md:black
                 useCustomLabel: true
                 dataType: DATE
-              - _type: TextField
+              - _type: DateField
                 _name: DateFinConstruction
                 value: DateFinConstruction
                 label: Date fin construction
@@ -639,7 +639,7 @@ formTabs:
                   color: md:black
                 useCustomLabel: true
                 dataType: DATE
-              - _type: TextField
+              - _type: DateField
                 _name: DateLivraison
                 value: DateLivraison
                 label: Date livraison

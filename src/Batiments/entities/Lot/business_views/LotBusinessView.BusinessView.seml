@@ -69,8 +69,8 @@ rootBusinessViewEntity:
       label: Masters Records
       pluralLabel: Masters Records
       transitionType: FULLY_QUALIFIED
-      transitionPath:  MasterRecords 
-      businessViewEntity: 
+      transitionPath:  MasterRecords
+      businessViewEntity:
         _type: BusinessViewEntity
         _name: MasterRecord
         displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
@@ -78,6 +78,37 @@ rootBusinessViewEntity:
         actionSet: Batiments.entities.Lot.action_sets.LotActionSet
         collection: Batiments.entities.Lot.collection_views.LotCollectionView
         form: Batiments.entities.Lot.forms.LotForm
+        displayRecordCount: ALWAYS
+        outlineVisible: false
+        enableUserDefinedSort: true
+        gridAllowed: true
+        listAllowed: true
+        overrideDefaultSort: false
+        tableAllowed: true
+
+    - _type: BusinessViewTransition
+      _name: RelLotSoc
+      label: Sociétés
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      enableHierarchy: '0'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: false
+      iconUrl: images://mdi/account-group.svg
+      pluralLabel: Sociétés
+      transitionPath: RelLotSoc
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '1'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      businessViewEntity:
+        _type: BusinessViewEntity
+        _name: RelLotSoc
+        displayCard: Batiments.entities.RelLotSoc.display_cards.RelLotSocDisplayCard
+        entity: Batiments.entities.RelLotSoc.RelLotSoc
+        actionSet: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet
+        collection: Batiments.entities.RelLotSoc.collection_views.Societe
+        form: Batiments.entities.RelLotSoc.forms.RelLotSocForm
         displayRecordCount: ALWAYS
         outlineVisible: false
         enableUserDefinedSort: true

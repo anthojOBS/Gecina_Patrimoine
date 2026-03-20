@@ -26,7 +26,7 @@ brokenValidationLabel: Le régime juridique sélectionné est invalide pour cet 
 
 foreignAttribute:
   _type: ForeignAttribute
-  _name: ImmeubleRegimeJuridique
+  _name: RegimeJuridique
   label: Régime Juridique de l'Immeuble
   physicalName: REGIME_JURIDIQUE_ID
   searchable: true

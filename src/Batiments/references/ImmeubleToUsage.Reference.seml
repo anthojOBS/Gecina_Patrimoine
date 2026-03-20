@@ -25,7 +25,7 @@ brokenValidationLabel: L'usage sélectionnée est invalide pour cet immeuble
 
 foreignAttribute:
   _type: ForeignAttribute
-  _name: Usage_Immeuble
+  _name: Usage
   label: Usage
   physicalName: USAGE_ID
   searchable: true

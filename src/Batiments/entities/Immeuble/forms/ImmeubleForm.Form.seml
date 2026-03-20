@@ -579,7 +579,7 @@ formTabs:
             labelWidth: 300px
             content:
 
-              - _type: DateField
+              - _type: TextField
                 _name: DateAcquisition
                 value: DateAcquisition
                 label: Date acquisition

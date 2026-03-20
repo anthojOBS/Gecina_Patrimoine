@@ -26,7 +26,7 @@ brokenValidationLabel: La SousSecteurImmostat sélectionnée est invalide pour c
 
 foreignAttribute:
   _type: ForeignAttribute
-  _name: SousSecteur_Immostat
+  _name: SousSecteurImmostat
   label: Sous Secteur Immostat
   physicalName: SS_SECTEUR_IMMOSTAT_ID
   searchable: true

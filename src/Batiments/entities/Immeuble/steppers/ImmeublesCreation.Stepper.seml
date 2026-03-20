@@ -4,9 +4,9 @@ _name: ImmeublesCreation
 entity: Batiments.entities.Immeuble.Immeuble
 label: Immeubles
 
-stepperFinishValidations:
-  - onStepperFinish: WARN
-    validationType: DETECT_DUPS
+# stepperFinishValidations:
+#   - onStepperFinish: WARN
+#     validationType: DETECT_DUPS
    
 rootStep:
   _type: CollectionStep
@@ -37,16 +37,16 @@ rootStep:
       enableMasterValuePicking: false
       formTab: Batiments.entities.Immeuble.forms.ImmeubleCREATION.Immeuble
 
-      # referenceFormFieldConfigs:
-      #   - enableCreateReference: false
-      #     enableUserSort: true
-      #     fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCREATION.Immeuble.SectionBas.GestionInterne.FDN_SousPortefeuille
-      #     referenceFilter: Referenced.Immeuble.Portefeuille = 'P1'
-          # referenceFilter: Referenced.Immeuble.FDN_Portefeuille = Record.SousPortefeuille.FDN_Portefeuille
-          # referenceFilter: Referenced.Immeuble.Portefeuille = Record.SousPortefeuille.FID_Portefeuille
+      referenceFormFieldConfigs:
+        - enableCreateReference: false
+          enableUserSort: true
+          referencePickerType: AUTO_COMPLETE
+          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCREATION.Immeuble.SectionBas.GestionInterne.FDN_SousPortefeuille
+          referenceFilter: Referenced.FID_Portefeuille = Record.FID_Portefeuille
+          referencePickerCollectionView: Batiments.entities.SousPortefeuille.collection_views.SousPortefeuilleCollectionView
+          # referencePickerSearchTypeConfigs: []
 
-
-      formStepEnrichers:  
+      formStepEnrichers:   
         - enricher: Batiments.entities.Immeuble.enrichers.StandardizeAddress
           executedOnButtonClick: false
           executedOnDataChange: true
@@ -56,6 +56,7 @@ rootStep:
           executedOnDataChange: true
           executedOnFormOpen: false
 # clik pour le bouton , change si maj de entree, form pour ouverture du formulaire sens si autre onglet 
+
       formStepValidations:  
         - executedOnDataChange: true
           executedOnFormOpen: true
@@ -68,18 +69,27 @@ rootStep:
         - executedOnDataChange: true
           executedOnFormOpen: true
           validationType: MANDATORY
-          attribute: Batiments.entities.Immeuble.Immeuble.DateAcquisition
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.entities.Immeuble.Immeuble.DateDebPhase
+          attribute: Batiments.entities.Immeuble.Immeuble.SuperficieUtile
         # - executedOnDataChange: true
         #   executedOnFormOpen: true
         #   validationType: MANDATORY
-        #   attribute: Batiments.entities.Immeuble.Immeuble.FDN_SousPortefeuille
-        # - executedOnDataChange: true
-        #   executedOnFormOpen: true
-        #   validationType: FOREIGN
+        #   attribute: Batiments.entities.Immeuble.Immeuble.AdresseEnrichie
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.ImmeubleToUsage.Usage
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.ImmeubleToOrgaResp.OrgaResp
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.ImmeubleToPortefeuille.Portefeuille
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.ImmeubleToSousPortefeuille.SousPortefeuille
 
         - validator: Batiments.entities.Immeuble.validations.CheckLongLibelle
           executedOnDataChange: true
@@ -92,15 +102,34 @@ rootStep:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.entities.Immeuble.Immeuble.Libelle
-          
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Immeuble.Immeuble.IdentifiantsERP
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Immeuble.Immeuble.SuperficieUtile
+
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToUsage.Usage
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToOrgaResp.OrgaResp
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToPortefeuille.Portefeuille
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToSousPortefeuille.SousPortefeuille
+
         - onStepExit: BLOCK
           validationType: CHECK
           validator: Batiments.entities.Immeuble.validations.CheckLongLibelle
-
-          
+ 
         - onStepExit: WARN
           validationType: DETECT_DUPS
           matcher: Batiments.entities.Immeuble.Immeuble.Matcher
+
 
     - _type: FormStep
       _name: CycleDeVie
@@ -111,14 +140,97 @@ rootStep:
       formFieldsMode: AUTO
       enableMasterValuePicking: false
       formTab: Batiments.entities.Immeuble.forms.ImmeubleCREATION.CycleVieImmeuble
- 
-    - _type: FormStep
-      _name: FiscaliteJuridique
-      label: Fiscalité et Juridique
-      canFinishSubLevel: true
-      enabledOnParentCreate: true
-      enabledOnParentEdit: true
-      formFieldsMode: AUTO
-      enableMasterValuePicking: false
-      formTab: Batiments.entities.Immeuble.forms.ImmeubleCREATION.FiscaliteJuridique
 
+      formStepValidations:  
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToPhase.Phase
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Immeuble.Immeuble.DateDebPhase
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Immeuble.Immeuble.DateAcquisition
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToPhase.Phase
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Immeuble.Immeuble.DateDebPhase
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Immeuble.Immeuble.DateAcquisition
+
+    # - _type: FormStep
+    #   _name: FiscaliteJuridique
+    #   label: Fiscalité et Juridique
+    #   canFinishSubLevel: true
+    #   enabledOnParentCreate: true
+    #   enabledOnParentEdit: true
+    #   formFieldsMode: AUTO
+    #   enableMasterValuePicking: false
+    #   formTab: Batiments.entities.Immeuble.forms.ImmeubleCREATION.FiscaliteJuridique
+    #   formStepValidations:  
+    #     - executedOnDataChange: true
+    #       executedOnFormOpen: true
+    #       validationType: MANDATORY
+    #       attribute:  Batiments.references.ImmeubleToRegimeJuridique.RegimeJuridique
+    #     - executedOnDataChange: true
+    #       executedOnFormOpen: true
+    #       validationType: MANDATORY
+    #       attribute:  Batiments.references.ImmeubleToFiscaliteCible.FiscaliteCible
+    #   stepTransitionValidations:
+    #     - onStepExit: BLOCK
+    #       validationType: MANDATORY
+    #       attribute:  Batiments.references.ImmeubleToRegimeJuridique.RegimeJuridique
+    #     - onStepExit: BLOCK
+    #       validationType: MANDATORY
+    #       attribute: Batiments.references.ImmeubleToFiscaliteCible.FiscaliteCible
+
+stepperFinishValidations:
+  - onStepperFinish: WARN
+    validationType: DETECT_DUPS
+
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Immeuble.Immeuble.Libelle
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Immeuble.Immeuble.IdentifiantsERP
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Immeuble.Immeuble.SuperficieUtile
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute:  Batiments.references.ImmeubleToUsage.Usage
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute:  Batiments.references.ImmeubleToOrgaResp.OrgaResp
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute:  Batiments.references.ImmeubleToPortefeuille.Portefeuille
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute:  Batiments.references.ImmeubleToSousPortefeuille.SousPortefeuille
+
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute:  Batiments.references.ImmeubleToPhase.Phase
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Immeuble.Immeuble.DateDebPhase
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Immeuble.Immeuble.DateAcquisition
+
+  # - onStepperFinish: BLOCK
+  #   validationType: MANDATORY
+  #   attribute:  Batiments.references.ImmeubleToRegimeJuridique.RegimeJuridique
+  # - onStepperFinish: BLOCK
+  #   validationType: MANDATORY
+  #   attribute:  Batiments.references.ImmeubleToFiscaliteCible.FiscaliteCible
+                                                                  

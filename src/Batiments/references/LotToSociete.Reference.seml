@@ -25,7 +25,7 @@ brokenValidationLabel: La société sélectionnée est invalide pour cet Lot
 
 foreignAttribute:
   _type: ForeignAttribute
-  _name: Societe_Lot
+  _name: Societe
   label: Societe
   physicalName: SOCIETE_ID
   searchable: true

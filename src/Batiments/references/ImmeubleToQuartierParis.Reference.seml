@@ -26,7 +26,7 @@ brokenValidationLabel: La QuartierParis sélectionnée est invalide pour cet imm
 
 foreignAttribute:
   _type: ForeignAttribute
-  _name: Quartier_Paris
+  _name: QuartierParis
   label: QuartierParis
   physicalName: QUARTIER_PARIS_ID
   searchable: true

@@ -25,7 +25,7 @@ brokenValidationLabel: La zone immostat sélectionnée est invalide pour cet imm
 
 foreignAttribute:
   _type: ForeignAttribute
-  _name: Zone_Immostat
+  _name: ZoneImmostat
   label: ZoneImmostat
   physicalName: ZONE_IMMOSTAT_ID
   searchable: true

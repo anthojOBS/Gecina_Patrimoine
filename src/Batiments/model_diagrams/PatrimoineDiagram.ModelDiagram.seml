@@ -36,6 +36,16 @@ entityShapes:
       x: 400
       y: 0
   - _type: EntityShape
+    _name: EtageShape
+    entity: Batiments.entities.Etage.Etage
+    borderColor: "#607d8b"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 800
+      y: 0
+  - _type: EntityShape
     _name: LotShape
     entity: Batiments.entities.Lot.Lot
     borderColor: "#006064"
@@ -56,6 +66,16 @@ entityShapes:
       x: 400
       y: 400
   - _type: EntityShape
+    _name: PortefeuilleShape
+    entity: Batiments.entities.Portefeuille.Portefeuille
+    borderColor: "#c2185b"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 200
+      y: 600
+  - _type: EntityShape
     _name: ZoneGeographiqueShape
     entity: Batiments.entities.ZoneGeographique.ZoneGeographique
     borderColor: "#ff5722"
@@ -65,6 +85,16 @@ entityShapes:
     position:
       x: -800
       y: -400
+  - _type: EntityShape
+    _name: PaysShape
+    entity: Batiments.entities.Pays.Pays
+    borderColor: "#1565c0"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -800
+      y: -200
   - _type: EntityShape
     _name: RegimeJuridiqueShape
     entity: Batiments.entities.RegimeJuridique.RegimeJuridique
@@ -76,55 +106,105 @@ entityShapes:
       x: -400
       y: -400
   - _type: EntityShape
-    _name: GenreLotShape
-    entity: Batiments.entities.GenreLot.GenreLot
-    borderColor: "#4caf50"
+    _name: CategorieERPShape
+    entity: Batiments.entities.CategorieERP.CategorieERP
+    borderColor: "#ad1457"
     fontTitleColor: ""
     width: -1
     height: -1
     position:
-      x: 1600
+      x: -400
       y: -200
   - _type: EntityShape
-    _name: EtageShape
-    entity: Batiments.entities.Etage.Etage
-    borderColor: "#607d8b"
+    _name: FiscaliteCibleShape
+    entity: Batiments.entities.FiscaliteCible.FiscaliteCible
+    borderColor: "#6a1b9a"
     fontTitleColor: ""
     width: -1
     height: -1
     position:
-      x: 800
+      x: -400
       y: 0
   - _type: EntityShape
-    _name: UsageLotShape
-    entity: Batiments.entities.UsageLot.UsageLot
-    borderColor: "#00695c"
+    _name: PeriodeConstructionShape
+    entity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
+    borderColor: "#8e24aa"
     fontTitleColor: ""
     width: -1
     height: -1
     position:
-      x: 1600
-      y: 0
+      x: -400
+      y: 200
   - _type: EntityShape
-    _name: PortefeuilleShape
-    entity: Batiments.entities.Portefeuille.Portefeuille
-    borderColor: "#c2185b"
+    _name: ModeChauffageShape
+    entity: Batiments.entities.ModeChauffage.ModeChauffage
+    borderColor: "#ef6c00"
     fontTitleColor: ""
     width: -1
     height: -1
     position:
-      x: 200
+      x: -400
+      y: 400
+  - _type: EntityShape
+    _name: TypeEnergieShape
+    entity: Batiments.entities.TypeEnergie.TypeEnergie
+    borderColor: "#1b5e20"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -400
       y: 600
   - _type: EntityShape
-    _name: PaysShape
-    entity: Batiments.entities.Pays.Pays
-    borderColor: "#1565c0"
+    _name: QuartierParisShape
+    entity: Batiments.entities.QuartierParis.QuartierParis
+    borderColor: "#283593"
     fontTitleColor: ""
     width: -1
     height: -1
     position:
       x: -800
-      y: -200
+      y: 0
+  - _type: EntityShape
+    _name: SecteurImmostatShape
+    entity: Batiments.entities.SecteurImmostat.SecteurImmostat
+    borderColor: "#2e7d32"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -800
+      y: 200
+  - _type: EntityShape
+    _name: SousSecteurImmostatShape
+    entity: Batiments.entities.SousSecteurImmostat.SousSecteurImmostat
+    borderColor: "#558b2f"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -800
+      y: 400
+  - _type: EntityShape
+    _name: ZoneImmostatShape
+    entity: Batiments.entities.ZoneImmostat.ZoneImmostat
+    borderColor: "#6d4c41"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -800
+      y: 600
+  - _type: EntityShape
+    _name: OrganisationResponsableShape
+    entity: Batiments.entities.OrganisationResponsable.OrganisationResponsable
+    borderColor: "#006064"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: -400
+      y: 800
   - _type: EntityShape
     _name: UsageShape
     entity: Batiments.entities.Usage.Usage
@@ -155,6 +235,36 @@ entityShapes:
     position:
       x: 1600
       y: 200
+  - _type: EntityShape
+    _name: GenreLotShape
+    entity: Batiments.entities.GenreLot.GenreLot
+    borderColor: "#4caf50"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 1600
+      y: -200
+  - _type: EntityShape
+    _name: UsageLotShape
+    entity: Batiments.entities.UsageLot.UsageLot
+    borderColor: "#00695c"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 1600
+      y: 0
+  - _type: EntityShape
+    _name: RaisonNonLouableShape
+    entity: Batiments.entities.RaisonNonLouable.RaisonNonLouable
+    borderColor: "#c62828"
+    fontTitleColor: ""
+    width: -1
+    height: -1
+    position:
+      x: 1600
+      y: 400
   - _type: EntityShape
     _name: SocieteShape
     entity: Batiments.entities.Societe.Societe
@@ -195,116 +305,6 @@ entityShapes:
     position:
       x: 2000
       y: 0
-  - _type: EntityShape
-    _name: ModeChauffageShape
-    entity: Batiments.entities.ModeChauffage.ModeChauffage
-    borderColor: "#ef6c00"
-    fontTitleColor: ""
-    width: -1
-    height: -1
-    position:
-      x: -400
-      y: 400
-  - _type: EntityShape
-    _name: CategorieERPShape
-    entity: Batiments.entities.CategorieERP.CategorieERP
-    borderColor: "#ad1457"
-    fontTitleColor: ""
-    width: -1
-    height: -1
-    position:
-      x: -400
-      y: -200
-  - _type: EntityShape
-    _name: FiscaliteCibleShape
-    entity: Batiments.entities.FiscaliteCible.FiscaliteCible
-    borderColor: "#6a1b9a"
-    fontTitleColor: ""
-    width: -1
-    height: -1
-    position:
-      x: -400
-      y: 0
-  - _type: EntityShape
-    _name: PeriodeConstructionShape
-    entity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
-    borderColor: "#8e24aa"
-    fontTitleColor: ""
-    width: -1
-    height: -1
-    position:
-      x: -400
-      y: 200
-  - _type: EntityShape
-    _name: TypeEnergieShape
-    entity: Batiments.entities.TypeEnergie.TypeEnergie
-    borderColor: "#1b5e20"
-    fontTitleColor: ""
-    width: -1
-    height: -1
-    position:
-      x: -400
-      y: 600
-  - _type: EntityShape
-    _name: QuartierParisShape
-    entity: Batiments.entities.QuartierParis.QuartierParis
-    borderColor: "#283593"
-    fontTitleColor: ""
-    width: -1
-    height: -1
-    position:
-      x: -800
-      y: 0
-  - _type: EntityShape
-    _name: OrganisationResponsableShape
-    entity: Batiments.entities.OrganisationResponsable.OrganisationResponsable
-    borderColor: "#006064"
-    fontTitleColor: ""
-    width: -1
-    height: -1
-    position:
-      x: -400
-      y: 800
-  - _type: EntityShape
-    _name: RaisonNonLouableShape
-    entity: Batiments.entities.RaisonNonLouable.RaisonNonLouable
-    borderColor: "#c62828"
-    fontTitleColor: ""
-    width: -1
-    height: -1
-    position:
-      x: 1600
-      y: 400
-  - _type: EntityShape
-    _name: SecteurImmostatShape
-    entity: Batiments.entities.SecteurImmostat.SecteurImmostat
-    borderColor: "#2e7d32"
-    fontTitleColor: ""
-    width: -1
-    height: -1
-    position:
-      x: -800
-      y: 200
-  - _type: EntityShape
-    _name: SousSecteurImmostatShape
-    entity: Batiments.entities.SousSecteurImmostat.SousSecteurImmostat
-    borderColor: "#558b2f"
-    fontTitleColor: ""
-    width: -1
-    height: -1
-    position:
-      x: -800
-      y: 400
-  - _type: EntityShape
-    _name: ZoneImmostatShape
-    entity: Batiments.entities.ZoneImmostat.ZoneImmostat
-    borderColor: "#6d4c41"
-    fontTitleColor: ""
-    width: -1
-    height: -1
-    position:
-      x: -800
-      y: 600
 referenceLinks:
   - reference: Batiments.references.ImmeubleToPhase
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
@@ -453,5 +453,9 @@ referenceLinks:
   - reference: Batiments.references.BatimentToPays
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
     toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.PaysShape
+    bendPoints: []
+  - reference: Batiments.references.BatimentToZoneGeographique
+    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ZoneGeographiqueShape
     bendPoints: []
 inheritLinks: []

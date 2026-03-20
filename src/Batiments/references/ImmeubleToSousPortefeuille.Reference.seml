@@ -27,7 +27,7 @@ brokenValidationLabel: Le SousPortefeuille sélectionné est invalide pour cet i
 
 foreignAttribute:
   _type: ForeignAttribute
-  _name: SsPortefeuille
+  _name: SousPortefeuille
   label: Sous-portefeuille
   physicalName: SOUS_PORTEFEUILLE_ID
   searchable: true
