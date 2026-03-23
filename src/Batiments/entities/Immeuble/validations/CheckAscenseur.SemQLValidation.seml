@@ -1,0 +1,8 @@
+_package: Batiments.entities.Immeuble.validations
+_name: CheckAscenseur
+_type: SemQLValidation
+entity: Batiments.entities.Immeuble.Immeuble
+label: Nombre Ascenseurs obligatoire 
+condition: (NbAscenseur > 0 and NbAscenseur is not null  and FlagAscenseur = '1') or FlagAscenseur = '0'
+validationScope: POST_CONSO
+validationLabel: Le nombre d'ascenseur doit être renseigné 

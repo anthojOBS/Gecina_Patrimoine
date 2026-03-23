@@ -21,8 +21,8 @@ toRolePhysicalName: QUARTIER_PARIS_ID
 oneToMany: true
 deletePropagation: RESTRICT
 validationScope: POST_CONSO
-mandatoryValidationLabel: La QuartierParis est obligatoire pour un immeuble
-brokenValidationLabel: La QuartierParis sélectionnée est invalide pour cet immeuble
+mandatoryValidationLabel: Le quartier Paris est obligatoire pour un immeuble
+brokenValidationLabel: Le quartier Paris sélectionnée est invalide pour cet immeuble
 
 foreignAttribute:
   _type: ForeignAttribute

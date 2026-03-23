@@ -19,7 +19,7 @@ toRoleLabel: Zone Géographique
 toRoleName: ZoneGeographique
 toRolePhysicalName: ZONE_GEOGRAPHIQUE_ID
 
-oneToMany: false
+oneToMany: true
 deletePropagation: RESTRICT
 validationScope: PRE_CONSO
 mandatoryValidationLabel: La zone géographique est obligatoire pour un immeuble

@@ -30,3 +30,13 @@ formTabs:
           typographyValueInterpreter: LITERAL
           typography: body-2
           color: md:black
+      - _type: ReferenceField
+        _name: FDN_ZoneImmostat
+        value: FDN_ZoneImmostat
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+        referencedEntity: Batiments.entities.ZoneImmostat.ZoneImmostat

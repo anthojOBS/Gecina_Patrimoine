@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: SecteurToZone
+label: Secteur To Zone
+description: Lien hiérarchique Secteur vers Zone
+fromRoleDocumentation: |
+  Cette référence établit le lien hiérarchique entre un **Zone** et son **Secteur**.
+  
+  Chaque Zone doit être rattaché à un Secteur dans la structure du patrimoine immobilier.
+physicalName: SECTEUR_ZONE_REF
+
+fromEntity: Batiments.entities.SecteurImmostat.SecteurImmostat
+fromRoleLabel: SecteurImmostat
+fromRoleName: SecteurImmostat
+fromRolePluralLabel: SecteurImmostat
+
+toEntity: Batiments.entities.ZoneImmostat.ZoneImmostat
+toRoleLabel: ZoneImmostat
+toRoleName: ZoneImmostat
+toRolePhysicalName: ZONE_IMMOSTAT_ID
+
+oneToMany: false
+deletePropagation: RESTRICT
+validationScope: NONE  #pour alimenter sans etage
+mandatoryValidationLabel: Le Secteur est obligatoire pour un Zone
+brokenValidationLabel: Le Secteur sélectionné est invalide pour ce Zone
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: ZoneImmostat
+  label: ZoneImmostat
+  physicalName: ZONE_IMMOSTAT_ID
+  searchable: true
+  entity: Batiments.entities.ZoneImmostat.ZoneImmostat

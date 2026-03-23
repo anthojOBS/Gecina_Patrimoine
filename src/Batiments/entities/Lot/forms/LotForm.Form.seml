@@ -72,7 +72,7 @@ formTabs:
                   - _type: ReferenceField
                     _name: FDN_Etage
                     value: FDN_Etage
-                    label: Etage lot
+                    label: Etage
                     authoringMode: auto
                     labelProperties:
                       alignment: left
@@ -547,7 +547,7 @@ formTabs:
           - _type: CheckboxField
             _name: StatutSousLocation
             value: StatutSousLocation
-            label: Statut sous location
+            label: Statut sous-location 
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL

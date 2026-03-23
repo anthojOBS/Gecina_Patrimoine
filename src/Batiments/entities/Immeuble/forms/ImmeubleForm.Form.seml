@@ -370,17 +370,17 @@ formTabs:
                 useCustomLabel: true
                # visibleValue: IGH is not null
                 dataType: BOOLEAN
-              - _type: ReferenceField
-                _name: FDN_CategorieERP
-                value: FDN_CategorieERP
-                label: Catégorie ERP
-                labelProperties:
-                  alignment: left
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: STRING
-                referencedEntity: Batiments.entities.CategorieERP.CategorieERP
+              # - _type: ReferenceField
+              #   _name: FDN_CategorieERP
+              #   value: FDN_CategorieERP
+              #   label: Catégorie ERP
+              #   labelProperties:
+              #     alignment: left
+              #     typography: body-2
+              #     color: md:black
+              #   useCustomLabel: true
+              #   dataType: STRING
+              #   referencedEntity: Batiments.entities.CategorieERP.CategorieERP
 
               - _type: TextField
                 _name: FlagAscenseur
@@ -393,6 +393,30 @@ formTabs:
                   color: md:black
                 useCustomLabel: true
                 dataType: BOOLEAN
+
+              - _type: TextField
+                _name: NbAscenseur
+                value: NbAscenseur
+                label: Nombre ascenseurs
+                documentation: Indique le nombre d'ascenseur.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+
+              - _type: TextField
+                _name: NbParking
+                value: NbParking
+                label: Nombre parkings
+                documentation: Indique le nombre d'ascenseur.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
 
               - _type: ReferenceField
                 _name: FDN_ModeChauffage
@@ -504,162 +528,173 @@ formTabs:
         layoutDirection: COLUMN
         content:
 
-          - _type: FormSection
-            _name: Phase
-            label: Phase
-            layoutDirection: COLUMN
-            visibleValue: "1"
-            visibleValueInterpreter: LITERAL
-            labelWidth: 300px
-            content:
-              - _type: ReferenceField
-                _name: FDN_Phase
-                value: FDN_Phase
-                label: Phase
-                documentation: Statut du bien dans son cycle de vie (initiale, active, terminée).
-                labelProperties:
-                  alignment: left
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: STRING
-                referencedEntity: Batiments.entities.Phase.Phase
-
-              - _type: TextField
-                _name: DateDebPhase
-                value: DateDebPhase
-                label: Date début phase
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
-
-          - _type: FormSection
-            _name: Restructuration
-            label: Restructuration
-            layoutDirection: COLUMN
-            visibleValue: "1"
-            visibleValueInterpreter: LITERAL
-            labelWidth: 300px
-            content:
-              - _type: TextField
-                _name: FlagRestructuration
-                value: FlagRestructuration
-                label: Restructuration en cours
-                documentation: Indique que l'immeuble est actuellement soumis à des travaux lourds ou à une réorganisation structurelle importante.
-                labelProperties:
-                  alignment: left
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: BOOLEAN
-
-              - _type: TextField
-                _name: DateRestructuration
-                value: DateRestructuration
-                label: Date dernière restructuration
-                documentation: Date à laquelle s’est achevée la dernière opération de restructuration lourde de l’immeuble. Cette date correspond à la fin effective du chantier, lorsque l’immeuble est de nouveau disponible pour une exploitation normale.
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
-
-          - _type: FormSection
-            _name: AcquisitionCession
-            label: Acquisition/Cession
-            layoutDirection: COLUMN
-            visibleValue: "1"
-            visibleValueInterpreter: LITERAL
-            labelWidth: 300px
+          - _type: FormContainer
+            _name: ContainerCycleVieHaut
+            layoutDirection: ROW
             content:
 
-              - _type: TextField
-                _name: DateAcquisition
-                value: DateAcquisition
-                label: Date acquisition
-                documentation: Date d’achat de l’immeuble par la société propriétaire.
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
-              - _type: TextField
-                _name: DateVente
-                value: DateVente
-                label: Date vente
-                documentation: Date effective de cession juridique (si applicable).
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
+                      - _type: FormSection
+                        _name: Phase
+                        label: Phase
+                        layoutDirection: COLUMN
+                        visibleValue: "1"
+                        visibleValueInterpreter: LITERAL
+                        labelWidth: 300px
+                        content:
+                          - _type: ReferenceField
+                            _name: FDN_Phase
+                            value: FDN_Phase
+                            label: Phase
+                            documentation: Statut du bien dans son cycle de vie (initiale, active, terminée).
+                            labelProperties:
+                              alignment: left
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: STRING
+                            referencedEntity: Batiments.entities.Phase.Phase
 
-          - _type: FormSection
-            _name: Construction
-            label: Construction
-            layoutDirection: COLUMN
-            visibleValue: "1"
-            visibleValueInterpreter: LITERAL
-            labelWidth: 300px
+                          - _type: TextField
+                            _name: DateDebPhase
+                            value: DateDebPhase
+                            label: Date début phase
+                            labelProperties:
+                              alignment: left
+                              typographyValueInterpreter: LITERAL
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: DATE
+
+                      - _type: FormSection
+                        _name: Restructuration
+                        label: Restructuration
+                        layoutDirection: COLUMN
+                        visibleValue: "1"
+                        visibleValueInterpreter: LITERAL
+                        labelWidth: 300px
+                        content:
+                          - _type: TextField
+                            _name: FlagRestructuration
+                            value: FlagRestructuration
+                            label: Restructuration en cours
+                            documentation: Indique que l'immeuble est actuellement soumis à des travaux lourds ou à une réorganisation structurelle importante.
+                            labelProperties:
+                              alignment: left
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: BOOLEAN
+
+                          - _type: TextField
+                            _name: DateRestructuration
+                            value: DateRestructuration
+                            label: Date dernière restructuration
+                            documentation: Date à laquelle s’est achevée la dernière opération de restructuration lourde de l’immeuble. Cette date correspond à la fin effective du chantier, lorsque l’immeuble est de nouveau disponible pour une exploitation normale.
+                            labelProperties:
+                              alignment: left
+                              typographyValueInterpreter: LITERAL
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: DATE
+
+
+          - _type: FormContainer
+            _name: ContainerCycleVieB
+            layoutDirection: ROW
             content:
-              - _type: ReferenceField
-                _name: FDN_PeriodeConstruction
-                value: FDN_PeriodeConstruction
-                label: Période de construction
-                labelProperties:
-                  alignment: left
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: STRING
-                referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
-              - _type: TextField
-                _name: DateDebutConstruction
-                value: DateDebutConstruction
-                label: Date début construction
-                documentation: Date de démarrage des travaux de construction de l’actif.
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
-              - _type: TextField
-                _name: DateFinConstruction
-                value: DateFinConstruction
-                label: Date fin construction
-                documentation: Date de fin des travaux de construction.
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
-              - _type: TextField
-                _name: DateLivraison
-                value: DateLivraison
-                label: Date livraison
-                documentation: Date de mise à disposition de l’actif après construction. (uniquement pour les VEFA). Ne pas afficher si pas d'info. Afficher que si VEFA et si on a l'info
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
 
+                      - _type: FormSection
+                        _name: Construction
+                        label: Construction
+                        layoutDirection: COLUMN
+                        visibleValue: "1"
+                        visibleValueInterpreter: LITERAL
+                        labelWidth: 300px
+                        content:
+                          - _type: ReferenceField
+                            _name: FDN_PeriodeConstruction
+                            value: FDN_PeriodeConstruction
+                            label: Période de construction
+                            labelProperties:
+                              alignment: left
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: STRING
+                            referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
+                          - _type: TextField
+                            _name: DateDebutConstruction
+                            value: DateDebutConstruction
+                            label: Date début construction
+                            documentation: Date de démarrage des travaux de construction de l’actif.
+                            labelProperties:
+                              alignment: left
+                              typographyValueInterpreter: LITERAL
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: DATE
+                          - _type: TextField
+                            _name: DateFinConstruction
+                            value: DateFinConstruction
+                            label: Date fin construction
+                            documentation: Date de fin des travaux de construction.
+                            labelProperties:
+                              alignment: left
+                              typographyValueInterpreter: LITERAL
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: DATE
+                          - _type: TextField
+                            _name: DateLivraison
+                            value: DateLivraison
+                            label: Date livraison
+                            documentation: Date de mise à disposition de l’actif après construction. (uniquement pour les VEFA). Ne pas afficher si pas d'info. Afficher que si VEFA et si on a l'info
+                            labelProperties:
+                              alignment: left
+                              typographyValueInterpreter: LITERAL
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: DATE
+
+
+                      - _type: FormSection
+                        _name: AcquisitionCession
+                        label: Acquisition/Cession
+                        layoutDirection: COLUMN
+                        visibleValue: "1"
+                        visibleValueInterpreter: LITERAL
+                        labelWidth: 300px
+                        content:
+
+                          - _type: TextField
+                            _name: DateAcquisition
+                            value: DateAcquisition
+                            label: Date acquisition
+                            documentation: Date d’achat de l’immeuble par la société propriétaire.
+                            labelProperties:
+                              alignment: left
+                              typographyValueInterpreter: LITERAL
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: DATE
+                          - _type: TextField
+                            _name: DateVente
+                            value: DateVente
+                            label: Date vente
+                            documentation: Date effective de cession juridique (si applicable).
+                            labelProperties:
+                              alignment: left
+                              typographyValueInterpreter: LITERAL
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: DATE
 
 
   - _type: FormTab

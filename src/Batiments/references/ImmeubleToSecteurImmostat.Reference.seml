@@ -21,8 +21,8 @@ toRolePhysicalName: SECTEUR_IMMOSTAT_ID
 oneToMany: true
 deletePropagation: RESTRICT
 validationScope: POST_CONSO
-mandatoryValidationLabel: La SecteurImmostat est obligatoire pour un immeuble
-brokenValidationLabel: La SecteurImmostat sélectionnée est invalide pour cet immeuble
+mandatoryValidationLabel: Le secteur Immostat est obligatoire pour un immeuble
+brokenValidationLabel: Le secteur Immostat sélectionné est invalide pour cet immeuble
 
 foreignAttribute:
   _type: ForeignAttribute

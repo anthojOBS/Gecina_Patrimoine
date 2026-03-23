@@ -7,4 +7,4 @@ enricherExecutionScope: NONE
 semQlEnricherExpressions: 
   - attributeName: ConcatAddress
     expression: UPPER(Adresse ||' '||CodePostal ||' '|| Ville)
-condition: Adresse is NOT NULL
+condition: Adresse is NOT NULL and (CodePostal is not null or Ville is not null)

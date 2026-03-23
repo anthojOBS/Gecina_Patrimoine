@@ -21,8 +21,8 @@ toRolePhysicalName: PERIODECONSTRUCTION_ID
 oneToMany: true
 deletePropagation: RESTRICT
 validationScope: POST_CONSO
-mandatoryValidationLabel: La PeriodeConstruction est obligatoire pour un immeuble
-brokenValidationLabel: La Periode Construction sélectionnée est invalide pour cet immeuble
+mandatoryValidationLabel: La période de construction est obligatoire pour un immeuble
+brokenValidationLabel: La période de construction sélectionnée est invalide pour cet immeuble
 
 foreignAttribute:
   _type: ForeignAttribute

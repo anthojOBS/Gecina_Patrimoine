@@ -1,0 +1,194 @@
+_package: Batiments.entities.Immeuble.forms
+_type: Form
+_name: ImmeubleEditCycleVie
+entity: Batiments.entities.Immeuble.Immeuble
+default: true
+formTabs:
+
+  - _type: FormTab
+    _name: CycleVieImmeuble
+    label: Cycle de vie
+    labelWidth: 300px
+    iconUrl: images://mdi/sync-circle.svg
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: ICON_LABEL
+    content:
+      - _type: FormContainer
+        _name: ContainerCycleVie
+        layoutDirection: COLUMN
+        content:
+
+
+          - _type: FormContainer
+            _name: ContainerCycleVieHaut
+            layoutDirection: ROW
+            content:
+
+                            - _type: FormSection
+                              _name: Phase
+                              label: Phase
+                              layoutDirection: COLUMN
+                              visibleValue: "1"
+                              visibleValueInterpreter: LITERAL
+                              labelWidth: 300px
+                              content:
+                                - _type: ReferenceField
+                                  _name: FDN_Phase
+                                  value: FDN_Phase
+                                  label: Phase
+                                  authoringMode: force-read-only
+                                  documentation: Statut du bien dans son cycle de vie (initiale, active, terminée).
+                                  labelProperties:
+                                    alignment: left
+                                    typography: body-2
+                                    color: md:black
+                                  useCustomLabel: true
+                                  dataType: STRING
+                                  referencedEntity: Batiments.entities.Phase.Phase
+
+                                - _type: DateField
+                                  _name: DateDebPhase
+                                  value: DateDebPhase
+                                  label: Date début phase
+                                  authoringMode: force-read-only
+                                  labelProperties:
+                                    alignment: left
+                                    typographyValueInterpreter: LITERAL
+                                    typography: body-2
+                                    color: md:black
+                                  useCustomLabel: true
+                                  dataType: DATE
+
+                            - _type: FormSection
+                              _name: Restructuration
+                              label: Restructuration
+                              layoutDirection: COLUMN
+                              visibleValue: "1"
+                              visibleValueInterpreter: LITERAL
+                              labelWidth: 300px
+                              content:
+                                - _type: TextField
+                                  _name: FlagRestructuration
+                                  value: FlagRestructuration
+                                  label: Restructuration en cours
+                                  documentation: Indique que l'immeuble est actuellement soumis à des travaux lourds ou à une réorganisation structurelle importante.
+                                  labelProperties:
+                                    alignment: left
+                                    typography: body-2
+                                    color: md:black
+                                  useCustomLabel: true
+                                  dataType: BOOLEAN
+
+                                - _type: DateField
+                                  _name: DateRestructuration
+                                  value: DateRestructuration
+                                  label: Date dernière restructuration
+                                  documentation: Date à laquelle s’est achevée la dernière opération de restructuration lourde de l’immeuble. Cette date correspond à la fin effective du chantier, lorsque l’immeuble est de nouveau disponible pour une exploitation normale.
+                                  labelProperties:
+                                    alignment: left
+                                    typographyValueInterpreter: LITERAL
+                                    typography: body-2
+                                    color: md:black
+                                  useCustomLabel: true
+                                  dataType: DATE
+
+          - _type: FormContainer
+            _name: ContainerCycleVieBas
+            layoutDirection: ROW
+            content:
+            
+                            - _type: FormSection
+                              _name: Construction
+                              label: Construction
+                              layoutDirection: COLUMN
+                              visibleValue: "1"
+                              visibleValueInterpreter: LITERAL
+                              labelWidth: 300px
+                              content:
+                                - _type: ReferenceField
+                                  _name: FDN_PeriodeConstruction
+                                  value: FDN_PeriodeConstruction
+                                  label: Période de construction
+                                  labelProperties:
+                                    alignment: left
+                                    typography: body-2
+                                    color: md:black
+                                  useCustomLabel: true
+                                  dataType: STRING
+                                  referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
+                                - _type: DateField
+                                  _name: DateDebutConstruction
+                                  value: DateDebutConstruction
+                                  label: Date début construction
+                                  documentation: Date de démarrage des travaux de construction de l’actif.
+                                  labelProperties:
+                                    alignment: left
+                                    typographyValueInterpreter: LITERAL
+                                    typography: body-2
+                                    color: md:black
+                                  useCustomLabel: true
+                                  dataType: DATE
+                                - _type: DateField
+                                  _name: DateFinConstruction
+                                  value: DateFinConstruction
+                                  label: Date fin construction
+                                  documentation: Date de fin des travaux de construction.
+                                  labelProperties:
+                                    alignment: left
+                                    typographyValueInterpreter: LITERAL
+                                    typography: body-2
+                                    color: md:black
+                                  useCustomLabel: true
+                                  dataType: DATE
+                                - _type: DateField
+                                  _name: DateLivraison
+                                  value: DateLivraison
+                                  label: Date livraison
+                                  documentation: Date de mise à disposition de l’actif après construction. (uniquement pour les VEFA). Ne pas afficher si pas d'info. Afficher que si VEFA et si on a l'info
+                                  labelProperties:
+                                    alignment: left
+                                    typographyValueInterpreter: LITERAL
+                                    typography: body-2
+                                    color: md:black
+                                  useCustomLabel: true
+                                  dataType: DATE
+
+
+                            - _type: FormSection
+                              _name: AcquisitionCession
+                              label: Acquisition/Cession
+                              layoutDirection: COLUMN
+                              visibleValue: "1"
+                              visibleValueInterpreter: LITERAL
+                              labelWidth: 300px
+                              content:
+
+                                - _type: DateField
+                                  _name: DateAcquisition
+                                  value: DateAcquisition
+                                  label: Date acquisition
+                                  documentation: Date d’achat de l’immeuble par la société propriétaire.
+                                  labelProperties:
+                                    alignment: left
+                                    typographyValueInterpreter: LITERAL
+                                    typography: body-2
+                                    color: md:black
+                                  useCustomLabel: true
+                                  dataType: DATE
+                                - _type: DateField
+                                  _name: DateVente
+                                  value: DateVente
+                                  label: Date vente
+                                  authoringMode: Case when DateVente is null then 'auto' else 'force-read-only' end
+                                  authoringModeValueInterpreter: SEMQL
+                                  documentation: Date effective de cession juridique (si applicable).
+                                  labelProperties:
+                                    alignment: left
+                                    typographyValueInterpreter: LITERAL
+                                    typography: body-2
+                                    color: md:black
+                                  useCustomLabel: true
+                                  dataType: DATE
+

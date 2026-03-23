@@ -68,7 +68,9 @@ attributes:
     physicalName: ADRESSE
     dataType: String
     length: 255
-    mandatory: false
+    mandatory: true
+    mandatoryValidationLabel: "Adresse de l'immeuble est obligatoire"
+    mandatoryValidationScope: PRE_CONSO
 
   - _type: EntityAttribute
     _name: AdresseLieuDit
@@ -78,6 +80,7 @@ attributes:
     length: 255
     mandatory: false
 
+
   - _type: EntityAttribute
     _name: CodePostal
     label: Code Postal
@@ -85,7 +88,9 @@ attributes:
     physicalName: CODE_POSTAL
     dataType: String
     length: 20
-    mandatory: false 
+    mandatory: true 
+    mandatoryValidationLabel: "Code postal de l'immeuble est obligatoire"
+    mandatoryValidationScope: POST_CONSO
 
   - _type: EntityAttribute
     _name: Ville
@@ -94,7 +99,9 @@ attributes:
     physicalName: VILLE
     dataType: String
     length: 150
-    mandatory: false
+    mandatory: true
+    mandatoryValidationLabel: "Ville de l'immeuble est obligatoire"
+    mandatoryValidationScope: POST_CONSO
 
   - _type: EntityAttribute
     _name: AdresseEnrichie
@@ -176,6 +183,22 @@ attributes:
     mandatory: false
 
   - _type: EntityAttribute
+    _name: NbAscenseur
+    label: Nombre ascenceurs
+    physicalName: NB_ASCENSEUR
+    dataType: LongInteger
+    precision: 20
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: NbParking
+    label: Nombre parkings
+    physicalName: NB_PARKING
+    dataType: LongInteger
+    precision: 20
+    mandatory: false
+
+  - _type: EntityAttribute
     _name: SecteurGeographique
     label: Secteur géographique
     physicalName: SECTEUR_GEOGRAPHIQUE
@@ -186,17 +209,17 @@ attributes:
   - _type: EntityAttribute
     _name: CapaciteAccueil
     label: Capacité d'accueil
-    physicalName: CAPACITE_ACCUEIL
-    dataType: String
-    length: 150
+    physicalName: CAPA_ACCUEIL
+    dataType: LongInteger
+    precision: 20
     mandatory: false
 
   - _type: EntityAttribute
     _name: PosteTravail
     label: Postes de travail
-    physicalName: POSTE_TRAVAIL
-    dataType: String
-    length: 150
+    physicalName: POST_TRAVAIL
+    dataType: LongInteger
+    precision: 20
     mandatory: false
 
 
@@ -226,7 +249,7 @@ attributes:
     scale: 2 
     mandatory: true
     mandatoryValidationLabel: "La superficie totale avec QP est obligatoire"
-    mandatoryValidationScope: PRE_CONSO
+    mandatoryValidationScope: POST_CONSO
 
   # booleen
   - _type: EntityAttribute
@@ -250,12 +273,13 @@ attributes:
     dataType: Boolean
     mandatory: false	
 
-  # - _type: EntityAttribute
-  #   _name: NombreAscenceurs
-  #   label: Nombre ascenceurs
-  #   physicalName: NOMBRE_ASCENCEURS
-  #   dataType: Integer
-  #   mandatory: false	
+  - _type: EntityAttribute
+    _name: Commentaire
+    label: Commentaires
+    physicalName: COMMENTAIRE
+    dataType: String
+    length: 250
+    mandatory: false
 
   # - _type: EntityAttribute
   #   _name: NombreParkings

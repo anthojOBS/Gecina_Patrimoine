@@ -21,8 +21,8 @@ toRolePhysicalName: MODECHAUFFAGE_ID
 oneToMany: true
 deletePropagation: RESTRICT
 validationScope: POST_CONSO
-mandatoryValidationLabel: La ModeChauffage est obligatoire pour un immeuble
-brokenValidationLabel: La Mode Chauffage sélectionnée est invalide pour cet immeuble
+mandatoryValidationLabel: Le mode de chauffage est obligatoire pour un immeuble
+brokenValidationLabel: Le mode de chauffage sélectionnée est invalide pour cet immeuble
 
 foreignAttribute:
   _type: ForeignAttribute

@@ -1,0 +1,57 @@
+_package: Batiments.entities.Immeuble.steppers
+_type: Stepper
+_name: ImmeublesEditFiscaliteJuridique
+entity: Batiments.entities.Immeuble.Immeuble
+label: Immeubles
+
+# stepperFinishValidations:
+#   - onStepperFinish: WARN
+#     validationType: DETECT_DUPS
+   
+rootStep:
+  _type: CollectionStep
+  _name: Immeubles
+  label: Immeubles
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+
+    - _type: FormStep
+      _name: FiscaliteJuridique
+      label: Fiscalité et Juridique
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleEditFiscaliteJuridique.FiscaliteJuridique
+      formStepValidations:  
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToRegimeJuridique.RegimeJuridique
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToFiscaliteCible.FiscaliteCible
+
+stepperFinishValidations:
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute:  Batiments.references.ImmeubleToRegimeJuridique.RegimeJuridique
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute:  Batiments.references.ImmeubleToFiscaliteCible.FiscaliteCible
+

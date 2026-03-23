@@ -33,6 +33,15 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
 
+  - _type: ReferenceColumn
+    _name: FDN_ZoneImmostat
+    value: FDN_ZoneImmostat
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.ZoneImmostat.ZoneImmostat
+
   - _type: TextColumn
     _name: UpdateDate
     value: UpdateDate

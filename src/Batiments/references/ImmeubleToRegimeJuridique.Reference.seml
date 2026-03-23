@@ -18,9 +18,9 @@ toRoleLabel: Régime Juridique
 toRoleName: RegimeJuridique
 toRolePhysicalName: REGIME_JURIDIQUE_ID
 
-oneToMany: false
+oneToMany: true
 deletePropagation: RESTRICT
-validationScope: PRE_CONSO
+validationScope: POST_CONSO
 mandatoryValidationLabel: Le régime juridique est obligatoire pour un immeuble
 brokenValidationLabel: Le régime juridique sélectionné est invalide pour cet immeuble
 
