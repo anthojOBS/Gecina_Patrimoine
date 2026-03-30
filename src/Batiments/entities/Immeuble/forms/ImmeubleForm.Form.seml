@@ -171,8 +171,10 @@ formTabs:
                           alignment: left
                           typography: body-2
                           color: md:black
+                          #isVisible: Ville is null or Ville = 'Paris' or FID_usage = 'ENT' or FID_usage is null
                         useCustomLabel: true
                         dataType: STRING
+                        #visibleValue: Ville = 'Paris' or Ville is null or FID_usage = 'ENT' or FID_usage is null
                         referencedEntity: Batiments.entities.QuartierParis.QuartierParis
        
 
@@ -469,49 +471,74 @@ formTabs:
                 useCustomLabel: true
                 dataType: INTEGER
 
-          - _type: FormSection
-            _name: GestionInterne
-            label: Gestion interne
+          - _type: FormContainer
+            _name: SectionBasD
             layoutDirection: COLUMN
-            visibleValue: "1"
-            visibleValueInterpreter: LITERAL
-            labelWidth: 200px
             content:
-              - _type: ReferenceField
-                _name: FDN_OrgaResp
-                value: FDN_OrgaResp
-                label: Organisation responsable
-                documentation: Direction métier en charge de la gestion opérationnelle de l’actif (Direction Résidentielle / Bureaux).
-                labelProperties:
-                  alignment: left
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: STRING
-                referencedEntity: Batiments.entities.OrganisationResponsable.OrganisationResponsable
-              - _type: ReferenceField
-                _name: FDN_Portefeuille
-                value: FDN_Portefeuille
-                label: Portefeuille gestion
-                documentation: Ensemble d’actifs rattachés à une même équipe opérationnelle (ex. Portefeuille 1, Portefeuille 2…).
-                labelProperties:
-                  alignment: left
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: STRING
-                referencedEntity: Batiments.entities.Portefeuille.Portefeuille
-              - _type: ReferenceField
-                _name: FDN_SousPortefeuille
-                value: FDN_SousPortefeuille
-                label: Sous-portefeuille gestion
-                labelProperties:
-                  alignment: left
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: STRING
-                referencedEntity: Batiments.entities.SousPortefeuille.SousPortefeuille
+              - _type: FormSection
+                _name: GestionInterne
+                label: Gestion interne
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
+                  - _type: ReferenceField
+                    _name: FDN_OrgaResp
+                    value: FDN_OrgaResp
+                    label: Organisation responsable
+                    documentation: Direction métier en charge de la gestion opérationnelle de l’actif (Direction Résidentielle / Bureaux).
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.OrganisationResponsable.OrganisationResponsable
+                  - _type: ReferenceField
+                    _name: FDN_Portefeuille
+                    value: FDN_Portefeuille
+                    label: Portefeuille gestion
+                    documentation: Ensemble d’actifs rattachés à une même équipe opérationnelle (ex. Portefeuille 1, Portefeuille 2…).
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.Portefeuille.Portefeuille
+                  - _type: ReferenceField
+                    _name: FDN_SousPortefeuille
+                    value: FDN_SousPortefeuille
+                    label: Sous-portefeuille gestion
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.SousPortefeuille.SousPortefeuille
+
+              - _type: FormSection
+                _name: Commentaires
+                label: Commentaires
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
+                        - _type: TextField
+                          _name: Commentaire
+                          value: Commentaire
+                          label: Commentaires
+                          authoringMode: Case when Commentaire is null then 'auto' else 'force-read-only' end
+                          authoringModeValueInterpreter: SEMQL
+                          labelProperties:
+                            alignment: left
+                            typography: body-2
+                            color: md:black
+                          useCustomLabel: false
+                          dataType: STRING
 
   - _type: FormTab
     _name: CycleVieImmeuble
@@ -759,7 +786,7 @@ formTabs:
             enableUserDefinedSort: true
             transitionPath: RelImmSoc
             sortExpression: 1 DESC
-            filter:  1=1
+            filter: FID_TypeSociete = '1'
             targetEntity: Batiments.entities.RelImmSoc.RelImmSoc
             height: 300
             formCollectionSearchConfigs:

@@ -92,6 +92,26 @@ formTabs:
                           color: md:black
                         useCustomLabel: false
                         dataType: STRING
+
+                      # - _type: TextField
+                      #   _name: AdresseEnrichie
+                      #   value: AdresseEnrichie
+                      #   componentProperties:
+                      #     multilineMaxLines: "3"
+                      #     multilineMinLines: "1"
+                      #     isMultiline: "1"
+                      #   label: Adresse
+                      #   labelProperties:
+                      #     alignment: left
+                      #     typographyValueInterpreter: LITERAL
+                      #     typography: body-2
+                      #     color: md:black
+                      #   useCustomLabel: false
+                      #   dataType: STRING
+                        
+
+
+
                       - _type: TextField
                         _name: CodePostal
                         value: CodePostal
@@ -170,10 +190,12 @@ formTabs:
                           alignment: left
                           typography: body-2
                           color: md:black
-                         # isVisible: Ville is null or Ville = 'Paris' or FDN_usage = 'ENTREPRISE' or FDN_usage is null
+                          #isVisible: Ville is null or Ville = 'Paris' or FDN_usage = 'ENTREPRISE' or FDN_usage is null
                         useCustomLabel: true
                         dataType: STRING
-                      #  visibleValue: Ville = 'Paris' or Ville is null or FDN_usage = 'ENTREPRISE' or FDN_usage is null
+                        visibleValue: IdentifiantsERP is null
+                        visibleValueInterpreter: SEMQL
+                         #or FDN_usage = 'ENTREPRISE' or FDN_usage is null Ville = 'Paris' or 
                         referencedEntity: Batiments.entities.QuartierParis.QuartierParis
        
 

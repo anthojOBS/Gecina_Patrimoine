@@ -18879,7 +18879,7 @@
                                 "qualifiedName": "Batiments.entities.Immeuble.action_sets.ImmeubleActionSet.CreateAuthorImmeubles",
                                 "_type": "CreateAction",
                                 "description": "",
-                                "label": "Create",
+                                "label": "Création immeuble",
                                 "useCustomLabel": true,
                                 "waitDialogEnabled": false,
                                 "allowOtherPublishers": true,
@@ -18891,7 +18891,7 @@
                                 "qualifiedName": "Batiments.entities.Immeuble.action_sets.ImmeubleActionSet.EditAuthorImmeubles",
                                 "_type": "EditAction",
                                 "description": "",
-                                "label": "Edit",
+                                "label": "Edition immeuble",
                                 "useCustomLabel": true,
                                 "waitDialogEnabled": false,
                                 "multipleSelectionAllowed": true,
@@ -18904,7 +18904,7 @@
                                 "qualifiedName": "Batiments.entities.Immeuble.action_sets.ImmeubleActionSet.EditImmeubleCycleVie",
                                 "_type": "EditAction",
                                 "description": "",
-                                "label": "Edit cycle de vie",
+                                "label": "Edition cycle de vie",
                                 "useCustomLabel": true,
                                 "waitDialogEnabled": false,
                                 "multipleSelectionAllowed": true,
@@ -18917,7 +18917,7 @@
                                 "qualifiedName": "Batiments.entities.Immeuble.action_sets.ImmeubleActionSet.EditImmeubleFiscaliteJuridique",
                                 "_type": "EditAction",
                                 "description": "",
-                                "label": "Edit Fiscalité et Juridique",
+                                "label": "Edition fiscalité et juridique",
                                 "useCustomLabel": true,
                                 "waitDialogEnabled": false,
                                 "multipleSelectionAllowed": true,
@@ -18930,7 +18930,7 @@
                                 "qualifiedName": "Batiments.entities.Immeuble.action_sets.ImmeubleActionSet.MassUpdateAuthorImmeubles",
                                 "_type": "MassUpdateAction",
                                 "description": "",
-                                "label": "Mass Update",
+                                "label": "Mise à jour de masse",
                                 "useCustomLabel": true,
                                 "waitDialogEnabled": false,
                                 "stepper": "Batiments.entities.Immeuble.steppers.AuthorImmeubles",
@@ -18942,7 +18942,7 @@
                                 "qualifiedName": "Batiments.entities.Immeuble.action_sets.ImmeubleActionSet.Delete",
                                 "_type": "DeleteAction",
                                 "description": "",
-                                "label": "Delete",
+                                "label": "Supprimer",
                                 "useCustomLabel": true,
                                 "waitDialogEnabled": false,
                                 "deleteType": "HARD_DELETE",
@@ -18954,7 +18954,7 @@
                                 "qualifiedName": "Batiments.entities.Immeuble.action_sets.ImmeubleActionSet.Export",
                                 "_type": "ExportAction",
                                 "description": "",
-                                "label": "Export",
+                                "label": "Exporter",
                                 "useCustomLabel": true,
                                 "waitDialogEnabled": false
                             },
@@ -18962,7 +18962,7 @@
                                 "qualifiedName": "Batiments.entities.Immeuble.action_sets.ImmeubleActionSet.ImportAuthorImmeubles",
                                 "_type": "ImportAction",
                                 "description": "",
-                                "label": "Import",
+                                "label": "Importer",
                                 "useCustomLabel": false,
                                 "waitDialogEnabled": false,
                                 "allowOtherPublishers": true,
@@ -21801,8 +21801,8 @@
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleCREATION.Immeuble.SectionGlobal.SectionPrems.LocalisationImmeuble.BlocAdresse",
                                 "referencedEntity": "Batiments.entities.QuartierParis.QuartierParis",
                                 "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
+                                "visibleValue": "IdentifiantsERP is null",
+                                "visibleValueInterpreter": "SEMQL",
                                 "componentProperties": [
                                     {
                                         "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleCREATION.Immeuble.SectionGlobal.SectionPrems.LocalisationImmeuble.BlocAdresse.FDN_QuartierParis.labelColor",
@@ -23284,7 +23284,7 @@
                                 "displayRecordCount": "ALWAYS",
                                 "documentationInterpreter": "LITERAL",
                                 "enableUserDefinedSort": true,
-                                "filter": "1=1",
+                                "filter": "FID_TypeSociete = '1'",
                                 "gridAllowed": false,
                                 "listAllowed": false,
                                 "posInParent": 0,
@@ -23460,15 +23460,34 @@
                                 "visibleValue": "1"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD",
+                                "_type": "FormContainer",
+                                "layoutDirection": "COLUMN",
+                                "posInParent": 1,
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas"
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne",
+                                "_type": "FormSection2",
+                                "documentationInterpreter": "LITERAL",
+                                "layoutDirection": "COLUMN",
+                                "posInParent": 0,
+                                "visibleValueInterpreter": "LITERAL",
+                                "label": "Gestion interne",
+                                "labelWidth": "200px",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD",
+                                "visibleValue": "1"
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.Commentaires",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 1,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Gestion interne",
+                                "label": "Commentaires",
                                 "labelWidth": "200px",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD",
                                 "visibleValue": "1"
                             },
                             {
@@ -24456,7 +24475,7 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne.FDN_OrgaResp",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_OrgaResp",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
@@ -24465,26 +24484,26 @@
                                 "value": "FDN_OrgaResp",
                                 "documentation": "Direction métier en charge de la gestion opérationnelle de l’actif (Direction Résidentielle / Bureaux).",
                                 "label": "Organisation responsable",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne",
                                 "referencedEntity": "Batiments.entities.OrganisationResponsable.OrganisationResponsable",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne.FDN_OrgaResp.labelColor",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_OrgaResp.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne.FDN_OrgaResp.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_OrgaResp.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne.FDN_OrgaResp.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_OrgaResp.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -24492,7 +24511,7 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne.FDN_Portefeuille",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_Portefeuille",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
@@ -24501,26 +24520,26 @@
                                 "value": "FDN_Portefeuille",
                                 "documentation": "Ensemble d’actifs rattachés à une même équipe opérationnelle (ex. Portefeuille 1, Portefeuille 2…).",
                                 "label": "Portefeuille gestion",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne",
                                 "referencedEntity": "Batiments.entities.Portefeuille.Portefeuille",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne.FDN_Portefeuille.labelColor",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_Portefeuille.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne.FDN_Portefeuille.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_Portefeuille.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne.FDN_Portefeuille.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_Portefeuille.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -24528,7 +24547,7 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne.FDN_SousPortefeuille",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_SousPortefeuille",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
@@ -24536,26 +24555,66 @@
                                 "useCustomLabel": true,
                                 "value": "FDN_SousPortefeuille",
                                 "label": "Sous-portefeuille gestion",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne",
                                 "referencedEntity": "Batiments.entities.SousPortefeuille.SousPortefeuille",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne.FDN_SousPortefeuille.labelColor",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_SousPortefeuille.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne.FDN_SousPortefeuille.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_SousPortefeuille.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.GestionInterne.FDN_SousPortefeuille.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_SousPortefeuille.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.Commentaires.Commentaire",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 0,
+                                "useCustomLabel": false,
+                                "value": "Commentaire",
+                                "label": "Commentaires",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.Commentaires",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.Commentaires.Commentaire.authoringMode",
+                                        "dataType": "STRING",
+                                        "value": "Case when Commentaire is null then 'auto' else 'force-read-only' end",
+                                        "valueInterpreter": "SEMQL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.Commentaires.Commentaire.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.Commentaires.Commentaire.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble.SectionBas.SectionBasD.Commentaires.Commentaire.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -25324,7 +25383,7 @@
                                 "formStepEnrichers": [
                                     {
                                         "enricher": "Batiments.entities.Immeuble.enrichers.StandardizeAddress",
-                                        "executedOnButtonClick": false,
+                                        "executedOnButtonClick": true,
                                         "executedOnDataChange": true,
                                         "executedOnFormOpen": false
                                     },
@@ -30434,7 +30493,7 @@
                                 "attributeName": "Adresse"
                             },
                             {
-                                "attributeName": "Codepostal"
+                                "attributeName": "CodePostal"
                             },
                             {
                                 "attributeName": "Ville"
