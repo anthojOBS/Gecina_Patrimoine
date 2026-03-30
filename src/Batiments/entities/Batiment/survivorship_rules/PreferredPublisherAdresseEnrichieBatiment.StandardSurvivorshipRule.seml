@@ -12,7 +12,7 @@ overrideStrategy: UNTIL_CONSOLIDATED_VAL_CHANGE
 attributes:
   - attributeName: AdresseEnrichie
   - attributeName: Adresse
-  - attributeName: Codepostal
+  - attributeName: CodePostal
   - attributeName: Ville
   - attributeName: Pays
   - attributeName: IdentifiantsERP
