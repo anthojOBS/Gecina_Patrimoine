@@ -1,0 +1,33 @@
+_package: Batiments.references
+_type: Reference
+_name: ImmeubleToPerimetreGestion
+label: Immeuble Périmètre gestion
+description: Référence Immeuble vers Perimetre gestion
+fromRoleDocumentation: |
+  Cette référence détermine la **PerimetreGestion** d'un **Immeuble** dans son cycle de vie.
+  La Perimetre gestion indique l'état d'avancement du projet immobilier (en construction, livré, etc.).
+physicalName: IMM_PERIMETRE_GESTION_REF
+
+fromEntity: Batiments.entities.Immeuble.Immeuble
+fromRoleLabel: Immeuble
+fromRoleName: Immeuble
+fromRolePluralLabel: Immeubles
+
+toEntity: Batiments.entities.PerimetreGestion.PerimetreGestion
+toRoleLabel: PerimetreGestion
+toRoleName: PerimetreGestion
+toRolePhysicalName: PERIMETRE_GESTION_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: La Périmètre gestion est obligatoire pour un immeuble
+brokenValidationLabel: La Périmètre gestion sélectionnée est invalide pour cet immeuble
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: PerimetreGestion
+  label: Périmètre gestion
+  physicalName: PERIMETRE_GESTION_ID
+  searchable: true
+  entity: Batiments.entities.Immeuble.Immeuble

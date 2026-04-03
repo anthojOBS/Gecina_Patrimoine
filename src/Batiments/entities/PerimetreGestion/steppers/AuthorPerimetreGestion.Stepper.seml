@@ -1,0 +1,33 @@
+_package: Batiments.entities.PerimetreGestion.steppers
+_type: Stepper
+_name: AuthorPerimetreGestion
+entity:  Batiments.entities.PerimetreGestion.PerimetreGestion
+label: Périmètre gestion
+rootStep:
+  _type: CollectionStep
+  _name: PerimetreGestionCollection
+  label: Périmètre gestion
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.PerimetreGestion.collection_views.PerimetreGestionCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: PerimetreGestion
+      label: PerimetreGestion
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.PerimetreGestion.forms.PerimetreGestionForm.PerimetreGestion

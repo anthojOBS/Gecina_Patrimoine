@@ -1,0 +1,19 @@
+_package: Batiments.entities.TypeCompteur.display_cards
+_type: DisplayCard
+_name: TypeCompteurDisplayCard
+entity: Batiments.entities.TypeCompteur.TypeCompteur
+default: true
+primaryTextExpression: TypeCompteur
+secondaryTextExpression: LibelleTypeCompteur
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageValue: images://mdi/domain.svg
+

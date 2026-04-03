@@ -165,16 +165,16 @@ formTabs:
                       - _type: TextField
                         _name: FDN_QuartierParis
                         value: FDN_QuartierParis
-                        label: Quartier Paris libellé
+                        label: Quartier Paris
                         documentation: Quartier de la ville de Paris lorsque applicable.
                         labelProperties:
                           alignment: left
                           typography: body-2
                           color: md:black
-                          #isVisible: Ville is null or Ville = 'Paris' or FID_usage = 'ENT' or FID_usage is null
                         useCustomLabel: true
                         dataType: STRING
-                        #visibleValue: Ville = 'Paris' or Ville is null or FID_usage = 'ENT' or FID_usage is null
+                        visibleValue: Ville = 'Paris' and  (FID_Usage = 'HAB' OR FID_Usage = 'MIXTE')
+                        visibleValueInterpreter: SEMQL
                         referencedEntity: Batiments.entities.QuartierParis.QuartierParis
        
 
@@ -353,9 +353,9 @@ formTabs:
                   alignment: left
                   typography: body-2
                   color: md:black
-                #  isVisible: IGH is not null
                 useCustomLabel: true
-                #visibleValue: IGH is not null
+                visibleValue: FID_OrgaResp = 'DB' 
+                visibleValueInterpreter: SEMQL
                 dataType: BOOLEAN
 
               - _type: TextField
@@ -368,21 +368,8 @@ formTabs:
                   alignment: left
                   typography: body-2
                   color: md:black
-                 # isVisible: IGH is not null
                 useCustomLabel: true
-               # visibleValue: IGH is not null
                 dataType: BOOLEAN
-              # - _type: ReferenceField
-              #   _name: FDN_CategorieERP
-              #   value: FDN_CategorieERP
-              #   label: Catégorie ERP
-              #   labelProperties:
-              #     alignment: left
-              #     typography: body-2
-              #     color: md:black
-              #   useCustomLabel: true
-              #   dataType: STRING
-              #   referencedEntity: Batiments.entities.CategorieERP.CategorieERP
 
               - _type: TextField
                 _name: FlagAscenseur
@@ -406,18 +393,8 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                dataType: STRING
-
-              - _type: TextField
-                _name: NbParking
-                value: NbParking
-                label: Nombre parkings
-                documentation: Indique le nombre d'ascenseur.
-                labelProperties:
-                  alignment: left
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
+                visibleValue: FlagAscenseur = '1'
+                visibleValueInterpreter: SEMQL
                 dataType: STRING
 
               - _type: ReferenceField
@@ -447,6 +424,21 @@ formTabs:
                 dataType: STRING
                 referencedEntity: Batiments.entities.TypeEnergie.TypeEnergie
 
+
+              - _type: ReferenceField
+                _name: FDN_TypeCompteur
+                value: FDN_TypeCompteur
+                label: Type compteur
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                visibleValue: FID_OrgaResp = 'DR' 
+                visibleValueInterpreter: SEMQL
+                dataType: STRING
+                referencedEntity: Batiments.entities.TypeCompteur.TypeCompteur
+
               - _type: TextField
                 _name: CapaciteAccueil
                 value: CapaciteAccueil
@@ -457,6 +449,8 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: FID_OrgaResp = 'DB' 
+                visibleValueInterpreter: SEMQL
                 dataType: INTEGER
 
               - _type: TextField
@@ -469,6 +463,8 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: FID_OrgaResp = 'DB' 
+                visibleValueInterpreter: SEMQL
                 dataType: INTEGER
 
           - _type: FormContainer
@@ -516,8 +512,24 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
+                    visibleValue: FID_OrgaResp = 'DB' 
+                    visibleValueInterpreter: SEMQL
                     dataType: STRING
                     referencedEntity: Batiments.entities.SousPortefeuille.SousPortefeuille
+
+                  - _type: ReferenceField
+                    _name: FDN_PerimetreGestion
+                    value: FDN_PerimetreGestion
+                    label: Périmètre gestion
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: FID_OrgaResp = 'DR' 
+                    visibleValueInterpreter: SEMQL
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.PerimetreGestion.PerimetreGestion
 
               - _type: FormSection
                 _name: Commentaires
@@ -539,6 +551,242 @@ formTabs:
                             color: md:black
                           useCustomLabel: false
                           dataType: STRING
+
+
+
+  - _type: FormTab
+    _name: Composition
+    label: Composition
+    iconUrl: images://mdi/bank.svg
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: ICON_LABEL
+    content:
+      - _type: FormContainer
+        _name: Composition
+        layoutDirection: ROW
+        content:
+          - _type: FormSection
+            _name: Lots
+            label: Lots
+            layoutDirection: COLUMN
+            visibleValue: "1"
+            visibleValueInterpreter: LITERAL
+            labelWidth: 300px
+            content:
+              - _type: TextField
+                _name: NombreEtages
+                value: lookup count (EtageCode) from Batiment.Etage  end 
+                label: Nombre d'étages
+                documentation: Nombre d'étages
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: INTEGER
+
+              - _type: TextField
+                _name: NbLotInitial
+                value: NbLotInitial
+                label: Nombre lots initial
+                documentation: Nombre lots initial.
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                visibleValue: FID_OrgaResp = 'DR' 
+                visibleValueInterpreter: SEMQL
+                dataType: INTEGER
+              - _type: TextField
+                _name: NbLotDate
+                value: lookup count (IdentifiantsERP) from Batiment.Etage.Lot  end 
+                label: Nombre lots à date
+                documentation: Nombre lots à date.
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: INTEGER
+              - _type: TextField
+                _name: NbNewLot
+                value:  lookup count (IdentifiantsERP) from Batiment.Etage.Lot  end 
+              #  value: lookup count (IdentifiantsERP) from Batiment.Etage.Lot where IdentifiantsERP like '[A-Za-z]%' end 
+                label: Nombre new lots
+                documentation: Nombre new lots.
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                visibleValue: FID_OrgaResp = 'DR' 
+                visibleValueInterpreter: SEMQL
+                dataType: INTEGER
+
+              - _type: TextField
+                _name: NbParking
+                value: lookup count (FID_TypologieLot) from Batiment.Etage.Lot where FID_TypologieLot = 'PK' end 
+                label: Nombre parkings
+                documentation: Indique le nombre d'ascenseur.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: TextField
+                _name: NbCave
+                value: lookup count (FID_GenreLot) from Batiment.Etage.Lot where FID_GenreLot = 'CAV' end 
+                label: Nombre caves
+                documentation: Indique le nombre de caves.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: TextField
+                _name: NbPlateau
+                value: lookup count (FID_TypologieLot) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' end 
+                label: Nombre plateaux
+                documentation: Indique le nombre de plateaux.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: TextField
+                _name: NbCoquesCommerciales
+                value: lookup count (FID_TypologieLot) from Batiment.Etage.Lot where FID_TypologieLot = 'LC' end 
+                label: Nombre coques commerciales
+                documentation: Indique le nombre de coques commerciales.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+          - _type: FormSection
+            _name: Superficies
+            label: Superficies
+            layoutDirection: COLUMN
+            visibleValue: "1"
+            visibleValueInterpreter: LITERAL
+            labelWidth: 300px
+            content:
+              - _type: TextField
+                _name: SurperficieHabitable
+                value: SurperficieHabitable
+                label: Superficie habitable (SHAB)
+                documentation: Superficie habitable (SHAB).
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: INTEGER
+
+              - _type: TextField
+                _name: SurperficiePlateauCoque
+                value: SurperficiePlateauCoque
+                label: Superficie plateaux et coques commerciales
+                documentation: Superficie plateaux et coques commerciales
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: INTEGER 
+              - _type: TextField
+                _name: SurperficieTaxable
+                value: SurperficieTaxable
+                label: Superficie taxable
+                documentation: Superficie taxable.
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: INTEGER
+              - _type: TextField
+                _name: SurperficieHallCouloir
+                value: SurperficieHallCouloir
+                label: Superficie halls/couloirs
+                documentation: Superficie halls/couloir.
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: INTEGER
+              - _type: TextField
+                _name: SurperficieToituresTerrasses
+                value: SurperficieToituresTerrasses
+                label: Superficie toitures/terrasses
+                documentation: Superficie toitures/terrasses.
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                visibleValue: FID_OrgaResp = 'DR' 
+                visibleValueInterpreter: SEMQL
+                dataType: INTEGER
+              - _type: TextField
+                _name: SurperficieEspacesVerts
+                value: SurperficieEspacesVerts
+                label: Superficie espaces verts
+                documentation: Superficie espaces verts.
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                visibleValue: FID_OrgaResp = 'DR' 
+                visibleValueInterpreter: SEMQL
+                dataType: INTEGER
+
+           
+      - _type: FormSection
+        _name: Services
+        label: Services non individualisés
+        layoutDirection: COLUMN
+        visibleValue: "1"
+        visibleValueInterpreter: LITERAL
+
+        content:
+          - _type: FormCollection
+            _name: Services
+            label: Services non individualisés
+            useCustomLabel: true
+            collection: Batiments.entities.Lot.collection_views.LotCollectionView
+            tableAllowed: true
+            listAllowed: false
+            gridAllowed: false
+            displayRecordCount: ALWAYS
+            enableUserDefinedSort: true
+            transitionPath: Batiment.Etage.Lot
+            sortExpression: 1 DESC
+            filter: FID_TypologieLot = 'PL'
+            targetEntity: Batiments.entities.Lot.Lot
+            height: 300
+            formCollectionSearchConfigs:
+             -  enabled: true 
+                searchType: TEXT
 
   - _type: FormTab
     _name: CycleVieImmeuble
@@ -581,7 +829,7 @@ formTabs:
                             dataType: STRING
                             referencedEntity: Batiments.entities.Phase.Phase
 
-                          - _type: TextField
+                          - _type: DateField
                             _name: DateDebPhase
                             value: DateDebPhase
                             label: Date début phase
@@ -613,7 +861,7 @@ formTabs:
                             useCustomLabel: true
                             dataType: BOOLEAN
 
-                          - _type: TextField
+                          - _type: DateField
                             _name: DateRestructuration
                             value: DateRestructuration
                             label: Date dernière restructuration
@@ -651,7 +899,7 @@ formTabs:
                             useCustomLabel: true
                             dataType: STRING
                             referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
-                          - _type: TextField
+                          - _type: DateField
                             _name: DateDebutConstruction
                             value: DateDebutConstruction
                             label: Date début construction
@@ -663,7 +911,7 @@ formTabs:
                               color: md:black
                             useCustomLabel: true
                             dataType: DATE
-                          - _type: TextField
+                          - _type: DateField
                             _name: DateFinConstruction
                             value: DateFinConstruction
                             label: Date fin construction
@@ -675,7 +923,7 @@ formTabs:
                               color: md:black
                             useCustomLabel: true
                             dataType: DATE
-                          - _type: TextField
+                          - _type: DateField
                             _name: DateLivraison
                             value: DateLivraison
                             label: Date livraison
@@ -698,7 +946,7 @@ formTabs:
                         labelWidth: 300px
                         content:
 
-                          - _type: TextField
+                          - _type: DateField
                             _name: DateAcquisition
                             value: DateAcquisition
                             label: Date acquisition
@@ -710,7 +958,7 @@ formTabs:
                               color: md:black
                             useCustomLabel: true
                             dataType: DATE
-                          - _type: TextField
+                          - _type: DateField
                             _name: DateVente
                             value: DateVente
                             label: Date vente
@@ -766,6 +1014,7 @@ formTabs:
             useCustomLabel: true
             dataType: STRING
             referencedEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
+
       - _type: FormSection
         _name: Societes
         label: Sociétés
@@ -786,7 +1035,8 @@ formTabs:
             enableUserDefinedSort: true
             transitionPath: RelImmSoc
             sortExpression: 1 DESC
-            filter: FID_TypeSociete = '1'
+            filter: 1=1
+            # filter: FID_TypeSociete = '1'
             targetEntity: Batiments.entities.RelImmSoc.RelImmSoc
             height: 300
             formCollectionSearchConfigs:

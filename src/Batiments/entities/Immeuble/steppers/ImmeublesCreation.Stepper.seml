@@ -49,7 +49,7 @@ rootStep:
         - enableCreateReference: false
           enableUserSort: true
           referencePickerType: AUTO_COMPLETE
-          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCREATION.Immeuble.SectionGlobal.SectionPrems.LocalisationImmeuble.BlocAdresse.FDN_SecteurImmostat
+          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCREATION.Immeuble.SectionDeux.LocalisationImmeuble.BlocAdresse.FDN_SecteurImmostat
           referenceFilter: Referenced.FID_ZoneImmostat = Record.FID_ZoneImmostat
           referencePickerCollectionView: Batiments.entities.SecteurImmostat.collection_views.SecteurImmostatCollectionView
           # referencePickerSearchTypeConfigs: []
@@ -57,12 +57,16 @@ rootStep:
         - enableCreateReference: false
           enableUserSort: true
           referencePickerType: AUTO_COMPLETE
-          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCREATION.Immeuble.SectionGlobal.SectionPrems.LocalisationImmeuble.BlocAdresse.FDN_SousSecteurImmostat
+          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCREATION.Immeuble.SectionDeux.LocalisationImmeuble.BlocAdresse.FDN_SousSecteurImmostat
           referenceFilter: Referenced.FID_SecteurImmostat = Record.FID_SecteurImmostat
           referencePickerCollectionView: Batiments.entities.SousSecteurImmostat.collection_views.SousSecteurImmostatCollectionView
           # referencePickerSearchTypeConfigs: []
 
       formStepEnrichers:   
+        - enricher: Batiments.entities.Immeuble.enrichers.DefautPays
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
         - enricher: Batiments.entities.Immeuble.enrichers.StandardizeAddress
           executedOnButtonClick: true
           executedOnDataChange: true
@@ -82,10 +86,6 @@ rootStep:
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute: Batiments.entities.Immeuble.Immeuble.IdentifiantsERP
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.entities.Immeuble.Immeuble.SuperficieUtile
         - executedOnDataChange: true
           executedOnFormOpen: true
           validationType: MANDATORY
@@ -130,10 +130,7 @@ rootStep:
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.references.ImmeubleToQuartierParis.QuartierParis
+
 
         - validator: Batiments.entities.Immeuble.validations.CheckLongLibelle
           executedOnDataChange: true
@@ -145,7 +142,11 @@ rootStep:
           executedOnFormOpen: true
           validationType: CHECK
           attribute: Batiments.entities.Immeuble.Immeuble.NbAscenseur
-
+        - validator: Batiments.entities.Immeuble.validations.CheckQuartierParis
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.ImmeubleToQuartierParis.QuartierParis
 
       stepTransitionValidations:
         - onStepExit: BLOCK
@@ -154,9 +155,6 @@ rootStep:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.entities.Immeuble.Immeuble.IdentifiantsERP
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.entities.Immeuble.Immeuble.SuperficieUtile
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.entities.Immeuble.Immeuble.Adresse
@@ -193,9 +191,7 @@ rootStep:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute:  Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute:  Batiments.references.ImmeubleToQuartierParis.QuartierParis
+
 
 
         - onStepExit: BLOCK
@@ -204,10 +200,28 @@ rootStep:
         - onStepExit: BLOCK
           validationType: CHECK
           validator: Batiments.entities.Immeuble.validations.CheckAscenseur
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckQuartierParis
 
         - onStepExit: WARN
           validationType: DETECT_DUPS
           matcher: Batiments.entities.Immeuble.Immeuble.Matcher
+
+    - _type: FormStep
+      _name: Composition
+      label: Composition
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleCREATION.Composition
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckNbLotInitial
+
 
 
     - _type: FormStep
@@ -228,18 +242,11 @@ rootStep:
         - executedOnDataChange: true
           executedOnFormOpen: true
           validationType: MANDATORY
-          attribute: Batiments.entities.Immeuble.Immeuble.DateDebPhase
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
           attribute: Batiments.entities.Immeuble.Immeuble.DateAcquisition
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute:  Batiments.references.ImmeubleToPhase.Phase
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.entities.Immeuble.Immeuble.DateDebPhase
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.entities.Immeuble.Immeuble.DateAcquisition
@@ -271,6 +278,35 @@ rootStep:
           validationType: MANDATORY
           attribute: Batiments.references.ImmeubleToRegimeJuridique.RegimeJuridique
 
+    # - _type: CollectionStep
+    #   _name: Societes
+    #   label: Sociétés
+    #   canFinishSubLevel: true
+    #   enabledOnParentCreate: true
+    #   enabledOnParentEdit: true
+    #   formFieldsMode: AUTO
+    #   childDeleteType: HARD_DELETE
+    #   collectionView: Batiments.entities.RelImmSoc.collection_views.RelImmSocCollectionView
+    #   defaultDisplayType: TABLE
+    #   customSortEnabled: false
+    #   userDefinedSortEnabled: true
+    #   displayGridAllowed: false
+    #   displayListAllowed: true
+    #   displayTableAllowed: true
+    #   useCustomCollectionLabel: false
+    #   childSteps:
+    #     - _type: FormStep
+    #       _name: Societes_form
+    #       label: Sociétés
+    #       canFinishSubLevel: true
+    #       enabledOnParentCreate: true
+    #       enabledOnParentEdit: true
+    #       formFieldsMode: AUTO
+    #       enableMasterValuePicking: false
+    #       formTab: Batiments.entities.RelImmSoc.forms.RelImmSocForm.RelImmSoc
+
+
+
 stepperFinishValidations:
   - onStepperFinish: WARN
     validationType: DETECT_DUPS
@@ -281,9 +317,6 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.Immeuble.Immeuble.IdentifiantsERP
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.entities.Immeuble.Immeuble.SuperficieUtile
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute:  Batiments.references.ImmeubleToUsage.Usage
@@ -297,12 +330,11 @@ stepperFinishValidations:
     validationType: MANDATORY
     attribute:  Batiments.references.ImmeubleToSousPortefeuille.SousPortefeuille
 
+
+
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute:  Batiments.references.ImmeubleToPhase.Phase
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.entities.Immeuble.Immeuble.DateDebPhase
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.Immeuble.Immeuble.DateAcquisition
@@ -334,6 +366,16 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
+
   - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.references.ImmeubleToQuartierParis.QuartierParis
+    validationType: CHECK
+    validator: Batiments.entities.Immeuble.validations.CheckLongLibelle
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Immeuble.validations.CheckAscenseur
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Immeuble.validations.CheckQuartierParis
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Immeuble.validations.CheckNbLotInitial

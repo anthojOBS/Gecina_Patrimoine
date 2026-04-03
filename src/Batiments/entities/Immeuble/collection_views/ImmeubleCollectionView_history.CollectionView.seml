@@ -169,14 +169,7 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
 
-  - _type: TextColumn
-    _name: NbParking
-    value: NbParking
-    useCustomLabel: false
-    dataType: LONG_INTEGER
-    columnAlign: LEFT
-    visibleByDefault: true
-
+ 
   - _type: TextColumn
     _name: Commentaire
     value: Commentaire

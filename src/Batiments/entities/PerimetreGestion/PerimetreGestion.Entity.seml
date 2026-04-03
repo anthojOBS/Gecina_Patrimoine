@@ -1,0 +1,35 @@
+_package: Batiments.entities.PerimetreGestion
+_type: Entity
+_name: PerimetreGestion
+label: Périmètre gestion
+pluralLabel: Périmètre gestion
+entityType: BASIC
+physicalTableName: PERIMETRE_GESTION
+description: Périmètre gestion
+documentation: |
+  Périmètre gestion
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: PerimetreGestion
+    label: Périmètre gestion
+    physicalName: PERIM_GESTION
+    dataType: String
+    length: 50
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: LibellePerimetreGestion
+    label: Libellé périmètre gestion
+    physicalName: LIB_PERIM_GSTION
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
+
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.PerimetreGestion.PerimetreGestion.PerimetreGestion

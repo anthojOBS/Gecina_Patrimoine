@@ -1,0 +1,35 @@
+_package: Batiments.entities.TypeCompteur
+_type: Entity
+_name: TypeCompteur
+label: Type compteur
+pluralLabel: Type compteur
+entityType: BASIC
+physicalTableName: TYPE_COMPTEUR
+description: Type compteur
+documentation: |
+  Type compteur
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: TypeCompteur
+    label: Type compteur
+    physicalName: TYPE_COMPTEUR
+    dataType: String
+    length: 50
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: LibelleTypeCompteur
+    label: Libellé type compteur
+    physicalName: LIB_TYPE_COMPTEUR
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
+
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.TypeCompteur.TypeCompteur.TypeCompteur

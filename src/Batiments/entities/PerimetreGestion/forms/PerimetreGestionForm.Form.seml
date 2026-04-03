@@ -1,0 +1,32 @@
+_package: Batiments.entities.PerimetreGestion.forms
+_type: Form
+_name: PerimetreGestionForm
+entity: Batiments.entities.PerimetreGestion.PerimetreGestion
+default: true
+formTabs:
+  - _type: FormTab
+    _name: PerimetreGestion
+    label: PerimetreGestion
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: TextField
+        _name: PerimetreGestion
+        value: PerimetreGestion
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: LibellePerimetreGestion
+        value: LibellePerimetreGestion
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

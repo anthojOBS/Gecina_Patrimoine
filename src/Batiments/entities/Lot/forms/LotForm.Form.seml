@@ -57,7 +57,8 @@ formTabs:
 
                   - _type: ReferenceField
                     _name: FDN_Batiment
-                    value: CASE WHEN Etage.FDN_Batiment is null THEN FDN_Batiment ELSE Etage.FDN_Batiment END
+                    # value: CASE WHEN Etage.FDN_Batiment is null THEN FDN_Batiment ELSE Etage.FDN_Batiment END
+                    value: Etage.FDN_Batiment
                     label: Bâtiment parent
                     authoringMode: auto
                     labelProperties:

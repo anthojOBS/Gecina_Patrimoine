@@ -191,14 +191,6 @@ attributes:
     mandatory: false
 
   - _type: EntityAttribute
-    _name: NbParking
-    label: Nombre parkings
-    physicalName: NB_PARKING
-    dataType: LongInteger
-    precision: 20
-    mandatory: false
-
-  - _type: EntityAttribute
     _name: SecteurGeographique
     label: Secteur géographique
     physicalName: SECTEUR_GEOGRAPHIQUE
@@ -228,6 +220,63 @@ attributes:
     label: Date de fin de validité
     physicalName: DATE_FIN_VALIDITE
     dataType: Date
+    mandatory: false
+
+
+  - _type: EntityAttribute
+    _name: NbLotInitial
+    label: Nombre lots initial
+    physicalName: NB_LOT_INITIAL
+    dataType: LongInteger
+    precision: 20
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: SurperficieHabitable
+    label: Superficie habitable (SHAB)
+    physicalName: SUPERFICIE_HABITABLE
+    dataType: LongInteger
+    precision: 20
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: SurperficiePlateauCoque
+    label: Superficie plateaux et coques commerciales
+    physicalName: SUPERFICIE_PLATEAU_COQUE
+    dataType: LongInteger
+    precision: 20
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: SurperficieTaxable
+    label: Superficie taxable
+    physicalName: SUPERFICIE_TAXABLE
+    dataType: LongInteger
+    precision: 20
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: SurperficieHallCouloir
+    label: Superficie halls/couloirs
+    physicalName: SUPERFICIE_HALL_COULOIR
+    dataType: LongInteger
+    precision: 20
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: SurperficieToituresTerrasses
+    label: Superficie toitures/terrasses
+    physicalName: SUPERFICIE_TOIT_TERRASSES
+    dataType: LongInteger
+    precision: 20
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: SurperficieEspacesVerts
+    label: Superficie espaces verts
+    physicalName: SUPERFICIE_ESPACES_VERTS
+    dataType: LongInteger
+    precision: 20
     mandatory: false
 
   - _type: EntityAttribute
@@ -280,13 +329,6 @@ attributes:
     dataType: String
     length: 250
     mandatory: false
-
-  # - _type: EntityAttribute
-  #   _name: NombreParkings
-  #   label: Nombre parkings
-  #   physicalName: NOMBRE_PARKINGS
-  #   dataType: Integer
-  #   mandatory: false		
 
   - _type: EntityAttribute
     _name: ReleveGeometre

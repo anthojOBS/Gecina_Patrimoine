@@ -170,14 +170,6 @@ tableColumns:
     visibleByDefault: false
 
   - _type: TextColumn
-    _name: NbParking
-    value: NbParking
-    useCustomLabel: false
-    dataType: LONG_INTEGER
-    columnAlign: LEFT
-    visibleByDefault: false
-
-  - _type: TextColumn
     _name: DateFinValidite
     value: DateFinValidite
     useCustomLabel: false
@@ -416,25 +408,6 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: false
 
-  # - _type: ReferenceColumn
-  #   _name: FDN_SocieteProprietaire
-  #   value: FDN_SocieteProprietaire
-  #   useCustomLabel: false
-  #   dataType: STRING
-  #   columnAlign: LEFT
-  #   visibleByDefault: false
-  #   referencedEntity: Batiments.entities.SocieteProprietaire.SocieteProprietaire
-
-  # - _type: ReferenceColumn
-  #   _name: FDN_SocieteAutre
-  #   value: FDN_SocieteAutre
-  #   label: Société exploitante
-  #   useCustomLabel: true
-  #   dataType: STRING
-  #   columnAlign: LEFT
-  #   visibleByDefault: false
-  #   referencedEntity: Batiments.entities.SocieteAutre.SocieteAutre
-
   - _type: ReferenceColumn
     _name: FDN_SousPortefeuille
     value: FDN_SousPortefeuille
@@ -453,6 +426,47 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
     referencedEntity: Batiments.entities.Usage.Usage
+
+  - _type: TextColumn
+    _name: NbLotInitial
+    value: NbLotInitial
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: SurperficieTaxable
+    value: SurperficieTaxable
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: SurperficieHallCouloir
+    value: SurperficieHallCouloir
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: SurperficieToituresTerrasses
+    value: SurperficieToituresTerrasses
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: SurperficieEspacesVerts
+    value: SurperficieEspacesVerts
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+
     
   - _type: HyperlinkColumn
     _name: BinaryContent
