@@ -37,6 +37,13 @@ rootStep:
       formFieldsMode: AUTO
       enableMasterValuePicking: false
       formTab: Batiments.entities.Immeuble.forms.ImmeubleEditFiscaliteJuridique.FiscaliteJuridique
+
+      formStepEnrichers:   
+        - enricher: Batiments.entities.Immeuble.enrichers.DefautRegimeTVA
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+
       formStepValidations:  
         - executedOnDataChange: true
           executedOnFormOpen: true
@@ -46,6 +53,7 @@ rootStep:
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute:  Batiments.references.ImmeubleToFiscaliteCible.FiscaliteCible
+
 
 stepperFinishValidations:
   - onStepperFinish: BLOCK

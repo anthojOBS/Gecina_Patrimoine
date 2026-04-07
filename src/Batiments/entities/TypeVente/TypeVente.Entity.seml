@@ -1,0 +1,35 @@
+_package: Batiments.entities.TypeVente
+_type: Entity
+_name: TypeVente
+label: Type vente
+pluralLabel: Type vente
+entityType: BASIC
+physicalTableName: TYPE_VENTE
+description: Type vente
+documentation: |
+  Type vente
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: TypeVente
+    label: Type vente
+    physicalName: TYPE_VENTE
+    dataType: String
+    length: 50
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: LibelleTypeVente
+    label: Libellé Type vente
+    physicalName: LIB_TYPE_VENTE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
+
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.TypeVente.TypeVente.TypeVente

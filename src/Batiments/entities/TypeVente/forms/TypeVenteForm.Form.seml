@@ -1,0 +1,32 @@
+_package: Batiments.entities.TypeVente.forms
+_type: Form
+_name: TypeVenteForm
+entity: Batiments.entities.TypeVente.TypeVente
+default: true
+formTabs:
+  - _type: FormTab
+    _name: TypeVente
+    label: TypeVente
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: TextField
+        _name: TypeVente
+        value: TypeVente
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: LibelleTypeVente
+        value: LibelleTypeVente
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

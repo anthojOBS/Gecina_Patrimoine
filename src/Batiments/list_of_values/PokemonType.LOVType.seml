@@ -1,0 +1,10 @@
+_name: PokemonType
+_type: LOVType
+_package: Batiments.list_of_values
+label: Types de pokemons
+length: 10
+lovValues:
+  - label: Pokemon Eau
+    code: eau
+  - label: Pokemon Feu
+    code: feu

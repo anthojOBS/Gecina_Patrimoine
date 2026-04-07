@@ -1,0 +1,33 @@
+_package: Batiments.entities.TypeVente.steppers
+_type: Stepper
+_name: AuthorTypevente
+entity:  Batiments.entities.TypeVente.TypeVente
+label: Type vente
+rootStep:
+  _type: CollectionStep
+  _name: Typevente_Collection
+  label: Type vente
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.TypeVente.collection_views.TypeVenteCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: TypeVente
+      label: TypeVente
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.TypeVente.forms.TypeVenteForm.TypeVente

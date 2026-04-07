@@ -1,0 +1,33 @@
+_package: Batiments.references
+_type: Reference
+_name: ImmeubleToTypeVente
+label: Immeuble Type Vente
+description: Référence Immeuble vers TypeVente
+fromRoleDocumentation: |
+  Cette référence détermine la **TypeVente** d'un **Immeuble** dans son cycle de vie.
+  La TypeVente indique l'état d'avancement du projet immobilier (en construction, livré, etc.).
+physicalName: IMMEUBLE_TYPE_VENTE_REF
+
+fromEntity: Batiments.entities.Immeuble.Immeuble
+fromRoleLabel: Immeuble
+fromRoleName: Immeuble
+fromRolePluralLabel: Immeubles
+
+toEntity: Batiments.entities.TypeVente.TypeVente
+toRoleLabel: Type Vente
+toRoleName: TypeVente
+toRolePhysicalName: TYPE_VENTE_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: Le mode de chauffage est obligatoire pour un immeuble
+brokenValidationLabel: Le mode de chauffage sélectionnée est invalide pour cet immeuble
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: TypeVente
+  label: TypeVente
+  physicalName: TYPE_VENTE_ID
+  searchable: true
+  entity: Batiments.entities.Immeuble.Immeuble

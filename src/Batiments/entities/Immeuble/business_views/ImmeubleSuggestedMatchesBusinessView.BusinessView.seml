@@ -18,7 +18,7 @@ rootBusinessViewEntity:
   entity: Batiments.entities.Immeuble.Immeuble
   actionSet: Batiments.entities.Immeuble.action_sets.ImmeubleActionSet
   collection: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView
-  form: Batiments.entities.Immeuble.forms.ImmeubleForm
+  form: Batiments.entities.Immeuble.forms.ImmeubleConsultation
   outlineVisible: false
   displayRecordCount: ALWAYS
   businessEntitySearchConfigs:
@@ -78,7 +78,7 @@ rootBusinessViewEntity:
         entity: Batiments.entities.Immeuble.Immeuble
         actionSet: Batiments.entities.Immeuble.action_sets.ImmeubleActionSet
         collection: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView
-        form: Batiments.entities.Immeuble.forms.ImmeubleForm
+        form: Batiments.entities.Immeuble.forms.ImmeubleConsultation
         displayRecordCount: ALWAYS
         outlineVisible: false
         enableUserDefinedSort: true

@@ -1,6 +1,6 @@
 _package: Batiments.entities.Immeuble.forms
 _type: Form
-_name: ImmeubleForm
+_name: ImmeubleConsultation
 entity: Batiments.entities.Immeuble.Immeuble
 default: true
 formTabs:
@@ -958,6 +958,34 @@ formTabs:
                               color: md:black
                             useCustomLabel: true
                             dataType: DATE
+
+                          - _type: ReferenceField
+                            _name: FDN_TypeVente
+                            value: FDN_TypeVente
+                            label: Type de vente
+                            labelProperties:
+                              alignment: left
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: STRING
+                            visibleValue: FID_OrgaResp = 'DR' 
+                            visibleValueInterpreter: SEMQL
+                            referencedEntity: Batiments.entities.TypeVente.TypeVente
+                          - _type: DateField
+                            _name: DateMiseVente
+                            value: DateVente
+                            label: Date mise en vente
+                            documentation: Date à laquelle l’immeuble est mis en vente.
+                            labelProperties:
+                              alignment: left
+                              typographyValueInterpreter: LITERAL
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            visibleValue: FID_OrgaResp = 'DR' 
+                            visibleValueInterpreter: SEMQL
+                            dataType: DATE                        
                           - _type: DateField
                             _name: DateVente
                             value: DateVente
@@ -1014,7 +1042,20 @@ formTabs:
             useCustomLabel: true
             dataType: STRING
             referencedEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
-
+          - _type: DateField
+            _name: DateMiseCopro
+            value: DateMiseCopropriete
+            label: Date mise en copropriété
+            documentation: Date à laquelle l’immeuble est mis en copropriété.
+            labelProperties:
+              alignment: left
+              typographyValueInterpreter: LITERAL
+              typography: body-2
+              color: md:black
+            useCustomLabel: true
+            visibleValue: FID_OrgaResp = 'DR' 
+            visibleValueInterpreter: SEMQL
+            dataType: DATE      
       - _type: FormSection
         _name: Societes
         label: Sociétés
@@ -1043,3 +1084,142 @@ formTabs:
              -  enabled: true 
                 searchType: TEXT
 
+
+  - _type: FormTab
+    _name: Equipements
+    label: Equipements
+    iconUrl: images://mdi/bank.svg
+    documentationInterpreter: LITERAL
+    visibleValue: FID_OrgaResp = 'DR' 
+    visibleValueInterpreter: SEMQL
+    displayFormTabAs: ICON_LABEL
+    content:
+      - _type: FormSection
+        _name: EspaceAmenagement
+        label: Espace et aménagement
+        layoutDirection: COLUMN
+        visibleValue: "1"
+        visibleValueInterpreter: LITERAL
+        labelWidth: 300px
+        content:
+
+              - _type: TextField
+                _name: StatutEspaceVert
+                value: StatutEspaceVert
+                label: Statut espace vert
+                documentation: Indique si l'immeuble dispose d'un espace vert.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+              - _type: TextField
+                _name: StatutAireJeux
+                value: StatutAireJeux
+                label: Statut aire de jeux
+                documentation: Indique si l'immeuble dispose d'une aire de jeu.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+
+      - _type: FormSection
+        _name: SecuriteEtAcces
+        label: Sécurité et accès
+        layoutDirection: COLUMN
+        visibleValue: "1"
+        visibleValueInterpreter: LITERAL
+        labelWidth: 300px
+        content:
+
+              - _type: TextField
+                _name: StatutDigicode
+                value: StatutDigicode
+                label: Statut digicode
+                documentation: Indique si l'immeuble dispose d'un digicode.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+              - _type: TextField
+                _name: StatutInterphone
+                value: StatutInterphone
+                label: Statut interphone
+                documentation: Indique si l'immeuble dispose d'un interphone.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+              - _type: TextField
+                _name: StatutVideosurveillance
+                value: StatutVideosurveillance
+                label: Statut vidéosurveillance
+                documentation: Indique si l'immeuble dispose d'une vidéosurveillance.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+              - _type: TextField
+                _name: StatutGardiennage
+                value: StatutGardiennage
+                label: Statut gardiennage
+                documentation: Indique si l'immeuble dispose d'un gardiennage.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+
+
+      - _type: FormSection
+        _name: Equipements
+        label: Équipements
+        layoutDirection: COLUMN
+        visibleValue: "1"
+        visibleValueInterpreter: LITERAL
+        labelWidth: 300px
+        content:
+
+              - _type: TextField
+                _name: StatutLocalPoubelle
+                value: StatutLocalPoubelle
+                label: Statut local poubelle
+                documentation: Indique si l'immeuble dispose d'un local à poubelles.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+              - _type: TextField
+                _name: StatutTriSelectif
+                value: StatutTriSelectif
+                label: Statut tri sélectif
+                documentation: Indique si l'immeuble dispose d'un système de tri sélectif.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+              - _type: TextField
+                _name: StatutLocalVelos
+                value: StatutLocalVelos
+                label: Statut local vélos
+                documentation: Indique si l'immeuble dispose d'un local pour les vélos.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN

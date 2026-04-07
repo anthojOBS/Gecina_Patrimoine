@@ -1,0 +1,263 @@
+_package: Batiments.entities.Immeuble.steppers
+_type: Stepper
+_name: ImmeubleEdition
+entity: Batiments.entities.Immeuble.Immeuble
+label: Immeubles
+
+rootStep:
+  _type: CollectionStep
+  _name: Immeubles
+  label: Immeubles
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Immeuble
+      label: Immeuble
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleEdition.Immeuble
+
+      referenceFormFieldConfigs:
+        # - enableCreateReference: false
+        #   enableUserSort: true
+        #   referencePickerType: AUTO_COMPLETE
+        #   fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCreation.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_SousPortefeuille
+        #   referenceFilter: Referenced.FID_Portefeuille = Record.FID_Portefeuille
+        #   referencePickerCollectionView: Batiments.entities.SousPortefeuille.collection_views.SousPortefeuilleCollectionView
+        #   # referencePickerSearchTypeConfigs: []
+
+        - enableCreateReference: false
+          enableUserSort: true
+          referencePickerType: AUTO_COMPLETE
+          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleEdition.Immeuble.SectionDeux.LocalisationImmeuble.BlocAdresse.FDN_SecteurImmostat
+          referenceFilter: Referenced.FID_ZoneImmostat = Record.FID_ZoneImmostat
+          referencePickerCollectionView: Batiments.entities.SecteurImmostat.collection_views.SecteurImmostatCollectionView
+          # referencePickerSearchTypeConfigs: []
+
+        - enableCreateReference: false
+          enableUserSort: true
+          referencePickerType: AUTO_COMPLETE
+          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleEdition.Immeuble.SectionDeux.LocalisationImmeuble.BlocAdresse.FDN_SousSecteurImmostat
+          referenceFilter: Referenced.FID_SecteurImmostat = Record.FID_SecteurImmostat
+          referencePickerCollectionView: Batiments.entities.SousSecteurImmostat.collection_views.SousSecteurImmostatCollectionView
+          # referencePickerSearchTypeConfigs: []
+
+      formStepEnrichers:  
+        - enricher: Batiments.entities.Immeuble.enrichers.Portefeuille
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false
+
+      formStepValidations:  
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.ImmeubleToUsage.Usage
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.ImmeubleToOrgaResp.OrgaResp
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.ImmeubleToPortefeuille.Portefeuille
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.ImmeubleToSousPortefeuille.SousPortefeuille
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.ImmeubleToZoneImmostat.ZoneImmostat
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.ImmeubleToSecteurImmostat.SecteurImmostat
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
+
+        - validator: Batiments.entities.Immeuble.validations.CheckAscenseur
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.entities.Immeuble.Immeuble.NbAscenseur
+        - validator: Batiments.entities.Immeuble.validations.CheckQuartierParis
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.ImmeubleToQuartierParis.QuartierParis
+
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToUsage.Usage
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToOrgaResp.OrgaResp
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToPortefeuille.Portefeuille
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToSousPortefeuille.SousPortefeuille
+
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToZoneImmostat.ZoneImmostat
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToSecteurImmostat.SecteurImmostat
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
+
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckAscenseur
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckQuartierParis
+
+    - _type: FormStep
+      _name: Composition
+      label: Composition
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleEdition.Composition
+
+    - _type: FormStep
+      _name: CycleDeVie
+      label: Cycle de vie de l'immeuble
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble
+ 
+      formStepValidations: 
+        - validator: Batiments.entities.Immeuble.validations.CheckDtLivraison
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.entities.Immeuble.Immeuble.DateLivraison
+        - validator: Batiments.entities.Immeuble.validations.CheckCoherenceDtConstruction
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.entities.Immeuble.Immeuble.DateFinConstruction
+
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckDtLivraison
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckCoherenceDtConstruction
+
+
+    - _type: FormStep
+      _name: FiscaliteJuridique
+      label: Fiscalité et Juridique
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleEdition.FiscaliteJuridique
+
+
+      formStepEnrichers:   
+        - enricher: Batiments.entities.Immeuble.enrichers.DefautRegimeTVA
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+
+      formStepValidations:  
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToRegimeJuridique.RegimeJuridique
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute:  Batiments.references.ImmeubleToFiscaliteCible.FiscaliteCible
+
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.references.ImmeubleToFiscaliteCible.FiscaliteCible
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.references.ImmeubleToRegimeJuridique.RegimeJuridique
+
+stepperFinishValidations:
+
+
+      - onStepperFinish: BLOCK
+        validationType: MANDATORY
+        attribute:  Batiments.references.ImmeubleToUsage.Usage
+      - onStepperFinish: BLOCK
+        validationType: MANDATORY
+        attribute:  Batiments.references.ImmeubleToOrgaResp.OrgaResp
+      - onStepperFinish: BLOCK
+        validationType: MANDATORY
+        attribute:  Batiments.references.ImmeubleToPortefeuille.Portefeuille
+      - onStepperFinish: BLOCK
+        validationType: MANDATORY
+        attribute:  Batiments.references.ImmeubleToSousPortefeuille.SousPortefeuille
+
+      - onStepperFinish: BLOCK
+        validationType: MANDATORY
+        attribute:  Batiments.references.ImmeubleToRegimeJuridique.RegimeJuridique
+      - onStepperFinish: BLOCK
+        validationType: MANDATORY
+        attribute:  Batiments.references.ImmeubleToFiscaliteCible.FiscaliteCible
+                                              
+      - onStepperFinish: BLOCK
+        validationType: MANDATORY
+        attribute: Batiments.references.ImmeubleToZoneImmostat.ZoneImmostat
+      - onStepperFinish: BLOCK
+        validationType: MANDATORY
+        attribute: Batiments.references.ImmeubleToSecteurImmostat.SecteurImmostat
+      - onStepperFinish: BLOCK
+        validationType: MANDATORY
+        attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
+
+      - onStepperFinish: BLOCK
+        validationType: CHECK
+        validator: Batiments.entities.Immeuble.validations.CheckLongLibelle
+      - onStepperFinish: BLOCK
+        validationType: CHECK
+        validator: Batiments.entities.Immeuble.validations.CheckAscenseur
+      - onStepperFinish: BLOCK
+        validationType: CHECK
+        validator: Batiments.entities.Immeuble.validations.CheckQuartierParis
+
+      - onStepperFinish: BLOCK
+        validationType: CHECK
+        validator: Batiments.entities.Immeuble.validations.CheckCoherenceDtConstruction
+      - onStepperFinish: BLOCK
+        validationType: CHECK
+        validator: Batiments.entities.Immeuble.validations.CheckDtLivraison

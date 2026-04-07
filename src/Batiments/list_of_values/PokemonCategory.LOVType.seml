@@ -1,0 +1,12 @@
+_name: PokemonCategory
+_type: LOVType
+_package: Batiments.list_of_values
+label: Catégorie de pokemon
+length: 10
+lovValues:
+  - label: PokePoisson
+    code: Poisson
+  - label: PokeGraine
+    code: Graine
+  - label: PokeTabouret
+    code: Tabouret

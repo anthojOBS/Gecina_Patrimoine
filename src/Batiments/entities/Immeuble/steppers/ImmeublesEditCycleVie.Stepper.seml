@@ -4,10 +4,7 @@ _name: ImmeublesEditCycleVie
 entity: Batiments.entities.Immeuble.Immeuble
 label: Immeubles
 
-# stepperFinishValidations:
-#   - onStepperFinish: WARN
-#     validationType: DETECT_DUPS
-   
+
 rootStep:
   _type: CollectionStep
   _name: Immeubles
@@ -39,27 +36,22 @@ rootStep:
       formTab: Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble
 
       formStepValidations:  
-        - executedOnDataChange: true
+        - validator: Batiments.entities.Immeuble.validations.CheckDtLivraison
+          executedOnDataChange: true
           executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute:  Batiments.references.ImmeubleToPhase.Phase
-        - executedOnDataChange: true
+          validationType: CHECK
+          attribute: Batiments.entities.Immeuble.Immeuble.DateLivraison
+        - validator: Batiments.entities.Immeuble.validations.CheckCoherenceDtConstruction
+          executedOnDataChange: true
           executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.entities.Immeuble.Immeuble.DateDebPhase
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.entities.Immeuble.Immeuble.DateAcquisition
+          validationType: CHECK
+          attribute: Batiments.entities.Immeuble.Immeuble.DateFinConstruction
 
 stepperFinishValidations:
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute:  Batiments.references.ImmeubleToPhase.Phase
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.entities.Immeuble.Immeuble.DateDebPhase
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.entities.Immeuble.Immeuble.DateAcquisition
+        - onStepperFinish: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckDtLivraison
+        - onStepperFinish: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckCoherenceDtConstruction
 

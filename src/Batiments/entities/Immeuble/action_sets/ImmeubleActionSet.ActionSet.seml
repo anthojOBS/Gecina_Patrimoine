@@ -18,7 +18,7 @@ actions:
     _name: EditAuthorImmeubles
     label: Edition immeuble
     useCustomLabel: true
-    stepper: Batiments.entities.Immeuble.steppers.AuthorImmeubles
+    stepper: Batiments.entities.Immeuble.steppers.ImmeubleEdition
     multipleSelectionAllowed: true
     availableForGoldenData: true
     availableForMasterData: true
@@ -48,7 +48,7 @@ actions:
     _name: MassUpdateAuthorImmeubles
     label: Mise à jour de masse
     useCustomLabel: true
-    stepper: Batiments.entities.Immeuble.steppers.AuthorImmeubles
+    stepper: Batiments.entities.Immeuble.steppers.ImmeubleEdition
     availableForGoldenData: true
     availableForErrorData: true
     availableForMasterData: true
@@ -72,7 +72,7 @@ actions:
     label: Importer
     useCustomLabel: false
     importMode: CREATE_AND_UPDATE
-    stepper: Batiments.entities.Immeuble.steppers.AuthorImmeubles
+    stepper: Batiments.entities.Immeuble.steppers.ImmeubleEdition
     importedRecordType: MASTER
     defaultPublisher: Batiments.publishers.VisionReelle
     waitDialogEnabled: false
@@ -116,5 +116,5 @@ actions:
     label: Explain Record
     useCustomLabel: true
     displayCard: Batiments.entities.Immeuble.display_cards.ImmeubleDisplayCard
-    formTab: Batiments.entities.Immeuble.forms.ImmeubleForm.Immeuble
+    formTab: Batiments.entities.Immeuble.forms.ImmeubleConsultation.Immeuble
     waitDialogEnabled: false

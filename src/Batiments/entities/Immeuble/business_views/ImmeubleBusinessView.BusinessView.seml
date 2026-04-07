@@ -18,7 +18,7 @@ rootBusinessViewEntity:
   entity: Batiments.entities.Immeuble.Immeuble
   actionSet: Batiments.entities.Immeuble.action_sets.ImmeubleActionSet
   collection: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView
-  form: Batiments.entities.Immeuble.forms.ImmeubleForm
+  form: Batiments.entities.Immeuble.forms.ImmeubleConsultation
   outlineVisible: false
   # referenceAttributeNavigationConfigs:
   #   - formField: Batiments.entities.Batiment.forms.BatimentForm.Batiment.SectionHaut.SectionGauche.IdentiteBatiment.FDN_Immeuble
@@ -89,7 +89,7 @@ rootBusinessViewEntity:
         - formField: Batiments.entities.Batiment.forms.BatimentForm.Batiment.SectionHaut.SectionHautGauche.IdentiteBatiment.FDN_Immeuble
           navigationMode: BUSINESS_OBJECT_VIEW
           businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
-          form: Batiments.entities.Immeuble.forms.ImmeubleForm
+          form: Batiments.entities.Immeuble.forms.ImmeubleConsultation
         
         transitions:
           - _type: BusinessViewTransition
@@ -320,7 +320,7 @@ rootBusinessViewEntity:
         entity: Batiments.entities.Immeuble.Immeuble
         actionSet: Batiments.entities.Immeuble.action_sets.ImmeubleActionSet
         collection: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView_history
-        form: Batiments.entities.Immeuble.forms.ImmeubleForm
+        form: Batiments.entities.Immeuble.forms.ImmeubleConsultation
         displayRecordCount: ALWAYS
         outlineVisible: false
         enableUserDefinedSort: true
@@ -348,7 +348,7 @@ rootBusinessViewEntity:
         entity: Batiments.entities.Immeuble.Immeuble
         actionSet: Batiments.entities.Immeuble.action_sets.ImmeubleActionSet
         collection: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView
-        form: Batiments.entities.Immeuble.forms.ImmeubleForm
+        form: Batiments.entities.Immeuble.forms.ImmeubleConsultation
         displayRecordCount: ALWAYS
         outlineVisible: false
         enableUserDefinedSort: true

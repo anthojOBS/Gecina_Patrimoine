@@ -48,18 +48,6 @@ formTabs:
                                   dataType: STRING
                                   referencedEntity: Batiments.entities.Phase.Phase
 
-                                - _type: DateField
-                                  _name: DateDebPhase
-                                  value: DateDebPhase
-                                  label: Date début phase
-                                  authoringMode: force-read-only
-                                  labelProperties:
-                                    alignment: left
-                                    typographyValueInterpreter: LITERAL
-                                    typography: body-2
-                                    color: md:black
-                                  useCustomLabel: true
-                                  dataType: DATE
 
                             - _type: FormSection
                               _name: Restructuration
@@ -155,40 +143,4 @@ formTabs:
                                   useCustomLabel: true
                                   dataType: DATE
 
-
-                            - _type: FormSection
-                              _name: AcquisitionCession
-                              label: Acquisition/Cession
-                              layoutDirection: COLUMN
-                              visibleValue: "1"
-                              visibleValueInterpreter: LITERAL
-                              labelWidth: 300px
-                              content:
-
-                                - _type: DateField
-                                  _name: DateAcquisition
-                                  value: DateAcquisition
-                                  label: Date acquisition
-                                  documentation: Date d’achat de l’immeuble par la société propriétaire.
-                                  labelProperties:
-                                    alignment: left
-                                    typographyValueInterpreter: LITERAL
-                                    typography: body-2
-                                    color: md:black
-                                  useCustomLabel: true
-                                  dataType: DATE
-                                - _type: DateField
-                                  _name: DateVente
-                                  value: DateVente
-                                  label: Date vente
-                                  authoringMode: Case when DateVente is null then 'auto' else 'force-read-only' end
-                                  authoringModeValueInterpreter: SEMQL
-                                  documentation: Date effective de cession juridique (si applicable).
-                                  labelProperties:
-                                    alignment: left
-                                    typographyValueInterpreter: LITERAL
-                                    typography: body-2
-                                    color: md:black
-                                  useCustomLabel: true
-                                  dataType: DATE
 

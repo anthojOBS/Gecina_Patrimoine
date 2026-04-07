@@ -128,6 +128,16 @@ attributes:
     mandatoryValidationLabel: "Date acquisition est obligatoire"
     mandatoryValidationScope: PRE_CONSO
 
+
+
+  - _type: EntityAttribute
+    _name: DateDebUsage
+    label: Date début usage
+    physicalName: DATE_DEBUT_USAGE
+    dataType: Date
+    mandatory: false
+
+
   - _type: EntityAttribute
     _name: DateVente
     label: Date vente
@@ -174,6 +184,23 @@ attributes:
     mandatoryValidationLabel: "Date début phase est obligatoire"
     mandatoryValidationScope: PRE_CONSO
 
+
+  - _type: EntityAttribute
+    _name: DateMiseCopropriete
+    label: Date mise en copropriété
+    physicalName: DATE_MISE_EN_COPRO
+    dataType: Date
+    mandatory: false
+
+
+
+
+  - _type: EntityAttribute
+    _name: DateMiseVente
+    label: Date mise en vente
+    physicalName: DATE_MISE_VENTE
+    dataType: Date
+    mandatory: false
 
   - _type: EntityAttribute
     _name: FlagAscenseur
@@ -330,6 +357,78 @@ attributes:
     length: 250
     mandatory: false
 
+
+  - _type: EntityAttribute
+    _name: StatutEspaceVert
+    label: Statut espace vert
+    physicalName: STATUT_ESPACE_VERT
+    dataType: Boolean
+    mandatory: false
+
+
+  - _type: EntityAttribute
+    _name: StatutAireJeux
+    label: Statut aire de jeux
+    physicalName: STATUT_AIRE_JEUX
+    dataType: Boolean
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: StatutDigicode
+    label: Statut digicode
+    physicalName: STATUT_DIGICODE
+    dataType: Boolean
+    mandatory: false
+
+
+  - _type: EntityAttribute
+    _name: StatutInterphone
+    label: Statut interphone
+    physicalName: STATUT_INTERPHONE
+    dataType: Boolean
+    mandatory: false
+
+
+  - _type: EntityAttribute
+    _name: StatutVideosurveillance
+    label: Statut vidéosurveillance
+    physicalName: STATUT_VIDEOSURVEILLANCE
+    dataType: Boolean
+    mandatory: false
+
+
+  - _type: EntityAttribute
+    _name: StatutGardiennage
+    label: Statut gardiennage
+    physicalName: STATUT_GARDIENNAGE
+    dataType: Boolean
+    mandatory: false
+
+
+  - _type: EntityAttribute
+    _name: StatutLocalPoubelle
+    label: Statut local poubelle
+    physicalName: STATUT_LOCAL_POUBELLE
+    dataType: Boolean
+    mandatory: false
+
+
+  - _type: EntityAttribute
+    _name: StatutTriSelectif
+    label: Statut tri sélectif
+    physicalName: STATUT_TRI_SELECTIF
+    dataType: Boolean
+    mandatory: false
+
+
+  - _type: EntityAttribute
+    _name: StatutLocalVelos
+    label: Statut local vélos
+    physicalName: STATUT_LOCAL_VELO
+    dataType: Boolean
+    mandatory: false
+
+
   - _type: EntityAttribute
     _name: ReleveGeometre
     label: Relevé géomètre
@@ -345,6 +444,8 @@ attributes:
     dataType: Binary
     mandatory: false
     searchable: true
+
+
 
 sourceIdGeneration:
   mode: MANUAL

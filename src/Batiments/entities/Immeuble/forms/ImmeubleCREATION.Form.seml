@@ -1,6 +1,6 @@
 _package: Batiments.entities.Immeuble.forms
 _type: Form
-_name: ImmeubleCREATION
+_name: ImmeubleCreation
 entity: Batiments.entities.Immeuble.Immeuble
 default: true
 formTabs:

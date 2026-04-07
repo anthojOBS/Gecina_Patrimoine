@@ -35,13 +35,13 @@ rootStep:
       enabledOnParentEdit: true
       formFieldsMode: AUTO
       enableMasterValuePicking: false
-      formTab: Batiments.entities.Immeuble.forms.ImmeubleCREATION.Immeuble
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleCreation.Immeuble
 
       referenceFormFieldConfigs:
         # - enableCreateReference: false
         #   enableUserSort: true
         #   referencePickerType: AUTO_COMPLETE
-        #   fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCREATION.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_SousPortefeuille
+        #   fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCreation.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_SousPortefeuille
         #   referenceFilter: Referenced.FID_Portefeuille = Record.FID_Portefeuille
         #   referencePickerCollectionView: Batiments.entities.SousPortefeuille.collection_views.SousPortefeuilleCollectionView
         #   # referencePickerSearchTypeConfigs: []
@@ -49,7 +49,7 @@ rootStep:
         - enableCreateReference: false
           enableUserSort: true
           referencePickerType: AUTO_COMPLETE
-          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCREATION.Immeuble.SectionDeux.LocalisationImmeuble.BlocAdresse.FDN_SecteurImmostat
+          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCreation.Immeuble.SectionDeux.LocalisationImmeuble.BlocAdresse.FDN_SecteurImmostat
           referenceFilter: Referenced.FID_ZoneImmostat = Record.FID_ZoneImmostat
           referencePickerCollectionView: Batiments.entities.SecteurImmostat.collection_views.SecteurImmostatCollectionView
           # referencePickerSearchTypeConfigs: []
@@ -57,7 +57,7 @@ rootStep:
         - enableCreateReference: false
           enableUserSort: true
           referencePickerType: AUTO_COMPLETE
-          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCREATION.Immeuble.SectionDeux.LocalisationImmeuble.BlocAdresse.FDN_SousSecteurImmostat
+          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCreation.Immeuble.SectionDeux.LocalisationImmeuble.BlocAdresse.FDN_SousSecteurImmostat
           referenceFilter: Referenced.FID_SecteurImmostat = Record.FID_SecteurImmostat
           referencePickerCollectionView: Batiments.entities.SousSecteurImmostat.collection_views.SousSecteurImmostatCollectionView
           # referencePickerSearchTypeConfigs: []
@@ -75,6 +75,10 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: true
           executedOnFormOpen: false
+        - enricher: Batiments.entities.Immeuble.enrichers.DefautDtDebUsage
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
 # clik pour le bouton , change si maj de entree, form pour ouverture du formulaire sens si autre onglet 
 
       formStepValidations:  
@@ -216,7 +220,7 @@ rootStep:
       enabledOnParentEdit: true
       formFieldsMode: AUTO
       enableMasterValuePicking: false
-      formTab: Batiments.entities.Immeuble.forms.ImmeubleCREATION.Composition
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleCreation.Composition
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: CHECK
@@ -232,7 +236,13 @@ rootStep:
       enabledOnParentEdit: true
       formFieldsMode: AUTO
       enableMasterValuePicking: false
-      formTab: Batiments.entities.Immeuble.forms.ImmeubleCREATION.CycleVieImmeuble
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble
+
+      formStepEnrichers:   
+        - enricher: Batiments.entities.Immeuble.enrichers.DefautDtDebPhase
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
 
       formStepValidations:  
         - executedOnDataChange: true
@@ -243,6 +253,16 @@ rootStep:
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute: Batiments.entities.Immeuble.Immeuble.DateAcquisition
+        - validator: Batiments.entities.Immeuble.validations.CheckDtLivraison
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.entities.Immeuble.Immeuble.DateLivraison
+        - validator: Batiments.entities.Immeuble.validations.CheckCoherenceDtConstruction
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.entities.Immeuble.Immeuble.DateFinConstruction
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: MANDATORY
@@ -250,6 +270,13 @@ rootStep:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.entities.Immeuble.Immeuble.DateAcquisition
+
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckDtLivraison
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckCoherenceDtConstruction
 
     - _type: FormStep
       _name: FiscaliteJuridique
@@ -259,7 +286,15 @@ rootStep:
       enabledOnParentEdit: true
       formFieldsMode: AUTO
       enableMasterValuePicking: false
-      formTab: Batiments.entities.Immeuble.forms.ImmeubleCREATION.FiscaliteJuridique
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleCreation.FiscaliteJuridique
+
+
+      formStepEnrichers:   
+        - enricher: Batiments.entities.Immeuble.enrichers.DefautRegimeTVA
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+
       formStepValidations:  
         - executedOnDataChange: true
           executedOnFormOpen: true
@@ -379,3 +414,9 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: CHECK
     validator: Batiments.entities.Immeuble.validations.CheckNbLotInitial
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Immeuble.validations.CheckCoherenceDtConstruction
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Immeuble.validations.CheckDtLivraison
