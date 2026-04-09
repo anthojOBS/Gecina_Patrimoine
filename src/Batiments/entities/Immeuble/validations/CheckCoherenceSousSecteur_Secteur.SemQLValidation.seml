@@ -1,0 +1,9 @@
+_package: Batiments.entities.Immeuble.validations
+_name: CheckCoherenceSousSecteur_Secteur
+_type: SemQLValidation
+entity: Batiments.entities.Immeuble.Immeuble
+label: Coherence sous-secteur / secteur immostat
+condition: FID_SecteurImmostat is not null and FID_SousSecteurImmostat is not null 
+ and FID_SecteurImmostat = SousSecteurImmostat.FID_SecteurImmostat and FID_SousSecteurImmostat = SousSecteurImmostat.SousSecteurImmostatCode
+validationScope: POST_CONSO
+validationLabel: secteur / sous-secteur non cohérent

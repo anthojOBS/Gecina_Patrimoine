@@ -19,7 +19,7 @@ toRoleLabel: Pays
 toRoleName: Pays
 toRolePhysicalName: PAYS_ID_ISO3
 
-oneToMany: false
+oneToMany: true
 deletePropagation: RESTRICT
 validationScope: POST_CONSO
 mandatoryValidationLabel: Le pays est obligatoire pour un Batiment

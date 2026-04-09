@@ -109,6 +109,21 @@ attributes:
     dataType: Date
     mandatory: false
 
+
+  - _type: EntityAttribute
+    _name: DateVente
+    label: Date vente
+    physicalName: DATE_VENTE
+    dataType: Date
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: StatutERP
+    label: Statut ERP
+    physicalName: STATUT_ERP
+    dataType: Boolean
+    mandatory: false
+
   - _type: EntityAttribute
     _name: StatutLouable
     label: Statut louable

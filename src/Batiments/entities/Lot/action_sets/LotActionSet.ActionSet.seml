@@ -109,5 +109,5 @@ actions:
     label: Explain Record
     useCustomLabel: true
     displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
-    formTab: Batiments.entities.Lot.forms.LotForm.Lot
+    formTab: Batiments.entities.Lot.forms.LotConsultation.Lot
     waitDialogEnabled: false

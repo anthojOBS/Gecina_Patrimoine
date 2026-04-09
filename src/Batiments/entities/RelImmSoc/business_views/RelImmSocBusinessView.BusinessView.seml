@@ -52,11 +52,11 @@ rootBusinessViewEntity:
       businessViewEntity: 
         _type: BusinessViewEntity
         _name: MasterRecord
-        displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
-        entity: Batiments.entities.Lot.Lot
-        actionSet: Batiments.entities.Lot.action_sets.LotActionSet
-        collection: Batiments.entities.Lot.collection_views.LotCollectionView
-        form: Batiments.entities.Lot.forms.LotForm
+        displayCard: Batiments.entities.RelImmSoc.display_cards.RelImmSocDisplayCard
+        entity: Batiments.entities.RelImmSoc.RelImmSoc
+        actionSet: Batiments.entities.RelImmSoc.action_sets.RelImmSocActionSet
+        collection: Batiments.entities.RelImmSoc.collection_views.RelImmSocCollectionView
+        form: Batiments.entities.RelImmSoc.forms.RelImmSocForm
         displayRecordCount: ALWAYS
         outlineVisible: false
         enableUserDefinedSort: true

@@ -37,11 +37,13 @@ attributes:
 
   - _type: EntityAttribute
     _name: IdentifiantsERP
-    label: Identifiants ERP
+    label: Numéro bâtiment
     physicalName: IDENTIFIANTS_ERP
     dataType: String
     length: 100
-    mandatory: false
+    mandatory: true
+    mandatoryValidationLabel: "Numéro bâtiment est obligatoire"
+    mandatoryValidationScope: PRE_CONSO
 
   - _type: EntityAttribute
     _name: Libelle_Batiment
@@ -49,7 +51,9 @@ attributes:
     physicalName: LIBELLE
     dataType: String
     length: 255
-    mandatory: false
+    mandatory: true
+    mandatoryValidationLabel: "Le libellé du bâtiment est obligatoire"
+    mandatoryValidationScope: PRE_CONSO
     searchable: true
 
   - _type: EntityAttribute
@@ -58,7 +62,9 @@ attributes:
     physicalName: ADRESSE
     dataType: String
     length: 255
-    mandatory: false
+    mandatory: true
+    mandatoryValidationLabel: "Adresse du bâtiment est obligatoire"
+    mandatoryValidationScope: PRE_CONSO
 
   - _type: EntityAttribute
     _name: CodePostal
@@ -66,7 +72,9 @@ attributes:
     physicalName: CODE_POSTAL
     dataType: String
     length: 255
-    mandatory: false
+    mandatory: true
+    mandatoryValidationLabel: "Le code postal du bâtiment est obligatoire"
+    mandatoryValidationScope: PRE_CONSO
 
   - _type: EntityAttribute
     _name: Ville
@@ -74,7 +82,9 @@ attributes:
     physicalName: VILLE
     dataType: String
     length: 255
-    mandatory: false
+    mandatory: true
+    mandatoryValidationLabel: "La ville du bâtiment est obligatoire"
+    mandatoryValidationScope: PRE_CONSO
 
   - _type: EntityAttribute
     _name: AdresseEnrichie
@@ -82,6 +92,19 @@ attributes:
     physicalName: ADRESSE_ENRICHIE
     dataType: String
     length: 255
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: DateDebUsage
+    label: Date début usage
+    physicalName: DATE_DEB_USAGE
+    dataType: Date
+    mandatory: false
+  - _type: EntityAttribute
+    _name: DateDebPhase
+    label: Date début phase 
+    physicalName: DATE_DEB_PHASE
+    dataType: Date
     mandatory: false
 
   - _type: EntityAttribute

@@ -20,7 +20,7 @@ toRoleLabel: Societe
 toRoleName: Societe
 toRolePhysicalName: SOCIETE_ID
 
-oneToMany: false
+oneToMany: true
 deletePropagation: RESTRICT
 validationScope: PRE_CONSO
 mandatoryValidationLabel: L'immeuble est obligatoire pour une société

@@ -5,7 +5,7 @@ label: Manage Duplicates on Lot
 entity: Batiments.entities.Lot.Lot
 enableMasterValuePicking: true
 displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
-formTab: Batiments.entities.Lot.forms.LotForm.Lot
+formTab: Batiments.entities.Lot.forms.LotConsultation.Lot
 collectionView: Batiments.entities.Lot.collection_views.LotCollectionView
 checkoutCustomSortEnabled: false
 checkoutUserDefinedSortEnabled: true

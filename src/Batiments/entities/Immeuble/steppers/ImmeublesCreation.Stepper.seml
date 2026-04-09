@@ -79,6 +79,10 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
+        - enricher: Batiments.entities.Immeuble.enrichers.DefautNbAscenceur
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: true
 # clik pour le bouton , change si maj de entree, form pour ouverture du formulaire sens si autre onglet 
 
       formStepValidations:  
@@ -136,6 +140,17 @@ rootStep:
           attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
 
 
+
+        - validator: Batiments.entities.Immeuble.validations.CheckCoherenceSecteur_Zone
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.ImmeubleToSecteurImmostat.SecteurImmostat
+        - validator: Batiments.entities.Immeuble.validations.CheckCoherenceSousSecteur_Secteur
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
         - validator: Batiments.entities.Immeuble.validations.CheckLongLibelle
           executedOnDataChange: true
           executedOnFormOpen: true
@@ -196,8 +211,12 @@ rootStep:
           validationType: MANDATORY
           attribute:  Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
 
-
-
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckCoherenceSecteur_Zone
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckCoherenceSousSecteur_Secteur
         - onStepExit: BLOCK
           validationType: CHECK
           validator: Batiments.entities.Immeuble.validations.CheckLongLibelle
@@ -226,8 +245,6 @@ rootStep:
           validationType: CHECK
           validator: Batiments.entities.Immeuble.validations.CheckNbLotInitial
 
-
-
     - _type: FormStep
       _name: CycleDeVie
       label: Cycle de vie de l'immeuble
@@ -239,6 +256,10 @@ rootStep:
       formTab: Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble
 
       formStepEnrichers:   
+        - enricher: Batiments.entities.Immeuble.enrichers.DefautPhase
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
         - enricher: Batiments.entities.Immeuble.enrichers.DefautDtDebPhase
           executedOnButtonClick: false
           executedOnDataChange: false
@@ -313,7 +334,23 @@ rootStep:
           validationType: MANDATORY
           attribute: Batiments.references.ImmeubleToRegimeJuridique.RegimeJuridique
 
+
     # - _type: CollectionStep
+    #   enableChildImportOnParentCreate: true
+    #   enableChildImportOnParentEdit: true 
+    #   childImportModeOnParentEdit: CREATE_ONLY 
+    #   enableChildCopyOnParentCreate: true
+    #   enableChildCopyOnParentEdit: true
+    #   enableChildCreationOnParentCreate: true
+    #   enableChildCreationOnParentEdit: true 
+    #   enableChildDeleteOnParentEdit: true
+    #   enableChildEditOnParentCreate: true
+    #   enableChildEditOnParentEdit: true
+    #   enableChildRemoveOnParentCreate: true
+    #   enableChildRemoveOnParentEdit: true
+    #   skipToChildCreationOnParentCreate: false
+    #   skipToChildEditingOnParentEdit: false
+    #   linear: false
     #   _name: Societes
     #   label: Sociétés
     #   canFinishSubLevel: true

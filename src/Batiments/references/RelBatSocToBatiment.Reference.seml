@@ -19,7 +19,7 @@ toRoleLabel: Batiment
 toRoleName: Batiment
 toRolePhysicalName: BAT_ID
 
-oneToMany: false
+oneToMany: true
 deletePropagation: RESTRICT
 validationScope: PRE_CONSO
 mandatoryValidationLabel: L'Batiment est obligatoire pour une société

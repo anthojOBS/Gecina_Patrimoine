@@ -1,6 +1,6 @@
 _package: Batiments.entities.Lot.forms
 _type: Form
-_name: LotForm
+_name: LotConsultation
 entity: Batiments.entities.Lot.Lot
 default: true
 formTabs:
@@ -84,43 +84,43 @@ formTabs:
                     dataType: STRING
                     referencedEntity: Batiments.entities.Etage.Etage
 
-                  - _type: TextField
-                    _name: SuperficieUtileSansQP
-                    value: case when SuperficieUtileSansQP is not null then SuperficieUtileSansQP || ' m²' else null end
-                    documentation: Dans chaque lot de bureau / commerce ==>m² privatifs + Quote part de parties communes (ratio de l'ensemble des parties communes réparties au prorata de ce qu'ils occupent en partie privative)
-                    label: Superficie utile sans QP
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
+                  # - _type: TextField
+                  #   _name: SuperficieUtileSansQP
+                  #   value: case when SuperficieUtileSansQP is not null then SuperficieUtileSansQP || ' m²' else null end
+                  #   documentation: Dans chaque lot de bureau / commerce ==>m² privatifs + Quote part de parties communes (ratio de l'ensemble des parties communes réparties au prorata de ce qu'ils occupent en partie privative)
+                  #   label: Superficie utile sans QP
+                  #   labelProperties:
+                  #     alignment: left
+                  #     typographyValueInterpreter: LITERAL
+                  #     typography: body-2
+                  #     color: md:black
+                  #   useCustomLabel: true
+                  #   dataType: STRING
 
-                  - _type: TextField
-                    _name: SuperficieUtileQP
-                    value: case when SuperficieUtileQP is not null then SuperficieUtileQP || ' m²' else null end
-                    documentation: Dans chaque lot de bureau / commerce ==>m² privatifs + Quote part de parties communes (ratio de l'ensemble des parties communes réparties au prorata de ce qu'ils occupent en partie privative)
-                    label: Superficie utile avec QP
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
+                  # - _type: TextField
+                  #   _name: SuperficieUtileQP
+                  #   value: case when SuperficieUtileQP is not null then SuperficieUtileQP || ' m²' else null end
+                  #   documentation: Dans chaque lot de bureau / commerce ==>m² privatifs + Quote part de parties communes (ratio de l'ensemble des parties communes réparties au prorata de ce qu'ils occupent en partie privative)
+                  #   label: Superficie utile avec QP
+                  #   labelProperties:
+                  #     alignment: left
+                  #     typographyValueInterpreter: LITERAL
+                  #     typography: body-2
+                  #     color: md:black
+                  #   useCustomLabel: true
+                  #   dataType: STRING
 
-                  - _type: TextField
-                    _name: SuperficieUtilePonderee
-                    value: case when SuperficieUtilePonderee is not null then SuperficieUtilePonderee || ' m²' else null end
-                    label: Superficie utile pondérée
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
+                  # - _type: TextField
+                  #   _name: SuperficieUtilePonderee
+                  #   value: case when SuperficieUtilePonderee is not null then SuperficieUtilePonderee || ' m²' else null end
+                  #   label: Superficie utile pondérée
+                  #   labelProperties:
+                  #     alignment: left
+                  #     typographyValueInterpreter: LITERAL
+                  #     typography: body-2
+                  #     color: md:black
+                  #   useCustomLabel: true
+                  #   dataType: STRING
 
                   - _type: TextField
                     _name: IdentifiantPhysique
@@ -133,64 +133,6 @@ formTabs:
                       color: md:black
                     useCustomLabel: true
                     dataType: STRING
-
-              - _type: FormSection
-                _name: Localisation
-                label: Localisation
-                layoutDirection: COLUMN
-                visibleValue: '1'
-                visibleValueInterpreter: LITERAL
-                labelWidth: 200px
-                content:
-                    # Bloc Adresse/Ville
-                        - _type: TextField
-                          _name: Adresse
-                          value: Etage.Batiment.Adresse
-                          label: Adresse
-                          labelProperties:
-                            alignment: left
-                            typographyValueInterpreter: LITERAL
-                            typography: body-2
-                            color: md:black
-                          useCustomLabel: true
-                          dataType: STRING
-                        - _type: TextField
-                          _name: CodePostal
-                          value: Etage.Batiment.CodePostal
-                          label: Code postal
-                          labelProperties:
-                            alignment: left
-                            typographyValueInterpreter: LITERAL
-                            typography: body-2
-                            color: md:black
-                          useCustomLabel: true
-                          dataType: STRING
-                        - _type: TextField
-                          _name: Ville
-                          value: Etage.Batiment.Ville
-                          label: Ville
-                          labelProperties:
-                            alignment: left
-                            typography: body-2
-                            color: md:black
-                          useCustomLabel: true
-                          dataType: STRING
-                        - _type: ReferenceField
-                          _name: FDN_Pays
-                          value: Etage.Batiment.FDN_Pays
-                          label: Pays
-                          labelProperties:
-                            alignment: left
-                            typography: body-2
-                            color: md:black    
-                          useCustomLabel: true
-                          dataType: STRING
-                          referencedEntity: Batiments.entities.Pays.Pays
-
-          - _type: FormContainer
-            _name: milieu
-            layoutDirection: ROW
-            content:
 
               - _type: FormSection
                 _name: Usage
@@ -249,58 +191,66 @@ formTabs:
                       dataType: STRING
                       referencedEntity: Batiments.entities.GenreLot.GenreLot
 
-                          
 
-          # Gestion interne
+          - _type: FormContainer
+            _name: milieu
+            layoutDirection: ROW
+            content:
+        
+                  
               - _type: FormSection
-                _name: GestionInterne
-                label: Gestion interne
+                _name: Localisation
+                label: Localisation
                 layoutDirection: COLUMN
                 visibleValue: '1'
                 visibleValueInterpreter: LITERAL
                 labelWidth: 200px
                 content:
-                  - _type: TextField
-                    _name: FDN_OrgaResp
-                    value: Etage.Batiment.Immeuble.FDN_OrgaResp
-                    label: Organisation responsable
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
+                    # Bloc Adresse/Ville
+                        - _type: TextField
+                          _name: Adresse
+                          value: Etage.Batiment.Adresse
+                          label: Adresse
+                          labelProperties:
+                            alignment: left
+                            typographyValueInterpreter: LITERAL
+                            typography: body-2
+                            color: md:black
+                          useCustomLabel: true
+                          dataType: STRING
+                        - _type: TextField
+                          _name: CodePostal
+                          value: Etage.Batiment.CodePostal
+                          label: Code postal
+                          labelProperties:
+                            alignment: left
+                            typographyValueInterpreter: LITERAL
+                            typography: body-2
+                            color: md:black
+                          useCustomLabel: true
+                          dataType: STRING
+                        - _type: TextField
+                          _name: Ville
+                          value: Etage.Batiment.Ville
+                          label: Ville
+                          labelProperties:
+                            alignment: left
+                            typography: body-2
+                            color: md:black
+                          useCustomLabel: true
+                          dataType: STRING
+                        - _type: ReferenceField
+                          _name: FDN_Pays
+                          value: Etage.Batiment.FDN_Pays
+                          label: Pays
+                          labelProperties:
+                            alignment: left
+                            typography: body-2
+                            color: md:black    
+                          useCustomLabel: true
+                          dataType: STRING
+                          referencedEntity: Batiments.entities.Pays.Pays
 
-                  - _type: TextField
-                    _name: FDN_Portefeuille
-                    value: Etage.Batiment.Immeuble.FDN_Portefeuille
-                    label: Portefeuille gestion
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
-
-                  - _type: TextField
-                    _name: SousPortefeuille
-                    value: Etage.Batiment.Immeuble.FDN_SousPortefeuille
-                    label: Sous-portefeuille gestion
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
-
-          - _type: FormContainer
-            _name: bas
-            layoutDirection: ROW
-            content:
-          # Caractéristiques générales
 
               - _type: FormSection
                 _name: SituationLocative
@@ -359,6 +309,12 @@ formTabs:
                     useCustomLabel: true
                     dataType: BOOLEAN   
 
+          - _type: FormContainer
+            _name: bas
+            layoutDirection: ROW
+            content:
+          # Caractéristiques générales
+
               - _type: FormSection
                 _name: CaracteristiquesGenerales
                 label: Caractéristiques générales
@@ -367,6 +323,20 @@ formTabs:
                 visibleValueInterpreter: LITERAL
                 labelWidth: 200px
                 content:
+
+                  - _type: CheckboxField
+                    _name: StatutERP
+                    value: StatutERP
+                    label: Statut ERP
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: BOOLEAN
+
+
                   - _type: CheckboxField
                     _name: StatutMeuble
                     value: StatutMeuble
@@ -391,6 +361,51 @@ formTabs:
                     useCustomLabel: true
                     dataType: BOOLEAN
 
+          # Gestion interne
+              - _type: FormSection
+                _name: GestionInterne
+                label: Gestion interne
+                layoutDirection: COLUMN
+                visibleValue: '1'
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
+                  - _type: TextField
+                    _name: FDN_OrgaResp
+                    value: Etage.Batiment.Immeuble.FDN_OrgaResp
+                    label: Organisation responsable
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+
+                  - _type: TextField
+                    _name: FDN_Portefeuille
+                    value: Etage.Batiment.Immeuble.FDN_Portefeuille
+                    label: Portefeuille gestion
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+
+                  - _type: TextField
+                    _name: SousPortefeuille
+                    value: Etage.Batiment.Immeuble.FDN_SousPortefeuille
+                    label: Sous-portefeuille gestion
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+
   - _type: FormTab
     _name: CycleVie
     label: Cycle de vie
@@ -400,6 +415,12 @@ formTabs:
     visibleValueInterpreter: LITERAL
     displayFormTabAs: ICON_LABEL
     content:
+    
+    - _type: FormContainer
+      _name: Cycle
+      layoutDirection: ROW
+      content:
+
       - _type: FormSection
         _name: Phase
         label: Phase

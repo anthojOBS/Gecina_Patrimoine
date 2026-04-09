@@ -63,6 +63,10 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: true
           executedOnFormOpen: false
+        - enricher: Batiments.entities.Immeuble.enrichers.DefautNbAscenceur
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: true
 
       formStepValidations:  
         - executedOnDataChange: true
@@ -94,6 +98,17 @@ rootStep:
           validationType: MANDATORY
           attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
 
+
+        - validator: Batiments.entities.Immeuble.validations.CheckCoherenceSecteur_Zone
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.ImmeubleToSecteurImmostat.SecteurImmostat
+        - validator: Batiments.entities.Immeuble.validations.CheckCoherenceSousSecteur_Secteur
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
         - validator: Batiments.entities.Immeuble.validations.CheckAscenseur
           executedOnDataChange: true
           executedOnFormOpen: true
@@ -129,6 +144,12 @@ rootStep:
           validationType: MANDATORY
           attribute:  Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
 
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckCoherenceSecteur_Zone
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckCoherenceSousSecteur_Secteur
         - onStepExit: BLOCK
           validationType: CHECK
           validator: Batiments.entities.Immeuble.validations.CheckAscenseur

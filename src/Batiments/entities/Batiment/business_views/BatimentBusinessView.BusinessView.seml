@@ -15,7 +15,7 @@ rootBusinessViewEntity:
   entity: Batiments.entities.Batiment.Batiment
   actionSet: Batiments.entities.Batiment.action_sets.BatimentActionSet
   collection: Batiments.entities.Batiment.collection_views.BatimentCollectionView
-  form: Batiments.entities.Batiment.forms.BatimentForm
+  form: Batiments.entities.Batiment.forms.BatimentConsultation
   outlineVisible: false
   displayRecordCount: ALWAYS
   businessEntitySearchConfigs:
@@ -105,7 +105,7 @@ rootBusinessViewEntity:
             overrideDefaultSort: false
             tableAllowed: true
             entity: Batiments.entities.Lot.Lot
-            form: Batiments.entities.Lot.forms.LotForm
+            form: Batiments.entities.Lot.forms.LotConsultation
             collection: Batiments.entities.Lot.collection_views.LotCollectionView
 
 
@@ -139,7 +139,7 @@ rootBusinessViewEntity:
         overrideDefaultSort: false
         tableAllowed: true
         entity: Batiments.entities.Lot.Lot
-        form: Batiments.entities.Lot.forms.LotForm
+        form: Batiments.entities.Lot.forms.LotConsultation
         collection: Batiments.entities.Lot.collection_views.LotCollectionView
         businessEntitySearchConfigs:
           - _name: TextConfig
@@ -194,7 +194,7 @@ rootBusinessViewEntity:
         entity: Batiments.entities.Batiment.Batiment
         actionSet: Batiments.entities.Batiment.action_sets.BatimentActionSet
         collection: Batiments.entities.Batiment.collection_views.BatimentCollectionView
-        form: Batiments.entities.Batiment.forms.BatimentForm
+        form: Batiments.entities.Batiment.forms.BatimentConsultation
         displayRecordCount: ALWAYS
         outlineVisible: false
         enableUserDefinedSort: true

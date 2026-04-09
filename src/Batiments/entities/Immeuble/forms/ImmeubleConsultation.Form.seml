@@ -557,7 +557,7 @@ formTabs:
   - _type: FormTab
     _name: Composition
     label: Composition
-    iconUrl: images://mdi/bank.svg
+    iconUrl: images://mdi/view-dashboard.svg
     documentationInterpreter: LITERAL
     visibleValue: "1"
     visibleValueInterpreter: LITERAL
@@ -617,7 +617,7 @@ formTabs:
               - _type: TextField
                 _name: NbNewLot
                 value:  lookup count (IdentifiantsERP) from Batiment.Etage.Lot  end 
-              #  value: lookup count (IdentifiantsERP) from Batiment.Etage.Lot where IdentifiantsERP like '[A-Za-z]%' end 
+               # value: lookup count (IdentifiantsERP) from Batiment.Etage.Lot where IdentifiantsERP like '[A-Za-z]%' end 
                 label: Nombre new lots
                 documentation: Nombre new lots.
                 labelProperties:
@@ -829,17 +829,6 @@ formTabs:
                             dataType: STRING
                             referencedEntity: Batiments.entities.Phase.Phase
 
-                          - _type: DateField
-                            _name: DateDebPhase
-                            value: DateDebPhase
-                            label: Date début phase
-                            labelProperties:
-                              alignment: left
-                              typographyValueInterpreter: LITERAL
-                              typography: body-2
-                              color: md:black
-                            useCustomLabel: true
-                            dataType: DATE
 
                       - _type: FormSection
                         _name: Restructuration
@@ -1044,7 +1033,7 @@ formTabs:
             referencedEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
           - _type: DateField
             _name: DateMiseCopro
-            value: DateMiseCopropriete
+            value: lookup first (DateVente) from Batiment.Etage.Lot where DateVente is not null order by DateVente desc end
             label: Date mise en copropriété
             documentation: Date à laquelle l’immeuble est mis en copropriété.
             labelProperties:
@@ -1053,7 +1042,7 @@ formTabs:
               typography: body-2
               color: md:black
             useCustomLabel: true
-            visibleValue: FID_OrgaResp = 'DR' 
+            visibleValue: FID_OrgaResp = 'DR' and (lookup first (DateVente) from Batiment.Etage.Lot where DateVente is not null order by DateVente desc end) is not null
             visibleValueInterpreter: SEMQL
             dataType: DATE      
       - _type: FormSection
@@ -1088,7 +1077,7 @@ formTabs:
   - _type: FormTab
     _name: Equipements
     label: Equipements
-    iconUrl: images://mdi/bank.svg
+    iconUrl: images://mdi/office-building-plus.svg
     documentationInterpreter: LITERAL
     visibleValue: FID_OrgaResp = 'DR' 
     visibleValueInterpreter: SEMQL

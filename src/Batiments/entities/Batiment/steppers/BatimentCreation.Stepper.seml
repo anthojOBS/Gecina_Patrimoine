@@ -1,0 +1,199 @@
+_package: Batiments.entities.Batiment.steppers
+_type: Stepper
+_name: BatimentCreation
+entity: Batiments.entities.Batiment.Batiment
+label: Batiments
+rootStep:
+  _type: CollectionStep
+  _name: Batiments
+  label: Batiments
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.Batiment.collection_views.BatimentCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Batiment
+      label: Batiment
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Batiment.forms.BatimentCreation.Batiment
+
+      formStepEnrichers:  
+        - enricher: Batiments.entities.Batiment.enrichers.DefautPays
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+        - enricher: Batiments.entities.Batiment.enrichers.StandardizeAddress
+          executedOnButtonClick: true
+          executedOnDataChange: false
+          executedOnFormOpen: false
+        - enricher: Batiments.entities.Batiment.enrichers.DefautDtDebUsage
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+
+      formStepValidations:  
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Batiment.Batiment.IdentifiantsERP
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Batiment.Batiment.Libelle_Batiment
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Batiment.Batiment.Adresse
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Batiment.Batiment.CodePostal
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Batiment.Batiment.Ville          
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.BatimentToPays.Pays
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.BatimentToUsage.Usage
+
+
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Batiment.Batiment.IdentifiantsERP
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Batiment.Batiment.Libelle_Batiment
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Batiment.Batiment.Adresse
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Batiment.Batiment.CodePostal
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Batiment.Batiment.Ville
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.BatimentToPays.Pays
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.BatimentToUsage.Usage
+        - onStepExit: WARN
+          validationType: DETECT_DUPS
+          matcher: Batiments.entities.Batiment.Batiment.Matcher
+
+    - _type: FormStep
+      _name: CycleDeVie
+      label: Cycle de vie de l'immeuble
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment
+
+      formStepEnrichers:   
+        - enricher: Batiments.entities.Batiment.enrichers.DefautPhase
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+        - enricher: Batiments.entities.Batiment.enrichers.DefautDtDebPhase
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+
+      formStepValidations:  
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute:  Batiments.references.BatimentToPhase.Phase
+
+
+    - _type: FormStep
+      _name: FiscaliteJuridique
+      label: Fiscalité et Juridique
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Batiment.forms.BatimentCreation.FiscaliteJuridique
+
+
+      formStepEnrichers:   
+        - enricher: Batiments.entities.Batiment.enrichers.DefautRegimeTVA
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+
+      formStepValidations:  
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute:  Batiments.references.BatimentToRegimeJuridique.RegimeJuridique
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute:  Batiments.references.BatimentToFiscaliteCible.FiscaliteCible
+
+
+stepperFinishValidations:
+
+  - onStepperFinish: WARN
+    validationType: DETECT_DUPS
+
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Batiment.Batiment.Libelle_Batiment
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Batiment.Batiment.IdentifiantsERP
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute:  Batiments.references.BatimentToUsage.Usage
+
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute:  Batiments.references.BatimentToPhase.Phase
+
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Batiment.Batiment.Adresse
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Batiment.Batiment.CodePostal  
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Batiment.Batiment.Ville  
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.references.BatimentToPays.Pays    
+
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute:  Batiments.references.BatimentToRegimeJuridique.RegimeJuridique
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute:  Batiments.references.BatimentToFiscaliteCible.FiscaliteCible
+

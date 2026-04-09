@@ -1,0 +1,33 @@
+_package: Batiments.references
+_type: Reference
+_name: BatimentToFiscaliteCible
+label: Batiment Fiscalite Cible
+description: Référence Batiment vers FiscaliteCible
+fromRoleDocumentation: |
+  Cette référence détermine la **FiscaliteCible** d'un **Batiment** dans son cycle de vie.
+  La FiscaliteCible indique l'état d'avancement du projet immobilier (en construction, livré, etc.).
+physicalName: BAT_FISCALITE_CIBLE_REF
+
+fromEntity: Batiments.entities.Batiment.Batiment
+fromRoleLabel: Batiment
+fromRoleName: Batiment
+fromRolePluralLabel: Batiments
+
+toEntity: Batiments.entities.FiscaliteCible.FiscaliteCible
+toRoleLabel: Fiscalite
+toRoleName: FiscaliteCible
+toRolePhysicalName: FISCALITE_CIBLE_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: La fiscalite cible est obligatoire pour un Batiment
+brokenValidationLabel: La fiscalite cible sélectionnée est invalide pour cet Batiment
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: FiscaliteCible
+  label: Fiscalite Cible
+  physicalName: FISCALITE_CIBLE_ID
+  searchable: true
+  entity: Batiments.entities.Batiment.Batiment

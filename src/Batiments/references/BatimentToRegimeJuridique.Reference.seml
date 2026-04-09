@@ -1,0 +1,33 @@
+_package: Batiments.references
+_type: Reference
+_name: BatimentToRegimeJuridique
+label: Batiment Régime Juridique
+description: Référence Batiment vers Régime Juridique
+fromRoleDocumentation: |
+  Cette référence associe un **Batiment** à son **Régime Juridique**.
+  Le régime juridique définit le statut légal et les modalités de gestion de l'Batiment.
+physicalName: BAT_REGIME_JUR_REF
+
+fromEntity: Batiments.entities.Batiment.Batiment
+fromRoleLabel: Batiment
+fromRoleName: Batiment
+fromRolePluralLabel: Batiments
+
+toEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
+toRoleLabel: Régime Juridique
+toRoleName: RegimeJuridique
+toRolePhysicalName: REGIME_JURIDIQUE_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: Le régime juridique est obligatoire pour un Batiment
+brokenValidationLabel: Le régime juridique sélectionné est invalide pour cet Batiment
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: RegimeJuridique
+  label: Régime Juridique de l'Batiment
+  physicalName: REGIME_JURIDIQUE_ID
+  searchable: true
+  entity: Batiments.entities.Batiment.Batiment

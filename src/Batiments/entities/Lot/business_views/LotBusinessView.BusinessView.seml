@@ -15,7 +15,7 @@ rootBusinessViewEntity:
   entity: Batiments.entities.Lot.Lot
   actionSet: Batiments.entities.Lot.action_sets.LotActionSet
   collection: Batiments.entities.Lot.collection_views.LotCollectionView
-  form: Batiments.entities.Lot.forms.LotForm
+  form: Batiments.entities.Lot.forms.LotConsultation
   outlineVisible: false
   displayRecordCount: ALWAYS
   businessEntitySearchConfigs:
@@ -77,7 +77,7 @@ rootBusinessViewEntity:
         entity: Batiments.entities.Lot.Lot
         actionSet: Batiments.entities.Lot.action_sets.LotActionSet
         collection: Batiments.entities.Lot.collection_views.LotCollectionView
-        form: Batiments.entities.Lot.forms.LotForm
+        form: Batiments.entities.Lot.forms.LotConsultation
         displayRecordCount: ALWAYS
         outlineVisible: false
         enableUserDefinedSort: true

@@ -30,7 +30,7 @@ rootStep:
       enabledOnParentEdit: true
       formFieldsMode: AUTO
       enableMasterValuePicking: false
-      formTab: Batiments.entities.Lot.forms.LotForm.Lot
+      formTab: Batiments.entities.Lot.forms.LotConsultation.Lot
 
       formStepValidations:
         - executedOnDataChange: true

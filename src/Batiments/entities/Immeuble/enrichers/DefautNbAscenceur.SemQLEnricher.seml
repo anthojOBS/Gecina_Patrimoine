@@ -1,0 +1,9 @@
+_package: Batiments.entities.Immeuble.enrichers
+_name: DefautNbAscenceur
+_type: SemQLEnricher
+entity: Batiments.entities.Immeuble.Immeuble
+label: Defaut nombre ascenceur
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: NbAscenseur
+    expression: case when FlagAscenseur ='0' then null  end

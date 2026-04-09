@@ -73,7 +73,7 @@ rootBusinessViewEntity:
         entity: Batiments.entities.Batiment.Batiment
         actionSet: Batiments.entities.Batiment.action_sets.BatimentActionSet
         collection: Batiments.entities.Batiment.collection_views.BatimentCollectionView
-        form: Batiments.entities.Batiment.forms.BatimentForm
+        form: Batiments.entities.Batiment.forms.BatimentConsultation
         displayRecordCount: ALWAYS
         displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
         gridAllowed: false
@@ -86,7 +86,7 @@ rootBusinessViewEntity:
 
 
         referenceAttributeNavigationConfigs:
-        - formField: Batiments.entities.Batiment.forms.BatimentForm.Batiment.SectionHaut.SectionHautGauche.IdentiteBatiment.FDN_Immeuble
+        - formField: Batiments.entities.Batiment.forms.BatimentConsultation.Batiment.SectionHaut.SectionHautGauche.IdentiteBatiment.FDN_Immeuble
           navigationMode: BUSINESS_OBJECT_VIEW
           businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
           form: Batiments.entities.Immeuble.forms.ImmeubleConsultation
@@ -110,7 +110,7 @@ rootBusinessViewEntity:
               entity: Batiments.entities.Batiment.Batiment
               actionSet: Batiments.entities.Batiment.action_sets.BatimentActionSet
               collection: Batiments.entities.Batiment.collection_views.BatimentCollectionView
-              form: Batiments.entities.Batiment.forms.BatimentForm
+              form: Batiments.entities.Batiment.forms.BatimentConsultation
               displayRecordCount: ALWAYS
               outlineVisible: false
               enableUserDefinedSort: true
@@ -217,7 +217,7 @@ rootBusinessViewEntity:
                   overrideDefaultSort: false
                   tableAllowed: true
                   entity: Batiments.entities.Lot.Lot
-                  form: Batiments.entities.Lot.forms.LotForm
+                  form: Batiments.entities.Lot.forms.LotConsultation
                   collection: Batiments.entities.Lot.collection_views.LotCollectionView
         
                   transitions:
@@ -240,7 +240,7 @@ rootBusinessViewEntity:
                         entity: Batiments.entities.Lot.Lot
                         actionSet: Batiments.entities.Lot.action_sets.LotActionSet
                         collection: Batiments.entities.Lot.collection_views.LotCollectionView
-                        form: Batiments.entities.Lot.forms.LotForm
+                        form: Batiments.entities.Lot.forms.LotConsultation
                         displayRecordCount: ALWAYS
                         outlineVisible: false
                         enableUserDefinedSort: true
@@ -281,7 +281,7 @@ rootBusinessViewEntity:
         overrideDefaultSort: false
         tableAllowed: true
         entity: Batiments.entities.Lot.Lot
-        form: Batiments.entities.Lot.forms.LotForm
+        form: Batiments.entities.Lot.forms.LotConsultation
         collection: Batiments.entities.Lot.collection_views.LotCollectionView
         businessEntitySearchConfigs:
           - _name: TextConfig

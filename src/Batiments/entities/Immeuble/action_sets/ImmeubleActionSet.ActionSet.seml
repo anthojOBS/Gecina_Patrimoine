@@ -16,7 +16,7 @@ actions:
     allowOtherPublishers: true
   - _type: EditAction
     _name: EditAuthorImmeubles
-    label: Edition immeuble
+    label: Modification immeuble
     useCustomLabel: true
     stepper: Batiments.entities.Immeuble.steppers.ImmeubleEdition
     multipleSelectionAllowed: true
@@ -26,7 +26,7 @@ actions:
     waitDialogEnabled: false
   - _type: EditAction
     _name: EditImmeubleCycleVie
-    label: Edition cycle de vie
+    label: Modification cycle de vie
     useCustomLabel: true
     stepper: Batiments.entities.Immeuble.steppers.ImmeublesEditCycleVie
     multipleSelectionAllowed: true
@@ -36,7 +36,7 @@ actions:
     waitDialogEnabled: false
   - _type: EditAction
     _name: EditImmeubleFiscaliteJuridique
-    label: Edition fiscalité et juridique
+    label: Modification fiscalité et juridique
     useCustomLabel: true
     stepper: Batiments.entities.Immeuble.steppers.ImmeublesEditFiscaliteJuridique
     multipleSelectionAllowed: true
@@ -79,17 +79,17 @@ actions:
     allowOtherPublishers: true
   - _type: BrowseGraphAction
     _name: BrowseGraph
-    label: Browse Graph
+    label: Recherche graphique
     useCustomLabel: true
     waitDialogEnabled: false
   - _type: DirectConfirmDupsAction
     _name: DirectConfirmDuplicates
-    label: Direct Confirm Duplicates
+    label: Confirmer doublons directement
     useCustomLabel: false
     waitDialogEnabled: false
   - _type: ReviewAndConfirm
     _name: ReviewAndConfirmDuplicatesManageDuplicatesOnImmeuble
-    label: Review and Confirm Duplicates
+    label: Revue and Validation doublons
     useCustomLabel: true
     dupsManager: Batiments.entities.Immeuble.dups_managers.ManageDuplicatesOnImmeuble
     enableEdit: true
@@ -97,14 +97,14 @@ actions:
     waitDialogEnabled: false
   - _type: MergeOrSplit
     _name: MergeOrSplitDuplicatesManageDuplicatesOnImmeuble
-    label: Merge Or Split Duplicates
+    label: Fusion et défusion
     useCustomLabel: true
     dupsManager: Batiments.entities.Immeuble.dups_managers.ManageDuplicatesOnImmeuble
     enableEdit: true
     waitDialogEnabled: false
   - _type: ReviewSuggestions
     _name: ReviewSuggestionsDuplicatesManageDuplicatesOnImmeuble
-    label: Review Duplicates Suggestions
+    label: Suggestions de doublons
     useCustomLabel: true
     dupsManager: Batiments.entities.Immeuble.dups_managers.ManageDuplicatesOnImmeuble
     enableEdit: true
@@ -113,7 +113,7 @@ actions:
     mandateResolveAllSuggestions: false
   - _type: ExplainRecordAction
     _name: ExplainRecord
-    label: Explain Record
+    label: Expliquer l'enregistrement
     useCustomLabel: true
     displayCard: Batiments.entities.Immeuble.display_cards.ImmeubleDisplayCard
     formTab: Batiments.entities.Immeuble.forms.ImmeubleConsultation.Immeuble

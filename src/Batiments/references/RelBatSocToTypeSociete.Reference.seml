@@ -17,7 +17,7 @@ toRoleLabel: Type Societe
 toRoleName: TypeSociete
 toRolePhysicalName: TYPE_SOCIETE_ID
 
-oneToMany: false
+oneToMany: true
 deletePropagation: RESTRICT
 validationScope: PRE_CONSO
 mandatoryValidationLabel: Le Type Societe est obligatoire pour une société

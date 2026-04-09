@@ -550,7 +550,7 @@ formTabs:
   - _type: FormTab
     _name: Composition
     label: Composition
-    iconUrl: images://mdi/bank.svg
+    iconUrl: images://mdi/view-dashboard.svg
     documentationInterpreter: LITERAL
     visibleValue: "1"
     visibleValueInterpreter: LITERAL

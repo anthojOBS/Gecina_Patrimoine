@@ -1,6 +1,6 @@
 _package: Batiments.entities.Batiment.forms
 _type: Form
-_name: BatimentForm
+_name: BatimentCreation
 entity: Batiments.entities.Batiment.Batiment
 default: true
 formTabs:
@@ -53,17 +53,7 @@ formTabs:
                         useCustomLabel: true
                         dataType: STRING
 
-                      - _type: CheckboxField
-                        _name: BatimentPrincipal
-                        value: BatimentPrincipal
-                        label: Statut bâtiment principal
-                        labelProperties:
-                          alignment: left
-                          typographyValueInterpreter: LITERAL
-                          typography: body-2
-                          color: md:black
-                        useCustomLabel: true
-                        dataType: BOOLEAN
+
 
                       - _type: ReferenceField
                         _name: FDN_Immeuble
@@ -78,19 +68,6 @@ formTabs:
                         dataType: STRING
                         referencedEntity: Batiments.entities.Immeuble.Immeuble
                         
-                      - _type: TextField
-                        _name: SuperficieUtile
-                        # value: SuperficieUtile
-                        value: case when SuperficieUtile is not null then SuperficieUtile || ' m²' else null end
-                        label: Superficie totale avec QP
-                        documentation: Addition de toutes les surfaces utiles avec QP Surface totale du bâtiment exprimée en m²
-                        labelProperties:
-                          alignment: left
-                          typographyValueInterpreter: LITERAL
-                          typography: body-2
-                          color: md:black
-                        useCustomLabel: true
-                        dataType: STRING
 
 
 
@@ -158,8 +135,6 @@ formTabs:
                             dataType: STRING
                             referencedEntity: Batiments.entities.Pays.Pays
 
-
-
           # Usage
       # SECTION HAUT (FormContainer)
       - _type: FormContainer
@@ -193,57 +168,7 @@ formTabs:
                           useCustomLabel: true
                           dataType: STRING
                           referencedEntity: Batiments.entities.Usage.Usage
-
-          # Gestion interne
-              - _type: FormContainer
-                _name: SectionBasDroite
-                layoutDirection: COLUMN
-                content:
-                  - _type: FormSection
-                    _name: GestionInterne
-                    label: Gestion interne
-                    layoutDirection: COLUMN
-                    visibleValue: '1'
-                    visibleValueInterpreter: LITERAL
-                    labelWidth: 200px
-                    content:
-                      - _type: TextField
-                        _name: FDN_OrgaResp
-                        value: Immeuble.FDN_OrgaResp
-                        label: Organisation responsable
-                        documentation: Direction métier en charge de la gestion opérationnelle de l’actif (Direction Résidentielle / Bureaux).
-                        labelProperties:
-                          alignment: left
-                          typographyValueInterpreter: LITERAL
-                          typography: body-2
-                          color: md:black
-                        useCustomLabel: true
-                        dataType: STRING
-
-                      - _type: TextField
-                        _name: FDN_Portefeuille
-                        value: Immeuble.FDN_Portefeuille
-                        label: Portefeuille gestion
-                        documentation: Ensemble d’actifs rattachés à une même équipe opérationnelle (ex. Portefeuille 1, Portefeuille 2…).
-                        labelProperties:
-                          alignment: left
-                          typographyValueInterpreter: LITERAL
-                          typography: body-2
-                          color: md:black
-                        useCustomLabel: true
-                        dataType: STRING
-
-                      - _type: TextField
-                        _name: SousPortefeuille
-                        value: Immeuble.FDN_SousPortefeuille
-                        label: Sous-portefeuille gestion
-                        labelProperties:
-                          alignment: left
-                          typographyValueInterpreter: LITERAL
-                          typography: body-2
-                          color: md:black
-                        useCustomLabel: true
-                        dataType: STRING
+       
 
   - _type: FormTab
     _name: CycleVieBatiment
@@ -254,133 +179,119 @@ formTabs:
     visibleValueInterpreter: LITERAL
     displayFormTabAs: ICON_LABEL
     content:
-      - _type: FormSection
-        _name: Phase
-        label: Phase
-        layoutDirection: COLUMN
-        visibleValue: '1'
-        visibleValueInterpreter: LITERAL
-        labelWidth: 300px
+      - _type: FormContainer
+        _name: Global
+        layoutDirection: ROW
         content:
-          - _type: ReferenceField
-            _name: FDN_Phase
-            value: Immeuble.FDN_Phase
-            label: Phase
-            documentation: Statut du bien dans son cycle de vie (initiale, active, terminée).
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: STRING
-            referencedEntity: Batiments.entities.Phase.Phase
+              - _type: FormContainer
+                _name: Gauche
+                layoutDirection: COLUMN
+                content:
+                  - _type: FormSection
+                    _name: Phase
+                    label: Phase
+                    layoutDirection: COLUMN
+                    visibleValue: '1'
+                    visibleValueInterpreter: LITERAL
+                    labelWidth: 300px
+                    content:
+                      - _type: ReferenceField
+                        _name: FDN_Phase
+                        value: FDN_Phase
+                        label: Phase
+                        documentation: Statut du bien dans son cycle de vie (initiale, active, terminée).
+                        labelProperties:
+                          alignment: left
+                          typographyValueInterpreter: LITERAL
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: STRING
+                        referencedEntity: Batiments.entities.Phase.Phase
 
-          - _type: TextField
-            _name: DateDebPhase
-            value: Immeuble.DateDebPhase
-            label: Date début phase
-            documentation: Date à partir de laquelle la phase actuelle est effective.
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: DATE
+                  - _type: FormSection
+                    _name: Construction
+                    label: Construction
+                    layoutDirection: COLUMN
+                    visibleValue: '1'
+                    visibleValueInterpreter: LITERAL
+                    labelWidth: 300px
+                    content:
+                          - _type: ReferenceField
+                            _name: FDN_PeriodeConstruction
+                            value: Immeuble.FDN_PeriodeConstruction
+                            label: Période de construction
+                            labelProperties:
+                              alignment: left
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: STRING
+                            referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
+                          - _type: TextField
+                            _name: DateDebutConstruction
+                            value: Immeuble.DateDebutConstruction
+                            label: Date début construction
+                            documentation: Date de démarrage des travaux de construction de l’actif.
+                            labelProperties:
+                              alignment: left
+                              typographyValueInterpreter: LITERAL
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: DATE
+                          - _type: TextField
+                            _name: DateFinConstruction
+                            value: Immeuble.DateFinConstruction
+                            label: Date fin construction
+                            documentation: Date de fin des travaux de construction.
+                            labelProperties:
+                              alignment: left
+                              typographyValueInterpreter: LITERAL
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: DATE
+                          - _type: TextField
+                            _name: DateLivraison
+                            value: Immeuble.DateLivraison
+                            label: Date livraison
+                            documentation: Date de mise à disposition de l’actif après construction. (uniquement pour les VEFA). Ne pas afficher si pas d'info. Afficher que si VEFA et si on a l'info
+                            labelProperties:
+                              alignment: left
+                              typographyValueInterpreter: LITERAL
+                              typography: body-2
+                              color: md:black
+                            useCustomLabel: true
+                            dataType: DATE
+             
+              - _type: FormContainer
+                _name: Droite
+                layoutDirection: COLUMN
+                content:
 
-      - _type: FormSection
-        _name: AcquisitionCession
-        label: Acquisition/Cession
-        layoutDirection: COLUMN
-        visibleValue: "1"
-        visibleValueInterpreter: LITERAL
-        labelWidth: 300px
-        content:
+                  - _type: FormSection
+                    _name: AcquisitionCession
+                    label: Acquisition/Cession
+                    layoutDirection: COLUMN
+                    visibleValue: "1"
+                    visibleValueInterpreter: LITERAL
+                    labelWidth: 300px
+                    content:
 
-              - _type: TextField
-                _name: DateAcquisition
-                value: Immeuble.DateAcquisition
-                label: Date acquisition
-                documentation: Date d’achat de l’immeuble par la société propriétaire.
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
-              - _type: TextField
-                _name: DateVente
-                value: Immeuble.DateVente
-                label: Date vente
-                documentation: Date effective de cession juridique (si applicable).
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
+                        - _type: TextField
+                          _name: DateAcquisition
+                          value: Immeuble.DateAcquisition
+                          label: Date acquisition
+                          documentation: Date d’achat de l’immeuble par la société propriétaire.
+                          labelProperties:
+                            alignment: left
+                            typographyValueInterpreter: LITERAL
+                            typography: body-2
+                            color: md:black
+                          useCustomLabel: true
+                          dataType: DATE
 
-      - _type: FormSection
-        _name: Construction
-        label: Construction
-        layoutDirection: COLUMN
-        visibleValue: '1'
-        visibleValueInterpreter: LITERAL
-        labelWidth: 300px
-        content:
-              - _type: ReferenceField
-                _name: FDN_PeriodeConstruction
-                value: Immeuble.FDN_PeriodeConstruction
-                label: Période de construction
-                labelProperties:
-                  alignment: left
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: STRING
-                referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
-              - _type: TextField
-                _name: DateDebutConstruction
-                value: Immeuble.DateDebutConstruction
-                label: Date début construction
-                documentation: Date de démarrage des travaux de construction de l’actif.
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
-              - _type: TextField
-                _name: DateFinConstruction
-                value: Immeuble.DateFinConstruction
-                label: Date fin construction
-                documentation: Date de fin des travaux de construction.
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
-              - _type: TextField
-                _name: DateLivraison
-                value: Immeuble.DateLivraison
-                label: Date livraison
-                documentation: Date de mise à disposition de l’actif après construction. (uniquement pour les VEFA). Ne pas afficher si pas d'info. Afficher que si VEFA et si on a l'info
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
-
-
-  
 
   - _type: FormTab
     _name: FiscaliteJuridique
@@ -401,7 +312,7 @@ formTabs:
         content:
           - _type: TextField
             _name: FDN_FiscaliteCible
-            value: Immeuble.FDN_FiscaliteCible
+            value: FDN_FiscaliteCible
             label: Régime TVA
             documentation: Régime de taxation du bien (non soumis, prorata, soumis 100%).
             labelProperties:
@@ -413,7 +324,7 @@ formTabs:
             dataType: STRING
           - _type: TextField
             _name: Juridique
-            value: Immeuble.FDN_RegimeJuridique
+            value: FDN_RegimeJuridique
             label: Régime juridique           
             documentation: monopropriété, copropriété, ASL, bail emphytéotique, réserve foncière, prise à bail, etc.
             labelProperties:
@@ -424,25 +335,4 @@ formTabs:
             useCustomLabel: true
             dataType: STRING
             referencedEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
-      - _type: FormSection
-        _name: Societes
-        label: Société 
-        layoutDirection: COLUMN
-        visibleValue: "1"
-        visibleValueInterpreter: LITERAL
-        labelWidth: 300px
-        content:
-          - _type: FormCollection
-            _name: Societes
-            label: Société 
-            useCustomLabel: true
-            collection: Batiments.entities.RelBatSoc.collection_views.Societe
-            tableAllowed: true
-            listAllowed: false
-            gridAllowed: false
-            displayRecordCount: ALWAYS
-            enableUserDefinedSort: true
-            transitionPath: RelBatSoc
-            sortExpression: 1 DESC
-            filter:  1=1
-            targetEntity: Batiments.entities.RelBatSoc.RelBatSoc
+

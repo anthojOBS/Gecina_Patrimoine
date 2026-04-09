@@ -446,7 +446,15 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
     referencedEntity: Batiments.entities.Usage.Usage
-    
+
+  - _type: TextColumn
+    _name: DateDebUsage
+    value: DateDebUsage
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+
   - _type: HyperlinkColumn
     _name: BinaryContent
     value: BinaryContent
