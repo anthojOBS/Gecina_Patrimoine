@@ -132,7 +132,22 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
+                    visibleValue: FID_TypologieLot in ('AP','PK','PI')
+                    visibleValueInterpreter: SEMQL
                     dataType: STRING
+                  - _type: CheckboxField
+                    _name: StatutNewLot
+                    value: StatutNewLot
+                    label: Statut new lot
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+                    visibleValueInterpreter: SEMQL
+                    dataType: BOOLEAN
 
               - _type: FormSection
                 _name: Usage
@@ -293,6 +308,8 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
+                    visibleValue: StatutLouable = '1' 
+                    visibleValueInterpreter: SEMQL
                     dataType: STRING
                     referencedEntity: Batiments.entities.GenreLot.GenreLot
 
@@ -404,7 +421,124 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
+                    visibleValueInterpreter: SEMQL
+                    visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DB' 
                     dataType: STRING
+
+                  - _type: TextField
+                    _name: PerimetreGestion
+                    value: Etage.Batiment.Immeuble.FDN_PerimetreGestion
+                    label: Périmètre gestion
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValueInterpreter: SEMQL
+                    visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+                    dataType: STRING
+
+
+  - _type: FormTab
+    _name: Composition
+    label: Composition
+    iconUrl: images://mdi/view-dashboard.svg
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: ICON_LABEL
+    content:
+      - _type: FormContainer
+        _name: Composition
+        layoutDirection: COLUMN
+        content:
+
+          - _type: FormSection
+            _name: Superficies
+            label: Superficies
+            layoutDirection: COLUMN
+            visibleValue: "1"
+            visibleValueInterpreter: LITERAL
+            labelWidth: 300px
+            content:
+              - _type: TextField
+                _name: SuperficieHabitable
+                value: case when SuperficieHabitable is not null then SuperficieHabitable || ' m²' else null end
+                label: Superficie habitable (SHAB)
+                documentation: Superficie habitable (SHAB).
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: INTEGER
+
+              - _type: TextField
+                _name: SuperficieUtileSansQP
+                value: case when SuperficieUtileSansQP is not null then SuperficieUtileSansQP || ' m²' else null end
+                label: Superficie utile sans QP
+                documentation: Superficie utile sans quote-part de parties communes.
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: INTEGER 
+  
+              - _type: TextField
+                _name: SuperficieUtileQP
+                value: case when SuperficieUtileQP is not null then SuperficieUtileQP || ' m²' else null end
+                label: Superficie utile avec QP
+                documentation: Superficie utile avec quote-part de parties communes.
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: INTEGER 
+
+              - _type: TextField
+                _name: SuperficieUtilePonderee
+                value: case when SuperficieUtilePonderee is not null then SuperficieUtilePonderee || ' m²' else null end
+                label: Superficie utile pondérée  
+                documentation: Superficie utile pondérée.
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: INTEGER 
+
+
+           
+          - _type: FormSection
+            _name: Services
+            label: Services non individualisés
+            layoutDirection: COLUMN
+            visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+            visibleValueInterpreter: SEMQL
+            labelWidth: 300px
+            content:
+              - _type: CheckboxField
+                _name: StatutSNI
+                value: StatutSNI
+                label: Statut SNI
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+                visibleValueInterpreter: SEMQL
+                dataType: BOOLEAN
+
+
 
   - _type: FormTab
     _name: CycleVie
@@ -431,7 +565,7 @@ formTabs:
         content:
           - _type: ReferenceField
             _name: FDN_Phase
-            value: Etage.Batiment.Immeuble.FDN_Phase
+            value: FDN_Phase
             label: Phase
             labelProperties:
               alignment: left
@@ -444,7 +578,7 @@ formTabs:
 
           - _type: TextField
             _name: DateDebPhase
-            value: Etage.Batiment.Immeuble.DateDebPhase
+            value: DateDebPhase
             label: Date début phase
             labelProperties:
               alignment: left
@@ -476,7 +610,7 @@ formTabs:
                 dataType: DATE
               - _type: TextField
                 _name: DateVente
-                value: Etage.Batiment.Immeuble.DateVente
+                value: DateVente
                 label: Date vente
                 labelProperties:
                   alignment: left
@@ -486,7 +620,19 @@ formTabs:
                 useCustomLabel: true
                 dataType: DATE
 
-
+              - _type: TextField
+                _name: NomAcquereur
+                value: NomAcquereur
+                label: Nom acquéreur
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+                visibleValueInterpreter: SEMQL
+                dataType: STRING
 
 
 
@@ -564,12 +710,14 @@ formTabs:
               typography: body-2
               color: md:black
             useCustomLabel: true
+            visibleValue: StatutCopropriete = '1' 
+            visibleValueInterpreter: SEMQL
             dataType: STRING
 
           - _type: CheckboxField
             _name: StatutSousLocation
             value: StatutSousLocation
-            label: Statut sous-location 
+            label: Statut sous-location  
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL
@@ -578,25 +726,383 @@ formTabs:
             useCustomLabel: true
             dataType: BOOLEAN
 
-      - _type: FormSection
-        _name: Societe
-        label: Sociétés
+  - _type: FormTab
+    _name: Amenagement
+    label: Aménagement
+    iconUrl: images://mdi/home-outline.svg
+    documentationInterpreter: LITERAL
+    visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+    visibleValueInterpreter: SEMQL
+    displayFormTabAs: ICON_LABEL
+    content:
+      - _type: FormContainer
+        _name: GlobalAmenagement
         layoutDirection: COLUMN
-        visibleValue: "1"
-        visibleValueInterpreter: LITERAL
-        labelWidth: 200px
         content:
-          - _type: FormCollection
-            _name: Societes
-            label: Sociétés 
-            useCustomLabel: true
-            collection: Batiments.entities.RelLotSoc.collection_views.Societe
-            tableAllowed: true
-            listAllowed: false
-            gridAllowed: false
-            displayRecordCount: ALWAYS
-            enableUserDefinedSort: true
-            transitionPath: RelLotSoc
-            sortExpression: 1 DESC
-            filter: 1=1
-            targetEntity: Batiments.entities.RelLotSoc.RelLotSoc
+          - _type: FormSection
+            _name: Pieces
+            label: Pièces
+            layoutDirection: COLUMN
+            visibleValue: "1"
+            visibleValueInterpreter: LITERAL
+            labelWidth: 200px
+            content:
+              - _type: TextField
+                _name: NombreChambres
+                value: NombreChambres
+                label: Nombre chambres
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: TextField
+                _name: NombreSallesEau
+                value: NombreSallesEau
+                label: Nombre salles d'eau
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: TextField
+                _name: NombreSallesBain
+                value: NombreSallesBain
+                label: Nombre salles de bain
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: TextField
+                _name: NombreWC
+                value: NombreWC
+                label: Nombre WC
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: TextField
+                _name: NombreWCSepares
+                value: NombreWCSepares
+                label: Nombre WC séparés
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: CheckboxField
+                _name: StatutSejour
+                value: StatutSejour
+                label: Statut séjour
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+              - _type: TextField
+                _name: SuperficieSejour
+                value: SuperficieSejour
+                label: Superficie séjour
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: CheckboxField
+                _name: StatutEntree
+                value: StatutEntree
+                label: Statut entrée
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+              - _type: TextField
+                _name: Placards
+                value: Placards
+                label: Placards
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+
+          - _type: FormSection
+            _name: Cuisine
+            label: Cuisine
+            layoutDirection: COLUMN
+            visibleValue: "1"
+            visibleValueInterpreter: LITERAL
+            labelWidth: 200px
+            content:
+              - _type: TextField
+                _name: TypeCuisine
+                value: TypeCuisine
+                label: Type cuisine
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: TextField
+                _name: EtatCuisine
+                value: EtatCuisine
+                label: Etat cuisine
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: TextField
+                _name: SuperficieCuisine
+                value: SuperficieCuisine
+                label: Superficie cuisine
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: CheckboxField
+                _name: StatutAmenagementCuisine
+                value: StatutAmenagementCuisine
+                label: Statut aménagement cuisine
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+              - _type: CheckboxField
+                _name: StatutPlaque
+                value: StatutPlaque
+                label: Statut plaque
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+              - _type: CheckboxField
+                _name: StatutHotte
+                value: StatutHotte
+                label: Statut hotte
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: CheckboxField
+                _name: StatutRefrigerateur
+                value: StatutRefrigerateur
+                label: Statut réfrigérateur
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+              - _type: TextField
+                _name: PlanTravail
+                value: PlanTravail
+                label: Plan de travail
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+
+          - _type: FormSection
+            _name: OrientationExposition
+            label: Orientation et exposition
+            layoutDirection: COLUMN
+            visibleValue: "1"
+            visibleValueInterpreter: LITERAL
+            labelWidth: 200px
+            content:
+              - _type: TextField
+                _name: Exposition
+                value: Exposition
+                label: Exposition
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: TextField
+                _name: Orientation
+                value: Orientation
+                label: Orientation
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: TextField
+                _name: OrientationTerrasse
+                value: OrientationTerrasse
+                label: Orientation terrasse
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: TextField
+                _name: OrientationBalcon
+                value: OrientationBalcon
+                label: Orientation balcon
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: TextField
+                _name: OrientationLoggia
+                value: OrientationLoggia
+                label: Orientation loggia
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+
+
+          - _type: FormSection
+            _name: EspacesExterieurs
+            label: Espaces extérieurs
+            layoutDirection: COLUMN
+            visibleValue: "1"
+            visibleValueInterpreter: LITERAL
+            labelWidth: 200px
+            content: 
+              - _type: CheckboxField
+                _name: StatutTerrasse
+                value: StatutTerrasse
+                label: Statut terrasse
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+              - _type: TextField
+                _name: SuperficieTerrasse
+                value: case when SuperficieTerrasse is not null then SuperficieTerrasse || ' m²' else null end
+                label: Superficie terrasse
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: CheckboxField
+                _name: StatutBalcon
+                value: StatutBalcon
+                label: Statut balcon
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+              - _type: TextField
+                _name: SuperficieBalcon
+                value: case when SuperficieBalcon is not null then SuperficieBalcon || ' m²' else null end
+                label: Superficie balcon
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: CheckboxField
+                _name: StatutLoggia
+                value: StatutLoggia
+                label: Statut loggia
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+              - _type: TextField
+                _name: SuperficieLoggia
+                value: case when SuperficieLoggia is not null then SuperficieLoggia || ' m²' else null end
+                label: Superficie loggia
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+              - _type: CheckboxField
+                _name: StatutJardin
+                value: StatutJardin
+                label: Statut jardin
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+              - _type: TextField
+                _name: SuperficieJardin
+                value: case when SuperficieJardin is not null then SuperficieJardin || ' m²' else null end
+                label: Superficie jardin
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+

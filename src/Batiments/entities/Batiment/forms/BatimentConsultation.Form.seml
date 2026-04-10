@@ -310,8 +310,7 @@ formTabs:
                 dataType: INTEGER
               - _type: TextField
                 _name: NbNewLot
-                value:  lookup count (IdentifiantsERP) from Etage.Lot  end 
-               # value: lookup count (IdentifiantsERP) from Batiment.Etage.Lot where IdentifiantsERP like '[A-Za-z]%' end 
+                value: lookup count (IdentifiantsERP) from Etage.Lot where StatutNewLot = '1' end 
                 label: Nombre new lots
                 documentation: Nombre new lots.
                 labelProperties:

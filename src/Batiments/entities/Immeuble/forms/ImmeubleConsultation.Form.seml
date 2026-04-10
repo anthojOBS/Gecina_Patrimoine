@@ -616,8 +616,7 @@ formTabs:
                 dataType: INTEGER
               - _type: TextField
                 _name: NbNewLot
-                value:  lookup count (IdentifiantsERP) from Batiment.Etage.Lot  end 
-               # value: lookup count (IdentifiantsERP) from Batiment.Etage.Lot where IdentifiantsERP like '[A-Za-z]%' end 
+                value: lookup count (IdentifiantsERP) from Batiment.Etage.Lot where StatutNewLot = '1' end 
                 label: Nombre new lots
                 documentation: Nombre new lots.
                 labelProperties:
@@ -781,7 +780,7 @@ formTabs:
             enableUserDefinedSort: true
             transitionPath: Batiment.Etage.Lot
             sortExpression: 1 DESC
-            filter: FID_TypologieLot = 'PL'
+            filter: StatutNewLot = '1'
             targetEntity: Batiments.entities.Lot.Lot
             height: 300
             formCollectionSearchConfigs:

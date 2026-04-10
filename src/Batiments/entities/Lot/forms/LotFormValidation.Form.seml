@@ -36,17 +36,6 @@ formTabs:
                   color: md:black
                   alignment: left
               - _type: TextField
-                _name: IdentifiantREFGolden
-                value: GoldenRecord.IdentifiantREF
-                useCustomLabel: false
-                dataType: STRING
-                authoringModeValueInterpreter: LITERAL
-                authoringMode: force_read_only
-                labelProperties:
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-              - _type: TextField
                 _name: IdentifiantsERPGolden
                 value: GoldenRecord.IdentifiantsERP
                 useCustomLabel: false
@@ -81,7 +70,7 @@ formTabs:
                   color: md:black
               - _type: TextField
                 _name: SuperficieGolden
-                value: GoldenRecord.SuperficieUtile
+                value: GoldenRecord.SuperficieHabitable
                 useCustomLabel: false
                 dataType: DECIMAL
                 authoringModeValueInterpreter: LITERAL
@@ -159,18 +148,6 @@ formTabs:
                   contentBackgroundColorValueInterpreter: SEMQL
                   contentBackgroundColor: case when LotCode != GoldenRecord.LotCode or (GoldenRecord.LotCode is null and LotCode is not null) then 'css:yellow' else 'css:white' end
               - _type: TextField
-                _name: IdentifiantREF
-                value: IdentifiantREF
-                useCustomLabel: false
-                dataType: STRING
-                labelProperties:
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                componentProperties:
-                  contentBackgroundColorValueInterpreter: SEMQL
-                  contentBackgroundColor: case when IdentifiantREF != GoldenRecord.IdentifiantREF or (GoldenRecord.IdentifiantREF is null and IdentifiantREF is not null) then 'css:yellow' else 'css:white' end
-              - _type: TextField
                 _name: IdentifiantsERP
                 value: IdentifiantsERP
                 useCustomLabel: false
@@ -208,8 +185,8 @@ formTabs:
                   contentBackgroundColor: case when Usage != GoldenRecord.Usage or (GoldenRecord.Usage is null and Usage is not null) then 'css:yellow' else 'css:white' end
               
               - _type: TextField
-                _name: SuperficieUtile
-                value: SuperficieUtile
+                _name: SuperficieHabitable
+                value: SuperficieHabitable
                 useCustomLabel: false
                 dataType: DECIMAL
                 labelProperties:

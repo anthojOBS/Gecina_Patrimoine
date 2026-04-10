@@ -16305,23 +16305,6 @@
                 ],
                 "atomicAttributes": [
                     {
-                        "qualifiedName": "Batiments.entities.Lot.Lot.IdentifiantREF",
-                        "_type": "AtomicAttribute",
-                        "abstractAtomicType": "String",
-                        "goldenAttribute": true,
-                        "i18ned": false,
-                        "lovValidationScope": "NONE",
-                        "mandatory": false,
-                        "mandatoryValidationLabel": "",
-                        "mandatoryValidationScope": "NONE",
-                        "multiValued": false,
-                        "physicalColName": "IDENTIFIANT_REF",
-                        "valueSeparator": "",
-                        "label": "Identifiant REF",
-                        "length": 100,
-                        "searchable": true
-                    },
-                    {
                         "qualifiedName": "Batiments.entities.Lot.Lot.IdentifiantsERP",
                         "_type": "AtomicAttribute",
                         "abstractAtomicType": "String",
@@ -16371,7 +16354,7 @@
                         "length": 150
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Lot.Lot.SuperficieUtile",
+                        "qualifiedName": "Batiments.entities.Lot.Lot.SuperficieHabitable",
                         "_type": "AtomicAttribute",
                         "abstractAtomicType": "Decimal",
                         "goldenAttribute": true,
@@ -16381,9 +16364,9 @@
                         "mandatoryValidationLabel": "",
                         "mandatoryValidationScope": "NONE",
                         "multiValued": false,
-                        "physicalColName": "SUPERFICIE_UTILE",
+                        "physicalColName": "SUPERFICIE_HABITABLE",
                         "valueSeparator": "",
-                        "label": "Superficie Utile",
+                        "label": "Superficie Habitable",
                         "precision": 15,
                         "scale": 2
                     },
@@ -16485,6 +16468,21 @@
                         "label": "Date début statut"
                     },
                     {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.DateDebPhase",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Date",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "DATE_DEB_PHASE",
+                        "valueSeparator": "",
+                        "label": "Date début phase"
+                    },
+                    {
                         "qualifiedName": "Batiments.entities.Lot.Lot.DateVente",
                         "_type": "AtomicAttribute",
                         "abstractAtomicType": "Date",
@@ -16498,6 +16496,36 @@
                         "physicalColName": "DATE_VENTE",
                         "valueSeparator": "",
                         "label": "Date vente"
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.StatutSNI",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Boolean",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "STATUT_SNI",
+                        "valueSeparator": "",
+                        "label": "Statut SNI"
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.StatutNewLot",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Boolean",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "STATUT_NEW_LOT",
+                        "valueSeparator": "",
+                        "label": "Statut new lot"
                     },
                     {
                         "qualifiedName": "Batiments.entities.Lot.Lot.StatutERP",
@@ -16622,6 +16650,23 @@
                         "searchable": false
                     },
                     {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.NomAcquereur",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "NOM_ACQUEREUR",
+                        "valueSeparator": "",
+                        "label": "Nom acquéreur",
+                        "length": 255,
+                        "searchable": false
+                    },
+                    {
                         "qualifiedName": "Batiments.entities.Lot.Lot.NumeroCopropriete",
                         "_type": "AtomicAttribute",
                         "abstractAtomicType": "String",
@@ -16652,6 +16697,476 @@
                         "physicalColName": "DATE_REGIME_TVA",
                         "valueSeparator": "",
                         "label": "Date régime TVA"
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.NombreChambres",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "NOMBRE_CHAMBRES",
+                        "valueSeparator": "",
+                        "label": "Nombre chambres",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.NombreSallesEau",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "NOMBRE_SALLES_EAU",
+                        "valueSeparator": "",
+                        "label": "Nombre salles d'eau",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.NombreSallesBain",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "NOMBRE_SALLES_BAIN",
+                        "valueSeparator": "",
+                        "label": "Nombre salles de bain",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.NombreWC",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "NOMBRE_WC",
+                        "valueSeparator": "",
+                        "label": "Nombre WC",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.NombreWCSepares",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "NOMBRE_WC_SEPARES",
+                        "valueSeparator": "",
+                        "label": "Nombre WC séparés",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.StatutSejour",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Boolean",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "STATUT_SEJOUR",
+                        "valueSeparator": "",
+                        "label": "Statut séjour"
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.SuperficieSejour",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "SUPERFICIE_SEJOUR",
+                        "valueSeparator": "",
+                        "label": "Superficie séjour",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.StatutEntree",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Boolean",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "STATUT_ENTREE",
+                        "valueSeparator": "",
+                        "label": "Statut entrée"
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.Placards",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "PLACARDS",
+                        "valueSeparator": "",
+                        "label": "Placards",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.TypeCuisine",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "TYPE_CUISINE",
+                        "valueSeparator": "",
+                        "label": "Type cuisine",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.EtatCuisine",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "ETAT_CUISINE",
+                        "valueSeparator": "",
+                        "label": "Etat cuisine",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.SuperficieCuisine",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "SUPERFICIE_CUISINE",
+                        "valueSeparator": "",
+                        "label": "Superficie cuisine",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.StatutAmenagementCuisine",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Boolean",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "STATUT_AMENAG_CUISINE",
+                        "valueSeparator": "",
+                        "label": "Statut aménagement cuisine"
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.StatutPlaque",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Boolean",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "STATUT_PLAQUE",
+                        "valueSeparator": "",
+                        "label": "Statut plaque"
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.StatutHotte",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Boolean",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "STATUT_HOTTE",
+                        "valueSeparator": "",
+                        "label": "Statut hotte"
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.StatutRefrigerateur",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Boolean",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "STATUT_REFRIGERATEUR",
+                        "valueSeparator": "",
+                        "label": "Statut réfrigérateur"
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.PlanTravail",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "PLAN_TRAVAIL",
+                        "valueSeparator": "",
+                        "label": "Plan de travail",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.Exposition",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "EXPOSITION",
+                        "valueSeparator": "",
+                        "label": "Exposition",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.Orientation",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "ORIENTATION",
+                        "valueSeparator": "",
+                        "label": "Orientation",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.OrientationTerrasse",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "ORIENTATION_TERRASSE",
+                        "valueSeparator": "",
+                        "label": "Orientation terrasse",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.OrientationBalcon",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "ORIENTATION_BALCON",
+                        "valueSeparator": "",
+                        "label": "Orientation balcon",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.OrientationLoggia",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "ORIENTATION_LOGGIA",
+                        "valueSeparator": "",
+                        "label": "Orientation loggia",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.StatutTerrasse",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Boolean",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "STATUT_TERRASSE",
+                        "valueSeparator": "",
+                        "label": "Statut terrasse"
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.SuperficieTerrasse",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "SUPERFICIE_TERRASSE",
+                        "valueSeparator": "",
+                        "label": "Superficie terrasse",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.StatutBalcon",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Boolean",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "STATUT_BALCON",
+                        "valueSeparator": "",
+                        "label": "Statut balcon"
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.SuperficieBalcon",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "SUPERFICIE_BALCON",
+                        "valueSeparator": "",
+                        "label": "Superficie balcon",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.StatutLoggia",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Boolean",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "STATUT_LOGGIA",
+                        "valueSeparator": "",
+                        "label": "Statut loggia"
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.SuperficieLoggia",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "SUPERFICIE_LOGGIA",
+                        "valueSeparator": "",
+                        "label": "Superficie loggia",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.StatutJardin",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Boolean",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "STATUT_JARDIN",
+                        "valueSeparator": "",
+                        "label": "Statut jardin"
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.Lot.SuperficieJardin",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "SUPERFICIE_JARDIN",
+                        "valueSeparator": "",
+                        "label": "Superficie jardin",
+                        "length": 100
                     }
                 ],
                 "complexAttributes": [],
@@ -16684,7 +17199,7 @@
                     {
                         "qualifiedName": "Batiments.entities.Lot.validations.Surface",
                         "_type": "CheckConstraint",
-                        "condition": "SuperficieUtile > 0",
+                        "condition": "SuperficieHabitable > 0",
                         "validationLabel": "Superficie du lot en m² doit être positive (format 0.0)",
                         "validationScope": "NONE",
                         "description": "Vérifie que la superficie du lot n'est pas nulle.",
@@ -17270,12 +17785,25 @@
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.NumeroCopropriete",
+                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.NomAcquereur",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 20,
+                                "useCustomLabel": false,
+                                "value": "NomAcquereur",
+                                "visibleByDefault": false,
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.NumeroCopropriete",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 21,
                                 "useCustomLabel": false,
                                 "value": "NumeroCopropriete",
                                 "visibleByDefault": false,
@@ -17288,7 +17816,7 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 21,
+                                "posInParent": 22,
                                 "useCustomLabel": false,
                                 "value": "DateRegimeTVA",
                                 "visibleByDefault": false,
@@ -17296,14 +17824,14 @@
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.SuperficieUtile",
+                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.SuperficieHabitable",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 22,
+                                "posInParent": 23,
                                 "useCustomLabel": false,
-                                "value": "SuperficieUtile",
+                                "value": "SuperficieHabitable",
                                 "visibleByDefault": false,
                                 "valueDataType": "DECIMAL",
                                 "componentProperties": []
@@ -17314,7 +17842,7 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 23,
+                                "posInParent": 24,
                                 "useCustomLabel": false,
                                 "value": "SuperficieUtileQP",
                                 "visibleByDefault": true,
@@ -17327,7 +17855,7 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 24,
+                                "posInParent": 25,
                                 "useCustomLabel": false,
                                 "value": "SuperficieUtileSansQP",
                                 "visibleByDefault": true,
@@ -17340,7 +17868,7 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 25,
+                                "posInParent": 26,
                                 "useCustomLabel": false,
                                 "value": "SuperficieUtilePonderee",
                                 "visibleByDefault": false,
@@ -17353,7 +17881,7 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 26,
+                                "posInParent": 27,
                                 "useCustomLabel": false,
                                 "value": "ConfirmationStatus",
                                 "visibleByDefault": false,
@@ -17366,7 +17894,7 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 27,
+                                "posInParent": 28,
                                 "useCustomLabel": false,
                                 "value": "ConfidenceScore",
                                 "visibleByDefault": false,
@@ -17379,7 +17907,7 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 28,
+                                "posInParent": 29,
                                 "useCustomLabel": false,
                                 "value": "MastersCount",
                                 "visibleByDefault": false,
@@ -17392,7 +17920,7 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semCheckboxField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 29,
+                                "posInParent": 30,
                                 "useCustomLabel": false,
                                 "value": "HasSuggestedMerge",
                                 "visibleByDefault": false,
@@ -17405,7 +17933,7 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 30,
+                                "posInParent": 31,
                                 "useCustomLabel": false,
                                 "value": "UpdateDate",
                                 "visibleByDefault": false,
@@ -17418,7 +17946,7 @@
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 31,
+                                "posInParent": 32,
                                 "useCustomLabel": false,
                                 "value": "Updator",
                                 "visibleByDefault": false,
@@ -17468,27 +17996,7 @@
                         "default": true,
                         "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation",
                         "formCharts": [],
-                        "formCollections": [
-                            {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.JuridiquePropriete.Societe.Societes",
-                                "displayRecordCount": "ALWAYS",
-                                "documentationInterpreter": "LITERAL",
-                                "enableUserDefinedSort": true,
-                                "filter": "1=1",
-                                "gridAllowed": false,
-                                "listAllowed": false,
-                                "posInParent": 0,
-                                "sortExpression": "1 DESC",
-                                "tableAllowed": true,
-                                "transitionPath": "RelLotSoc",
-                                "useCustomLabel": true,
-                                "visibleValueInterpreter": "LITERAL",
-                                "collection": "Batiments.entities.RelLotSoc.collection_views.Societe",
-                                "label": "Sociétés",
-                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.JuridiquePropriete.Societe",
-                                "targetEntity": "Batiments.entities.RelLotSoc.RelLotSoc"
-                            }
-                        ],
+                        "formCollections": [],
                         "formContainers": [
                             {
                                 "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Lot",
@@ -17601,10 +18109,52 @@
                                 "visibleValue": "1"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie",
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition",
                                 "_type": "FormTab",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 1,
+                                "visibleValueInterpreter": "LITERAL",
+                                "displayFormTabAs": "ICON_LABEL",
+                                "iconUrl": "images://mdi/view-dashboard.svg",
+                                "label": "Composition",
+                                "visibleValue": "1"
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition",
+                                "_type": "FormContainer",
+                                "layoutDirection": "COLUMN",
+                                "posInParent": 0,
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Composition"
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies",
+                                "_type": "FormSection2",
+                                "documentationInterpreter": "LITERAL",
+                                "layoutDirection": "COLUMN",
+                                "posInParent": 0,
+                                "visibleValueInterpreter": "LITERAL",
+                                "label": "Superficies",
+                                "labelWidth": "300px",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition",
+                                "visibleValue": "1"
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Services",
+                                "_type": "FormSection2",
+                                "documentationInterpreter": "LITERAL",
+                                "layoutDirection": "COLUMN",
+                                "posInParent": 1,
+                                "visibleValueInterpreter": "SEMQL",
+                                "label": "Services non individualisés",
+                                "labelWidth": "300px",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition",
+                                "visibleValue": "Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'"
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie",
+                                "_type": "FormTab",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 2,
                                 "visibleValueInterpreter": "LITERAL",
                                 "displayFormTabAs": "ICON_LABEL",
                                 "iconUrl": "images://mdi/sync-circle.svg",
@@ -17646,7 +18196,7 @@
                                 "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.JuridiquePropriete",
                                 "_type": "FormTab",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 2,
+                                "posInParent": 3,
                                 "visibleValueInterpreter": "LITERAL",
                                 "displayFormTabAs": "ICON_LABEL",
                                 "iconUrl": "images://mdi/bank.svg",
@@ -17666,15 +18216,69 @@
                                 "visibleValue": "1"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.JuridiquePropriete.Societe",
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement",
+                                "_type": "FormTab",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 4,
+                                "visibleValueInterpreter": "SEMQL",
+                                "displayFormTabAs": "ICON_LABEL",
+                                "iconUrl": "images://mdi/home-outline.svg",
+                                "label": "Aménagement",
+                                "visibleValue": "Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'"
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement",
+                                "_type": "FormContainer",
+                                "layoutDirection": "COLUMN",
+                                "posInParent": 0,
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement"
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces",
+                                "_type": "FormSection2",
+                                "documentationInterpreter": "LITERAL",
+                                "layoutDirection": "COLUMN",
+                                "posInParent": 0,
+                                "visibleValueInterpreter": "LITERAL",
+                                "label": "Pièces",
+                                "labelWidth": "200px",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement",
+                                "visibleValue": "1"
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 1,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Sociétés",
+                                "label": "Cuisine",
                                 "labelWidth": "200px",
-                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.JuridiquePropriete",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement",
+                                "visibleValue": "1"
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition",
+                                "_type": "FormSection2",
+                                "documentationInterpreter": "LITERAL",
+                                "layoutDirection": "COLUMN",
+                                "posInParent": 2,
+                                "visibleValueInterpreter": "LITERAL",
+                                "label": "Orientation et exposition",
+                                "labelWidth": "200px",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement",
+                                "visibleValue": "1"
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs",
+                                "_type": "FormSection2",
+                                "documentationInterpreter": "LITERAL",
+                                "layoutDirection": "COLUMN",
+                                "posInParent": 3,
+                                "visibleValueInterpreter": "LITERAL",
+                                "label": "Espaces extérieurs",
+                                "labelWidth": "200px",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement",
                                 "visibleValue": "1"
                             }
                         ],
@@ -17841,8 +18445,8 @@
                                 "label": "Identifiant physique",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.haut.IdentiteLot",
                                 "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
+                                "visibleValue": "FID_TypologieLot in ('AP','PK','PI')",
+                                "visibleValueInterpreter": "SEMQL",
                                 "componentProperties": [
                                     {
                                         "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.haut.IdentiteLot.IdentifiantPhysique.labelColor",
@@ -17858,6 +18462,40 @@
                                     },
                                     {
                                         "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.haut.IdentiteLot.IdentifiantPhysique.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.haut.IdentiteLot.StatutNewLot",
+                                "_type": "FormField",
+                                "componentName": "semCheckboxField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 5,
+                                "useCustomLabel": true,
+                                "value": "StatutNewLot",
+                                "label": "Statut new lot",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.haut.IdentiteLot",
+                                "valueDataType": "BOOLEAN",
+                                "visibleValue": "Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'",
+                                "visibleValueInterpreter": "SEMQL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.haut.IdentiteLot.StatutNewLot.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.haut.IdentiteLot.StatutNewLot.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.haut.IdentiteLot.StatutNewLot.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -18220,8 +18858,8 @@
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.milieu.SituationLocative",
                                 "referencedEntity": "Batiments.entities.GenreLot.GenreLot",
                                 "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
+                                "visibleValue": "StatutLouable = '1'",
+                                "visibleValueInterpreter": "SEMQL",
                                 "componentProperties": [
                                     {
                                         "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.milieu.SituationLocative.FDN_RaisonNonLouable.labelColor",
@@ -18458,8 +19096,8 @@
                                 "label": "Sous-portefeuille gestion",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.bas.GestionInterne",
                                 "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
+                                "visibleValue": "Etage.Batiment.Immeuble.FID_OrgaResp = 'DB'",
+                                "visibleValueInterpreter": "SEMQL",
                                 "componentProperties": [
                                     {
                                         "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.bas.GestionInterne.SousPortefeuille.labelColor",
@@ -18482,13 +19120,221 @@
                                 ]
                             },
                             {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.bas.GestionInterne.PerimetreGestion",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 3,
+                                "useCustomLabel": true,
+                                "value": "Etage.Batiment.Immeuble.FDN_PerimetreGestion",
+                                "label": "Périmètre gestion",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.bas.GestionInterne",
+                                "valueDataType": "STRING",
+                                "visibleValue": "Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'",
+                                "visibleValueInterpreter": "SEMQL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.bas.GestionInterne.PerimetreGestion.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.bas.GestionInterne.PerimetreGestion.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Lot.Identite.bas.GestionInterne.PerimetreGestion.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieHabitable",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 0,
+                                "useCustomLabel": true,
+                                "value": "case when SuperficieHabitable is not null then SuperficieHabitable || ' m²' else null end",
+                                "documentation": "Superficie habitable (SHAB).",
+                                "label": "Superficie habitable (SHAB)",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies",
+                                "valueDataType": "INTEGER",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieHabitable.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieHabitable.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieHabitable.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieUtileSansQP",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 1,
+                                "useCustomLabel": true,
+                                "value": "case when SuperficieUtileSansQP is not null then SuperficieUtileSansQP || ' m²' else null end",
+                                "documentation": "Superficie utile sans quote-part de parties communes.",
+                                "label": "Superficie utile sans QP",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies",
+                                "valueDataType": "INTEGER",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieUtileSansQP.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieUtileSansQP.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieUtileSansQP.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieUtileQP",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 2,
+                                "useCustomLabel": true,
+                                "value": "case when SuperficieUtileQP is not null then SuperficieUtileQP || ' m²' else null end",
+                                "documentation": "Superficie utile avec quote-part de parties communes.",
+                                "label": "Superficie utile avec QP",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies",
+                                "valueDataType": "INTEGER",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieUtileQP.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieUtileQP.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieUtileQP.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieUtilePonderee",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 3,
+                                "useCustomLabel": true,
+                                "value": "case when SuperficieUtilePonderee is not null then SuperficieUtilePonderee || ' m²' else null end",
+                                "documentation": "Superficie utile pondérée.",
+                                "label": "Superficie utile pondérée",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies",
+                                "valueDataType": "INTEGER",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieUtilePonderee.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieUtilePonderee.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Superficies.SuperficieUtilePonderee.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Services.StatutSNI",
+                                "_type": "FormField",
+                                "componentName": "semCheckboxField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 0,
+                                "useCustomLabel": true,
+                                "value": "StatutSNI",
+                                "label": "Statut SNI",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Services",
+                                "valueDataType": "BOOLEAN",
+                                "visibleValue": "Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'",
+                                "visibleValueInterpreter": "SEMQL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Services.StatutSNI.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Services.StatutSNI.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Services.StatutSNI.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
                                 "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase.FDN_Phase",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": true,
-                                "value": "Etage.Batiment.Immeuble.FDN_Phase",
+                                "value": "FDN_Phase",
                                 "label": "Phase",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase",
                                 "referencedEntity": "Batiments.entities.Phase.Phase",
@@ -18523,7 +19369,7 @@
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 1,
                                 "useCustomLabel": true,
-                                "value": "Etage.Batiment.Immeuble.DateDebPhase",
+                                "value": "DateDebPhase",
                                 "label": "Date début phase",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase",
                                 "valueDataType": "DATE",
@@ -18591,7 +19437,7 @@
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 1,
                                 "useCustomLabel": true,
-                                "value": "Etage.Batiment.Immeuble.DateVente",
+                                "value": "DateVente",
                                 "label": "Date vente",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.AcquisitionCession",
                                 "valueDataType": "DATE",
@@ -18612,6 +19458,40 @@
                                     },
                                     {
                                         "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.AcquisitionCession.DateVente.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.AcquisitionCession.NomAcquereur",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 2,
+                                "useCustomLabel": true,
+                                "value": "NomAcquereur",
+                                "label": "Nom acquéreur",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.AcquisitionCession",
+                                "valueDataType": "STRING",
+                                "visibleValue": "Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'",
+                                "visibleValueInterpreter": "SEMQL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.AcquisitionCession.NomAcquereur.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.AcquisitionCession.NomAcquereur.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.AcquisitionCession.NomAcquereur.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -18765,8 +19645,8 @@
                                 "label": "Numéro copropriété",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.JuridiquePropriete.Juridique",
                                 "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
+                                "visibleValue": "StatutCopropriete = '1'",
+                                "visibleValueInterpreter": "SEMQL",
                                 "componentProperties": [
                                     {
                                         "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.JuridiquePropriete.Juridique.NumeroCopropriete.labelColor",
@@ -18816,6 +19696,1026 @@
                                     },
                                     {
                                         "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.JuridiquePropriete.Juridique.StatutSousLocation.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreChambres",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 0,
+                                "useCustomLabel": true,
+                                "value": "NombreChambres",
+                                "label": "Nombre chambres",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreChambres.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreChambres.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreChambres.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreSallesEau",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 1,
+                                "useCustomLabel": true,
+                                "value": "NombreSallesEau",
+                                "label": "Nombre salles d'eau",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreSallesEau.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreSallesEau.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreSallesEau.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreSallesBain",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 2,
+                                "useCustomLabel": true,
+                                "value": "NombreSallesBain",
+                                "label": "Nombre salles de bain",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreSallesBain.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreSallesBain.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreSallesBain.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreWC",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 3,
+                                "useCustomLabel": true,
+                                "value": "NombreWC",
+                                "label": "Nombre WC",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreWC.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreWC.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreWC.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreWCSepares",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 4,
+                                "useCustomLabel": true,
+                                "value": "NombreWCSepares",
+                                "label": "Nombre WC séparés",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreWCSepares.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreWCSepares.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.NombreWCSepares.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.StatutSejour",
+                                "_type": "FormField",
+                                "componentName": "semCheckboxField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 5,
+                                "useCustomLabel": true,
+                                "value": "StatutSejour",
+                                "label": "Statut séjour",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces",
+                                "valueDataType": "BOOLEAN",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.StatutSejour.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.StatutSejour.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.StatutSejour.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.SuperficieSejour",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 6,
+                                "useCustomLabel": true,
+                                "value": "SuperficieSejour",
+                                "label": "Superficie séjour",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.SuperficieSejour.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.SuperficieSejour.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.SuperficieSejour.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.StatutEntree",
+                                "_type": "FormField",
+                                "componentName": "semCheckboxField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 7,
+                                "useCustomLabel": true,
+                                "value": "StatutEntree",
+                                "label": "Statut entrée",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces",
+                                "valueDataType": "BOOLEAN",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.StatutEntree.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.StatutEntree.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.StatutEntree.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.Placards",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 8,
+                                "useCustomLabel": true,
+                                "value": "Placards",
+                                "label": "Placards",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.Placards.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.Placards.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Pieces.Placards.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.TypeCuisine",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 0,
+                                "useCustomLabel": true,
+                                "value": "TypeCuisine",
+                                "label": "Type cuisine",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.TypeCuisine.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.TypeCuisine.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.TypeCuisine.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.EtatCuisine",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 1,
+                                "useCustomLabel": true,
+                                "value": "EtatCuisine",
+                                "label": "Etat cuisine",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.EtatCuisine.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.EtatCuisine.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.EtatCuisine.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.SuperficieCuisine",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 2,
+                                "useCustomLabel": true,
+                                "value": "SuperficieCuisine",
+                                "label": "Superficie cuisine",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.SuperficieCuisine.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.SuperficieCuisine.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.SuperficieCuisine.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutAmenagementCuisine",
+                                "_type": "FormField",
+                                "componentName": "semCheckboxField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 3,
+                                "useCustomLabel": true,
+                                "value": "StatutAmenagementCuisine",
+                                "label": "Statut aménagement cuisine",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine",
+                                "valueDataType": "BOOLEAN",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutAmenagementCuisine.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutAmenagementCuisine.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutAmenagementCuisine.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutPlaque",
+                                "_type": "FormField",
+                                "componentName": "semCheckboxField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 4,
+                                "useCustomLabel": true,
+                                "value": "StatutPlaque",
+                                "label": "Statut plaque",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine",
+                                "valueDataType": "BOOLEAN",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutPlaque.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutPlaque.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutPlaque.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutHotte",
+                                "_type": "FormField",
+                                "componentName": "semCheckboxField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 5,
+                                "useCustomLabel": true,
+                                "value": "StatutHotte",
+                                "label": "Statut hotte",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutHotte.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutHotte.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutHotte.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutRefrigerateur",
+                                "_type": "FormField",
+                                "componentName": "semCheckboxField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 6,
+                                "useCustomLabel": true,
+                                "value": "StatutRefrigerateur",
+                                "label": "Statut réfrigérateur",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine",
+                                "valueDataType": "BOOLEAN",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutRefrigerateur.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutRefrigerateur.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.StatutRefrigerateur.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.PlanTravail",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 7,
+                                "useCustomLabel": true,
+                                "value": "PlanTravail",
+                                "label": "Plan de travail",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.PlanTravail.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.PlanTravail.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.Cuisine.PlanTravail.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.Exposition",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 0,
+                                "useCustomLabel": true,
+                                "value": "Exposition",
+                                "label": "Exposition",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.Exposition.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.Exposition.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.Exposition.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.Orientation",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 1,
+                                "useCustomLabel": true,
+                                "value": "Orientation",
+                                "label": "Orientation",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.Orientation.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.Orientation.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.Orientation.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.OrientationTerrasse",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 2,
+                                "useCustomLabel": true,
+                                "value": "OrientationTerrasse",
+                                "label": "Orientation terrasse",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.OrientationTerrasse.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.OrientationTerrasse.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.OrientationTerrasse.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.OrientationBalcon",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 3,
+                                "useCustomLabel": true,
+                                "value": "OrientationBalcon",
+                                "label": "Orientation balcon",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.OrientationBalcon.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.OrientationBalcon.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.OrientationBalcon.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.OrientationLoggia",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 4,
+                                "useCustomLabel": true,
+                                "value": "OrientationLoggia",
+                                "label": "Orientation loggia",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.OrientationLoggia.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.OrientationLoggia.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.OrientationExposition.OrientationLoggia.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutTerrasse",
+                                "_type": "FormField",
+                                "componentName": "semCheckboxField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 0,
+                                "useCustomLabel": true,
+                                "value": "StatutTerrasse",
+                                "label": "Statut terrasse",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs",
+                                "valueDataType": "BOOLEAN",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutTerrasse.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutTerrasse.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutTerrasse.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieTerrasse",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 1,
+                                "useCustomLabel": true,
+                                "value": "case when SuperficieTerrasse is not null then SuperficieTerrasse || ' m²' else null end",
+                                "label": "Superficie terrasse",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieTerrasse.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieTerrasse.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieTerrasse.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutBalcon",
+                                "_type": "FormField",
+                                "componentName": "semCheckboxField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 2,
+                                "useCustomLabel": true,
+                                "value": "StatutBalcon",
+                                "label": "Statut balcon",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs",
+                                "valueDataType": "BOOLEAN",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutBalcon.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutBalcon.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutBalcon.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieBalcon",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 3,
+                                "useCustomLabel": true,
+                                "value": "case when SuperficieBalcon is not null then SuperficieBalcon || ' m²' else null end",
+                                "label": "Superficie balcon",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieBalcon.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieBalcon.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieBalcon.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutLoggia",
+                                "_type": "FormField",
+                                "componentName": "semCheckboxField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 4,
+                                "useCustomLabel": true,
+                                "value": "StatutLoggia",
+                                "label": "Statut loggia",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs",
+                                "valueDataType": "BOOLEAN",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutLoggia.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutLoggia.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutLoggia.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieLoggia",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 5,
+                                "useCustomLabel": true,
+                                "value": "case when SuperficieLoggia is not null then SuperficieLoggia || ' m²' else null end",
+                                "label": "Superficie loggia",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieLoggia.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieLoggia.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieLoggia.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutJardin",
+                                "_type": "FormField",
+                                "componentName": "semCheckboxField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 6,
+                                "useCustomLabel": true,
+                                "value": "StatutJardin",
+                                "label": "Statut jardin",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs",
+                                "valueDataType": "BOOLEAN",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutJardin.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutJardin.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.StatutJardin.labelTypography",
+                                        "dataType": "STRING",
+                                        "value": "body-2",
+                                        "valueInterpreter": "LITERAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieJardin",
+                                "_type": "FormField",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 7,
+                                "useCustomLabel": true,
+                                "value": "case when SuperficieJardin is not null then SuperficieJardin || ' m²' else null end",
+                                "label": "Superficie jardin",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs",
+                                "valueDataType": "STRING",
+                                "visibleValue": "1",
+                                "visibleValueInterpreter": "LITERAL",
+                                "componentProperties": [
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieJardin.labelColor",
+                                        "dataType": "STRING",
+                                        "value": "md:black",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieJardin.labelTextAlign",
+                                        "dataType": "STRING",
+                                        "value": "left",
+                                        "valueInterpreter": "LITERAL"
+                                    },
+                                    {
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.Amenagement.GlobalAmenagement.EspacesExterieurs.SuperficieJardin.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -18912,44 +20812,11 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden.IdentifiantREFGolden",
-                                "_type": "FormField",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 1,
-                                "useCustomLabel": false,
-                                "value": "GoldenRecord.IdentifiantREF",
-                                "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden",
-                                "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
-                                "componentProperties": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden.IdentifiantREFGolden.authoringMode",
-                                        "dataType": "STRING",
-                                        "value": "force_read_only",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden.IdentifiantREFGolden.labelColor",
-                                        "dataType": "STRING",
-                                        "value": "md:black",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden.IdentifiantREFGolden.labelTypography",
-                                        "dataType": "STRING",
-                                        "value": "body-2",
-                                        "valueInterpreter": "LITERAL"
-                                    }
-                                ]
-                            },
-                            {
                                 "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden.IdentifiantsERPGolden",
                                 "_type": "FormField",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 2,
+                                "posInParent": 1,
                                 "useCustomLabel": false,
                                 "value": "GoldenRecord.IdentifiantsERP",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden",
@@ -18982,7 +20849,7 @@
                                 "_type": "FormField",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 3,
+                                "posInParent": 2,
                                 "useCustomLabel": false,
                                 "value": "GoldenRecord.Libelle",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden",
@@ -19015,7 +20882,7 @@
                                 "_type": "FormField",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 4,
+                                "posInParent": 3,
                                 "useCustomLabel": false,
                                 "value": "GoldenRecord.Usage",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden",
@@ -19048,9 +20915,9 @@
                                 "_type": "FormField",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 5,
+                                "posInParent": 4,
                                 "useCustomLabel": false,
-                                "value": "GoldenRecord.SuperficieUtile",
+                                "value": "GoldenRecord.SuperficieHabitable",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden",
                                 "valueDataType": "DECIMAL",
                                 "visibleValue": "1",
@@ -19081,7 +20948,7 @@
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 6,
+                                "posInParent": 5,
                                 "useCustomLabel": false,
                                 "value": "FDN_Etage",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden",
@@ -19115,7 +20982,7 @@
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 7,
+                                "posInParent": 6,
                                 "useCustomLabel": false,
                                 "value": "FDN_GenreLot",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden",
@@ -19149,7 +21016,7 @@
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 8,
+                                "posInParent": 7,
                                 "useCustomLabel": false,
                                 "value": "FDN_Phase",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden",
@@ -19183,7 +21050,7 @@
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 9,
+                                "posInParent": 8,
                                 "useCustomLabel": false,
                                 "value": "FDN_UsageLot",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden",
@@ -19246,44 +21113,11 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.IdentifiantREF",
-                                "_type": "FormField",
-                                "componentName": "semTextField",
-                                "documentationInterpreter": "LITERAL",
-                                "posInParent": 1,
-                                "useCustomLabel": false,
-                                "value": "IdentifiantREF",
-                                "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden",
-                                "valueDataType": "STRING",
-                                "visibleValue": "1",
-                                "visibleValueInterpreter": "LITERAL",
-                                "componentProperties": [
-                                    {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.IdentifiantREF.contentBackgroundColor",
-                                        "dataType": "STRING",
-                                        "value": "case when IdentifiantREF != GoldenRecord.IdentifiantREF or (GoldenRecord.IdentifiantREF is null and IdentifiantREF is not null) then 'css:yellow' else 'css:white' end",
-                                        "valueInterpreter": "SEMQL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.IdentifiantREF.labelColor",
-                                        "dataType": "STRING",
-                                        "value": "md:black",
-                                        "valueInterpreter": "LITERAL"
-                                    },
-                                    {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.IdentifiantREF.labelTypography",
-                                        "dataType": "STRING",
-                                        "value": "body-2",
-                                        "valueInterpreter": "LITERAL"
-                                    }
-                                ]
-                            },
-                            {
                                 "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.IdentifiantsERP",
                                 "_type": "FormField",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 2,
+                                "posInParent": 1,
                                 "useCustomLabel": false,
                                 "value": "IdentifiantsERP",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden",
@@ -19316,7 +21150,7 @@
                                 "_type": "FormField",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 3,
+                                "posInParent": 2,
                                 "useCustomLabel": false,
                                 "value": "Libelle",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden",
@@ -19349,7 +21183,7 @@
                                 "_type": "FormField",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 4,
+                                "posInParent": 3,
                                 "useCustomLabel": false,
                                 "value": "Usage",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden",
@@ -19378,32 +21212,32 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.SuperficieUtile",
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.SuperficieHabitable",
                                 "_type": "FormField",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 5,
+                                "posInParent": 4,
                                 "useCustomLabel": false,
-                                "value": "SuperficieUtile",
+                                "value": "SuperficieHabitable",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden",
                                 "valueDataType": "DECIMAL",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.SuperficieUtile.contentBackgroundColor",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.SuperficieHabitable.contentBackgroundColor",
                                         "dataType": "STRING",
                                         "value": "case when Superficie != GoldenRecord.Superficie or (GoldenRecord.Superficie is null and Superficie is not null) then 'css:yellow' else 'css:white' end",
                                         "valueInterpreter": "SEMQL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.SuperficieUtile.labelColor",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.SuperficieHabitable.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.SuperficieUtile.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.SuperficieHabitable.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -19415,7 +21249,7 @@
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 6,
+                                "posInParent": 5,
                                 "useCustomLabel": false,
                                 "value": "FDN_Etage",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden",
@@ -19449,7 +21283,7 @@
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 7,
+                                "posInParent": 6,
                                 "useCustomLabel": false,
                                 "value": "FDN_GenreLot",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden",
@@ -19483,7 +21317,7 @@
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 8,
+                                "posInParent": 7,
                                 "useCustomLabel": false,
                                 "value": "FDN_Phase",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden",
@@ -19517,7 +21351,7 @@
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
-                                "posInParent": 9,
+                                "posInParent": 8,
                                 "useCustomLabel": false,
                                 "value": "FDN_UsageLot",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden",
@@ -19609,7 +21443,7 @@
                                     {
                                         "_type": "FormStepValidation",
                                         "type": "CHECK",
-                                        "attribute": "Batiments.entities.Lot.Lot.SuperficieUtile",
+                                        "attribute": "Batiments.entities.Lot.Lot.SuperficieHabitable",
                                         "executedOnDataChange": true,
                                         "executedOnFormOpen": true,
                                         "validator": "Batiments.entities.Lot.validations.Surface"
@@ -19687,7 +21521,7 @@
                                     {
                                         "_type": "FormStepValidation",
                                         "type": "CHECK",
-                                        "attribute": "Batiments.entities.Lot.Lot.SuperficieUtile",
+                                        "attribute": "Batiments.entities.Lot.Lot.SuperficieHabitable",
                                         "executedOnDataChange": true,
                                         "executedOnFormOpen": true,
                                         "validator": "Batiments.entities.Lot.validations.Surface"
@@ -20592,7 +22426,7 @@
                         "qualifiedName": "Batiments.entities.Immeuble.validations.CheckCoherenceSecteur_Zone",
                         "_type": "CheckConstraint",
                         "condition": "FID_SecteurImmostat is not null and FID_ZoneImmostat is not null and FID_ZoneImmostat = SecteurImmostat.FID_ZoneImmostat and FID_SecteurImmostat = SecteurImmostat.SecteurImmostatCode",
-                        "validationLabel": "secteur / zone immostat non cohérente",
+                        "validationLabel": "secteur / zone immostat non cohérent",
                         "validationScope": "POST_CONSO",
                         "label": "Coherence secteur / zone immostat"
                     },
@@ -20600,7 +22434,7 @@
                         "qualifiedName": "Batiments.entities.Immeuble.validations.CheckCoherenceSousSecteur_Secteur",
                         "_type": "CheckConstraint",
                         "condition": "FID_SecteurImmostat is not null and FID_SousSecteurImmostat is not null and FID_SecteurImmostat = SousSecteurImmostat.FID_SecteurImmostat and FID_SousSecteurImmostat = SousSecteurImmostat.SousSecteurImmostatCode",
-                        "validationLabel": "secteur / zone immostat non cohérente",
+                        "validationLabel": "secteur / sous-secteur non cohérent",
                         "validationScope": "POST_CONSO",
                         "label": "Coherence sous-secteur / secteur immostat"
                     },
@@ -23042,7 +24876,7 @@
                                 "displayRecordCount": "ALWAYS",
                                 "documentationInterpreter": "LITERAL",
                                 "enableUserDefinedSort": true,
-                                "filter": "FID_TypologieLot = 'PL'",
+                                "filter": "StatutNewLot = '1'",
                                 "gridAllowed": false,
                                 "listAllowed": false,
                                 "posInParent": 0,
@@ -24652,7 +26486,7 @@
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 3,
                                 "useCustomLabel": true,
-                                "value": "lookup count (IdentifiantsERP) from Batiment.Etage.Lot  end",
+                                "value": "lookup count (IdentifiantsERP) from Batiment.Etage.Lot where StatutNewLot = '1' end",
                                 "documentation": "Nombre new lots.",
                                 "label": "Nombre new lots",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.Composition.Composition.Lots",
@@ -30017,6 +31851,22 @@
                                     {
                                         "_type": "FormStepValidation",
                                         "type": "CHECK",
+                                        "attribute": "Batiments.references.ImmeubleToSecteurImmostat.SecteurImmostat",
+                                        "executedOnDataChange": true,
+                                        "executedOnFormOpen": true,
+                                        "validator": "Batiments.entities.Immeuble.validations.CheckCoherenceSecteur_Zone"
+                                    },
+                                    {
+                                        "_type": "FormStepValidation",
+                                        "type": "CHECK",
+                                        "attribute": "Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat",
+                                        "executedOnDataChange": true,
+                                        "executedOnFormOpen": true,
+                                        "validator": "Batiments.entities.Immeuble.validations.CheckCoherenceSousSecteur_Secteur"
+                                    },
+                                    {
+                                        "_type": "FormStepValidation",
+                                        "type": "CHECK",
                                         "attribute": "Batiments.entities.Immeuble.Immeuble.NbAscenseur",
                                         "executedOnDataChange": true,
                                         "executedOnFormOpen": true,
@@ -30094,6 +31944,18 @@
                                         "onStepExit": "BLOCK",
                                         "type": "MANDATORY",
                                         "attribute": "Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat"
+                                    },
+                                    {
+                                        "_type": "StepTransitionValidation",
+                                        "onStepExit": "BLOCK",
+                                        "type": "CHECK",
+                                        "validator": "Batiments.entities.Immeuble.validations.CheckCoherenceSecteur_Zone"
+                                    },
+                                    {
+                                        "_type": "StepTransitionValidation",
+                                        "onStepExit": "BLOCK",
+                                        "type": "CHECK",
+                                        "validator": "Batiments.entities.Immeuble.validations.CheckCoherenceSousSecteur_Secteur"
                                     },
                                     {
                                         "_type": "StepTransitionValidation",
@@ -35381,7 +37243,7 @@
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 2,
                                 "useCustomLabel": true,
-                                "value": "lookup count (IdentifiantsERP) from Etage.Lot  end",
+                                "value": "lookup count (IdentifiantsERP) from Etage.Lot where StatutNewLot = '1' end",
                                 "documentation": "Nombre new lots.",
                                 "label": "Nombre new lots",
                                 "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentConsultation.Composition.Composition.Lots",

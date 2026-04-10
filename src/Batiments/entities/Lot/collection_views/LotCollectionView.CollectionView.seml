@@ -223,6 +223,15 @@ tableColumns:
     visibleByDefault: false
 
   - _type: TextColumn
+    _name: NomAcquereur
+    value: NomAcquereur
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: false
+
+
+  - _type: TextColumn
     _name: NumeroCopropriete
     value: NumeroCopropriete
     useCustomLabel: false
@@ -239,8 +248,8 @@ tableColumns:
     visibleByDefault: false
 
   - _type: TextColumn
-    _name: SuperficieUtile
-    value: SuperficieUtile
+    _name: SuperficieHabitable
+    value: SuperficieHabitable
     useCustomLabel: false
     dataType: DECIMAL
     columnAlign: LEFT

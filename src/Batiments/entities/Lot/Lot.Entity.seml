@@ -26,14 +26,6 @@ attributes:
     mandatory: true
     searchable: true
   - _type: EntityAttribute
-    _name: IdentifiantREF
-    label: Identifiant REF
-    physicalName: IDENTIFIANT_REF
-    dataType: String
-    length: 100
-    mandatory: false
-    searchable: true
-  - _type: EntityAttribute
     _name: IdentifiantsERP
     label: Identifiants ERP
     physicalName: IDENTIFIANTS_ERP
@@ -56,9 +48,9 @@ attributes:
     length: 150
     mandatory: false
   - _type: EntityAttribute
-    _name: SuperficieUtile
-    label: Superficie Utile
-    physicalName: SUPERFICIE_UTILE
+    _name: SuperficieHabitable
+    label: Superficie Habitable
+    physicalName: SUPERFICIE_HABITABLE
     dataType: Decimal
     precision: 15
     scale: 2
@@ -109,12 +101,33 @@ attributes:
     dataType: Date
     mandatory: false
 
+  - _type: EntityAttribute
+    _name: DateDebPhase
+    label: Date début phase
+    physicalName: DATE_DEB_PHASE
+    dataType: Date
+    mandatory: false
 
   - _type: EntityAttribute
     _name: DateVente
     label: Date vente
     physicalName: DATE_VENTE
     dataType: Date
+    mandatory: false
+
+
+  - _type: EntityAttribute
+    _name: StatutSNI
+    label: Statut SNI
+    physicalName: STATUT_SNI
+    dataType: Boolean
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: StatutNewLot
+    label: Statut new lot
+    physicalName: STATUT_NEW_LOT
+    dataType: Boolean
     mandatory: false
 
   - _type: EntityAttribute
@@ -176,6 +189,16 @@ attributes:
     mandatory: false
     searchable: false
 
+
+  - _type: EntityAttribute
+    _name: NomAcquereur
+    label: Nom acquéreur
+    physicalName: NOM_ACQUEREUR
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
+
   - _type: EntityAttribute
     _name: NumeroCopropriete
     label: Numéro copropriété
@@ -186,10 +209,212 @@ attributes:
     searchable: false
 
   - _type: EntityAttribute
-    _name: DateRegimeTVA 
+    _name: DateRegimeTVA
     label: Date régime TVA
     physicalName: DATE_REGIME_TVA
     dataType: Date
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: NombreChambres
+    label: Nombre chambres
+    physicalName: NOMBRE_CHAMBRES
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: NombreSallesEau
+    label: Nombre salles d'eau
+    physicalName: NOMBRE_SALLES_EAU
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: NombreSallesBain
+    label: Nombre salles de bain
+    physicalName: NOMBRE_SALLES_BAIN
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: NombreWC
+    label: Nombre WC
+    physicalName: NOMBRE_WC
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: NombreWCSepares
+    label: Nombre WC séparés
+    physicalName: NOMBRE_WC_SEPARES
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: StatutSejour
+    label: Statut séjour
+    physicalName: STATUT_SEJOUR
+    dataType: Boolean
+    mandatory: false
+  - _type: EntityAttribute
+    _name: SuperficieSejour
+    label: Superficie séjour
+    physicalName: SUPERFICIE_SEJOUR
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: StatutEntree
+    label: Statut entrée
+    physicalName: STATUT_ENTREE
+    dataType: Boolean
+    mandatory: false
+  - _type: EntityAttribute
+    _name: Placards
+    label: Placards
+    physicalName: PLACARDS
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: TypeCuisine
+    label: Type cuisine
+    physicalName: TYPE_CUISINE
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: EtatCuisine
+    label: Etat cuisine
+    physicalName: ETAT_CUISINE
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: SuperficieCuisine
+    label: Superficie cuisine
+    physicalName: SUPERFICIE_CUISINE
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: StatutAmenagementCuisine
+    label: Statut aménagement cuisine
+    physicalName: STATUT_AMENAG_CUISINE
+    dataType: Boolean
+    mandatory: false
+  - _type: EntityAttribute
+    _name: StatutPlaque
+    label: Statut plaque
+    physicalName: STATUT_PLAQUE
+    dataType: Boolean
+    mandatory: false
+  - _type: EntityAttribute
+    _name: StatutHotte
+    label: Statut hotte
+    physicalName: STATUT_HOTTE
+    dataType: Boolean
+    mandatory: false
+  - _type: EntityAttribute
+    _name: StatutRefrigerateur
+    label: Statut réfrigérateur
+    physicalName: STATUT_REFRIGERATEUR
+    dataType: Boolean
+    mandatory: false
+  - _type: EntityAttribute
+    _name: PlanTravail
+    label: Plan de travail
+    physicalName: PLAN_TRAVAIL
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: Exposition
+    label: Exposition
+    physicalName: EXPOSITION
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: Orientation
+    label: Orientation
+    physicalName: ORIENTATION
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: OrientationTerrasse
+    label: Orientation terrasse
+    physicalName: ORIENTATION_TERRASSE
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: OrientationBalcon
+    label: Orientation balcon
+    physicalName: ORIENTATION_BALCON
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: OrientationLoggia
+    label: Orientation loggia
+    physicalName: ORIENTATION_LOGGIA
+    dataType: String
+    length: 100
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: StatutTerrasse
+    label: Statut terrasse
+    physicalName: STATUT_TERRASSE
+    dataType: Boolean
+    mandatory: false
+  - _type: EntityAttribute
+    _name: SuperficieTerrasse
+    label: Superficie terrasse
+    physicalName: SUPERFICIE_TERRASSE
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: StatutBalcon
+    label: Statut balcon
+    physicalName: STATUT_BALCON
+    dataType: Boolean
+    mandatory: false
+  - _type: EntityAttribute
+    _name: SuperficieBalcon
+    label: Superficie balcon
+    physicalName: SUPERFICIE_BALCON
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: StatutLoggia
+    label: Statut loggia
+    physicalName: STATUT_LOGGIA
+    dataType: Boolean
+    mandatory: false
+  - _type: EntityAttribute
+    _name: SuperficieLoggia
+    label: Superficie loggia
+    physicalName: SUPERFICIE_LOGGIA
+    dataType: String
+    length: 100
+    mandatory: false
+  - _type: EntityAttribute
+    _name: StatutJardin
+    label: Statut jardin
+    physicalName: STATUT_JARDIN
+    dataType: Boolean
+    mandatory: false
+  - _type: EntityAttribute
+    _name: SuperficieJardin
+    label: Superficie jardin
+    physicalName: SUPERFICIE_JARDIN
+    dataType: String
+    length: 100
     mandatory: false
 
 sourceIdGeneration:
