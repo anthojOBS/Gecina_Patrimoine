@@ -15,6 +15,9 @@ attributes:
   - attributeName: CodePostal 
   - attributeName: Ville
   - attributeName: Pays
+  - attributeName: NbAscenseur
+  - attributeName: ModeChauffage
+  - attributeName: TypeEnergie #toRoleName de la ref
   # - attributeName: Portefeuille #toRoleName de la ref
   
 publisherRankings:

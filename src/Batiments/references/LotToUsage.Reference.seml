@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: LotToUsage
+label: Lot Usage
+description: Référence Lot vers Usage de Lot
+fromRoleDocumentation: |
+  Cette référence définit l'**Usage** d'un **Lot**.
+  
+  L'usage caractérise la destination fonctionnelle du lot (habitation, bureau, commerce, etc.).
+physicalName: LOT_USAGE_REF
+
+fromEntity: Batiments.entities.Lot.Lot
+fromRoleLabel: Lot
+fromRoleName: Lot
+fromRolePluralLabel: Lots
+
+toEntity: Batiments.entities.Usage.Usage
+toRoleLabel: Usage
+toRoleName: Usage
+toRolePhysicalName: USAGE_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: L'usage est obligatoire pour un lot
+brokenValidationLabel: L'usage sélectionné est invalide pour ce lot
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Usage
+  label: Usage
+  physicalName: USAGE_ID
+  searchable: true
+  entity: Batiments.entities.Lot.Lot

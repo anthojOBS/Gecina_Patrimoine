@@ -1,0 +1,10 @@
+_package: Batiments.entities.Lot.enrichers
+_name: DefautRegimeTVA
+_type: SemQLEnricher
+entity: Batiments.entities.Lot.Lot
+label: Default Country
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: FID_FiscaliteCible
+    expression: case when FID_Usage ='ENT' then '1' else '2' end
+condition: FID_FiscaliteCible is NULL 

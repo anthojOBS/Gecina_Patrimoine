@@ -1,6 +1,6 @@
 _package: Batiments.entities.Lot.steppers
 _type: Stepper
-_name: AuthorLots
+_name: LotsConsultation
 entity: Batiments.entities.Lot.Lot
 label: Lots
 rootStep:
@@ -32,14 +32,14 @@ rootStep:
       enableMasterValuePicking: false
       formTab: Batiments.entities.Lot.forms.LotConsultation.Lot
 
-      formStepValidations:
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: CHECK
-          attribute: Batiments.entities.Lot.Lot.SuperficieHabitable
-          validator: Batiments.entities.Lot.validations.Surface
+      # formStepValidations:
+      #   - executedOnDataChange: true
+      #     executedOnFormOpen: true
+      #     validationType: CHECK
+      #     attribute: Batiments.entities.Lot.Lot.SuperficieHabitable
+      #     validator: Batiments.entities.Lot.validations.Surface
 
-      stepTransitionValidations:
-        - onStepExit: BLOCK
-          validationType: CHECK
-          validator: Batiments.entities.Lot.validations.Surface
+      # stepTransitionValidations:
+      #   - onStepExit: BLOCK
+      #     validationType: CHECK
+      #     validator: Batiments.entities.Lot.validations.Surface

@@ -19,9 +19,9 @@ toRoleLabel: Typologie de Lot
 toRoleName: TypologieLot
 toRolePhysicalName: TYPOLOGIE_LOT_ID
 
-oneToMany: false
+oneToMany: true
 deletePropagation: RESTRICT
-validationScope: PRE_CONSO
+validationScope: POST_CONSO
 mandatoryValidationLabel: La typologie de lot est obligatoire pour un lot
 brokenValidationLabel: La typologie de lot sélectionnée est invalide pour ce lot
 

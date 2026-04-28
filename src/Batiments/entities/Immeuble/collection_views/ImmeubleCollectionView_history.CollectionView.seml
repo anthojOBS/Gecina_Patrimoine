@@ -100,13 +100,40 @@ tableColumns:
     visibleByDefault: true
 
   - _type: ReferenceColumn
-    _name: PeriodeConstruction
+    _name: FDN_PeriodeConstruction
     value: FDN_PeriodeConstruction
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
     referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
+  - _type: ReferenceColumn
+    _name: FDN_PerimetreGestion
+    value: FDN_PerimetreGestion
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.PerimetreGestion.PerimetreGestion
+
+
+  - _type: ReferenceColumn
+    _name: FDN_TypeCompteur
+    value: FDN_TypeCompteur
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.TypeCompteur.TypeCompteur
+
+  - _type: ReferenceColumn
+    _name: FDN_TypeVente
+    value: FDN_TypeVente
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.TypeVente.TypeVente
 
   - _type: TextColumn
     _name: DateDebutConstruction
@@ -145,7 +172,7 @@ tableColumns:
     visibleByDefault: true
 
   - _type: ReferenceColumn
-    _name: FiscaliteCible
+    _name: FDN_FiscaliteCible
     value: FDN_FiscaliteCible
     useCustomLabel: false
     dataType: STRING
@@ -341,15 +368,6 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
 
-  # Nouveaux attributs ajoutés
-  - _type: TextColumn
-    _name: SuperficieUtile
-    value: SuperficieUtile
-    useCustomLabel: false
-    dataType: DECIMAL
-    columnAlign: LEFT
-    visibleByDefault: true
-
   - _type: ReferenceColumn
     _name: FDN_ZoneImmostat
     value: FDN_ZoneImmostat
@@ -402,6 +420,14 @@ tableColumns:
     visibleByDefault: true
 
   - _type: TextColumn
+    _name: StatutIRVE
+    value: StatutIRVE
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
     _name: FlagRestructuration
     value: FlagRestructuration
     useCustomLabel: false
@@ -437,7 +463,6 @@ tableColumns:
     visibleByDefault: true
     referencedEntity: Batiments.entities.SousPortefeuille.SousPortefeuille
     
-
   - _type: ReferenceColumn
     _name: FDN_Usage
     value: FDN_Usage
@@ -454,6 +479,47 @@ tableColumns:
     dataType: DATE
     columnAlign: LEFT
     visibleByDefault: true
+
+
+  - _type: TextColumn
+    _name: NbLotInitial
+    value: NbLotInitial
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: SurperficieHallCouloir
+    value: SurperficieHallCouloir
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: SurperficieTerrasses
+    value: SurperficieTerrasses
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+  - _type: TextColumn
+    _name: SurperficieToitures
+    value: SurperficieToitures
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: SurperficieEspacesVerts
+    value: SurperficieEspacesVerts
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+
 
   - _type: HyperlinkColumn
     _name: BinaryContent

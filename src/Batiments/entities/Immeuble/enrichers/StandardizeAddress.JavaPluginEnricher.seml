@@ -29,7 +29,7 @@ pluginOutputs:
   outputName: LOCALITY_LONGNAME
 - attributeName: CodePostal
   outputName: POSTALCODE_SHORTNAME
-- attributeName: Adresse
-  outputName: ROUTE_LONGNAME
-- attributeName: Commentaire
-  outputName: FORMATTED_ADDRESS
+# - attributeName: Adresse
+#   outputName: ROUTE_LONGNAME
+# - attributeName: Commentaire
+#   outputName: FORMATTED_ADDRESS

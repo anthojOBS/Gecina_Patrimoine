@@ -1,0 +1,45 @@
+_package: Batiments.entities.Immeuble.steppers
+_type: Stepper
+_name: ImmeubleImport
+entity: Batiments.entities.Immeuble.Immeuble
+label: Immeubles
+
+rootStep:
+  _type: CollectionStep
+  _name: Immeubles
+  label: Immeubles
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Immeuble
+      label: Immeuble
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Immeuble.forms.ImmeubleConsultation.Immeuble
+
+      formStepEnrichers:  
+        - enricher: Batiments.entities.Immeuble.enrichers.StandardizeAddress
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false
+
+        - enricher: Batiments.entities.Immeuble.enrichers.Portefeuille
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false

@@ -1,0 +1,17 @@
+_package: Batiments.entities.SousLot.display_cards
+_type: DisplayCard
+_name: SousLotDisplayCard
+entity: Batiments.entities.SousLot.SousLot
+default: true
+primaryTextExpression: IdentifiantsERP
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageValue: images://mdi/floor-plan.svg

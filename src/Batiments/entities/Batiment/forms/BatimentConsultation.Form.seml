@@ -77,13 +77,14 @@ formTabs:
                         useCustomLabel: true
                         dataType: STRING
                         referencedEntity: Batiments.entities.Immeuble.Immeuble
-                        
+                            
                       - _type: TextField
-                        _name: SuperficieUtile
-                        # value: SuperficieUtile
-                        value: case when SuperficieUtile is not null then SuperficieUtile || ' m²' else null end
+                        _name: SuperficieUtile_m2
+                        value: case when (lookup sum (SuperficieUtileQP) from Etage.Lot where FID_GenreLot <> 'RIE' or FID_TypologieLot <> 'PK' end) is not null  then (lookup sum (SuperficieUtileQP) from Etage.Lot  where FID_GenreLot <> 'RIE' or FID_TypologieLot <> 'PK'  end) || ' m²' else
+                          null end
                         label: Superficie totale avec QP
-                        documentation: Addition de toutes les surfaces utiles avec QP Surface totale du bâtiment exprimée en m²
+                        documentation: Addition de toutes les surfaces utiles avec QP Surface totale de
+                          l’actif exprimée en m²
                         labelProperties:
                           alignment: left
                           typographyValueInterpreter: LITERAL
@@ -285,8 +286,8 @@ formTabs:
             content:
               - _type: TextField
                 _name: NombreEtages
-                value: lookup count (EtageCode) from Etage  end 
-                label: Nombre d'étages
+                value: lookup first (substr(Libelle, 1, 1)) from Etage where substr(CodeEtage, 1, 1) = 'E' order by CodeEtage desc  end 
+                label: Nombre étages
                 documentation: Nombre d'étages
                 labelProperties:
                   alignment: left
@@ -357,7 +358,9 @@ formTabs:
             content:
               - _type: TextField
                 _name: SurperficieHabitable
-                value: Immeuble.SurperficieHabitable
+                value: case when (FID_Usage = 'HAB' or  FID_Usage = 'MIXTE') and (lookup sum (SuperficieHabitable) from Etage.Lot end) is not null  then (lookup sum (SuperficieHabitable) from Etage.Lot end) || ' m²' else
+                      null end
+                
                 label: Superficie habitable (SHAB)
                 documentation: Superficie habitable (SHAB).
                 labelProperties:
@@ -366,13 +369,16 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_Usage = 'HAB' or FID_Usage = 'MIXTE'
+                visibleValue: Immeuble.FID_Usage = 'HAB' or  Immeuble.FID_Usage = 'MIXTE'
                 visibleValueInterpreter: SEMQL
-                dataType: INTEGER
+                dataType: STRING
+
 
               - _type: TextField
                 _name: SurperficiePlateauCoque
-                value: Immeuble.SurperficiePlateauCoque
+                value: case when (lookup sum (SuperficieUtileQP) from Etage.Lot where FID_TypologieLot = 'PL' or FID_TypologieLot = 'LC' end) is not null  then (lookup sum (SuperficieUtileQP) from Etage.Lot where FID_TypologieLot = 'PL' or FID_TypologieLot = 'LC'  end) || ' m²' else
+                      null end
+                
                 label: Superficie plateaux et coques commerciales
                 documentation: Superficie plateaux et coques commerciales
                 labelProperties:
@@ -381,9 +387,9 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: 1=1 #ajouter contition si lot present 
+                visibleValue: (lookup sum (SuperficieUtileQP) from Etage.Lot where FID_TypologieLot = 'PL' or FID_TypologieLot = 'LC' end)  is not null
                 visibleValueInterpreter: SEMQL
-                dataType: INTEGER 
+                dataType: STRING 
  
 
           
@@ -521,7 +527,7 @@ formTabs:
                             color: md:black
                           useCustomLabel: true
                           dataType: STRING
-                          visibleValue: Immeuble.FID_OrgaResp = 'DR' 
+                          visibleValue: Immeuble.FID_OrgaResp = 'DR'  and Immeuble.FDN_TypeVente is not null
                           visibleValueInterpreter: SEMQL
                           
                         - _type: TextField
@@ -535,7 +541,7 @@ formTabs:
                             typography: body-2
                             color: md:black
                           useCustomLabel: true
-                          visibleValue: Immeuble.FID_OrgaResp = 'DR' 
+                          visibleValue: Immeuble.FID_OrgaResp = 'DR'  and Immeuble.DateMiseVente is not null
                           visibleValueInterpreter: SEMQL
                           dataType: DATE
 
@@ -550,6 +556,8 @@ formTabs:
                             typography: body-2
                             color: md:black
                           useCustomLabel: true
+                          visibleValue: Immeuble.DateVente is not null
+                          visibleValueInterpreter: SEMQL
                           dataType: DATE
 
 

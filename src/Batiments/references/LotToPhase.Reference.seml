@@ -19,9 +19,9 @@ toRoleLabel: Phase
 toRoleName: Phase
 toRolePhysicalName: PHASE_ID
 
-oneToMany: false
+oneToMany: true
 deletePropagation: RESTRICT
-validationScope: PRE_CONSO
+validationScope: POST_CONSO
 mandatoryValidationLabel: La phase est obligatoire pour un lot
 brokenValidationLabel: La phase sélectionnée est invalide pour ce lot
 

@@ -21,7 +21,7 @@ toRolePhysicalName: BAT_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: PRE_CONSO
+validationScope: POST_CONSO
 mandatoryValidationLabel: L'Batiment est obligatoire pour une société
 brokenValidationLabel: L'Batiment sélectionné est invalide pour cette société
 

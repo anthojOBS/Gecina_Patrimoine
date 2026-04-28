@@ -52,7 +52,7 @@ actions:
     label: Importer
     useCustomLabel: true
     importMode: CREATE_AND_UPDATE
-    stepper: Batiments.entities.Batiment.steppers.BatimentEdition
+    stepper: Batiments.entities.Batiment.steppers.BatimentImport
     importedRecordType: MASTER
     defaultPublisher: Batiments.publishers.VisionReelle
     waitDialogEnabled: false

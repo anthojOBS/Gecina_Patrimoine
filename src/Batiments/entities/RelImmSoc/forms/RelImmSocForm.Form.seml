@@ -6,7 +6,7 @@ default: true
 formTabs:
   - _type: FormTab
     _name: RelImmSoc
-    label: RelImmSoc 
+    label: Société 
     documentationInterpreter: LITERAL
     visibleValue: "1"
     visibleValueInterpreter: LITERAL
@@ -22,3 +22,30 @@ formTabs:
           typography: body-2
           color: md:black
           alignment: left
+
+      - _type: ReferenceField
+        _name: FDN_TypeSociete
+        value: FDN_TypeSociete
+        label: Type Société
+        labelProperties:
+          alignment: left
+          typography: body-2
+          color: md:black
+        useCustomLabel: true
+        dataType: STRING
+        referencedEntity: Batiments.entities.TypeSociete.TypeSociete
+
+
+      - _type: ReferenceField
+        _name: FDN_Societe
+        value: FDN_Societe
+        label: Société
+        labelProperties:
+          alignment: left
+          typography: body-2
+          color: md:black
+        useCustomLabel: true
+        dataType: STRING
+        referencedEntity: Batiments.entities.Societe.Societe
+
+

@@ -250,6 +250,70 @@ rootBusinessViewEntity:
                         tableAllowed: true
 
 
+
+                    - _type: BusinessViewTransition
+                      _name: SousLots
+                      label: Sous-lots
+                      displayFormTabAs: ICON_LABEL
+                      displayTransitionNodeAs: ICON_LABEL
+                      enableHierarchy: '1'
+                      enableHierarchyInterpreter: LITERAL
+                      expandHierarchyByDefault: true
+                      iconUrl: images://mdi/file-tree.svg
+                      transitionPath: SousLot
+                      transitionType: FULLY_QUALIFIED
+                      transitionVisible: '0'
+                      transitionVisibleInterpreter: LITERAL
+                      useCustomLabel: true
+                      pluralLabel: Sous-lots
+                      businessViewEntity: 
+                        _type: BusinessViewEntity
+                        _name: SousLots
+                        displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
+                        displayRecordCount: ALWAYS
+                        enableUserDefinedSort: true
+                        gridAllowed: false
+                        listAllowed: true
+                        outlineVisible: false
+                        overrideDefaultSort: false
+                        tableAllowed: true
+                        entity: Batiments.entities.SousLot.SousLot
+                        form: Batiments.entities.SousLot.forms.SousLotConsultation
+                        collection: Batiments.entities.SousLot.collection_views.SousLotCollectionView
+              
+                        transitions:
+
+                          - _type: BusinessViewTransition
+                            _name: MasterRecordsLots
+                            displayFormTabAs: ICON_LABEL
+                            useCustomLabel: false
+                            enableHierarchyInterpreter: LITERAL
+                            filter: 1=1
+                            iconUrl: images://mdi/puzzle.svg
+                            label: Masters Records
+                            pluralLabel: Masters Records
+                            transitionType: FULLY_QUALIFIED
+                            transitionPath:  MasterRecords 
+                            businessViewEntity: 
+                              _type: BusinessViewEntity
+                              _name: MasterRecordsSousLots
+                              displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
+                              entity: Batiments.entities.SousLot.SousLot
+                              actionSet: Batiments.entities.SousLot.action_sets.SousLotActionSet
+                              collection: Batiments.entities.SousLot.collection_views.SousLotCollectionView
+                              form: Batiments.entities.SousLot.forms.SousLotConsultation
+                              displayRecordCount: ALWAYS
+                              outlineVisible: false
+                              enableUserDefinedSort: true
+                              gridAllowed: true
+                              listAllowed: true
+                              overrideDefaultSort: false
+                              tableAllowed: true
+
+
+
+
+
     - _type: BusinessViewTransition
       _name: Lots_global
       label: Lots global

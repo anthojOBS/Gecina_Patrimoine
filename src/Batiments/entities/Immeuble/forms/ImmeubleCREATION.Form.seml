@@ -214,6 +214,27 @@ formTabs:
                           color: md:black
                         useCustomLabel: false
                         dataType: STRING
+                      # - _type: TextField
+                      #   _name: latitude
+                      #   value: CoordY
+                      #   label: Latitude
+                      #   labelProperties:
+                      #     alignment: left
+                      #     typography: body-2
+                      #     color: md:black
+                      #   useCustomLabel: false
+                      #   dataType: STRING
+                      # - _type: TextField
+                      #   _name: longitude
+                      #   value: CoordX
+                      #   label: Longitude
+                      #   labelProperties:
+                      #     alignment: left
+                      #     typography: body-2
+                      #     color: md:black
+                      #   useCustomLabel: false
+                      #   dataType: STRING
+                      
                       - _type: ReferenceField
                         _name: FDN_Pays
                         value: FDN_Pays
@@ -253,7 +274,7 @@ formTabs:
                       - _type: ReferenceField
                         _name: FDN_SousSecteurImmostat
                         value: FDN_SousSecteurImmostat
-                        label: Sous secteur immostat
+                        label: Sous-secteur immostat
                         documentation: Découpage géographique de gestion
                         labelProperties:
                           alignment: left
@@ -420,19 +441,32 @@ formTabs:
                     visibleValueInterpreter: SEMQL
                     dataType: STRING
 
-                  - _type: ReferenceField
-                    _name: FDN_TypeCompteur
-                    value: FDN_TypeCompteur
-                    label: Type compteur
+                  - _type: TextField
+                    _name: StatutIRVE
+                    value: StatutIRVE
+                    label: Statut IRVE
+                    documentation: Indique si l'immeuble est classé selon les critères IRVE.
                     labelProperties:
                       alignment: left
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
-                    visibleValue: FID_OrgaResp = 'DR' 
-                    visibleValueInterpreter: SEMQL
-                    dataType: STRING
-                    referencedEntity: Batiments.entities.TypeCompteur.TypeCompteur
+                    dataType: BOOLEAN
+
+                    
+                  # - _type: ReferenceField
+                  #   _name: FDN_TypeCompteur
+                  #   value: FDN_TypeCompteur
+                  #   label: Type compteur
+                  #   labelProperties:
+                  #     alignment: left
+                  #     typography: body-2
+                  #     color: md:black
+                  #   useCustomLabel: true
+                  #   visibleValue: FID_OrgaResp = 'DR' 
+                  #   visibleValueInterpreter: SEMQL
+                  #   dataType: STRING
+                  #   referencedEntity: Batiments.entities.TypeCompteur.TypeCompteur
 
                   - _type: TextField
                     _name: CapaciteAccueil
@@ -531,29 +565,7 @@ formTabs:
         _name: Composition
         layoutDirection: ROW
         content:
-          - _type: FormSection
-            _name: Lots
-            label: Lots
-            layoutDirection: COLUMN
-            visibleValue: "1"
-            visibleValueInterpreter: LITERAL
-            labelWidth: 300px
-            content:
-              - _type: TextField
-                _name: NbLotInitial
-                value: NbLotInitial
-                label: Nombre lots initial
-                documentation: Nombre lots initial.
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                visibleValue: FID_OrgaResp = 'DR' 
-                visibleValueInterpreter: SEMQL
-                dataType: INTEGER
-
+       
           - _type: FormSection
             _name: Superficies
             label: Superficies
@@ -562,18 +574,7 @@ formTabs:
             visibleValueInterpreter: LITERAL
             labelWidth: 300px
             content:
-              - _type: TextField
-                _name: SurperficieTaxable
-                value: SurperficieTaxable
-                label: Superficie taxable
-                documentation: Superficie taxable.
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: INTEGER
+
               - _type: TextField
                 _name: SurperficieHallCouloir
                 value: SurperficieHallCouloir
@@ -585,21 +586,31 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                dataType: INTEGER
+                dataType: DECIMAL
               - _type: TextField
-                _name: SurperficieToituresTerrasses
-                value: SurperficieToituresTerrasses
-                label: Superficie toitures/terrasses
-                documentation: Superficie toitures/terrasses.
+                _name: SurperficieTerrasses
+                value: SurperficieTerrasses
+                label: Superficie terrasses
+                documentation: Superficie terrasses.
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_OrgaResp = 'DR' 
-                visibleValueInterpreter: SEMQL
-                dataType: INTEGER
+                dataType: DECIMAL
+              - _type: TextField
+                _name: SurperficieToitures
+                value: SurperficieToitures
+                label: Superficie toitures
+                documentation: Superficie toitures.
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: DECIMAL
               - _type: TextField
                 _name: SurperficieEspacesVerts
                 value: SurperficieEspacesVerts
@@ -613,7 +624,7 @@ formTabs:
                 useCustomLabel: true
                 visibleValue: FID_OrgaResp = 'DR' 
                 visibleValueInterpreter: SEMQL
-                dataType: INTEGER
+                dataType: DECIMAL
 
   - _type: FormTab
     _name: CycleVieImmeuble

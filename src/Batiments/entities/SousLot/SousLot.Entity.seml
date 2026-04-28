@@ -1,0 +1,160 @@
+_package: Batiments.entities.SousLot
+_type: Entity
+_name: SousLot
+label: Sous-lot
+pluralLabel: SousLots
+entityType: FUZZY_MATCHED
+physicalTableName: SOUS_LOT
+iconUrl: images://mdi/floor-plan.svg
+description: ""
+documentation: |
+  Le **SousLot** représente une unité locative ou de copropriété au sein d'un étage.
+  
+  Un lot est la plus petite unité de gestion du patrimoine immobilier. Il est caractérisé par son genre de bien (commercial, résidentiel, etc.), son usage (habitation, bureau, commerce, etc.) et sa surface.
+  
+  Cette entité permet de gérer finement les espaces locatifs et de suivre leur occupation et leur rentabilité.
+historizeGolden: true
+historizeMaster: true
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: SousLotCode
+    label: Sous Lot Code
+    physicalName: LOT_CODE
+    dataType: LongInteger
+    precision: 38
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: IdentifiantsERP
+    label: Identifiants ERP
+    physicalName: IDENTIFIANTS_ERP
+    dataType: String
+    length: 100
+    mandatory: true
+    mandatoryValidationLabel: "Numéro sous-lot est obligatoire"
+    mandatoryValidationScope: POST_CONSO
+  - _type: EntityAttribute
+    _name: Libelle
+    label: Libellé sous-lot
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: true
+    mandatoryValidationLabel: "Le libellé est obligatoire"
+    mandatoryValidationScope: POST_CONSO
+    searchable: true
+
+  - _type: EntityAttribute
+    _name: IdentifiantPhysique
+    label: Identifiant physique
+    physicalName: IDENTIFIANT_PHYSIQUE
+    dataType: String
+    length: 150
+    mandatory: false
+
+
+  - _type: EntityAttribute
+    _name: StatutMeuble
+    label: Statut meuble
+    physicalName: STATUT_MEUBLE
+    dataType: Boolean
+    mandatory: false
+
+
+  - _type: EntityAttribute
+    _name: StatutPMR
+    label: Statut PMR
+    physicalName: STATUT_PMR
+    dataType: Boolean
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: StatutLouable
+    label: Statut louable
+    physicalName: STATUT_LOUABLE
+    dataType: Boolean
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: DateDebStatut
+    label: Date début statut
+    physicalName: DATE_DEB_STATUT
+    dataType: Date
+    mandatory: true
+    mandatoryValidationLabel: "Date début statut est obligatoire"
+    mandatoryValidationScope: POST_CONSO
+
+  - _type: EntityAttribute
+    _name: SuperficieHabitable
+    label: Superficie Habitable (SHAB)
+    physicalName: SUPERFICIE_HABITABLE
+    dataType: Decimal
+    precision: 15
+    scale: 2
+    mandatory: true
+    mandatoryValidationLabel: "Superficie Habitable (SHAB) est obligatoire"
+    mandatoryValidationScope: POST_CONSO
+
+  - _type: EntityAttribute
+    _name: SuperficieUtileQP
+    label: Superficie Habitable (SHAB) avec QP
+    physicalName: SUPERFICIE_UTILE_QP
+    dataType: Decimal
+    precision: 15
+    scale: 2
+    mandatory: true
+    mandatoryValidationLabel: "Superficie Habitable (SHAB) avec QP est obligatoire"
+    mandatoryValidationScope: POST_CONSO
+
+  - _type: EntityAttribute
+    _name: DateDebPhase
+    label: Date début phase
+    physicalName: DATE_DEB_PHASE
+    dataType: Date
+    mandatory: true
+    mandatoryValidationLabel: "Date début phase est obligatoire"
+    mandatoryValidationScope: POST_CONSO
+
+
+  - _type: EntityAttribute
+    _name: DateRegimeTVA
+    label: Date régime TVA
+    physicalName: DATE_REGIME_TVA
+    dataType: Date
+    mandatory: true
+    mandatoryValidationLabel: "Date régime TVA est obligatoire"
+    mandatoryValidationScope: POST_CONSO
+
+
+sourceIdGeneration:
+  mode: MANUAL
+
+primaryKey: Batiments.entities.SousLot.SousLot.SousLotCode
+
+goldenIdGeneration:
+  mode: SEQUENCE
+  startWith: 1
+
+matcher:
+  _type: SemQLMatcher
+  _name: Matcher
+  description: BatimentSemQLMatcher
+  matchRules:
+    - _type: SemQLMatchRule
+      _name: NewRule
+      label: NewRuleLabel
+      condition:   Record1.IdentifiantsERP = Record2.IdentifiantsERP #and ( (Record1.FID_Etage = Record2.FID_Etage) or ( Record1.FID_Etage is null ) or ( Record2.FID_Etage is null ) ) and Record1.FID_Batiment = Record2.FID_Batiment
+      matchScore: 100
+      usingMatchOn: false
+  useTransitiveMatchScore: true
+  useMultiIterationGrouping: true
+  mergeThresholdNewGroup: 90
+  mergeThresholdMergingUnconfirmed: 90
+  mergeThresholdMergingConfirmed: 90
+  mergeThresholdMergingConfirmedWithUnconfirmed: 90
+  mergeThresholdMergingUnconfirmedWithNewMasters: 90
+  mergeThresholdMergingConfirmedWithNewMasters: 90
+  mergeThresholdRemergingPreviouslySplit: 100
+  autoConfirmGoldenThreshold: 99
+  autoConfirmSingletons: false

@@ -1,0 +1,33 @@
+_package: Batiments.references
+_type: Reference
+_name: LotToFiscaliteCible
+label: Lot Fiscalite Cible
+description: Référence Lot vers FiscaliteCible
+fromRoleDocumentation: |
+  Cette référence détermine la **FiscaliteCible** d'un **Lot** dans son cycle de vie.
+  La FiscaliteCible indique l'état d'avancement du projet immobilier (en construction, livré, etc.).
+physicalName: LOT_TO_FISCALITE_CIBLE
+
+fromEntity: Batiments.entities.Lot.Lot
+fromRoleLabel: Lot
+fromRoleName: Lot
+fromRolePluralLabel: Lots
+
+toEntity: Batiments.entities.FiscaliteCible.FiscaliteCible
+toRoleLabel: Fiscalite
+toRoleName: FiscaliteCible
+toRolePhysicalName: FISCALITE_CIBLE_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: La fiscalite cible est obligatoire pour un immeuble
+brokenValidationLabel: La fiscalite cible sélectionnée est invalide pour cet immeuble
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: FiscaliteCible
+  label: Fiscalite Cible
+  physicalName: FISCALITE_CIBLE_ID
+  searchable: true
+  entity: Batiments.entities.Lot.Lot

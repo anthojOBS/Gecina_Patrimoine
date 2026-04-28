@@ -52,7 +52,7 @@ formTabs:
                     dataType: STRING
                   - _type: TextField
                     _name: SuperficieUtile_m2
-                    value: case when SuperficieUtile is not null then SuperficieUtile || ' m²' else
+                    value: case when (lookup sum (SuperficieUtileQP) from Batiment.Etage.Lot where FID_GenreLot <> 'RIE' or FID_TypologieLot <> 'PK' end) is not null  then (lookup sum (SuperficieUtileQP) from Batiment.Etage.Lot  where FID_GenreLot <> 'RIE' or FID_TypologieLot <> 'PK'  end) || ' m²' else
                       null end
                     label: Superficie totale avec QP
                     documentation: Addition de toutes les surfaces utiles avec QP Surface totale de
@@ -64,6 +64,8 @@ formTabs:
                       color: md:black
                     useCustomLabel: true
                     dataType: STRING
+
+
 
 
               - _type: FormSection
@@ -153,7 +155,7 @@ formTabs:
                       - _type: ReferenceField
                         _name: FDN_SousSecteurImmostat
                         value: FDN_SousSecteurImmostat
-                        label: Sous secteur immostat
+                        label: Sous-secteur immostat
                         documentation: Découpage géographique de gestion
                         labelProperties:
                           alignment: left
@@ -192,7 +194,6 @@ formTabs:
                 content:
                   - _type: ObjectField
                     _name: GoogleMaps
-
                     dataType: STRING
                     label: Google Maps View
                     useCustomLabel: true
@@ -261,6 +262,7 @@ formTabs:
                       </body>
 
                       </html>'
+
                     componentProperties:
                       sourceType: content
                       textTypography: body-1
@@ -424,20 +426,31 @@ formTabs:
                 dataType: STRING
                 referencedEntity: Batiments.entities.TypeEnergie.TypeEnergie
 
-
-              - _type: ReferenceField
-                _name: FDN_TypeCompteur
-                value: FDN_TypeCompteur
-                label: Type compteur
+              - _type: TextField
+                _name: StatutIRVE
+                value: StatutIRVE
+                label: Statut IRVE
+                documentation: Indique si l'immeuble est classé selon les critères IRVE.
                 labelProperties:
                   alignment: left
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_OrgaResp = 'DR' 
-                visibleValueInterpreter: SEMQL
-                dataType: STRING
-                referencedEntity: Batiments.entities.TypeCompteur.TypeCompteur
+                dataType: BOOLEAN
+
+              # - _type: ReferenceField
+              #   _name: FDN_TypeCompteur
+              #   value: FDN_TypeCompteur
+              #   label: Type compteur
+              #   labelProperties:
+              #     alignment: left
+              #     typography: body-2
+              #     color: md:black
+              #   useCustomLabel: true
+              #   visibleValue: FID_OrgaResp = 'DR' 
+              #   visibleValueInterpreter: SEMQL
+              #   dataType: STRING
+              #   referencedEntity: Batiments.entities.TypeCompteur.TypeCompteur
 
               - _type: TextField
                 _name: CapaciteAccueil
@@ -577,8 +590,8 @@ formTabs:
             content:
               - _type: TextField
                 _name: NombreEtages
-                value: lookup count (EtageCode) from Batiment.Etage  end 
-                label: Nombre d'étages
+                value: lookup first (substr(Libelle, 1, 1)) from Batiment.Etage where substr(CodeEtage, 1, 1) = 'E' order by CodeEtage desc  end 
+                label: Nombre étages
                 documentation: Nombre d'étages
                 labelProperties:
                   alignment: left
@@ -586,7 +599,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                dataType: INTEGER
+                dataType: STRING
 
               - _type: TextField
                 _name: NbLotInitial
@@ -683,7 +696,9 @@ formTabs:
             content:
               - _type: TextField
                 _name: SurperficieHabitable
-                value: SurperficieHabitable
+                value: case when (FID_Usage = 'HAB' or  FID_Usage = 'MIXTE') and (lookup sum (SuperficieHabitable) from Batiment.Etage.Lot end) is not null  then (lookup sum (SuperficieHabitable) from Batiment.Etage.Lot end) || ' m²' else
+                      null end
+                
                 label: Superficie habitable (SHAB)
                 documentation: Superficie habitable (SHAB).
                 labelProperties:
@@ -692,11 +707,16 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                dataType: INTEGER
+                visibleValue: FID_Usage = 'HAB' or  FID_Usage = 'MIXTE'
+                visibleValueInterpreter: SEMQL
+                dataType: STRING
+
 
               - _type: TextField
                 _name: SurperficiePlateauCoque
-                value: SurperficiePlateauCoque
+                value: case when (lookup sum (SuperficieUtileQP) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' or FID_TypologieLot = 'LC' end) is not null  then (lookup sum (SuperficieUtileQP) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' or FID_TypologieLot = 'LC'  end) || ' m²' else
+                      null end
+                
                 label: Superficie plateaux et coques commerciales
                 documentation: Superficie plateaux et coques commerciales
                 labelProperties:
@@ -705,22 +725,75 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                dataType: INTEGER 
+                visibleValue: (lookup sum (SuperficieUtileQP) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' or FID_TypologieLot = 'LC' end)  is not null
+                visibleValueInterpreter: SEMQL
+                dataType: STRING 
+
+
+
               - _type: TextField
-                _name: SurperficieTaxable
-                value: SurperficieTaxable
-                label: Superficie taxable
-                documentation: Superficie taxable.
+                _name: SurperficieTaxableBureaux
+                value: case when (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' end) is not null  then (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' end) || ' m²' else
+                      null end
+                
+                label: Superficie taxable locaux bureaux
+                documentation: Superficie taxable locaux bureaux
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                dataType: INTEGER
+                dataType: STRING 
+
+              - _type: TextField
+                _name: SurperficieTaxableCommerciaux
+                value: case when (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LC' end) is not null  then (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LC' end) || ' m²' else
+                      null end
+                
+                label: Superficie taxable locaux commerciaux
+                documentation: Superficie taxable locaux commerciaux
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING 
+
+              - _type: TextField
+                _name: SurperficieTaxableStockage
+                value: case when (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LD' end) is not null  then (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LD' end) || ' m²' else
+                      null end
+                
+                label: Superficie taxable locaux stockage
+                documentation: Superficie taxable locaux stockage
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING 
+
+              - _type: TextField
+                _name: SurperficieTaxableparkings
+                value: case when (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PK' end) is not null  then (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PK' end) || ' m²' else
+                      null end
+                
+                label: Superficie taxable parkings
+                documentation: Superficie taxable parkings
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING 
+
               - _type: TextField
                 _name: SurperficieHallCouloir
-                value: SurperficieHallCouloir
+                value: case when SurperficieHallCouloir is not null then SurperficieHallCouloir || ' m²' else null end
                 label: Superficie halls/couloirs
                 documentation: Superficie halls/couloir.
                 labelProperties:
@@ -729,24 +802,34 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                dataType: INTEGER
+                dataType: STRING
               - _type: TextField
-                _name: SurperficieToituresTerrasses
-                value: SurperficieToituresTerrasses
-                label: Superficie toitures/terrasses
-                documentation: Superficie toitures/terrasses.
+                _name: SurperficieTerrasses
+                value: case when SurperficieTerrasses is not null then SurperficieTerrasses || ' m²' else null end
+                label: Superficie terrasses
+                documentation: Superficie terrasses.
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_OrgaResp = 'DR' 
-                visibleValueInterpreter: SEMQL
-                dataType: INTEGER
+                dataType: STRING
+              - _type: TextField
+                _name: SurperficieToitures
+                value: case when SurperficieToitures is not null then SurperficieToitures || ' m²' else null end
+                label: Superficie toitures
+                documentation: Superficie toitures.
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
               - _type: TextField
                 _name: SurperficieEspacesVerts
-                value: SurperficieEspacesVerts
+                value: case when SurperficieEspacesVerts is not null then SurperficieEspacesVerts || ' m²' else null end
                 label: Superficie espaces verts
                 documentation: Superficie espaces verts.
                 labelProperties:
@@ -757,15 +840,15 @@ formTabs:
                 useCustomLabel: true
                 visibleValue: FID_OrgaResp = 'DR' 
                 visibleValueInterpreter: SEMQL
-                dataType: INTEGER
+                dataType: STRING
 
            
       - _type: FormSection
         _name: Services
         label: Services non individualisés
         layoutDirection: COLUMN
-        visibleValue: "1"
-        visibleValueInterpreter: LITERAL
+        visibleValue: (lookup count (IdentifiantsERP) from Batiment.Etage.Lot where FID_TypologieLot = 'SNI' end ) > 0
+        visibleValueInterpreter: SEMQL
 
         content:
           - _type: FormCollection
@@ -780,7 +863,7 @@ formTabs:
             enableUserDefinedSort: true
             transitionPath: Batiment.Etage.Lot
             sortExpression: 1 DESC
-            filter: StatutNewLot = '1'
+            filter: FID_TypologieLot = 'SNI'
             targetEntity: Batiments.entities.Lot.Lot
             height: 300
             formCollectionSearchConfigs:
@@ -971,7 +1054,7 @@ formTabs:
                               typography: body-2
                               color: md:black
                             useCustomLabel: true
-                            visibleValue: FID_OrgaResp = 'DR' 
+                            visibleValue: FID_OrgaResp = 'DR' and  DateMiseVente is not null
                             visibleValueInterpreter: SEMQL
                             dataType: DATE                        
                           - _type: DateField
@@ -985,6 +1068,8 @@ formTabs:
                               typography: body-2
                               color: md:black
                             useCustomLabel: true
+                            visibleValue: DateVente is not null
+                            visibleValueInterpreter: SEMQL
                             dataType: DATE
 
 
@@ -1057,6 +1142,7 @@ formTabs:
             label: Sociétés
             useCustomLabel: true
             collection: Batiments.entities.RelImmSoc.collection_views.Societe
+            actionSet: Batiments.entities.RelImmSoc.action_sets.RelImmSocActionSet
             tableAllowed: true
             listAllowed: false
             gridAllowed: false

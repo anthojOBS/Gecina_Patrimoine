@@ -100,13 +100,23 @@ tableColumns:
     visibleByDefault: false
 
   - _type: ReferenceColumn
-    _name: PeriodeConstruction
+    _name: FDN_PeriodeConstruction
     value: FDN_PeriodeConstruction
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: false
     referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
+
+  - _type: ReferenceColumn
+    _name: FDN_PerimetreGestion
+    value: FDN_PerimetreGestion
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: false
+    referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
+
 
   - _type: TextColumn
     _name: DateDebutConstruction
@@ -145,7 +155,7 @@ tableColumns:
     visibleByDefault: false
 
   - _type: ReferenceColumn
-    _name: FiscaliteCible
+    _name: FDN_FiscaliteCible
     value: FDN_FiscaliteCible
     useCustomLabel: false
     dataType: STRING
@@ -189,6 +199,14 @@ tableColumns:
   - _type: TextColumn
     _name: DateDebPhase
     value: DateDebPhase
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: DateDebUsage
+    value: DateDebUsage
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
@@ -332,14 +350,6 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: false
 
-  # Nouveaux attributs ajoutés
-  - _type: TextColumn
-    _name: SuperficieUtile
-    value: SuperficieUtile
-    useCustomLabel: false
-    dataType: DECIMAL
-    columnAlign: LEFT
-    visibleByDefault: false
 
   - _type: ReferenceColumn
     _name: FDN_ZoneImmostat
@@ -376,6 +386,25 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: false
     referencedEntity: Batiments.entities.QuartierParis.QuartierParis
+
+  - _type: ReferenceColumn
+    _name: FDN_TypeCompteur
+    value: FDN_TypeCompteur
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: false
+    referencedEntity: Batiments.entities.TypeCompteur.TypeCompteur
+
+  - _type: ReferenceColumn
+    _name: FDN_TypeVente
+    value: FDN_TypeVente
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: false
+    referencedEntity: Batiments.entities.TypeVente.TypeVente
+
   - _type: TextColumn
     _name: IGH
     value: IGH
@@ -387,6 +416,14 @@ tableColumns:
   - _type: TextColumn
     _name: ERP
     value: ERP
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: StatutIRVE
+    value: StatutIRVE
     useCustomLabel: false
     dataType: BOOLEAN
     columnAlign: LEFT
@@ -436,14 +473,6 @@ tableColumns:
     visibleByDefault: false
 
   - _type: TextColumn
-    _name: SurperficieTaxable
-    value: SurperficieTaxable
-    useCustomLabel: false
-    dataType: DECIMAL
-    columnAlign: LEFT
-    visibleByDefault: false
-
-  - _type: TextColumn
     _name: SurperficieHallCouloir
     value: SurperficieHallCouloir
     useCustomLabel: false
@@ -452,8 +481,15 @@ tableColumns:
     visibleByDefault: false
 
   - _type: TextColumn
-    _name: SurperficieToituresTerrasses
-    value: SurperficieToituresTerrasses
+    _name: SurperficieTerrasses
+    value: SurperficieTerrasses
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+  - _type: TextColumn
+    _name: SurperficieToitures
+    value: SurperficieToitures
     useCustomLabel: false
     dataType: DECIMAL
     columnAlign: LEFT

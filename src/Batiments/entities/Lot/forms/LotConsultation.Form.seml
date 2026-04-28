@@ -84,44 +84,6 @@ formTabs:
                     dataType: STRING
                     referencedEntity: Batiments.entities.Etage.Etage
 
-                  # - _type: TextField
-                  #   _name: SuperficieUtileSansQP
-                  #   value: case when SuperficieUtileSansQP is not null then SuperficieUtileSansQP || ' m²' else null end
-                  #   documentation: Dans chaque lot de bureau / commerce ==>m² privatifs + Quote part de parties communes (ratio de l'ensemble des parties communes réparties au prorata de ce qu'ils occupent en partie privative)
-                  #   label: Superficie utile sans QP
-                  #   labelProperties:
-                  #     alignment: left
-                  #     typographyValueInterpreter: LITERAL
-                  #     typography: body-2
-                  #     color: md:black
-                  #   useCustomLabel: true
-                  #   dataType: STRING
-
-                  # - _type: TextField
-                  #   _name: SuperficieUtileQP
-                  #   value: case when SuperficieUtileQP is not null then SuperficieUtileQP || ' m²' else null end
-                  #   documentation: Dans chaque lot de bureau / commerce ==>m² privatifs + Quote part de parties communes (ratio de l'ensemble des parties communes réparties au prorata de ce qu'ils occupent en partie privative)
-                  #   label: Superficie utile avec QP
-                  #   labelProperties:
-                  #     alignment: left
-                  #     typographyValueInterpreter: LITERAL
-                  #     typography: body-2
-                  #     color: md:black
-                  #   useCustomLabel: true
-                  #   dataType: STRING
-
-                  # - _type: TextField
-                  #   _name: SuperficieUtilePonderee
-                  #   value: case when SuperficieUtilePonderee is not null then SuperficieUtilePonderee || ' m²' else null end
-                  #   label: Superficie utile pondérée
-                  #   labelProperties:
-                  #     alignment: left
-                  #     typographyValueInterpreter: LITERAL
-                  #     typography: body-2
-                  #     color: md:black
-                  #   useCustomLabel: true
-                  #   dataType: STRING
-
                   - _type: TextField
                     _name: IdentifiantPhysique
                     value: IdentifiantPhysique
@@ -158,8 +120,8 @@ formTabs:
                 labelWidth: 200px
                 content:
                     - _type: ReferenceField
-                      _name: FDN_UsageLot
-                      value: FDN_UsageLot
+                      _name: FDN_Usage
+                      value: FDN_Usage
                       label: Usage
                       labelProperties:
                         alignment: left
@@ -168,7 +130,7 @@ formTabs:
                         color: md:black
                       useCustomLabel: true
                       dataType: STRING
-                      referencedEntity: Batiments.entities.UsageLot.UsageLot
+                      referencedEntity: Batiments.entities.Usage.Usage
                     - _type: TextField
                       _name: DateDebUsage
                       value: DateDebUsage
@@ -311,8 +273,7 @@ formTabs:
                     visibleValue: StatutLouable = '1' 
                     visibleValueInterpreter: SEMQL
                     dataType: STRING
-                    referencedEntity: Batiments.entities.GenreLot.GenreLot
-
+                    referencedEntity: Batiments.entities.RaisonNonLouable.RaisonNonLouable
 
                   - _type: CheckboxField
                     _name: StatutLogementSocial
@@ -377,6 +338,19 @@ formTabs:
                       color: md:black
                     useCustomLabel: true
                     dataType: BOOLEAN
+
+                  - _type: ReferenceField
+                    _name: FDN_TypeCompteur
+                    value: FDN_TypeCompteur
+                    label: Type de compteur
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.TypeCompteur.TypeCompteur
 
           # Gestion interne
               - _type: FormSection
@@ -473,7 +447,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                dataType: INTEGER
+                dataType: STRING
 
               - _type: TextField
                 _name: SuperficieUtileSansQP
@@ -486,7 +460,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                dataType: INTEGER 
+                dataType: STRING 
   
               - _type: TextField
                 _name: SuperficieUtileQP
@@ -499,7 +473,20 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                dataType: INTEGER 
+                dataType: STRING 
+
+              - _type: TextField
+                _name: SuperficieTaxable
+                value: case when SuperficieTaxable is not null then SuperficieTaxable || ' m²' else null end
+                label: Superficie taxable
+                documentation: Superficie taxable.
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING 
 
               - _type: TextField
                 _name: SuperficieUtilePonderee
@@ -512,7 +499,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                dataType: INTEGER 
+                dataType: STRING 
 
 
            
@@ -520,8 +507,6 @@ formTabs:
             _name: Services
             label: Services non individualisés
             layoutDirection: COLUMN
-            visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
-            visibleValueInterpreter: SEMQL
             labelWidth: 300px
             content:
               - _type: CheckboxField
@@ -534,8 +519,6 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
-                visibleValueInterpreter: SEMQL
                 dataType: BOOLEAN
 
 
@@ -598,17 +581,6 @@ formTabs:
         content:
 
               - _type: TextField
-                _name: DateAcquisition
-                value: Etage.Batiment.Immeuble.DateAcquisition
-                label: Date acquisition
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: DATE
-              - _type: TextField
                 _name: DateVente
                 value: DateVente
                 label: Date vente
@@ -618,6 +590,8 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: DateVente is not null
+                visibleValueInterpreter: SEMQL
                 dataType: DATE
 
               - _type: TextField
@@ -655,7 +629,7 @@ formTabs:
         content:
           - _type: TextField
             _name: FDN_FiscaliteCible
-            value: Etage.Batiment.Immeuble.FDN_FiscaliteCible
+            value: FDN_FiscaliteCible
             label: Régime TVA
             labelProperties:
               alignment: left
@@ -664,6 +638,7 @@ formTabs:
               color: md:black
             useCustomLabel: true
             dataType: STRING
+            referencedEntity: Batiments.entities.FiscaliteCible.FiscaliteCible
 
           - _type: TextField
             _name: DateDebRegimeTVA
@@ -725,6 +700,36 @@ formTabs:
               color: md:black
             useCustomLabel: true
             dataType: BOOLEAN
+
+
+      - _type: FormSection
+        _name: Societes
+        label: Sociétés
+        layoutDirection: COLUMN
+        visibleValue: "1"
+        visibleValueInterpreter: LITERAL
+
+        content:
+          - _type: FormCollection
+            _name: Societes
+            label: Sociétés
+            useCustomLabel: true
+            collection: Batiments.entities.RelLotSoc.collection_views.Societe
+            tableAllowed: true
+            listAllowed: false
+            gridAllowed: false
+            displayRecordCount: ALWAYS
+            enableUserDefinedSort: true
+            transitionPath: RelLotSoc
+            sortExpression: 1 DESC
+            filter: 1=1
+            # filter: FID_TypeSociete = '1'
+            targetEntity: Batiments.entities.RelLotSoc.RelLotSoc
+            height: 300
+            formCollectionSearchConfigs:
+             -  enabled: true 
+                searchType: TEXT
+
 
   - _type: FormTab
     _name: Amenagement

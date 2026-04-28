@@ -1,0 +1,10 @@
+_package: Batiments.entities.SousLot.enrichers
+_name: DefautDtDebStatut
+_type: SemQLEnricher
+entity: Batiments.entities.SousLot.SousLot
+label: Default date début statut
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: DateDebStatut
+    expression: CURRENT_DATE()
+condition: DateDebStatut is NULL 

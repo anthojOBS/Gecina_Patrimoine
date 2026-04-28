@@ -1,0 +1,10 @@
+_package: Batiments.entities.Lot.enrichers
+_name: DefautDtDebUsage
+_type: SemQLEnricher
+entity: Batiments.entities.Lot.Lot
+label: Default date début usage
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: DateDebUsage
+    expression: CURRENT_DATE()
+condition: DateDebUsage is NULL 

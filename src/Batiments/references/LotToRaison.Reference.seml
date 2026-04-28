@@ -19,9 +19,9 @@ toRoleLabel: Raison non louable
 toRoleName: RaisonNonLouable
 toRolePhysicalName: RAISON_NON_LOUABLE_ID
 
-oneToMany: false
+oneToMany: true
 deletePropagation: RESTRICT
-validationScope: PRE_CONSO
+validationScope: POST_CONSO
 mandatoryValidationLabel: La raison est obligatoire pour un lot
 brokenValidationLabel: La raison sélectionnée est invalide pour ce lot
 

@@ -43,7 +43,7 @@ attributes:
     length: 100
     mandatory: true
     mandatoryValidationLabel: "Numéro bâtiment est obligatoire"
-    mandatoryValidationScope: PRE_CONSO
+    mandatoryValidationScope: POST_CONSO
 
   - _type: EntityAttribute
     _name: Libelle_Batiment
@@ -53,7 +53,7 @@ attributes:
     length: 255
     mandatory: true
     mandatoryValidationLabel: "Le libellé du bâtiment est obligatoire"
-    mandatoryValidationScope: PRE_CONSO
+    mandatoryValidationScope: POST_CONSO
     searchable: true
 
   - _type: EntityAttribute
@@ -64,7 +64,7 @@ attributes:
     length: 255
     mandatory: true
     mandatoryValidationLabel: "Adresse du bâtiment est obligatoire"
-    mandatoryValidationScope: PRE_CONSO
+    mandatoryValidationScope: POST_CONSO
 
   - _type: EntityAttribute
     _name: CodePostal
@@ -74,7 +74,7 @@ attributes:
     length: 255
     mandatory: true
     mandatoryValidationLabel: "Le code postal du bâtiment est obligatoire"
-    mandatoryValidationScope: PRE_CONSO
+    mandatoryValidationScope: POST_CONSO
 
   - _type: EntityAttribute
     _name: Ville
@@ -84,7 +84,7 @@ attributes:
     length: 255
     mandatory: true
     mandatoryValidationLabel: "La ville du bâtiment est obligatoire"
-    mandatoryValidationScope: PRE_CONSO
+    mandatoryValidationScope: POST_CONSO
 
   - _type: EntityAttribute
     _name: AdresseEnrichie
@@ -129,29 +129,12 @@ attributes:
     mandatory: false
 
   - _type: EntityAttribute
-    _name: Proprietaire
-    label: Propriétaire
-    physicalName: PROPRIETAIRE
-    dataType: String
-    length: 150
-    mandatory: false
-
-  - _type: EntityAttribute
     _name: BatimentPrincipal
     label: Flag batiment principal
     physicalName: BATIMENT_PRINCIPAL
     dataType: Boolean
     mandatory: false
-    
-  - _type: EntityAttribute
-    _name: SuperficieUtile
-    label: SuperficieUtile
-    physicalName: SUPERFICIE_UTILE
-    dataType: Decimal
-    precision: 18
-    scale: 2 
-    mandatory: false
-    searchable: false
+
     
   - _type: EntityAttribute
     _name: FlagAscenseur

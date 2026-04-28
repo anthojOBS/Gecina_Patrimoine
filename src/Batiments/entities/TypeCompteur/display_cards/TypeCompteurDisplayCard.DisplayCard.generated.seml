@@ -3,8 +3,7 @@ _type: DisplayCard
 _name: TypeCompteurDisplayCard
 entity: Batiments.entities.TypeCompteur.TypeCompteur
 default: true
-primaryTextExpression: TypeCompteur
-secondaryTextExpression: LibelleTypeCompteur
+primaryTextExpression: LibelleTypeCompteur
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

@@ -1,0 +1,66 @@
+_package: Batiments.entities.SousLot.steppers
+_type: Stepper
+_name: SousLotsConsultation
+entity: Batiments.entities.SousLot.SousLot
+label: SousLots
+rootStep:
+  _type: CollectionStep
+  _name: Lots
+  label: Lots
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.SousLot.collection_views.SousLotCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Lot
+      label: Lot
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.SousLot.forms.SousLotConsultation.SousLot
+
+
+    - _type: FormStep
+      _name: Composition
+      label: Composition
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.SousLot.forms.SousLotConsultation.Composition
+
+
+    - _type: FormStep
+      _name: CycleVie
+      label: Cycle de vie
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie
+
+
+    - _type: FormStep
+      _name: JuridiquePropriete
+      label: Juridique et propriété
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.SousLot.forms.SousLotConsultation.JuridiquePropriete

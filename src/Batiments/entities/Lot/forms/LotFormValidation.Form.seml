@@ -58,17 +58,6 @@ formTabs:
                   typography: body-2
                   color: md:black
               - _type: TextField
-                _name: UsageGolden
-                value: GoldenRecord.Usage
-                useCustomLabel: false
-                dataType: STRING
-                authoringModeValueInterpreter: LITERAL
-                authoringMode: force_read_only
-                labelProperties:
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-              - _type: TextField
                 _name: SuperficieGolden
                 value: GoldenRecord.SuperficieHabitable
                 useCustomLabel: false
@@ -115,18 +104,18 @@ formTabs:
                   typographyValueInterpreter: LITERAL
                   typography: body-2
                   color: md:black
-              - _type: ReferenceField
-                _name: FDN_UsageLotGolden
-                value: FDN_UsageLot
-                useCustomLabel: false
-                dataType: STRING
-                referencedEntity: Batiments.entities.UsageLot.UsageLot
-                authoringModeValueInterpreter: LITERAL
-                authoringMode: force_read_only
-                labelProperties:
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
+              # - _type: ReferenceField
+              #   _name: FDN_UsageLotGolden
+              #   value: FDN_UsageLot
+              #   useCustomLabel: false
+              #   dataType: STRING
+              #   referencedEntity: Batiments.entities.UsageLot.UsageLot
+              #   authoringModeValueInterpreter: LITERAL
+              #   authoringMode: force_read_only
+              #   labelProperties:
+              #     typographyValueInterpreter: LITERAL
+              #     typography: body-2
+              #     color: md:black
 
           - _type: FormSection
             _name: NewGolden
@@ -171,18 +160,18 @@ formTabs:
                 componentProperties:
                   contentBackgroundColorValueInterpreter: SEMQL
                   contentBackgroundColor: case when Libelle != GoldenRecord.Libelle or (GoldenRecord.Libelle is null and Libelle is not null) then 'css:yellow' else 'css:white' end
-              - _type: TextField
-                _name: Usage
-                value: Usage
-                useCustomLabel: false
-                dataType: STRING
-                labelProperties:
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                componentProperties:
-                  contentBackgroundColorValueInterpreter: SEMQL
-                  contentBackgroundColor: case when Usage != GoldenRecord.Usage or (GoldenRecord.Usage is null and Usage is not null) then 'css:yellow' else 'css:white' end
+              # - _type: TextField
+              #   _name: Usage
+              #   value: Usage
+              #   useCustomLabel: false
+              #   dataType: STRING
+              #   labelProperties:
+              #     typographyValueInterpreter: LITERAL
+              #     typography: body-2
+              #     color: md:black
+              #   componentProperties:
+              #     contentBackgroundColorValueInterpreter: SEMQL
+              #     contentBackgroundColor: case when Usage != GoldenRecord.Usage or (GoldenRecord.Usage is null and Usage is not null) then 'css:yellow' else 'css:white' end
               
               - _type: TextField
                 _name: SuperficieHabitable

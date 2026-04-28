@@ -1,0 +1,15 @@
+_package: Batiments.entities.SousLot.dups_managers
+_type: DupsManager
+_name: ManageDuplicatesOnSousLot
+label: Manage Duplicates on SousLot
+entity: Batiments.entities.SousLot.SousLot
+enableMasterValuePicking: true
+displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
+formTab: Batiments.entities.SousLot.forms.SousLotConsultation.SousLot
+collectionView: Batiments.entities.SousLot.collection_views.SousLotCollectionView
+checkoutCustomSortEnabled: false
+checkoutUserDefinedSortEnabled: true
+checkoutDefaultDisplayType: TABLE
+checkoutDisplayGridAllowed: false
+checkoutDisplayListAllowed: true
+checkoutDisplayTableAllowed: true

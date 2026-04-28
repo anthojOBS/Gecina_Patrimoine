@@ -1,0 +1,9 @@
+_package: Batiments.entities.SousLot.survivorship_rules
+_type: IDSurvivorshipRule
+_name: IdSurvivorshipRule
+entity: Batiments.entities.SousLot.SousLot
+label: Id Survivorship Rule
+description: ""
+documentation: ""
+consolidationStrategy: CUSTOM_RANKING
+consolidationSkipNulls: false

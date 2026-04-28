@@ -19,9 +19,9 @@ toRoleLabel: Genre de Lot
 toRoleName: GenreLot
 toRolePhysicalName: GENRE_LOT_ID
 
-oneToMany: false
+oneToMany: true
 deletePropagation: RESTRICT
-validationScope: PRE_CONSO
+validationScope: POST_CONSO
 mandatoryValidationLabel: Le genre de Lot est obligatoire pour un lot
 brokenValidationLabel: Le genre de Lot sélectionné est invalide pour ce lot
 

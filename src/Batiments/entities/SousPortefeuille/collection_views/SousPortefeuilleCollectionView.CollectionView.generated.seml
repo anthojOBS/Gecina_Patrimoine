@@ -40,3 +40,11 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
     referencedEntity: Batiments.entities.Portefeuille.Portefeuille
+  - _type: ReferenceColumn
+    _name: FDN_OrgaResp
+    value: FDN_OrgaResp
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.OrganisationResponsable.OrganisationResponsable

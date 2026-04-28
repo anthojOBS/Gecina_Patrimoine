@@ -1,0 +1,263 @@
+_package: Batiments.entities.Lot.steppers
+_type: Stepper
+_name: LotsCreation
+entity: Batiments.entities.Lot.Lot
+label: Lots
+rootStep:
+  _type: CollectionStep
+  _name: Lots
+  label: Lots
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.Lot.collection_views.LotCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Lot
+      label: Lot
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Lot.forms.LotCreation.Lot
+
+      formStepEnrichers:   
+        - enricher: Batiments.entities.Lot.enrichers.DefautDtDebUsage
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+
+      formStepValidations:  
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Lot.Lot.Libelle
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Lot.Lot.IdentifiantsERP
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Lot.Lot.DateDebUsage
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.LotToUsage.Usage
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.LotToTypologieLot.TypologieLot
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.LotToGenreLot.GenreLot
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.LotToTypeCompteur.TypeCompteur
+
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Lot.Lot.Libelle
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Lot.Lot.IdentifiantsERP
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.references.LotToUsage.Usage
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Lot.Lot.DateDebUsage
+
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.references.LotToTypologieLot.TypologieLot
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.references.LotToGenreLot.GenreLot
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.references.LotToTypeCompteur.TypeCompteur
+
+
+    - _type: FormStep
+      _name: Composition
+      label: Composition
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Lot.forms.LotCreation.Composition
+
+    - _type: FormStep
+      _name: CycleDeVie
+      label: Cycle de vie de l'immeuble
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Lot.forms.LotCreation.CycleVie
+
+      formStepEnrichers:   
+        - enricher: Batiments.entities.Lot.enrichers.DefautPhase
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+        - enricher: Batiments.entities.Lot.enrichers.DefautDtDebPhase
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+
+      formStepValidations:  
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute:  Batiments.references.LotToPhase.Phase
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Lot.Lot.DateDebPhase
+
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.LotToPhase.Phase
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Lot.Lot.DateDebPhase
+
+    - _type: FormStep
+      _name: FiscaliteJuridique
+      label: Fiscalité et Juridique
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Lot.forms.LotCreation.JuridiquePropriete
+
+      formStepEnrichers:   
+        - enricher: Batiments.entities.Lot.enrichers.DefautRegimeTVA
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+
+      formStepValidations:  
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute:  Batiments.references.LotToFiscaliteCible.FiscaliteCible
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Lot.Lot.DateRegimeTVA
+
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.references.LotToFiscaliteCible.FiscaliteCible
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Lot.Lot.DateRegimeTVA
+
+
+    - _type: CollectionStep
+      enableChildImportOnParentCreate: true
+      enableChildImportOnParentEdit: true 
+      childImportModeOnParentEdit: CREATE_ONLY 
+      enableChildCopyOnParentCreate: true
+      enableChildCopyOnParentEdit: true
+      enableChildCreationOnParentCreate: true
+      enableChildCreationOnParentEdit: true 
+      enableChildDeleteOnParentEdit: true
+      enableChildEditOnParentCreate: true
+      enableChildEditOnParentEdit: true
+      enableChildRemoveOnParentCreate: true
+      enableChildRemoveOnParentEdit: true
+      skipToChildCreationOnParentCreate: false
+      skipToChildEditingOnParentEdit: false
+      linear: false
+      _name: Societes
+      label: Sociétés
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      childDeleteType: HARD_DELETE
+      oneToManyReference: Batiments.references.RelLotSocToLot
+      collectionView: Batiments.entities.RelLotSoc.collection_views.RelLotSocCollectionView
+      defaultDisplayType: TABLE
+      customSortEnabled: false
+      userDefinedSortEnabled: true
+      displayGridAllowed: false
+      displayListAllowed: true
+      displayTableAllowed: true
+      useCustomCollectionLabel: false
+      childSteps:
+        - _type: FormStep
+          _name: Societes_form
+          label: Sociétés
+          canFinishSubLevel: true
+          enabledOnParentCreate: true
+          enabledOnParentEdit: true
+          formFieldsMode: AUTO
+          enableMasterValuePicking: false
+          formTab: Batiments.entities.RelLotSoc.forms.RelLotSocForm.RelLotSoc
+
+
+
+stepperFinishValidations:
+  - onStepperFinish: WARN
+    validationType: DETECT_DUPS
+
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Lot.Lot.Libelle
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Lot.Lot.IdentifiantsERP
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute:  Batiments.references.LotToUsage.Usage
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Lot.Lot.DateDebUsage
+
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.references.LotToTypologieLot.TypologieLot
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.references.LotToGenreLot.GenreLot
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.references.LotToTypeCompteur.TypeCompteur
+
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute:  Batiments.references.LotToPhase.Phase
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Lot.Lot.DateDebPhase
+
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.references.LotToFiscaliteCible.FiscaliteCible
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Lot.Lot.DateRegimeTVA

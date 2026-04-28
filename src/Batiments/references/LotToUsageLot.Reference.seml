@@ -19,9 +19,9 @@ toRoleLabel: Usage de Lot
 toRoleName: UsageLot
 toRolePhysicalName: USAGE_LOT_ID
 
-oneToMany: false
+oneToMany: true
 deletePropagation: RESTRICT
-validationScope: PRE_CONSO
+validationScope: POST_CONSO
 mandatoryValidationLabel: L'usage est obligatoire pour un lot
 brokenValidationLabel: L'usage sélectionné est invalide pour ce lot
 

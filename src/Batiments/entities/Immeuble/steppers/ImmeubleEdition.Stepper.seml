@@ -34,13 +34,20 @@ rootStep:
       formTab: Batiments.entities.Immeuble.forms.ImmeubleEdition.Immeuble
 
       referenceFormFieldConfigs:
-        # - enableCreateReference: false
-        #   enableUserSort: true
-        #   referencePickerType: AUTO_COMPLETE
-        #   fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCreation.Immeuble.SectionBas.SectionBasD.GestionInterne.FDN_SousPortefeuille
-        #   referenceFilter: Referenced.FID_Portefeuille = Record.FID_Portefeuille
-        #   referencePickerCollectionView: Batiments.entities.SousPortefeuille.collection_views.SousPortefeuilleCollectionView
-        #   # referencePickerSearchTypeConfigs: []
+        - enableCreateReference: false
+          enableUserSort: true
+          referencePickerType: AUTO_COMPLETE
+          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleEdition.Immeuble.SectionGlobal.SectionPremsD.GestionInterne.FDN_SousPortefeuille_DB
+          referenceFilter: Referenced.FID_OrgaResp = Record.FID_OrgaResp
+          referencePickerCollectionView: Batiments.entities.SousPortefeuille.collection_views.SousPortefeuilleCollectionView
+          # referencePickerSearchTypeConfigs: []
+        - enableCreateReference: false
+          enableUserSort: true
+          referencePickerType: AUTO_COMPLETE
+          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleEdition.Immeuble.SectionGlobal.SectionPremsD.GestionInterne.FDN_SousPortefeuille_DR
+          referenceFilter: Referenced.FID_OrgaResp = Record.FID_OrgaResp
+          referencePickerCollectionView: Batiments.entities.SousPortefeuille.collection_views.SousPortefeuilleCollectionView
+          # referencePickerSearchTypeConfigs: []
 
         - enableCreateReference: false
           enableUserSort: true

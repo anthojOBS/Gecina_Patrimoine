@@ -69,7 +69,7 @@ steps:
       toCandidatesOrAssignee: false
     taskType: DATA_AUTHORING
     entity: Batiments.entities.Lot.Lot
-    stepper: Batiments.entities.Lot.steppers.AuthorLots
+    stepper: Batiments.entities.Lot.steppers.LotsConsultation
     myTasksConfiguration:
       collection: Batiments.entities.Lot.collection_views.LotCollectionView
     transitions:

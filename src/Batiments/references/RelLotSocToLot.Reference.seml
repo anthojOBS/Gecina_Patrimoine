@@ -21,7 +21,7 @@ toRolePhysicalName: LOT_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: PRE_CONSO
+validationScope: POST_CONSO
 mandatoryValidationLabel: Le lot est obligatoire pour une société
 brokenValidationLabel: Le lot sélectionné est invalide pour cette société
 

@@ -7,3 +7,4 @@ enricherExecutionScope: NONE
 semQlEnricherExpressions: 
   - attributeName: NbAscenseur
     expression: case when FlagAscenseur ='0' then null  end
+condition: NbAscenseur is not null and  FlagAscenseur ='0'

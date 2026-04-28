@@ -185,6 +185,16 @@ rootFolder:
       requiredRole: semarchyAdmin
 
     - _type: BrowseBusinessViewAction
+      _name: SousLots
+      businessView: Batiments.entities.SousLot.business_views.SousLotBusinessView
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      label: Lots
+      nbRecordsBadgeVisible: false
+      icon: images://mdi/floor-plan.svg
+      requiredRole: semarchyAdmin
+
+    - _type: BrowseBusinessViewAction
       _name: ImmeublesErrors
       label: Immeubles Erreurs
       businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
@@ -308,6 +318,22 @@ rootFolder:
           imageMode: FIT
           icon: images://mdi/map-marker.svg
           nbRecordsBadgeVisible: false
+
+        - _type: BrowseBusinessViewAction
+          _name: PerimetreGestion
+          businessView: Batiments.entities.PerimetreGestion.business_views.PerimetreGestionBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/timeline-text.svg
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
+          _name: PeriodeConstruction
+          businessView: Batiments.entities.PeriodeConstruction.business_views.PeriodeConstructionBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/timeline-text.svg
+          nbRecordsBadgeVisible: false
+
         - _type: BrowseBusinessViewAction
           _name: Phases
           businessView: Batiments.entities.Phase.business_views.PhaseBusinessView
@@ -366,6 +392,15 @@ rootFolder:
           imageAlign: MIDDLE_CENTER
           imageMode: FIT
           nbRecordsBadgeVisible: false
+
+        - _type: BrowseBusinessViewAction
+          _name: TypeCompteur
+          businessView: Batiments.entities.TypeCompteur.business_views.TypeCompteurBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/office-building.svg
+          nbRecordsBadgeVisible: false
+
         - _type: BrowseBusinessViewAction
           _name: TypeEnergie
           businessView: Batiments.entities.TypeEnergie.business_views.TypeEnergieBusinessView
@@ -380,6 +415,15 @@ rootFolder:
           imageMode: FIT
           icon: images://mdi/office-building.svg
           nbRecordsBadgeVisible: false
+
+        - _type: BrowseBusinessViewAction
+          _name: TypeVente
+          businessView: Batiments.entities.TypeVente.business_views.TypeVenteBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/office-building.svg
+          nbRecordsBadgeVisible: false
+
         - _type: BrowseBusinessViewAction
           _name: TypologieLots
           businessView: Batiments.entities.TypologieLot.business_views.TypologieLotBusinessView
@@ -452,19 +496,26 @@ rootFolder:
         importAction: Batiments.entities.Lot.action_sets.LotActionSet.ImportAuthorLots
         description: Importer Lot depuis un fichier
       - _type: ImportDataAppAction
+        _name: ImportSousLots
+        label: Importer Sous-Lots
+        imageAlign: MIDDLE_CENTER
+        imageMode: FIT
+        importAction: Batiments.entities.SousLot.action_sets.SousLotActionSet.Import
+        description: Importer Sous-lot depuis un fichier
+      - _type: ImportDataAppAction
         _name: ImportSociete
         label: Importer relation Societés & Immeubles
         imageAlign: MIDDLE_CENTER
         imageMode: FIT
         importAction: Batiments.entities.RelImmSoc.action_sets.RelImmSocActionSet.ImportAuthorRelImmSoc
         description: Importer Société depuis un fichier
-      - _type: ImportDataAppAction
-        _name: ImportSocieteBatiment
-        label: Importer relation Societés & Bâtiment
-        imageAlign: MIDDLE_CENTER
-        imageMode: FIT
-        importAction: Batiments.entities.RelBatSoc.action_sets.RelBatSocActionSet.ImportAuthorRelBatSoc
-        description: Importer Société depuis un fichier
+      # - _type: ImportDataAppAction
+      #   _name: ImportSocieteBatiment
+      #   label: Importer relation Societés & Bâtiment
+      #   imageAlign: MIDDLE_CENTER
+      #   imageMode: FIT
+      #   importAction: Batiments.entities.RelBatSoc.action_sets.RelBatSocActionSet.ImportAuthorRelBatSoc
+      #   description: Importer Société depuis un fichier
       - _type: ImportDataAppAction
         _name: ImportLotsBatiment
         label: Importer relation Societés & Lots

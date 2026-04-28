@@ -21,7 +21,7 @@ toRolePhysicalName: ZONE_GEOGRAPHIQUE_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: PRE_CONSO
+validationScope: POST_CONSO
 mandatoryValidationLabel: La zone géographique est obligatoire pour un immeuble
 brokenValidationLabel: La zone géographique sélectionnée est invalide pour cet immeuble
 

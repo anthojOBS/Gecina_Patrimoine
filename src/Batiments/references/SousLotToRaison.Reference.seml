@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: SousLotToRaison
+label: Sous Lot Raison
+description: Référence Lot vers Raison
+fromRoleDocumentation: |
+  Cette référence associe un **Lot** à sa **Raison** dans le cycle de vie.
+  
+  La raison permet de suivre les motifs de non-louage du lot dans le projet immobilier.
+physicalName: SOUS_LOT_RAISON_REF
+
+fromEntity: Batiments.entities.SousLot.SousLot
+fromRoleLabel: SousLot
+fromRoleName: SousLot
+fromRolePluralLabel: SousLots
+
+toEntity: Batiments.entities.RaisonNonLouable.RaisonNonLouable
+toRoleLabel: Raison non louable
+toRoleName: RaisonNonLouable
+toRolePhysicalName: RAISON_NON_LOUABLE_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: La raison est obligatoire pour un lot
+brokenValidationLabel: La raison sélectionnée est invalide pour ce lot
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: RaisonNonLouable
+  label: Raison non louable
+  physicalName: RAISON_NON_LOUABLE_ID
+  searchable: true
+  entity: Batiments.entities.SousLot.SousLot
