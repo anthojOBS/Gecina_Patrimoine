@@ -356,27 +356,7 @@ attributes:
     dataType: String
     length: 100
     mandatory: false
-  - _type: EntityAttribute
-    _name: OrientationTerrasse
-    label: Orientation terrasse
-    physicalName: ORIENTATION_TERRASSE
-    dataType: String
-    length: 100
-    mandatory: false
-  - _type: EntityAttribute
-    _name: OrientationBalcon
-    label: Orientation balcon
-    physicalName: ORIENTATION_BALCON
-    dataType: String
-    length: 100
-    mandatory: false
-  - _type: EntityAttribute
-    _name: OrientationLoggia
-    label: Orientation loggia
-    physicalName: ORIENTATION_LOGGIA
-    dataType: String
-    length: 100
-    mandatory: false
+
 
   - _type: EntityAttribute
     _name: StatutTerrasse
@@ -448,7 +428,7 @@ matcher:
     - _type: SemQLMatchRule
       _name: NewRule
       label: NewRuleLabel
-      condition:   Record1.IdentifiantsERP = Record2.IdentifiantsERP and ( (Record1.FID_Etage = Record2.FID_Etage) or ( Record1.FID_Etage is null ) or ( Record2.FID_Etage is null ) ) and Record1.FID_Batiment = Record2.FID_Batiment
+      condition:   Record1.IdentifiantsERP = Record2.IdentifiantsERP and ( (Record1.FID_Etage = Record2.FID_Etage) or ( Record1.FID_Etage is null ) or ( Record2.FID_Etage is null ) ) and Record1.Etage.FID_Batiment = Record2.Etage.FID_Batiment
       matchScore: 100
       usingMatchOn: false
   useTransitiveMatchScore: true

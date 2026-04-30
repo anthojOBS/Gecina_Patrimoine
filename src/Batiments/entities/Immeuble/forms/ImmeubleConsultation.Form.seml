@@ -845,7 +845,7 @@ formTabs:
            
       - _type: FormSection
         _name: Services
-        label: Services non individualisés
+        label: Services
         layoutDirection: COLUMN
         visibleValue: (lookup count (IdentifiantsERP) from Batiment.Etage.Lot where FID_TypologieLot = 'SNI' end ) > 0
         visibleValueInterpreter: SEMQL
@@ -853,18 +853,18 @@ formTabs:
         content:
           - _type: FormCollection
             _name: Services
-            label: Services non individualisés
+            label: Services
             useCustomLabel: true
-            collection: Batiments.entities.Lot.collection_views.LotCollectionView
+            collection: Batiments.entities.Service.collection_views.ServiceCollectionImmeuble
             tableAllowed: true
             listAllowed: false
             gridAllowed: false
             displayRecordCount: ALWAYS
             enableUserDefinedSort: true
-            transitionPath: Batiment.Etage.Lot
+            transitionPath: Batiment.Etage.Lot.Service
             sortExpression: 1 DESC
-            filter: FID_TypologieLot = 'SNI'
-            targetEntity: Batiments.entities.Lot.Lot
+            filter: 1=1
+            targetEntity: Batiments.entities.Service.Service
             height: 300
             formCollectionSearchConfigs:
              -  enabled: true 

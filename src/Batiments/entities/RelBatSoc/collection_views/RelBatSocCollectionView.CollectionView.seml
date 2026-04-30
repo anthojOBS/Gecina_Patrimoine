@@ -14,9 +14,9 @@ listItemLines: 1
 listShowDisplayCardAvatar: false
 listShowDivider: true
 tableAllowed: true
-tableDisplayCardColumnLabel: Lot
+tableDisplayCardColumnLabel: relation
 tableRowLines: 1
-tableShowDisplayCard: true
+tableShowDisplayCard: false
 tableColumns:
   - _type: IdColumn
     _name: RelBatSocCode

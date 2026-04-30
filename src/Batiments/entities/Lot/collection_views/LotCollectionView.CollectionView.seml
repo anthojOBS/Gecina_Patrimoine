@@ -141,14 +141,6 @@ tableColumns:
     visibleByDefault: false
     referencedEntity: Batiments.entities.Phase.Phase
 
-  - _type: ReferenceColumn
-    _name: FDN_TypeCompteur
-    value: FDN_TypeCompteur
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-    referencedEntity: Batiments.entities.TypeCompteur.TypeCompteur
 
   - _type: TextColumn
     _name: DateDebUsage

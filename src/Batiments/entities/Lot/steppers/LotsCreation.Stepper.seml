@@ -63,10 +63,6 @@ rootStep:
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute: Batiments.references.LotToGenreLot.GenreLot
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.references.LotToTypeCompteur.TypeCompteur
 
       stepTransitionValidations:
         - onStepExit: BLOCK
@@ -88,9 +84,7 @@ rootStep:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.references.LotToGenreLot.GenreLot
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.references.LotToTypeCompteur.TypeCompteur
+
 
 
     - _type: FormStep
@@ -102,6 +96,50 @@ rootStep:
       formFieldsMode: AUTO
       enableMasterValuePicking: false
       formTab: Batiments.entities.Lot.forms.LotCreation.Composition
+
+    - _type: CollectionStep
+      enableChildImportOnParentCreate: true
+      enableChildImportOnParentEdit: true 
+      childImportModeOnParentEdit: CREATE_ONLY 
+      enableChildCopyOnParentCreate: true
+      enableChildCopyOnParentEdit: true
+      enableChildCreationOnParentCreate: true
+      enableChildCreationOnParentEdit: true 
+      enableChildDeleteOnParentEdit: true
+      enableChildEditOnParentCreate: true
+      enableChildEditOnParentEdit: true
+      enableChildRemoveOnParentCreate: true
+      enableChildRemoveOnParentEdit: true
+      skipToChildCreationOnParentCreate: false
+      skipToChildEditingOnParentEdit: false
+      linear: false
+      _name: Service
+      label: Types service
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      childDeleteType: HARD_DELETE
+      oneToManyReference: Batiments.references.ServiceToLot
+      collectionView: Batiments.entities.Service.collection_views.ServiceCollectionLot
+      defaultDisplayType: TABLE
+      customSortEnabled: false
+      userDefinedSortEnabled: true
+      displayGridAllowed: false
+      displayListAllowed: true
+      displayTableAllowed: true
+      useCustomCollectionLabel: false
+      childSteps:
+        - _type: FormStep
+          _name: Service_form
+          label: Services
+          canFinishSubLevel: true
+          enabledOnParentCreate: true
+          enabledOnParentEdit: true
+          formFieldsMode: AUTO
+          enableMasterValuePicking: false
+          formTab: Batiments.entities.Service.forms.ServiceForm.Service
+
 
     - _type: FormStep
       _name: CycleDeVie
@@ -244,9 +282,6 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.references.LotToGenreLot.GenreLot
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.references.LotToTypeCompteur.TypeCompteur
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY

@@ -222,18 +222,6 @@ formTabs:
                     useCustomLabel: true
                     dataType: BOOLEAN
 
-                  - _type: ReferenceField
-                    _name: FDN_TypeCompteur
-                    value: FDN_TypeCompteur
-                    label: Type de compteur
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
-                    referencedEntity: Batiments.entities.TypeCompteur.TypeCompteur
 
               - _type: FormSection
                 _name: SituationLocative
@@ -276,7 +264,7 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
-                    visibleValue: StatutLouable = '1' 
+                    visibleValue: StatutLouable = '0' 
                     visibleValueInterpreter: SEMQL
                     dataType: STRING
                     referencedEntity: Batiments.entities.GenreLot.GenreLot

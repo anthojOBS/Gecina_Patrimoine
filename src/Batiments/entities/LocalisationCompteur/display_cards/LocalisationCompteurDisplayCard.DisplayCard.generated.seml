@@ -1,0 +1,18 @@
+_package: Batiments.entities.LocalisationCompteur.display_cards
+_type: DisplayCard
+_name: LocalisationCompteurDisplayCard
+entity: Batiments.entities.LocalisationCompteur.LocalisationCompteur
+default: true
+primaryTextExpression: LocalisationCompteurLibelle 
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageValue: images://mdi/domain.svg
+

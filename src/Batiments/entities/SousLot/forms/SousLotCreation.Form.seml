@@ -140,7 +140,7 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
-                    visibleValue: StatutLouable = '1' 
+                    visibleValue: StatutLouable = '0' 
                     visibleValueInterpreter: SEMQL
                     dataType: STRING
                     referencedEntity: Batiments.entities.RaisonNonLouable.RaisonNonLouable

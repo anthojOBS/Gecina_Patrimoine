@@ -1,0 +1,33 @@
+_package: Batiments.entities.LocalisationCompteur.steppers
+_type: Stepper
+_name: AuthorLocalisationCompteur
+entity:  Batiments.entities.LocalisationCompteur.LocalisationCompteur
+label: LocalisationCompteur
+rootStep:
+  _type: CollectionStep
+  _name: LocalisationCompteurCollect
+  label: LocalisationCompteur
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.LocalisationCompteur.collection_views.LocalisationCompteurCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: LocalisationCompteur
+      label: LocalisationCompteur
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.LocalisationCompteur.forms.LocalisationCompteurForm.LocalisationCompteur

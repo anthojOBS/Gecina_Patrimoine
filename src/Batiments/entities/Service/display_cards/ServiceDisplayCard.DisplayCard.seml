@@ -1,0 +1,19 @@
+_package: Batiments.entities.Service.display_cards
+_type: DisplayCard
+_name: ServiceDisplayCard
+entity: Batiments.entities.Service.Service
+default: true
+primaryTextExpression: ServiceID
+
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageValue: images://mdi/domain.svg
+

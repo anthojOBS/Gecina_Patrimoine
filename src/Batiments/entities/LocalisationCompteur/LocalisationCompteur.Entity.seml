@@ -1,0 +1,34 @@
+_package: Batiments.entities.LocalisationCompteur
+_type: Entity
+_name: LocalisationCompteur
+label: Localisation compteur
+pluralLabel: Localisation compteur
+entityType: BASIC
+physicalTableName: LOCALISATION_COMPTEUR
+description: Localisation compteur
+documentation: Localisation compteur
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: LocalisationCompteurCode 
+    label: Localisation compteur
+    physicalName: LOC_COMPTEUR
+    dataType: String
+    length: 50
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: LocalisationCompteurLibelle
+    label: LocalisationCompteurLibelle
+    physicalName: LOC_COMPTEUR_LIB
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
+
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.LocalisationCompteur.LocalisationCompteur.LocalisationCompteurCode 

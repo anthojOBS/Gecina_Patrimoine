@@ -1,0 +1,86 @@
+_package: Batiments.entities.Compteur
+_type: Entity
+_name: Compteur
+label: Compteur
+pluralLabel: Compteur
+entityType: FUZZY_MATCHED
+physicalTableName: COMPTEUR
+description: Compteur
+documentation:  Compteur
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: CompteurID
+    label: Compteur ID
+    physicalName: COMPTEUR_ID
+    dataType: LongInteger
+    precision: 38
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: Ref_compteur
+    label: Référence compteur
+    physicalName: REF_COMPTEUR
+    dataType: String
+    length: 50
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: Dt_mise_service
+    label: Date mise en service
+    physicalName: DT_MISE_SERVICE
+    dataType: Date
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: Dt_fin
+    label: Date fin
+    physicalName: DT_FIN
+    dataType: Date
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: Point_Livraison
+    label: Point livraison
+    physicalName: POINT_LIVR
+    dataType: String
+    length: 50
+    mandatory: false
+    searchable: false
+
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.Compteur.Compteur.CompteurID
+
+goldenIdGeneration:
+  mode: SEQUENCE
+  startWith: 1
+
+matcher:
+  _type: SemQLMatcher
+  _name: Matcher
+  description: BatimentSemQLMatcher
+  matchRules:
+    - _type: SemQLMatchRule
+      _name: NewRule
+      label: NewRuleLabel
+      condition:   Record1.CompteurID = Record2.CompteurID  #and ( (Record1.Lot.FID_Etage = Record2.Lot.FID_Etage) or ( Record1.Lot.FID_Etage is null ) or ( Record2.Lot.FID_Etage is null ) ) and Record1.Lot.Etage.FID_Batiment = Record2.Lot.Etage.FID_Batiment
+      matchScore: 100
+      usingMatchOn: false
+  useTransitiveMatchScore: true
+  useMultiIterationGrouping: true
+  mergeThresholdNewGroup: 90
+  mergeThresholdMergingUnconfirmed: 90
+  mergeThresholdMergingConfirmed: 90
+  mergeThresholdMergingConfirmedWithUnconfirmed: 90
+  mergeThresholdMergingUnconfirmedWithNewMasters: 90
+  mergeThresholdMergingConfirmedWithNewMasters: 90
+  mergeThresholdRemergingPreviouslySplit: 100
+  autoConfirmGoldenThreshold: 99
+  autoConfirmSingletons: false

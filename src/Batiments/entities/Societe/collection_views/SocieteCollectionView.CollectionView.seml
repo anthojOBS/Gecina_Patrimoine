@@ -16,7 +16,7 @@ listShowDivider: true
 tableAllowed: true
 tableDisplayCardColumnLabel: Société
 tableRowLines: 1
-tableShowDisplayCard: true
+tableShowDisplayCard: false
 tableColumns:
   - _type: IdColumn
     _name: SocieteCode

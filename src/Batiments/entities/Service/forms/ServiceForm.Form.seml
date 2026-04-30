@@ -1,0 +1,23 @@
+_package: Batiments.entities.Service.forms
+_type: Form
+_name: ServiceForm
+entity: Batiments.entities.Service.Service
+default: true
+formTabs:
+  - _type: FormTab
+    _name: Service
+    label: Service
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: TextField
+        _name: ServiceID
+        value: ServiceID
+        useCustomLabel: false
+        dataType: INTEGER
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

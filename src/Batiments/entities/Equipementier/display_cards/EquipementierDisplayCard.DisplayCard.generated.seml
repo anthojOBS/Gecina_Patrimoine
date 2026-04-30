@@ -1,0 +1,18 @@
+_package: Batiments.entities.Equipementier.display_cards
+_type: DisplayCard
+_name: EquipementierDisplayCard
+entity: Batiments.entities.Equipementier.Equipementier
+default: true
+primaryTextExpression: EquipementierLibelle 
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageValue: images://mdi/domain.svg
+

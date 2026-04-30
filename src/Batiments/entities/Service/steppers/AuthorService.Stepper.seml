@@ -1,0 +1,33 @@
+_package: Batiments.entities.Service.steppers
+_type: Stepper
+_name: AuthorService
+entity:  Batiments.entities.Service.Service
+label: Service
+rootStep:
+  _type: CollectionStep
+  _name: ServiceCollect
+  label: Service
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.Service.collection_views.ServiceCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Service
+      label: Service
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Service.forms.ServiceForm.Service

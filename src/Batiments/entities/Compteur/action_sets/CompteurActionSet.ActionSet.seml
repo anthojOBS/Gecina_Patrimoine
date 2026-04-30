@@ -1,0 +1,63 @@
+_package: Batiments.entities.Compteur.action_sets
+_type: ActionSet
+_name: CompteurActionSet
+entity: Batiments.entities.Compteur.Compteur
+label: Compteur Action Set
+defaultActionSet: true
+actions:
+  - _type: CreateAction
+    _name: CreateAuthorCompteur
+    label: Create
+    useCustomLabel: true
+    stepper: Batiments.entities.Compteur.steppers.AuthorCompteur
+    createMultiple: false
+    createdRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: EditAction
+    _name: EditAuthorCompteur
+    label: Edit
+    useCustomLabel: true
+    stepper: Batiments.entities.Compteur.steppers.AuthorCompteur
+    multipleSelectionAllowed: true
+    availableForGoldenData: true
+    availableForMasterData: false
+    availableForErrorData: true
+    waitDialogEnabled: false
+  - _type: MassUpdateAction
+    _name: MassUpdateAuthorCompteur
+    label: Mass Update
+    useCustomLabel: true
+    stepper: Batiments.entities.Compteur.steppers.AuthorCompteur
+    availableForGoldenData: true
+    availableForErrorData: true
+    availableForMasterData: false
+    waitDialogEnabled: false
+  - _type: DeleteAction
+    _name: Delete
+    label: Delete
+    useCustomLabel: true
+    multipleSelectionAllowed: true
+    deleteType: HARD_DELETE
+    waitDialogEnabled: false
+    availableForGoldenData: true
+    availableForMasterData: false
+  - _type: ExportAction
+    _name: Export
+    label: Export
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: ImportAuthorCompteur
+    label: Import
+    useCustomLabel: true
+    importMode: CREATE_AND_UPDATE
+    stepper: Batiments.entities.Compteur.steppers.AuthorCompteur
+    importedRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: BrowseGraphAction
+    _name: BrowseGraph
+    label: Browse Graph
+    useCustomLabel: true
+    waitDialogEnabled: false

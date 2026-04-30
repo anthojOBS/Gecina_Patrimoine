@@ -270,7 +270,7 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
-                    visibleValue: StatutLouable = '1' 
+                    visibleValue: StatutLouable = '0' 
                     visibleValueInterpreter: SEMQL
                     dataType: STRING
                     referencedEntity: Batiments.entities.RaisonNonLouable.RaisonNonLouable
@@ -339,19 +339,6 @@ formTabs:
                     useCustomLabel: true
                     dataType: BOOLEAN
 
-                  - _type: ReferenceField
-                    _name: FDN_TypeCompteur
-                    value: FDN_TypeCompteur
-                    label: Type de compteur
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
-                    referencedEntity: Batiments.entities.TypeCompteur.TypeCompteur
-
           # Gestion interne
               - _type: FormSection
                 _name: GestionInterne
@@ -412,6 +399,35 @@ formTabs:
                     visibleValueInterpreter: SEMQL
                     visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
                     dataType: STRING
+
+
+     
+      - _type: FormSection
+        _name: Compteur
+        label: Informations compteur
+        layoutDirection: COLUMN
+        visibleValue: 1=1
+        visibleValueInterpreter: SEMQL
+
+        content:
+          - _type: FormCollection
+            _name: Compteur
+            label: Informations compteur
+            useCustomLabel: true
+            collection: Batiments.entities.Compteur.collection_views.CompteurCollectionView
+            tableAllowed: true
+            listAllowed: false
+            gridAllowed: false
+            displayRecordCount: ALWAYS
+            enableUserDefinedSort: true
+            transitionPath: Batiment.Etage.Lot.Compteur
+            sortExpression: 1 DESC
+            filter: 1=1
+            targetEntity: Batiments.entities.Compteur.Compteur
+            height: 300
+            formCollectionSearchConfigs:
+             -  enabled: true 
+                searchType: TEXT
 
 
   - _type: FormTab
@@ -502,24 +518,34 @@ formTabs:
                 dataType: STRING 
 
 
-           
+              
+            
           - _type: FormSection
             _name: Services
-            label: Services non individualisés
+            label: Types services
             layoutDirection: COLUMN
-            labelWidth: 300px
+            visibleValue: 1 = 1
+            visibleValueInterpreter: SEMQL
+
             content:
-              - _type: CheckboxField
-                _name: StatutSNI
-                value: StatutSNI
-                label: Statut SNI
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
+              - _type: FormCollection
+                _name: Services
+                label: Services
                 useCustomLabel: true
-                dataType: BOOLEAN
+                collection: Batiments.entities.Service.collection_views.ServiceCollectionLot
+                tableAllowed: true
+                listAllowed: false
+                gridAllowed: false
+                displayRecordCount: ALWAYS
+                enableUserDefinedSort: true
+                transitionPath: Batiment.Etage.Lot.Service
+                sortExpression: 1 DESC
+                filter: 1=1
+                targetEntity: Batiments.entities.Service.Service
+                height: 300
+                formCollectionSearchConfigs:
+                - enabled: true 
+                  searchType: TEXT
 
 
 
@@ -575,8 +601,8 @@ formTabs:
         _name: AcquisitionCession
         label: Acquisition/Cession
         layoutDirection: COLUMN
-        visibleValue: "1"
-        visibleValueInterpreter: LITERAL
+        visibleValue: (DateVente is not null) OR (Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' )
+        visibleValueInterpreter: SEMQL
         labelWidth: 300px
         content:
 
@@ -979,39 +1005,7 @@ formTabs:
                   color: md:black
                 useCustomLabel: true
                 dataType: STRING
-              - _type: TextField
-                _name: OrientationTerrasse
-                value: OrientationTerrasse
-                label: Orientation terrasse
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: STRING
-              - _type: TextField
-                _name: OrientationBalcon
-                value: OrientationBalcon
-                label: Orientation balcon
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: STRING
-              - _type: TextField
-                _name: OrientationLoggia
-                value: OrientationLoggia
-                label: Orientation loggia
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: STRING
+
 
 
           - _type: FormSection

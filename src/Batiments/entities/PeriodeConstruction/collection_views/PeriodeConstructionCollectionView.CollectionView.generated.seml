@@ -14,9 +14,9 @@ listItemLines: 1
 listShowDisplayCardAvatar: false
 listShowDivider: true
 tableAllowed: true
-tableDisplayCardColumnLabel: Lot
+tableDisplayCardColumnLabel: Periode construction
 tableRowLines: 1
-tableShowDisplayCard: true
+tableShowDisplayCard: false
 tableColumns:
   - _type: TextColumn
     _name: PeriodeConstruction

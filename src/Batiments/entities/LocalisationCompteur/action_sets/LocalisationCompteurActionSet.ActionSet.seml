@@ -1,0 +1,63 @@
+_package: Batiments.entities.LocalisationCompteur.action_sets
+_type: ActionSet
+_name: LocalisationCompteurActionSet
+entity: Batiments.entities.LocalisationCompteur.LocalisationCompteur
+label: LocalisationCompteur Action Set
+defaultActionSet: true
+actions:
+  - _type: CreateAction
+    _name: CreateAuthorLocalisationCompteur
+    label: Create
+    useCustomLabel: true
+    stepper: Batiments.entities.LocalisationCompteur.steppers.AuthorLocalisationCompteur
+    createMultiple: false
+    createdRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: EditAction
+    _name: EditAuthorLocalisationCompteur
+    label: Edit
+    useCustomLabel: true
+    stepper: Batiments.entities.LocalisationCompteur.steppers.AuthorLocalisationCompteur
+    multipleSelectionAllowed: true
+    availableForGoldenData: true
+    availableForMasterData: false
+    availableForErrorData: true
+    waitDialogEnabled: false
+  - _type: MassUpdateAction
+    _name: MassUpdateAuthorLocalisationCompteur
+    label: Mass Update
+    useCustomLabel: true
+    stepper: Batiments.entities.LocalisationCompteur.steppers.AuthorLocalisationCompteur
+    availableForGoldenData: true
+    availableForErrorData: true
+    availableForMasterData: false
+    waitDialogEnabled: false
+  - _type: DeleteAction
+    _name: Delete
+    label: Delete
+    useCustomLabel: true
+    multipleSelectionAllowed: true
+    deleteType: HARD_DELETE
+    waitDialogEnabled: false
+    availableForGoldenData: true
+    availableForMasterData: false
+  - _type: ExportAction
+    _name: Export
+    label: Export
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: ImportAuthorLocalisationCompteur
+    label: Import
+    useCustomLabel: true
+    importMode: CREATE_AND_UPDATE
+    stepper: Batiments.entities.LocalisationCompteur.steppers.AuthorLocalisationCompteur
+    importedRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: BrowseGraphAction
+    _name: BrowseGraph
+    label: Browse Graph
+    useCustomLabel: true
+    waitDialogEnabled: false

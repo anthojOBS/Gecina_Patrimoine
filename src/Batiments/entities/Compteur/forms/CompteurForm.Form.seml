@@ -1,0 +1,59 @@
+_package: Batiments.entities.Compteur.forms
+_type: Form
+_name: CompteurForm
+entity: Batiments.entities.Compteur.Compteur
+default: true
+formTabs:
+  - _type: FormTab
+    _name: Compteur
+    label: Compteur
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: TextField
+        _name: CompteurID
+        value: CompteurID
+        useCustomLabel: false
+        dataType: INTEGER
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: Ref_compteur
+        value: Ref_compteur
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: Dt_mise_service
+        value: Dt_mise_service
+        useCustomLabel: false
+        dataType: DATE
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: Dt_fin
+        value: Dt_fin
+        useCustomLabel: false
+        dataType: DATE
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: Point_Livraison
+        value: Point_Livraison
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

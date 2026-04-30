@@ -189,10 +189,21 @@ rootFolder:
       businessView: Batiments.entities.SousLot.business_views.SousLotBusinessView
       imageAlign: MIDDLE_CENTER
       imageMode: FIT
-      label: Lots
+      label: Sous-lots
       nbRecordsBadgeVisible: false
       icon: images://mdi/floor-plan.svg
       requiredRole: semarchyAdmin
+
+    - _type: BrowseBusinessViewAction
+      _name: Compteur
+      businessView: Batiments.entities.Compteur.business_views.CompteurBusinessView
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      label: Compteur
+      nbRecordsBadgeVisible: false
+      icon: images://mdi/floor-plan.svg
+      requiredRole: semarchyAdmin
+
 
     - _type: BrowseBusinessViewAction
       _name: ImmeublesErrors
@@ -278,8 +289,8 @@ rootFolder:
       icon: images://mdi/database.svg
       appActions:
         - _type: BrowseBusinessViewAction
-          _name: CategorieERP
-          businessView: Batiments.entities.CategorieERP.business_views.CategorieERPBusinessView
+          _name: Equipementier
+          businessView: Batiments.entities.Equipementier.business_views.EquipementierBusinessView
           imageAlign: MIDDLE_CENTER
           imageMode: FIT
           icon: images://mdi/timeline-text.svg
@@ -290,6 +301,13 @@ rootFolder:
           imageAlign: MIDDLE_CENTER
           imageMode: FIT
           nbRecordsBadgeVisible: false         
+        - _type: BrowseBusinessViewAction
+          _name: LocalisationCompteur
+          businessView: Batiments.entities.LocalisationCompteur.business_views.LocalisationCompteurBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/home-city.svg
+          nbRecordsBadgeVisible: false
         - _type: BrowseBusinessViewAction
           _name: GenreLots
           businessView: Batiments.entities.GenreLot.business_views.GenreLotBusinessView
@@ -402,6 +420,13 @@ rootFolder:
           nbRecordsBadgeVisible: false
 
         - _type: BrowseBusinessViewAction
+          _name: TypeService
+          businessView: Batiments.entities.TypeService.business_views.TypeServiceBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/office-building.svg
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
           _name: TypeEnergie
           businessView: Batiments.entities.TypeEnergie.business_views.TypeEnergieBusinessView
           imageAlign: MIDDLE_CENTER
@@ -509,6 +534,20 @@ rootFolder:
         imageMode: FIT
         importAction: Batiments.entities.RelImmSoc.action_sets.RelImmSocActionSet.ImportAuthorRelImmSoc
         description: Importer Société depuis un fichier
+      - _type: ImportDataAppAction
+        _name: ImportService
+        label: Importer service
+        imageAlign: MIDDLE_CENTER
+        imageMode: FIT
+        importAction: Batiments.entities.Service.action_sets.ServiceActionSet.ImportAuthorService
+        description: Importer service depuis un fichier
+      - _type: ImportDataAppAction
+        _name: Importcompteur
+        label: Importer Compteur
+        imageAlign: MIDDLE_CENTER
+        imageMode: FIT
+        importAction: Batiments.entities.Compteur.action_sets.CompteurActionSet.ImportAuthorCompteur
+        description: Importer Compteur depuis un fichier
       # - _type: ImportDataAppAction
       #   _name: ImportSocieteBatiment
       #   label: Importer relation Societés & Bâtiment

@@ -1,0 +1,59 @@
+_package: Batiments.entities.LocalisationCompteur.business_views
+_type: BusinessView
+_name: LocalisationCompteurBusinessView
+entity: Batiments.entities.LocalisationCompteur.LocalisationCompteur
+rootLabel: LocalisationCompteur
+rootPluralLabel: LocalisationCompteur
+displayRootNodeAs: ICON_LABEL
+label: LocalisationCompteur
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: LocalisationCompteur
+  displayCard: Batiments.entities.LocalisationCompteur.display_cards.LocalisationCompteurDisplayCard
+  entity: Batiments.entities.LocalisationCompteur.LocalisationCompteur
+  actionSet: Batiments.entities.LocalisationCompteur.action_sets.LocalisationCompteurActionSet
+  collection: Batiments.entities.LocalisationCompteur.collection_views.LocalisationCompteurCollectionView
+  form: Batiments.entities.LocalisationCompteur.forms.LocalisationCompteurForm
+  outlineVisible: false
+  displayRecordCount: ALWAYS
+  businessEntitySearchConfigs:
+    - _name: TextConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: TEXT
+    - _name: FormConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: BY_FORM
+    - _name: AdvancedConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: ADVANCED
+    - _name: SemqlConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: SEMQL
+  overrideDefaultSort: false
+  enableUserDefinedSort: true
+  listAllowed: true
+  tableAllowed: true
+  gridAllowed: true
+
+  transitions:
+    - _name: GoldenHistoryRecords
+      _type: BusinessViewTransition
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      enableHierarchy: '0'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: false
+      iconUrl: images://mdi/history.svg
+      label: History
+      pluralLabel: History
+      transitionPath: GoldenHistoryRecords
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '1'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      businessViewEntity: 
+        _type: BusinessViewEntityReference
+        ref: Batiments.entities.LocalisationCompteur.business_views.LocalisationCompteurBusinessView.LocalisationCompteur
+      filter: 1 = 1
+enableHierarchyView: false
+useHierarchyOnOpen: false

@@ -1,0 +1,32 @@
+_package: Batiments.entities.Equipementier.forms
+_type: Form
+_name: EquipementierForm
+entity: Batiments.entities.Equipementier.Equipementier
+default: true
+formTabs:
+  - _type: FormTab
+    _name: Equipementier
+    label: Equipementier
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: TextField
+        _name: EquipementierCode 
+        value: EquipementierCode 
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: EquipementierLibelle
+        value: EquipementierLibelle
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

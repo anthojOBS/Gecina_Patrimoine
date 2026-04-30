@@ -1,0 +1,62 @@
+_package: Batiments.entities.Service.collection_views
+_type: CollectionView
+_name: ServiceCollectionImmeuble
+entity: Batiments.entities.Service.Service
+default: true
+displayCard: Batiments.entities.Service.display_cards.ServiceDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Service
+tableRowLines: 1
+tableShowDisplayCard: false
+tableColumns:
+
+  - _type: ReferenceColumn
+    _name: FDN_Lot
+    value: FDN_Lot
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Lot.Lot
+
+
+  - _type: ReferenceColumn
+    _name: FDN_Etage
+    value: Lot.FDN_Etage
+    useCustomLabel: true
+    label: Etage
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Etage.Etage
+
+
+  - _type: ReferenceColumn
+    _name: FDN_Batiment
+    value: Lot.Etage.FDN_Batiment
+    useCustomLabel: true
+    label: Batiment
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Batiment.Batiment
+
+
+  - _type: ReferenceColumn
+    _name: FDN_TypeService
+    value: FDN_TypeService
+    useCustomLabel: true
+    label: Types services
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.TypeService.TypeService

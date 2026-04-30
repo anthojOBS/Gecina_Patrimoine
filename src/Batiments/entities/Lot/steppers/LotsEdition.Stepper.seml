@@ -55,10 +55,6 @@ rootStep:
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute: Batiments.references.LotToGenreLot.GenreLot
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.references.LotToTypeCompteur.TypeCompteur
 
       stepTransitionValidations:
         - onStepExit: BLOCK
@@ -74,10 +70,6 @@ rootStep:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.references.LotToGenreLot.GenreLot
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.references.LotToTypeCompteur.TypeCompteur
-
 
     - _type: FormStep
       _name: Composition
@@ -225,9 +217,6 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.references.LotToGenreLot.GenreLot
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.references.LotToTypeCompteur.TypeCompteur
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY
