@@ -402,32 +402,27 @@ formTabs:
 
 
      
-      - _type: FormSection
+
+      - _type: FormCollection
         _name: Compteur
         label: Informations compteur
-        layoutDirection: COLUMN
-        visibleValue: 1=1
-        visibleValueInterpreter: SEMQL
-
-        content:
-          - _type: FormCollection
-            _name: Compteur
-            label: Informations compteur
-            useCustomLabel: true
-            collection: Batiments.entities.Compteur.collection_views.CompteurCollectionView
-            tableAllowed: true
-            listAllowed: false
-            gridAllowed: false
-            displayRecordCount: ALWAYS
-            enableUserDefinedSort: true
-            transitionPath: Batiment.Etage.Lot.Compteur
-            sortExpression: 1 DESC
-            filter: 1=1
-            targetEntity: Batiments.entities.Compteur.Compteur
-            height: 300
-            formCollectionSearchConfigs:
-             -  enabled: true 
-                searchType: TEXT
+        pluralLabel: Informations compteur
+        useCustomLabel: true
+        collection: Batiments.entities.Compteur.collection_views.CompteurCollectionView
+        actionSet: Batiments.entities.Compteur.action_sets.CompteurActionSet
+        tableAllowed: true
+        listAllowed: false
+        gridAllowed: false
+        displayRecordCount: ALWAYS
+        enableUserDefinedSort: true
+        transitionPath: Compteur
+        sortExpression: 1 DESC
+        filter: 1=1
+        targetEntity: Batiments.entities.Compteur.Compteur
+        height: 300
+        formCollectionSearchConfigs:
+          - enabled: true 
+            searchType: TEXT
 
 
   - _type: FormTab
@@ -517,35 +512,27 @@ formTabs:
                 useCustomLabel: true
                 dataType: STRING 
 
-
-              
-            
-          - _type: FormSection
+          - _type: FormCollection
             _name: Services
-            label: Types services
-            layoutDirection: COLUMN
-            visibleValue: 1 = 1
+            label: Services
+            pluralLabel: Types services
+            visibleValue: FID_TypologieLot = 'SNI'
             visibleValueInterpreter: SEMQL
-
-            content:
-              - _type: FormCollection
-                _name: Services
-                label: Services
-                useCustomLabel: true
-                collection: Batiments.entities.Service.collection_views.ServiceCollectionLot
-                tableAllowed: true
-                listAllowed: false
-                gridAllowed: false
-                displayRecordCount: ALWAYS
-                enableUserDefinedSort: true
-                transitionPath: Batiment.Etage.Lot.Service
-                sortExpression: 1 DESC
-                filter: 1=1
-                targetEntity: Batiments.entities.Service.Service
-                height: 300
-                formCollectionSearchConfigs:
-                - enabled: true 
-                  searchType: TEXT
+            useCustomLabel: true
+            collection: Batiments.entities.Service.collection_views.ServiceCollectionLot
+            tableAllowed: true
+            listAllowed: false
+            gridAllowed: false
+            displayRecordCount: ALWAYS
+            enableUserDefinedSort: true
+            transitionPath: Service
+            sortExpression: 1 DESC
+            filter: 1=1
+            targetEntity: Batiments.entities.Service.Service
+            height: 300
+            formCollectionSearchConfigs:
+            - enabled: true 
+              searchType: TEXT
 
 
 
@@ -594,6 +581,11 @@ formTabs:
               typographyValueInterpreter: LITERAL
               typography: body-2
               color: md:black
+            componentProperties:                 
+              displayFormat: dd/MM/yyyy                
+              displayFormatValueInterpreter: LITERAL            
+              editingFormat: dd/MM/yyyy                 
+              editingFormatValueInterpreter: LITERAL 
             useCustomLabel: true
             dataType: DATE
 
@@ -615,6 +607,11 @@ formTabs:
                   typographyValueInterpreter: LITERAL
                   typography: body-2
                   color: md:black
+                componentProperties:                 
+                  displayFormat: dd/MM/yyyy                
+                  displayFormatValueInterpreter: LITERAL            
+                  editingFormat: dd/MM/yyyy                 
+                  editingFormatValueInterpreter: LITERAL 
                 useCustomLabel: true
                 visibleValue: DateVente is not null
                 visibleValueInterpreter: SEMQL
@@ -675,6 +672,11 @@ formTabs:
               typographyValueInterpreter: LITERAL
               typography: body-2
               color: md:black
+            componentProperties:                 
+              displayFormat: dd/MM/yyyy                
+              displayFormatValueInterpreter: LITERAL            
+              editingFormat: dd/MM/yyyy                 
+              editingFormatValueInterpreter: LITERAL 
             useCustomLabel: true
             dataType: DATE
           - _type: TextField
@@ -704,7 +706,7 @@ formTabs:
           - _type: TextField
             _name: NumeroCopropriete
             value: NumeroCopropriete
-            label: Numéro copropriété
+            label: Identifiant lot copropriété
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL

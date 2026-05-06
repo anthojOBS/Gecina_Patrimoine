@@ -12,7 +12,7 @@ physicalName: ETAGE_BATIMENT_REF
 fromEntity: Batiments.entities.Etage.Etage
 fromRoleLabel: Etage
 fromRoleName: Etage
-fromRolePluralLabel: Etages
+fromRolePluralLabel: Composition des étages
 
 toEntity: Batiments.entities.Batiment.Batiment
 toRoleLabel: Batiment

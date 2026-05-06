@@ -247,15 +247,6 @@ tableColumns:
 
 
   - _type: ReferenceColumn
-    _name: FDN_CategorieERP
-    value: FDN_CategorieERP
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: false
-    referencedEntity: Batiments.entities.CategorieERP.CategorieERP
-
-  - _type: ReferenceColumn
     _name: FDN_ModeChauffage
     value: FDN_ModeChauffage
     useCustomLabel: false

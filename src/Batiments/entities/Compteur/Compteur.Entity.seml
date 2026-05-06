@@ -70,7 +70,10 @@ matcher:
     - _type: SemQLMatchRule
       _name: NewRule
       label: NewRuleLabel
-      condition:   Record1.CompteurID = Record2.CompteurID  #and ( (Record1.Lot.FID_Etage = Record2.Lot.FID_Etage) or ( Record1.Lot.FID_Etage is null ) or ( Record2.Lot.FID_Etage is null ) ) and Record1.Lot.Etage.FID_Batiment = Record2.Lot.Etage.FID_Batiment
+      condition:   Record1.Ref_compteur = Record2.Ref_compteur  and Record1.FID_TypeCompteur = Record2.FID_TypeCompteur
+       and Record1.FID_Lot = Record2.FID_Lot
+       and ( (Record1.Lot.FID_Etage = Record2.Lot.FID_Etage) or ( Record1.Lot.FID_Etage is null ) or ( Record2.Lot.FID_Etage is null ) ) 
+       and Record1.Lot.Etage.FID_Batiment = Record2.Lot.Etage.FID_Batiment
       matchScore: 100
       usingMatchOn: false
   useTransitiveMatchScore: true

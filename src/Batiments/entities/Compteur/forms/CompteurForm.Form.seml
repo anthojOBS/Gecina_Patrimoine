@@ -12,37 +12,60 @@ formTabs:
     visibleValueInterpreter: LITERAL
     displayFormTabAs: LABEL
     content:
-      - _type: TextField
-        _name: CompteurID
-        value: CompteurID
-        useCustomLabel: false
-        dataType: INTEGER
+      - _type: ReferenceField
+        _name: FDN_TypeCompteur
+        value: FDN_TypeCompteur
+        label: Type compteur
         labelProperties:
+          alignment: left
           typographyValueInterpreter: LITERAL
           typography: body-2
           color: md:black
+        useCustomLabel: true
+        dataType: STRING
+        referencedEntity: Batiments.entities.FiscaliteCible.FiscaliteCible
+
+
       - _type: TextField
         _name: Ref_compteur
         value: Ref_compteur
-        useCustomLabel: false
+        useCustomLabel: true
+        label: Référence compteur
         dataType: STRING
         labelProperties:
           typographyValueInterpreter: LITERAL
           typography: body-2
           color: md:black
-      - _type: TextField
+
+      - _type: ReferenceField
+        _name: FDN_Equipementier
+        value: FDN_Equipementier
+        label: Equipementier
+        labelProperties:
+          alignment: left
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+        useCustomLabel: true
+        dataType: STRING
+        referencedEntity: Batiments.entities.FiscaliteCible.FiscaliteCible
+
+
+      - _type: DateField
         _name: Dt_mise_service
         value: Dt_mise_service
-        useCustomLabel: false
+        useCustomLabel: true
+        label: Date mise en service
         dataType: DATE
         labelProperties:
           typographyValueInterpreter: LITERAL
           typography: body-2
           color: md:black
-      - _type: TextField
+      - _type: DateField
         _name: Dt_fin
         value: Dt_fin
-        useCustomLabel: false
+        useCustomLabel: true
+        label: Date fin
         dataType: DATE
         labelProperties:
           typographyValueInterpreter: LITERAL
@@ -51,9 +74,23 @@ formTabs:
       - _type: TextField
         _name: Point_Livraison
         value: Point_Livraison
-        useCustomLabel: false
+        useCustomLabel: true
+        label: Point livraison
         dataType: STRING
         labelProperties:
           typographyValueInterpreter: LITERAL
           typography: body-2
           color: md:black
+
+      - _type: ReferenceField
+        _name: FDN_LocalisationCompteur
+        value: FDN_LocalisationCompteur
+        label: Localisation compteur
+        labelProperties:
+          alignment: left
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+        useCustomLabel: true
+        dataType: STRING
+        referencedEntity: Batiments.entities.LocalisationCompteur.LocalisationCompteur

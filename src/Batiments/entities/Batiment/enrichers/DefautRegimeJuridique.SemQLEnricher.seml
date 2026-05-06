@@ -1,0 +1,10 @@
+_package: Batiments.entities.Batiment.enrichers
+_name: DefautRegimeJuridique
+_type: SemQLEnricher
+entity: Batiments.entities.Batiment.Batiment
+label: Defaut régime juridique
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: FID_RegimeJuridique
+    expression: Immeuble.FID_RegimeJuridique
+condition: FID_RegimeJuridique is NULL 

@@ -112,6 +112,7 @@ rootStep:
       enableChildRemoveOnParentEdit: true
       skipToChildCreationOnParentCreate: false
       skipToChildEditingOnParentEdit: false
+      # filter: Lot.FID_TypologieLot = 'SNI'
       linear: false
       _name: Service
       label: Types service
@@ -143,7 +144,7 @@ rootStep:
 
     - _type: FormStep
       _name: CycleDeVie
-      label: Cycle de vie de l'immeuble
+      label: Cycle de vie
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
@@ -181,7 +182,7 @@ rootStep:
 
     - _type: FormStep
       _name: FiscaliteJuridique
-      label: Fiscalité et Juridique
+      label: Juridique et propriété
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true

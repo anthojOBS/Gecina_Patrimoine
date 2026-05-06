@@ -576,6 +576,11 @@ formTabs:
     visibleValueInterpreter: LITERAL
     displayFormTabAs: ICON_LABEL
     content:
+
+
+
+
+
       - _type: FormContainer
         _name: Composition
         layoutDirection: ROW
@@ -686,6 +691,10 @@ formTabs:
                   color: md:black
                 useCustomLabel: true
                 dataType: STRING
+        
+
+
+
           - _type: FormSection
             _name: Superficies
             label: Superficies
@@ -842,34 +851,28 @@ formTabs:
                 visibleValueInterpreter: SEMQL
                 dataType: STRING
 
-           
-      - _type: FormSection
+
+
+      - _type: FormCollection
         _name: Services
         label: Services
-        layoutDirection: COLUMN
-        visibleValue: (lookup count (IdentifiantsERP) from Batiment.Etage.Lot where FID_TypologieLot = 'SNI' end ) > 0
-        visibleValueInterpreter: SEMQL
-
-        content:
-          - _type: FormCollection
-            _name: Services
-            label: Services
-            useCustomLabel: true
-            collection: Batiments.entities.Service.collection_views.ServiceCollectionImmeuble
-            tableAllowed: true
-            listAllowed: false
-            gridAllowed: false
-            displayRecordCount: ALWAYS
-            enableUserDefinedSort: true
-            transitionPath: Batiment.Etage.Lot.Service
-            sortExpression: 1 DESC
-            filter: 1=1
-            targetEntity: Batiments.entities.Service.Service
-            height: 300
-            formCollectionSearchConfigs:
-             -  enabled: true 
-                searchType: TEXT
-
+        pluralLabel: Services
+        useCustomLabel: true
+        collection: Batiments.entities.Service.collection_views.ServiceCollectionImmeuble
+        tableAllowed: true
+        listAllowed: false
+        gridAllowed: false
+        displayRecordCount: ALWAYS
+        enableUserDefinedSort: true
+        transitionPath: Batiment.Etage.Lot.Service
+        sortExpression: 1 DESC
+        filter: 1=1
+        targetEntity: Batiments.entities.Service.Service
+        height: 300
+        formCollectionSearchConfigs:
+        - enabled: true 
+          searchType: TEXT
+    
   - _type: FormTab
     _name: CycleVieImmeuble
     label: Cycle de vie
@@ -980,6 +983,11 @@ formTabs:
                               typographyValueInterpreter: LITERAL
                               typography: body-2
                               color: md:black
+                            componentProperties:                 
+                              displayFormat: dd/MM/yyyy                
+                              displayFormatValueInterpreter: LITERAL            
+                              editingFormat: dd/MM/yyyy                 
+                              editingFormatValueInterpreter: LITERAL
                             useCustomLabel: true
                             dataType: DATE
                           - _type: DateField
@@ -992,6 +1000,11 @@ formTabs:
                               typographyValueInterpreter: LITERAL
                               typography: body-2
                               color: md:black
+                            componentProperties:                 
+                              displayFormat: dd/MM/yyyy                
+                              displayFormatValueInterpreter: LITERAL            
+                              editingFormat: dd/MM/yyyy                 
+                              editingFormatValueInterpreter: LITERAL
                             useCustomLabel: true
                             dataType: DATE
                           - _type: DateField
@@ -1004,6 +1017,11 @@ formTabs:
                               typographyValueInterpreter: LITERAL
                               typography: body-2
                               color: md:black
+                            componentProperties:                 
+                              displayFormat: dd/MM/yyyy                
+                              displayFormatValueInterpreter: LITERAL            
+                              editingFormat: dd/MM/yyyy                 
+                              editingFormatValueInterpreter: LITERAL
                             useCustomLabel: true
                             dataType: DATE
 
@@ -1027,9 +1045,15 @@ formTabs:
                               typographyValueInterpreter: LITERAL
                               typography: body-2
                               color: md:black
+                            componentProperties:                 
+                              displayFormat: dd/MM/yyyy                
+                              displayFormatValueInterpreter: LITERAL            
+                              editingFormat: dd/MM/yyyy                 
+                              editingFormatValueInterpreter: LITERAL
                             useCustomLabel: true
                             dataType: DATE
 
+ 
                           - _type: ReferenceField
                             _name: FDN_TypeVente
                             value: FDN_TypeVente
@@ -1053,6 +1077,11 @@ formTabs:
                               typographyValueInterpreter: LITERAL
                               typography: body-2
                               color: md:black
+                            componentProperties:                 
+                              displayFormat: dd/MM/yyyy                
+                              displayFormatValueInterpreter: LITERAL            
+                              editingFormat: dd/MM/yyyy                 
+                              editingFormatValueInterpreter: LITERAL
                             useCustomLabel: true
                             visibleValue: FID_OrgaResp = 'DR' and  DateMiseVente is not null
                             visibleValueInterpreter: SEMQL
@@ -1067,6 +1096,11 @@ formTabs:
                               typographyValueInterpreter: LITERAL
                               typography: body-2
                               color: md:black
+                            componentProperties:                 
+                              displayFormat: dd/MM/yyyy                
+                              displayFormatValueInterpreter: LITERAL            
+                              editingFormat: dd/MM/yyyy                 
+                              editingFormatValueInterpreter: LITERAL
                             useCustomLabel: true
                             visibleValue: DateVente is not null
                             visibleValueInterpreter: SEMQL
@@ -1125,6 +1159,11 @@ formTabs:
               typographyValueInterpreter: LITERAL
               typography: body-2
               color: md:black
+            componentProperties:                 
+              displayFormat: dd/MM/yyyy                
+              displayFormatValueInterpreter: LITERAL            
+              editingFormat: dd/MM/yyyy                 
+              editingFormatValueInterpreter: LITERAL
             useCustomLabel: true
             visibleValue: FID_OrgaResp = 'DR' and (lookup first (DateVente) from Batiment.Etage.Lot where DateVente is not null order by DateVente desc end) is not null
             visibleValueInterpreter: SEMQL
@@ -1162,7 +1201,7 @@ formTabs:
   - _type: FormTab
     _name: Equipements
     label: Equipements
-    iconUrl: images://mdi/office-building-plus.svg
+    iconUrl: images://mdi/office-building-cog.svg
     documentationInterpreter: LITERAL
     visibleValue: FID_OrgaResp = 'DR' 
     visibleValueInterpreter: SEMQL

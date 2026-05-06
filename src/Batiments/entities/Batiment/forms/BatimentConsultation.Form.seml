@@ -32,7 +32,7 @@ formTabs:
                     content:
                       - _type: TextField
                         _name: IdentifiantsERP
-                        value: IdentifiantsERP
+                        value: Immeuble.IdentifiantsERP || '_' || IdentifiantsERP
                         label: Numéro bâtiment
                         labelProperties:
                           alignment: left
@@ -392,7 +392,28 @@ formTabs:
                 dataType: STRING 
  
 
-          
+     
+
+      - _type: FormCollection
+        _name: Etage
+        label: Composition des étages
+        pluralLabel: Composition des étages
+        useCustomLabel: true
+        collection: Batiments.entities.Etage.collection_views.EtageCompositionConsultation
+        tableAllowed: true
+        listAllowed: false
+        gridAllowed: false
+        displayRecordCount: ALWAYS
+        enableUserDefinedSort: true
+        transitionPath: Etage
+        sortExpression: 1 DESC
+        filter: 1=1
+        targetEntity: Batiments.entities.Etage.Etage
+        height: 300
+        formCollectionSearchConfigs:
+          -  enabled: true 
+             searchType: TEXT
+
 
 
   - _type: FormTab
@@ -463,6 +484,11 @@ formTabs:
                               typographyValueInterpreter: LITERAL
                               typography: body-2
                               color: md:black
+                            componentProperties:                 
+                              displayFormat: dd/MM/yyyy                
+                              displayFormatValueInterpreter: LITERAL            
+                              editingFormat: dd/MM/yyyy                 
+                              editingFormatValueInterpreter: LITERAL 
                             useCustomLabel: true
                             dataType: DATE
                           - _type: TextField
@@ -475,6 +501,11 @@ formTabs:
                               typographyValueInterpreter: LITERAL
                               typography: body-2
                               color: md:black
+                            componentProperties:                 
+                              displayFormat: dd/MM/yyyy                
+                              displayFormatValueInterpreter: LITERAL            
+                              editingFormat: dd/MM/yyyy                 
+                              editingFormatValueInterpreter: LITERAL 
                             useCustomLabel: true
                             dataType: DATE
                           - _type: TextField
@@ -487,6 +518,11 @@ formTabs:
                               typographyValueInterpreter: LITERAL
                               typography: body-2
                               color: md:black
+                            componentProperties:                 
+                              displayFormat: dd/MM/yyyy                
+                              displayFormatValueInterpreter: LITERAL            
+                              editingFormat: dd/MM/yyyy                 
+                              editingFormatValueInterpreter: LITERAL 
                             useCustomLabel: true
                             dataType: DATE
              
@@ -514,6 +550,11 @@ formTabs:
                             typographyValueInterpreter: LITERAL
                             typography: body-2
                             color: md:black
+                          componentProperties:                 
+                            displayFormat: dd/MM/yyyy                
+                            displayFormatValueInterpreter: LITERAL            
+                            editingFormat: dd/MM/yyyy                 
+                            editingFormatValueInterpreter: LITERAL
                           useCustomLabel: true
                           dataType: DATE
 
@@ -540,6 +581,11 @@ formTabs:
                             typographyValueInterpreter: LITERAL
                             typography: body-2
                             color: md:black
+                          componentProperties:                 
+                            displayFormat: dd/MM/yyyy                
+                            displayFormatValueInterpreter: LITERAL            
+                            editingFormat: dd/MM/yyyy                 
+                            editingFormatValueInterpreter: LITERAL
                           useCustomLabel: true
                           visibleValue: Immeuble.FID_OrgaResp = 'DR'  and Immeuble.DateMiseVente is not null
                           visibleValueInterpreter: SEMQL
@@ -555,6 +601,11 @@ formTabs:
                             typographyValueInterpreter: LITERAL
                             typography: body-2
                             color: md:black
+                          componentProperties:                 
+                            displayFormat: dd/MM/yyyy                
+                            displayFormatValueInterpreter: LITERAL            
+                            editingFormat: dd/MM/yyyy                 
+                            editingFormatValueInterpreter: LITERAL
                           useCustomLabel: true
                           visibleValue: Immeuble.DateVente is not null
                           visibleValueInterpreter: SEMQL
@@ -614,6 +665,11 @@ formTabs:
               typographyValueInterpreter: LITERAL
               typography: body-2
               color: md:black
+            componentProperties:                 
+              displayFormat: dd/MM/yyyy                
+              displayFormatValueInterpreter: LITERAL            
+              editingFormat: dd/MM/yyyy                 
+              editingFormatValueInterpreter: LITERAL
             useCustomLabel: true
             visibleValue: Immeuble.FID_OrgaResp = 'DR' and (lookup first (DateVente) from Etage.Lot where DateVente is not null order by DateVente desc end) is not null
             visibleValueInterpreter: SEMQL

@@ -37,6 +37,17 @@ rootBusinessViewEntity:
   tableAllowed: true
   gridAllowed: true
 
+  embeddedCollectionNavigations:
+    - formCollection: Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Services
+      browsingTarget: BUSINESS_OBJECT_VIEW
+      businessView: Batiments.entities.Service.business_views.ServiceBusinessView
+
+    - formCollection: Batiments.entities.Lot.forms.LotConsultation.Lot.Compteur
+      browsingTarget: BUSINESS_OBJECT_VIEW
+      businessView: Batiments.entities.Compteur.business_views.CompteurBusinessView
+
+
+
   transitions:
 
     - _name: GoldenHistoryRecords

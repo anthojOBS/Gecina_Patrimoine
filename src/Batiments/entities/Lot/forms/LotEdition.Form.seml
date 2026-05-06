@@ -150,6 +150,8 @@ formTabs:
                       _name: FDN_TypologieLot
                       value: FDN_TypologieLot
                       label: Typologie de lot
+                      authoringMode: case when :V_USER_ROLES like '%semarchyAdmin%' then 'auto' else 'force-read-only' end
+                      authoringModeValueInterpreter: SEMQL
                       labelProperties:
                         alignment: left
                         typographyValueInterpreter: LITERAL
@@ -376,26 +378,6 @@ formTabs:
                 dataType: DECIMAL 
 
 
-           
-          - _type: FormSection
-            _name: Services
-            label: Services non individualisés
-            layoutDirection: COLUMN
-            labelWidth: 300px
-            content:
-              - _type: CheckboxField
-                _name: StatutSNI
-                value: StatutSNI
-                label: Statut SNI
-                labelProperties:
-                  alignment: left
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                useCustomLabel: true
-                dataType: BOOLEAN
-
-
 
   - _type: FormTab
     _name: CycleVie
@@ -517,7 +499,7 @@ formTabs:
           - _type: TextField
             _name: NumeroCopropriete
             value: NumeroCopropriete
-            label: Numéro copropriété
+            label: Identifiant lot copropriété
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL

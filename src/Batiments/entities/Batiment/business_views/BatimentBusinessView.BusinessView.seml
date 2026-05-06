@@ -171,9 +171,21 @@ rootBusinessViewEntity:
       transitionVisible: '1'
       transitionVisibleInterpreter: LITERAL
       useCustomLabel: true
-      businessViewEntity: 
-        _type: BusinessViewEntityReference
-        ref: Batiments.entities.Batiment.business_views.BatimentBusinessView.Batiment
+      businessViewEntity:
+        _type: BusinessViewEntity
+        _name: GoldenRecord
+        displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
+        entity: Batiments.entities.Batiment.Batiment
+        actionSet: Batiments.entities.Batiment.action_sets.BatimentActionSet
+        collection: Batiments.entities.Batiment.collection_views.BatimentCollectionView_history
+        form: Batiments.entities.Batiment.forms.BatimentConsultation
+        displayRecordCount: ALWAYS
+        outlineVisible: false
+        enableUserDefinedSort: true
+        gridAllowed: true
+        listAllowed: true
+        overrideDefaultSort: false
+        tableAllowed: true
       filter: 1 = 1
 	  
     - _type: BusinessViewTransition

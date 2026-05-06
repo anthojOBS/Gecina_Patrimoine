@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: RelImmSocDisplayCard
 entity: Batiments.entities.RelImmSoc.RelImmSoc
 default: true
-primaryTextExpression: RelImmSocCode
+primaryTextExpression: FDN_TypeSociete || ' - ' || FDN_Societe
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

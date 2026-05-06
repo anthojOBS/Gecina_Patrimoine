@@ -1,0 +1,56 @@
+_package: Batiments.entities.Etage.collection_views
+_type: CollectionView
+_name: EtageCompositionConsultation
+entity: Batiments.entities.Etage.Etage
+default: true
+displayCard: Batiments.entities.Etage.display_cards.EtageDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Etage
+tableRowLines: 1
+tableShowDisplayCard: false
+tableColumns:
+
+  - _type: TextColumn
+    _name: Libelle
+    value: Libelle
+    label: Etage  
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: SuperficieBalcons
+    value: case when SuperficieBalcons is not null then  SuperficieBalcons || ' m²' else null end
+    useCustomLabel: true
+    label: Superficie balcons
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: SuperficieTerrasses
+    value: case when SuperficieTerrasses is not null then  SuperficieTerrasses || ' m²' else null end
+    useCustomLabel: true
+    label: Superficie terrasses
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: SuperficieJardins
+    value: case when SuperficieJardins is not null then  SuperficieJardins || ' m²' else null end
+    useCustomLabel: true
+    label: Superficie jardins
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true

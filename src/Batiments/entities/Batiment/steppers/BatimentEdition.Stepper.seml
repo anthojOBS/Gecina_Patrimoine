@@ -46,19 +46,71 @@ rootStep:
           attribute:  Batiments.references.BatimentToUsage.Usage
 
 
+
+
+    - _type: CollectionStep
+      enableChildImportOnParentCreate: true
+      enableChildImportOnParentEdit: true 
+      childImportModeOnParentEdit: CREATE_ONLY 
+      enableChildCopyOnParentCreate: true
+      enableChildCopyOnParentEdit: true
+      enableChildCreationOnParentCreate: true
+      enableChildCreationOnParentEdit: true 
+      enableChildDeleteOnParentEdit: true
+      enableChildEditOnParentCreate: true
+      enableChildEditOnParentEdit: true
+      enableChildRemoveOnParentCreate: true
+      enableChildRemoveOnParentEdit: true
+      skipToChildCreationOnParentCreate: false
+      skipToChildEditingOnParentEdit: false
+      linear: false
+      _name: Composition
+      label: Composition
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      childDeleteType: HARD_DELETE
+      oneToManyReference: Batiments.references.EtageToBatiment
+      collectionView: Batiments.entities.Etage.collection_views.EtageCompositionConsultation
+      defaultDisplayType: TABLE
+      customSortEnabled: false
+      userDefinedSortEnabled: true
+      displayGridAllowed: false
+      displayListAllowed: true
+      displayTableAllowed: true
+      useCustomCollectionLabel: false
+      childSteps:
+        - _type: FormStep
+          _name: Etage_form
+          label: Composition des étages 
+          canFinishSubLevel: true
+          enabledOnParentCreate: true
+          enabledOnParentEdit: true
+          formFieldsMode: AUTO
+          enableMasterValuePicking: false
+          formTab: Batiments.entities.Etage.forms.EtageForm.Etage
+
+
     - _type: FormStep
       _name: CycleDeVie
-      label: Cycle de vie de l'immeuble
+      label: Cycle de vie
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
       formFieldsMode: AUTO
       enableMasterValuePicking: false
       formTab: Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment
+      
+      formStepEnrichers:   
+        - enricher: Batiments.entities.Batiment.enrichers.DefautPhase
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
 
     - _type: FormStep
-      _name: FiscaliteJuridique
-      label: Fiscalité et Juridique
+      _name: JuridiquePropriete
+      label: Juridique et propriété 
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
@@ -66,6 +118,16 @@ rootStep:
       enableMasterValuePicking: false
       formTab: Batiments.entities.Batiment.forms.BatimentEdition.FiscaliteJuridique
 
+      formStepEnrichers:   
+        - enricher: Batiments.entities.Batiment.enrichers.DefautRegimeTVA
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+        - enricher: Batiments.entities.Batiment.enrichers.DefautRegimeJuridique
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+          
       formStepValidations:  
         - executedOnDataChange: true
           executedOnFormOpen: true

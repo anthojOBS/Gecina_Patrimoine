@@ -1,0 +1,18 @@
+_package: Batiments.entities.Batiment.enrichers
+_name: DefautConstruction
+_type: SemQLEnricher
+entity: Batiments.entities.Batiment.Batiment
+label: Defaut donnée construction
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: DateAcquisition
+    expression: Immeuble.DateAcquisition
+  - attributeName: DateDebutConstruction
+    expression: Immeuble.DateDebutConstruction
+  - attributeName: DateFinConstruction
+    expression: Immeuble.DateFinConstruction
+  - attributeName: DateLivraison
+    expression: Immeuble.DateLivraison
+  - attributeName: FID_PeriodeConstruction
+    expression: Immeuble.FID_PeriodeConstruction 
+condition: DateAcquisition is NULL 

@@ -659,6 +659,7 @@ formTabs:
                                   _name: FDN_Phase
                                   value: FDN_Phase
                                   label: Phase
+                                  authoringMode: force-read-only
                                   documentation: Statut du bien dans son cycle de vie (initiale, active, terminée).
                                   labelProperties:
                                     alignment: left
@@ -698,6 +699,11 @@ formTabs:
                                     typographyValueInterpreter: LITERAL
                                     typography: body-2
                                     color: md:black
+                                  componentProperties:                 
+                                    displayFormat: dd/MM/yyyy                
+                                    displayFormatValueInterpreter: LITERAL            
+                                    editingFormat: dd/MM/yyyy                 
+                                    editingFormatValueInterpreter: LITERAL
                                   useCustomLabel: true
                                   dataType: DATE
 
@@ -735,6 +741,11 @@ formTabs:
                                     typographyValueInterpreter: LITERAL
                                     typography: body-2
                                     color: md:black
+                                  componentProperties:                 
+                                    displayFormat: dd/MM/yyyy                
+                                    displayFormatValueInterpreter: LITERAL            
+                                    editingFormat: dd/MM/yyyy                 
+                                    editingFormatValueInterpreter: LITERAL
                                   useCustomLabel: true
                                   dataType: DATE
                                 - _type: DateField
@@ -747,6 +758,11 @@ formTabs:
                                     typographyValueInterpreter: LITERAL
                                     typography: body-2
                                     color: md:black
+                                  componentProperties:                 
+                                    displayFormat: dd/MM/yyyy                
+                                    displayFormatValueInterpreter: LITERAL            
+                                    editingFormat: dd/MM/yyyy                 
+                                    editingFormatValueInterpreter: LITERAL
                                   useCustomLabel: true
                                   dataType: DATE
                                 - _type: DateField
@@ -759,6 +775,11 @@ formTabs:
                                     typographyValueInterpreter: LITERAL
                                     typography: body-2
                                     color: md:black
+                                  componentProperties:                 
+                                    displayFormat: dd/MM/yyyy                
+                                    displayFormatValueInterpreter: LITERAL            
+                                    editingFormat: dd/MM/yyyy                 
+                                    editingFormatValueInterpreter: LITERAL
                                   useCustomLabel: true
                                   dataType: DATE
 
@@ -782,6 +803,11 @@ formTabs:
                                     typographyValueInterpreter: LITERAL
                                     typography: body-2
                                     color: md:black
+                                  componentProperties:                 
+                                    displayFormat: dd/MM/yyyy                
+                                    displayFormatValueInterpreter: LITERAL            
+                                    editingFormat: dd/MM/yyyy                 
+                                    editingFormatValueInterpreter: LITERAL
                                   useCustomLabel: true
                                   dataType: DATE
    

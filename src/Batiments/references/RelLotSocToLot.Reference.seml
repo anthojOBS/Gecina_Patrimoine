@@ -10,9 +10,9 @@ fromRoleDocumentation: |
 physicalName: REL_LOT_REF
 
 fromEntity: Batiments.entities.RelLotSoc.RelLotSoc
-fromRoleLabel: RelLotSoc
+fromRoleLabel: Relation lot société
 fromRoleName: RelLotSoc
-fromRolePluralLabel: RelLotSoc
+fromRolePluralLabel: Relation lot société
 
 toEntity: Batiments.entities.Lot.Lot
 toRoleLabel: Lot

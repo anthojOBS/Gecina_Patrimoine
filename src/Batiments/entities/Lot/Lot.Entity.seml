@@ -213,7 +213,7 @@ attributes:
 
   - _type: EntityAttribute
     _name: NumeroCopropriete
-    label: Numéro copropriété
+    label: Identifiant lot copropriété
     physicalName: NUMERO_COPROPRIOETE
     dataType: String
     length: 255

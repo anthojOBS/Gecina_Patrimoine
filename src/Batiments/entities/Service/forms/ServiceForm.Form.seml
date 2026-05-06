@@ -6,18 +6,21 @@ default: true
 formTabs:
   - _type: FormTab
     _name: Service
-    label: Service
+    label: Types services
     documentationInterpreter: LITERAL
     visibleValue: "1"
     visibleValueInterpreter: LITERAL
     displayFormTabAs: LABEL
     content:
-      - _type: TextField
-        _name: ServiceID
-        value: ServiceID
-        useCustomLabel: false
-        dataType: INTEGER
-        labelProperties:
-          typographyValueInterpreter: LITERAL
-          typography: body-2
-          color: md:black
+        - _type: ReferenceField
+          _name: FDN_TypeService
+          value: FDN_TypeService
+          label: Types services
+          labelProperties:
+            alignment: left
+            typography: body-2
+            color: md:black
+          useCustomLabel: true
+          dataType: STRING
+          referencedEntity: Batiments.entities.TypeService.TypeService
+

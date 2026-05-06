@@ -1,0 +1,53 @@
+_package: Batiments.entities.Etage.collection_views
+_type: CollectionView
+_name: EtageComposition
+entity: Batiments.entities.Etage.Etage
+default: true
+displayCard: Batiments.entities.Etage.display_cards.EtageDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Etage
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+
+  - _type: TextColumn
+    _name: Libelle
+    value: Libelle
+    label: Libellé  
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: SuperficieBalcons
+    value: SuperficieBalcons
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: SuperficieTerrasses
+    value: SuperficieTerrasses
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: TextColumn
+    _name: SuperficieJardins
+    value: SuperficieJardins
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false

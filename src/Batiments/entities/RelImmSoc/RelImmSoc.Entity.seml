@@ -1,8 +1,8 @@
 _package: Batiments.entities.RelImmSoc
 _type: Entity
 _name: RelImmSoc
-label: RelImmSoc
-pluralLabel: RelImmSoc
+label: Relation immeuble société
+pluralLabel: Relation immeuble société
 entityType: FUZZY_MATCHED
 physicalTableName: REL_IMM_SOC
 iconUrl: images://mdi/floor-plan.svg
@@ -14,7 +14,7 @@ enableDelete: true
 attributes:
   - _type: EntityAttribute
     _name: RelImmSocCode
-    label: RelImmSoc Code
+    label: Relation immeuble société Code
     physicalName: REL_IMM_SOC_CODE
     dataType: LongInteger
     precision: 38

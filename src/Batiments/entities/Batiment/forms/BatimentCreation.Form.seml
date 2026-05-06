@@ -171,6 +171,43 @@ formTabs:
        
 
   - _type: FormTab
+    _name: Composition
+    label: Composition
+    documentationInterpreter: LITERAL
+    visibleValue: Immeuble.FID_OrgaResp = 'DB'
+    visibleValueInterpreter: SEMQL
+    displayFormTabAs: ICON_LABEL
+    content:
+
+      - _type: FormSection
+        _name: Etage
+        label: Composition des étages 
+        layoutDirection: COLUMN
+        visibleValue: Immeuble.FID_OrgaResp = 'DB'
+        visibleValueInterpreter: SEMQL
+
+        content:
+          - _type: FormCollection
+            _name: Etage
+            label: Composition des étages
+            pluralLabel: Composition des étages
+            useCustomLabel: true
+            collection: Batiments.entities.Etage.collection_views.EtageComposition
+            tableAllowed: true
+            listAllowed: false
+            gridAllowed: false
+            displayRecordCount: ALWAYS
+            enableUserDefinedSort: true
+            transitionPath: Etage
+            sortExpression: 1 DESC
+            filter: 1=1
+            targetEntity: Batiments.entities.Etage.Etage
+            height: 300
+            formCollectionSearchConfigs:
+             -  enabled: true 
+                searchType: TEXT
+
+  - _type: FormTab
     _name: CycleVieBatiment
     label: Cycle de vie
     iconUrl: images://mdi/sync-circle.svg
@@ -199,6 +236,7 @@ formTabs:
                         _name: FDN_Phase
                         value: FDN_Phase
                         label: Phase
+                        authoringMode: force-read-only
                         documentation: Statut du bien dans son cycle de vie (initiale, active, terminée).
                         labelProperties:
                           alignment: left
@@ -219,7 +257,7 @@ formTabs:
                     content:
                           - _type: ReferenceField
                             _name: FDN_PeriodeConstruction
-                            value: Immeuble.FDN_PeriodeConstruction
+                            value: FDN_PeriodeConstruction
                             label: Période de construction
                             labelProperties:
                               alignment: left
@@ -230,7 +268,7 @@ formTabs:
                             referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
                           - _type: TextField
                             _name: DateDebutConstruction
-                            value: Immeuble.DateDebutConstruction
+                            value: DateDebutConstruction
                             label: Date début construction
                             documentation: Date de démarrage des travaux de construction de l’actif.
                             labelProperties:
@@ -238,11 +276,16 @@ formTabs:
                               typographyValueInterpreter: LITERAL
                               typography: body-2
                               color: md:black
+                            componentProperties:                 
+                              displayFormat: dd/MM/yyyy                
+                              displayFormatValueInterpreter: LITERAL            
+                              editingFormat: dd/MM/yyyy                 
+                              editingFormatValueInterpreter: LITERAL 
                             useCustomLabel: true
                             dataType: DATE
                           - _type: TextField
                             _name: DateFinConstruction
-                            value: Immeuble.DateFinConstruction
+                            value: DateFinConstruction
                             label: Date fin construction
                             documentation: Date de fin des travaux de construction.
                             labelProperties:
@@ -250,11 +293,16 @@ formTabs:
                               typographyValueInterpreter: LITERAL
                               typography: body-2
                               color: md:black
+                            componentProperties:                 
+                              displayFormat: dd/MM/yyyy                
+                              displayFormatValueInterpreter: LITERAL            
+                              editingFormat: dd/MM/yyyy                 
+                              editingFormatValueInterpreter: LITERAL 
                             useCustomLabel: true
                             dataType: DATE
                           - _type: TextField
                             _name: DateLivraison
-                            value: Immeuble.DateLivraison
+                            value: DateLivraison
                             label: Date livraison
                             documentation: Date de mise à disposition de l’actif après construction. (uniquement pour les VEFA). Ne pas afficher si pas d'info. Afficher que si VEFA et si on a l'info
                             labelProperties:
@@ -262,6 +310,11 @@ formTabs:
                               typographyValueInterpreter: LITERAL
                               typography: body-2
                               color: md:black
+                            componentProperties:                 
+                              displayFormat: dd/MM/yyyy                
+                              displayFormatValueInterpreter: LITERAL            
+                              editingFormat: dd/MM/yyyy                 
+                              editingFormatValueInterpreter: LITERAL 
                             useCustomLabel: true
                             dataType: DATE
              
@@ -281,14 +334,19 @@ formTabs:
 
                         - _type: TextField
                           _name: DateAcquisition
-                          value: Immeuble.DateAcquisition
+                          value: DateAcquisition
                           label: Date acquisition
-                          documentation: Date d’achat de l’immeuble par la société propriétaire.
+                          documentation: Date d’achat du batiment par la société propriétaire.
                           labelProperties:
                             alignment: left
                             typographyValueInterpreter: LITERAL
                             typography: body-2
                             color: md:black
+                          componentProperties:                 
+                            displayFormat: dd/MM/yyyy                
+                            displayFormatValueInterpreter: LITERAL            
+                            editingFormat: dd/MM/yyyy                 
+                            editingFormatValueInterpreter: LITERAL 
                           useCustomLabel: true
                           dataType: DATE
 
@@ -310,18 +368,18 @@ formTabs:
         visibleValueInterpreter: LITERAL
         labelWidth: 300px
         content:
-          - _type: TextField
-            _name: FDN_FiscaliteCible
-            value: FDN_FiscaliteCible
-            label: Régime TVA
-            documentation: Régime de taxation du bien (non soumis, prorata, soumis 100%).
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: STRING
+          # - _type: TextField
+          #   _name: FDN_FiscaliteCible
+          #   value: FDN_FiscaliteCible
+          #   label: Régime TVA
+          #   documentation: Régime de taxation du bien (non soumis, prorata, soumis 100%).
+          #   labelProperties:
+          #     alignment: left
+          #     typographyValueInterpreter: LITERAL
+          #     typography: body-2
+          #     color: md:black
+          #   useCustomLabel: true
+          #   dataType: STRING
           - _type: TextField
             _name: Juridique
             value: FDN_RegimeJuridique

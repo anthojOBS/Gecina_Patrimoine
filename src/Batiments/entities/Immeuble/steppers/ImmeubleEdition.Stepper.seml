@@ -184,6 +184,12 @@ rootStep:
       enableMasterValuePicking: false
       formTab: Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble
  
+      formStepEnrichers:   
+        - enricher: Batiments.entities.Immeuble.enrichers.DefautPhase
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+
       formStepValidations: 
         - validator: Batiments.entities.Immeuble.validations.CheckDtLivraison
           executedOnDataChange: true

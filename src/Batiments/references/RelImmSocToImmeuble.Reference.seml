@@ -10,9 +10,9 @@ fromRoleDocumentation: |
 physicalName: REL_IMM_REF
 
 fromEntity: Batiments.entities.RelImmSoc.RelImmSoc
-fromRoleLabel: RelImmSoc
+fromRoleLabel: Relation immeuble société
 fromRoleName: RelImmSoc
-fromRolePluralLabel: RelImmSocs
+fromRolePluralLabel: Relation immeuble société
 
 toEntity: Batiments.entities.Immeuble.Immeuble
 toRoleLabel: Immeuble

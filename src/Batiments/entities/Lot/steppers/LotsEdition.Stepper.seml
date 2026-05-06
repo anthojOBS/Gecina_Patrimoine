@@ -71,6 +71,9 @@ rootStep:
           validationType: MANDATORY
           attribute: Batiments.references.LotToGenreLot.GenreLot
 
+
+
+
     - _type: FormStep
       _name: Composition
       label: Composition
@@ -80,6 +83,51 @@ rootStep:
       formFieldsMode: AUTO
       enableMasterValuePicking: false
       formTab: Batiments.entities.Lot.forms.LotEdition.Composition
+
+
+    - _type: CollectionStep
+      enableChildImportOnParentCreate: true
+      enableChildImportOnParentEdit: true 
+      childImportModeOnParentEdit: CREATE_ONLY 
+      enableChildCopyOnParentCreate: true
+      enableChildCopyOnParentEdit: true
+      enableChildCreationOnParentCreate: true
+      enableChildCreationOnParentEdit: true 
+      enableChildDeleteOnParentEdit: true
+      enableChildEditOnParentCreate: true
+      enableChildEditOnParentEdit: true
+      enableChildRemoveOnParentCreate: true
+      enableChildRemoveOnParentEdit: true
+      skipToChildCreationOnParentCreate: false
+      skipToChildEditingOnParentEdit: false
+      linear: false
+      _name: Service
+      label: Types service
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      childDeleteType: HARD_DELETE
+      oneToManyReference: Batiments.references.ServiceToLot
+      collectionView: Batiments.entities.Service.collection_views.ServiceCollectionLot
+      defaultDisplayType: TABLE
+      customSortEnabled: false
+      userDefinedSortEnabled: true
+      displayGridAllowed: false
+      displayListAllowed: true
+      displayTableAllowed: true
+      useCustomCollectionLabel: false
+      childSteps:
+        - _type: FormStep
+          _name: Service_form
+          label: Services
+          canFinishSubLevel: true
+          enabledOnParentCreate: true
+          enabledOnParentEdit: true
+          formFieldsMode: AUTO
+          enableMasterValuePicking: false
+          formTab: Batiments.entities.Service.forms.ServiceForm.Service
+
 
     - _type: FormStep
       _name: CycleDeVie

@@ -29,6 +29,14 @@ rootBusinessViewEntity:
   #     formField: Batiments.entities.Batiment.forms.BatimentForm.Batiment.SectionHaut.SectionGauche.IdentiteBatiment.FDN_Immeuble
   #     navigationMode: BUSINESS_OBJECT_VIEW
   #     businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
+  embeddedCollectionNavigations:
+    - formCollection: Batiments.entities.Immeuble.forms.ImmeubleConsultation.Composition.Services
+      browsingTarget: BUSINESS_OBJECT_VIEW
+      businessView: Batiments.entities.Service.business_views.ServiceBusinessView
+
+    - formCollection: Batiments.entities.Immeuble.forms.ImmeubleConsultation.FiscaliteJuridique.Societes.Societes
+      browsingTarget: BUSINESS_OBJECT_VIEW
+      businessView: Batiments.entities.Societe.business_views.SocieteBusinessView
 
 
   displayRecordCount: ALWAYS
@@ -84,6 +92,11 @@ rootBusinessViewEntity:
         outlineVisible: false
         sortExpression: Libelle_Batiment ASC
 
+        embeddedCollectionNavigations:
+
+          - formCollection: Batiments.entities.Batiment.forms.BatimentConsultation.FiscaliteJuridique.Societes.Societes
+            browsingTarget: BUSINESS_OBJECT_VIEW
+            businessView: Batiments.entities.Societe.business_views.SocieteBusinessView
 
         referenceAttributeNavigationConfigs:
         - formField: Batiments.entities.Batiment.forms.BatimentConsultation.Batiment.SectionHaut.SectionHautGauche.IdentiteBatiment.FDN_Immeuble

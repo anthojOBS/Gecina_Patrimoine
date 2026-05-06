@@ -22,7 +22,7 @@ tableColumns:
   - _type: ReferenceColumn
     _name: FDN_TypeSociete
     value: FDN_TypeSociete
-    label: Type Société
+    label: Type société
     useCustomLabel: true
     dataType: STRING
     columnAlign: LEFT

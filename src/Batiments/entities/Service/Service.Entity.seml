@@ -14,7 +14,7 @@ enableDelete: true
 attributes:
   - _type: EntityAttribute
     _name: ServiceID
-    label: Pokemon Evol ID
+    label: Service ID
     physicalName: SERVICE_ID
     dataType: LongInteger
     precision: 38
@@ -38,7 +38,7 @@ matcher:
     - _type: SemQLMatchRule
       _name: NewRule
       label: NewRuleLabel
-      condition:  1=1 # Record1.FID_Lot = Record2.FID_Lot and Record1.FID_TypeSociete = Record2.FID_TypeSociete and Record1.FID_Societe = Record2.FID_Societe
+      condition:  Record1.FID_TypeService=Record2.FID_TypeService and Record1.FID_Lot = Record2.FID_Lot 
  
       matchScore: 100
       usingMatchOn: false

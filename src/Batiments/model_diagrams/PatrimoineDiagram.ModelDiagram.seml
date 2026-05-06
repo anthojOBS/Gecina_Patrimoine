@@ -106,16 +106,6 @@ entityShapes:
       x: -400
       y: -400
   - _type: EntityShape
-    _name: CategorieERPShape
-    entity: Batiments.entities.CategorieERP.CategorieERP
-    borderColor: "#ad1457"
-    fontTitleColor: ""
-    width: -1
-    height: -1
-    position:
-      x: -400
-      y: -200
-  - _type: EntityShape
     _name: FiscaliteCibleShape
     entity: Batiments.entities.FiscaliteCible.FiscaliteCible
     borderColor: "#6a1b9a"
@@ -437,10 +427,6 @@ referenceLinks:
   - reference: Batiments.references.ImmeubleToPays
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
     toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.PaysShape
-    bendPoints: []
-  - reference: Batiments.references.ImmeubleToCategorieERP
-    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
-    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.CategorieERPShape
     bendPoints: []
   - reference: Batiments.references.EtageToTypeEtage
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.EtageShape

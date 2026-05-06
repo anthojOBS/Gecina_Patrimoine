@@ -12,21 +12,10 @@ formTabs:
     visibleValueInterpreter: LITERAL
     displayFormTabAs: LABEL
     content:
-      - _type: IdField
-        _name: RelImmSocCode
-        value: RelImmSocCode
-        useCustomLabel: false
-        dataType: STRING
-        labelProperties:
-          typographyValueInterpreter: LITERAL
-          typography: body-2
-          color: md:black
-          alignment: left
-
       - _type: ReferenceField
         _name: FDN_TypeSociete
         value: FDN_TypeSociete
-        label: Type Société
+        label: Type société
         labelProperties:
           alignment: left
           typography: body-2

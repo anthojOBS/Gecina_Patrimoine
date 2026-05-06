@@ -109,21 +109,29 @@ attributes:
 
   - _type: EntityAttribute
     _name: DateAcquisition
-    label: Date d'acquisition
+    label: Date acquisition
     physicalName: DATE_ACQUISITION
     dataType: Date
     mandatory: false
 
+
   - _type: EntityAttribute
-    _name: DateConstruction
-    label: Date de construction
-    physicalName: DATE_CONSTRUCTION
+    _name: DateDebutConstruction
+    label: Date début de construction
+    physicalName: DATE_DEBUT_CONSTRUCTION
+    dataType: Date
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: DateFinConstruction
+    label: Date fin de construction
+    physicalName: DATE_FIN_CONSTRUCTION
     dataType: Date
     mandatory: false
 
   - _type: EntityAttribute
     _name: DateLivraison
-    label: Date de livraison
+    label: Date livraison
     physicalName: DATE_LIVRAISON
     dataType: Date
     mandatory: false

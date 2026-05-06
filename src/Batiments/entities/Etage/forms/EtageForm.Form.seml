@@ -13,26 +13,6 @@ formTabs:
     displayFormTabAs: ICON_LABEL
     labelWidth: 200px
     content:
-      - _type: IdField
-        _name: EtageCode
-        value: EtageCode
-        useCustomLabel: false
-        dataType: LONG_INTEGER
-        labelProperties:
-          typographyValueInterpreter: LITERAL
-          typography: body-2
-          color: md:black
-          alignment: left
-      - _type: TextField
-        _name: CodeEtage
-        value: CodeEtage
-        label: Etage
-        useCustomLabel: false
-        dataType: STRING
-        labelProperties:
-          typographyValueInterpreter: LITERAL
-          typography: body-2
-          color: md:black
       - _type: TextField
         _name: Libelle
         value: Libelle
@@ -44,12 +24,31 @@ formTabs:
           typography: body-2
           color: md:black
 
-      - _type: ReferenceField
-        _name: FDN_Batiment
-        value: FDN_Batiment
+      - _type: TextField
+        _name: SuperficieBalcons
+        value: SuperficieBalcons
         useCustomLabel: false
-        dataType: STRING
-        referencedEntity: Batiments.entities.Batiment.Batiment
+        dataType: DECIMAL
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+
+      - _type: TextField
+        _name: SuperficieTerrasses
+        value: SuperficieTerrasses
+        useCustomLabel: false
+        dataType: DECIMAL
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+
+      - _type: TextField
+        _name: SuperficieJardins
+        value: SuperficieJardins
+        useCustomLabel: false
+        dataType: DECIMAL
         labelProperties:
           typographyValueInterpreter: LITERAL
           typography: body-2

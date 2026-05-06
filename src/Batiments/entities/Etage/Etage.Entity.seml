@@ -57,6 +57,32 @@ attributes:
     mandatory: false
     searchable: true
 
+  - _type: EntityAttribute
+    _name: SuperficieTerrasses
+    label: Superficie terrasses
+    physicalName: SUPERF_TERRASSES
+    dataType: Decimal
+    precision: 18
+    scale: 2
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: SuperficieBalcons
+    label: Superficie balcons
+    physicalName: SUPERF_BALCONS
+    dataType: Decimal
+    precision: 18
+    scale: 2
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: SuperficieJardins
+    label: Superficie jardins
+    physicalName: SURPERFICIE_JARDINS
+    dataType: Decimal
+    precision: 18
+    scale: 2
+    mandatory: false
 
 sourceIdGeneration:
   mode: MANUAL
