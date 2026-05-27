@@ -140,6 +140,11 @@ formTabs:
                         typographyValueInterpreter: LITERAL
                         typography: body-2
                         color: md:black
+                      componentProperties:                 
+                        displayFormat: dd/MM/yyyy                
+                        displayFormatValueInterpreter: LITERAL            
+                        editingFormat: dd/MM/yyyy                 
+                        editingFormatValueInterpreter: LITERAL 
                       useCustomLabel: true
                       dataType: DATE
                     - _type: ReferenceField
@@ -166,6 +171,8 @@ formTabs:
                         color: md:black
                       useCustomLabel: true
                       dataType: STRING
+                      visibleValue: FID_TypologieLot <> 'SNI'
+                      visibleValueInterpreter: SEMQL
                       referencedEntity: Batiments.entities.GenreLot.GenreLot
 
 
@@ -285,6 +292,8 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
+                    visibleValue: FID_TypologieLot = 'SNI'
+                    visibleValueInterpreter: SEMQL
                     dataType: BOOLEAN   
 
           - _type: FormContainer
@@ -462,7 +471,7 @@ formTabs:
 
               - _type: TextField
                 _name: SuperficieUtileSansQP
-                value: case when SuperficieUtileSansQP is not null then SuperficieUtileSansQP || ' m²' else null end
+                value: SuperficieUtileSansQP || ' m²'
                 label: Superficie utile sans QP
                 documentation: Superficie utile sans quote-part de parties communes.
                 labelProperties:
@@ -471,11 +480,13 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: SuperficieUtileSansQP is not null
+                visibleValueInterpreter: SEMQL
                 dataType: STRING 
   
               - _type: TextField
                 _name: SuperficieUtileQP
-                value: case when SuperficieUtileQP is not null then SuperficieUtileQP || ' m²' else null end
+                value: SuperficieUtileQP || ' m²'
                 label: Superficie utile avec QP
                 documentation: Superficie utile avec quote-part de parties communes.
                 labelProperties:
@@ -484,11 +495,29 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: SuperficieUtileQP is not null
+                visibleValueInterpreter: SEMQL
                 dataType: STRING 
+
+
+              - _type: ReferenceField
+                _name: FDN_DestinationTaxable
+                value: FDN_DestinationTaxable
+                label: Destination taxable
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                visibleValue: SuperficieTaxable is not null
+                visibleValueInterpreter: SEMQL
+                dataType: STRING
+                referencedEntity: Batiments.entities.DestinationTaxable.DestinationTaxable
 
               - _type: TextField
                 _name: SuperficieTaxable
-                value: case when SuperficieTaxable is not null then SuperficieTaxable || ' m²' else null end
+                value: SuperficieTaxable || ' m²'
                 label: Superficie taxable
                 documentation: Superficie taxable.
                 labelProperties:
@@ -497,11 +526,13 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: SuperficieTaxable is not null
+                visibleValueInterpreter: SEMQL
                 dataType: STRING 
 
               - _type: TextField
                 _name: SuperficieUtilePonderee
-                value: case when SuperficieUtilePonderee is not null then SuperficieUtilePonderee || ' m²' else null end
+                value: SuperficieUtilePonderee || ' m²'
                 label: Superficie utile pondérée  
                 documentation: Superficie utile pondérée.
                 labelProperties:
@@ -510,6 +541,8 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: SuperficieUtilePonderee is not null
+                visibleValueInterpreter: SEMQL
                 dataType: STRING 
 
           - _type: FormCollection
@@ -730,33 +763,28 @@ formTabs:
             dataType: BOOLEAN
 
 
-      - _type: FormSection
+
+      - _type: FormCollection
         _name: Societes
         label: Sociétés
-        layoutDirection: COLUMN
-        visibleValue: "1"
-        visibleValueInterpreter: LITERAL
-
-        content:
-          - _type: FormCollection
-            _name: Societes
-            label: Sociétés
-            useCustomLabel: true
-            collection: Batiments.entities.RelLotSoc.collection_views.Societe
-            tableAllowed: true
-            listAllowed: false
-            gridAllowed: false
-            displayRecordCount: ALWAYS
-            enableUserDefinedSort: true
-            transitionPath: RelLotSoc
-            sortExpression: 1 DESC
-            filter: 1=1
-            # filter: FID_TypeSociete = '1'
-            targetEntity: Batiments.entities.RelLotSoc.RelLotSoc
-            height: 300
-            formCollectionSearchConfigs:
-             -  enabled: true 
-                searchType: TEXT
+        pluralLabel: Sociétés
+        useCustomLabel: true
+        collection: Batiments.entities.RelLotSoc.collection_views.Societe
+        actionSet: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet
+        tableAllowed: true
+        listAllowed: false
+        gridAllowed: false
+        displayRecordCount: ALWAYS
+        enableUserDefinedSort: true
+        transitionPath: RelLotSoc
+        sortExpression: 1 DESC
+        filter: 1=1
+        # filter: FID_TypeSociete = '1'
+        targetEntity: Batiments.entities.RelLotSoc.RelLotSoc
+        height: 300
+        formCollectionSearchConfigs:
+          - enabled: true 
+            searchType: TEXT
 
 
   - _type: FormTab

@@ -7,7 +7,7 @@ defaultActionSet: true
 actions:
   - _type: CreateAction
     _name: CreateAuthorLots
-    label: Creation sous-lot
+    label: Création sous-lot
     useCustomLabel: true
     stepper: Batiments.entities.SousLot.steppers.SousLotsCreation
     createMultiple: false

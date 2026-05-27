@@ -1,0 +1,9 @@
+_package: Batiments.entities.Lot.enrichers
+_name: DefautLouable
+_type: SemQLEnricher
+entity: Batiments.entities.Lot.Lot
+label: Defaut Statut Louable
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: StatutLouable
+    expression: case when 1=1 then '1'  else '0' end

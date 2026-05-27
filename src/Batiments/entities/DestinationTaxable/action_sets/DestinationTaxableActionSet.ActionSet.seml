@@ -1,0 +1,63 @@
+_package: Batiments.entities.DestinationTaxable.action_sets
+_type: ActionSet
+_name: DestinationTaxableActionSet
+entity: Batiments.entities.DestinationTaxable.DestinationTaxable
+label: DestinationTaxable Action Set
+defaultActionSet: true
+actions:
+  - _type: CreateAction
+    _name: CreateAuthorDestinationTaxables
+    label: Create
+    useCustomLabel: true
+    stepper: Batiments.entities.DestinationTaxable.steppers.AuthorDestinationTaxable
+    createMultiple: false
+    createdRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: EditAction
+    _name: EditAuthorDestinationTaxables
+    label: Edit
+    useCustomLabel: true
+    stepper: Batiments.entities.DestinationTaxable.steppers.AuthorDestinationTaxable
+    multipleSelectionAllowed: true
+    availableForGoldenData: true
+    availableForMasterData: false
+    availableForErrorData: true
+    waitDialogEnabled: false
+  - _type: MassUpdateAction
+    _name: MassUpdateAuthorDestinationTaxables
+    label: Mass Update
+    useCustomLabel: true
+    stepper: Batiments.entities.DestinationTaxable.steppers.AuthorDestinationTaxable
+    availableForGoldenData: true
+    availableForErrorData: true
+    availableForMasterData: false
+    waitDialogEnabled: false
+  - _type: DeleteAction
+    _name: Delete
+    label: Delete
+    useCustomLabel: true
+    multipleSelectionAllowed: true
+    deleteType: HARD_DELETE
+    waitDialogEnabled: false
+    availableForGoldenData: true
+    availableForMasterData: false
+  - _type: ExportAction
+    _name: Export
+    label: Export
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: ImportAuthorDestinationTaxables
+    label: Import
+    useCustomLabel: true
+    importMode: CREATE_AND_UPDATE
+    stepper: Batiments.entities.DestinationTaxable.steppers.AuthorDestinationTaxable
+    importedRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: BrowseGraphAction
+    _name: BrowseGraph
+    label: Browse Graph
+    useCustomLabel: true
+    waitDialogEnabled: false

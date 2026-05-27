@@ -7,7 +7,7 @@ defaultActionSet: true
 actions:
   - _type: CreateAction
     _name: CreateAuthorEquipementier
-    label: Create
+    label: Création
     useCustomLabel: true
     stepper: Batiments.entities.Equipementier.steppers.AuthorEquipementier
     createMultiple: false
@@ -16,7 +16,7 @@ actions:
     allowOtherPublishers: true
   - _type: EditAction
     _name: EditAuthorEquipementier
-    label: Edit
+    label: Modification
     useCustomLabel: true
     stepper: Batiments.entities.Equipementier.steppers.AuthorEquipementier
     multipleSelectionAllowed: true
@@ -26,7 +26,7 @@ actions:
     waitDialogEnabled: false
   - _type: MassUpdateAction
     _name: MassUpdateAuthorEquipementier
-    label: Mass Update
+    label: Mise à jour en masse
     useCustomLabel: true
     stepper: Batiments.entities.Equipementier.steppers.AuthorEquipementier
     availableForGoldenData: true
@@ -35,7 +35,7 @@ actions:
     waitDialogEnabled: false
   - _type: DeleteAction
     _name: Delete
-    label: Delete
+    label: Supprimer
     useCustomLabel: true
     multipleSelectionAllowed: true
     deleteType: HARD_DELETE
@@ -44,12 +44,12 @@ actions:
     availableForMasterData: false
   - _type: ExportAction
     _name: Export
-    label: Export
+    label: Exporter
     useCustomLabel: true
     waitDialogEnabled: false
   - _type: ImportAction
     _name: ImportAuthorEquipementier
-    label: Import
+    label: Importer
     useCustomLabel: true
     importMode: CREATE_AND_UPDATE
     stepper: Batiments.entities.Equipementier.steppers.AuthorEquipementier
@@ -58,6 +58,6 @@ actions:
     allowOtherPublishers: true
   - _type: BrowseGraphAction
     _name: BrowseGraph
-    label: Browse Graph
+    label: Recherche graphique
     useCustomLabel: true
     waitDialogEnabled: false

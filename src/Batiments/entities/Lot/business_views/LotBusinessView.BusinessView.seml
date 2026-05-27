@@ -47,6 +47,11 @@ rootBusinessViewEntity:
       businessView: Batiments.entities.Compteur.business_views.CompteurBusinessView
 
 
+    - formCollection: Batiments.entities.Lot.forms.LotConsultation.JuridiquePropriete.Societes
+      browsingTarget: BUSINESS_OBJECT_VIEW
+      businessView: Batiments.entities.RelLotSoc.business_views.RelLotSocBusinessView
+
+
 
   transitions:
 

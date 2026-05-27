@@ -32,6 +32,13 @@ rootStep:
       enableMasterValuePicking: false
       formTab: Batiments.entities.Lot.forms.LotConsultation.Lot
 
+
+      formStepEnrichers:  
+        - enricher: Batiments.entities.Lot.enrichers.DefautLouable
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+          
       # formStepValidations:
       #   - executedOnDataChange: true
       #     executedOnFormOpen: true

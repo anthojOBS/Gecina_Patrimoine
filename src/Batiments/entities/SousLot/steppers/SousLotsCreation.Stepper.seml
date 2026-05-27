@@ -2,11 +2,11 @@ _package: Batiments.entities.SousLot.steppers
 _type: Stepper
 _name: SousLotsCreation
 entity: Batiments.entities.SousLot.SousLot
-label: SousLots
+label: Sous-lot
 rootStep:
   _type: CollectionStep
   _name: SousLots
-  label: SousLots
+  label: Sous-lot
   canFinishSubLevel: true
   enabledOnParentCreate: true
   enabledOnParentEdit: true
@@ -24,7 +24,7 @@ rootStep:
   childSteps:
     - _type: FormStep
       _name: Lot
-      label: Lot
+      label: Sous-lot
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
@@ -34,6 +34,11 @@ rootStep:
 
       formStepEnrichers:   
         - enricher: Batiments.entities.SousLot.enrichers.DefautDtDebStatut
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+ 
+        - enricher: Batiments.entities.SousLot.enrichers.DefautLouable
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
@@ -52,6 +57,13 @@ rootStep:
           validationType: MANDATORY
           attribute: Batiments.entities.SousLot.SousLot.DateDebStatut
 
+        - validator: Batiments.entities.SousLot.validations.CheckRaisonNonLouable
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.SousLotToRaison.RaisonNonLouable
+
+
 
 
       stepTransitionValidations:
@@ -64,6 +76,11 @@ rootStep:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.entities.SousLot.SousLot.DateDebStatut
+
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.SousLot.validations.CheckRaisonNonLouable
+
 
     - _type: FormStep
       _name: Composition
@@ -169,3 +186,6 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.SousLot.SousLot.DateDebPhase
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.SousLot.validations.CheckRaisonNonLouable

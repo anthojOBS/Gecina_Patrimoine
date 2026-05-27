@@ -19,9 +19,9 @@ toRoleLabel: Lot
 toRoleName: Lot
 toRolePhysicalName: LOT_ID
 
-oneToMany: false
+oneToMany: true
 deletePropagation: RESTRICT
-validationScope: NONE  #pour alimenter sans etage
+validationScope: POST_CONSO  
 mandatoryValidationLabel: Le lot est obligatoire pour un compteur
 brokenValidationLabel: Le lot sélectionné est invalide pour ce compteur
 

@@ -2,11 +2,11 @@ _package: Batiments.entities.SousLot.steppers
 _type: Stepper
 _name: SousLotsEdition
 entity: Batiments.entities.SousLot.SousLot
-label: SousLots
+label: Sous-lot
 rootStep:
   _type: CollectionStep
   _name: Lots
-  label: Lots
+  label: Sous-lot
   canFinishSubLevel: true
   enabledOnParentCreate: true
   enabledOnParentEdit: true
@@ -24,7 +24,7 @@ rootStep:
   childSteps:
     - _type: FormStep
       _name: Lot
-      label: Lot
+      label: Sous-lot
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
@@ -38,6 +38,7 @@ rootStep:
           executedOnDataChange: false
           executedOnFormOpen: true
 
+
       formStepValidations:  
         - executedOnDataChange: true
           executedOnFormOpen: true
@@ -46,10 +47,22 @@ rootStep:
 
 
 
+        - validator: Batiments.entities.SousLot.validations.CheckRaisonNonLouable
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.SousLotToRaison.RaisonNonLouable
+
+
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.entities.SousLot.SousLot.DateDebStatut
+
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.SousLot.validations.CheckRaisonNonLouable
+
 
     - _type: FormStep
       _name: Composition
@@ -138,3 +151,8 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.SousLot.SousLot.DateDebPhase
+
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.SousLot.validations.CheckRaisonNonLouable
+

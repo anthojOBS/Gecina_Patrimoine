@@ -150,6 +150,12 @@ attributes:
     physicalName: FLAG_ASCENSEUR
     dataType: Boolean
     mandatory: false
+  - _type: EntityAttribute
+    _name: AccesParking
+    label: Accès parking
+    physicalName: ACCES_PARKING
+    dataType: Boolean
+    mandatory: false
 
 sourceIdGeneration:
   mode: MANUAL

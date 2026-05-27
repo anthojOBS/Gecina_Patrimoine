@@ -80,7 +80,18 @@ formTabs:
                         useCustomLabel: true
                         dataType: STRING
                         referencedEntity: Batiments.entities.Immeuble.Immeuble
-                        
+
+                      - _type: CheckboxField
+                        _name: AccesParking
+                        value: AccesParking
+                        label: Accès Parking
+                        labelProperties:
+                          alignment: left
+                          typographyValueInterpreter: LITERAL
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: BOOLEAN   
 
               # Localisation immeuble
               - _type: FormContainer
@@ -151,79 +162,76 @@ formTabs:
                             dataType: STRING
                             referencedEntity: Batiments.entities.Pays.Pays
 
+      # # SECTION HAUT (FormContainer)
+      # - _type: FormContainer
+      #   _name: SectionBas
+      #   layoutDirection: ROW
+      #   content:
+      #         # Identité bâtiment
+      #         - _type: FormContainer
+      #           _name: SectionBasGauche
+      #           layoutDirection: COLUMN
+      #           content:
+
+      #             - _type: FormSection
+      #               _name: Usage
+      #               label: Usage
+      #               layoutDirection: COLUMN
+      #               visibleValue: '1'
+      #               visibleValueInterpreter: LITERAL
+      #               labelWidth: 200px
+      #               content:
+      #                   - _type: ReferenceField
+      #                     _name: FDN_Usage
+      #                     value: FDN_Usage
+      #                     label: Usage
+      #                     documentation: Usage principal de l’immeuble, indiquant s’il est destiné à une activité d’entreprise, à de l’habitation ou au deux.
+      #                     labelProperties:
+      #                       alignment: left
+      #                       typographyValueInterpreter: LITERAL
+      #                       typography: body-2
+      #                       color: md:black
+      #                     useCustomLabel: true
+      #                     dataType: STRING
+      #                     referencedEntity: Batiments.entities.Usage.Usage
 
 
-          # Usage
-      # SECTION HAUT (FormContainer)
-      - _type: FormContainer
-        _name: SectionBas
-        layoutDirection: ROW
-        content:
-              # Identité bâtiment
-              - _type: FormContainer
-                _name: SectionBasGauche
-                layoutDirection: COLUMN
-                content:
+  # - _type: FormTab
+  #   _name: Composition
+  #   label: Composition
+  #   documentationInterpreter: LITERAL
+  #   visibleValue: Immeuble.FID_OrgaResp = 'DB'
+  #   visibleValueInterpreter: SEMQL
+  #   displayFormTabAs: ICON_LABEL
+  #   content:
 
-                  - _type: FormSection
-                    _name: Usage
-                    label: Usage
-                    layoutDirection: COLUMN
-                    visibleValue: '1'
-                    visibleValueInterpreter: LITERAL
-                    labelWidth: 200px
-                    content:
-                        - _type: ReferenceField
-                          _name: FDN_Usage
-                          value: FDN_Usage
-                          label: Usage
-                          documentation: Usage principal de l’immeuble, indiquant s’il est destiné à une activité d’entreprise, à de l’habitation ou au deux.
-                          labelProperties:
-                            alignment: left
-                            typographyValueInterpreter: LITERAL
-                            typography: body-2
-                            color: md:black
-                          useCustomLabel: true
-                          dataType: STRING
-                          referencedEntity: Batiments.entities.Usage.Usage
+  #     - _type: FormSection
+  #       _name: Etage
+  #       label: Composition des étages 
+  #       layoutDirection: COLUMN
+  #       visibleValue: Immeuble.FID_OrgaResp = 'DB'
+  #       visibleValueInterpreter: SEMQL
 
-
-  - _type: FormTab
-    _name: Composition
-    label: Composition
-    documentationInterpreter: LITERAL
-    visibleValue: Immeuble.FID_OrgaResp = 'DB'
-    visibleValueInterpreter: SEMQL
-    displayFormTabAs: ICON_LABEL
-    content:
-
-      - _type: FormSection
-        _name: Etage
-        label: Composition des étages 
-        layoutDirection: COLUMN
-        visibleValue: Immeuble.FID_OrgaResp = 'DB'
-        visibleValueInterpreter: SEMQL
-
-        content:
-          - _type: FormCollection
-            _name: Etage
-            label: Composition des étages
-            pluralLabel: Composition des étages
-            useCustomLabel: true
-            collection: Batiments.entities.Etage.collection_views.EtageComposition
-            tableAllowed: true
-            listAllowed: false
-            gridAllowed: false
-            displayRecordCount: ALWAYS
-            enableUserDefinedSort: true
-            transitionPath: Etage
-            sortExpression: 1 DESC
-            filter: 1=1
-            targetEntity: Batiments.entities.Etage.Etage
-            height: 300
-            formCollectionSearchConfigs:
-             -  enabled: true 
-                searchType: TEXT
+  #       content:
+  #         - _type: FormCollection
+  #           _name: Etage
+  #           label: Composition des étages
+  #           pluralLabel: Composition des étages
+  #           useCustomLabel: true
+  #           collection: Batiments.entities.Etage.collection_views.EtageComposition
+  #           tableAllowed: true
+  #           listAllowed: false
+  #           gridAllowed: false
+  #           displayRecordCount: ALWAYS
+  #           enableUserDefinedSort: true
+  #           transitionPath: Etage
+  #           sortExpression: 1 DESC
+  #           filter: 1=1
+  #           targetEntity: Batiments.entities.Etage.Etage
+  #           height: 300
+  #           formCollectionSearchConfigs:
+  #            -  enabled: true 
+  #               searchType: TEXT
 
   - _type: FormTab
     _name: CycleVieBatiment
@@ -284,7 +292,7 @@ formTabs:
                             useCustomLabel: true
                             dataType: STRING
                             referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
-                          - _type: TextField
+                          - _type: DateField
                             _name: DateDebutConstruction
                             value: DateDebutConstruction
                             label: Date début construction
@@ -301,7 +309,7 @@ formTabs:
                               editingFormatValueInterpreter: LITERAL 
                             useCustomLabel: true
                             dataType: DATE
-                          - _type: TextField
+                          - _type: DateField
                             _name: DateFinConstruction
                             value: DateFinConstruction
                             label: Date fin construction
@@ -318,7 +326,7 @@ formTabs:
                               editingFormatValueInterpreter: LITERAL 
                             useCustomLabel: true
                             dataType: DATE
-                          - _type: TextField
+                          - _type: DateField
                             _name: DateLivraison
                             value: DateLivraison
                             label: Date livraison

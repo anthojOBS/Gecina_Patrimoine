@@ -1,0 +1,32 @@
+_package: Batiments.entities.DestinationTaxable.forms
+_type: Form
+_name: DestinationTaxableForm
+entity: Batiments.entities.DestinationTaxable.DestinationTaxable
+default: true
+formTabs:
+  - _type: FormTab
+    _name: DestinationTaxable
+    label: DestinationTaxable
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: IdField
+        _name: DestinationTaxableCode
+        value: DestinationTaxableCode
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: DestinationTaxableLibelle
+        value: DestinationTaxableLibelle
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

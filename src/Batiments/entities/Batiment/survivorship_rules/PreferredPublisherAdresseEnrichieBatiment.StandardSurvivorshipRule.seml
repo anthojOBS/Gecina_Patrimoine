@@ -16,6 +16,7 @@ attributes:
   - attributeName: Ville
   - attributeName: Pays
   - attributeName: IdentifiantsERP
+  - attributeName: AccesParking
   
 publisherRankings:
   - _type: ConsoPublisherRanking

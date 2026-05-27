@@ -50,20 +50,20 @@ formTabs:
                       color: md:black
                     useCustomLabel: false
                     dataType: STRING
-                  - _type: TextField
-                    _name: SuperficieUtile_m2
-                    value: case when (lookup sum (SuperficieUtileQP) from Batiment.Etage.Lot where FID_GenreLot <> 'RIE' or FID_TypologieLot <> 'PK' end) is not null  then (lookup sum (SuperficieUtileQP) from Batiment.Etage.Lot  where FID_GenreLot <> 'RIE' or FID_TypologieLot <> 'PK'  end) || ' m²' else
-                      null end
-                    label: Superficie totale avec QP
-                    documentation: Addition de toutes les surfaces utiles avec QP Surface totale de
-                      l’actif exprimée en m²
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
+                  # - _type: TextField
+                  #   _name: SuperficieUtile_m2
+                  #   value: case when (lookup sum (SuperficieUtileQP) from Batiment.Etage.Lot where FID_GenreLot <> 'RIE' or FID_TypologieLot <> 'PK' end) is not null  then (lookup sum (SuperficieUtileQP) from Batiment.Etage.Lot  where FID_GenreLot <> 'RIE' or FID_TypologieLot <> 'PK'  end) || ' m²' else
+                  #     null end
+                  #   label: Superficie totale avec QP
+                  #   documentation: Addition de toutes les surfaces utiles avec QP Surface totale de
+                  #     l’actif exprimée en m²
+                  #   labelProperties:
+                  #     alignment: left
+                  #     typographyValueInterpreter: LITERAL
+                  #     typography: body-2
+                  #     color: md:black
+                  #   useCustomLabel: true
+                  #   dataType: STRING
 
 
 
@@ -138,6 +138,8 @@ formTabs:
                           typography: body-2
                           color: md:black
                         useCustomLabel: true
+                        visibleValue: FID_ZoneImmostat is not null
+                        visibleValueInterpreter: SEMQL
                         dataType: STRING
                         referencedEntity: Batiments.entities.Pays.Pays
                       - _type: ReferenceField
@@ -150,6 +152,8 @@ formTabs:
                           typography: body-2
                           color: md:black
                         useCustomLabel: true
+                        visibleValue: FID_SecteurImmostat is not null
+                        visibleValueInterpreter: SEMQL
                         dataType: STRING
                         referencedEntity: Batiments.entities.SecteurImmostat.SecteurImmostat
                       - _type: ReferenceField
@@ -162,6 +166,8 @@ formTabs:
                           typography: body-2
                           color: md:black
                         useCustomLabel: true
+                        visibleValue: FID_SousSecteurImmostat is not null
+                        visibleValueInterpreter: SEMQL
                         dataType: STRING
                         referencedEntity: Batiments.entities.SousSecteurImmostat.SousSecteurImmostat
                       - _type: TextField
@@ -288,19 +294,36 @@ formTabs:
                     _name: BlocUsage
                     layoutDirection: COLUMN
                     content:
-                      - _type: ReferenceField
-                        _name: FDN_Usage
-                        value: FDN_Usage
+                      # - _type: ReferenceField
+                      #   _name: FDN_Usage
+                      #   value: FDN_Usage
+                      #   label: Usage
+                      #   documentation: Usage principal de l’immeuble, indiquant s’il est destiné à une activité d’entreprise, à de l’habitation ou au deux.
+                      #   labelProperties:
+                      #     alignment: left
+                      #     typography: body-2
+                      #     color: md:black
+                      #   useCustomLabel: true
+                      #   dataType: STRING
+                      #   referencedEntity: Batiments.entities.Usage.Usage
+
+                      - _type: TextField
+                        _name: UsageDetail
+                        value: case when FID_OrgaResp = 'DR'  then FDN_Usage  
+                         when (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'Mixte'
+                         when (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'HAB' end) = 0  then 'Tertiaire'
+                         when (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'ENT' end) = 0  and (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'Habitation'
+                         else Null end
+                        
                         label: Usage
-                        documentation: Usage principal de l’immeuble, indiquant s’il est destiné à une activité d’entreprise, à de l’habitation ou au deux.
                         labelProperties:
                           alignment: left
+                          typographyValueInterpreter: LITERAL
                           typography: body-2
                           color: md:black
                         useCustomLabel: true
                         dataType: STRING
-                        referencedEntity: Batiments.entities.Usage.Usage
-
+                        
           - _type: FormContainer
             _name: SectionD3
             layoutDirection: COLUMN
@@ -462,7 +485,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_OrgaResp = 'DB' 
+                visibleValue: FID_OrgaResp = 'DB' and CapaciteAccueil is not null
                 visibleValueInterpreter: SEMQL
                 dataType: INTEGER
 
@@ -476,7 +499,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_OrgaResp = 'DB' 
+                visibleValue: FID_OrgaResp = 'DB' and PosteTravail is not null
                 visibleValueInterpreter: SEMQL
                 dataType: INTEGER
 
@@ -723,9 +746,7 @@ formTabs:
 
               - _type: TextField
                 _name: SurperficiePlateauCoque
-                value: case when (lookup sum (SuperficieUtileQP) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' or FID_TypologieLot = 'LC' end) is not null  then (lookup sum (SuperficieUtileQP) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' or FID_TypologieLot = 'LC'  end) || ' m²' else
-                      null end
-                
+                value: (lookup sum (SuperficieUtileQP) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' or FID_TypologieLot = 'LC'  end) || ' m²'
                 label: Superficie plateaux et coques commerciales
                 documentation: Superficie plateaux et coques commerciales
                 labelProperties:
@@ -742,9 +763,7 @@ formTabs:
 
               - _type: TextField
                 _name: SurperficieTaxableBureaux
-                value: case when (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' end) is not null  then (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' end) || ' m²' else
-                      null end
-                
+                value: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' end) || ' m²'
                 label: Superficie taxable locaux bureaux
                 documentation: Superficie taxable locaux bureaux
                 labelProperties:
@@ -753,13 +772,13 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' end) is not null
+                visibleValueInterpreter: SEMQL
                 dataType: STRING 
 
               - _type: TextField
                 _name: SurperficieTaxableCommerciaux
-                value: case when (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LC' end) is not null  then (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LC' end) || ' m²' else
-                      null end
-                
+                value: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LC' end) || ' m²' 
                 label: Superficie taxable locaux commerciaux
                 documentation: Superficie taxable locaux commerciaux
                 labelProperties:
@@ -768,13 +787,13 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LC' end) is not null
+                visibleValueInterpreter: SEMQL
                 dataType: STRING 
 
               - _type: TextField
                 _name: SurperficieTaxableStockage
-                value: case when (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LD' end) is not null  then (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LD' end) || ' m²' else
-                      null end
-                
+                value: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LD' end) || ' m²'                
                 label: Superficie taxable locaux stockage
                 documentation: Superficie taxable locaux stockage
                 labelProperties:
@@ -783,13 +802,13 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LD' end) is not null
+                visibleValueInterpreter: SEMQL
                 dataType: STRING 
 
               - _type: TextField
                 _name: SurperficieTaxableparkings
-                value: case when (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PK' end) is not null  then (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PK' end) || ' m²' else
-                      null end
-                
+                value: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PK' end) || ' m²'  
                 label: Superficie taxable parkings
                 documentation: Superficie taxable parkings
                 labelProperties:
@@ -798,6 +817,8 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PK' end) is not null
+                visibleValueInterpreter: SEMQL
                 dataType: STRING 
 
               - _type: TextField
@@ -857,8 +878,11 @@ formTabs:
         _name: Services
         label: Services
         pluralLabel: Services
+        visibleValue: (lookup first (FID_Lot) from Batiment.Etage.Lot.Service end) is not null
+        visibleValueInterpreter: SEMQL
         useCustomLabel: true
         collection: Batiments.entities.Service.collection_views.ServiceCollectionImmeuble
+        actionSet: Batiments.entities.Service.action_sets.ServiceImmeuble
         tableAllowed: true
         listAllowed: false
         gridAllowed: false
@@ -945,7 +969,14 @@ formTabs:
                               typographyValueInterpreter: LITERAL
                               typography: body-2
                               color: md:black
+                            componentProperties:                 
+                              displayFormat: dd/MM/yyyy                
+                              displayFormatValueInterpreter: LITERAL            
+                              editingFormat: dd/MM/yyyy                 
+                              editingFormatValueInterpreter: LITERAL
                             useCustomLabel: true
+                            visibleValue:  DateRestructuration is not null 
+                            visibleValueInterpreter: SEMQL
                             dataType: DATE
 
 
@@ -1023,6 +1054,8 @@ formTabs:
                               editingFormat: dd/MM/yyyy                 
                               editingFormatValueInterpreter: LITERAL
                             useCustomLabel: true
+                            visibleValue:  DateLivraison is not null 
+                            visibleValueInterpreter: SEMQL
                             dataType: DATE
 
 
@@ -1168,34 +1201,28 @@ formTabs:
             visibleValue: FID_OrgaResp = 'DR' and (lookup first (DateVente) from Batiment.Etage.Lot where DateVente is not null order by DateVente desc end) is not null
             visibleValueInterpreter: SEMQL
             dataType: DATE      
-      - _type: FormSection
+
+      - _type: FormCollection
         _name: Societes
         label: Sociétés
-        layoutDirection: COLUMN
-        visibleValue: "1"
-        visibleValueInterpreter: LITERAL
-
-        content:
-          - _type: FormCollection
-            _name: Societes
-            label: Sociétés
-            useCustomLabel: true
-            collection: Batiments.entities.RelImmSoc.collection_views.Societe
-            actionSet: Batiments.entities.RelImmSoc.action_sets.RelImmSocActionSet
-            tableAllowed: true
-            listAllowed: false
-            gridAllowed: false
-            displayRecordCount: ALWAYS
-            enableUserDefinedSort: true
-            transitionPath: RelImmSoc
-            sortExpression: 1 DESC
-            filter: 1=1
-            # filter: FID_TypeSociete = '1'
-            targetEntity: Batiments.entities.RelImmSoc.RelImmSoc
-            height: 300
-            formCollectionSearchConfigs:
-             -  enabled: true 
-                searchType: TEXT
+        pluralLabel: Sociétés
+        useCustomLabel: true
+        collection: Batiments.entities.RelImmSoc.collection_views.Societe
+        actionSet: Batiments.entities.RelImmSoc.action_sets.RelImmSocActionSet
+        tableAllowed: true
+        listAllowed: false
+        gridAllowed: false
+        displayRecordCount: ALWAYS
+        enableUserDefinedSort: true
+        transitionPath: RelImmSoc
+        sortExpression: 1 DESC
+        filter: 1=1
+        # filter: FID_TypeSociete = '1'
+        targetEntity: Batiments.entities.RelImmSoc.RelImmSoc
+        height: 300
+        formCollectionSearchConfigs:
+          - enabled: true 
+            searchType: TEXT
 
 
   - _type: FormTab

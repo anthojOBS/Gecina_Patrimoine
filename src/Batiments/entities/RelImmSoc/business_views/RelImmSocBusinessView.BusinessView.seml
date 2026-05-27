@@ -2,9 +2,9 @@ _package: Batiments.entities.RelImmSoc.business_views
 _type: BusinessView
 _name: RelImmSocBusinessView
 entity: Batiments.entities.RelImmSoc.RelImmSoc
-rootLabel: RelImmSocs
-rootPluralLabel: RelImmSocs
-label: RelImmSocs
+rootLabel: Relation immeuble société
+rootPluralLabel: Relation immeuble société
+label: Relation immeuble société
 enableHierarchyView: false
 useHierarchyOnOpen: false
 displayRootNodeAs: ICON_LABEL

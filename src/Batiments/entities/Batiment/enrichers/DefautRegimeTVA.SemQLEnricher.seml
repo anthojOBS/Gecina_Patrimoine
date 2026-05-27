@@ -6,5 +6,5 @@ label: Default Country
 enricherExecutionScope: NONE
 semQlEnricherExpressions: 
   - attributeName: FID_FiscaliteCible
-    expression: case when FID_Usage ='ENT' then '1' else '2' end
+    expression: Immeuble.FID_FiscaliteCible
 condition: FID_FiscaliteCible is NULL 

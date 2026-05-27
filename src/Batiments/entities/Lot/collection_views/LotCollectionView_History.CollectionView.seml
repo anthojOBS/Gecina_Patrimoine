@@ -1,0 +1,385 @@
+_package: Batiments.entities.Lot.collection_views
+_type: CollectionView
+_name: LotCollectionView_History
+entity: Batiments.entities.Lot.Lot
+default: false
+displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Lot
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: IdColumn
+    _name: LotCode
+    value: LotCode
+    useCustomLabel: false
+    dataType: LONG_INTEGER
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: IdentifiantsERP
+    value: IdentifiantsERP
+    label: Numéro du lot
+    useCustomLabel: true
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: ReferenceColumn
+    _name: FDN_Etage
+    value: FDN_Etage
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Etage.Etage
+
+
+
+  - _type: TextColumn
+    _name: Libelle
+    value: Libelle
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: IdentifiantPhysique
+    value: IdentifiantPhysique
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  # - _type: TextColumn
+  #   _name: Adresse
+  #   #value: Etage.Batiment.Adresse
+  #   value: CASE WHEN Etage.Batiment.Adresse is null THEN Batiment.Adresse ELSE Etage.Batiment.Adresse END
+  #   label: Adresse du bâtiment
+  #   useCustomLabel: true
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: true
+
+
+  # - _type: TextColumn
+  #   _name: Immeuble_identifiantsERP
+  #   #value: Etage.Batiment.Immeuble.IdentifiantsERP
+  #   value: CASE WHEN Etage.Batiment.Immeuble.IdentifiantsERP is null THEN Batiment.Immeuble.IdentifiantsERP ELSE Etage.Batiment.Immeuble.IdentifiantsERP END
+  #   label: Numéro de l'immeuble
+  #   useCustomLabel: true
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: true
+
+
+  # - _type: TextColumn
+  #   _name: Batiments_identifiantsERP
+  #   #value: Etage.Batiment.IdentifiantsERP
+  #   value: CASE WHEN Etage.Batiment.IdentifiantsERP is null THEN Batiment.IdentifiantsERP ELSE Etage.Batiment.IdentifiantsERP END
+  #   label: Numéro de bâtiment
+  #   useCustomLabel: true
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: true
+
+
+  - _type: ReferenceColumn
+    _name: FDN_Batiment
+    value: FDN_Batiment
+   # value: CASE WHEN Etage.FDN_Batiment is null THEN FDN_Batiment ELSE Etage.FDN_Batiment END
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Batiment.Batiment
+
+  - _type: ReferenceColumn
+    _name: FDN_GenreLot
+    value: FDN_GenreLot
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.GenreLot.GenreLot
+    
+  - _type: ReferenceColumn
+    _name: FDN_UsageLot
+    value: FDN_UsageLot
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.UsageLot.UsageLot
+
+  - _type: ReferenceColumn
+    _name: FDN_Usage
+    value: FDN_Usage
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Usage.Usage
+
+  - _type: ReferenceColumn
+    _name: FDN_FiscaliteCible
+    value: FDN_FiscaliteCible
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.FiscaliteCible.FiscaliteCible
+
+  - _type: ReferenceColumn
+    _name: FDN_TypologieLot
+    value: FDN_TypologieLot
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.TypologieLot.TypologieLot
+  - _type: ReferenceColumn
+    _name: FDN_Phase
+    value: FDN_Phase
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Phase.Phase
+
+  - _type: TextColumn
+    _name: DateDebPhase
+    value: DateDebPhase
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: DateDebUsage
+    value: DateDebUsage
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: DateDebStatut
+    value: DateDebStatut
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: ReferenceColumn
+    _name: FDN_RaisonNonLouable
+    value: FDN_RaisonNonLouable
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.RaisonNonLouable.RaisonNonLouable
+    
+  - _type: TextColumn
+    _name: StatutLouable
+    value: StatutLouable
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+    
+  - _type: TextColumn
+    _name: StatutSousLocation
+    value: StatutSousLocation
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+        
+  - _type: TextColumn
+    _name: StatutLogementSocial
+    value: StatutLogementSocial
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+        
+  - _type: TextColumn
+    _name: StatutMeuble
+    value: StatutMeuble
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+        
+  - _type: TextColumn
+    _name: StatutPMR
+    value: StatutPMR
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+
+        
+  - _type: TextColumn
+    _name: StatutERP
+    value: StatutERP
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: StatutCopropriete
+    value: StatutCopropriete
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: IdentifiantFiscal
+    value: IdentifiantFiscal
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: NomAcquereur
+    value: NomAcquereur
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+
+  - _type: TextColumn
+    _name: NumeroCopropriete
+    value: NumeroCopropriete
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: DateRegimeTVA
+    value: DateRegimeTVA
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: SuperficieHabitable
+    value: SuperficieHabitable
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: SuperficieUtileQP
+    value: SuperficieUtileQP
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: SuperficieUtileSansQP
+    value: SuperficieUtileSansQP
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+
+  - _type: TextColumn
+    _name: SuperficieUtilePonderee
+    value: SuperficieUtilePonderee
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: ReferenceColumn
+    _name: FDN_DestinationTaxable
+    value: FDN_DestinationTaxable
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.DestinationTaxable.DestinationTaxable
+
+
+  - _type: TextColumn
+    _name: SuperficieTaxable
+    value: SuperficieTaxable
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+    
+  - _type: TextColumn
+    _name: ConfirmationStatus
+    columnAlign: LEFT
+    dataType: STRING
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: ConfirmationStatus
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: ConfidenceScore
+    columnAlign: LEFT
+    dataType: LONG_INTEGER
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: ConfidenceScore
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: MastersCount
+    columnAlign: LEFT
+    dataType: LONG_INTEGER
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: MastersCount
+    visibleByDefault: true
+    
+  - _type: CheckboxColumn
+    _name: HasSuggestedMerge
+    columnAlign: LEFT
+    dataType: BOOLEAN
+    documentationInterpreter: LITERAL
+    useCustomLabel: false
+    value: HasSuggestedMerge
+    visibleByDefault: true
+  
+  - _type: TextColumn
+    _name: UpdateDate
+    value: UpdateDate
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+    
+  - _type: TextColumn
+    _name: Updator
+    value: Updator
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true

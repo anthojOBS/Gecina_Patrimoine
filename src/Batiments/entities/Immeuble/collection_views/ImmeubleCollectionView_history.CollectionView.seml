@@ -2,7 +2,7 @@ _package: Batiments.entities.Immeuble.collection_views
 _type: CollectionView
 _name: ImmeubleCollectionView_history
 entity: Batiments.entities.Immeuble.Immeuble
-default: true
+default: false
 displayCard: Batiments.entities.Immeuble.display_cards.ImmeubleDisplayCard
 gridAllowed: true
 gridColumns: 4

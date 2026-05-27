@@ -1,0 +1,16 @@
+_package: Batiments.entities.DestinationTaxable.display_cards
+_type: DisplayCard
+_name: DestinationTaxableDisplayCard
+entity: Batiments.entities.DestinationTaxable.DestinationTaxable
+default: true
+primaryTextExpression: DestinationTaxableLibelle
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT

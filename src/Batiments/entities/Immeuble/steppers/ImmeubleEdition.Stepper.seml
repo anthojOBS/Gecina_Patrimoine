@@ -92,19 +92,34 @@ rootStep:
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute: Batiments.references.ImmeubleToSousPortefeuille.SousPortefeuille
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.references.ImmeubleToZoneImmostat.ZoneImmostat
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.references.ImmeubleToSecteurImmostat.SecteurImmostat
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
+        # - executedOnDataChange: true
+        #   executedOnFormOpen: true
+        #   validationType: MANDATORY
+        #   attribute: Batiments.references.ImmeubleToZoneImmostat.ZoneImmostat
+        # - executedOnDataChange: true
+        #   executedOnFormOpen: true
+        #   validationType: MANDATORY
+        #   attribute: Batiments.references.ImmeubleToSecteurImmostat.SecteurImmostat
+        # - executedOnDataChange: true
+        #   executedOnFormOpen: true
+        #   validationType: MANDATORY
+        #   attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
 
+        - validator: Batiments.entities.Immeuble.validations.CheckZoneOrga
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.ImmeubleToZoneImmostat.ZoneImmostat
+        - validator: Batiments.entities.Immeuble.validations.CheckSecteurOrga
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.ImmeubleToSecteurImmostat.SecteurImmostat
+        - validator: Batiments.entities.Immeuble.validations.CheckSsSecteurOrga
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
 
         - validator: Batiments.entities.Immeuble.validations.CheckCoherenceSecteur_Zone
           executedOnDataChange: true
@@ -141,16 +156,25 @@ rootStep:
           validationType: MANDATORY
           attribute:  Batiments.references.ImmeubleToSousPortefeuille.SousPortefeuille
 
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute:  Batiments.references.ImmeubleToZoneImmostat.ZoneImmostat
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute:  Batiments.references.ImmeubleToSecteurImmostat.SecteurImmostat
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute:  Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
+        # - onStepExit: BLOCK
+        #   validationType: MANDATORY
+        #   attribute:  Batiments.references.ImmeubleToZoneImmostat.ZoneImmostat
+        # - onStepExit: BLOCK
+        #   validationType: MANDATORY
+        #   attribute:  Batiments.references.ImmeubleToSecteurImmostat.SecteurImmostat
+        # - onStepExit: BLOCK
+        #   validationType: MANDATORY
+        #   attribute:  Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
 
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckZoneOrga
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckSecteurOrga
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckSsSecteurOrga
         - onStepExit: BLOCK
           validationType: CHECK
           validator: Batiments.entities.Immeuble.validations.CheckCoherenceSecteur_Zone
@@ -189,6 +213,10 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
+        - enricher: Batiments.entities.Immeuble.enrichers.DefautPeriodConstruct
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: true
 
       formStepValidations: 
         - validator: Batiments.entities.Immeuble.validations.CheckDtLivraison
@@ -201,7 +229,11 @@ rootStep:
           executedOnFormOpen: true
           validationType: CHECK
           attribute: Batiments.entities.Immeuble.Immeuble.DateFinConstruction
-
+        - validator: Batiments.entities.Immeuble.validations.CheckPeriodeConstruction
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute:  Batiments.references.ImmeubleToPeriodeConstruction.PeriodeConstruction
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: CHECK
@@ -209,7 +241,9 @@ rootStep:
         - onStepExit: BLOCK
           validationType: CHECK
           validator: Batiments.entities.Immeuble.validations.CheckCoherenceDtConstruction
-
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckPeriodeConstruction
 
     - _type: FormStep
       _name: FiscaliteJuridique
@@ -314,16 +348,32 @@ stepperFinishValidations:
         validationType: MANDATORY
         attribute:  Batiments.references.ImmeubleToFiscaliteCible.FiscaliteCible
                                               
-      - onStepperFinish: BLOCK
-        validationType: MANDATORY
-        attribute: Batiments.references.ImmeubleToZoneImmostat.ZoneImmostat
-      - onStepperFinish: BLOCK
-        validationType: MANDATORY
-        attribute: Batiments.references.ImmeubleToSecteurImmostat.SecteurImmostat
-      - onStepperFinish: BLOCK
-        validationType: MANDATORY
-        attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
+      # - onStepperFinish: BLOCK
+      #   validationType: MANDATORY
+      #   attribute: Batiments.references.ImmeubleToZoneImmostat.ZoneImmostat
+      # - onStepperFinish: BLOCK
+      #   validationType: MANDATORY
+      #   attribute: Batiments.references.ImmeubleToSecteurImmostat.SecteurImmostat
+      # - onStepperFinish: BLOCK
+      #   validationType: MANDATORY
+      #   attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
 
+      - onStepperFinish: BLOCK
+        validationType: CHECK
+        validator: Batiments.entities.Immeuble.validations.CheckZoneOrga  
+      - onStepperFinish: BLOCK
+        validationType: CHECK
+        validator: Batiments.entities.Immeuble.validations.CheckSecteurOrga
+      - onStepperFinish: BLOCK
+        validationType: CHECK
+        validator: Batiments.entities.Immeuble.validations.CheckSsSecteurOrga
+      - onStepperFinish: BLOCK
+        validationType: CHECK
+        validator: Batiments.entities.Immeuble.validations.CheckCoherenceSecteur_Zone
+      - onStepperFinish: BLOCK
+        validationType: CHECK
+        validator: Batiments.entities.Immeuble.validations.CheckCoherenceSousSecteur_Secteur
+        
       - onStepperFinish: BLOCK
         validationType: CHECK
         validator: Batiments.entities.Immeuble.validations.CheckLongLibelle
@@ -340,3 +390,6 @@ stepperFinishValidations:
       - onStepperFinish: BLOCK
         validationType: CHECK
         validator: Batiments.entities.Immeuble.validations.CheckDtLivraison
+      - onStepperFinish: BLOCK
+        validationType: CHECK
+        validator: Batiments.entities.Immeuble.validations.CheckPeriodeConstruction

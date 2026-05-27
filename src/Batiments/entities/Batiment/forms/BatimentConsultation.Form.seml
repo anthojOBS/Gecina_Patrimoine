@@ -53,17 +53,6 @@ formTabs:
                         useCustomLabel: true
                         dataType: STRING
 
-                      # - _type: CheckboxField
-                      #   _name: BatimentPrincipal
-                      #   value: BatimentPrincipal
-                      #   label: Statut bâtiment principal
-                      #   labelProperties:
-                      #     alignment: left
-                      #     typographyValueInterpreter: LITERAL
-                      #     typography: body-2
-                      #     color: md:black
-                      #   useCustomLabel: true
-                      #   dataType: BOOLEAN
 
                       - _type: ReferenceField
                         _name: FDN_Immeuble
@@ -77,21 +66,36 @@ formTabs:
                         useCustomLabel: true
                         dataType: STRING
                         referencedEntity: Batiments.entities.Immeuble.Immeuble
-                            
-                      - _type: TextField
-                        _name: SuperficieUtile_m2
-                        value: case when (lookup sum (SuperficieUtileQP) from Etage.Lot where FID_GenreLot <> 'RIE' or FID_TypologieLot <> 'PK' end) is not null  then (lookup sum (SuperficieUtileQP) from Etage.Lot  where FID_GenreLot <> 'RIE' or FID_TypologieLot <> 'PK'  end) || ' m²' else
-                          null end
-                        label: Superficie totale avec QP
-                        documentation: Addition de toutes les surfaces utiles avec QP Surface totale de
-                          l’actif exprimée en m²
+
+
+                      - _type: CheckboxField
+                        _name: AccesParking
+                        value: AccesParking
+                        label: Accès Parking
                         labelProperties:
                           alignment: left
                           typographyValueInterpreter: LITERAL
                           typography: body-2
                           color: md:black
                         useCustomLabel: true
-                        dataType: STRING
+                        visibleValue: AccesParking = '1'
+                        visibleValueInterpreter: SEMQL
+                        dataType: BOOLEAN
+
+                      # - _type: TextField
+                      #   _name: SuperficieUtile_m2
+                      #   value: case when (lookup sum (SuperficieUtileQP) from Etage.Lot where FID_GenreLot <> 'RIE' or FID_TypologieLot <> 'PK' end) is not null  then (lookup sum (SuperficieUtileQP) from Etage.Lot  where FID_GenreLot <> 'RIE' or FID_TypologieLot <> 'PK'  end) || ' m²' else
+                      #     null end
+                      #   label: Superficie totale avec QP
+                      #   documentation: Addition de toutes les surfaces utiles avec QP Surface totale de
+                      #     l’actif exprimée en m²
+                      #   labelProperties:
+                      #     alignment: left
+                      #     typographyValueInterpreter: LITERAL
+                      #     typography: body-2
+                      #     color: md:black
+                      #   useCustomLabel: true
+                      #   dataType: STRING
 
 
 
@@ -181,11 +185,28 @@ formTabs:
                     visibleValueInterpreter: LITERAL
                     labelWidth: 200px
                     content:
-                        - _type: ReferenceField
-                          _name: FDN_Usage
-                          value: FDN_Usage
+                        # - _type: ReferenceField
+                        #   _name: FDN_Usage
+                        #   value: FDN_Usage
+                        #   label: Usage
+                        #   documentation: Usage principal de l’immeuble, indiquant s’il est destiné à une activité d’entreprise, à de l’habitation ou au deux.
+                        #   labelProperties:
+                        #     alignment: left
+                        #     typographyValueInterpreter: LITERAL
+                        #     typography: body-2
+                        #     color: md:black
+                        #   useCustomLabel: true
+                        #   dataType: STRING
+                        #   referencedEntity: Batiments.entities.Usage.Usage
+
+                        - _type: TextField
+                          _name: UsageDetail
+                          value: case  when (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'Mixte'
+                            when (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'HAB' end) = 0  then 'Tertiaire'
+                            when (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'ENT' end) = 0  and (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'Résidentiel'
+                            else Null end
+                          
                           label: Usage
-                          documentation: Usage principal de l’immeuble, indiquant s’il est destiné à une activité d’entreprise, à de l’habitation ou au deux.
                           labelProperties:
                             alignment: left
                             typographyValueInterpreter: LITERAL
@@ -193,8 +214,7 @@ formTabs:
                             color: md:black
                           useCustomLabel: true
                           dataType: STRING
-                          referencedEntity: Batiments.entities.Usage.Usage
-
+                          
           # Gestion interne
               - _type: FormContainer
                 _name: SectionBasDroite
@@ -325,15 +345,17 @@ formTabs:
                 dataType: INTEGER
 
               - _type: TextField
-                _name: NbCoquesCommerciales
-                value: lookup count (FID_TypologieLot) from Etage.Lot where FID_TypologieLot = 'LC' end 
-                label: Nombre coques commerciales
-                documentation: Indique le nombre de coques commerciales.
+                _name: NbParking
+                value: lookup count (FID_TypologieLot) from Etage.Lot where FID_TypologieLot = 'PK' end 
+                label: Nombre parkings
+                documentation: Indique le nombre de parking.
                 labelProperties:
                   alignment: left
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: (lookup count (FID_TypologieLot) from Etage.Lot where FID_TypologieLot = 'PK' end ) > 0 
+                visibleValueInterpreter: SEMQL
                 dataType: STRING
 
               - _type: TextField
@@ -347,6 +369,19 @@ formTabs:
                   color: md:black
                 useCustomLabel: true
                 dataType: STRING
+                
+              - _type: TextField
+                _name: NbCoquesCommerciales
+                value: lookup count (FID_TypologieLot) from Etage.Lot where FID_TypologieLot = 'LC' end 
+                label: Nombre coques commerciales
+                documentation: Indique le nombre de coques commerciales.
+                labelProperties:
+                  alignment: left
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: STRING
+
 
           - _type: FormSection
             _name: Superficies
@@ -398,8 +433,11 @@ formTabs:
         _name: Etage
         label: Composition des étages
         pluralLabel: Composition des étages
+        visibleValue: Immeuble.FID_OrgaResp = 'DB' and ((lookup count (SuperficieTerrasses) from Etage end) > 0 or (lookup count (SuperficieJardins) from Etage end) > 0 or (lookup count (SuperficieBalcons) from Etage end) > 0)
+        visibleValueInterpreter: SEMQL
         useCustomLabel: true
         collection: Batiments.entities.Etage.collection_views.EtageCompositionConsultation
+        actionSet: Batiments.entities.Etage.action_sets.EtageSuperficie
         tableAllowed: true
         listAllowed: false
         gridAllowed: false
@@ -407,7 +445,7 @@ formTabs:
         enableUserDefinedSort: true
         transitionPath: Etage
         sortExpression: 1 DESC
-        filter: 1=1
+        filter: SuperficieBalcons > 0 or SuperficieTerrasses > 0 or SuperficieJardins > 0 
         targetEntity: Batiments.entities.Etage.Etage
         height: 300
         formCollectionSearchConfigs:
@@ -465,7 +503,7 @@ formTabs:
                     content:
                           - _type: ReferenceField
                             _name: FDN_PeriodeConstruction
-                            value: Immeuble.FDN_PeriodeConstruction
+                            value: FDN_PeriodeConstruction
                             label: Période de construction
                             labelProperties:
                               alignment: left
@@ -476,7 +514,7 @@ formTabs:
                             referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
                           - _type: TextField
                             _name: DateDebutConstruction
-                            value: Immeuble.DateDebutConstruction
+                            value: DateDebutConstruction
                             label: Date début construction
                             documentation: Date de démarrage des travaux de construction de l’actif.
                             labelProperties:
@@ -493,7 +531,7 @@ formTabs:
                             dataType: DATE
                           - _type: TextField
                             _name: DateFinConstruction
-                            value: Immeuble.DateFinConstruction
+                            value: DateFinConstruction
                             label: Date fin construction
                             documentation: Date de fin des travaux de construction.
                             labelProperties:
@@ -510,7 +548,7 @@ formTabs:
                             dataType: DATE
                           - _type: TextField
                             _name: DateLivraison
-                            value: Immeuble.DateLivraison
+                            value: DateLivraison
                             label: Date livraison
                             documentation: Date de mise à disposition de l’actif après construction. (uniquement pour les VEFA). Ne pas afficher si pas d'info. Afficher que si VEFA et si on a l'info
                             labelProperties:
@@ -542,7 +580,7 @@ formTabs:
 
                         - _type: TextField
                           _name: DateAcquisition
-                          value: Immeuble.DateAcquisition
+                          value: DateAcquisition
                           label: Date acquisition
                           documentation: Date d’achat de l’immeuble par la société propriétaire.
                           labelProperties:

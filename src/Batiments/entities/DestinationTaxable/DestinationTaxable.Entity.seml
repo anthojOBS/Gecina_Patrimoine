@@ -1,0 +1,34 @@
+_package: Batiments.entities.DestinationTaxable
+_type: Entity
+_name: DestinationTaxable
+label: Destination taxable
+pluralLabel: Usages
+entityType: BASIC
+physicalTableName: DESTINATION_TAXABLE
+iconUrl: images://mdi/domain.svg
+description: ""
+documentation: |
+  L'entité **Destination Taxable** 
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: DestinationTaxableCode
+    label: Code Destination Taxable
+    physicalName: USAGE_ID
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+  - _type: EntityAttribute
+    _name: DestinationTaxableLibelle
+    label: Libellé Destination Taxable
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.DestinationTaxable.DestinationTaxable.DestinationTaxableCode

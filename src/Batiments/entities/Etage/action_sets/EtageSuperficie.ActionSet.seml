@@ -1,0 +1,32 @@
+_package: Batiments.entities.Etage.action_sets
+_type: ActionSet
+_name: EtageSuperficie
+entity: Batiments.entities.Etage.Etage
+label: Etage Action Set
+defaultActionSet: false
+actions:
+  - _type: EditAction
+    _name: EditAuthorEtages
+    label: Modification superficie
+    useCustomLabel: true
+    stepper: Batiments.entities.Etage.steppers.AuthorEtages
+    multipleSelectionAllowed: true
+    availableForGoldenData: true
+    availableForMasterData: true
+    availableForErrorData: true
+    waitDialogEnabled: false
+  - _type: ExportAction
+    _name: Export
+    label: Exporter
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: ImportAuthorEtages
+    label: Importer
+    useCustomLabel: true
+    importMode: CREATE_AND_UPDATE
+    stepper: Batiments.entities.Etage.steppers.Etage_import
+    importedRecordType: MASTER
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+

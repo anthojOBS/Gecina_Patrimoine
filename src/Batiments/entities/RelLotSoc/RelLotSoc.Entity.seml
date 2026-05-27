@@ -1,8 +1,8 @@
 _package: Batiments.entities.RelLotSoc
 _type: Entity
 _name: RelLotSoc
-label: RelLotSoc
-pluralLabel: RelLotSoc
+label: Relation lot société
+pluralLabel: Relation lot société
 entityType: FUZZY_MATCHED
 physicalTableName: REL_LOT_SOCIETE
 iconUrl: images://mdi/floor-plan.svg

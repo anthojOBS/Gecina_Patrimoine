@@ -2,9 +2,9 @@ _package: Batiments.entities.RelLotSoc.business_views
 _type: BusinessView
 _name: RelLotSocBusinessView
 entity: Batiments.entities.RelLotSoc.RelLotSoc
-rootLabel: RelLotSocs
-rootPluralLabel: RelLotSocs
-label: RelLotSocs
+rootLabel: Relation lot société
+rootPluralLabel: Relation lot société
+label: Relation lot société
 enableHierarchyView: false
 useHierarchyOnOpen: false
 displayRootNodeAs: ICON_LABEL

@@ -172,6 +172,8 @@ formTabs:
                         color: md:black
                       useCustomLabel: true
                       dataType: STRING
+                      visibleValue: FID_TypologieLot <> 'SNI'
+                      visibleValueInterpreter: SEMQL
                       referencedEntity: Batiments.entities.GenreLot.GenreLot
 
 
@@ -257,6 +259,11 @@ formTabs:
                       typographyValueInterpreter: LITERAL
                       typography: body-2
                       color: md:black
+                    componentProperties:                 
+                      displayFormat: dd/MM/yyyy                
+                      displayFormatValueInterpreter: LITERAL            
+                      editingFormat: dd/MM/yyyy                 
+                      editingFormatValueInterpreter: LITERAL
                     useCustomLabel: true
                     dataType: DATE
                   - _type: ReferenceField
@@ -285,6 +292,8 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
+                    visibleValue: FID_TypologieLot = 'SNI'
+                    visibleValueInterpreter: SEMQL
                     dataType: BOOLEAN   
 
 
@@ -334,6 +343,8 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','FS','SNI')
+                visibleValueInterpreter: SEMQL
                 dataType: DECIMAL
   
               - _type: TextField
@@ -347,8 +358,28 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','FS')
+                visibleValueInterpreter: SEMQL
                 dataType: DECIMAL 
 
+
+
+              - _type: ReferenceField
+                _name: FDN_DestinationTaxable
+                value: FDN_DestinationTaxable
+                label: Destination taxable
+                authoringMode: case when FID_TypologieLot = 'LD' then 'auto' else 'force-read-only' end
+                authoringModeValueInterpreter: SEMQL
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','PK')
+                visibleValueInterpreter: SEMQL
+                dataType: STRING
+                referencedEntity: Batiments.entities.DestinationTaxable.DestinationTaxable
 
               - _type: TextField
                 _name: SuperficieTaxable
@@ -361,6 +392,8 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','PK')
+                visibleValueInterpreter: SEMQL
                 dataType: DECIMAL 
 
 
@@ -375,6 +408,8 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: FID_TypologieLot in ('LC','LD')
+                visibleValueInterpreter: SEMQL
                 dataType: DECIMAL 
 
 

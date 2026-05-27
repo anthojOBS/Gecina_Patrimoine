@@ -446,14 +446,31 @@ tableColumns:
     referencedEntity: Batiments.entities.SousPortefeuille.SousPortefeuille
     
 
-  - _type: ReferenceColumn
-    _name: FDN_Usage
-    value: FDN_Usage
-    useCustomLabel: false
+  # - _type: ReferenceColumn
+  #   _name: FDN_Usage
+  #   value: FDN_Usage
+  #   useCustomLabel: false
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: true
+  #   referencedEntity: Batiments.entities.Usage.Usage
+
+
+  - _type: TextColumn
+    _name: UsageDetail
+    value: case when FID_OrgaResp = 'DR'  then FDN_Usage  
+      when (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'Mixte'
+      when (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'HAB' end) = 0  then 'Tertiaire'
+      when (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'ENT' end) = 0  and (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'Habitation'
+      else Null end
+    useCustomLabel: true
+    label: Usage
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
-    referencedEntity: Batiments.entities.Usage.Usage
+
+
+
 
   - _type: TextColumn
     _name: NbLotInitial

@@ -15,6 +15,7 @@ attributes:
   - attributeName: CodePostal 
   - attributeName: Ville
   - attributeName: Pays
+  - attributeName: FlagAscenseur
   - attributeName: NbAscenseur
   - attributeName: ModeChauffage
   - attributeName: TypeEnergie #toRoleName de la ref

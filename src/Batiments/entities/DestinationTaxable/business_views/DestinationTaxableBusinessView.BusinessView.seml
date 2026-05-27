@@ -1,0 +1,59 @@
+_package: Batiments.entities.DestinationTaxable.business_views
+_type: BusinessView
+_name: DestinationTaxableBusinessView
+entity: Batiments.entities.DestinationTaxable.DestinationTaxable
+rootLabel: DestinationTaxable
+rootPluralLabel: DestinationTaxable
+displayRootNodeAs: ICON_LABEL
+label: DestinationTaxable
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: DestinationTaxable
+  displayCard: Batiments.entities.DestinationTaxable.display_cards.DestinationTaxableDisplayCard
+  entity: Batiments.entities.DestinationTaxable.DestinationTaxable
+  actionSet: Batiments.entities.DestinationTaxable.action_sets.DestinationTaxableActionSet
+  collection: Batiments.entities.DestinationTaxable.collection_views.DestinationTaxableCollectionView
+  form: Batiments.entities.DestinationTaxable.forms.DestinationTaxableForm
+  outlineVisible: false
+  displayRecordCount: ALWAYS
+  businessEntitySearchConfigs:
+    - _name: TextConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: TEXT
+    - _name: FormConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: BY_FORM
+    - _name: AdvancedConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: ADVANCED
+    - _name: SemqlConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: SEMQL
+  overrideDefaultSort: false
+  enableUserDefinedSort: true
+  listAllowed: true
+  tableAllowed: true
+  gridAllowed: true
+
+  transitions:
+    - _name: GoldenHistoryRecords
+      _type: BusinessViewTransition
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      enableHierarchy: '0'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: false
+      iconUrl: images://mdi/history.svg
+      label: History
+      pluralLabel: History
+      transitionPath: GoldenHistoryRecords
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '1'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      businessViewEntity: 
+        _type: BusinessViewEntityReference
+        ref: Batiments.entities.DestinationTaxable.business_views.DestinationTaxableBusinessView.DestinationTaxable
+      filter: 1 = 1
+enableHierarchyView: false
+useHierarchyOnOpen: false

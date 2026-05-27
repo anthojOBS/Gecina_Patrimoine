@@ -32,11 +32,12 @@ rootBusinessViewEntity:
   embeddedCollectionNavigations:
     - formCollection: Batiments.entities.Immeuble.forms.ImmeubleConsultation.Composition.Services
       browsingTarget: BUSINESS_OBJECT_VIEW
-      businessView: Batiments.entities.Service.business_views.ServiceBusinessView
+      businessView: Batiments.entities.Lot.business_views.LotBusinessView
+      form: Batiments.entities.Lot.forms.LotConsultation
 
-    - formCollection: Batiments.entities.Immeuble.forms.ImmeubleConsultation.FiscaliteJuridique.Societes.Societes
+    - formCollection: Batiments.entities.Immeuble.forms.ImmeubleConsultation.FiscaliteJuridique.Societes
       browsingTarget: BUSINESS_OBJECT_VIEW
-      businessView: Batiments.entities.Societe.business_views.SocieteBusinessView
+      businessView: Batiments.entities.RelImmSoc.business_views.RelImmSocBusinessView
 
 
   displayRecordCount: ALWAYS
@@ -105,6 +106,39 @@ rootBusinessViewEntity:
           form: Batiments.entities.Immeuble.forms.ImmeubleConsultation
         
         transitions:
+
+          - _name: GoldenHistoryRecords
+            _type: BusinessViewTransition
+            displayFormTabAs: ICON_LABEL
+            displayTransitionNodeAs: ICON_LABEL
+            enableHierarchy: '0'
+            enableHierarchyInterpreter: LITERAL
+            expandHierarchyByDefault: false
+            iconUrl: images://mdi/history.svg
+            label: History
+            pluralLabel: History
+            transitionPath: GoldenHistoryRecords
+            transitionType: FULLY_QUALIFIED
+            transitionVisible: '1'
+            transitionVisibleInterpreter: LITERAL
+            useCustomLabel: true
+            businessViewEntity:
+              _type: BusinessViewEntity
+              _name: HistoryBatiments
+              displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
+              entity: Batiments.entities.Batiment.Batiment
+              actionSet: Batiments.entities.Batiment.action_sets.BatimentActionSet
+              collection: Batiments.entities.Batiment.collection_views.BatimentCollectionView_history
+              form: Batiments.entities.Batiment.forms.BatimentConsultation
+              displayRecordCount: ALWAYS
+              outlineVisible: false
+              enableUserDefinedSort: true
+              gridAllowed: true
+              listAllowed: true
+              overrideDefaultSort: false
+              tableAllowed: true
+            filter: 1 = 1
+          
           - _type: BusinessViewTransition
             _name: MasterRecordsBatiments
             displayFormTabAs: ICON_LABEL
@@ -122,7 +156,7 @@ rootBusinessViewEntity:
               displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
               entity: Batiments.entities.Batiment.Batiment
               actionSet: Batiments.entities.Batiment.action_sets.BatimentActionSet
-              collection: Batiments.entities.Batiment.collection_views.BatimentCollectionView
+              collection: Batiments.entities.Batiment.collection_views.BatimentCollectionView_history
               form: Batiments.entities.Batiment.forms.BatimentConsultation
               displayRecordCount: ALWAYS
               outlineVisible: false
@@ -132,6 +166,7 @@ rootBusinessViewEntity:
               overrideDefaultSort: false
               tableAllowed: true
               sortExpression: Libelle_Batiment ASC
+
 
 
           - _type: BusinessViewTransition
@@ -146,7 +181,7 @@ rootBusinessViewEntity:
             enableHierarchyInterpreter: LITERAL
             expandHierarchyByDefault: true
 
-            iconUrl: images://mdi/file-tree.svg
+            iconUrl: images://mdi/stairs.svg
             transitionPath: Etage
             transitionType: FULLY_QUALIFIED
             transitionVisible: '0'
@@ -211,7 +246,7 @@ rootBusinessViewEntity:
                 enableHierarchy: '1'
                 enableHierarchyInterpreter: LITERAL
                 expandHierarchyByDefault: true
-                iconUrl: images://mdi/file-tree.svg
+                iconUrl: images://mdi/floor-plan.svg
                 transitionPath: Lot
                 transitionType: FULLY_QUALIFIED
                 transitionVisible: '0'
@@ -235,6 +270,39 @@ rootBusinessViewEntity:
         
                   transitions:
 
+
+                    - _name: GoldenHistoryRecords
+                      _type: BusinessViewTransition
+                      displayFormTabAs: ICON_LABEL
+                      displayTransitionNodeAs: ICON_LABEL
+                      enableHierarchy: '0'
+                      enableHierarchyInterpreter: LITERAL
+                      expandHierarchyByDefault: false
+                      iconUrl: images://mdi/history.svg
+                      label: History
+                      pluralLabel: History
+                      transitionPath: GoldenHistoryRecords
+                      transitionType: FULLY_QUALIFIED
+                      transitionVisible: '1'
+                      transitionVisibleInterpreter: LITERAL
+                      useCustomLabel: true
+                      businessViewEntity: 
+                        _type: BusinessViewEntity
+                        _name: HistoryLots
+                        displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
+                        entity: Batiments.entities.Lot.Lot
+                        actionSet: Batiments.entities.Lot.action_sets.LotActionSet
+                        collection: Batiments.entities.Lot.collection_views.LotCollectionView_History
+                        form: Batiments.entities.Lot.forms.LotConsultation
+                        displayRecordCount: ALWAYS
+                        outlineVisible: false
+                        enableUserDefinedSort: true
+                        gridAllowed: true
+                        listAllowed: true
+                        overrideDefaultSort: false
+                        tableAllowed: true
+                        sortExpression: Libelle ASC
+
                     - _type: BusinessViewTransition
                       _name: MasterRecordsLots
                       displayFormTabAs: ICON_LABEL
@@ -252,7 +320,7 @@ rootBusinessViewEntity:
                         displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
                         entity: Batiments.entities.Lot.Lot
                         actionSet: Batiments.entities.Lot.action_sets.LotActionSet
-                        collection: Batiments.entities.Lot.collection_views.LotCollectionView
+                        collection: Batiments.entities.Lot.collection_views.LotCollectionView_History
                         form: Batiments.entities.Lot.forms.LotConsultation
                         displayRecordCount: ALWAYS
                         outlineVisible: false
@@ -263,7 +331,6 @@ rootBusinessViewEntity:
                         tableAllowed: true
 
 
-
                     - _type: BusinessViewTransition
                       _name: SousLots
                       label: Sous-lots
@@ -272,7 +339,7 @@ rootBusinessViewEntity:
                       enableHierarchy: '1'
                       enableHierarchyInterpreter: LITERAL
                       expandHierarchyByDefault: true
-                      iconUrl: images://mdi/file-tree.svg
+                      iconUrl: images://mdi/door-sliding-open.svg
                       transitionPath: SousLot
                       transitionType: FULLY_QUALIFIED
                       transitionVisible: '0'
@@ -296,6 +363,38 @@ rootBusinessViewEntity:
               
                         transitions:
 
+                          - _name: GoldenHistoryRecords
+                            _type: BusinessViewTransition
+                            displayFormTabAs: ICON_LABEL
+                            displayTransitionNodeAs: ICON_LABEL
+                            enableHierarchy: '0'
+                            enableHierarchyInterpreter: LITERAL
+                            expandHierarchyByDefault: false
+                            iconUrl: images://mdi/history.svg
+                            label: History
+                            pluralLabel: History
+                            transitionPath: GoldenHistoryRecords
+                            transitionType: FULLY_QUALIFIED
+                            transitionVisible: '1'
+                            transitionVisibleInterpreter: LITERAL
+                            useCustomLabel: true
+                            businessViewEntity: 
+                              _type: BusinessViewEntity
+                              _name: HistorySousLots
+                              displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
+                              entity: Batiments.entities.SousLot.SousLot
+                              actionSet: Batiments.entities.SousLot.action_sets.SousLotActionSet
+                              collection: Batiments.entities.SousLot.collection_views.SousLotCollectionView_History
+                              form: Batiments.entities.SousLot.forms.SousLotConsultation
+                              displayRecordCount: ALWAYS
+                              outlineVisible: false
+                              enableUserDefinedSort: true
+                              gridAllowed: true
+                              listAllowed: true
+                              overrideDefaultSort: false
+                              tableAllowed: true
+                              sortExpression: Libelle ASC
+                              
                           - _type: BusinessViewTransition
                             _name: MasterRecordsLots
                             displayFormTabAs: ICON_LABEL
@@ -313,7 +412,7 @@ rootBusinessViewEntity:
                               displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
                               entity: Batiments.entities.SousLot.SousLot
                               actionSet: Batiments.entities.SousLot.action_sets.SousLotActionSet
-                              collection: Batiments.entities.SousLot.collection_views.SousLotCollectionView
+                              collection: Batiments.entities.SousLot.collection_views.SousLotCollectionView_History
                               form: Batiments.entities.SousLot.forms.SousLotConsultation
                               displayRecordCount: ALWAYS
                               outlineVisible: false
@@ -358,6 +457,7 @@ rootBusinessViewEntity:
         overrideDefaultSort: false
         tableAllowed: true
         entity: Batiments.entities.Lot.Lot
+        actionSet: Batiments.entities.Lot.action_sets.LotImmeuble
         form: Batiments.entities.Lot.forms.LotConsultation
         collection: Batiments.entities.Lot.collection_views.LotCollectionView
         businessEntitySearchConfigs:
@@ -373,6 +473,162 @@ rootBusinessViewEntity:
           - _name: SemqlConfig
             _type: BusinessEntitySearchTypeConfig
             searchType: SEMQL
+
+        transitions:
+
+
+          - _name: GoldenHistoryRecords
+            _type: BusinessViewTransition
+            displayFormTabAs: ICON_LABEL
+            displayTransitionNodeAs: ICON_LABEL
+            enableHierarchy: '0'
+            enableHierarchyInterpreter: LITERAL
+            expandHierarchyByDefault: false
+            iconUrl: images://mdi/history.svg
+            label: History
+            pluralLabel: History
+            transitionPath: GoldenHistoryRecords
+            transitionType: FULLY_QUALIFIED
+            transitionVisible: '1'
+            transitionVisibleInterpreter: LITERAL
+            useCustomLabel: true
+            businessViewEntity: 
+              _type: BusinessViewEntity
+              _name: HistoryLotsGlobal
+              displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
+              entity: Batiments.entities.Lot.Lot
+              actionSet: Batiments.entities.Lot.action_sets.LotActionSet
+              collection: Batiments.entities.Lot.collection_views.LotCollectionView_History
+              form: Batiments.entities.Lot.forms.LotConsultation
+              displayRecordCount: ALWAYS
+              outlineVisible: false
+              enableUserDefinedSort: true
+              gridAllowed: true
+              listAllowed: true
+              overrideDefaultSort: false
+              tableAllowed: true
+              sortExpression: Libelle ASC
+
+          - _type: BusinessViewTransition
+            _name: MasterRecordsLots
+            displayFormTabAs: ICON_LABEL
+            useCustomLabel: false
+            enableHierarchyInterpreter: LITERAL
+            filter: 1=1
+            iconUrl: images://mdi/puzzle.svg
+            label: Masters Records
+            pluralLabel: Masters Records
+            transitionType: FULLY_QUALIFIED
+            transitionPath:  MasterRecords 
+            businessViewEntity: 
+              _type: BusinessViewEntity
+              _name: MasterRecordsLotsGlobal
+              displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
+              entity: Batiments.entities.Lot.Lot
+              actionSet: Batiments.entities.Lot.action_sets.LotActionSet
+              collection: Batiments.entities.Lot.collection_views.LotCollectionView_History
+              form: Batiments.entities.Lot.forms.LotConsultation
+              displayRecordCount: ALWAYS
+              outlineVisible: false
+              enableUserDefinedSort: true
+              gridAllowed: true
+              listAllowed: true
+              overrideDefaultSort: false
+              tableAllowed: true
+
+
+          - _type: BusinessViewTransition
+            _name: SousLots
+            label: Sous-lots
+            displayFormTabAs: ICON_LABEL
+            displayTransitionNodeAs: ICON_LABEL
+            enableHierarchy: '1'
+            enableHierarchyInterpreter: LITERAL
+            expandHierarchyByDefault: true
+            iconUrl: images://mdi/door-sliding-open.svg
+            transitionPath: SousLot
+            transitionType: FULLY_QUALIFIED
+            transitionVisible: '0'
+            transitionVisibleInterpreter: LITERAL
+            useCustomLabel: true
+            pluralLabel: Sous-lots
+            businessViewEntity: 
+              _type: BusinessViewEntity
+              _name: SousLotsGlobal
+              displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
+              displayRecordCount: ALWAYS
+              enableUserDefinedSort: true
+              gridAllowed: false
+              listAllowed: true
+              outlineVisible: false
+              overrideDefaultSort: false
+              tableAllowed: true
+              entity: Batiments.entities.SousLot.SousLot
+              form: Batiments.entities.SousLot.forms.SousLotConsultation
+              collection: Batiments.entities.SousLot.collection_views.SousLotCollectionView
+    
+              transitions:
+
+                - _name: GoldenHistoryRecords
+                  _type: BusinessViewTransition
+                  displayFormTabAs: ICON_LABEL
+                  displayTransitionNodeAs: ICON_LABEL
+                  enableHierarchy: '0'
+                  enableHierarchyInterpreter: LITERAL
+                  expandHierarchyByDefault: false
+                  iconUrl: images://mdi/history.svg
+                  label: History
+                  pluralLabel: History
+                  transitionPath: GoldenHistoryRecords
+                  transitionType: FULLY_QUALIFIED
+                  transitionVisible: '1'
+                  transitionVisibleInterpreter: LITERAL
+                  useCustomLabel: true
+                  businessViewEntity: 
+                    _type: BusinessViewEntity
+                    _name: HistorySousLotsGlobal
+                    displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
+                    entity: Batiments.entities.SousLot.SousLot
+                    actionSet: Batiments.entities.SousLot.action_sets.SousLotActionSet
+                    collection: Batiments.entities.SousLot.collection_views.SousLotCollectionView_History
+                    form: Batiments.entities.SousLot.forms.SousLotConsultation
+                    displayRecordCount: ALWAYS
+                    outlineVisible: false
+                    enableUserDefinedSort: true
+                    gridAllowed: true
+                    listAllowed: true
+                    overrideDefaultSort: false
+                    tableAllowed: true
+                    sortExpression: Libelle ASC
+                    
+                - _type: BusinessViewTransition
+                  _name: MasterRecordsLots
+                  displayFormTabAs: ICON_LABEL
+                  useCustomLabel: false
+                  enableHierarchyInterpreter: LITERAL
+                  filter: 1=1
+                  iconUrl: images://mdi/puzzle.svg
+                  label: Masters Records
+                  pluralLabel: Masters Records
+                  transitionType: FULLY_QUALIFIED
+                  transitionPath:  MasterRecords 
+                  businessViewEntity: 
+                    _type: BusinessViewEntity
+                    _name: MasterRecordsSousLotsglobal
+                    displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
+                    entity: Batiments.entities.SousLot.SousLot
+                    actionSet: Batiments.entities.SousLot.action_sets.SousLotActionSet
+                    collection: Batiments.entities.SousLot.collection_views.SousLotCollectionView_History
+                    form: Batiments.entities.SousLot.forms.SousLotConsultation
+                    displayRecordCount: ALWAYS
+                    outlineVisible: false
+                    enableUserDefinedSort: true
+                    gridAllowed: true
+                    listAllowed: true
+                    overrideDefaultSort: false
+                    tableAllowed: true
+
+
 
 
     - _name: GoldenHistoryRecords
@@ -424,7 +680,7 @@ rootBusinessViewEntity:
         displayCard: Batiments.entities.Immeuble.display_cards.ImmeubleDisplayCard
         entity: Batiments.entities.Immeuble.Immeuble
         actionSet: Batiments.entities.Immeuble.action_sets.ImmeubleActionSet
-        collection: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView
+        collection: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView_history
         form: Batiments.entities.Immeuble.forms.ImmeubleConsultation
         displayRecordCount: ALWAYS
         outlineVisible: false

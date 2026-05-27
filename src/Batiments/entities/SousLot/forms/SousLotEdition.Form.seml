@@ -6,7 +6,7 @@ default: true
 formTabs:
   - _type: FormTab
     _name: SousLot
-    label: Fiche Lot
+    label: Fiche Sous-lot
     documentationInterpreter: LITERAL
     visibleValue: "1"
     visibleValueInterpreter: LITERAL
@@ -128,6 +128,11 @@ formTabs:
                       typographyValueInterpreter: LITERAL
                       typography: body-2
                       color: md:black
+                    componentProperties:                 
+                      displayFormat: dd/MM/yyyy                
+                      displayFormatValueInterpreter: LITERAL            
+                      editingFormat: dd/MM/yyyy                 
+                      editingFormatValueInterpreter: LITERAL
                     useCustomLabel: true
                     dataType: DATE
                   - _type: ReferenceField
@@ -242,6 +247,11 @@ formTabs:
               typographyValueInterpreter: LITERAL
               typography: body-2
               color: md:black
+            componentProperties:                 
+              displayFormat: dd/MM/yyyy                
+              displayFormatValueInterpreter: LITERAL            
+              editingFormat: dd/MM/yyyy                 
+              editingFormatValueInterpreter: LITERAL  
             useCustomLabel: true
             dataType: DATE
 
@@ -287,6 +297,11 @@ formTabs:
               typographyValueInterpreter: LITERAL
               typography: body-2
               color: md:black
+            componentProperties:                 
+              displayFormat: dd/MM/yyyy                
+              displayFormatValueInterpreter: LITERAL            
+              editingFormat: dd/MM/yyyy                 
+              editingFormatValueInterpreter: LITERAL   
             useCustomLabel: true
             dataType: DATE
 

@@ -1,0 +1,8 @@
+_package: Batiments.entities.Lot.validations
+_name: CheckDestinationTaxable
+_type: SemQLValidation
+entity: Batiments.entities.Lot.Lot
+label: Destination taxable obligatoire 
+condition:  (FID_TypologieLot = 'LD'  and FID_DestinationTaxable is not null) or FID_TypologieLot != 'LD'  or FID_TypologieLot is null
+validationScope: POST_CONSO
+validationLabel: Destination taxable doit être renseigné si la typologie du lot est un local divers

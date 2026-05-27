@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: LotToDestinationTaxable
+label: Lot DestinationTaxable
+description: Référence Lot vers DestinationTaxable
+fromRoleDocumentation: |
+  Cette référence associe un **Lot** à sa **DestinationTaxable** dans le cycle de vie.
+  
+  La DestinationTaxable permet de suivre l'état d'avancement du lot dans le projet immobilier.
+physicalName: LOT_DESTINATION_REF
+
+fromEntity: Batiments.entities.Lot.Lot
+fromRoleLabel: Lot
+fromRoleName: Lot
+fromRolePluralLabel: Lots
+
+toEntity: Batiments.entities.DestinationTaxable.DestinationTaxable
+toRoleLabel: DestinationTaxable
+toRoleName: DestinationTaxable
+toRolePhysicalName: DESTINATION_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: POST_CONSO
+mandatoryValidationLabel: La DestinationTaxable est obligatoire pour un lot
+brokenValidationLabel: La DestinationTaxable sélectionnée est invalide pour ce lot
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: DestinationTaxable
+  label: DestinationTaxable
+  physicalName: DESTINATION_ID
+  searchable: true
+  entity: Batiments.entities.Lot.Lot

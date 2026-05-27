@@ -71,10 +71,6 @@ rootStep:
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute: Batiments.references.BatimentToPays.Pays
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.references.BatimentToUsage.Usage
 
 
       stepTransitionValidations:
@@ -96,57 +92,55 @@ rootStep:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute:  Batiments.references.BatimentToPays.Pays
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute:  Batiments.references.BatimentToUsage.Usage
+
         - onStepExit: WARN
           validationType: DETECT_DUPS
           matcher: Batiments.entities.Batiment.Batiment.Matcher
 
 
 
-    - _type: CollectionStep
-      enableChildImportOnParentCreate: true
-      enableChildImportOnParentEdit: true 
-      childImportModeOnParentEdit: CREATE_ONLY 
-      enableChildCopyOnParentCreate: true
-      enableChildCopyOnParentEdit: true
-      enableChildCreationOnParentCreate: true
-      enableChildCreationOnParentEdit: true 
-      enableChildDeleteOnParentEdit: true
-      enableChildEditOnParentCreate: true
-      enableChildEditOnParentEdit: true
-      enableChildRemoveOnParentCreate: true
-      enableChildRemoveOnParentEdit: true
-      skipToChildCreationOnParentCreate: false
-      skipToChildEditingOnParentEdit: false
-      linear: false
-      _name: Composition
-      label: Composition
-      canFinishSubLevel: true
-      enabledOnParentCreate: true
-      enabledOnParentEdit: true
-      formFieldsMode: AUTO
-      childDeleteType: HARD_DELETE
-      oneToManyReference: Batiments.references.EtageToBatiment
-      collectionView: Batiments.entities.Etage.collection_views.EtageCompositionConsultation
-      defaultDisplayType: TABLE
-      customSortEnabled: false
-      userDefinedSortEnabled: true
-      displayGridAllowed: false
-      displayListAllowed: true
-      displayTableAllowed: true
-      useCustomCollectionLabel: false
-      childSteps:
-        - _type: FormStep
-          _name: Etage_form
-          label: Composition des étages 
-          canFinishSubLevel: true
-          enabledOnParentCreate: true
-          enabledOnParentEdit: true
-          formFieldsMode: AUTO
-          enableMasterValuePicking: false
-          formTab: Batiments.entities.Etage.forms.EtageForm.Etage
+    # - _type: CollectionStep
+    #   enableChildImportOnParentCreate: true
+    #   enableChildImportOnParentEdit: true 
+    #   childImportModeOnParentEdit: CREATE_ONLY 
+    #   enableChildCopyOnParentCreate: true
+    #   enableChildCopyOnParentEdit: true
+    #   enableChildCreationOnParentCreate: true
+    #   enableChildCreationOnParentEdit: true 
+    #   enableChildDeleteOnParentEdit: true
+    #   enableChildEditOnParentCreate: true
+    #   enableChildEditOnParentEdit: true
+    #   enableChildRemoveOnParentCreate: true
+    #   enableChildRemoveOnParentEdit: true
+    #   skipToChildCreationOnParentCreate: false
+    #   skipToChildEditingOnParentEdit: false
+    #   linear: false
+    #   _name: Composition
+    #   label: Composition
+    #   canFinishSubLevel: true
+    #   enabledOnParentCreate: true
+    #   enabledOnParentEdit: true
+    #   formFieldsMode: AUTO
+    #   childDeleteType: HARD_DELETE
+    #   oneToManyReference: Batiments.references.EtageToBatiment
+    #   collectionView: Batiments.entities.Etage.collection_views.EtageCompositionConsultation
+    #   defaultDisplayType: TABLE
+    #   customSortEnabled: false
+    #   userDefinedSortEnabled: true
+    #   displayGridAllowed: false
+    #   displayListAllowed: true
+    #   displayTableAllowed: true
+    #   useCustomCollectionLabel: false
+    #   childSteps:
+    #     - _type: FormStep
+    #       _name: Etage_form
+    #       label: Composition des étages 
+    #       canFinishSubLevel: true
+    #       enabledOnParentCreate: true
+    #       enabledOnParentEdit: true
+    #       formFieldsMode: AUTO
+    #       enableMasterValuePicking: false
+    #       formTab: Batiments.entities.Etage.forms.EtageForm.Etage
 
 
     - _type: FormStep
@@ -177,8 +171,33 @@ rootStep:
         - executedOnDataChange: true
           executedOnFormOpen: true
           validationType: MANDATORY
-          attribute:  Batiments.references.BatimentToPhase.Phase
+          attribute:  Batiments.references.BatimentToPhase.Phase 
+        - validator: Batiments.entities.Batiment.validations.CheckDtLivraison
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.entities.Batiment.Batiment.DateLivraison
+        - validator: Batiments.entities.Batiment.validations.CheckCoherenceDtConstruction
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.entities.Batiment.Batiment.DateFinConstruction
+        - validator: Batiments.entities.Immeuble.validations.CheckPeriodeConstruction
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute:  Batiments.references.BatimentToPeriodeConstruction.PeriodeConstruction
 
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Batiment.validations.CheckDtLivraison
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Batiment.validations.CheckCoherenceDtConstruction
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Batiment.validations.CheckPeriodeConstruction
 
     - _type: FormStep
       _name: JuridiquePropriete
@@ -223,9 +242,6 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.Batiment.Batiment.IdentifiantsERP
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute:  Batiments.references.BatimentToUsage.Usage
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY
@@ -250,4 +266,12 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute:  Batiments.references.BatimentToFiscaliteCible.FiscaliteCible
-
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Batiment.validations.CheckCoherenceDtConstruction
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Batiment.validations.CheckDtLivraison
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Batiment.validations.CheckPeriodeConstruction

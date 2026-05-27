@@ -32,8 +32,22 @@ rootStep:
       enableMasterValuePicking: false
       formTab: Batiments.entities.Lot.forms.LotCreation.Lot
 
+      referenceFormFieldConfigs:
+        - enableCreateReference: false
+          enableUserSort: true
+          referencePickerType: AUTO_COMPLETE
+          fdnFormField: Batiments.entities.Lot.forms.LotCreation.Lot.Identite.haut.Usage.FDN_Usage
+          # referenceFilter: Referenced.FID_Usage = 'ENT' or Referenced.FID_Usage = 'HAB'
+          referenceFilter: Referenced.UsageCode = 'ENT' or Referenced.UsageCode = 'HAB'
+          referencePickerCollectionView: Batiments.entities.Usage.collection_views.UsageCollectionView
+          # referencePickerSearchTypeConfigs: []
+
       formStepEnrichers:   
         - enricher: Batiments.entities.Lot.enrichers.DefautDtDebUsage
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+        - enricher: Batiments.entities.Lot.enrichers.DefautLouable
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
@@ -64,6 +78,13 @@ rootStep:
           validationType: MANDATORY
           attribute: Batiments.references.LotToGenreLot.GenreLot
 
+
+        - validator: Batiments.entities.Lot.validations.CheckRaisonNonLouable
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.LotToRaison.RaisonNonLouable
+
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: MANDATORY
@@ -85,6 +106,10 @@ rootStep:
           validationType: MANDATORY
           attribute: Batiments.references.LotToGenreLot.GenreLot
 
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Lot.validations.CheckRaisonNonLouable
+
 
 
     - _type: FormStep
@@ -96,6 +121,41 @@ rootStep:
       formFieldsMode: AUTO
       enableMasterValuePicking: false
       formTab: Batiments.entities.Lot.forms.LotCreation.Composition
+
+
+      formStepEnrichers:   
+        - enricher: Batiments.entities.Lot.enrichers.DefautDestinationTax
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
+
+      formStepValidations:  
+        - validator: Batiments.entities.Lot.validations.CheckDestinationTaxable
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.LotToDestinationTaxable.DestinationTaxable
+        - validator: Batiments.entities.Lot.validations.CheckSuperficieQP
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.entities.Lot.Lot.SuperficieUtileQP
+        - validator: Batiments.entities.Lot.validations.CheckSuperficiesansQP
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.entities.Lot.Lot.SuperficieUtileSansQP
+          
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Lot.validations.CheckDestinationTaxable
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Lot.validations.CheckSuperficieQP
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Lot.validations.CheckSuperficiesansQP
 
     - _type: CollectionStep
       enableChildImportOnParentCreate: true
@@ -112,10 +172,10 @@ rootStep:
       enableChildRemoveOnParentEdit: true
       skipToChildCreationOnParentCreate: false
       skipToChildEditingOnParentEdit: false
-      # filter: Lot.FID_TypologieLot = 'SNI'
+      filter: Lot.FID_TypologieLot = 'SNI'
       linear: false
       _name: Service
-      label: Types service
+      label: Types services
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
@@ -284,6 +344,18 @@ stepperFinishValidations:
     validationType: MANDATORY
     attribute: Batiments.references.LotToGenreLot.GenreLot
 
+
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Lot.validations.CheckDestinationTaxable
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Lot.validations.CheckSuperficiesansQP
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Lot.validations.CheckSuperficieQP
+
+
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute:  Batiments.references.LotToPhase.Phase
@@ -297,3 +369,7 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.Lot.Lot.DateRegimeTVA
+
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Lot.validations.CheckRaisonNonLouable

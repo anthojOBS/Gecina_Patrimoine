@@ -52,7 +52,7 @@ actions:
     label: Import
     useCustomLabel: true
     importMode: CREATE_AND_UPDATE
-    stepper: Batiments.entities.Etage.steppers.AuthorEtages
+    stepper: Batiments.entities.Etage.steppers.Etage_import
     importedRecordType: MASTER
     waitDialogEnabled: false
     allowOtherPublishers: true

@@ -1,0 +1,8 @@
+_package: Batiments.entities.Immeuble.validations
+_name: CheckSsSecteurOrga
+_type: SemQLValidation
+entity: Batiments.entities.Immeuble.Immeuble
+label: Sous secteur immostat obligatoire pour la direction bureaux
+condition: (FID_OrgaResp ='DB' and FID_SousSecteurImmostat is not null) or (FID_OrgaResp ='DR')
+validationScope: POST_CONSO
+validationLabel: Sous secteur immostat obligatoire pour la direction bureaux

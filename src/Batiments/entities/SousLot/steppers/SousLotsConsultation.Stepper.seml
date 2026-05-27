@@ -2,11 +2,11 @@ _package: Batiments.entities.SousLot.steppers
 _type: Stepper
 _name: SousLotsConsultation
 entity: Batiments.entities.SousLot.SousLot
-label: SousLots
+label: Sous-lot
 rootStep:
   _type: CollectionStep
   _name: Lots
-  label: Lots
+  label: Sous-lot
   canFinishSubLevel: true
   enabledOnParentCreate: true
   enabledOnParentEdit: true
@@ -24,7 +24,7 @@ rootStep:
   childSteps:
     - _type: FormStep
       _name: Lot
-      label: Lot
+      label: Sous-lot
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
@@ -32,6 +32,12 @@ rootStep:
       enableMasterValuePicking: false
       formTab: Batiments.entities.SousLot.forms.SousLotConsultation.SousLot
 
+
+      formStepEnrichers:  
+        - enricher: Batiments.entities.SousLot.enrichers.DefautLouable
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
 
     - _type: FormStep
       _name: Composition

@@ -5,4 +5,4 @@ entity: Batiments.entities.Immeuble.Immeuble
 label: Cohérence date de livraison
 condition: (DateLivraison >= DateDebutConstruction) or DateDebutConstruction is null or DateLivraison is null
 validationScope: POST_CONSO
-validationLabel: La date de livraison doivent être cohérente avec la date de début de construction
+validationLabel: La date de livraison doit être cohérente avec la date de début de construction

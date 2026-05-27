@@ -79,9 +79,9 @@ navDrawer:
     labelVisible: false
     actions:
       - appAction: Batiments.applications.Patrimoine.Root.Immeubles
-      - appAction: Batiments.applications.Patrimoine.Root.Batiments
+      # - appAction: Batiments.applications.Patrimoine.Root.Batiments
       # - appAction: Batiments.applications.Patrimoine.Root.Etages
-      - appAction: Batiments.applications.Patrimoine.Root.Lots
+      # - appAction: Batiments.applications.Patrimoine.Root.Lots
       - appAction: Batiments.applications.Patrimoine.Root.ImmeublesErrors
       - appAction: Batiments.applications.Patrimoine.Root.ImmeublesErrorsGolden
       - appAction: Batiments.applications.Patrimoine.Root.ImmeublesSuggestedMatches
@@ -288,6 +288,13 @@ rootFolder:
       imageMode: FIT
       icon: images://mdi/database.svg
       appActions:
+        - _type: BrowseBusinessViewAction
+          _name: DestinationTaxable
+          businessView: Batiments.entities.DestinationTaxable.business_views.DestinationTaxableBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/timeline-text.svg
+          nbRecordsBadgeVisible: false
         - _type: BrowseBusinessViewAction
           _name: Equipementier
           businessView: Batiments.entities.Equipementier.business_views.EquipementierBusinessView
@@ -535,12 +542,12 @@ rootFolder:
         importAction: Batiments.entities.RelImmSoc.action_sets.RelImmSocActionSet.ImportAuthorRelImmSoc
         description: Importer Société depuis un fichier
       - _type: ImportDataAppAction
-        _name: ImportService
-        label: Importer service
+        _name: ImportLotsBatiment
+        label: Importer relation Societés & Lots
         imageAlign: MIDDLE_CENTER
         imageMode: FIT
-        importAction: Batiments.entities.Service.action_sets.ServiceActionSet.ImportAuthorService
-        description: Importer service depuis un fichier
+        importAction: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet.ImportAuthorRelLotSoc
+        description: Importer Société depuis un fichier
       - _type: ImportDataAppAction
         _name: Importcompteur
         label: Importer Compteur
@@ -548,19 +555,12 @@ rootFolder:
         imageMode: FIT
         importAction: Batiments.entities.Compteur.action_sets.CompteurActionSet.ImportAuthorCompteur
         description: Importer Compteur depuis un fichier
-      # - _type: ImportDataAppAction
-      #   _name: ImportSocieteBatiment
-      #   label: Importer relation Societés & Bâtiment
-      #   imageAlign: MIDDLE_CENTER
-      #   imageMode: FIT
-      #   importAction: Batiments.entities.RelBatSoc.action_sets.RelBatSocActionSet.ImportAuthorRelBatSoc
-      #   description: Importer Société depuis un fichier
       - _type: ImportDataAppAction
-        _name: ImportLotsBatiment
-        label: Importer relation Societés & Lots
+        _name: ImportService
+        label: Importer service
         imageAlign: MIDDLE_CENTER
         imageMode: FIT
-        importAction: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet.ImportAuthorRelLotSoc
-        description: Importer Société depuis un fichier
+        importAction: Batiments.entities.Service.action_sets.ServiceActionSet.ImportAuthorService
+        description: Importer service depuis un fichier
 
 applicationTitle: Référentiel Patrimoine

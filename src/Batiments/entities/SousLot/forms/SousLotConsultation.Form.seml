@@ -127,6 +127,11 @@ formTabs:
                       typographyValueInterpreter: LITERAL
                       typography: body-2
                       color: md:black
+                    componentProperties:                 
+                      displayFormat: dd/MM/yyyy                
+                      displayFormatValueInterpreter: LITERAL            
+                      editingFormat: dd/MM/yyyy                 
+                      editingFormatValueInterpreter: LITERAL
                     useCustomLabel: true
                     dataType: DATE
                   - _type: ReferenceField
@@ -225,8 +230,8 @@ formTabs:
               - _type: TextField
                 _name: SuperficieUtileQP
                 value: case when SuperficieUtileQP is not null then SuperficieUtileQP || ' m²' else null end
-                label: Superficie utile avec QP
-                documentation: Superficie utile avec quote-part de parties communes.
+                label: Superficie habitable (SHAB) avec QP
+                documentation: Superficie habitable (SHAB) avec quote-part de parties communes.
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL
@@ -283,6 +288,11 @@ formTabs:
               typographyValueInterpreter: LITERAL
               typography: body-2
               color: md:black
+            componentProperties:                 
+              displayFormat: dd/MM/yyyy                
+              displayFormatValueInterpreter: LITERAL            
+              editingFormat: dd/MM/yyyy                 
+              editingFormatValueInterpreter: LITERAL
             useCustomLabel: true
             dataType: DATE
 
@@ -327,6 +337,11 @@ formTabs:
               typographyValueInterpreter: LITERAL
               typography: body-2
               color: md:black
+            componentProperties:                 
+              displayFormat: dd/MM/yyyy                
+              displayFormatValueInterpreter: LITERAL            
+              editingFormat: dd/MM/yyyy                 
+              editingFormatValueInterpreter: LITERAL
             useCustomLabel: true
             dataType: DATE
 

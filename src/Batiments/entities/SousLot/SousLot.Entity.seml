@@ -5,7 +5,7 @@ label: Sous-lot
 pluralLabel: SousLots
 entityType: FUZZY_MATCHED
 physicalTableName: SOUS_LOT
-iconUrl: images://mdi/floor-plan.svg
+iconUrl: images://mdi/door-sliding-open.svg
 description: ""
 documentation: |
   Le **SousLot** représente une unité locative ou de copropriété au sein d'un étage.

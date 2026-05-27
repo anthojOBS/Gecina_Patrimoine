@@ -25,7 +25,14 @@ tableColumns:
     dataType: INTEGER
     columnAlign: LEFT
     visibleByDefault: false
-
+  - _type: ReferenceColumn
+    _name: FDN_Lot
+    value: FDN_Lot
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: false
+    referencedEntity: Batiments.entities.Lot.Lot
   - _type: ReferenceColumn
     _name: FDN_TypeCompteur
     value: FDN_TypeCompteur
