@@ -56,13 +56,6 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: false
   - _type: TextColumn
-    _name: AdresseLieuDit
-    value: AdresseLieuDit
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: false
-  - _type: TextColumn
     _name: CodePostal
     value: CodePostal
     useCustomLabel: false
@@ -83,6 +76,49 @@ tableColumns:
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: false
+
+
+  - _type: TextColumn
+    _name: AdresseStandardise
+    value: AdresseStandardise
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: CodePostalEnrichi
+    value: CodePostalEnrichi
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  
+  - _type: TextColumn
+    _name: VilleEnrichie
+    value: VilleEnrichie
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    
+  - _type: ReferenceColumn
+    _name: FDN_Pays
+    value: FDN_Pays
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: false
+    referencedEntity: Batiments.entities.Pays.Pays
+
+  - _type: TextColumn
+    _name: PaysEnrichie
+    value: PaysEnrichie
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
 
   - _type: TextColumn
     _name: DateAcquisition
@@ -220,14 +256,7 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: false
     referencedEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
-  - _type: ReferenceColumn
-    _name: FDN_ZoneGeographique
-    value: FDN_ZoneGeographique
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: false
-    referencedEntity: Batiments.entities.ZoneGeographique.ZoneGeographique
+
   - _type: ReferenceColumn
     _name: FDN_Portefeuille
     value: FDN_Portefeuille
@@ -236,14 +265,7 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: false
     referencedEntity: Batiments.entities.Portefeuille.Portefeuille
-  - _type: ReferenceColumn
-    _name: FDN_Pays
-    value: FDN_Pays
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: false
-    referencedEntity: Batiments.entities.Pays.Pays
+
 
 
   - _type: ReferenceColumn
@@ -524,8 +546,14 @@ tableColumns:
       linkSourceType: url
       linkDisplayText: Télécharger le document
 
-
-
+  - _type: TextColumn
+    _name: FlagQPIncluse
+    value: FlagQPIncluse
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: false
+    
   # - _type: TextColumn
   #   _name: BinaryContent
   #   value: BinaryContent

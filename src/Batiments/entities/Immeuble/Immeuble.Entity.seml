@@ -6,14 +6,16 @@ pluralLabel: Immeuble
 entityType: FUZZY_MATCHED
 physicalTableName: IMMEUBLE
 iconUrl: images://mdi/office-building-marker.svg
-description: ""
-documentation: |
-  L'**Immeuble** représente un actif immobilier dans le patrimoine de Gecina.
+#description: |
+#  Ceci est une description très utiles
+#  Comportant un saut de ligne
+# documentation: |
+#   L'immeuble représente un actif immobilier dans le patrimoine de Gecina.
   
-  Un immeuble est une unité de propriété qui peut contenir un ou plusieurs bâtiments.
-  Il est caractérisé par son identifiant, sa localisation géographique, son régime juridique et sa phase dans le cycle de vie du projet.
+#   Un immeuble est une unité de propriété qui peut contenir un ou plusieurs bâtiments.
+#   Il est caractérisé par son identifiant, sa localisation géographique, son régime juridique et sa phase dans le cycle de vie du projet.
   
-  Cette entité est centrale dans la gestion du patrimoine immobilier et permet de suivre l'évolution des actifs de leur acquisition à leur exploitation.
+#   Cette entité est centrale dans la gestion du patrimoine immobilier et permet de suivre l'évolution des actifs de leur acquisition à leur exploitation.
 historizeGolden: true
 historizeMaster: true
 enableDelete: true
@@ -73,15 +75,6 @@ attributes:
     mandatoryValidationScope: POST_CONSO
 
   - _type: EntityAttribute
-    _name: AdresseLieuDit
-    label: Adresse Lieu Dit
-    physicalName: ADRESSE_LIEU_DIT
-    dataType: String
-    length: 255
-    mandatory: false
-
-
-  - _type: EntityAttribute
     _name: CodePostal
     label: Code Postal
     documentation: Code postal de la commune où est situé l’actif.
@@ -91,6 +84,16 @@ attributes:
     mandatory: true 
     mandatoryValidationLabel: "Code postal de l'immeuble est obligatoire"
     mandatoryValidationScope: POST_CONSO
+
+
+  - _type: EntityAttribute
+    _name: CodePostalEnrichi
+    label: Code Postal
+    documentation: Code postal de la commune où est situé l’actif.
+    physicalName: CODE_POSTAL_ENRICHI
+    dataType: String
+    length: 20
+    mandatory: false
 
   - _type: EntityAttribute
     _name: Ville
@@ -104,6 +107,23 @@ attributes:
     mandatoryValidationScope: POST_CONSO
 
   - _type: EntityAttribute
+    _name: VilleEnrichie
+    label: Ville
+    documentation: Commune dans laquelle se situe l’actif.
+    physicalName: VILLE_ENRICHIE
+    dataType: String
+    length: 150
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: AdresseStandardise
+    label: Adresse
+    physicalName: ADRESSE_STANDARDISEE
+    dataType: String
+    length: 255
+    mandatory: false
+
+  - _type: EntityAttribute
     _name: AdresseEnrichie
     label: Adresse Enrichie
     physicalName: ADRESSE_ENRICHIE
@@ -112,17 +132,9 @@ attributes:
     mandatory: false
 
   - _type: EntityAttribute
-    _name: CoordX
-    label: Coord X
-    physicalName: COORD_X
-    dataType: String
-    length: 255
-    mandatory: false
-
-  - _type: EntityAttribute
-    _name: CoordY
-    label: Coord Y
-    physicalName: COORD_Y
+    _name: PaysEnrichie
+    label: Pays
+    physicalName: PAYS_ENRICHIE
     dataType: String
     length: 255
     mandatory: false
@@ -443,6 +455,12 @@ attributes:
     mandatory: false
     searchable: true
 
+  - _type: EntityAttribute
+    _name: FlagQPIncluse
+    label: Flag QP incluse
+    physicalName: FLAG_QP_INCLUSE
+    dataType: Boolean
+    mandatory: false
 
 
 sourceIdGeneration:

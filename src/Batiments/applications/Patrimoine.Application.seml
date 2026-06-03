@@ -38,27 +38,19 @@ globalSearchConfig:
       viewType: GD
       businessView: Batiments.entities.Batiment.business_views.BatimentBusinessView
       searchTypeConfig: Batiments.entities.Batiment.business_views.BatimentBusinessView.Batiment.TextConfig
-      maxResults: 5
-    - _type: GlobalSearchBoView
-      _name: Lots
-      viewType: GD
-      businessView: Batiments.entities.Lot.business_views.LotBusinessView
-      searchTypeConfig: Batiments.entities.Lot.business_views.LotBusinessView.Lot.TextConfig
-      maxResults: 5
-    - _type: GlobalSearchBoView
-      _name: Etages
-      viewType: GD
-      businessView: Batiments.entities.Etage.business_views.EtageBusinessView
-      searchTypeConfig: Batiments.entities.Etage.business_views.EtageBusinessView.Etage.TextConfig
-      maxResults: 5
-    - _type: GlobalSearchBoView
-      _name: ZoneGeographiques
-      viewType: GD
-      businessView: Batiments.entities.ZoneGeographique.business_views.ZoneGeographiqueBusinessView
-      searchTypeConfig: Batiments.entities.ZoneGeographique.business_views.ZoneGeographiqueBusinessView.ZoneGeographique.TextConfig
-      maxResults: 5
-    
-
+      maxResults: 10
+    # - _type: GlobalSearchBoView
+    #   _name: Lots
+    #   viewType: GD
+    #   businessView: Batiments.entities.Lot.business_views.LotBusinessView
+    #   searchTypeConfig: Batiments.entities.Lot.business_views.LotBusinessView.Lot.TextConfig
+    #   maxResults: 5
+    # - _type: GlobalSearchBoView
+    #   _name: Etages
+    #   viewType: GD
+    #   businessView: Batiments.entities.Etage.business_views.EtageBusinessView
+    #   searchTypeConfig: Batiments.entities.Etage.business_views.EtageBusinessView.Etage.TextConfig
+    #   maxResults: 5
 
 navDrawer:
   - _type: NavigationGroup
@@ -71,6 +63,7 @@ navDrawer:
       # - appAction: Batiments.applications.Patrimoine.Root.GlobalSearch
       - appAction: Batiments.applications.Patrimoine.Root.Entities
       - appAction: Batiments.applications.Patrimoine.Root.Dashboard
+      - appAction: Batiments.applications.Patrimoine.Root.OpenModelDoc
 
   - _type: NavigationGroup
     _name: Patrimoine
@@ -144,6 +137,12 @@ rootFolder:
       iconColor: '#3F51B5'
       requiredRole: semarchyAdmin
 
+    - _type: OpenDocumentationAction
+      _name: OpenModelDoc
+      iconColor: md:grey
+      label: Documentation
+
+            
     - _type: BrowseBusinessViewAction
       _name: Immeubles
       businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
@@ -468,21 +467,6 @@ rootFolder:
           businessView: Batiments.entities.Usage.business_views.UsageBusinessView
           imageAlign: MIDDLE_CENTER
           imageMode: FIT
-          nbRecordsBadgeVisible: false
-        - _type: BrowseBusinessViewAction
-          _name: UsageLots
-          businessView: Batiments.entities.UsageLot.business_views.UsageLotBusinessView
-          imageAlign: MIDDLE_CENTER
-          imageMode: FIT
-          icon: images://mdi/tag.svg
-          nbRecordsBadgeVisible: false
-          
-        - _type: BrowseBusinessViewAction
-          _name: ZoneGeographiques
-          businessView: Batiments.entities.ZoneGeographique.business_views.ZoneGeographiqueBusinessView
-          imageAlign: MIDDLE_CENTER
-          imageMode: FIT
-          icon: images://mdi/map-marker.svg
           nbRecordsBadgeVisible: false
 
         - _type: BrowseBusinessViewAction

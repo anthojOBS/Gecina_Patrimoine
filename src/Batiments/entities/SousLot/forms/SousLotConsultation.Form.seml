@@ -317,7 +317,7 @@ formTabs:
         content:
           - _type: TextField
             _name: FDN_FiscaliteCible
-            value: Lot.FDN_FiscaliteCible
+            value: FDN_FiscaliteCible
             label: Régime TVA
             labelProperties:
               alignment: left

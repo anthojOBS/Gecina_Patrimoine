@@ -1,0 +1,9 @@
+_package: Batiments.entities.Batiment.validations
+_name: CheckCoherenceVille
+_type: SemQLValidation
+entity: Batiments.entities.Batiment.Batiment
+label: Coherence ville
+condition: (Immeuble.VilleEnrichie = VilleEnrichie and VilleEnrichie is not null) or Ville is null
+validationScope: POST_CONSO
+validationLabel: La ville est différente de celle de immeuble
+

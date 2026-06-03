@@ -361,18 +361,6 @@ formTabs:
         visibleValueInterpreter: LITERAL
         labelWidth: 300px
         content:
-          # - _type: TextField
-          #   _name: FDN_FiscaliteCible
-          #   value: FDN_FiscaliteCible
-          #   label: Régime TVA
-          #   documentation: Régime de taxation du bien (non soumis, prorata, soumis 100%).
-          #   labelProperties:
-          #     alignment: left
-          #     typographyValueInterpreter: LITERAL
-          #     typography: body-2
-          #     color: md:black
-          #   useCustomLabel: true
-          #   dataType: STRING
           - _type: TextField
             _name: Juridique
             value: FDN_RegimeJuridique

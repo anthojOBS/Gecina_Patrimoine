@@ -1,0 +1,11 @@
+_package: Batiments.entities.SousLot.enrichers
+_name: DefautRaisonNonLouable
+_type: SemQLEnricher
+entity: Batiments.entities.SousLot.SousLot
+label: Defaut Raison Louable
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: StatutLouable
+    expression: case when FID_RaisonNonLouable = 'LOC' then '1'  else '0' end
+  - attributeName: FID_RaisonNonLouable
+    expression: case when FID_RaisonNonLouable = 'LOC' then null  else FID_RaisonNonLouable end

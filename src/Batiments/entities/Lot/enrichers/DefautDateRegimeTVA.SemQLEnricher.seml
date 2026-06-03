@@ -1,0 +1,10 @@
+_package: Batiments.entities.Lot.enrichers
+_name: DefautDateRegimeTVA
+_type: SemQLEnricher
+entity: Batiments.entities.Lot.Lot
+label: Alimentation par défaut de la date du régime de TVA
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: DateRegimeTVA
+    expression: CURRENT_DATE()
+condition: FID_FiscaliteCible <> GoldenRecord.FID_FiscaliteCible

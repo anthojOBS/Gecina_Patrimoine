@@ -91,24 +91,6 @@ entityPrivGrants:
     removeAllowed: false
     defaultAccessType: READ
   - _type: EntityPrivGrant
-    entity: Batiments.entities.UsageLot.UsageLot
-    _name: UsageLot
-    checkoutAllowed: false
-    createAllowed: false
-    deleteAllowed: false
-    exportAllowed: false
-    removeAllowed: false
-    defaultAccessType: READ
-  - _type: EntityPrivGrant
-    entity: Batiments.entities.ZoneGeographique.ZoneGeographique
-    _name: ZoneGeographique
-    checkoutAllowed: false
-    createAllowed: false
-    deleteAllowed: false
-    exportAllowed: false
-    removeAllowed: false
-    defaultAccessType: READ
-  - _type: EntityPrivGrant
     entity: Batiments.entities.Usage.Usage
     _name: Usage
     checkoutAllowed: false

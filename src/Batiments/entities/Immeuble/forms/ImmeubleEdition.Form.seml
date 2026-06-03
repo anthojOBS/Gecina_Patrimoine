@@ -184,7 +184,7 @@ formTabs:
                         value: Adresse
                         authoringMode: force-read-only
                         componentProperties:
-                          multilineMaxLines: "3"
+                          multilineMaxLines: "2"
                           multilineMinLines: "1"
                           isMultiline: "1"
                         label: Adresse

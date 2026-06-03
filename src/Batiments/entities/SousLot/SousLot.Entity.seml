@@ -122,9 +122,7 @@ attributes:
     label: Date régime TVA
     physicalName: DATE_REGIME_TVA
     dataType: Date
-    mandatory: true
-    mandatoryValidationLabel: "Date régime TVA est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatory: false
 
 
 sourceIdGeneration:

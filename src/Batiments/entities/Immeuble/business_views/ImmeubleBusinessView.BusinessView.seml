@@ -31,7 +31,7 @@ rootBusinessViewEntity:
   #     businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
   embeddedCollectionNavigations:
     - formCollection: Batiments.entities.Immeuble.forms.ImmeubleConsultation.Composition.Services
-      browsingTarget: BUSINESS_OBJECT_VIEW
+      browsingTarget: MODAL_FORM
       businessView: Batiments.entities.Lot.business_views.LotBusinessView
       form: Batiments.entities.Lot.forms.LotConsultation
 

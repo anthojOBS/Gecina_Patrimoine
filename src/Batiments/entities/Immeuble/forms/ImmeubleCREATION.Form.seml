@@ -181,7 +181,7 @@ formTabs:
                         _name: Adresse
                         value: Adresse
                         componentProperties:
-                          multilineMaxLines: "3"
+                          multilineMaxLines: "2"
                           multilineMinLines: "1"
                           isMultiline: "1"
                         label: Adresse
@@ -452,21 +452,6 @@ formTabs:
                       color: md:black
                     useCustomLabel: true
                     dataType: BOOLEAN
-
-                    
-                  # - _type: ReferenceField
-                  #   _name: FDN_TypeCompteur
-                  #   value: FDN_TypeCompteur
-                  #   label: Type compteur
-                  #   labelProperties:
-                  #     alignment: left
-                  #     typography: body-2
-                  #     color: md:black
-                  #   useCustomLabel: true
-                  #   visibleValue: FID_OrgaResp = 'DR' 
-                  #   visibleValueInterpreter: SEMQL
-                  #   dataType: STRING
-                  #   referencedEntity: Batiments.entities.TypeCompteur.TypeCompteur
 
                   - _type: TextField
                     _name: CapaciteAccueil

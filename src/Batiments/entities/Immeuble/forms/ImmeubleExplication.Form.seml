@@ -1,0 +1,1068 @@
+_package: Batiments.entities.Immeuble.forms
+_type: Form
+_name: ImmeubleExplication
+entity: Batiments.entities.Immeuble.Immeuble
+default: true
+formTabs:
+
+  - _type: FormTab
+    _name: Immeuble
+    label: Fiche immeuble
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: ICON_LABEL
+    content:
+
+              - _type: FormSection
+                _name: IdentiteImmeuble
+                label: Identité immeuble
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
+                  - _type: TextField
+                    _name: IdentifiantsERP
+                    value: IdentifiantsERP
+                    label: Numéro immeuble
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: false
+                    dataType: STRING
+                  - _type: TextField
+                    _name: Libelle
+                    value: Libelle
+                    label: Libellé immeuble
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: false
+                    dataType: STRING
+
+              - _type: FormSection
+                _name: LocalisationImmeuble
+                label: Localisation
+                layoutDirection: ROW
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
+
+                      - _type: TextField
+                        _name: Adresse
+                        value: Adresse
+                        componentProperties:
+                          multilineMaxLines: "3"
+                          multilineMinLines: "1"
+                          isMultiline: "1"
+                        label: Adresse
+                        labelProperties:
+                          alignment: left
+                          typographyValueInterpreter: LITERAL
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: false
+                        dataType: STRING
+                      - _type: TextField
+                        _name: CodePostal
+                        value: CodePostal
+                        label: Code postal
+                        labelProperties:
+                          alignment: left
+                          typographyValueInterpreter: LITERAL
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: false
+                        dataType: STRING
+                      - _type: TextField
+                        _name: Ville
+                        value: Ville
+                        label: Ville
+                        labelProperties:
+                          alignment: left
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: false
+                        dataType: STRING
+                      - _type: ReferenceField
+                        _name: FDN_Pays
+                        value: FDN_Pays
+                        label: Pays
+                        documentation: Pays dans lequel se situe l’actif.
+                        labelProperties:
+                          alignment: left
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: STRING
+                        referencedEntity: Batiments.entities.Pays.Pays
+                      - _type: ReferenceField
+                        _name: FDN_ZoneImmostat
+                        value: FDN_ZoneImmostat
+                        label: Zone immostat
+                        documentation: Découpage géographique de gestion 
+                        labelProperties:
+                          alignment: left
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        visibleValue: FID_ZoneImmostat is not null
+                        visibleValueInterpreter: SEMQL
+                        dataType: STRING
+                        referencedEntity: Batiments.entities.Pays.Pays
+                      - _type: ReferenceField
+                        _name: FDN_SecteurImmostat
+                        value: FDN_SecteurImmostat
+                        label: Secteur immostat
+                        documentation: Découpage géographique de gestion
+                        labelProperties:
+                          alignment: left
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        visibleValue: FID_SecteurImmostat is not null
+                        visibleValueInterpreter: SEMQL
+                        dataType: STRING
+                        referencedEntity: Batiments.entities.SecteurImmostat.SecteurImmostat
+                      - _type: ReferenceField
+                        _name: FDN_SousSecteurImmostat
+                        value: FDN_SousSecteurImmostat
+                        label: Sous-secteur immostat
+                        documentation: Découpage géographique de gestion
+                        labelProperties:
+                          alignment: left
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        visibleValue: FID_SousSecteurImmostat is not null
+                        visibleValueInterpreter: SEMQL
+                        dataType: STRING
+                        referencedEntity: Batiments.entities.SousSecteurImmostat.SousSecteurImmostat
+                      - _type: TextField
+                        _name: FDN_QuartierParis
+                        value: FDN_QuartierParis
+                        label: Quartier Paris
+                        documentation: Quartier de la ville de Paris lorsque applicable.
+                        labelProperties:
+                          alignment: left
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: STRING
+                        visibleValue: Ville = 'Paris' and  (FID_Usage = 'HAB' OR FID_Usage = 'MIXTE')
+                        visibleValueInterpreter: SEMQL
+                        referencedEntity: Batiments.entities.QuartierParis.QuartierParis
+       
+              - _type: FormSection
+                _name: Usage
+                label: Usage
+                layoutDirection: ROW
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
+                      - _type: TextField
+                        _name: UsageDetail
+                        value: case when FID_OrgaResp = 'DR'  then FDN_Usage  
+                         when (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'Mixte'
+                         when (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'HAB' end) = 0  then 'Tertiaire'
+                         when (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'ENT' end) = 0  and (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'Habitation'
+                         else Null end
+                        
+                        label: Usage
+                        labelProperties:
+                          alignment: left
+                          typographyValueInterpreter: LITERAL
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: STRING
+                        
+              - _type: FormSection
+                _name: Geometre
+                label: Relevés géomètres
+                layoutDirection: ROW
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
+                        - _type: HyperlinkField
+                          _name: BinaryContent
+                          value: BinaryContent
+                          useCustomLabel: true
+                          label: Relevé géomètre
+                          labelProperties:
+                            isVisible: "1"
+                            alignment: left
+                            typography: body-2
+                            color: md:black
+                          dataType: BINARY
+                          componentProperties:
+                            linkDisplayText: Télécharger le relevé géomètre
+                            linkSourceType: url
+                            textTypography: headline
+                            textTypographyValueInterpreter: LITERAL
+
+              - _type: FormSection
+                _name: Caracteristiques
+                label: Caractéristiques générales
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
+                  - _type: TextField
+                    _name: IGH
+                    value: IGH
+                    label: Statut IGH
+                    documentation: Statut IGH
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: FID_OrgaResp = 'DB' 
+                    visibleValueInterpreter: SEMQL
+                    dataType: BOOLEAN
+
+                  - _type: TextField
+                    _name: ERP
+                    value: ERP
+                    label: Statut ERP
+                    documentation: Indique si un immeuble est autorisé à recevoir du public selon la réglementation ERP (Établissement Recevant du Public).
+                      Cet attribut précise si des démarches administratives ont été effectuées auprès de la préfecture et si l’autorisation a été accordée.
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: BOOLEAN
+
+                  - _type: TextField
+                    _name: FlagAscenseur
+                    value: FlagAscenseur
+                    label: Statut ascenseur
+                    documentation: Indique si l'immeuble dispose au moins d'un ascenseur.
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: BOOLEAN
+
+                  - _type: TextField
+                    _name: NbAscenseur
+                    value: NbAscenseur
+                    label: Nombre ascenseurs
+                    documentation: Indique le nombre d'ascenseur.
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: FlagAscenseur = '1'
+                    visibleValueInterpreter: SEMQL
+                    dataType: STRING
+
+                  - _type: ReferenceField
+                    _name: FDN_ModeChauffage
+                    value: FDN_ModeChauffage
+                    label: Mode chauffage
+                    documentation: Caractérise l’organisation du système de production et de distribution de chaleur au sein d’un immeuble.
+                      Il indique si le chauffage est assuré par une installation commune à plusieurs lots (collectif), par des installations propres à chaque lot (individuel), ou par une combinaison des deux (mixte).
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.ModeChauffage.ModeChauffage
+
+                  - _type: ReferenceField
+                    _name: FDN_TypeEnergie
+                    value: FDN_TypeEnergie
+                    label: Type d'énergie
+                    documentation: Désigne la source d’énergie utilisée pour produire la chaleur nécessaire au chauffage.
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.TypeEnergie.TypeEnergie
+
+                  - _type: TextField
+                    _name: StatutIRVE
+                    value: StatutIRVE
+                    label: Statut IRVE
+                    documentation: Indique si l'immeuble est classé selon les critères IRVE.
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: BOOLEAN
+
+                  - _type: TextField
+                    _name: CapaciteAccueil
+                    value: CapaciteAccueil
+                    label: Capacité d'accueil
+                    documentation: Nombre maximal de personnes pouvant être présentes simultanément dans l’immeuble.
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: FID_OrgaResp = 'DB' and CapaciteAccueil is not null
+                    visibleValueInterpreter: SEMQL
+                    dataType: INTEGER
+
+                  - _type: TextField
+                    _name: PosteTravail
+                    value: PosteTravail
+                    label: Postes de travail
+                    documentation: Nombre maximal de postes de travail pouvant être installés et utilisés simultanément dans l’immeuble selon son aménagement actuel.
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: FID_OrgaResp = 'DB' and PosteTravail is not null
+                    visibleValueInterpreter: SEMQL
+                    dataType: INTEGER
+
+              - _type: FormSection
+                _name: GestionInterne
+                label: Gestion interne
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
+                  - _type: ReferenceField
+                    _name: FDN_OrgaResp
+                    value: FDN_OrgaResp
+                    label: Organisation responsable
+                    documentation: Direction métier en charge de la gestion opérationnelle de l’actif (Direction Résidentielle / Bureaux).
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.OrganisationResponsable.OrganisationResponsable
+                  - _type: ReferenceField
+                    _name: FDN_Portefeuille
+                    value: FDN_Portefeuille
+                    label: Portefeuille gestion
+                    documentation: Ensemble d’actifs rattachés à une même équipe opérationnelle (ex. Portefeuille 1, Portefeuille 2…).
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.Portefeuille.Portefeuille
+                  - _type: ReferenceField
+                    _name: FDN_SousPortefeuille
+                    value: FDN_SousPortefeuille
+                    label: Sous-portefeuille gestion
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: FID_OrgaResp = 'DB' 
+                    visibleValueInterpreter: SEMQL
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.SousPortefeuille.SousPortefeuille
+
+                  - _type: ReferenceField
+                    _name: FDN_PerimetreGestion
+                    value: FDN_PerimetreGestion
+                    label: Périmètre gestion
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: FID_OrgaResp = 'DR' 
+                    visibleValueInterpreter: SEMQL
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.PerimetreGestion.PerimetreGestion
+
+              - _type: FormSection
+                _name: Commentaires
+                label: Commentaires
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
+                        - _type: TextField
+                          _name: Commentaire
+                          value: Commentaire
+                          label: Commentaires
+                          authoringMode: Case when Commentaire is null then 'auto' else 'force-read-only' end
+                          authoringModeValueInterpreter: SEMQL
+                          labelProperties:
+                            alignment: left
+                            typography: body-2
+                            color: md:black
+                          useCustomLabel: false
+                          dataType: STRING
+
+              - _type: FormSection
+                _name: Lots
+                label: Composition des lots
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 300px
+                content:
+                  - _type: TextField
+                    _name: NombreEtages
+                    value: lookup first (substr(Libelle, 1, 1)) from Batiment.Etage where substr(CodeEtage, 1, 1) = 'E' order by CodeEtage desc  end 
+                    label: Nombre étages
+                    documentation: Nombre d'étages
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                  - _type: TextField
+                    _name: NbLotInitial
+                    value: NbLotInitial
+                    label: Nombre lots initial
+                    documentation: Nombre lots initial.
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: FID_OrgaResp = 'DR' 
+                    visibleValueInterpreter: SEMQL
+                    dataType: INTEGER
+                  - _type: TextField
+                    _name: NbLotDate
+                    value: lookup count (IdentifiantsERP) from Batiment.Etage.Lot  end 
+                    label: Nombre lots à date
+                    documentation: Nombre lots à date.
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: INTEGER
+                  - _type: TextField
+                    _name: NbNewLot
+                    value: lookup count (IdentifiantsERP) from Batiment.Etage.Lot where StatutNewLot = '1' end 
+                    label: Nombre new lots
+                    documentation: Nombre new lots.
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: FID_OrgaResp = 'DR' 
+                    visibleValueInterpreter: SEMQL
+                    dataType: INTEGER
+                  - _type: TextField
+                    _name: NbParking
+                    value: lookup count (FID_TypologieLot) from Batiment.Etage.Lot where FID_TypologieLot = 'PK' end 
+                    label: Nombre parkings
+                    documentation: Indique le nombre d'ascenseur.
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                  - _type: TextField
+                    _name: NbCave
+                    value: lookup count (FID_GenreLot) from Batiment.Etage.Lot where FID_GenreLot = 'CAV' end 
+                    label: Nombre caves
+                    documentation: Indique le nombre de caves.
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                  - _type: TextField
+                    _name: NbPlateau
+                    value: lookup count (FID_TypologieLot) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' end 
+                    label: Nombre plateaux
+                    documentation: Indique le nombre de plateaux.
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                  - _type: TextField
+                    _name: NbCoquesCommerciales
+                    value: lookup count (FID_TypologieLot) from Batiment.Etage.Lot where FID_TypologieLot = 'LC' end 
+                    label: Nombre coques commerciales
+                    documentation: Indique le nombre de coques commerciales.
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+            
+              - _type: FormSection
+                _name: Superficies
+                label: Superficies
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 300px
+                content:
+                  - _type: TextField
+                    _name: SurperficieHabitable
+                    value: case when (FID_Usage = 'HAB' or  FID_Usage = 'MIXTE') and (lookup sum (SuperficieHabitable) from Batiment.Etage.Lot end) is not null  then (lookup sum (SuperficieHabitable) from Batiment.Etage.Lot end) || ' m²' else
+                          null end
+                    
+                    label: Superficie habitable (SHAB)
+                    documentation: Superficie habitable (SHAB).
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: FID_Usage = 'HAB' or  FID_Usage = 'MIXTE'
+                    visibleValueInterpreter: SEMQL
+                    dataType: STRING
+
+                  - _type: TextField
+                    _name: SurperficiePlateauCoque
+                    value: (lookup sum (SuperficieUtileQP) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' or FID_TypologieLot = 'LC'  end) || ' m²'
+                    label: Superficie plateaux et coques commerciales
+                    documentation: Superficie plateaux et coques commerciales
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: (lookup sum (SuperficieUtileQP) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' or FID_TypologieLot = 'LC' end)  is not null
+                    visibleValueInterpreter: SEMQL
+                    dataType: STRING 
+
+                  - _type: TextField
+                    _name: SurperficieTaxableBureaux
+                    value: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' end) || ' m²'
+                    label: Superficie taxable locaux bureaux
+                    documentation: Superficie taxable locaux bureaux
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PL' end) is not null
+                    visibleValueInterpreter: SEMQL
+                    dataType: STRING 
+
+                  - _type: TextField
+                    _name: SurperficieTaxableCommerciaux
+                    value: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LC' end) || ' m²' 
+                    label: Superficie taxable locaux commerciaux
+                    documentation: Superficie taxable locaux commerciaux
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LC' end) is not null
+                    visibleValueInterpreter: SEMQL
+                    dataType: STRING 
+
+                  - _type: TextField
+                    _name: SurperficieTaxableStockage
+                    value: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LD' end) || ' m²'                
+                    label: Superficie taxable locaux stockage
+                    documentation: Superficie taxable locaux stockage
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LD' end) is not null
+                    visibleValueInterpreter: SEMQL
+                    dataType: STRING 
+
+                  - _type: TextField
+                    _name: SurperficieTaxableparkings
+                    value: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PK' end) || ' m²'  
+                    label: Superficie taxable parkings
+                    documentation: Superficie taxable parkings
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'PK' end) is not null
+                    visibleValueInterpreter: SEMQL
+                    dataType: STRING 
+
+                  - _type: TextField
+                    _name: SurperficieHallCouloir
+                    value: case when SurperficieHallCouloir is not null then SurperficieHallCouloir || ' m²' else null end
+                    label: Superficie halls/couloirs
+                    documentation: Superficie halls/couloir.
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                  - _type: TextField
+                    _name: SurperficieTerrasses
+                    value: case when SurperficieTerrasses is not null then SurperficieTerrasses || ' m²' else null end
+                    label: Superficie terrasses
+                    documentation: Superficie terrasses.
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                  - _type: TextField
+                    _name: SurperficieToitures
+                    value: case when SurperficieToitures is not null then SurperficieToitures || ' m²' else null end
+                    label: Superficie toitures
+                    documentation: Superficie toitures.
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                  - _type: TextField
+                    _name: SurperficieEspacesVerts
+                    value: case when SurperficieEspacesVerts is not null then SurperficieEspacesVerts || ' m²' else null end
+                    label: Superficie espaces verts
+                    documentation: Superficie espaces verts.
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: FID_OrgaResp = 'DR' 
+                    visibleValueInterpreter: SEMQL
+                    dataType: STRING
+
+              - _type: FormSection
+                _name: Phase
+                label: Phase
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 300px
+                content:
+                  - _type: ReferenceField
+                    _name: FDN_Phase
+                    value: FDN_Phase
+                    label: Phase
+                    documentation: Statut du bien dans son cycle de vie (initiale, active, terminée).
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.Phase.Phase
+
+              - _type: FormSection
+                _name: Restructuration
+                label: Restructuration
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 300px
+                content:
+                  - _type: TextField
+                    _name: FlagRestructuration
+                    value: FlagRestructuration
+                    label: Restructuration en cours
+                    documentation: Indique que l'immeuble est actuellement soumis à des travaux lourds ou à une réorganisation structurelle importante.
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: BOOLEAN
+
+                  - _type: DateField
+                    _name: DateRestructuration
+                    value: DateRestructuration
+                    label: Date dernière restructuration
+                    documentation: Date à laquelle s’est achevée la dernière opération de restructuration lourde de l’immeuble. Cette date correspond à la fin effective du chantier, lorsque l’immeuble est de nouveau disponible pour une exploitation normale.
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    componentProperties:                 
+                      displayFormat: dd/MM/yyyy                
+                      displayFormatValueInterpreter: LITERAL            
+                      editingFormat: dd/MM/yyyy                 
+                      editingFormatValueInterpreter: LITERAL
+                    useCustomLabel: true
+                    visibleValue:  DateRestructuration is not null 
+                    visibleValueInterpreter: SEMQL
+                    dataType: DATE
+
+              - _type: FormSection
+                _name: Construction
+                label: Construction
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 300px
+                content:
+                  - _type: ReferenceField
+                    _name: FDN_PeriodeConstruction
+                    value: FDN_PeriodeConstruction
+                    label: Période de construction
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
+                  - _type: DateField
+                    _name: DateDebutConstruction
+                    value: DateDebutConstruction
+                    label: Date début construction
+                    documentation: Date de démarrage des travaux de construction de l’actif.
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    componentProperties:                 
+                      displayFormat: dd/MM/yyyy                
+                      displayFormatValueInterpreter: LITERAL            
+                      editingFormat: dd/MM/yyyy                 
+                      editingFormatValueInterpreter: LITERAL
+                    useCustomLabel: true
+                    dataType: DATE
+                  - _type: DateField
+                    _name: DateFinConstruction
+                    value: DateFinConstruction
+                    label: Date fin construction
+                    documentation: Date de fin des travaux de construction.
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    componentProperties:                 
+                      displayFormat: dd/MM/yyyy                
+                      displayFormatValueInterpreter: LITERAL            
+                      editingFormat: dd/MM/yyyy                 
+                      editingFormatValueInterpreter: LITERAL
+                    useCustomLabel: true
+                    dataType: DATE
+                  - _type: DateField
+                    _name: DateLivraison
+                    value: DateLivraison
+                    label: Date livraison
+                    documentation: Date de mise à disposition de l’actif après construction. (uniquement pour les VEFA). Ne pas afficher si pas d'info. Afficher que si VEFA et si on a l'info
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    componentProperties:                 
+                      displayFormat: dd/MM/yyyy                
+                      displayFormatValueInterpreter: LITERAL            
+                      editingFormat: dd/MM/yyyy                 
+                      editingFormatValueInterpreter: LITERAL
+                    useCustomLabel: true
+                    visibleValue:  DateLivraison is not null 
+                    visibleValueInterpreter: SEMQL
+                    dataType: DATE
+
+              - _type: FormSection
+                _name: AcquisitionCession
+                label: Acquisition/Cession
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 300px
+                content:
+                  - _type: DateField
+                    _name: DateAcquisition
+                    value: DateAcquisition
+                    label: Date acquisition
+                    documentation: Date d’achat de l’immeuble par la société propriétaire.
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    componentProperties:                 
+                      displayFormat: dd/MM/yyyy                
+                      displayFormatValueInterpreter: LITERAL            
+                      editingFormat: dd/MM/yyyy                 
+                      editingFormatValueInterpreter: LITERAL
+                    useCustomLabel: true
+                    dataType: DATE
+                  - _type: ReferenceField
+                    _name: FDN_TypeVente
+                    value: FDN_TypeVente
+                    label: Type de vente
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                    visibleValue: FID_OrgaResp = 'DR' 
+                    visibleValueInterpreter: SEMQL
+                    referencedEntity: Batiments.entities.TypeVente.TypeVente
+                  - _type: DateField
+                    _name: DateMiseVente
+                    value: DateVente
+                    label: Date mise en vente
+                    documentation: Date à laquelle l’immeuble est mis en vente.
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    componentProperties:                 
+                      displayFormat: dd/MM/yyyy                
+                      displayFormatValueInterpreter: LITERAL            
+                      editingFormat: dd/MM/yyyy                 
+                      editingFormatValueInterpreter: LITERAL
+                    useCustomLabel: true
+                    visibleValue: FID_OrgaResp = 'DR' and  DateMiseVente is not null
+                    visibleValueInterpreter: SEMQL
+                    dataType: DATE                        
+                  - _type: DateField
+                    _name: DateVente
+                    value: DateVente
+                    label: Date vente
+                    documentation: Date effective de cession juridique (si applicable).
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    componentProperties:                 
+                      displayFormat: dd/MM/yyyy                
+                      displayFormatValueInterpreter: LITERAL            
+                      editingFormat: dd/MM/yyyy                 
+                      editingFormatValueInterpreter: LITERAL
+                    useCustomLabel: true
+                    visibleValue: DateVente is not null
+                    visibleValueInterpreter: SEMQL
+                    dataType: DATE
+
+              - _type: FormSection
+                _name: Juridique
+                label: Juridique
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 300px
+                content:
+                  - _type: TextField
+                    _name: FDN_FiscaliteCible
+                    value: FDN_FiscaliteCible
+                    label: Régime TVA
+                    documentation: Régime de taxation du bien (non soumis, prorata, soumis 100%).
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                  - _type: TextField
+                    _name: Juridique
+                    value: FDN_RegimeJuridique
+                    label: Régime juridique
+                    documentation: monopropriété, copropriété, ASL, bail emphytéotique, réserve foncière, prise à bail, etc.
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
+                  - _type: DateField
+                    _name: DateMiseCopro
+                    value: lookup first (DateVente) from Batiment.Etage.Lot where DateVente is not null order by DateVente desc end
+                    label: Date mise en copropriété
+                    documentation: Date à laquelle l’immeuble est mis en copropriété.
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    componentProperties:                 
+                      displayFormat: dd/MM/yyyy                
+                      displayFormatValueInterpreter: LITERAL            
+                      editingFormat: dd/MM/yyyy                 
+                      editingFormatValueInterpreter: LITERAL
+                    useCustomLabel: true
+                    visibleValue: FID_OrgaResp = 'DR' and (lookup first (DateVente) from Batiment.Etage.Lot where DateVente is not null order by DateVente desc end) is not null
+                    visibleValueInterpreter: SEMQL
+                    dataType: DATE      
+
+              - _type: FormSection
+                _name: EspaceAmenagement
+                label: Espace et aménagement
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 300px
+                content:
+
+                      - _type: TextField
+                        _name: StatutEspaceVert
+                        value: StatutEspaceVert
+                        label: Statut espace vert
+                        documentation: Indique si l'immeuble dispose d'un espace vert.
+                        labelProperties:
+                          alignment: left
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: BOOLEAN
+                      - _type: TextField
+                        _name: StatutAireJeux
+                        value: StatutAireJeux
+                        label: Statut aire de jeux
+                        documentation: Indique si l'immeuble dispose d'une aire de jeu.
+                        labelProperties:
+                          alignment: left
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: BOOLEAN
+
+              - _type: FormSection
+                _name: SecuriteEtAcces
+                label: Sécurité et accès
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 300px
+                content:
+
+                      - _type: TextField
+                        _name: StatutDigicode
+                        value: StatutDigicode
+                        label: Statut digicode
+                        documentation: Indique si l'immeuble dispose d'un digicode.
+                        labelProperties:
+                          alignment: left
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: BOOLEAN
+                      - _type: TextField
+                        _name: StatutInterphone
+                        value: StatutInterphone
+                        label: Statut interphone
+                        documentation: Indique si l'immeuble dispose d'un interphone.
+                        labelProperties:
+                          alignment: left
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: BOOLEAN
+                      - _type: TextField
+                        _name: StatutVideosurveillance
+                        value: StatutVideosurveillance
+                        label: Statut vidéosurveillance
+                        documentation: Indique si l'immeuble dispose d'une vidéosurveillance.
+                        labelProperties:
+                          alignment: left
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: BOOLEAN
+                      - _type: TextField
+                        _name: StatutGardiennage
+                        value: StatutGardiennage
+                        label: Statut gardiennage
+                        documentation: Indique si l'immeuble dispose d'un gardiennage.
+                        labelProperties:
+                          alignment: left
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: BOOLEAN
+
+              - _type: FormSection
+                _name: Equipements
+                label: Équipements
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 300px
+                content:
+
+                      - _type: TextField
+                        _name: StatutLocalPoubelle
+                        value: StatutLocalPoubelle
+                        label: Statut local poubelle
+                        documentation: Indique si l'immeuble dispose d'un local à poubelles.
+                        labelProperties:
+                          alignment: left
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: BOOLEAN
+                      - _type: TextField
+                        _name: StatutTriSelectif
+                        value: StatutTriSelectif
+                        label: Statut tri sélectif
+                        documentation: Indique si l'immeuble dispose d'un système de tri sélectif.
+                        labelProperties:
+                          alignment: left
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: BOOLEAN
+                      - _type: TextField
+                        _name: StatutLocalVelos
+                        value: StatutLocalVelos
+                        label: Statut local vélos
+                        documentation: Indique si l'immeuble dispose d'un local pour les vélos.
+                        labelProperties:
+                          alignment: left
+                          typography: body-2
+                          color: md:black
+                        useCustomLabel: true
+                        dataType: BOOLEAN

@@ -14,5 +14,4 @@ avatarImageValueInterpreter: LITERAL
 primaryImageSourceType: URL
 avatarImageAlign: MIDDLE_CENTER
 avatarImageMode: FIT
-avatarImageValue: images://mdi/domain.svg
-
+avatarImageValue: images://GECINA/office-building-cog.png

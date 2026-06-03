@@ -224,16 +224,3 @@ formTabs:
                 componentProperties:
                   contentBackgroundColorValueInterpreter: SEMQL
                   contentBackgroundColor: case when FDN_Phase != GoldenRecord.FDN_Phase or (GoldenRecord.FDN_Phase is null and FDN_Phase is not null) then 'css:yellow' else 'css:white' end
-              - _type: ReferenceField
-                _name: FDN_UsageLot
-                value: FDN_UsageLot
-                useCustomLabel: false
-                dataType: STRING
-                referencedEntity: Batiments.entities.UsageLot.UsageLot
-                labelProperties:
-                  typographyValueInterpreter: LITERAL
-                  typography: body-2
-                  color: md:black
-                componentProperties:
-                  contentBackgroundColorValueInterpreter: SEMQL
-                  contentBackgroundColor: case when FDN_UsageLot != GoldenRecord.FDN_UsageLot or (GoldenRecord.FDN_UsageLot is null and FDN_UsageLot is not null) then 'css:yellow' else 'css:white' end

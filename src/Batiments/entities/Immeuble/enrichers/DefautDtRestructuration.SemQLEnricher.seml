@@ -1,0 +1,10 @@
+_package: Batiments.entities.Immeuble.enrichers
+_name: DefautDtRestructuration
+_type: SemQLEnricher
+entity: Batiments.entities.Immeuble.Immeuble
+label: Alimentation de la date de restructuration
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: DateRestructuration
+    expression: CURRENT_DATE()
+condition: GoldenRecord.FlagRestructuration = '1'  and FlagRestructuration = '0'

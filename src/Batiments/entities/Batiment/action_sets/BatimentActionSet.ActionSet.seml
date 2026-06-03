@@ -96,5 +96,5 @@ actions:
     label: Expliquer l'enregistrement
     useCustomLabel: true
     displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
-    formTab: Batiments.entities.Batiment.forms.BatimentConsultation.Batiment
+    formTab: Batiments.entities.Batiment.forms.BatimentExplication.Batiment
     waitDialogEnabled: false

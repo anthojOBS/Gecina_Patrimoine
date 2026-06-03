@@ -67,6 +67,14 @@ attributes:
     mandatoryValidationScope: POST_CONSO
 
   - _type: EntityAttribute
+    _name: AdresseStandardise
+    label: Adresse
+    physicalName: ADRESSE_STANDARDISEE
+    dataType: String
+    length: 255
+    mandatory: false
+
+  - _type: EntityAttribute
     _name: CodePostal
     label: Code Postal
     physicalName: CODE_POSTAL
@@ -90,6 +98,32 @@ attributes:
     _name: AdresseEnrichie
     label: Adresse Enrichie
     physicalName: ADRESSE_ENRICHIE
+    dataType: String
+    length: 255
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: CodePostalEnrichi
+    label: Code Postal
+    documentation: Code postal de la commune où est situé l’actif.
+    physicalName: CODE_POSTAL_ENRICHI
+    dataType: String
+    length: 20
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: VilleEnrichie
+    label: Ville
+    documentation: Commune dans laquelle se situe l’actif.
+    physicalName: VILLE_ENRICHIE
+    dataType: String
+    length: 150
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: PaysEnrichie
+    label: Pays
+    physicalName: PAYS_ENRICHIE
     dataType: String
     length: 255
     mandatory: false

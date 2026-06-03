@@ -217,6 +217,10 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: true
           executedOnFormOpen: true
+        - enricher: Batiments.entities.Immeuble.enrichers.DefautDtRestructuration
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false
 
       formStepValidations: 
         - validator: Batiments.entities.Immeuble.validations.CheckDtLivraison

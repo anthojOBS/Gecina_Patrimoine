@@ -2,7 +2,7 @@ _package: Batiments.entities.Lot.enrichers
 _name: DefautRegimeTVA
 _type: SemQLEnricher
 entity: Batiments.entities.Lot.Lot
-label: Default Country
+label: Alimentation par défaut du régime de TVA
 enricherExecutionScope: NONE
 semQlEnricherExpressions: 
   - attributeName: FID_FiscaliteCible

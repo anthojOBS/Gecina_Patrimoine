@@ -1,0 +1,12 @@
+_package: Batiments.entities.SousLot.enrichers
+_name: DefautRegimeTVA
+_type: SemQLEnricher
+entity: Batiments.entities.SousLot.SousLot
+label: Alimentation par défaut de la date du régime de TVA et du régime de TVA
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: FID_FiscaliteCible
+    expression: Lot.FID_FiscaliteCible
+  - attributeName: DateRegimeTVA
+    expression: Lot.DateRegimeTVA
+condition: DateRegimeTVA is NULL OR FID_FiscaliteCible is NULL

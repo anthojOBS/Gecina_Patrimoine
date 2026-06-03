@@ -61,6 +61,11 @@ formTabs:
           typographyValueInterpreter: LITERAL
           typography: body-2
           color: md:black
+        componentProperties:                 
+          displayFormat: dd/MM/yyyy                
+          displayFormatValueInterpreter: LITERAL            
+          editingFormat: dd/MM/yyyy                 
+          editingFormatValueInterpreter: LITERAL
       - _type: DateField
         _name: Dt_fin
         value: Dt_fin
@@ -71,6 +76,11 @@ formTabs:
           typographyValueInterpreter: LITERAL
           typography: body-2
           color: md:black
+        componentProperties:                 
+          displayFormat: dd/MM/yyyy                
+          displayFormatValueInterpreter: LITERAL            
+          editingFormat: dd/MM/yyyy                 
+          editingFormatValueInterpreter: LITERAL 
       - _type: TextField
         _name: Point_Livraison
         value: Point_Livraison

@@ -1,0 +1,11 @@
+_package: Batiments.entities.Lot.enrichers
+_name: DefautRaisonNonLouable
+_type: SemQLEnricher
+entity: Batiments.entities.Lot.Lot
+label: Defaut Raison Non Louable
+enricherExecutionScope: POST_CONSO
+semQlEnricherExpressions: 
+  - attributeName: StatutLouable
+    expression: case when UsageLot = 'LOC' or UsageLot is null then '1'  else '0' end
+  - attributeName: FID_RaisonNonLouable
+    expression: case when UsageLot = 'LOC' or UsageLot is null then null  else UsageLot end

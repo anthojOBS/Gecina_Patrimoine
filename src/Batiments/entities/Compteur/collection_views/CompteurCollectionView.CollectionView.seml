@@ -72,6 +72,10 @@ tableColumns:
     dataType: DATE
     columnAlign: LEFT
     visibleByDefault: true
+    componentProperties:                 
+          displayFormat: dd/MM/yyyy                
+          displayFormatValueInterpreter: LITERAL            
+
   - _type: DateColumn
     _name: Dt_fin
     value: Dt_fin
@@ -80,6 +84,9 @@ tableColumns:
     dataType: DATE
     columnAlign: LEFT
     visibleByDefault: true
+    componentProperties:                 
+          displayFormat: dd/MM/yyyy                
+          displayFormatValueInterpreter: LITERAL
   - _type: TextColumn
     _name: Point_Livraison
     value: Point_Livraison

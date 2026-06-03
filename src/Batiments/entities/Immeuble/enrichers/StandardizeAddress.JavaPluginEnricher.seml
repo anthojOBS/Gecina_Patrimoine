@@ -25,11 +25,10 @@ pluginInputs:
 pluginOutputs:
 - attributeName: AdresseEnrichie
   outputName: FORMATTED_ADDRESS
-- attributeName: Ville
+- attributeName: VilleEnrichie
   outputName: LOCALITY_LONGNAME
-- attributeName: CodePostal
+- attributeName: CodePostalEnrichi
   outputName: POSTALCODE_SHORTNAME
-# - attributeName: Adresse
-#   outputName: ROUTE_LONGNAME
-# - attributeName: Commentaire
-#   outputName: FORMATTED_ADDRESS
+- attributeName: PaysEnrichie
+  outputName: COUNTRY_LONGNAME
+

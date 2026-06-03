@@ -292,7 +292,7 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
-                    visibleValue: FID_TypologieLot = 'SNI'
+                    visibleValue: FID_TypologieLot <> 'SNI'
                     visibleValueInterpreter: SEMQL
                     dataType: BOOLEAN   
 
@@ -505,6 +505,8 @@ formTabs:
           - _type: DateField
             _name: DateDebRegimeTVA
             value: DateRegimeTVA
+            authoringMode: case when FID_TypologieLot = 'AP' then 'auto' else 'force-read-only' end
+            authoringModeValueInterpreter: SEMQL
             label: Date régime TVA
             labelProperties:
               alignment: left

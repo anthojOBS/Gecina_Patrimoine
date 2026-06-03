@@ -1,0 +1,10 @@
+_package: Batiments.entities.Lot.enrichers
+_name: DefautGenreLot
+_type: SemQLEnricher
+entity: Batiments.entities.Lot.Lot
+label: Default Genre lot pour des lots service
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: FID_GenreLot
+    expression: case when FID_TypologieLot = 'SNI' then 'SNI' else FID_GenreLot end
+condition: FID_TypologieLot = 'SNI'

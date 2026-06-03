@@ -4,7 +4,8 @@ _type: SemQLEnricher
 entity: Batiments.entities.Immeuble.Immeuble
 label: Concat Address
 enricherExecutionScope: NONE
+afterEnrichers: Batiments.entities.Immeuble.enrichers.StandardizeAddress
 semQlEnricherExpressions: 
-  - attributeName: ConcatAddress
-    expression: UPPER(Adresse ||' '||CodePostal ||' '|| Ville)
-condition: Adresse is NOT NULL and (CodePostal is not null or Ville is not null)
+  - attributeName: AdresseStandardise
+    expression: substr(AdresseEnrichie, 1, sem_instr(AdresseEnrichie,',')-1)
+condition: Adresse is not null or CodePostal is not null or Ville is not null

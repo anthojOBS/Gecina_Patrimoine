@@ -113,15 +113,7 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
     referencedEntity: Batiments.entities.GenreLot.GenreLot
-    
-  - _type: ReferenceColumn
-    _name: FDN_UsageLot
-    value: FDN_UsageLot
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-    referencedEntity: Batiments.entities.UsageLot.UsageLot
+
 
   - _type: ReferenceColumn
     _name: FDN_Usage
@@ -132,14 +124,6 @@ tableColumns:
     visibleByDefault: true
     referencedEntity: Batiments.entities.Usage.Usage
 
-  - _type: ReferenceColumn
-    _name: FDN_FiscaliteCible
-    value: FDN_FiscaliteCible
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-    referencedEntity: Batiments.entities.FiscaliteCible.FiscaliteCible
 
   - _type: ReferenceColumn
     _name: FDN_TypologieLot
@@ -273,6 +257,16 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
 
+  - _type: ReferenceColumn
+    _name: FDN_FiscaliteCible
+    value: FDN_FiscaliteCible
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.FiscaliteCible.FiscaliteCible
+
+
   - _type: TextColumn
     _name: DateRegimeTVA
     value: DateRegimeTVA
@@ -331,7 +325,57 @@ tableColumns:
     dataType: DECIMAL
     columnAlign: LEFT
     visibleByDefault: true
+
+
+  - _type: TextColumn
+    _name: SuperficieComm
+    value: SuperficieComm
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: false
     
+  - _type: TextColumn
+    _name: SuperficieHall
+    value: SuperficieHall
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+
+  - _type: TextColumn
+    _name: SuperficiePal
+    value: SuperficiePal
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: SuperficieQPCirculation
+    value: SuperficieQPCirculation
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: SuperficieQPPalier
+    value: SuperficieQPPalier
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: UsageLot
+    value: UsageLot
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
   - _type: TextColumn
     _name: ConfirmationStatus
     columnAlign: LEFT

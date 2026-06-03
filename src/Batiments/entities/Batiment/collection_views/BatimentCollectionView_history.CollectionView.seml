@@ -83,6 +83,40 @@ tableColumns:
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
+
+  - _type: TextColumn
+    _name: AdresseStandardise
+    value: AdresseStandardise
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: CodePostalEnrichi
+    value: CodePostalEnrichi
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  
+  - _type: TextColumn
+    _name: VilleEnrichie
+    value: VilleEnrichie
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: PaysEnrichie
+    value: PaysEnrichie
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+
   - _type: CheckboxColumn
     _name: BatimentPrincipal
     value: BatimentPrincipal
@@ -115,15 +149,6 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
     referencedEntity: Batiments.entities.Phase.Phase
-
-  - _type: ReferenceColumn
-    _name: FDN_ZoneGeographique
-    value: FDN_ZoneGeographique
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-    referencedEntity: Batiments.entities.ZoneGeographique.ZoneGeographique
 
   - _type: TextColumn
     _name: SousPortefeuille

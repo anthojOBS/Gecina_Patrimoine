@@ -144,6 +144,11 @@ formTabs:
                         typographyValueInterpreter: LITERAL
                         typography: body-2
                         color: md:black
+                      componentProperties:                 
+                        displayFormat: dd/MM/yyyy                
+                        displayFormatValueInterpreter: LITERAL            
+                        editingFormat: dd/MM/yyyy                 
+                        editingFormatValueInterpreter: LITERAL
                       useCustomLabel: true
                       dataType: DATE
                     - _type: ReferenceField
@@ -292,7 +297,7 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
-                    visibleValue: FID_TypologieLot = 'SNI'
+                    visibleValue: FID_TypologieLot <> 'SNI'
                     visibleValueInterpreter: SEMQL
                     dataType: BOOLEAN   
 
@@ -460,6 +465,11 @@ formTabs:
               typography: body-2
               color: md:black
             useCustomLabel: true
+            componentProperties:                 
+              displayFormat: dd/MM/yyyy                
+              displayFormatValueInterpreter: LITERAL            
+              editingFormat: dd/MM/yyyy                 
+              editingFormatValueInterpreter: LITERAL
             dataType: DATE
 
 
@@ -498,12 +508,19 @@ formTabs:
           - _type: DateField
             _name: DateDebRegimeTVA
             value: DateRegimeTVA
+            authoringMode: case when FID_TypologieLot = 'AP' then 'auto' else 'force-read-only' end
+            authoringModeValueInterpreter: SEMQL
             label: Date régime TVA
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL
               typography: body-2
               color: md:black
+            componentProperties:                 
+              displayFormat: dd/MM/yyyy                
+              displayFormatValueInterpreter: LITERAL            
+              editingFormat: dd/MM/yyyy                 
+              editingFormatValueInterpreter: LITERAL 
             useCustomLabel: true
             dataType: DATE
 

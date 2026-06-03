@@ -102,5 +102,5 @@ actions:
     label: Expliquer l'enregistrement
     useCustomLabel: true
     displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
-    formTab: Batiments.entities.SousLot.forms.SousLotConsultation.SousLot
+    formTab: Batiments.entities.SousLot.forms.SousLotExplication.SousLot
     waitDialogEnabled: false

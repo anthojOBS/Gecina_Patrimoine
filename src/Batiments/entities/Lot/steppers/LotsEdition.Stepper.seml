@@ -48,7 +48,10 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
-
+        - enricher: Batiments.entities.Lot.enrichers.DefautGenreLot
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false
 
       formStepValidations:  
 
@@ -241,18 +244,13 @@ rootStep:
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute:  Batiments.references.LotToFiscaliteCible.FiscaliteCible
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.entities.Lot.Lot.DateRegimeTVA
+
 
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.references.LotToFiscaliteCible.FiscaliteCible
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.entities.Lot.Lot.DateRegimeTVA
+
 
 
     - _type: CollectionStep
@@ -341,9 +339,6 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.references.LotToFiscaliteCible.FiscaliteCible
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.entities.Lot.Lot.DateRegimeTVA
 
   - onStepperFinish: BLOCK
     validationType: CHECK

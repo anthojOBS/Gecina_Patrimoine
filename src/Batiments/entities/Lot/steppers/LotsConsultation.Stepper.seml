@@ -34,11 +34,11 @@ rootStep:
 
 
       formStepEnrichers:  
-        - enricher: Batiments.entities.Lot.enrichers.DefautLouable
+        - enricher: Batiments.entities.Lot.enrichers.DefautRaisonNonLouable
           executedOnButtonClick: false
-          executedOnDataChange: false
-          executedOnFormOpen: true
-          
+          executedOnDataChange: true
+          executedOnFormOpen: false
+
       # formStepValidations:
       #   - executedOnDataChange: true
       #     executedOnFormOpen: true

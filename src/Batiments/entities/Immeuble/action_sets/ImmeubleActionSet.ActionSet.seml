@@ -24,26 +24,6 @@ actions:
     availableForMasterData: true
     availableForErrorData: true
     waitDialogEnabled: false
-  # - _type: EditAction
-  #   _name: EditImmeubleCycleVie
-  #   label: Modification cycle de vie
-  #   useCustomLabel: true
-  #   stepper: Batiments.entities.Immeuble.steppers.ImmeublesEditCycleVie
-  #   multipleSelectionAllowed: true
-  #   availableForGoldenData: true
-  #   availableForMasterData: true
-  #   availableForErrorData: true
-  #   waitDialogEnabled: false
-  # - _type: EditAction
-  #   _name: EditImmeubleFiscaliteJuridique
-  #   label: Modification fiscalité et juridique
-  #   useCustomLabel: true
-  #   stepper: Batiments.entities.Immeuble.steppers.ImmeublesEditFiscaliteJuridique
-  #   multipleSelectionAllowed: true
-  #   availableForGoldenData: true
-  #   availableForMasterData: true
-  #   availableForErrorData: true
-  #   waitDialogEnabled: false
   - _type: MassUpdateAction
     _name: MassUpdateAuthorImmeubles
     label: Mise à jour de masse
@@ -116,5 +96,5 @@ actions:
     label: Expliquer l'enregistrement
     useCustomLabel: true
     displayCard: Batiments.entities.Immeuble.display_cards.ImmeubleDisplayCard
-    formTab: Batiments.entities.Immeuble.forms.ImmeubleConsultation.Immeuble
+    formTab: Batiments.entities.Immeuble.forms.ImmeubleExplication.Immeuble
     waitDialogEnabled: false

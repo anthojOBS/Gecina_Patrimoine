@@ -1,0 +1,17 @@
+_package: Batiments.entities.Lot.enrichers
+_name: CalculSuperficieUtile
+_type: SemQLEnricher
+entity: Batiments.entities.Lot.Lot
+label: Calcul Superficie Utile
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: SuperficieUtileQP
+    expression: case when FID_TypologieLot <> 'PL' or FID_TypologieLot <> 'LC' or FID_TypologieLot <> 'LD' or FID_TypologieLot <> 'CL' or FID_TypologieLot <> 'FS' or FID_TypologieLot <> 'SNI' then NULL 
+     when Etage.Batiment.Immeuble.FlagQPIncluse = '1' then SuperficieComm else SuperficieComm + SuperficieHall + SuperficiePal + SuperficieQPPalier  +  SuperficieQPCirculation  end
+
+  - attributeName: SuperficieUtileSansQP
+    expression: case when FID_TypologieLot <> 'PL' or FID_TypologieLot <> 'LC' or FID_TypologieLot <> 'LD' or FID_TypologieLot <> 'CL' or FID_TypologieLot <> 'FS' or FID_TypologieLot <> 'SNI' then NULL 
+     when Etage.Batiment.Immeuble.FlagQPIncluse = '1' then SuperficieComm - SuperficieHall - SuperficiePal - SuperficieQPPalier  - SuperficieQPCirculation else SuperficieComm end
+
+  - attributeName: SuperficieUtilePonderee
+    expression: case when FID_TypologieLot <> 'LC' or FID_TypologieLot <> 'LD' then NULL else SuperficieUtilePonderee end

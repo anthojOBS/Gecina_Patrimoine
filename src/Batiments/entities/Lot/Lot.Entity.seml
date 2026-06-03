@@ -85,6 +85,53 @@ attributes:
     scale: 2
     mandatory: false
 
+
+  - _type: EntityAttribute
+    _name: SuperficieComm
+    label: Superficie Commun
+    physicalName: SUPERFICIE_COMMUN
+    dataType: Decimal
+    precision: 15
+    scale: 2
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: SuperficieHall
+    label: Superficie hall
+    physicalName: SUPERFICIE_HALL
+    dataType: Decimal
+    precision: 15
+    scale: 2
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: SuperficiePal
+    label: Superficie palier
+    physicalName: SUPERFICIE_PAL
+    dataType: Decimal
+    precision: 15
+    scale: 2
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: SuperficieQPCirculation
+    label: Superficie QP circulation
+    physicalName: SUPERFICIE_QP_CIRCULATION
+    dataType: Decimal
+    precision: 15
+    scale: 2
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: SuperficieQPPalier
+    label: Superficie QP palier
+    physicalName: SUPERFICIE_QP_PALIER
+    dataType: Decimal
+    precision: 15
+    scale: 2
+    mandatory: false
+
+
   - _type: EntityAttribute
     _name: IdentifiantPhysique
     label: Identifiant physique
@@ -225,9 +272,8 @@ attributes:
     label: Date régime TVA
     physicalName: DATE_REGIME_TVA
     dataType: Date
-    mandatory: true
-    mandatoryValidationLabel: "Date régime TVA est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatory: false
+
 
   - _type: EntityAttribute
     _name: NombreChambres
@@ -409,6 +455,14 @@ attributes:
     physicalName: SUPERFICIE_JARDIN
     dataType: String
     length: 100
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: UsageLot
+    label: Usage lot
+    physicalName: USAGE_LOT
+    dataType: String
+    length: 10
     mandatory: false
 
 sourceIdGeneration:

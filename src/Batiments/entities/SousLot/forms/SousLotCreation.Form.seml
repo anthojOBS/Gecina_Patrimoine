@@ -281,11 +281,10 @@ formTabs:
         visibleValueInterpreter: LITERAL
         labelWidth: 200px
         content:
-          - _type: TextField
+          - _type: ReferenceField
             _name: FDN_FiscaliteCible
-            value: Lot.FDN_FiscaliteCible
+            value: FDN_FiscaliteCible
             label: Régime TVA
-            authoringMode: force-read-only
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL

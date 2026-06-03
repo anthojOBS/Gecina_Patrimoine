@@ -1,0 +1,15 @@
+_package: Batiments.entities.Batiment.enrichers
+_name: FormatPays
+_type: SemQLEnricher
+entity: Batiments.entities.Batiment.Batiment
+label: Mise en qualité du pays
+enricherExecutionScope: NONE
+afterEnrichers: Batiments.entities.Batiment.enrichers.StandardizeAddress
+semQlEnricherExpressions: 
+  - attributeName: FID_Pays
+    expression: case when  any Pays.Batiment have (Pays.iso3 = Upper(substr(PaysEnrichie, 1, 3))) then UPPER(substr(PaysEnrichie, 1, 3)) else 'FRA' end
+condition: Adresse is not null or CodePostal is not null or Ville is not null
+
+
+ 
+         

@@ -65,15 +65,19 @@ rootStep:
           referencePickerCollectionView: Batiments.entities.SousSecteurImmostat.collection_views.SousSecteurImmostatCollectionView
           # referencePickerSearchTypeConfigs: []
 
-      formStepEnrichers:   
-        - enricher: Batiments.entities.Immeuble.enrichers.DefautPays
-          executedOnButtonClick: false
-          executedOnDataChange: false
-          executedOnFormOpen: true
+      formStepEnrichers:
         - enricher: Batiments.entities.Immeuble.enrichers.StandardizeAddress
-          executedOnButtonClick: true
+          executedOnButtonClick: false
           executedOnDataChange: true
           executedOnFormOpen: false
+        - enricher: Batiments.entities.Immeuble.enrichers.FormatPays
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: true  
+        - enricher: Batiments.entities.Immeuble.enrichers.ConcatAddress
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false 
         - enricher: Batiments.entities.Immeuble.enrichers.Portefeuille
           executedOnButtonClick: false
           executedOnDataChange: true

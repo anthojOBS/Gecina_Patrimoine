@@ -1,0 +1,15 @@
+_package: Batiments.entities.Immeuble.enrichers
+_name: DefautUsageImmeuble
+_type: SemQLEnricher
+entity: Batiments.entities.Immeuble.Immeuble
+label: Defaut Usage Immeuble
+enricherExecutionScope: POST_CONSO
+
+semQlEnricherExpressions: 
+
+  - attributeName: FID_Usage
+    expression: case  when (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'MIXTE'
+                         when (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'HAB' end) = 0  then 'ENT'
+                         when (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'ENT' end) = 0  and (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'HAB'
+                         else Null end
+condition: FID_Usage is null

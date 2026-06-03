@@ -134,6 +134,17 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
 
+
+  - _type: ReferenceColumn
+    _name: FDN_FiscaliteCible
+    value: FDN_FiscaliteCible
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.FiscaliteCible.FiscaliteCible
+
+
   - _type: TextColumn
     _name: DateRegimeTVA
     value: DateRegimeTVA

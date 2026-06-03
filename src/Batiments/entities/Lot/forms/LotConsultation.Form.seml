@@ -193,7 +193,7 @@ formTabs:
                     # Bloc Adresse/Ville
                         - _type: TextField
                           _name: Adresse
-                          value: Etage.Batiment.Adresse
+                          value: Etage.Batiment.AdresseStandardise
                           label: Adresse
                           labelProperties:
                             alignment: left
@@ -204,7 +204,7 @@ formTabs:
                           dataType: STRING
                         - _type: TextField
                           _name: CodePostal
-                          value: Etage.Batiment.CodePostal
+                          value: Etage.Batiment.CodePostalEnrichi
                           label: Code postal
                           labelProperties:
                             alignment: left
@@ -215,7 +215,7 @@ formTabs:
                           dataType: STRING
                         - _type: TextField
                           _name: Ville
-                          value: Etage.Batiment.Ville
+                          value: Etage.Batiment.VilleEnrichie
                           label: Ville
                           labelProperties:
                             alignment: left
@@ -266,6 +266,11 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
+                    componentProperties:                 
+                        displayFormat: dd/MM/yyyy                
+                        displayFormatValueInterpreter: LITERAL            
+                        editingFormat: dd/MM/yyyy                 
+                        editingFormatValueInterpreter: LITERAL  
                     dataType: DATE
                   - _type: ReferenceField
                     _name: FDN_RaisonNonLouable
@@ -292,7 +297,7 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
-                    visibleValue: FID_TypologieLot = 'SNI'
+                    visibleValue: FID_TypologieLot <> 'SNI'
                     visibleValueInterpreter: SEMQL
                     dataType: BOOLEAN   
 
@@ -660,7 +665,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+                visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' and NomAcquereur is not null
                 visibleValueInterpreter: SEMQL
                 dataType: STRING
 

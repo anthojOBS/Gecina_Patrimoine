@@ -32,15 +32,20 @@ rootStep:
       enableMasterValuePicking: false
       formTab: Batiments.entities.Batiment.forms.BatimentCreation.Batiment
 
-      formStepEnrichers:  
-        - enricher: Batiments.entities.Batiment.enrichers.DefautPays
-          executedOnButtonClick: false
-          executedOnDataChange: false
-          executedOnFormOpen: true
+      formStepEnrichers:
         - enricher: Batiments.entities.Batiment.enrichers.StandardizeAddress
-          executedOnButtonClick: true
-          executedOnDataChange: false
+          executedOnButtonClick: false
+          executedOnDataChange: true
           executedOnFormOpen: false
+        - enricher: Batiments.entities.Batiment.enrichers.FormatPays
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: true  
+        - enricher: Batiments.entities.Batiment.enrichers.ConcatAddress
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false 
+
         - enricher: Batiments.entities.Batiment.enrichers.DefautDtDebUsage
           executedOnButtonClick: false
           executedOnDataChange: false
@@ -71,7 +76,11 @@ rootStep:
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute: Batiments.references.BatimentToPays.Pays
-
+        - validator: Batiments.entities.Batiment.validations.CheckCoherenceVille
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.entities.Batiment.Batiment.Ville
 
       stepTransitionValidations:
         - onStepExit: BLOCK
@@ -92,55 +101,12 @@ rootStep:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute:  Batiments.references.BatimentToPays.Pays
-
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Batiment.validations.CheckCoherenceVille
         - onStepExit: WARN
           validationType: DETECT_DUPS
           matcher: Batiments.entities.Batiment.Batiment.Matcher
-
-
-
-    # - _type: CollectionStep
-    #   enableChildImportOnParentCreate: true
-    #   enableChildImportOnParentEdit: true 
-    #   childImportModeOnParentEdit: CREATE_ONLY 
-    #   enableChildCopyOnParentCreate: true
-    #   enableChildCopyOnParentEdit: true
-    #   enableChildCreationOnParentCreate: true
-    #   enableChildCreationOnParentEdit: true 
-    #   enableChildDeleteOnParentEdit: true
-    #   enableChildEditOnParentCreate: true
-    #   enableChildEditOnParentEdit: true
-    #   enableChildRemoveOnParentCreate: true
-    #   enableChildRemoveOnParentEdit: true
-    #   skipToChildCreationOnParentCreate: false
-    #   skipToChildEditingOnParentEdit: false
-    #   linear: false
-    #   _name: Composition
-    #   label: Composition
-    #   canFinishSubLevel: true
-    #   enabledOnParentCreate: true
-    #   enabledOnParentEdit: true
-    #   formFieldsMode: AUTO
-    #   childDeleteType: HARD_DELETE
-    #   oneToManyReference: Batiments.references.EtageToBatiment
-    #   collectionView: Batiments.entities.Etage.collection_views.EtageCompositionConsultation
-    #   defaultDisplayType: TABLE
-    #   customSortEnabled: false
-    #   userDefinedSortEnabled: true
-    #   displayGridAllowed: false
-    #   displayListAllowed: true
-    #   displayTableAllowed: true
-    #   useCustomCollectionLabel: false
-    #   childSteps:
-    #     - _type: FormStep
-    #       _name: Etage_form
-    #       label: Composition des étages 
-    #       canFinishSubLevel: true
-    #       enabledOnParentCreate: true
-    #       enabledOnParentEdit: true
-    #       formFieldsMode: AUTO
-    #       enableMasterValuePicking: false
-    #       formTab: Batiments.entities.Etage.forms.EtageForm.Etage
 
 
     - _type: FormStep
@@ -189,6 +155,7 @@ rootStep:
           attribute:  Batiments.references.BatimentToPeriodeConstruction.PeriodeConstruction
 
       stepTransitionValidations:
+
         - onStepExit: BLOCK
           validationType: CHECK
           validator: Batiments.entities.Batiment.validations.CheckDtLivraison
@@ -259,6 +226,9 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.references.BatimentToPays.Pays    
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Batiment.validations.CheckCoherenceVille
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY

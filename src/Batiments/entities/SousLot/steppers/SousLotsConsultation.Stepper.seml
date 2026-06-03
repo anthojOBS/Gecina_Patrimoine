@@ -34,10 +34,11 @@ rootStep:
 
 
       formStepEnrichers:  
-        - enricher: Batiments.entities.SousLot.enrichers.DefautLouable
+        - enricher: Batiments.entities.SousLot.enrichers.DefautRaisonNonLouable
           executedOnButtonClick: false
-          executedOnDataChange: false
-          executedOnFormOpen: true
+          executedOnDataChange: true
+          executedOnFormOpen: false
+
 
     - _type: FormStep
       _name: Composition
@@ -70,3 +71,14 @@ rootStep:
       formFieldsMode: AUTO
       enableMasterValuePicking: false
       formTab: Batiments.entities.SousLot.forms.SousLotConsultation.JuridiquePropriete
+
+
+
+    # - _type: StepEnricherTrigger
+    #   _name: Immeuble
+    #   label: Immeuble
+    #   enabledOnParentCreate: false
+    #   enabledOnParentEdit: true
+    #   enricher: Batiments.entities.Immeuble.enrichers.DefautUsageImmeuble
+    #   event: ON_STEP_EXIT_POST_VALID 
+        

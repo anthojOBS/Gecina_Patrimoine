@@ -94,5 +94,5 @@ actions:
     label: Expliquer l'enregistrement
     useCustomLabel: true
     displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
-    formTab: Batiments.entities.Lot.forms.LotConsultation.Lot
+    formTab: Batiments.entities.Lot.forms.LotExplication.Lot
     waitDialogEnabled: false

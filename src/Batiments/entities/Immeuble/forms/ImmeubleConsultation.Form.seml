@@ -81,12 +81,8 @@ formTabs:
                     layoutDirection: COLUMN
                     content:
                       - _type: TextField
-                        _name: Adresse
-                        value: Adresse
-                        componentProperties:
-                          multilineMaxLines: "3"
-                          multilineMinLines: "1"
-                          isMultiline: "1"
+                        _name: AdresseStandardise
+                        value: AdresseStandardise
                         label: Adresse
                         labelProperties:
                           alignment: left
@@ -95,10 +91,11 @@ formTabs:
                           color: md:black
                         useCustomLabel: false
                         dataType: STRING
+
                       - _type: TextField
-                        _name: CodePostal
-                        value: CodePostal
-                        label: Code postal
+                        _name: CodePostalEnrichi
+                        value: CodePostalEnrichi
+                        label: Code postal enrichi
                         labelProperties:
                           alignment: left
                           typographyValueInterpreter: LITERAL
@@ -106,16 +103,18 @@ formTabs:
                           color: md:black
                         useCustomLabel: false
                         dataType: STRING
+
                       - _type: TextField
-                        _name: Ville
-                        value: Ville
-                        label: Ville
+                        _name: VilleEnrichie
+                        value: VilleEnrichie
+                        label: Ville enrichie
                         labelProperties:
                           alignment: left
                           typography: body-2
                           color: md:black
                         useCustomLabel: false
                         dataType: STRING
+
                       - _type: ReferenceField
                         _name: FDN_Pays
                         value: FDN_Pays
@@ -128,6 +127,7 @@ formTabs:
                         useCustomLabel: true
                         dataType: STRING
                         referencedEntity: Batiments.entities.Pays.Pays
+
                       - _type: ReferenceField
                         _name: FDN_ZoneImmostat
                         value: FDN_ZoneImmostat
@@ -1228,7 +1228,8 @@ formTabs:
   - _type: FormTab
     _name: Equipements
     label: Equipements
-    iconUrl: images://mdi/office-building-cog.svg
+    # iconUrl: images://mdi/office-building-cog.svg
+    iconUrl: images://GECINA/office-building-cog.svg
     documentationInterpreter: LITERAL
     visibleValue: FID_OrgaResp = 'DR' 
     visibleValueInterpreter: SEMQL
