@@ -107,7 +107,7 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
-                    visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+                    visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' and StatutNewLot = '1'
                     visibleValueInterpreter: SEMQL
                     dataType: BOOLEAN
 
@@ -417,26 +417,26 @@ formTabs:
 
      
 
-      - _type: FormCollection
-        _name: Compteur
-        label: Informations compteur
-        pluralLabel: Informations compteur
-        useCustomLabel: true
-        collection: Batiments.entities.Compteur.collection_views.CompteurCollectionView
-        actionSet: Batiments.entities.Compteur.action_sets.CompteurActionSet
-        tableAllowed: true
-        listAllowed: false
-        gridAllowed: false
-        displayRecordCount: ALWAYS
-        enableUserDefinedSort: true
-        transitionPath: Compteur
-        sortExpression: 1 DESC
-        filter: 1=1
-        targetEntity: Batiments.entities.Compteur.Compteur
-        height: 300
-        formCollectionSearchConfigs:
-          - enabled: true 
-            searchType: TEXT
+      # - _type: FormCollection
+      #   _name: Compteur
+      #   label: Informations compteur
+      #   pluralLabel: Informations compteur
+      #   useCustomLabel: true
+      #   collection: Batiments.entities.Compteur.collection_views.CompteurCollectionView
+      #   actionSet: Batiments.entities.Compteur.action_sets.CompteurActionSet
+      #   tableAllowed: true
+      #   listAllowed: false
+      #   gridAllowed: false
+      #   displayRecordCount: ALWAYS
+      #   enableUserDefinedSort: true
+      #   transitionPath: Compteur
+      #   sortExpression: 1 DESC
+      #   filter: 1=1
+      #   targetEntity: Batiments.entities.Compteur.Compteur
+      #   height: 300
+      #   formCollectionSearchConfigs:
+      #     - enabled: true 
+      #       searchType: TEXT
 
 
   - _type: FormTab
@@ -472,6 +472,8 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
+                visibleValue: FID_TypologieLot = 'AP' and SuperficieHabitable is not null 
+                visibleValueInterpreter: SEMQL
                 dataType: STRING
 
               - _type: TextField
@@ -485,7 +487,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: SuperficieUtileSansQP is not null
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','FS','SNI') and SuperficieUtileSansQP is not null
                 visibleValueInterpreter: SEMQL
                 dataType: STRING 
   
@@ -500,7 +502,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: SuperficieUtileQP is not null
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','FS') and SuperficieUtileQP is not null
                 visibleValueInterpreter: SEMQL
                 dataType: STRING 
 
@@ -515,7 +517,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: SuperficieTaxable is not null
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','PK') and SuperficieTaxable is not null
                 visibleValueInterpreter: SEMQL
                 dataType: STRING
                 referencedEntity: Batiments.entities.DestinationTaxable.DestinationTaxable
@@ -531,7 +533,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: SuperficieTaxable is not null
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','PK') and SuperficieTaxable is not null
                 visibleValueInterpreter: SEMQL
                 dataType: STRING 
 
@@ -546,7 +548,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: SuperficieUtilePonderee is not null
+                visibleValue: FID_TypologieLot in ('LC','LD') and SuperficieUtilePonderee is not null
                 visibleValueInterpreter: SEMQL
                 dataType: STRING 
 

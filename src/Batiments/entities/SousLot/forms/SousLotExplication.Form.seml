@@ -192,8 +192,8 @@ formTabs:
                     dataType: STRING
 
                   - _type: TextField
-                    _name: SuperficieUtileQP
-                    value: case when SuperficieUtileQP is not null then SuperficieUtileQP || ' m²' else null end
+                    _name: SuperficieHabitableQP
+                    value: case when SuperficieHabitableQP is not null then SuperficieHabitableQP || ' m²' else null end
                     label: Superficie habitable (SHAB) avec QP
                     documentation: Superficie habitable (SHAB) avec quote-part de parties communes.
                     labelProperties:

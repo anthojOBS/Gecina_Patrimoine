@@ -329,6 +329,8 @@ formTabs:
                   typographyValueInterpreter: LITERAL
                   typography: body-2
                   color: md:black
+                visibleValue: FID_TypologieLot = 'AP'
+                visibleValueInterpreter: SEMQL
                 useCustomLabel: true
                 dataType: DECIMAL
 

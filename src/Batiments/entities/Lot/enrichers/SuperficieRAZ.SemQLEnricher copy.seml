@@ -1,0 +1,18 @@
+_package: Batiments.entities.Lot.enrichers
+_name: SuperficieRAZ
+_type: SemQLEnricher
+entity: Batiments.entities.Lot.Lot
+label: Calcul Superficie Utile
+enricherExecutionScope: POST_CONSO
+semQlEnricherExpressions: 
+  - attributeName: SuperficieUtileQP
+    expression: case when FID_TypologieLot not in ('PL','LC','LD','CL','FS','SNI') then NULL else SuperficieUtileQP end
+
+  - attributeName: SuperficieUtileSansQP
+    expression: case when FID_TypologieLot not in ('PL','LC','LD','CL','FS','SNI') then NULL else SuperficieUtileSansQP end
+
+  - attributeName: SuperficieUtilePonderee
+    expression: case when FID_TypologieLot not in ('LC','LD') then NULL else SuperficieUtilePonderee end
+
+  - attributeName: SuperficieHabitable
+    expression: case when FID_TypologieLot not in ('AP') then NULL else SuperficieHabitable end

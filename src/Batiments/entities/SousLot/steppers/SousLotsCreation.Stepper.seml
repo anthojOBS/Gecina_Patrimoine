@@ -93,23 +93,17 @@ rootStep:
       formTab: Batiments.entities.SousLot.forms.SousLotCreation.Composition
 
       formStepValidations:  
-        - executedOnDataChange: true
+        - validator: Batiments.entities.SousLot.validations.CheckSuperficieHabitable
+          executedOnDataChange: true
           executedOnFormOpen: true
-          validationType: MANDATORY
+          validationType: CHECK
           attribute: Batiments.entities.SousLot.SousLot.SuperficieHabitable
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.entities.SousLot.SousLot.SuperficieUtileQP
-
 
       stepTransitionValidations:
         - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.entities.SousLot.SousLot.SuperficieHabitable
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.entities.SousLot.SousLot.SuperficieUtileQP
+          validationType: CHECK
+          validator: Batiments.entities.SousLot.validations.CheckSuperficieHabitable
+
 
     - _type: FormStep
       _name: CycleDeVie
@@ -181,15 +175,17 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.SousLot.SousLot.SuperficieHabitable
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.entities.SousLot.SousLot.SuperficieUtileQP
+
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute:  Batiments.references.SousLotToPhase.Phase
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.SousLot.SousLot.DateDebPhase
+
   - onStepperFinish: BLOCK
     validationType: CHECK
     validator: Batiments.entities.SousLot.validations.CheckRaisonNonLouable
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.SousLot.validations.CheckSuperficieHabitable

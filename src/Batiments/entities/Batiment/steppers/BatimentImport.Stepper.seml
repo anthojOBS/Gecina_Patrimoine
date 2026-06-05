@@ -32,3 +32,16 @@ rootStep:
       enableMasterValuePicking: false
       formTab: Batiments.entities.Batiment.forms.BatimentEdition.Batiment
 
+      formStepEnrichers:
+        - enricher: Batiments.entities.Batiment.enrichers.StandardizeAddress
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false
+        - enricher: Batiments.entities.Batiment.enrichers.FormatPays
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: true  
+        - enricher: Batiments.entities.Batiment.enrichers.ConcatAddress
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false 

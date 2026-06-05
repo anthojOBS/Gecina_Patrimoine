@@ -123,6 +123,8 @@ formTabs:
                     _name: DateDebStatut
                     value: DateDebStatut
                     label: Date début statut
+                    authoringMode: case when StatutLouable <> GoldenRecord.StatutLouable then 'auto' else 'force-read-only' end
+                    authoringModeValueInterpreter: SEMQL 
                     labelProperties:
                       alignment: left
                       typographyValueInterpreter: LITERAL
@@ -188,10 +190,10 @@ formTabs:
                 dataType: STRING
 
               - _type: TextField
-                _name: SuperficieUtileQP
-                value: SuperficieUtileQP
-                label: Superficie utile avec QP
-                documentation: Superficie utile avec quote-part de parties communes.
+                _name: SuperficieHabitableQP
+                value: SuperficieHabitableQP
+                label: Superficie habitable avec QP
+                documentation: Superficie habitable avec quote-part de parties communes.
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL

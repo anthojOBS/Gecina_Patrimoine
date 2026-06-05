@@ -478,38 +478,63 @@ tableColumns:
     useCustomLabel: false
     dataType: DECIMAL
     columnAlign: LEFT
-    visibleByDefault: false
+    visibleByDefault: true
 
   - _type: TextColumn
-    _name: SurperficieHallCouloir
-    value: SurperficieHallCouloir
+    _name: SuperficieHallCouloir
+    value: SuperficieHallCouloir
     useCustomLabel: false
     dataType: DECIMAL
     columnAlign: LEFT
-    visibleByDefault: false
+    visibleByDefault: true
+
 
   - _type: TextColumn
-    _name: SurperficieTerrasses
-    value: SurperficieTerrasses
+    _name: SuperficieHall
+    value: SuperficieHall
     useCustomLabel: false
     dataType: DECIMAL
     columnAlign: LEFT
-    visibleByDefault: false
-  - _type: TextColumn
-    _name: SurperficieToitures
-    value: SurperficieToitures
-    useCustomLabel: false
-    dataType: DECIMAL
-    columnAlign: LEFT
-    visibleByDefault: false
+    visibleByDefault: true
 
   - _type: TextColumn
-    _name: SurperficieEspacesVerts
-    value: SurperficieEspacesVerts
+    _name: SuperficieQPPalier
+    value: SuperficieQPPalier
     useCustomLabel: false
     dataType: DECIMAL
     columnAlign: LEFT
-    visibleByDefault: false
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: SuperficiePalier
+    value: SuperficiePalier
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: SuperficieTerrasses
+    value: SuperficieTerrasses
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: SuperficieToitures
+    value: SuperficieToitures
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: SuperficieEspacesVerts
+    value: SuperficieEspacesVerts
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
 
 
   - _type: HyperlinkColumn

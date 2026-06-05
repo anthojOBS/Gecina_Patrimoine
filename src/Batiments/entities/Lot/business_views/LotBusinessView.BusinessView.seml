@@ -42,9 +42,9 @@ rootBusinessViewEntity:
       browsingTarget: BUSINESS_OBJECT_VIEW
       businessView: Batiments.entities.Service.business_views.ServiceBusinessView
 
-    - formCollection: Batiments.entities.Lot.forms.LotConsultation.Lot.Compteur
-      browsingTarget: BUSINESS_OBJECT_VIEW
-      businessView: Batiments.entities.Compteur.business_views.CompteurBusinessView
+    # - formCollection: Batiments.entities.Lot.forms.LotConsultation.Lot.Compteur
+    #   browsingTarget: BUSINESS_OBJECT_VIEW
+    #   businessView: Batiments.entities.Compteur.business_views.CompteurBusinessView
 
 
     - formCollection: Batiments.entities.Lot.forms.LotConsultation.JuridiquePropriete.Societes

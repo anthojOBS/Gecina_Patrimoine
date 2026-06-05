@@ -1,0 +1,8 @@
+_package: Batiments.entities.SousLot.validations
+_name: CheckSuperficieHabitable
+_type: SemQLValidation
+entity: Batiments.entities.SousLot.SousLot
+label: Superficie habitable obligatoire
+condition:  (Lot.FID_TypologieLot = 'PI'  and SuperficieHabitable is not null) or Lot.FID_TypologieLot != 'PI'  or Lot.FID_TypologieLot is null
+validationScope: POST_CONSO
+validationLabel: Superficie habitable doit être renseignée si la typologie du lot est une pièce.

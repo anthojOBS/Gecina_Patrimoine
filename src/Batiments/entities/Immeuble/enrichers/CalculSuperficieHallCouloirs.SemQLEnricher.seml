@@ -1,0 +1,10 @@
+_package: Batiments.entities.Immeuble.enrichers
+_name: CalculSuperficieHallCouloirs
+_type: SemQLEnricher
+entity: Batiments.entities.Immeuble.Immeuble
+label: Calcul Superficie Hall/Couloirs
+enricherExecutionScope: POST_CONSO
+semQlEnricherExpressions: 
+  - attributeName: SuperficieHallCouloir
+    expression: coalesce(SuperficieHall, 0) + coalesce(SuperficieQPPalier, 0) + coalesce(SuperficiePalier, 0)
+    

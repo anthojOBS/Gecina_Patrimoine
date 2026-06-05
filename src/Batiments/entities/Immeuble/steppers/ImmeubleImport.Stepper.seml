@@ -38,12 +38,23 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: true
           executedOnFormOpen: false
-
+        - enricher: Batiments.entities.Immeuble.enrichers.FormatPays
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false  
+        - enricher: Batiments.entities.Immeuble.enrichers.ConcatAddress
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false 
         - enricher: Batiments.entities.Immeuble.enrichers.Portefeuille
           executedOnButtonClick: false
           executedOnDataChange: true
           executedOnFormOpen: false
 
+        - enricher: Batiments.entities.Immeuble.enrichers.CalculSuperficieHallCouloirs
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false
         - enricher: Batiments.entities.Immeuble.enrichers.DefautPeriodConstruct
           executedOnButtonClick: false
           executedOnDataChange: true

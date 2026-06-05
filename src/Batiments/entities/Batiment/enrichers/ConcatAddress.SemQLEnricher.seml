@@ -3,7 +3,7 @@ _name: ConcatAddress
 _type: SemQLEnricher
 entity: Batiments.entities.Batiment.Batiment
 label: Concat Address
-enricherExecutionScope: NONE
+enricherExecutionScope: PRE_CONSO
 afterEnrichers: Batiments.entities.Batiment.enrichers.StandardizeAddress
 semQlEnricherExpressions: 
   - attributeName: AdresseStandardise

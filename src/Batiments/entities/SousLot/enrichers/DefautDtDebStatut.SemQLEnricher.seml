@@ -7,4 +7,4 @@ enricherExecutionScope: NONE
 semQlEnricherExpressions: 
   - attributeName: DateDebStatut
     expression: CURRENT_DATE()
-condition: DateDebStatut is NULL 
+condition: DateDebStatut is NULL   or  StatutLouable <> GoldenRecord.StatutLouable 

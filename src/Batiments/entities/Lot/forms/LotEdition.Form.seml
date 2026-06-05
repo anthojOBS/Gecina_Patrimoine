@@ -104,7 +104,8 @@ formTabs:
                     _name: StatutNewLot
                     value: StatutNewLot
                     label: Statut new lot
-                    authoringMode: force-read-only
+                    authoringMode: case when StatutNewLot ='0' then 'auto' else 'force-read-only' end
+                    authoringModeValueInterpreter: SEMQL
                     labelProperties:
                       alignment: left
                       typographyValueInterpreter: LITERAL
@@ -264,6 +265,8 @@ formTabs:
                       typographyValueInterpreter: LITERAL
                       typography: body-2
                       color: md:black
+                    authoringMode: case when StatutLouable <> GoldenRecord.StatutLouable then 'auto' else 'force-read-only' end
+                    authoringModeValueInterpreter: SEMQL 
                     componentProperties:                 
                       displayFormat: dd/MM/yyyy                
                       displayFormatValueInterpreter: LITERAL            
@@ -334,6 +337,8 @@ formTabs:
                   typographyValueInterpreter: LITERAL
                   typography: body-2
                   color: md:black
+                visibleValue: FID_TypologieLot = 'AP' 
+                visibleValueInterpreter: SEMQL
                 useCustomLabel: true
                 dataType: DECIMAL
 

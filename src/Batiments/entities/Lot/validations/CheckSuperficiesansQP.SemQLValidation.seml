@@ -3,6 +3,6 @@ _name: CheckSuperficiesansQP
 _type: SemQLValidation
 entity: Batiments.entities.Lot.Lot
 label: Superficie utile sans QP obligatoire 
-condition:  (FID_TypologieLot = 'PL'  and SuperficieUtileQP is not null) or FID_TypologieLot != 'PL'  or FID_TypologieLot is null
+condition:  (FID_TypologieLot = 'PL'  and SuperficieUtileSansQP is not null) or FID_TypologieLot != 'PL'  or FID_TypologieLot is null
 validationScope: POST_CONSO
 validationLabel: Superficie utile sans QP doit être renseigné si la typologie du lot est un plateau.

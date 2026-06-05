@@ -92,20 +92,16 @@ attributes:
     dataType: Decimal
     precision: 15
     scale: 2
-    mandatory: true
-    mandatoryValidationLabel: "Superficie Habitable (SHAB) est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatory: false
 
   - _type: EntityAttribute
-    _name: SuperficieUtileQP
+    _name: SuperficieHabitableQP
     label: Superficie Habitable (SHAB) avec QP
-    physicalName: SUPERFICIE_UTILE_QP
+    physicalName: SUPERFICIE_HABITABLE_QP
     dataType: Decimal
     precision: 15
     scale: 2
-    mandatory: true
-    mandatoryValidationLabel: "Superficie Habitable (SHAB) avec QP est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatory: false
 
   - _type: EntityAttribute
     _name: DateDebPhase

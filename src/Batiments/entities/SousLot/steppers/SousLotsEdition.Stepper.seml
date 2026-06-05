@@ -35,7 +35,7 @@ rootStep:
       formStepEnrichers:   
         - enricher: Batiments.entities.SousLot.enrichers.DefautDtDebStatut
           executedOnButtonClick: false
-          executedOnDataChange: false
+          executedOnDataChange: true
           executedOnFormOpen: true
 
 
@@ -75,23 +75,18 @@ rootStep:
       formTab: Batiments.entities.SousLot.forms.SousLotEdition.Composition
 
       formStepValidations:  
-        - executedOnDataChange: true
+        - validator: Batiments.entities.SousLot.validations.CheckSuperficieHabitable
+          executedOnDataChange: true
           executedOnFormOpen: true
-          validationType: MANDATORY
+          validationType: CHECK
           attribute: Batiments.entities.SousLot.SousLot.SuperficieHabitable
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.entities.SousLot.SousLot.SuperficieUtileQP
-
 
       stepTransitionValidations:
         - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.entities.SousLot.SousLot.SuperficieHabitable
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.entities.SousLot.SousLot.SuperficieUtileQP
+          validationType: CHECK
+          validator: Batiments.entities.SousLot.validations.CheckSuperficieHabitable
+
+
 
     - _type: FormStep
       _name: CycleDeVie
@@ -122,6 +117,10 @@ rootStep:
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute: Batiments.entities.SousLot.SousLot.DateDebPhase
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.SousLot.SousLot.DateDebStatut
 
       stepTransitionValidations:
         - onStepExit: BLOCK
@@ -130,6 +129,9 @@ rootStep:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.entities.SousLot.SousLot.DateDebPhase
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.SousLot.SousLot.DateDebStatut
 
     - _type: FormStep
       _name: FiscaliteJuridique
@@ -157,17 +159,20 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.SousLot.SousLot.SuperficieHabitable
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.entities.SousLot.SousLot.SuperficieUtileQP
+
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute:  Batiments.references.SousLotToPhase.Phase
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.SousLot.SousLot.DateDebPhase
-
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.SousLot.SousLot.DateDebStatut
   - onStepperFinish: BLOCK
     validationType: CHECK
     validator: Batiments.entities.SousLot.validations.CheckRaisonNonLouable
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.SousLot.validations.CheckSuperficieHabitable
 

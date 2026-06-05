@@ -294,16 +294,40 @@ attributes:
     mandatory: false
 
   - _type: EntityAttribute
-    _name: SurperficieHallCouloir
+    _name: SuperficieHallCouloir
     label: Superficie halls/couloirs
     physicalName: SUPERF_HALL_COULOIR
     dataType: Decimal
     precision: 18
     scale: 2
     mandatory: false
+  - _type: EntityAttribute
+    _name: SuperficieHall
+    label: Superficie halls
+    physicalName: SUPERF_HALL
+    dataType: Decimal
+    precision: 18
+    scale: 2
+    mandatory: false
+  - _type: EntityAttribute
+    _name: SuperficiePalier
+    label: Superficie paliers
+    physicalName: SUPERF_PALIER
+    dataType: Decimal
+    precision: 18
+    scale: 2
+    mandatory: false
+  - _type: EntityAttribute
+    _name: SuperficieQPPalier
+    label: Superficie QP paliers
+    physicalName: SUPERF_QP_PALIER
+    dataType: Decimal
+    precision: 18
+    scale: 2
+    mandatory: false
 
   - _type: EntityAttribute
-    _name: SurperficieTerrasses
+    _name: SuperficieTerrasses
     label: Superficie terrasses
     physicalName: SUPERF_TERRASSES
     dataType: Decimal
@@ -312,7 +336,7 @@ attributes:
     mandatory: false
 
   - _type: EntityAttribute
-    _name: SurperficieToitures
+    _name: SuperficieToitures
     label: Superficie toitures
     physicalName: SUPERF_TOITURE
     dataType: Decimal
@@ -321,7 +345,7 @@ attributes:
     mandatory: false
     
   - _type: EntityAttribute
-    _name: SurperficieEspacesVerts
+    _name: SuperficieEspacesVerts
     label: Superficie espaces verts
     physicalName: SUPERF_ESPACES_VERTS
     dataType: Decimal

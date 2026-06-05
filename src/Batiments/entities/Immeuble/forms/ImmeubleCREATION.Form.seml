@@ -561,8 +561,8 @@ formTabs:
             content:
 
               - _type: TextField
-                _name: SurperficieHallCouloir
-                value: SurperficieHallCouloir
+                _name: SuperficieHallCouloir
+                value: SuperficieHallCouloir
                 label: Superficie halls/couloirs
                 documentation: Superficie halls/couloir.
                 labelProperties:
@@ -573,8 +573,8 @@ formTabs:
                 useCustomLabel: true
                 dataType: DECIMAL
               - _type: TextField
-                _name: SurperficieTerrasses
-                value: SurperficieTerrasses
+                _name: SuperficieTerrasses
+                value: SuperficieTerrasses
                 label: Superficie terrasses
                 documentation: Superficie terrasses.
                 labelProperties:
@@ -585,8 +585,8 @@ formTabs:
                 useCustomLabel: true
                 dataType: DECIMAL
               - _type: TextField
-                _name: SurperficieToitures
-                value: SurperficieToitures
+                _name: SuperficieToitures
+                value: SuperficieToitures
                 label: Superficie toitures
                 documentation: Superficie toitures.
                 labelProperties:
@@ -597,8 +597,8 @@ formTabs:
                 useCustomLabel: true
                 dataType: DECIMAL
               - _type: TextField
-                _name: SurperficieEspacesVerts
-                value: SurperficieEspacesVerts
+                _name: SuperficieEspacesVerts
+                value: SuperficieEspacesVerts
                 label: Superficie espaces verts
                 documentation: Superficie espaces verts.
                 labelProperties:

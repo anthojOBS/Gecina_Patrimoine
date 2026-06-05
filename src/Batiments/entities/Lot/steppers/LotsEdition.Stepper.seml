@@ -48,6 +48,10 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
+        - enricher: Batiments.entities.Lot.enrichers.DefautDtDebStatut
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: true
         - enricher: Batiments.entities.Lot.enrichers.DefautGenreLot
           executedOnButtonClick: false
           executedOnDataChange: true
@@ -59,6 +63,10 @@ rootStep:
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute: Batiments.entities.Lot.Lot.DateDebUsage
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.entities.Lot.Lot.DateDebStatut
         - executedOnDataChange: true
           executedOnFormOpen: true
           validationType: MANDATORY
@@ -85,6 +93,9 @@ rootStep:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.entities.Lot.Lot.DateDebUsage
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.Lot.Lot.DateDebStatut
 
         - onStepExit: BLOCK
           validationType: MANDATORY
@@ -109,6 +120,12 @@ rootStep:
       enableMasterValuePicking: false
       formTab: Batiments.entities.Lot.forms.LotEdition.Composition
 
+      formStepEnrichers:   
+        - enricher: Batiments.entities.Lot.enrichers.SuperficieRAZ
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: true
+
       formStepValidations:  
         - validator: Batiments.entities.Lot.validations.CheckDestinationTaxable
           executedOnDataChange: true
@@ -125,7 +142,11 @@ rootStep:
           executedOnFormOpen: true
           validationType: CHECK
           attribute: Batiments.entities.Lot.Lot.SuperficieUtileSansQP
-
+        - validator: Batiments.entities.Lot.validations.CheckSuperficieHabitable
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.entities.Lot.Lot.SuperficieHabitable
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: CHECK
@@ -136,7 +157,9 @@ rootStep:
         - onStepExit: BLOCK
           validationType: CHECK
           validator: Batiments.entities.Lot.validations.CheckSuperficiesansQP
-
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Lot.validations.CheckSuperficieHabitable
 
 
 
@@ -309,6 +332,9 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.Lot.Lot.DateDebUsage
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.entities.Lot.Lot.DateDebStatut
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY
@@ -326,7 +352,9 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: CHECK
     validator: Batiments.entities.Lot.validations.CheckSuperficieQP
-
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Lot.validations.CheckSuperficieHabitable
 
 
   - onStepperFinish: BLOCK

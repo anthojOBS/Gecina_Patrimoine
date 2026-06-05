@@ -38,6 +38,10 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: true
           executedOnFormOpen: false
+        - enricher: Batiments.entities.Lot.enrichers.CalculSuperficieUtile
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false
 
       # formStepValidations:
       #   - executedOnDataChange: true

@@ -162,8 +162,8 @@ tableColumns:
     visibleByDefault: true
 
   - _type: TextColumn
-    _name: SuperficieUtileQP
-    value: SuperficieUtileQP
+    _name: SuperficieHabitableQP
+    value: SuperficieHabitableQP
     useCustomLabel: false
     dataType: DECIMAL
     columnAlign: LEFT

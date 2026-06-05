@@ -308,24 +308,6 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
 
-  - _type: ReferenceColumn
-    _name: FDN_DestinationTaxable
-    value: FDN_DestinationTaxable
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-    referencedEntity: Batiments.entities.DestinationTaxable.DestinationTaxable
-
-
-  - _type: TextColumn
-    _name: SuperficieTaxable
-    value: SuperficieTaxable
-    useCustomLabel: false
-    dataType: DECIMAL
-    columnAlign: LEFT
-    visibleByDefault: true
-
 
   - _type: TextColumn
     _name: SuperficieComm
@@ -333,7 +315,7 @@ tableColumns:
     useCustomLabel: false
     dataType: DECIMAL
     columnAlign: LEFT
-    visibleByDefault: false
+    visibleByDefault: true
     
   - _type: TextColumn
     _name: SuperficieHall
@@ -367,6 +349,25 @@ tableColumns:
     dataType: DECIMAL
     columnAlign: LEFT
     visibleByDefault: true
+
+  - _type: ReferenceColumn
+    _name: FDN_DestinationTaxable
+    value: FDN_DestinationTaxable
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.DestinationTaxable.DestinationTaxable
+
+
+  - _type: TextColumn
+    _name: SuperficieTaxable
+    value: SuperficieTaxable
+    useCustomLabel: false
+    dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+
 
   - _type: TextColumn
     _name: UsageLot

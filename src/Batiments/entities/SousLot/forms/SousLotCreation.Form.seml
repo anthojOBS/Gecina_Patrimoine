@@ -190,10 +190,10 @@ formTabs:
 
   
               - _type: TextField
-                _name: SuperficieUtileQP
-                value: SuperficieUtileQP
-                label: Superficie utile avec QP
-                documentation: Superficie utile avec quote-part de parties communes.
+                _name: SuperficieHabitableQP
+                value: SuperficieHabitableQP
+                label: Superficie habitable avec QP
+                documentation: Superficie habitable avec quote-part de parties communes.
                 labelProperties:
                   alignment: left
                   typographyValueInterpreter: LITERAL

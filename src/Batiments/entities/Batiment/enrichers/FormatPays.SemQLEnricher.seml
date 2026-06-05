@@ -3,7 +3,7 @@ _name: FormatPays
 _type: SemQLEnricher
 entity: Batiments.entities.Batiment.Batiment
 label: Mise en qualité du pays
-enricherExecutionScope: NONE
+enricherExecutionScope: PRE_CONSO
 afterEnrichers: Batiments.entities.Batiment.enrichers.StandardizeAddress
 semQlEnricherExpressions: 
   - attributeName: FID_Pays
