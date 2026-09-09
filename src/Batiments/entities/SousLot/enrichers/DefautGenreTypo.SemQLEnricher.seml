@@ -1,0 +1,11 @@
+_package: Batiments.entities.SousLot.enrichers
+_name: DefautGenreTypo
+_type: SemQLEnricher
+entity: Batiments.entities.SousLot.SousLot
+label: Defaut Genre et Typologie de lot
+enricherExecutionScope: POST_CONSO
+semQlEnricherExpressions: 
+  - attributeName: FID_GenreLot
+    expression: case when FID_GenreLot is null then 'CHA' else FID_GenreLot end
+  - attributeName: FID_TypologieLot 
+    expression: case when FID_TypologieLot is null then 'PI' else FID_TypologieLot end

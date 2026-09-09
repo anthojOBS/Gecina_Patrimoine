@@ -185,7 +185,7 @@ formTabs:
                           color: md:black
                         useCustomLabel: true
                         dataType: STRING
-                        visibleValue: Ville = 'Paris' and  (FID_Usage = 'RESI' OR FID_Usage = 'MIX')
+                        visibleValue: VilleEnrichie = 'Paris' and  (FID_Usage = 'RESI' OR FID_Usage = 'MIX')
                         visibleValueInterpreter: SEMQL
                         referencedEntity: Batiments.entities.QuartierParis.QuartierParis
        
@@ -729,7 +729,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_Usage = 'HAB' or  FID_Usage = 'MIX'
+                visibleValue: FID_Usage = 'RESI' or  FID_Usage = 'MIX'
                 visibleValueInterpreter: SEMQL
                 dataType: STRING
 
@@ -862,30 +862,6 @@ formTabs:
                 visibleValueInterpreter: SEMQL
                 dataType: STRING
 
-
-
-      - _type: FormCollection
-        _name: Services
-        label: Services
-        pluralLabel: Services
-        visibleValue: (lookup first (FID_Lot) from Batiment.Etage.Lot.Service end) is not null
-        visibleValueInterpreter: SEMQL
-        useCustomLabel: true
-        collection: Batiments.entities.Service.collection_views.ServiceCollectionImmeuble
-        actionSet: Batiments.entities.Service.action_sets.ServiceImmeuble
-        tableAllowed: true
-        listAllowed: false
-        gridAllowed: false
-        displayRecordCount: ALWAYS
-        enableUserDefinedSort: true
-        transitionPath: Batiment.Etage.Lot.Service
-        sortExpression: 1 DESC
-        filter: 1=1
-        targetEntity: Batiments.entities.Service.Service
-        height: 300
-        formCollectionSearchConfigs:
-        - enabled: true 
-          searchType: TEXT
     
       - _type: FormContainer
         _name: InformationGestion
@@ -911,6 +887,30 @@ formTabs:
                   color: md:black
                 useCustomLabel: true
                 dataType: BOOLEAN
+
+
+      - _type: FormCollection
+        _name: Services
+        label: Services
+        pluralLabel: Services
+        visibleValue: (lookup first (FID_Etage) from Batiment.Etage.Lot where FID_TypologieLot = 'SNI' end) is not null
+        visibleValueInterpreter: SEMQL
+        useCustomLabel: true
+        collection: Batiments.entities.Lot.collection_views.LotService
+        actionSet: Batiments.entities.Lot.action_sets.LotImmeuble
+        tableAllowed: true
+        listAllowed: false
+        gridAllowed: false
+        displayRecordCount: ALWAYS
+        enableUserDefinedSort: true
+        transitionPath: Batiment.Etage.Lot
+        sortExpression: 1 DESC
+        filter: FID_TypologieLot = 'SNI'
+        targetEntity: Batiments.entities.Lot.Lot
+        height: 300
+        formCollectionSearchConfigs:
+        - enabled: true 
+          searchType: TEXT
 
   - _type: FormTab
     _name: CycleVieImmeuble

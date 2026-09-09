@@ -1,0 +1,295 @@
+
+_package: Batiments.entities.Immeuble.search_forms
+_type: SearchForm
+_name: ImmeubleSearchForm
+label: Critères
+entity: Batiments.entities.Immeuble.Immeuble
+semQlCondition: (:SEARCH_PARAM_IDENTIFIANTS_ERP is null OR IdentifiantsERP = :SEARCH_PARAM_IDENTIFIANTS_ERP)
+ AND (:SEARCH_PARAM_LIBELLE is null OR Libelle = :SEARCH_PARAM_LIBELLE) 
+ AND (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+ AND (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+ AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+ AND (:SEARCH_PARAM_ZONE_IMMOSTAT is null OR FID_ZoneImmostat = :SEARCH_PARAM_ZONE_IMMOSTAT)
+ AND (:SEARCH_PARAM_SECTEUR_IMMOSTAT is null OR FID_SecteurImmostat = :SEARCH_PARAM_SECTEUR_IMMOSTAT)
+ AND (:SEARCH_PARAM_SOUSSSECTEUR_IMMOSTAT is null OR FID_SousSecteurImmostat = :SEARCH_PARAM_SOUSSSECTEUR_IMMOSTAT)
+ AND (:SEARCH_PARAM_QUARTIER_PARIS is null OR FID_QuartierParis = :SEARCH_PARAM_QUARTIER_PARIS) 
+ AND (:SEARCH_PARAM_USAGE is null OR FID_Usage = :SEARCH_PARAM_USAGE) 
+ AND (:SEARCH_PARAM_IGH is null OR (:SEARCH_PARAM_IGH = '1' AND IGH = '1') OR (:SEARCH_PARAM_IGH = '0' AND (IGH = '0' or IGH is null)))
+ AND (:SEARCH_PARAM_ERP is null OR (:SEARCH_PARAM_ERP = '1' AND ERP = '1') OR (:SEARCH_PARAM_ERP = '0' AND (ERP = '0' or ERP is null)))
+ AND (:SEARCH_PARAM_FLAG_RESTRUCTURATION is null OR (:SEARCH_PARAM_FLAG_RESTRUCTURATION = '1' AND FlagRestructuration = '1') OR (:SEARCH_PARAM_FLAG_RESTRUCTURATION = '0' AND (FlagRestructuration = '0' or FlagRestructuration is null))) 
+ AND (:SEARCH_PARAM_FISCALITE_CIBLE is null OR FID_FiscaliteCible = :SEARCH_PARAM_FISCALITE_CIBLE) 
+ AND (:SEARCH_PARAM_REGIME_JURIDIQUE is null OR FID_RegimeJuridique = :SEARCH_PARAM_REGIME_JURIDIQUE) 
+ AND (:SEARCH_PARAM_SOCIETE_PROPRIETAIRE is null OR (  any RelImmSoc has ( FID_Societe = :SEARCH_PARAM_SOCIETE_PROPRIETAIRE) ) )
+ AND (:SEARCH_PARAM_SOCIETE_EXPLOITANTE is null OR (  any RelImmSoc has ( FID_Societe = :SEARCH_PARAM_SOCIETE_EXPLOITANTE) ) )
+ AND (:SEARCH_PARAM_SERVICE is null OR (  any Batiment.Etage.Lot.Service has ( FID_TypeService = :SEARCH_PARAM_SERVICE) ) )
+
+searchParameters:
+  - _name: IdentifiantsERP
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_IDENTIFIANTS_ERP
+    label: Numéro immeuble
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: IdentifiantsERP
+    primaryTextExpression: IdentifiantsERP
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+      AND (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Immeuble.Immeuble
+  - _name: Libelle
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_LIBELLE
+    label: Libellé immeuble
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: Libelle
+    primaryTextExpression: Libelle
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+      AND (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+ 
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Immeuble.Immeuble
+  - _name: FDN_Orgaresp
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_ORGARESP
+    label: Organisation responsable
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_OrgaResp
+    primaryTextExpression: FDN_OrgaResp
+    filterExpression: (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Immeuble.Immeuble
+  - _name: FDN_Portefeuille
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_PORTEFEUILLE
+    label: Portefeuille gestion
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_Portefeuille
+    primaryTextExpression: FDN_Portefeuille
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Immeuble.Immeuble
+  - _name: FDN_SousPortefeuille
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_SSPORTEFEUILLE
+    label: Sous portefeuille gestion
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_SousPortefeuille
+    primaryTextExpression: FDN_SousPortefeuille
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+       AND (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE)
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Immeuble.Immeuble
+  - _name: FDN_ZoneImmostat
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_ZONE_IMMOSTAT
+    label: Zone immostat
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_ZoneImmostat
+    primaryTextExpression: FDN_ZoneImmostat
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+      AND (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Immeuble.Immeuble
+  - _name: FDN_SecteureImmostat
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_SECTEUR_IMMOSTAT
+    label: Secteur immostat
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_SecteurImmostat
+    primaryTextExpression: FDN_SecteurImmostat
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+      AND (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Immeuble.Immeuble
+  - _name: FDN_SousSecteurImmostat
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_SOUSSSECTEUR_IMMOSTAT
+    label: Sous secteur immostat
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_SousSecteurImmostat
+    primaryTextExpression: FDN_SousSecteurImmostat
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+      AND (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Immeuble.Immeuble
+  - _name: FDN_QuartierParis
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_QUARTIER_PARIS
+    label: Quartier Paris
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_QuartierParis
+    primaryTextExpression: FDN_QuartierParis
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+      AND (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Immeuble.Immeuble
+  - _name: FDN_Usage
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_USAGE
+    label: Usage
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_Usage
+    primaryTextExpression: FDN_Usage
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+      AND (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Immeuble.Immeuble
+
+  - _name: IGH
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_IGH
+    label: Statut IGH
+    dataType: Boolean
+    displayType: VALUE_PICKER
+    boundSelectExpression: IGH
+    primaryTextExpression: case when IGH = '0' or IGH is null then 'Inactif' else 'Actif' end
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+      AND (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Immeuble.Immeuble
+  - _name: ERP
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_ERP
+    label: Statut ERP
+    dataType: Boolean
+    displayType: VALUE_PICKER
+    boundSelectExpression: ERP
+    primaryTextExpression: case when ERP = '0' or ERP is null then 'Inactif' else 'Actif' end
+
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+      AND (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Immeuble.Immeuble
+    
+  - _name: Service
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_SERVICE
+    label: Services
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_TypeService
+    primaryTextExpression: FDN_TypeService
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Service.Service
+
+  - _name: FlagRestructuration
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_FLAG_RESTRUCTURATION
+    label: Flag restructuration
+    dataType: Boolean
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+      AND (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+    displayType: VALUE_PICKER
+    primaryTextExpression: case when FlagRestructuration = '0' or FlagRestructuration is null then 'Inactif' else 'Actif' end
+    boundSelectExpression: FlagRestructuration
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Immeuble.Immeuble
+
+  - _name: FDN_FiscaliteCible
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_FISCALITE_CIBLE
+    label: Régime TVA
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_FiscaliteCible
+    primaryTextExpression: FDN_FiscaliteCible
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+      AND (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Immeuble.Immeuble
+  - _name: FDN_RegimeJuridique
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_REGIME_JURIDIQUE
+    label: Régime juridique
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_RegimeJuridique
+    primaryTextExpression: FDN_RegimeJuridique
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+      AND (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Immeuble.Immeuble
+  - _name: SocieteProprietaire
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_SOCIETE_PROPRIETAIRE
+    label: Société propriétaire
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_Societe
+    primaryTextExpression: FDN_Societe
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR Immeuble.FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+      AND (:SEARCH_PARAM_PORTEFEUILLE is null OR Immeuble.FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR Immeuble.FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.RelImmSoc.RelImmSoc
+  - _name: SocieteExploitante
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_SOCIETE_EXPLOITANTE
+    label: Société exploitante
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_Societe
+    primaryTextExpression: FDN_Societe
+    filterExpression: (:SEARCH_PARAM_ORGARESP is null OR Immeuble.FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
+      AND (:SEARCH_PARAM_PORTEFEUILLE is null OR Immeuble.FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
+      AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR Immeuble.FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.RelImmSoc.RelImmSoc

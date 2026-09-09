@@ -3,8 +3,7 @@ _type: DisplayCard
 _name: TypeVenteDisplayCard
 entity: Batiments.entities.TypeVente.TypeVente
 default: true
-primaryTextExpression: TypeVente
-secondaryTextExpression: LibelleTypeVente
+primaryTextExpression: LibelleTypeVente
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

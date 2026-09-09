@@ -3,7 +3,7 @@ _type: Stepper
 _name: LotsEdition
 entity: Batiments.entities.Lot.Lot
 label: Lots
-modelJob: Batiments.model_jobs.Lot_immeuble
+# modelJob: Batiments.model_jobs.Lot_immeuble
 rootStep:
   _type: CollectionStep
   _name: Lots
@@ -29,7 +29,7 @@ rootStep:
     - _type: FormStep
       _name: Lot
       label: Fiche Lot
-      canFinishSubLevel: true
+      canFinishSubLevel: false
       enabledOnParentCreate: true
       enabledOnParentEdit: true
       formFieldsMode: AUTO
@@ -56,6 +56,14 @@ rootStep:
         - enableCreateReference: false
           enableUserSort: true
           referencePickerType: AUTO_COMPLETE
+          fdnFormField: Batiments.entities.Lot.forms.LotEdition.Lot.Identite.haut.Usage.FDN_TypologieLot
+          referenceFilter: Referenced.Code <> 'PI'
+          referencePickerCollectionView: Batiments.entities.TypologieLot.collection_views.TypologieLotCollectionView
+          # referencePickerSearchTypeConfigs: []
+
+        - enableCreateReference: false
+          enableUserSort: true
+          referencePickerType: AUTO_COMPLETE
           fdnFormField: Batiments.entities.Lot.forms.LotEdition.Lot.Identite.haut.Usage.FDN_GenreLot
           referenceFilter: Referenced.FID_TypologieLot = Record.FID_TypologieLot
           referencePickerCollectionView: Batiments.entities.GenreLot.collection_views.GenreLotCollectionView
@@ -70,10 +78,14 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: true
           executedOnFormOpen: true
-        - enricher: Batiments.entities.Lot.enrichers.DefautGenreLot
+        # - enricher: Batiments.entities.Lot.enrichers.DefautGenreLot
+        #   executedOnButtonClick: false
+        #   executedOnDataChange: true
+        #   executedOnFormOpen: false
+        - enricher: Batiments.entities.Lot.enrichers.AlimSocExploitante
           executedOnButtonClick: false
           executedOnDataChange: true
-          executedOnFormOpen: false
+          executedOnFormOpen: true
 
       formStepValidations:  
 
@@ -148,7 +160,7 @@ rootStep:
     - _type: FormStep
       _name: Composition
       label: Composition
-      canFinishSubLevel: true
+      canFinishSubLevel: false
       enabledOnParentCreate: true
       enabledOnParentEdit: true
       formFieldsMode: AUTO
@@ -202,67 +214,94 @@ rootStep:
 
 
 
-    - _type: CollectionStep
-      enableChildImportOnParentCreate: true
-      enableChildImportOnParentEdit: true 
-      childImportModeOnParentEdit: CREATE_ONLY 
-      enableChildCopyOnParentCreate: true
-      enableChildCopyOnParentEdit: true
-      enableChildCreationOnParentCreate: true
-      enableChildCreationOnParentEdit: true 
-      enableChildDeleteOnParentEdit: true
-      enableChildEditOnParentCreate: true
-      enableChildEditOnParentEdit: true
-      enableChildRemoveOnParentCreate: true
-      enableChildRemoveOnParentEdit: true
-      skipToChildCreationOnParentCreate: false
-      skipToChildEditingOnParentEdit: false
-      filter: Lot.FID_TypologieLot = 'SNI'
-      linear: false
-      _name: Service
-      label: Types services
-      canFinishSubLevel: true
-      enabledOnParentCreate: true
-      enabledOnParentEdit: true
-      formFieldsMode: AUTO
-      childDeleteType: HARD_DELETE
-      oneToManyReference: Batiments.references.ServiceToLot
-      collectionView: Batiments.entities.Service.collection_views.ServiceCollectionLot
-      defaultDisplayType: TABLE
-      customSortEnabled: false
-      userDefinedSortEnabled: true
-      displayGridAllowed: false
-      displayListAllowed: true
-      displayTableAllowed: true
-      useCustomCollectionLabel: false
-      childSteps:
-        - _type: FormStep
-          _name: Service_form
-          label: Services
-          canFinishSubLevel: true
-          enabledOnParentCreate: true
-          enabledOnParentEdit: true
-          formFieldsMode: AUTO
-          enableMasterValuePicking: false
-          formTab: Batiments.entities.Service.forms.ServiceForm.Service
+    # - _type: CollectionStep
+    #   enableChildImportOnParentCreate: true
+    #   enableChildImportOnParentEdit: true 
+    #   childImportModeOnParentEdit: CREATE_ONLY 
+    #   enableChildCopyOnParentCreate: true
+    #   enableChildCopyOnParentEdit: true
+    #   enableChildCreationOnParentCreate: true
+    #   enableChildCreationOnParentEdit: true 
+    #   enableChildDeleteOnParentEdit: true
+    #   enableChildEditOnParentCreate: true
+    #   enableChildEditOnParentEdit: true
+    #   enableChildRemoveOnParentCreate: true
+    #   enableChildRemoveOnParentEdit: true
+    #   skipToChildCreationOnParentCreate: false
+    #   skipToChildEditingOnParentEdit: false
+    #   filter: Lot.FID_TypologieLot = 'SNI'
+    #   linear: false
+    #   _name: Service
+    #   label: Types services
+    #   canFinishSubLevel: true
+    #   enabledOnParentCreate: true
+    #   enabledOnParentEdit: true
+    #   formFieldsMode: AUTO
+    #   childDeleteType: HARD_DELETE
+    #   oneToManyReference: Batiments.references.ServiceToLot
+    #   collectionView: Batiments.entities.Service.collection_views.ServiceCollectionLot
+    #   defaultDisplayType: TABLE
+    #   customSortEnabled: false
+    #   userDefinedSortEnabled: true
+    #   displayGridAllowed: false
+    #   displayListAllowed: true
+    #   displayTableAllowed: true
+    #   useCustomCollectionLabel: false
+    #   childSteps:
+    #     - _type: FormStep
+    #       _name: Service_form
+    #       label: Services
+    #       canFinishSubLevel: true
+    #       enabledOnParentCreate: true
+    #       enabledOnParentEdit: true
+    #       formFieldsMode: AUTO
+    #       enableMasterValuePicking: false
+    #       formTab: Batiments.entities.Service.forms.ServiceForm.Service
+
+    #       formStepValidations:  
+    #         - executedOnDataChange: true
+    #           executedOnFormOpen: true
+    #           validationType: MANDATORY
+    #           attribute: Batiments.references.ServiceToType.TypeService
+
+    #       stepTransitionValidations:
+    #         - onStepExit: BLOCK
+    #           validationType: MANDATORY
+    #           attribute: Batiments.references.ServiceToType.TypeService
+
+    #         - onStepExit: BLOCK
+    #           validationType: DETECT_DUPS
+    #           matcher: Batiments.entities.Service.Service.Matcher
+
 
 
     - _type: FormStep
       _name: CycleDeVie
       label: Cycle de vie
-      canFinishSubLevel: true
+      canFinishSubLevel: false
       enabledOnParentCreate: true
       enabledOnParentEdit: true
       formFieldsMode: AUTO
       enableMasterValuePicking: false
       formTab: Batiments.entities.Lot.forms.LotEdition.CycleVie
 
+      referenceFormFieldConfigs:
+        - enableCreateReference: false
+          enableUserSort: true
+          referencePickerType: AUTO_COMPLETE
+          fdnFormField: Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Etat.FDN_Phase          
+          referenceFilter: Referenced.PhaseCode <> 'VENDU'
+          referencePickerCollectionView: Batiments.entities.Phase.collection_views.PhaseCollectionView
+          # referencePickerSearchTypeConfigs: []
       formStepEnrichers:   
         - enricher: Batiments.entities.Lot.enrichers.DefautPhase
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
-
+        - enricher: Batiments.entities.Lot.enrichers.DefautFinGestion
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false
           
       formStepValidations:  
         - executedOnDataChange: true
@@ -276,16 +315,24 @@ rootStep:
           validationType: MANDATORY
           attribute:  Batiments.references.LotToPhase.Phase
 
-
     - _type: FormStep
       _name: FiscaliteJuridique
       label: Juridique et propriété
-      canFinishSubLevel: true
+      canFinishSubLevel: false
       enabledOnParentCreate: true
       enabledOnParentEdit: true
       formFieldsMode: AUTO
       enableMasterValuePicking: false
       formTab: Batiments.entities.Lot.forms.LotEdition.JuridiquePropriete
+
+      referenceFormFieldConfigs:
+        - enableCreateReference: false
+          enableUserSort: true
+          referencePickerType: AUTO_COMPLETE
+          fdnFormField: Batiments.entities.Lot.forms.LotEdition.JuridiquePropriete.Societes.FDN_SocieteExploitante
+          referenceFilter: SEM_INSTR(',' || Record.SocieteExploitanteIDs || ',' , ',' || Referenced.SocieteCode || ',') > 0
+          referencePickerCollectionView: Batiments.entities.Societe.collection_views.SocieteCollectionView
+          # referencePickerSearchTypeConfigs: []
 
       formStepEnrichers:   
         - enricher: Batiments.entities.Lot.enrichers.DefautRegimeTVA
@@ -318,44 +365,44 @@ rootStep:
 
 
 
-    - _type: CollectionStep
-      enableChildImportOnParentCreate: true
-      enableChildImportOnParentEdit: true 
-      childImportModeOnParentEdit: CREATE_ONLY 
-      enableChildCopyOnParentCreate: true
-      enableChildCopyOnParentEdit: true
-      enableChildCreationOnParentCreate: true
-      enableChildCreationOnParentEdit: true 
-      enableChildDeleteOnParentEdit: true
-      enableChildEditOnParentCreate: true
-      enableChildEditOnParentEdit: true
-      enableChildRemoveOnParentCreate: true
-      enableChildRemoveOnParentEdit: true
-      skipToChildCreationOnParentCreate: false
-      skipToChildEditingOnParentEdit: false
-      linear: false
-      _name: SousLot
-      label: SousLot
-      # filter: Lot.FID_Usage = 'TERM'
-      canFinishSubLevel: true
-      enabledOnParentCreate: true
-      enabledOnParentEdit: true
-      formFieldsMode: AUTO
-      childDeleteType: HARD_DELETE
-      oneToManyReference: Batiments.references.SousLotToLot
-      collectionView: Batiments.entities.SousLot.collection_views.SousLotCollectionView
-      defaultDisplayType: TABLE
-      customSortEnabled: false
-      userDefinedSortEnabled: true
-      displayGridAllowed: false
-      displayListAllowed: true
-      displayTableAllowed: true
-      useCustomCollectionLabel: false
-      stepTriggers:
-        - _type: StepEnricherTrigger
-          _name: Phase  
-          enricher: Batiments.entities.SousLot.enrichers.DefautPhaseTermine
-          event: ON_STEP_ENTER
+    # - _type: CollectionStep
+    #   enableChildImportOnParentCreate: true
+    #   enableChildImportOnParentEdit: true 
+    #   childImportModeOnParentEdit: CREATE_ONLY 
+    #   enableChildCopyOnParentCreate: true
+    #   enableChildCopyOnParentEdit: true
+    #   enableChildCreationOnParentCreate: true
+    #   enableChildCreationOnParentEdit: true 
+    #   enableChildDeleteOnParentEdit: true
+    #   enableChildEditOnParentCreate: true
+    #   enableChildEditOnParentEdit: true
+    #   enableChildRemoveOnParentCreate: true
+    #   enableChildRemoveOnParentEdit: true
+    #   skipToChildCreationOnParentCreate: false
+    #   skipToChildEditingOnParentEdit: false
+    #   linear: false
+    #   _name: SousLot
+    #   label: SousLot
+    #   # filter: Lot.FID_Usage = 'TERM'
+    #   canFinishSubLevel: true
+    #   enabledOnParentCreate: true
+    #   enabledOnParentEdit: true
+    #   formFieldsMode: AUTO
+    #   childDeleteType: HARD_DELETE
+    #   oneToManyReference: Batiments.references.SousLotToLot
+    #   collectionView: Batiments.entities.SousLot.collection_views.SousLotCollectionView
+    #   defaultDisplayType: TABLE
+    #   customSortEnabled: false
+    #   userDefinedSortEnabled: true
+    #   displayGridAllowed: false
+    #   displayListAllowed: true
+    #   displayTableAllowed: true
+    #   useCustomCollectionLabel: false
+    #   stepTriggers:
+    #     - _type: StepEnricherTrigger
+    #       _name: Phase  
+    #       enricher: Batiments.entities.SousLot.enrichers.DefautPhaseTermine
+    #       event: ON_STEP_EXIT_POST_VALID
 
 stepperFinishValidations:
   - onStepperFinish: WARN
@@ -400,7 +447,6 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute:  Batiments.references.LotToPhase.Phase
-
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY

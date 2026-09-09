@@ -29,7 +29,7 @@ tableColumns:
   - _type: TextColumn
     _name: IdentifiantsERP
     value: IdentifiantsERP
-    label: Numéro du lot
+    label: Numéro du sous-lot
     useCustomLabel: true
     dataType: STRING
     columnAlign: LEFT
@@ -38,7 +38,8 @@ tableColumns:
   - _type: ReferenceColumn
     _name: FDN_Lot
     value: FDN_Lot
-    useCustomLabel: false
+    label: Lot parent
+    useCustomLabel: true
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
@@ -142,6 +143,24 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
     referencedEntity: Batiments.entities.FiscaliteCible.FiscaliteCible
+
+  - _type: ReferenceColumn
+    _name: FDN_GenreLot
+    value: FDN_GenreLot
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.GenreLot.GenreLot
+
+  - _type: ReferenceColumn
+    _name: FDN_TypologieLot
+    value: FDN_TypologieLot
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.TypologieLot.TypologieLot
 
 
   - _type: TextColumn

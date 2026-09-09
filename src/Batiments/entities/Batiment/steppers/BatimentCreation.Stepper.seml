@@ -33,6 +33,10 @@ rootStep:
       formTab: Batiments.entities.Batiment.forms.BatimentCreation.Batiment
 
       formStepEnrichers:
+        - enricher: Batiments.entities.Batiment.enrichers.PreAlimAddress
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
         - enricher: Batiments.entities.Batiment.enrichers.StandardizeAddress
           executedOnButtonClick: false
           executedOnDataChange: true
@@ -40,7 +44,7 @@ rootStep:
         - enricher: Batiments.entities.Batiment.enrichers.FormatPays
           executedOnButtonClick: false
           executedOnDataChange: true
-          executedOnFormOpen: true  
+          executedOnFormOpen: false  
         - enricher: Batiments.entities.Batiment.enrichers.ConcatAddress
           executedOnButtonClick: false
           executedOnDataChange: true

@@ -16,7 +16,7 @@ listShowDivider: true
 tableAllowed: true
 tableDisplayCardColumnLabel: Lot
 tableRowLines: 1
-tableShowDisplayCard: true
+tableShowDisplayCard: false
 tableColumns:
   - _type: ReferenceColumn
     _name: FDN_SocieteProprietaire

@@ -4,6 +4,8 @@ _type: SemQLEnricher
 entity: Batiments.entities.RelImmSoc.RelImmSoc
 label: Alimentation par défaut de la date début société
 enricherExecutionScope: NONE
+afterEnrichers: Batiments.entities.RelImmSoc.enrichers.DefautDateDebSociete
+
 semQlEnricherExpressions: 
   - attributeName: DateDebSociete 
     expression: CURRENT_DATE()

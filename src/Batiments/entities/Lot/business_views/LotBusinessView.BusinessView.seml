@@ -19,39 +19,20 @@ rootBusinessViewEntity:
   outlineVisible: false
   displayRecordCount: ALWAYS
   businessEntitySearchConfigs:
+
+    - _name: FormConfig1
+      _type: BusinessEntitySearchTypeConfig
+      searchType: CUSTOM_FORM
+      customForm: Batiments.entities.Lot.search_forms.LotSearchForm
     - _name: TextConfig
       _type: BusinessEntitySearchTypeConfig
       searchType: TEXT
-    - _name: FormConfig
-      _type: BusinessEntitySearchTypeConfig
-      searchType: BY_FORM
-    - _name: AdvancedConfig
-      _type: BusinessEntitySearchTypeConfig
-      searchType: ADVANCED
-    - _name: SemqlConfig
-      _type: BusinessEntitySearchTypeConfig
-      searchType: SEMQL
+
   overrideDefaultSort: false
   enableUserDefinedSort: true
   listAllowed: true
   tableAllowed: true
   gridAllowed: true
-
-  embeddedCollectionNavigations:
-    - formCollection: Batiments.entities.Lot.forms.LotConsultation.Composition.Composition.Services
-      browsingTarget: BUSINESS_OBJECT_VIEW
-      businessView: Batiments.entities.Service.business_views.ServiceBusinessView
-
-    # - formCollection: Batiments.entities.Lot.forms.LotConsultation.Lot.Compteur
-    #   browsingTarget: BUSINESS_OBJECT_VIEW
-    #   businessView: Batiments.entities.Compteur.business_views.CompteurBusinessView
-
-
-    # - formCollection: Batiments.entities.Lot.forms.LotConsultation.JuridiquePropriete.Societes
-    #   browsingTarget: BUSINESS_OBJECT_VIEW
-    #   businessView: Batiments.entities.RelLotSoc.business_views.RelLotSocBusinessView
-
-
 
   transitions:
 
@@ -86,6 +67,7 @@ rootBusinessViewEntity:
       pluralLabel: Masters Records
       transitionType: FULLY_QUALIFIED
       transitionPath:  MasterRecords
+      visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
       businessViewEntity:
         _type: BusinessViewEntity
         _name: MasterRecord

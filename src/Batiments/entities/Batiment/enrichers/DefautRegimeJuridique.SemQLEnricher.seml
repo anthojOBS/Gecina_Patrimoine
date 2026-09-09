@@ -3,7 +3,7 @@ _name: DefautRegimeJuridique
 _type: SemQLEnricher
 entity: Batiments.entities.Batiment.Batiment
 label: Defaut régime juridique
-enricherExecutionScope: NONE
+enricherExecutionScope: POST_CONSO
 semQlEnricherExpressions: 
   - attributeName: FID_RegimeJuridique
     expression: Immeuble.FID_RegimeJuridique

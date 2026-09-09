@@ -1,0 +1,159 @@
+_package: Batiments.entities.Lot.search_forms
+_type: SearchForm
+_name: LotSearchForm
+label: Critères
+entity: Batiments.entities.Lot.Lot
+semQlCondition:  (:SEARCH_PARAM_IDENTIFIANTS_ERP is null OR IdentifiantsERP = :SEARCH_PARAM_IDENTIFIANTS_ERP)
+  AND (:SEARCH_PARAM_TYPOLIE_LOT is null OR FID_TypologieLot = :SEARCH_PARAM_TYPOLIE_LOT)
+  AND (:SEARCH_PARAM_GENRE_LOT is null OR FID_GenreLot = :SEARCH_PARAM_GENRE_LOT)
+  AND (:SEARCH_PARAM_SOCIETE_EXPLOITANTE is null OR FID_SocieteExploitante = :SEARCH_PARAM_SOCIETE_EXPLOITANTE)
+  AND (:SEARCH_PARAM_STATUT_LOUABLE is null OR (:SEARCH_PARAM_STATUT_LOUABLE = '1' AND StatutLouable = '1') OR (:SEARCH_PARAM_STATUT_LOUABLE = '0' AND (StatutLouable = '0' or StatutLouable is null)))
+  AND (:SEARCH_PARAM_STATUT_LOGEMENT_SOCIAL is null OR (:SEARCH_PARAM_STATUT_LOGEMENT_SOCIAL = '1' AND StatutLogementSocial = '1') OR (:SEARCH_PARAM_STATUT_LOGEMENT_SOCIAL = '0' AND (StatutLogementSocial = '0' or StatutLogementSocial is null)))
+  AND (:SEARCH_PARAM_STATUT_ERP is null OR (:SEARCH_PARAM_STATUT_ERP = '1' AND StatutERP = '1') OR (:SEARCH_PARAM_STATUT_ERP = '0' AND (StatutERP = '0' or StatutERP is null)))
+  AND (:SEARCH_PARAM_STATUT_MEUBLE is null OR (:SEARCH_PARAM_STATUT_MEUBLE = '1' AND StatutMeuble = '1') OR (:SEARCH_PARAM_STATUT_MEUBLE = '0' AND (StatutMeuble = '0' or StatutMeuble is null)))
+  AND (:SEARCH_PARAM_STATUT_PMR is null OR  (:SEARCH_PARAM_STATUT_PMR = '1' AND StatutPMR = '1') OR (:SEARCH_PARAM_STATUT_PMR = '0' AND (StatutPMR = '0' or StatutPMR is null)))
+  AND (:SEARCH_PARAM_REGIME_TVA is null OR FID_FiscaliteCible = :SEARCH_PARAM_REGIME_TVA)
+  AND (:SEARCH_PARAM_ETAGE is null OR (   FDN_Etage = :SEARCH_PARAM_ETAGE) ) 
+  AND (:SEARCH_PARAM_BATIMENT is null OR (  Etage.FDN_Batiment = :SEARCH_PARAM_BATIMENT) ) 
+
+searchParameters:
+  - _name: IdentifiantsERP
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_IDENTIFIANTS_ERP
+    label: Numéro lot
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: IdentifiantsERP
+    primaryTextExpression: IdentifiantsERP
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Lot.Lot
+  - _name: FDN_Batiment
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_BATIMENT
+    label: Bâtiment parent
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: Etage.FDN_Batiment
+    primaryTextExpression: Etage.FDN_Batiment
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Lot.Lot
+  - _name: FDN_Etage
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_ETAGE
+    label: Étage
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FDN_Etage
+    primaryTextExpression: FDN_Etage    
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Lot.Lot
+  - _name: FDN_TypologieLot
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_TYPOLIE_LOT
+    label: Typologie du lot
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_TypologieLot
+    primaryTextExpression: FDN_TypologieLot
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Lot.Lot
+  - _name: FDN_GenreLot
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_GENRE_LOT
+    label: Genre du lot
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_GenreLot
+    primaryTextExpression: FDN_GenreLot
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Lot.Lot
+  - _name: FDN_RegimeTVA
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_REGIME_TVA
+    label: Régime TVA
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_FiscaliteCible
+    primaryTextExpression: FDN_FiscaliteCible
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Lot.Lot 
+  - _name: SocieteExploitante
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_SOCIETE_EXPLOITANTE
+    label: Société exploitante
+    dataType: String
+    length: 255
+    displayType: VALUE_PICKER
+    boundSelectExpression: FID_SocieteExploitante
+    primaryTextExpression: FDN_SocieteExploitante
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Lot.Lot
+    
+  - _name: StatutLouable
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_STATUT_LOUABLE
+    label: Statut louable
+    dataType: Boolean
+    displayType: VALUE_PICKER
+    boundSelectExpression: StatutLouable
+    primaryTextExpression: case when StatutLouable = '0' or StatutLouable is null then 'Inactif' else 'Actif' end
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Lot.Lot
+  - _name: StatutLogementSocial
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_STATUT_LOGEMENT_SOCIAL
+    label: Statut logement social
+    dataType: Boolean
+    displayType: VALUE_PICKER
+    boundSelectExpression: StatutLogementSocial
+    primaryTextExpression: case when StatutLogementSocial = '0' or StatutLogementSocial is null then 'Inactif' else 'Actif' end
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Lot.Lot
+  - _name: StatutERP
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_STATUT_ERP
+    label: Statut ERP
+    dataType: Boolean
+    displayType: VALUE_PICKER
+    boundSelectExpression: StatutERP
+    primaryTextExpression: case when StatutERP = '0' or StatutERP is null then 'Inactif' else 'Actif' end
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Lot.Lot
+  - _name: StatutMeuble
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_STATUT_MEUBLE
+    label: Statut meuble
+    dataType: Boolean
+    displayType: VALUE_PICKER
+    boundSelectExpression: StatutMeuble
+    primaryTextExpression: case when StatutMeuble = '0' or StatutMeuble is null then 'Inactif' else 'Actif' end
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Lot.Lot
+  - _name: StatutPMR
+    _type: SearchParameter
+    bindVariableName: SEARCH_PARAM_STATUT_PMR
+    label: Statut PMR
+    dataType: Boolean
+    displayType: VALUE_PICKER
+    boundSelectExpression: StatutPMR
+    primaryTextExpression: case when StatutPMR = '0' or StatutPMR is null then 'Inactif' else 'Actif' end
+    useDistinct: true
+    displayCount: false
+    lookupEntity: Batiments.entities.Lot.Lot

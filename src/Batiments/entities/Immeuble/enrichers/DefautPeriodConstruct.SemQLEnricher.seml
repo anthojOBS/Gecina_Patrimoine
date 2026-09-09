@@ -3,7 +3,7 @@ _name: DefautPeriodConstruct
 _type: SemQLEnricher
 entity: Batiments.entities.Immeuble.Immeuble
 label: Enrichissement période de construction
-enricherExecutionScope: NONE
+enricherExecutionScope: POST_CONSO
 semQlEnricherExpressions: 
   - attributeName: FID_PeriodeConstruction
     expression: case when DATE_PART('year',DateFinConstruction) < '1946'  then '1' 

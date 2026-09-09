@@ -45,3 +45,7 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: true
           executedOnFormOpen: false 
+        - enricher: Batiments.entities.Batiment.enrichers.DefautRegimeJuridique
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false 

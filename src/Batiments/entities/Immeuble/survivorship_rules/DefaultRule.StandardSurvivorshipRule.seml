@@ -10,3 +10,11 @@ consolidationStrategy: CUSTOM_RANKING
 consolidationOrderByExpression: UpdateDate desc
 consolidationSkipNulls: false
 overrideStrategy: UNTIL_CONSOLIDATED_VAL_CHANGE
+publisherRankings:
+  - _type: ConsoPublisherRanking
+    publisher: Batiments.publishers.KSIOP
+  - _type: ConsoPublisherRanking
+    publisher: Batiments.publishers.VisionReelle
+  - _type: ConsoPublisherRanking
+    publisher: Batiments.publishers.SOLARE
+

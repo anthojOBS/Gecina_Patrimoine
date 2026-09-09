@@ -147,7 +147,7 @@ tableColumns:
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
     
   - _type: TextColumn
     _name: DateDebUsage
@@ -223,13 +223,13 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: false
 
-  - _type: TextColumn
-    _name: StatutCopropriete
-    value: StatutCopropriete
-    useCustomLabel: false
-    dataType: BOOLEAN
-    columnAlign: LEFT
-    visibleByDefault: false
+  # - _type: TextColumn
+  #   _name: StatutCopropriete
+  #   value: StatutCopropriete
+  #   useCustomLabel: false
+  #   dataType: BOOLEAN
+  #   columnAlign: LEFT
+  #   visibleByDefault: false
 
   - _type: TextColumn
     _name: IdentifiantFiscal

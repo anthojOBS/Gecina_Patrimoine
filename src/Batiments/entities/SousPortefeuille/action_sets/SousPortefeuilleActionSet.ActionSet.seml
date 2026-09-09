@@ -56,8 +56,3 @@ actions:
     importedRecordType: GOLDEN
     waitDialogEnabled: false
     allowOtherPublishers: true
-  - _type: BrowseGraphAction
-    _name: BrowseGraph
-    label: Browse Graph
-    useCustomLabel: true
-    waitDialogEnabled: false

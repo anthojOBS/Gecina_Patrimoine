@@ -479,6 +479,7 @@ attributes:
     mandatory: false
 
 
+
 sourceIdGeneration:
   mode: MANUAL
 
@@ -496,7 +497,7 @@ matcher:
     - _type: SemQLMatchRule
       _name: NewRule
       label: NewRuleLabel
-      condition: Record1.IdentifiantsERP = Record2.IdentifiantsERP 
+      condition: (Record1.IdentifiantsERP = Record2.IdentifiantsERP ) or (Record1.IdentifiantREF = Record2.IdentifiantREF and Record1.IdentifiantREF is not null )
       matchScore: 100
       usingMatchOn: false
     - _type: SemQLMatchRule

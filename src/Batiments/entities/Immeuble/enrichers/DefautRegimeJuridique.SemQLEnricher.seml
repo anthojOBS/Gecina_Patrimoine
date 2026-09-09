@@ -1,0 +1,10 @@
+_package: Batiments.entities.Immeuble.enrichers
+_name: DefautRegimeJuridique
+_type: SemQLEnricher
+entity: Batiments.entities.Immeuble.Immeuble
+label: Defaut régime juridique
+enricherExecutionScope: POST_CONSO
+semQlEnricherExpressions: 
+  - attributeName: FID_RegimeJuridique
+    expression:  case when FID_RegimeJuridique is NULL then 'AUC' else FID_RegimeJuridique end
+condition: FID_RegimeJuridique is NULL 

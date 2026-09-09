@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: SousLotToGenreLot
+label: Sous-lot Genre de Lot
+description: Référence Sous-lot vers Genre de Lot
+fromRoleDocumentation: |
+  Cette référence permet de classifier un **Sous-lot** selon son **Genre de Lot**.
+  
+  Le genre de Lot caractérise la nature du sous-lot (commercial, résidentiel, etc.).
+physicalName: SSLOT_GENRE_LOT_REF
+
+fromEntity: Batiments.entities.SousLot.SousLot
+fromRoleLabel: Sous-lot
+fromRoleName: SousLot
+fromRolePluralLabel: Sous-lots
+
+toEntity: Batiments.entities.GenreLot.GenreLot
+toRoleLabel: Genre de Lot
+toRoleName: GenreLot
+toRolePhysicalName: GENRE_SSLOT_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: NONE
+mandatoryValidationLabel: Le genre de Sous-lot est obligatoire pour un Sous-lot
+brokenValidationLabel: Le genre de Sous-lot sélectionné est invalide pour ce Sous-lot
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: GenreLot
+  label: Genre de Lot
+  physicalName: GENRE_SSLOT_ID
+  searchable: true
+  entity: Batiments.entities.SousLot.SousLot

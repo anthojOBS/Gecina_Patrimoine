@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: SousLotToTypologieLot
+label: Sous-lot Typologie de Lot
+description: Référence Sous-lot vers Typologie de Lot
+fromRoleDocumentation: |
+  Cette référence permet de classifier un **Sous-lot** selon son **Typologie de Lot**.
+  
+  La Typologie de sous-lot caractérise la typologie du sous-lot (commercial, résidentiel, etc.).
+physicalName: SSLOT_TYPOLOGIE_LOT_REF
+
+fromEntity: Batiments.entities.SousLot.SousLot
+fromRoleLabel: Sous-lot
+fromRoleName: SousLot
+fromRolePluralLabel: Sous-lots
+
+toEntity: Batiments.entities.TypologieLot.TypologieLot
+toRoleLabel: Typologie de Lot
+toRoleName: TypologieLot
+toRolePhysicalName: TYPOLOGIE_SSLOT_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: NONE
+mandatoryValidationLabel: La typologie de sous-lot est obligatoire pour un sous-lot
+brokenValidationLabel: La typologie de sous-lot sélectionnée est invalide pour ce sous-lot
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: TypologieLot
+  label: Typologie de Lot
+  physicalName: TYPOLOGIE_SSLOT_ID
+  searchable: true
+  entity: Batiments.entities.SousLot.SousLot

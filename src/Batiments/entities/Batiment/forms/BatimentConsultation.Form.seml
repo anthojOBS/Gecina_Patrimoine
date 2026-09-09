@@ -741,25 +741,62 @@ formTabs:
             visibleValueInterpreter: SEMQL
             dataType: DATE
 
-      - _type: FormSection
-        _name: Societes
-        label: Société 
-        layoutDirection: COLUMN
-        visibleValue: "1"
-        visibleValueInterpreter: LITERAL
-        labelWidth: 300px
+      - _type: FormContainer
+        _name: Societes_proprio
+        layoutDirection: ROW
         content:
-          - _type: FormCollection
-            _name: Societes
-            label: Société 
-            useCustomLabel: true
-            collection: Batiments.entities.Lot.collection_views.LotSociete
-            tableAllowed: true
-            listAllowed: false
-            gridAllowed: false
-            displayRecordCount: ALWAYS
-            enableUserDefinedSort: true
-            transitionPath: Etage.Lot
-            sortExpression: 1 DESC
-            filter:  1=1
-            targetEntity: Batiments.entities.Lot.Lot
+
+
+
+        - _type: FormSection
+          _name: Societes_test
+          label: Société 
+          layoutDirection: COLUMN
+          visibleValue: "1"
+          visibleValueInterpreter: LITERAL
+          labelWidth: 300px
+          content:
+                        - _type: TextField
+                          _name: SocProprio
+                          value: lookup distinct_string_agg (FDN_SocieteProprietaire) separated by ', ' from Etage.Lot end
+                          label: Société propriétaire
+                          labelProperties:
+                            alignment: left
+                            typography: body-2
+                            color: md:black
+                          useCustomLabel: true
+                          dataType: STRING
+                        - _type: TextField
+                          _name: SocExploit
+                          value: lookup distinct_string_agg (FDN_SocieteExploitante) separated by ', ' from Etage.Lot end
+                          label: Société exploitante
+                          labelProperties:
+                            alignment: left
+                            typography: body-2
+                            color: md:black
+                          useCustomLabel: true
+                          dataType: STRING
+
+
+      # - _type: FormSection
+      #   _name: Societes
+      #   label: Société 
+      #   layoutDirection: COLUMN
+      #   visibleValue: "1"
+      #   visibleValueInterpreter: LITERAL
+      #   labelWidth: 300px
+      #   content:
+      #     - _type: FormCollection
+      #       _name: Societes
+      #       label: Société 
+      #       useCustomLabel: true
+      #       collection: Batiments.entities.Lot.collection_views.LotSociete
+      #       tableAllowed: true
+      #       listAllowed: false
+      #       gridAllowed: false
+      #       displayRecordCount: ALWAYS
+      #       enableUserDefinedSort: true
+      #       transitionPath: Etage.Lot
+      #       sortExpression: 1 DESC
+      #       filter:  1=1
+      #       targetEntity: Batiments.entities.Lot.Lot

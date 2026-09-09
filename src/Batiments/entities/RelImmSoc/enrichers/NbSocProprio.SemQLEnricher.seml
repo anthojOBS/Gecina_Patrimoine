@@ -1,0 +1,13 @@
+_package: Batiments.entities.RelImmSoc.enrichers
+_name: NbSocProprio
+_type: SemQLEnricher
+entity: Batiments.entities.RelImmSoc.RelImmSoc
+label: Alimentation par défaut de la date début société
+enricherExecutionScope: POST_CONSO
+
+semQlEnricherExpressions: 
+  - attributeName: NbSocProprio 
+    expression: case 
+     when not (any Immeuble.RelImmSoc have (FID_TypeSociete = '1' and NbSocProprio =1  ))  then 1
+     when not (any Immeuble.RelImmSoc have (FID_TypeSociete = '1' and NbSocProprio =2 ))   then 2 else 3 end
+condition: FID_TypeSociete = '1' and NbSocProprio is null

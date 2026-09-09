@@ -20,15 +20,15 @@ rootBusinessViewEntity:
     - _name: TextConfig
       _type: BusinessEntitySearchTypeConfig
       searchType: TEXT
-    - _name: FormConfig
-      _type: BusinessEntitySearchTypeConfig
-      searchType: BY_FORM
-    - _name: AdvancedConfig
-      _type: BusinessEntitySearchTypeConfig
-      searchType: ADVANCED
-    - _name: SemqlConfig
-      _type: BusinessEntitySearchTypeConfig
-      searchType: SEMQL
+    # - _name: FormConfig
+    #   _type: BusinessEntitySearchTypeConfig
+    #   searchType: BY_FORM
+    # - _name: AdvancedConfig
+    #   _type: BusinessEntitySearchTypeConfig
+    #   searchType: ADVANCED
+    # - _name: SemqlConfig
+    #   _type: BusinessEntitySearchTypeConfig
+    #   searchType: SEMQL
   overrideDefaultSort: false
   enableUserDefinedSort: true
   listAllowed: true

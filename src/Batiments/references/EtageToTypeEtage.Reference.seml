@@ -20,8 +20,8 @@ toRolePhysicalName: TYPE_ETAGE_ID
 oneToMany: true
 deletePropagation: RESTRICT
 validationScope: NONE
-mandatoryValidationLabel: Le TypeEtage est obligatoire pour un Etage
-brokenValidationLabel: Le TypeEtage sélectionnée est invalide pour cet Etage
+mandatoryValidationLabel: L'étage est obligatoire
+brokenValidationLabel: L'étage sélectionné est invalide
 
 foreignAttribute:
   _type: ForeignAttribute

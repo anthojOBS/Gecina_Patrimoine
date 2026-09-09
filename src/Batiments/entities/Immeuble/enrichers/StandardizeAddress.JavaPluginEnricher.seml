@@ -3,6 +3,7 @@ _name: StandardizeAddress
 _type: JavaPluginEnricher
 entity: Batiments.entities.Immeuble.Immeuble
 label: Standardize Address Enricher
+#value:   AIzaSyBO0mYm4Kn1eBM5nQpVW9UJesv_RYUrm_w 
 enricherExecutionScope: PRE_CONSO
 batchUpdateSize: 1000
 processingBatchSize: 1
@@ -15,6 +16,7 @@ condition: Adresse is not null and CodePostal is not null and Ville is not null
 pluginParams:
   - paramName: PARAM_CLIENT_ID
     value: AIzaSyB_Yyr4bb_JPuAM9gPp2GyXYCxUwl3vpkI
+
 pluginInputs:
   - expression: Adresse
     inputName: IN_ADDRESSLINE

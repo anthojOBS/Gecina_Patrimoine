@@ -55,6 +55,9 @@ tableColumns:
     _name: DateDebSociete
     value: DateDebSociete
     useCustomLabel: false
+    componentProperties:                 
+          displayFormat: dd/MM/yyyy                
+          displayFormatValueInterpreter: LITERAL            
     dataType: DATE
     columnAlign: LEFT
     visibleByDefault: true
@@ -63,6 +66,9 @@ tableColumns:
     _name: DateFinSociete
     value: DateFinSociete
     useCustomLabel: false
+    componentProperties:                 
+          displayFormat: dd/MM/yyyy                
+          displayFormatValueInterpreter: LITERAL            
     dataType: DATE
     columnAlign: LEFT
     visibleByDefault: false

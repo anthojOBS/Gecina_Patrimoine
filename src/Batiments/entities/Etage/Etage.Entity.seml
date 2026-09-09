@@ -101,7 +101,7 @@ matcher:
     - _type: SemQLMatchRule
       _name: NewRule
       label: NewRuleLabel
-      condition: Record1.FID_Batiment = Record2.FID_Batiment AND Record1.CodeEtage = Record2.CodeEtage
+      condition: Record1.FID_Batiment = Record2.FID_Batiment AND Record1.FID_TypeEtage = Record2.FID_TypeEtage
       matchScore: 100
       usingMatchOn: false
   useTransitiveMatchScore: true

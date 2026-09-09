@@ -155,7 +155,7 @@ formTabs:
                           color: md:black
                         useCustomLabel: true
                         dataType: STRING
-                        visibleValue: Ville = 'Paris' and  (FID_Usage = 'RESI' OR FID_Usage = 'MIX')
+                        visibleValue: VilleEnrichie = 'Paris' and  (FID_Usage = 'RESI' OR FID_Usage = 'MIX')
                         visibleValueInterpreter: SEMQL
                         referencedEntity: Batiments.entities.QuartierParis.QuartierParis
        

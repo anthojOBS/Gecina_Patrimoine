@@ -52,6 +52,7 @@ actions:
     label: Recherche Graphique
     useCustomLabel: true
     waitDialogEnabled: false
+    requiredRole: semarchyAdmin
   - _type: ExplainRecordAction
     _name: ExplainRecord
     label: Expliquer l'enrigistrement

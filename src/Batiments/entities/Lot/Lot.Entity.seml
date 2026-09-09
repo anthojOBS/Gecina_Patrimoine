@@ -231,12 +231,12 @@ attributes:
     dataType: Boolean
     mandatory: false
 
-  - _type: EntityAttribute
-    _name: StatutCopropriete
-    label: Statut copropriété
-    physicalName: STATUT_COPROPRIOETE
-    dataType: Boolean
-    mandatory: false
+  # - _type: EntityAttribute
+  #   _name: StatutCopropriete
+  #   label: Statut copropriété
+  #   physicalName: STATUT_COPROPRIOETE
+  #   dataType: Boolean
+  #   mandatory: false
 
   - _type: EntityAttribute
     _name: IdentifiantFiscal
@@ -470,7 +470,15 @@ attributes:
     dataType: String
     length: 250
     mandatory: false
+  - _type: EntityAttribute
+    _name: SocieteExploitanteIDs
+    label: Sociétés exploitantes immeuble
+    physicalName: SOCIETE_EXPLOITANTE_IDS
+    dataType: String
+    length: 250
+    mandatory: false
     
+
 sourceIdGeneration:
   mode: MANUAL
 
@@ -483,12 +491,14 @@ goldenIdGeneration:
 matcher:
   _type: SemQLMatcher
   _name: Matcher
-  description: BatimentSemQLMatcher
+  description: LotSemQLMatcher
   matchRules:
     - _type: SemQLMatchRule
       _name: NewRule
       label: NewRuleLabel
-      condition:   Record1.IdentifiantsERP = Record2.IdentifiantsERP and ( (Record1.FID_Etage = Record2.FID_Etage) or ( Record1.FID_Etage is null ) or ( Record2.FID_Etage is null ) ) and Record1.Etage.FID_Batiment = Record2.Etage.FID_Batiment
+      condition:   Record1.IdentifiantsERP = Record2.IdentifiantsERP and
+        ( (Record1.FID_Etage = Record2.FID_Etage) or ( Record1.FID_Etage is null ) or ( Record2.FID_Etage is null ) ) 
+        and (Record1.FID_Batiment = Record2.FID_Batiment )
       matchScore: 100
       usingMatchOn: false
   useTransitiveMatchScore: true

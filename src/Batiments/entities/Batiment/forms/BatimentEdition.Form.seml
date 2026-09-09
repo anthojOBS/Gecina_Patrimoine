@@ -46,7 +46,7 @@ formTabs:
                         _name: Libelle_Batiment
                         value: Libelle_Batiment
                         label: Libellé bâtiment
-                        authoringMode: force-read-only
+                        authoringMode: auto
                         labelProperties:
                           alignment: left
                           typographyValueInterpreter: LITERAL
@@ -54,18 +54,6 @@ formTabs:
                           color: md:black
                         useCustomLabel: true
                         dataType: STRING
-
-                      # - _type: CheckboxField
-                      #   _name: BatimentPrincipal
-                      #   value: BatimentPrincipal
-                      #   label: Statut bâtiment principal
-                      #   labelProperties:
-                      #     alignment: left
-                      #     typographyValueInterpreter: LITERAL
-                      #     typography: body-2
-                      #     color: md:black
-                      #   useCustomLabel: true
-                      #   dataType: BOOLEAN
 
                       - _type: ReferenceField
                         _name: FDN_Immeuble
@@ -253,7 +241,7 @@ formTabs:
                         _name: FDN_Phase
                         value: FDN_Phase
                         label: Etat
-                        authoringMode: force-read-only
+                        authoringMode: auto
                         documentation: Etat du bien dans son cycle de vie (initiale, active, terminée).
                         labelProperties:
                           alignment: left

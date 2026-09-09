@@ -216,14 +216,8 @@ matcher:
     - _type: SemQLMatchRule
       _name: NewRule
       label: NewRuleLabel
-      condition: Record1.IdentifiantsERP = Record2.IdentifiantsERP and Record1.FID_Immeuble = Record2.FID_Immeuble
+      condition: ((Record1.IdentifiantsERP = Record2.IdentifiantsERP) or ( Record1.Libelle_Batiment like '%unique%' ) or ( Record1.IdentifiantsERP = 'PK' and Record2.AccesParking = '1' )) and Record1.FID_Immeuble = Record2.FID_Immeuble
       matchScore: 100
-      usingMatchOn: false
-    - _type: SemQLMatchRule
-      _name: Address
-      label: NewRuleLabel
-      condition: Record1.AdresseEnrichie = Record2.AdresseEnrichie
-      matchScore: 80
       usingMatchOn: false
   useTransitiveMatchScore: true
   useMultiIterationGrouping: true

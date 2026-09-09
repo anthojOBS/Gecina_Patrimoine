@@ -62,6 +62,7 @@ actions:
     label: Recherche graphique
     useCustomLabel: true
     waitDialogEnabled: false
+    requiredRole: semarchyAdmin
   - _type: DirectConfirmDupsAction
     _name: DirectConfirmDuplicates
     label: Confirmer doublons directement

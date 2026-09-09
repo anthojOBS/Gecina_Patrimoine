@@ -1,8 +1,0 @@
-_package: Batiments.publishers
-_type: Publisher
-_name: KSIOP_SOC
-label: KSIOP_SOC
-description: KSIOP Société Publisher
-active: true
-code: KSIOP_SOC
-color: md:orange-700

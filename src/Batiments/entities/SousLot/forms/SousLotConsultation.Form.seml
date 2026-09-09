@@ -307,7 +307,7 @@ formTabs:
             _name: DateFinPhase
             value: DateFinPhase
             label: Date fin gestion
-            visibleValue: GoldenRecord.DateFinPhase is not null
+            visibleValue: DateFinPhase is not null
             visibleValueInterpreter: SEMQL
             labelProperties:
               alignment: left

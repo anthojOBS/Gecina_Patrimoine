@@ -186,8 +186,8 @@ formTabs:
                         color: md:black
                       useCustomLabel: true
                       dataType: STRING
-                      visibleValue: FID_TypologieLot <> 'SNI'
-                      visibleValueInterpreter: SEMQL
+                      # visibleValue: FID_TypologieLot <> 'SNI'
+                      # visibleValueInterpreter: SEMQL
                       referencedEntity: Batiments.entities.GenreLot.GenreLot
 
 
@@ -381,7 +381,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_TypologieLot in ('PL','LC','LD','FS','SNI')
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','FS','SNI','CL')
                 visibleValueInterpreter: SEMQL
                 dataType: DECIMAL
   
@@ -396,7 +396,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_TypologieLot in ('PL','LC','LD','FS')
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','FS','CL')
                 visibleValueInterpreter: SEMQL
                 dataType: DECIMAL 
 
@@ -414,7 +414,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_TypologieLot in ('PL','LC','LD','PK')
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','PK','CL')
                 visibleValueInterpreter: SEMQL
                 dataType: STRING
                 referencedEntity: Batiments.entities.DestinationTaxable.DestinationTaxable
@@ -430,7 +430,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_TypologieLot in ('PL','LC','LD','PK')
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','PK','CL')
                 visibleValueInterpreter: SEMQL
                 dataType: DECIMAL 
 
@@ -491,22 +491,22 @@ formTabs:
             referencedEntity: Batiments.entities.Phase.Phase
 
 
-          - _type: DateField
-            _name: DateFinPhase
-            value: DateFinPhase
-            label: Date fin gestion
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            componentProperties:                 
-              displayFormat: dd/MM/yyyy                
-              displayFormatValueInterpreter: LITERAL            
-              editingFormat: dd/MM/yyyy                 
-              editingFormatValueInterpreter: LITERAL 
-            useCustomLabel: true
-            dataType: DATE
+          # - _type: DateField
+          #   _name: DateFinPhase
+          #   value: DateFinPhase
+          #   label: Date fin gestion
+          #   labelProperties:
+          #     alignment: left
+          #     typographyValueInterpreter: LITERAL
+          #     typography: body-2
+          #     color: md:black
+          #   componentProperties:                 
+          #     displayFormat: dd/MM/yyyy                
+          #     displayFormatValueInterpreter: LITERAL            
+          #     editingFormat: dd/MM/yyyy                 
+          #     editingFormatValueInterpreter: LITERAL 
+          #   useCustomLabel: true
+          #   dataType: DATE
 
 
 
@@ -563,6 +563,8 @@ formTabs:
           - _type: TextField
             _name: IdentifiantFiscal
             value: IdentifiantFiscal
+            visibleValue: FID_TypologieLot = 'AP' 
+            visibleValueInterpreter: SEMQL
             label: Identifiant fiscal
             labelProperties:
               alignment: left
@@ -572,17 +574,17 @@ formTabs:
             useCustomLabel: true
             dataType: STRING
 
-          - _type: CheckboxField
-            _name: StatutCopropriete
-            value: StatutCopropriete
-            label: Statut copropriété
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: BOOLEAN
+          # - _type: CheckboxField
+          #   _name: StatutCopropriete
+          #   value: StatutCopropriete
+          #   label: Statut copropriété
+          #   labelProperties:
+          #     alignment: left
+          #     typographyValueInterpreter: LITERAL
+          #     typography: body-2
+          #     color: md:black
+          #   useCustomLabel: true
+          #   dataType: BOOLEAN
 
           - _type: TextField
             _name: NumeroCopropriete
@@ -594,22 +596,22 @@ formTabs:
               typography: body-2
               color: md:black
             useCustomLabel: true
-            visibleValue: StatutCopropriete = '1' 
-            visibleValueInterpreter: SEMQL
+            # visibleValue: StatutCopropriete = '1' 
+            # visibleValueInterpreter: SEMQL
             dataType: STRING
 
-          - _type: CheckboxField
-            _name: StatutSousLocation
-            value: StatutSousLocation
-            label: Statut sous-location  
-            authoringMode: force-read-only
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: BOOLEAN
+          # - _type: CheckboxField
+          #   _name: StatutSousLocation
+          #   value: StatutSousLocation
+          #   label: Statut sous-location  
+          #   authoringMode: force-read-only
+          #   labelProperties:
+          #     alignment: left
+          #     typographyValueInterpreter: LITERAL
+          #     typography: body-2
+          #     color: md:black
+          #   useCustomLabel: true
+          #   dataType: BOOLEAN
 
 
       - _type: FormSection

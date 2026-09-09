@@ -10,8 +10,3 @@ actions:
     label: Exporter
     useCustomLabel: true
     waitDialogEnabled: false
-  - _type: BrowseGraphAction
-    _name: BrowseGraph
-    label: Recherche graphique
-    useCustomLabel: true
-    waitDialogEnabled: false

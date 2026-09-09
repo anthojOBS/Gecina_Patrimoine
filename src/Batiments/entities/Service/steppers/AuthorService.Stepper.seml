@@ -31,3 +31,23 @@ rootStep:
       formFieldsMode: AUTO
       enableMasterValuePicking: false
       formTab: Batiments.entities.Service.forms.ServiceForm.Service
+
+      formStepValidations:  
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.ServiceToType.TypeService
+      stepTransitionValidations:
+
+        - onStepExit: BLOCK
+          validationType: DETECT_DUPS
+          matcher: Batiments.entities.Service.Service.Matcher
+
+stepperFinishValidations:
+
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.references.ServiceToType.TypeService
+
+  - onStepperFinish: BLOCK
+    validationType: DETECT_DUPS

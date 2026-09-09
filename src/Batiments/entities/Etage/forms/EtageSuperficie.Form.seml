@@ -1,0 +1,66 @@
+_package: Batiments.entities.Etage.forms
+_type: Form
+_name: EtageSuperficie
+entity: Batiments.entities.Etage.Etage
+default: false
+formTabs:
+  - _type: FormTab
+    _name: Etage
+    label: Etage
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: ICON_LABEL
+    labelWidth: 200px
+    content:
+
+      - _type: TextField
+        _name: FDN_TypeEtage
+        value: FDN_TypeEtage
+        label: Libellé
+        authoringMode: 'force-read-only'
+        authoringModeValueInterpreter: LITERAL
+        visibleValue: '1'
+        visibleValueInterpreter: LITERAL
+        useCustomLabel: true
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+
+      - _type: TextField
+        _name: SuperficieBalcons
+        value: SuperficieBalcons
+        visibleValue: Batiment.Immeuble.FID_OrgaResp = 'DB'
+        visibleValueInterpreter: SEMQL
+        useCustomLabel: false
+        dataType: DECIMAL
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+
+      - _type: TextField
+        _name: SuperficieTerrasses
+        value: SuperficieTerrasses
+        visibleValue: Batiment.Immeuble.FID_OrgaResp = 'DB'
+        visibleValueInterpreter: SEMQL
+        useCustomLabel: false
+        dataType: DECIMAL
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+
+      - _type: TextField
+        _name: SuperficieJardins
+        value: SuperficieJardins
+        visibleValue: Batiment.Immeuble.FID_OrgaResp = 'DB'
+        visibleValueInterpreter: SEMQL
+        useCustomLabel: false
+        dataType: DECIMAL
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

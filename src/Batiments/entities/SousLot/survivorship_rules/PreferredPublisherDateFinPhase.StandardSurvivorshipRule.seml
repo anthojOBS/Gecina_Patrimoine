@@ -1,0 +1,20 @@
+_package: Batiments.entities.SousLot.survivorship_rules
+_type: StandardSurvivorshipRule
+_name: PreferredPublisherDateFinPhase
+entity: Batiments.entities.SousLot.SousLot
+label: Preferred Publisher DateFinPhase Survivorship Rule
+description: ""
+documentation: ""
+defaultRule: false
+consolidationStrategy: PREFERRED_PUBLISHER
+consolidationSkipNulls: true
+overrideStrategy: UNTIL_CONSOLIDATED_VAL_CHANGE
+attributes:
+  - attributeName: DateFinPhase
+publisherRankings:
+  - _type: ConsoPublisherRanking
+    publisher: Batiments.publishers.KSIOP
+  - _type: ConsoPublisherRanking
+    publisher: Batiments.publishers.VisionReelle
+  - _type: ConsoPublisherRanking
+    publisher: Batiments.publishers.SOLARE

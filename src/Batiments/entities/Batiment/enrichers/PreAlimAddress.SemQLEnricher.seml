@@ -1,0 +1,25 @@
+_package: Batiments.entities.Batiment.enrichers
+_name: PreAlimAddress
+_type: SemQLEnricher
+entity: Batiments.entities.Batiment.Batiment
+label: Pre-Alimentation Adresse depuis immeuble
+enricherExecutionScope: PRE_CONSO
+semQlEnricherExpressions: 
+  - attributeName: Adresse
+    expression: Immeuble.AdresseStandardise
+  - attributeName: CodePostal
+    expression: Immeuble.CodePostalEnrichi
+  - attributeName: Ville
+    expression: Immeuble.VilleEnrichie
+  - attributeName: FID_Pays
+    expression: Immeuble.FID_Pays
+
+  - attributeName: AdresseStandardise
+    expression: Immeuble.AdresseStandardise
+  - attributeName: CodePostalEnrichi
+    expression: Immeuble.CodePostalEnrichi
+  - attributeName: VilleEnrichie
+    expression: Immeuble.VilleEnrichie
+  - attributeName: PaysEnrichie
+    expression: Immeuble.FID_Pays
+condition: Adresse is null or CodePostal is null or Ville is null

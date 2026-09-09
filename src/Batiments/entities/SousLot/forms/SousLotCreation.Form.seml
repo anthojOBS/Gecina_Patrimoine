@@ -266,22 +266,22 @@ formTabs:
 
 
 
-          - _type: DateField
-            _name: DateFinPhase
-            value: DateFinPhase
-            label: Date fin gestion
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            componentProperties:                 
-              displayFormat: dd/MM/yyyy                
-              displayFormatValueInterpreter: LITERAL            
-              editingFormat: dd/MM/yyyy                 
-              editingFormatValueInterpreter: LITERAL 
-            useCustomLabel: true
-            dataType: DATE
+          # - _type: DateField
+          #   _name: DateFinPhase
+          #   value: DateFinPhase
+          #   label: Date fin gestion
+          #   labelProperties:
+          #     alignment: left
+          #     typographyValueInterpreter: LITERAL
+          #     typography: body-2
+          #     color: md:black
+          #   componentProperties:                 
+          #     displayFormat: dd/MM/yyyy                
+          #     displayFormatValueInterpreter: LITERAL            
+          #     editingFormat: dd/MM/yyyy                 
+          #     editingFormatValueInterpreter: LITERAL 
+          #   useCustomLabel: true
+          #   dataType: DATE
 
 
 

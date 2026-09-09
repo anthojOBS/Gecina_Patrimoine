@@ -9,7 +9,7 @@ actions:
     _name: EditAuthorEtages
     label: Modification superficie
     useCustomLabel: true
-    stepper: Batiments.entities.Etage.steppers.AuthorEtages
+    stepper: Batiments.entities.Etage.steppers.EtageSuperficie
     multipleSelectionAllowed: true
     availableForGoldenData: true
     availableForMasterData: true

@@ -53,8 +53,27 @@ formTabs:
           editingFormat: dd/MM/yyyy                 
           editingFormatValueInterpreter: LITERAL
         useCustomLabel: true
-        visibleValue:  GoldenRecord.DateDebSociete is not null 
+        visibleValue:  DateDebSociete is not null 
         visibleValueInterpreter: SEMQL
         dataType: DATE
 
+
+      - _type: DateField
+        _name: DateFinSociete
+        value: DateFinSociete
+        label: Date fin société
+        labelProperties:
+          alignment: left
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+        componentProperties:                 
+          displayFormat: dd/MM/yyyy                
+          displayFormatValueInterpreter: LITERAL            
+          editingFormat: dd/MM/yyyy                 
+          editingFormatValueInterpreter: LITERAL
+        useCustomLabel: true
+        visibleValue:  DateFinSociete is not null 
+        visibleValueInterpreter: SEMQL
+        dataType: DATE
 

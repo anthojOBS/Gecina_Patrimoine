@@ -22,15 +22,15 @@ rootBusinessViewEntity:
     - _name: TextConfig
       _type: BusinessEntitySearchTypeConfig
       searchType: TEXT
-    - _name: FormConfig
-      _type: BusinessEntitySearchTypeConfig
-      searchType: BY_FORM
-    - _name: AdvancedConfig
-      _type: BusinessEntitySearchTypeConfig
-      searchType: ADVANCED
-    - _name: SemqlConfig
-      _type: BusinessEntitySearchTypeConfig
-      searchType: SEMQL
+    # - _name: FormConfig
+    #   _type: BusinessEntitySearchTypeConfig
+    #   searchType: BY_FORM
+    # - _name: AdvancedConfig
+    #   _type: BusinessEntitySearchTypeConfig
+    #   searchType: ADVANCED
+    # - _name: SemqlConfig
+    #   _type: BusinessEntitySearchTypeConfig
+    #   searchType: SEMQL
   overrideDefaultSort: false
   enableUserDefinedSort: true
   sortExpression: TypeEtage.EtageNum DESC
@@ -49,6 +49,8 @@ rootBusinessViewEntity:
       pluralLabel: Masters Records
       transitionType: FULLY_QUALIFIED
       transitionPath:  MasterRecords 
+      transitionVisible: :V_USER_ROLES like '%semarchyAdmin%'
+      transitionVisibleInterpreter: SEMQL
       businessViewEntity: 
         _type: BusinessViewEntity
         _name: MasterRecord

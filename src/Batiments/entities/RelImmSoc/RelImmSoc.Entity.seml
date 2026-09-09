@@ -38,6 +38,14 @@ attributes:
     dataType: Date
     mandatory: false
 
+  - _type: EntityAttribute
+    _name: NbSocProprio
+    label: Nombre de société proprietaire
+    physicalName: NB_SOCIETE_PROPRIO
+    dataType: ShortInteger
+    precision: 1
+    mandatory: false
+
 sourceIdGeneration:
   mode: MANUAL
 
@@ -55,8 +63,11 @@ matcher:
     - _type: SemQLMatchRule
       _name: NewRule
       label: NewRuleLabel
-      condition:   Record1.FID_Immeuble = Record2.FID_Immeuble and Record1.FID_TypeSociete = Record2.FID_TypeSociete and Record1.FID_Societe = Record2.FID_Societe
- 
+      condition:   Record1.FID_Immeuble = Record2.FID_Immeuble 
+       and Record1.FID_TypeSociete = Record2.FID_TypeSociete 
+       
+       and ((Record1.FID_TypeSociete ='1' and (Record1.DateDebSociete = Record2.DateDebSociete or Record1.FID_Societe = Record2.FID_Societe))
+        or ( Record1.FID_TypeSociete ='2' and Record1.FID_Societe = Record2.FID_Societe ))
       matchScore: 100
       usingMatchOn: false
   useTransitiveMatchScore: true

@@ -1,0 +1,63 @@
+_package: Batiments.entities.Lot.collection_views
+_type: CollectionView
+_name: LotService
+entity: Batiments.entities.Lot.Lot
+default: true
+displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Lot
+tableRowLines: 1
+tableShowDisplayCard: false
+
+tableColumns:
+
+  - _type: TextColumn
+    _name: IdentifiantsERP
+    value: IdentifiantsERP
+    label: Numéro du lot
+    useCustomLabel: true
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+
+  - _type: ReferenceColumn
+    _name: FDN_Etage
+    value: FDN_Etage
+    useCustomLabel: true
+    label: Etage
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Etage.Etage
+
+
+  - _type: ReferenceColumn
+    _name: FDN_Batiment
+    value: Etage.FDN_Batiment
+    useCustomLabel: true
+    label: Batiment
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Batiment.Batiment
+
+
+  - _type: ReferenceColumn
+    _name: TypeService
+    value: FDN_GenreLot
+    useCustomLabel: true
+    label: Types services
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.GenreLot.GenreLot

@@ -9,8 +9,8 @@ actions:
     _name: CreateAuthorEtages
     label: Création étage
     useCustomLabel: true
-    stepper: Batiments.entities.Etage.steppers.AuthorEtages
-    createMultiple: false
+    stepper: Batiments.entities.Etage.steppers.EtageCreation
+    createMultiple: true
     createdRecordType: GOLDEN
     waitDialogEnabled: false
     allowOtherPublishers: true
@@ -18,7 +18,7 @@ actions:
     _name: EditAuthorEtages
     label: Modification étage
     useCustomLabel: true
-    stepper: Batiments.entities.Etage.steppers.AuthorEtages
+    stepper: Batiments.entities.Etage.steppers.EtageSuperficie
     multipleSelectionAllowed: true
     availableForGoldenData: true
     availableForMasterData: true

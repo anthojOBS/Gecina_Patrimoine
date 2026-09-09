@@ -3,9 +3,9 @@ _name: DefautDateDebSociete
 _type: SemQLEnricher
 entity: Batiments.entities.RelImmSoc.RelImmSoc
 label: Alimentation par défaut de la date début société
-enricherExecutionScope: NONE
+enricherExecutionScope: POST_CONSO
 semQlEnricherExpressions: 
   - attributeName: DateDebSociete 
     expression: Immeuble.DateAcquisition 
     # expression:  case when   any RelImmSoc.Immeuble.RelImmSocs have (FID_TypeSociete = '1') then  CURRENT_DATE() else  Immeuble.DateAcquisition end
-condition: GoldenRecord.FID_TypeSociete is null  and FID_TypeSociete = '1'
+condition: FID_TypeSociete = '1'

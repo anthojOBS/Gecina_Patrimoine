@@ -42,6 +42,10 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
+        - enricher: Batiments.entities.SousLot.enrichers.DefautGenreTypo
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: true
 
       formStepValidations:  
         - executedOnDataChange: true

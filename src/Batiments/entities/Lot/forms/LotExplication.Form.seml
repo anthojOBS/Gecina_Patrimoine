@@ -672,17 +672,17 @@ formTabs:
                       color: md:black
                     useCustomLabel: true
                     dataType: STRING
-                  - _type: CheckboxField
-                    _name: StatutCopropriete
-                    value: StatutCopropriete
-                    label: Statut copropriété
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: BOOLEAN
+                  # - _type: CheckboxField
+                  #   _name: StatutCopropriete
+                  #   value: StatutCopropriete
+                  #   label: Statut copropriété
+                  #   labelProperties:
+                  #     alignment: left
+                  #     typographyValueInterpreter: LITERAL
+                  #     typography: body-2
+                  #     color: md:black
+                  #   useCustomLabel: true
+                  #   dataType: BOOLEAN
 
 
                   - _type: TextField
@@ -695,7 +695,7 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
-                    visibleValue: StatutCopropriete = '1' 
+                    visibleValue: NumeroCopropriete is not null
                     visibleValueInterpreter: SEMQL
                     dataType: STRING
 

@@ -13,23 +13,11 @@ formTabs:
     displayFormTabAs: ICON_LABEL
     labelWidth: 200px
     content:
-      # - _type: TextField
-      #   _name: Libelle
-      #   value: Libelle
-      #   label: Libellé
-      #   useCustomLabel: false
-      #   dataType: STRING
-      #   labelProperties:
-      #     typographyValueInterpreter: LITERAL
-      #     typography: body-2
-      #     color: md:black
 
       - _type: TextField
         _name: FDN_TypeEtage
         value: FDN_TypeEtage
         label: Libellé
-        authoringMode: case when FID_TypeEtage is null then 'auto' else 'force-read-only' end
-        authoringModeValueInterpreter: SEMQL
         visibleValue: '1'
         visibleValueInterpreter: LITERAL
         useCustomLabel: true

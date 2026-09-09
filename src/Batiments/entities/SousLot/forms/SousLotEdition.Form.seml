@@ -267,6 +267,8 @@ formTabs:
             _name: DateFinPhase
             value: DateFinPhase
             label: Date fin gestion
+            visibleValue: DateFinPhase is not null
+            visibleValueInterpreter: SEMQL
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL

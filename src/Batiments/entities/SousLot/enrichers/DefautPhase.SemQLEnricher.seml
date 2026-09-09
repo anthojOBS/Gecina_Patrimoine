@@ -6,5 +6,5 @@ label: Default Phase
 enricherExecutionScope: NONE
 semQlEnricherExpressions: 
   - attributeName: FID_Phase
-    expression: case when FID_Phase is NULL then 'ACTIVE' else FID_Phase end
+    expression: case when FID_Phase is NULL then 'EXP' else FID_Phase end
 condition: FID_Phase is NULL 

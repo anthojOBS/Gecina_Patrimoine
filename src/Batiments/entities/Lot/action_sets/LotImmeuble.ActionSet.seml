@@ -16,13 +16,7 @@ actions:
     availableForMasterData: true
     availableForErrorData: true
     waitDialogEnabled: false
-  # - _type: StartWorkflowEntityAction
-  #   _name: EditSurfaceLot
-  #   label: Editer Surface Lot (Workflow)
-  #   useCustomLabel: true
-  #   waitDialogEnabled: false
-  #   workflow: Batiments.workflows.ModificationSurfaceLot
-  #   startEvent: Batiments.workflows.ModificationSurfaceLot.StartEdit
+
   - _type: MassUpdateAction
     _name: MassUpdateAuthorLots
     label: Mise à jour de masse
@@ -60,6 +54,7 @@ actions:
     label: Recherche graphique
     useCustomLabel: true
     waitDialogEnabled: false
+    requiredRole: semarchyAdmin
   - _type: DirectConfirmDupsAction
     _name: DirectConfirmDuplicates
     label: Confirmer doublons directement

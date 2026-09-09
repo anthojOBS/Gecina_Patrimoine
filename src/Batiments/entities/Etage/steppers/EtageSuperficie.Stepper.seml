@@ -1,0 +1,51 @@
+_package: Batiments.entities.Etage.steppers
+_type: Stepper
+_name: EtageSuperficie
+entity: Batiments.entities.Etage.Etage
+label: Etages
+rootStep:
+  _type: CollectionStep
+  _name: Etages
+  label: Etages
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.Etage.collection_views.EtageCompositionConsultation
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Etage
+      label: Etage
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Etage.forms.EtageSuperficie.Etage
+
+      formStepValidations:  
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute: Batiments.references.EtageToTypeEtage.TypeEtage
+      stepTransitionValidations:
+
+        - onStepExit: BLOCK
+          validationType: DETECT_DUPS
+          matcher: Batiments.entities.Etage.Etage.Matcher
+
+stepperFinishValidations:
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.references.EtageToTypeEtage.TypeEtage
+  - onStepperFinish: BLOCK
+    validationType: DETECT_DUPS

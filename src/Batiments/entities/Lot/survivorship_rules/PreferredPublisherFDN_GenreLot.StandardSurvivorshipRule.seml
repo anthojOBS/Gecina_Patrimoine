@@ -1,0 +1,20 @@
+_package: Batiments.entities.Lot.survivorship_rules
+_type: StandardSurvivorshipRule
+_name: PreferredPublisherFDN_GenreLot
+entity: Batiments.entities.Lot.Lot
+label: Preferred Publisher GenreLot Survivorship Rule
+description: ""
+documentation: ""
+defaultRule: false
+consolidationStrategy: PREFERRED_PUBLISHER
+consolidationSkipNulls: true
+overrideStrategy: UNTIL_CONSOLIDATED_VAL_CHANGE
+attributes:
+  - attributeName: GenreLot
+publisherRankings:
+  - _type: ConsoPublisherRanking
+    publisher: Batiments.publishers.KSIOP
+  - _type: ConsoPublisherRanking
+    publisher: Batiments.publishers.VisionReelle
+  - _type: ConsoPublisherRanking
+    publisher: Batiments.publishers.SOLARE

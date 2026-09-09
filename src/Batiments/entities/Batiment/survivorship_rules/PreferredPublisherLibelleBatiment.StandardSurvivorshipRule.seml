@@ -17,6 +17,4 @@ publisherRankings:
   - _type: ConsoPublisherRanking
     publisher: Batiments.publishers.KSIOP
   - _type: ConsoPublisherRanking
-    publisher: Batiments.publishers.DATA_RESI
-  - _type: ConsoPublisherRanking
     publisher: Batiments.publishers.SOLARE

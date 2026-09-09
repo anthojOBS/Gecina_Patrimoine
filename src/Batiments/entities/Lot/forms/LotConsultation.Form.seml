@@ -185,8 +185,8 @@ formTabs:
                         color: md:black
                       useCustomLabel: true
                       dataType: STRING
-                      visibleValue: FID_TypologieLot <> 'SNI'
-                      visibleValueInterpreter: SEMQL
+                      # visibleValue: FID_TypologieLot <> 'SNI'
+                      # visibleValueInterpreter: SEMQL
                       referencedEntity: Batiments.entities.GenreLot.GenreLot
 
 
@@ -526,7 +526,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_TypologieLot in ('PL','LC','LD','FS','SNI') and SuperficieUtileSansQP is not null
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','FS','SNI','CL') and SuperficieUtileSansQP is not null
                 visibleValueInterpreter: SEMQL
                 dataType: STRING 
   
@@ -541,7 +541,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_TypologieLot in ('PL','LC','LD','FS') and SuperficieUtileQP is not null
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','FS','CL') and SuperficieUtileQP is not null
                 visibleValueInterpreter: SEMQL
                 dataType: STRING 
 
@@ -556,7 +556,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_TypologieLot in ('PL','LC','LD','PK') and SuperficieTaxable is not null
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','PK','CL') and SuperficieTaxable is not null
                 visibleValueInterpreter: SEMQL
                 dataType: STRING
                 referencedEntity: Batiments.entities.DestinationTaxable.DestinationTaxable
@@ -572,7 +572,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_TypologieLot in ('PL','LC','LD','PK') and SuperficieTaxable is not null
+                visibleValue: FID_TypologieLot in ('PL','LC','LD','PK','CL') and SuperficieTaxable is not null
                 visibleValueInterpreter: SEMQL
                 dataType: STRING 
 
@@ -591,27 +591,27 @@ formTabs:
                 visibleValueInterpreter: SEMQL
                 dataType: STRING 
 
-          - _type: FormCollection
-            _name: Services
-            label: Services
-            pluralLabel: Types services
-            visibleValue: FID_TypologieLot = 'SNI'
-            visibleValueInterpreter: SEMQL
-            useCustomLabel: true
-            collection: Batiments.entities.Service.collection_views.ServiceCollectionLot
-            tableAllowed: true
-            listAllowed: false
-            gridAllowed: false
-            displayRecordCount: ALWAYS
-            enableUserDefinedSort: true
-            transitionPath: Service
-            sortExpression: 1 DESC
-            filter: 1=1
-            targetEntity: Batiments.entities.Service.Service
-            height: 300
-            formCollectionSearchConfigs:
-            - enabled: true 
-              searchType: TEXT
+          # - _type: FormCollection
+          #   _name: Services
+          #   label: Services
+          #   pluralLabel: Types services
+          #   visibleValue: FID_TypologieLot = 'SNI'
+          #   visibleValueInterpreter: SEMQL
+          #   useCustomLabel: true
+          #   collection: Batiments.entities.Service.collection_views.ServiceCollectionLot
+          #   tableAllowed: true
+          #   listAllowed: false
+          #   gridAllowed: false
+          #   displayRecordCount: ALWAYS
+          #   enableUserDefinedSort: true
+          #   transitionPath: Service
+          #   sortExpression: 1 DESC
+          #   filter: 1=1
+          #   targetEntity: Batiments.entities.Service.Service
+          #   height: 300
+          #   formCollectionSearchConfigs:
+          #   - enabled: true 
+          #     searchType: TEXT
 
 
 
@@ -657,7 +657,7 @@ formTabs:
             _name: DateFinPhase
             value: DateFinPhase
             label: Date fin gestion
-            visibleValue: GoldenRecord.DateFinPhase is not null
+            visibleValue: DateFinPhase is not null
             visibleValueInterpreter: SEMQL
             labelProperties:
               alignment: left
@@ -765,6 +765,8 @@ formTabs:
           - _type: TextField
             _name: IdentifiantFiscal
             value: IdentifiantFiscal
+            visibleValue: FID_TypologieLot = 'AP' 
+            visibleValueInterpreter: SEMQL
             label: Identifiant fiscal
             labelProperties:
               alignment: left
@@ -773,17 +775,17 @@ formTabs:
               color: md:black
             useCustomLabel: true
             dataType: STRING
-          - _type: CheckboxField
-            _name: StatutCopropriete
-            value: StatutCopropriete
-            label: Statut copropriété
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: BOOLEAN
+          # - _type: CheckboxField
+          #   _name: StatutCopropriete
+          #   value: StatutCopropriete
+          #   label: Statut copropriété
+          #   labelProperties:
+          #     alignment: left
+          #     typographyValueInterpreter: LITERAL
+          #     typography: body-2
+          #     color: md:black
+          #   useCustomLabel: true
+          #   dataType: BOOLEAN
 
 
           - _type: TextField
@@ -796,7 +798,7 @@ formTabs:
               typography: body-2
               color: md:black
             useCustomLabel: true
-            visibleValue: StatutCopropriete = '1' 
+            visibleValue: NumeroCopropriete is not null
             visibleValueInterpreter: SEMQL
             dataType: STRING
 

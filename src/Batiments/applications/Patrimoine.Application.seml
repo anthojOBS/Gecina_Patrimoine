@@ -63,7 +63,7 @@ navDrawer:
       # - appAction: Batiments.applications.Patrimoine.Root.GlobalSearch
       - appAction: Batiments.applications.Patrimoine.Root.Entities
       - appAction: Batiments.applications.Patrimoine.Root.Dashboard
-      - appAction: Batiments.applications.Patrimoine.Root.OpenModelDoc
+      # - appAction: Batiments.applications.Patrimoine.Root.OpenModelDoc
 
   - _type: NavigationGroup
     _name: Patrimoine
@@ -117,7 +117,8 @@ rootFolder:
       imageAlign: MIDDLE_CENTER
       imageMode: FIT
       badgeVisible: true
-
+      requiredRole: semarchyAdmin
+      
     - _type: BrowseEntitiesFolderAction
       _name: Entities
       lineageEnabled: true
@@ -137,10 +138,11 @@ rootFolder:
       iconColor: '#3F51B5'
       requiredRole: semarchyAdmin
 
-    - _type: OpenDocumentationAction
-      _name: OpenModelDoc
-      iconColor: md:grey
-      label: Documentation
+    # - _type: OpenDocumentationAction
+    #   _name: OpenModelDoc
+    #   iconColor: md:grey
+    #   label: Documentation
+    #   requiredRole: semarchyAdmin
 
             
     - _type: BrowseBusinessViewAction
@@ -532,13 +534,7 @@ rootFolder:
         importAction: Batiments.entities.RelImmSoc.action_sets.RelImmSocActionSet.ImportAuthorRelImmSoc
         description: Importer Société depuis un fichier
         requiredRole: semarchyAdmin
-      # - _type: ImportDataAppAction
-      #   _name: ImportLotsBatiment
-      #   label: Importer relation Societés & Lots
-      #   imageAlign: MIDDLE_CENTER
-      #   imageMode: FIT
-      #   importAction: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet.ImportAuthorRelLotSoc
-      #   description: Importer Société depuis un fichier
+
       # - _type: ImportDataAppAction
       #   _name: Importcompteur
       #   label: Importer Compteur
@@ -546,13 +542,13 @@ rootFolder:
       #   imageMode: FIT
       #   importAction: Batiments.entities.Compteur.action_sets.CompteurActionSet.ImportAuthorCompteur
       #   description: Importer Compteur depuis un fichier
-      - _type: ImportDataAppAction
-        _name: ImportService
-        label: Importer service
-        imageAlign: MIDDLE_CENTER
-        imageMode: FIT
-        importAction: Batiments.entities.Service.action_sets.ServiceActionSet.ImportAuthorService
-        description: Importer service depuis un fichier
-        requiredRole: semarchyAdmin
+      # - _type: ImportDataAppAction
+      #   _name: ImportService
+      #   label: Importer service
+      #   imageAlign: MIDDLE_CENTER
+      #   imageMode: FIT
+      #   importAction: Batiments.entities.Service.action_sets.ServiceActionSet.ImportAuthorService
+      #   description: Importer service depuis un fichier
+      #   requiredRole: semarchyAdmin
 
 applicationTitle: Référentiel Patrimoine

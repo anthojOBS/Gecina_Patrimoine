@@ -18,11 +18,11 @@ rootBusinessViewEntity:
   form: Batiments.entities.Batiment.forms.BatimentConsultation
   outlineVisible: false
 
-  embeddedCollectionNavigations:
-    - formCollection: Batiments.entities.Batiment.forms.BatimentConsultation.FiscaliteJuridique.Societes.Societes
-      browsingTarget: MODAL_FORM
-      businessView: Batiments.entities.Lot.business_views.LotBusinessView
-      form: Batiments.entities.Lot.forms.LotConsultation
+  # embeddedCollectionNavigations:
+  #   - formCollection: Batiments.entities.Batiment.forms.BatimentConsultation.FiscaliteJuridique.Societes.Societes
+  #     browsingTarget: MODAL_FORM
+  #     businessView: Batiments.entities.Lot.business_views.LotBusinessView
+  #     form: Batiments.entities.Lot.forms.LotConsultation
 
 
   displayRecordCount: ALWAYS
@@ -30,15 +30,6 @@ rootBusinessViewEntity:
     - _name: TextConfig
       _type: BusinessEntitySearchTypeConfig
       searchType: TEXT
-    - _name: FormConfig
-      _type: BusinessEntitySearchTypeConfig
-      searchType: BY_FORM
-    - _name: AdvancedConfig
-      _type: BusinessEntitySearchTypeConfig
-      searchType: ADVANCED
-    - _name: SemqlConfig
-      _type: BusinessEntitySearchTypeConfig
-      searchType: SEMQL
   overrideDefaultSort: false
   enableUserDefinedSort: true
   listAllowed: true
@@ -161,6 +152,9 @@ rootBusinessViewEntity:
                 pluralLabel: Masters Records
                 transitionType: FULLY_QUALIFIED
                 transitionPath:  MasterRecords 
+
+                visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
+
                 businessViewEntity: 
                   _type: BusinessViewEntity
                   _name: MasterRecordsLots
@@ -265,7 +259,7 @@ rootBusinessViewEntity:
                       # transitionVisibleInterpreter: SEMQL
                       transitionVisible: '0'
                       transitionVisibleInterpreter: LITERAL
-                      visibleInFormTabCondition: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'
+                      visibleInFormTabCondition: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' and :V_USER_ROLES like '%semarchyAdmin%'
                       businessViewEntity: 
                         _type: BusinessViewEntity
                         _name: MasterRecordsSousLots
@@ -378,6 +372,7 @@ rootBusinessViewEntity:
             pluralLabel: Masters Records
             transitionType: FULLY_QUALIFIED
             transitionPath:  MasterRecords 
+            visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
             businessViewEntity: 
               _type: BusinessViewEntity
               _name: MasterRecordsLotsGlobal
@@ -411,7 +406,7 @@ rootBusinessViewEntity:
             transitionVisible: '0'
             transitionVisibleInterpreter: LITERAL
             filter: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
-            visibleInFormTabCondition: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'
+            visibleInFormTabCondition: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
             useCustomLabel: true
             pluralLabel: Sous-lots
             businessViewEntity: 
@@ -483,7 +478,7 @@ rootBusinessViewEntity:
                   # transitionVisibleInterpreter: SEMQL
                   transitionVisible: '0'
                   transitionVisibleInterpreter: LITERAL
-                  visibleInFormTabCondition: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'
+                  visibleInFormTabCondition: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' and :V_USER_ROLES like '%semarchyAdmin%'
                   businessViewEntity: 
                     _type: BusinessViewEntity
                     _name: MasterRecordsSousLotsglobal
@@ -545,6 +540,7 @@ rootBusinessViewEntity:
       pluralLabel: Masters Records
       transitionType: FULLY_QUALIFIED
       transitionPath:  MasterRecords
+      visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
       businessViewEntity:
         _type: BusinessViewEntity
         _name: MasterRecord
