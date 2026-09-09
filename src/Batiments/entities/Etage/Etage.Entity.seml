@@ -48,14 +48,14 @@ attributes:
     length: 50
     mandatory: false
 
-  - _type: EntityAttribute
-    _name: Libelle
-    label: Libellé
-    physicalName: LIBELLE
-    dataType: String
-    length: 255
-    mandatory: false
-    searchable: true
+  # - _type: EntityAttribute
+  #   _name: Libelle
+  #   label: Libellé
+  #   physicalName: LIBELLE
+  #   dataType: String
+  #   length: 255
+  #   mandatory: false
+  #   searchable: true
 
   - _type: EntityAttribute
     _name: SuperficieTerrasses

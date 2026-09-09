@@ -31,3 +31,13 @@ formTabs:
           typographyValueInterpreter: LITERAL
           typography: body-2
           color: md:black
+      - _type: ReferenceField
+        _name: FDN_TypologieLot
+        value: FDN_TypologieLot
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+        referencedEntity: Batiments.entities.TypologieLot.TypologieLot

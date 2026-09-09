@@ -127,13 +127,12 @@ tableColumns:
     visibleByDefault: true
 
   - _type: TextColumn
-    _name: DateDebPhase
-    value: DateDebPhase
+    _name: DateFinPhase
+    value: DateFinPhase
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
     visibleByDefault: true
-
 
   - _type: ReferenceColumn
     _name: FDN_FiscaliteCible
@@ -166,6 +165,14 @@ tableColumns:
     value: SuperficieHabitableQP
     useCustomLabel: false
     dataType: DECIMAL
+    columnAlign: LEFT
+    visibleByDefault: true
+ 
+  - _type: TextColumn
+    _name: Commentaire
+    value: Commentaire
+    useCustomLabel: false
+    dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
 

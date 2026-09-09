@@ -8,8 +8,8 @@ formTabs:
     _name: Service
     label: Types services
     documentationInterpreter: LITERAL
-    visibleValue: "1"
-    visibleValueInterpreter: LITERAL
+    visibleValue:  Lot.FID_TypologieLot = 'SNI'
+    visibleValueInterpreter: SEMQL
     displayFormTabAs: LABEL
     content:
         - _type: ReferenceField

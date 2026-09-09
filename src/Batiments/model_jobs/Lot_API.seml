@@ -1,0 +1,16 @@
+_package: Batiments.model_jobs
+_name: Lot_API
+_type: ModelJob
+jobType: INTEGRATION
+queueName: Default
+modelTasks:
+  - _type: ModelJobTask
+    entity: Batiments.entities.Lot.Lot
+    _name: Lot
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: false
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: false
+

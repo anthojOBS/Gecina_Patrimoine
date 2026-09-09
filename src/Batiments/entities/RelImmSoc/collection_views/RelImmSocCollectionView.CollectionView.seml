@@ -51,3 +51,18 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
     referencedEntity: Batiments.entities.Societe.Societe
+  - _type: TextColumn
+    _name: DateDebSociete
+    value: DateDebSociete
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: DateFinSociete
+    value: DateFinSociete
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: false

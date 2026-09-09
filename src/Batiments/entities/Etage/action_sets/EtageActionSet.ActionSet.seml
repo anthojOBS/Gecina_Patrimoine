@@ -7,7 +7,7 @@ defaultActionSet: true
 actions:
   - _type: CreateAction
     _name: CreateAuthorEtages
-    label: Création
+    label: Création étage
     useCustomLabel: true
     stepper: Batiments.entities.Etage.steppers.AuthorEtages
     createMultiple: false
@@ -16,7 +16,7 @@ actions:
     allowOtherPublishers: true
   - _type: EditAction
     _name: EditAuthorEtages
-    label: Modification
+    label: Modification étage
     useCustomLabel: true
     stepper: Batiments.entities.Etage.steppers.AuthorEtages
     multipleSelectionAllowed: true

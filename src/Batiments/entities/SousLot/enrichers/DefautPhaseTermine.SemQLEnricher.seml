@@ -1,0 +1,12 @@
+_package: Batiments.entities.SousLot.enrichers
+_name: DefautPhaseTermine
+_type: SemQLEnricher
+entity: Batiments.entities.SousLot.SousLot
+label: Phase Terminé
+enricherExecutionScope: POST_CONSO
+semQlEnricherExpressions: 
+  # - attributeName: FID_Phase
+  #   expression: case when Lot.FID_Phase = 'TERM'  then 'TERM' else FID_Phase end
+    
+  - attributeName: Libelle
+    expression: case when Lot.FID_Phase = 'TERM'  then 'TERM' else 'TEST' end

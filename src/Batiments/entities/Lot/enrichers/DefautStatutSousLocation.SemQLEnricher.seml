@@ -1,0 +1,9 @@
+_package: Batiments.entities.Lot.enrichers
+_name: DefautStatutSousLocation
+_type: SemQLEnricher
+entity: Batiments.entities.Lot.Lot
+label: Default Country
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: StatutSousLocation
+    expression: case when FID_SocieteProprietaire = FID_SocieteExploitante then '0' else '1' end

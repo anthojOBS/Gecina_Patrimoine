@@ -180,10 +180,10 @@ formTabs:
                       - _type: TextField
                         _name: Adresse
                         value: Adresse
-                        componentProperties:
-                          multilineMaxLines: "2"
-                          multilineMinLines: "1"
-                          isMultiline: "1"
+                        # componentProperties:
+                        #   multilineMaxLines: "2"
+                        #   multilineMinLines: "1"
+                        #   isMultiline: "1"
                         label: Adresse
                         labelProperties:
                           alignment: left
@@ -295,7 +295,7 @@ formTabs:
                           #isVisible: Ville is null or Ville = 'Paris' or FDN_Usage = 'ENTREPRISE' or FDN_Usage is null
                         useCustomLabel: true
                         dataType: STRING
-                        visibleValue: Ville = 'Paris' and  (FID_Usage = 'HAB' OR FID_Usage = 'MIXTE')
+                        visibleValue: Ville = 'Paris' and  (FID_Usage = 'RESI' OR FID_Usage = 'MIX')
                         visibleValueInterpreter: SEMQL
                         referencedEntity: Batiments.entities.QuartierParis.QuartierParis
 
@@ -611,6 +611,31 @@ formTabs:
                 visibleValueInterpreter: SEMQL
                 dataType: DECIMAL
 
+      - _type: FormContainer
+        _name: InformationGestion
+        layoutDirection: ROW
+        content:
+          - _type: FormSection
+            _name: InformationGestion
+            label: Informations Gestion
+            layoutDirection: COLUMN
+            visibleValue: "1"
+            visibleValueInterpreter: LITERAL
+            labelWidth: 300px
+            content:
+              - _type: TextField
+                _name: FlagQPIncluse
+                value: FlagQPIncluse
+                label: Gestion QP incluse
+                documentation: Indique si la gestion locative inclus ou non la QP dans la surface
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+
   - _type: FormTab
     _name: CycleVieImmeuble
     label: Cycle de vie
@@ -633,8 +658,8 @@ formTabs:
             content:
 
                             - _type: FormSection
-                              _name: Phase
-                              label: Phase
+                              _name: Etat
+                              label: Etat
                               layoutDirection: COLUMN
                               visibleValue: "1"
                               visibleValueInterpreter: LITERAL
@@ -643,9 +668,9 @@ formTabs:
                                 - _type: ReferenceField
                                   _name: FDN_Phase
                                   value: FDN_Phase
-                                  label: Phase
-                                  authoringMode: force-read-only
-                                  documentation: Statut du bien dans son cycle de vie (initiale, active, terminée).
+                                  label: Etat
+                                  authoringMode: auto
+                                  documentation: Etat du bien dans son cycle de vie (initiale, active, terminée).
                                   labelProperties:
                                     alignment: left
                                     typography: body-2
@@ -653,6 +678,7 @@ formTabs:
                                   useCustomLabel: true
                                   dataType: STRING
                                   referencedEntity: Batiments.entities.Phase.Phase
+
 
                             - _type: FormSection
                               _name: Restructuration

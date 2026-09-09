@@ -38,3 +38,23 @@ formTabs:
         referencedEntity: Batiments.entities.Societe.Societe
 
 
+      - _type: DateField
+        _name: DateDebSociete
+        value: DateDebSociete
+        label: Date debut société
+        labelProperties:
+          alignment: left
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+        componentProperties:                 
+          displayFormat: dd/MM/yyyy                
+          displayFormatValueInterpreter: LITERAL            
+          editingFormat: dd/MM/yyyy                 
+          editingFormatValueInterpreter: LITERAL
+        useCustomLabel: true
+        visibleValue:  GoldenRecord.DateDebSociete is not null 
+        visibleValueInterpreter: SEMQL
+        dataType: DATE
+
+

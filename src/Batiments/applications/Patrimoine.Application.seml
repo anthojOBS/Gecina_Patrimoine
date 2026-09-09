@@ -417,13 +417,13 @@ rootFolder:
           imageMode: FIT
           nbRecordsBadgeVisible: false
 
-        # - _type: BrowseBusinessViewAction
-        #   _name: TypeCompteur
-        #   businessView: Batiments.entities.TypeCompteur.business_views.TypeCompteurBusinessView
-        #   imageAlign: MIDDLE_CENTER
-        #   imageMode: FIT
-        #   icon: images://mdi/office-building.svg
-        #   nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
+          _name: TypeEtage
+          businessView: Batiments.entities.TypeEtage.business_views.TypeEtageBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/office-building.svg
+          nbRecordsBadgeVisible: false
 
         - _type: BrowseBusinessViewAction
           _name: TypeService
@@ -490,6 +490,8 @@ rootFolder:
         imageMode: FIT
         importAction: Batiments.entities.Immeuble.action_sets.ImmeubleActionSet.ImportAuthorImmeubles
         description: Importer Immeuble depuis un fichier
+        requiredRole: semarchyAdmin
+
       - _type: ImportDataAppAction
         _name: ImportBatiments
         label: Importer Bâtiments
@@ -497,6 +499,7 @@ rootFolder:
         imageMode: FIT
         importAction: Batiments.entities.Batiment.action_sets.BatimentActionSet.ImportAuthorBatiments
         description: Importer Bâtiment depuis un fichier
+        requiredRole: semarchyAdmin
       - _type: ImportDataAppAction
         _name: ImportEtages
         label: Importer Etages
@@ -504,6 +507,7 @@ rootFolder:
         imageMode: FIT
         importAction: Batiments.entities.Etage.action_sets.EtageActionSet.ImportAuthorEtages
         description: Importer Etage depuis un fichier
+        requiredRole: semarchyAdmin
       - _type: ImportDataAppAction
         _name: ImportLots
         label: Importer Lots
@@ -511,6 +515,7 @@ rootFolder:
         imageMode: FIT
         importAction: Batiments.entities.Lot.action_sets.LotActionSet.ImportAuthorLots
         description: Importer Lot depuis un fichier
+        requiredRole: semarchyAdmin
       - _type: ImportDataAppAction
         _name: ImportSousLots
         label: Importer Sous-Lots
@@ -518,6 +523,7 @@ rootFolder:
         imageMode: FIT
         importAction: Batiments.entities.SousLot.action_sets.SousLotActionSet.Import
         description: Importer Sous-lot depuis un fichier
+        requiredRole: semarchyAdmin
       - _type: ImportDataAppAction
         _name: ImportSociete
         label: Importer relation Societés & Immeubles
@@ -525,13 +531,14 @@ rootFolder:
         imageMode: FIT
         importAction: Batiments.entities.RelImmSoc.action_sets.RelImmSocActionSet.ImportAuthorRelImmSoc
         description: Importer Société depuis un fichier
-      - _type: ImportDataAppAction
-        _name: ImportLotsBatiment
-        label: Importer relation Societés & Lots
-        imageAlign: MIDDLE_CENTER
-        imageMode: FIT
-        importAction: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet.ImportAuthorRelLotSoc
-        description: Importer Société depuis un fichier
+        requiredRole: semarchyAdmin
+      # - _type: ImportDataAppAction
+      #   _name: ImportLotsBatiment
+      #   label: Importer relation Societés & Lots
+      #   imageAlign: MIDDLE_CENTER
+      #   imageMode: FIT
+      #   importAction: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet.ImportAuthorRelLotSoc
+      #   description: Importer Société depuis un fichier
       # - _type: ImportDataAppAction
       #   _name: Importcompteur
       #   label: Importer Compteur
@@ -546,5 +553,6 @@ rootFolder:
         imageMode: FIT
         importAction: Batiments.entities.Service.action_sets.ServiceActionSet.ImportAuthorService
         description: Importer service depuis un fichier
+        requiredRole: semarchyAdmin
 
 applicationTitle: Référentiel Patrimoine

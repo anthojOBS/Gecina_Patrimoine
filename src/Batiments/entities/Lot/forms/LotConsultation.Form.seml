@@ -110,7 +110,21 @@ formTabs:
                     visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' and StatutNewLot = '1'
                     visibleValueInterpreter: SEMQL
                     dataType: BOOLEAN
-
+                  - _type: ReferenceField
+                    _name: FDN_LotOrigine
+                    value: FDN_LotOrigine
+                    label: Lot d'origine
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' and StatutNewLot = '1'
+                    visibleValueInterpreter: SEMQL
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.Lot.Lot
+                    
               - _type: FormSection
                 _name: Usage
                 label: Usage
@@ -414,7 +428,32 @@ formTabs:
                     visibleValue: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
                     dataType: STRING
 
-
+          - _type: FormContainer
+            _name: com
+            layoutDirection: ROW
+            content:
+              - _type: FormSection
+                _name: Commentaires
+                label: Commentaires
+                layoutDirection: COLUMN       
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
+                        - _type: TextField
+                          _name: Commentaire
+                          value: Commentaire
+                          label: Commentaires
+                          componentProperties:
+                            multilineMaxLines: "2"
+                            multilineMinLines: "1"
+                            isMultiline: "1"
+                          labelProperties:
+                            alignment: left
+                            typography: body-2
+                            color: md:black
+                          useCustomLabel: false
+                          dataType: STRING
      
 
       # - _type: FormCollection
@@ -592,8 +631,8 @@ formTabs:
       content:
 
       - _type: FormSection
-        _name: Phase
-        label: Phase
+        _name: Etat
+        label: Etat
         layoutDirection: COLUMN
         visibleValue: '1'
         visibleValueInterpreter: LITERAL
@@ -602,7 +641,7 @@ formTabs:
           - _type: ReferenceField
             _name: FDN_Phase
             value: FDN_Phase
-            label: Phase
+            label: Etat
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL
@@ -612,10 +651,14 @@ formTabs:
             dataType: STRING
             referencedEntity: Batiments.entities.Phase.Phase
 
+
+
           - _type: TextField
-            _name: DateDebPhase
-            value: DateDebPhase
-            label: Date début phase
+            _name: DateFinPhase
+            value: DateFinPhase
+            label: Date fin gestion
+            visibleValue: GoldenRecord.DateFinPhase is not null
+            visibleValueInterpreter: SEMQL
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL
@@ -769,29 +812,61 @@ formTabs:
             useCustomLabel: true
             dataType: BOOLEAN
 
-
-
-      - _type: FormCollection
+      - _type: FormSection
         _name: Societes
         label: Sociétés
-        pluralLabel: Sociétés
-        useCustomLabel: true
-        collection: Batiments.entities.RelLotSoc.collection_views.Societe
-        actionSet: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet
-        tableAllowed: true
-        listAllowed: false
-        gridAllowed: false
-        displayRecordCount: ALWAYS
-        enableUserDefinedSort: true
-        transitionPath: RelLotSoc
-        sortExpression: 1 DESC
-        filter: 1=1
-        # filter: FID_TypeSociete = '1'
-        targetEntity: Batiments.entities.RelLotSoc.RelLotSoc
-        height: 300
-        formCollectionSearchConfigs:
-          - enabled: true 
-            searchType: TEXT
+        layoutDirection: COLUMN
+        visibleValue: '1'
+        visibleValueInterpreter: LITERAL
+        labelWidth: 200px
+        content:
+          - _type: ReferenceField
+            _name: FDN_SocieteProprietaire
+            value: FDN_SocieteProprietaire
+            label: Société propriétaire
+            labelProperties:
+              alignment: left
+              typographyValueInterpreter: LITERAL
+              typography: body-2
+              color: md:black
+            useCustomLabel: true
+            dataType: STRING
+            referencedEntity: Batiments.entities.Societe.Societe
+          - _type: ReferenceField
+            _name: FDN_SocieteExploitante
+            value: FDN_SocieteExploitante
+            label: Société exploitante
+            labelProperties:
+              alignment: left
+              typographyValueInterpreter: LITERAL
+              typography: body-2
+              color: md:black
+            useCustomLabel: true
+            dataType: STRING
+            referencedEntity: Batiments.entities.Societe.Societe
+
+
+      # - _type: FormCollection
+      #   _name: Societes
+      #   label: Sociétés
+      #   pluralLabel: Sociétés
+      #   useCustomLabel: true
+      #   collection: Batiments.entities.RelLotSoc.collection_views.Societe
+      #   actionSet: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet
+      #   tableAllowed: true
+      #   listAllowed: false
+      #   gridAllowed: false
+      #   displayRecordCount: ALWAYS
+      #   enableUserDefinedSort: true
+      #   transitionPath: RelLotSoc
+      #   sortExpression: 1 DESC
+      #   filter: 1=1
+      #   # filter: FID_TypeSociete = '1'
+      #   targetEntity: Batiments.entities.RelLotSoc.RelLotSoc
+      #   height: 300
+      #   formCollectionSearchConfigs:
+      #     - enabled: true 
+      #       searchType: TEXT
 
 
   - _type: FormTab

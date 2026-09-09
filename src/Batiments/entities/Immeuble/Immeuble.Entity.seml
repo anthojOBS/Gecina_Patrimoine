@@ -203,14 +203,6 @@ attributes:
     dataType: Date
     mandatory: false
 
-  - _type: EntityAttribute
-    _name: DateDebPhase
-    label: Date début phase
-    physicalName: DATE_DEBUT_PHASE
-    dataType: Date
-    mandatory: true
-    mandatoryValidationLabel: "Date début phase est obligatoire"
-    mandatoryValidationScope: POST_CONSO
 
 
   - _type: EntityAttribute
@@ -247,9 +239,9 @@ attributes:
   - _type: EntityAttribute
     _name: NbAscenseur
     label: Nombre ascenceurs
-    physicalName: NB_ASCENSEUR
+    physicalName: NBR_ASCENSEUR
     dataType: LongInteger
-    precision: 20
+    precision: 2
     mandatory: false
 
   - _type: EntityAttribute

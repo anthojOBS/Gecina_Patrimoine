@@ -1,0 +1,8 @@
+_package: Batiments.entities.Lot.validations
+_name: CheckUsage
+_type: SemQLValidation
+entity: Batiments.entities.Lot.Lot
+label: Cohérence usage immeuble et lot
+condition:  (FID_Usage =  Etage.Batiment.Immeuble.FID_Usage) or Etage.Batiment.Immeuble.FID_Usage = 'MIXTE'  or FID_Usage is null
+validationScope: PRE_CONSO
+validationLabel: Attention - l’usage du lot est incompatible avec celui de l’immeuble. Vérifiez l’usage de l’immeuble

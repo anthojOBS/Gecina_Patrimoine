@@ -256,13 +256,7 @@ tableColumns:
     visibleByDefault: true
     referencedEntity: Batiments.entities.Phase.Phase
     
-  - _type: TextColumn
-    _name: DateDebPhase
-    value: DateDebPhase
-    useCustomLabel: false
-    dataType: DATE
-    columnAlign: LEFT
-    visibleByDefault: true
+
 
   - _type: ReferenceColumn
     _name: FDN_RegimeJuridique

@@ -1,0 +1,8 @@
+_package: Batiments.entities.Immeuble.validations
+_name: CheckSocieteProprio
+_type: SemQLValidation
+entity: Batiments.entities.Immeuble.Immeuble
+label: Société propriétaire obligatoire 
+condition: any RelImmSoc have (FID_TypeSociete = '1')
+validationScope: POST_CONSO
+validationLabel: L'immeuble doit avoir une société proprietaire

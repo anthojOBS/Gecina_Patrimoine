@@ -7,5 +7,6 @@ description: ""
 documentation: ""
 defaultRule: true
 consolidationStrategy: CUSTOM_RANKING
+consolidationOrderByExpression: UpdateDate desc
 consolidationSkipNulls: false
 overrideStrategy: UNTIL_CONSOLIDATED_VAL_CHANGE

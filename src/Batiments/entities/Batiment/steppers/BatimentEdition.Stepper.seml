@@ -6,7 +6,7 @@ label: Batiments
 rootStep:
   _type: CollectionStep
   _name: Batiments
-  label: Batiments
+  label: Fiche bâtiment
   canFinishSubLevel: true
   enabledOnParentCreate: true
   enabledOnParentEdit: true

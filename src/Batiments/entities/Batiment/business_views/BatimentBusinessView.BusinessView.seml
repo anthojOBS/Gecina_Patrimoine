@@ -17,6 +17,14 @@ rootBusinessViewEntity:
   collection: Batiments.entities.Batiment.collection_views.BatimentCollectionView
   form: Batiments.entities.Batiment.forms.BatimentConsultation
   outlineVisible: false
+
+  embeddedCollectionNavigations:
+    - formCollection: Batiments.entities.Batiment.forms.BatimentConsultation.FiscaliteJuridique.Societes.Societes
+      browsingTarget: MODAL_FORM
+      businessView: Batiments.entities.Lot.business_views.LotBusinessView
+      form: Batiments.entities.Lot.forms.LotConsultation
+
+
   displayRecordCount: ALWAYS
   businessEntitySearchConfigs:
     - _name: TextConfig
@@ -70,7 +78,7 @@ rootBusinessViewEntity:
         tableAllowed: true
         enableUserDefinedSort: true
         outlineVisible: false
-        sortExpression: CodeEtage ASC
+        sortExpression: TypeEtage.EtageNum DESC
 
 
 
@@ -181,8 +189,13 @@ rootBusinessViewEntity:
                 iconUrl: images://mdi/door-sliding-open.svg
                 transitionPath: SousLot
                 transitionType: FULLY_QUALIFIED
+                # transitionVisible: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+                # transitionVisibleInterpreter: SEMQL
                 transitionVisible: '0'
                 transitionVisibleInterpreter: LITERAL
+
+
+                visibleInFormTabCondition: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'
                 useCustomLabel: true
                 pluralLabel: Sous-lots
                 businessViewEntity: 
@@ -214,8 +227,11 @@ rootBusinessViewEntity:
                       pluralLabel: History
                       transitionPath: GoldenHistoryRecords
                       transitionType: FULLY_QUALIFIED
-                      transitionVisible: '1'
+                      # transitionVisible: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+                      # transitionVisibleInterpreter: SEMQL
+                      transitionVisible: '0'
                       transitionVisibleInterpreter: LITERAL
+                      visibleInFormTabCondition: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
                       useCustomLabel: true
                       businessViewEntity: 
                         _type: BusinessViewEntity
@@ -245,6 +261,11 @@ rootBusinessViewEntity:
                       pluralLabel: Masters Records
                       transitionType: FULLY_QUALIFIED
                       transitionPath:  MasterRecords 
+                      # transitionVisible: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+                      # transitionVisibleInterpreter: SEMQL
+                      transitionVisible: '0'
+                      transitionVisibleInterpreter: LITERAL
+                      visibleInFormTabCondition: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'
                       businessViewEntity: 
                         _type: BusinessViewEntity
                         _name: MasterRecordsSousLots
@@ -385,8 +406,12 @@ rootBusinessViewEntity:
             iconUrl: images://mdi/door-sliding-open.svg
             transitionPath: SousLot
             transitionType: FULLY_QUALIFIED
+            # transitionVisible: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+            # transitionVisibleInterpreter: SEMQL
             transitionVisible: '0'
             transitionVisibleInterpreter: LITERAL
+            filter: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+            visibleInFormTabCondition: Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'
             useCustomLabel: true
             pluralLabel: Sous-lots
             businessViewEntity: 
@@ -418,8 +443,13 @@ rootBusinessViewEntity:
                   pluralLabel: History
                   transitionPath: GoldenHistoryRecords
                   transitionType: FULLY_QUALIFIED
-                  transitionVisible: '1'
+                  # transitionVisible: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+                  # transitionVisibleInterpreter: SEMQL
+                  transitionVisible: '0'
                   transitionVisibleInterpreter: LITERAL
+                  filter: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+
+                  visibleInFormTabCondition: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'
                   useCustomLabel: true
                   businessViewEntity: 
                     _type: BusinessViewEntity
@@ -443,12 +473,17 @@ rootBusinessViewEntity:
                   displayFormTabAs: ICON_LABEL
                   useCustomLabel: false
                   enableHierarchyInterpreter: LITERAL
-                  filter: 1=1
+                  filter: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
                   iconUrl: images://mdi/puzzle.svg
                   label: Masters Records
                   pluralLabel: Masters Records
                   transitionType: FULLY_QUALIFIED
                   transitionPath:  MasterRecords 
+                  # transitionVisible: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+                  # transitionVisibleInterpreter: SEMQL
+                  transitionVisible: '0'
+                  transitionVisibleInterpreter: LITERAL
+                  visibleInFormTabCondition: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'
                   businessViewEntity: 
                     _type: BusinessViewEntity
                     _name: MasterRecordsSousLotsglobal

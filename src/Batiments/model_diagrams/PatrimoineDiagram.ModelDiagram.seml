@@ -328,16 +328,6 @@ entityShapes:
       y: 800
   # Relations société - à droite des sociétés
   - _type: EntityShape
-    _name: RelBatSocShape
-    entity: Batiments.entities.RelBatSoc.RelBatSoc
-    borderColor: "#3e2723"
-    fontTitleColor: ""
-    width: -1
-    height: -1
-    position:
-      x: 400
-      y: 1000
-  - _type: EntityShape
     _name: RelImmSocShape
     entity: Batiments.entities.RelImmSoc.RelImmSoc
     borderColor: "#37474f"
@@ -346,16 +336,6 @@ entityShapes:
     height: -1
     position:
       x: 800
-      y: 1000
-  - _type: EntityShape
-    _name: RelLotSocShape
-    entity: Batiments.entities.RelLotSoc.RelLotSoc
-    borderColor: "#880e4f"
-    fontTitleColor: ""
-    width: -1
-    height: -1
-    position:
-      x: 1200
       y: 1000
 referenceLinks:
   - reference: Batiments.references.ImmeubleToPhase
@@ -434,25 +414,13 @@ referenceLinks:
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
     toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ZoneImmostatShape
     bendPoints: []
-  - reference: Batiments.references.LotToSociete
+  - reference: Batiments.references.LotToSocieteProprietaire
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
     toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.SocieteShape
     bendPoints: []
   - reference: Batiments.references.LotToTypologieLot
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
     toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.TypologieLotShape
-    bendPoints: []
-  - reference: Batiments.references.RelBatSocToBatiment
-    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RelBatSocShape
-    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
-    bendPoints: []
-  - reference: Batiments.references.RelBatSocToTypeSociete
-    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RelBatSocShape
-    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.TypeSocieteShape
-    bendPoints: []
-  - reference: Batiments.references.RelBatSocToSociete
-    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RelBatSocShape
-    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.SocieteShape
     bendPoints: []
   - reference: Batiments.references.RelImmSocToTypeSociete
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RelImmSocShape
@@ -465,18 +433,6 @@ referenceLinks:
   - reference: Batiments.references.RelImmSocToSociete
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RelImmSocShape
     toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.SocieteShape
-    bendPoints: []
-  - reference: Batiments.references.RelLotSocToLot
-    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RelLotSocShape
-    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
-    bendPoints: []
-  - reference: Batiments.references.RelLotSocToSociete
-    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RelLotSocShape
-    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.SocieteShape
-    bendPoints: []
-  - reference: Batiments.references.RelLotSocToTypeSociete
-    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.RelLotSocShape
-    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.TypeSocieteShape
     bendPoints: []
   - reference: Batiments.references.LotToRaison
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape

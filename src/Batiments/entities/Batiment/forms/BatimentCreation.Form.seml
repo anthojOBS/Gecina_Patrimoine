@@ -144,76 +144,30 @@ formTabs:
                             dataType: STRING
                             referencedEntity: Batiments.entities.Pays.Pays
 
-      # # SECTION HAUT (FormContainer)
-      # - _type: FormContainer
-      #   _name: SectionBas
-      #   layoutDirection: ROW
-      #   content:
-      #         # Identité bâtiment
-      #         - _type: FormContainer
-      #           _name: SectionBasGauche
-      #           layoutDirection: COLUMN
-      #           content:
 
-      #             - _type: FormSection
-      #               _name: Usage
-      #               label: Usage
-      #               layoutDirection: COLUMN
-      #               visibleValue: '1'
-      #               visibleValueInterpreter: LITERAL
-      #               labelWidth: 200px
-      #               content:
-      #                   - _type: ReferenceField
-      #                     _name: FDN_Usage
-      #                     value: FDN_Usage
-      #                     label: Usage
-      #                     documentation: Usage principal de l’immeuble, indiquant s’il est destiné à une activité d’entreprise, à de l’habitation ou au deux.
-      #                     labelProperties:
-      #                       alignment: left
-      #                       typographyValueInterpreter: LITERAL
-      #                       typography: body-2
-      #                       color: md:black
-      #                     useCustomLabel: true
-      #                     dataType: STRING
-      #                     referencedEntity: Batiments.entities.Usage.Usage
-       
 
-  # - _type: FormTab
-  #   _name: Composition
-  #   label: Composition
-  #   documentationInterpreter: LITERAL
-  #   visibleValue: Immeuble.FID_OrgaResp = 'DB'
-  #   visibleValueInterpreter: SEMQL
-  #   displayFormTabAs: ICON_LABEL
-  #   content:
-
-  #     - _type: FormSection
-  #       _name: Etage
-  #       label: Composition des étages 
-  #       layoutDirection: COLUMN
-  #       visibleValue: Immeuble.FID_OrgaResp = 'DB'
-  #       visibleValueInterpreter: SEMQL
-
-  #       content:
-  #         - _type: FormCollection
-  #           _name: Etage
-  #           label: Composition des étages
-  #           pluralLabel: Composition des étages
-  #           useCustomLabel: true
-  #           collection: Batiments.entities.Etage.collection_views.EtageComposition
-  #           tableAllowed: true
-  #           listAllowed: false
-  #           gridAllowed: false
-  #           displayRecordCount: ALWAYS
-  #           enableUserDefinedSort: true
-  #           transitionPath: Etage
-  #           sortExpression: 1 DESC
-  #           filter: 1=1
-  #           targetEntity: Batiments.entities.Etage.Etage
-  #           height: 300
-  #           formCollectionSearchConfigs:
-  #            -  enabled: true 
-  #               searchType: TEXT
+      - _type: FormContainer
+        _name: bas
+        layoutDirection: ROW
+        content:
+          - _type: FormSection
+            _name: Commentaires
+            label: Commentaires
+            layoutDirection: COLUMN
+            visibleValue: "1"
+            visibleValueInterpreter: LITERAL
+            labelWidth: 200px
+            content:
+                    - _type: TextField
+                      _name: Commentaire
+                      value: Commentaire
+                      label: Commentaires
+                      labelProperties:
+                        alignment: left
+                        typography: body-2
+                        color: md:black
+                      useCustomLabel: false
+                      dataType: STRING
 
   - _type: FormTab
     _name: CycleVieBatiment
@@ -233,8 +187,8 @@ formTabs:
                 layoutDirection: COLUMN
                 content:
                   - _type: FormSection
-                    _name: Phase
-                    label: Phase
+                    _name: Etat
+                    label: Etat
                     layoutDirection: COLUMN
                     visibleValue: '1'
                     visibleValueInterpreter: LITERAL
@@ -243,7 +197,7 @@ formTabs:
                       - _type: ReferenceField
                         _name: FDN_Phase
                         value: FDN_Phase
-                        label: Phase
+                        label: Etat
                         authoringMode: force-read-only
                         documentation: Statut du bien dans son cycle de vie (initiale, active, terminée).
                         labelProperties:
@@ -254,6 +208,7 @@ formTabs:
                         useCustomLabel: true
                         dataType: STRING
                         referencedEntity: Batiments.entities.Phase.Phase
+
 
                   - _type: FormSection
                     _name: Construction
@@ -358,7 +313,7 @@ formTabs:
                           useCustomLabel: true
                           dataType: DATE
 
-
+                              
   - _type: FormTab
     _name: FiscaliteJuridique
     label: Juridique et propriété

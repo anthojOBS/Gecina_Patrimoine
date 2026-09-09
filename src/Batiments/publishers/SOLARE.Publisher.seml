@@ -1,0 +1,8 @@
+_package: Batiments.publishers
+_type: Publisher
+_name: SOLARE
+label: SOLARE
+description: SOLARE Publisher
+active: true
+code: SOLARE
+color: md:purple

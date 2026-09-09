@@ -1,8 +1,0 @@
-_package: Batiments.publishers
-_type: Publisher
-_name: SAM_FM
-label: SAM FM
-description: SAM FM Publisher
-active: true
-code: SAMFM
-color: md:blue

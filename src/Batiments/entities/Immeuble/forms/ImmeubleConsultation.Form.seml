@@ -84,6 +84,10 @@ formTabs:
                         _name: AdresseStandardise
                         value: AdresseStandardise
                         label: Adresse
+                        componentProperties:
+                          multilineMaxLines: "2"
+                          multilineMinLines: "1"
+                          isMultiline: "1"
                         labelProperties:
                           alignment: left
                           typographyValueInterpreter: LITERAL
@@ -181,7 +185,7 @@ formTabs:
                           color: md:black
                         useCustomLabel: true
                         dataType: STRING
-                        visibleValue: Ville = 'Paris' and  (FID_Usage = 'HAB' OR FID_Usage = 'MIXTE')
+                        visibleValue: Ville = 'Paris' and  (FID_Usage = 'RESI' OR FID_Usage = 'MIX')
                         visibleValueInterpreter: SEMQL
                         referencedEntity: Batiments.entities.QuartierParis.QuartierParis
        
@@ -294,35 +298,19 @@ formTabs:
                     _name: BlocUsage
                     layoutDirection: COLUMN
                     content:
-                      # - _type: ReferenceField
-                      #   _name: FDN_Usage
-                      #   value: FDN_Usage
-                      #   label: Usage
-                      #   documentation: Usage principal de l’immeuble, indiquant s’il est destiné à une activité d’entreprise, à de l’habitation ou au deux.
-                      #   labelProperties:
-                      #     alignment: left
-                      #     typography: body-2
-                      #     color: md:black
-                      #   useCustomLabel: true
-                      #   dataType: STRING
-                      #   referencedEntity: Batiments.entities.Usage.Usage
-
-                      - _type: TextField
-                        _name: UsageDetail
-                        value: case when FID_OrgaResp = 'DR'  then FDN_Usage  
-                         when (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'Mixte'
-                         when (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'HAB' end) = 0  then 'Tertiaire'
-                         when (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'ENT' end) = 0  and (lookup count(FID_Usage) from Batiment.Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'Habitation'
-                         else Null end
-                        
+                      - _type: ReferenceField
+                        _name: FDN_Usage
+                        value: FDN_Usage
                         label: Usage
+                        documentation: Usage principal de l’immeuble, indiquant s’il est destiné à une activité d’entreprise, à de l’habitation ou au deux.
                         labelProperties:
                           alignment: left
-                          typographyValueInterpreter: LITERAL
                           typography: body-2
                           color: md:black
                         useCustomLabel: true
                         dataType: STRING
+                        referencedEntity: Batiments.entities.Usage.Usage
+
                         
           - _type: FormContainer
             _name: SectionD3
@@ -579,8 +567,10 @@ formTabs:
                           _name: Commentaire
                           value: Commentaire
                           label: Commentaires
-                          authoringMode: Case when Commentaire is null then 'auto' else 'force-read-only' end
-                          authoringModeValueInterpreter: SEMQL
+                          componentProperties:
+                            multilineMaxLines: "2"
+                            multilineMinLines: "1"
+                            isMultiline: "1"
                           labelProperties:
                             alignment: left
                             typography: body-2
@@ -618,7 +608,7 @@ formTabs:
             content:
               - _type: TextField
                 _name: NombreEtages
-                value: lookup first (substr(Libelle, 1, 1)) from Batiment.Etage where substr(CodeEtage, 1, 1) = 'E' order by CodeEtage desc  end 
+                value: lookup first (EtageNum) from Batiment.Etage.TypeEtage order by EtageNum desc  end 
                 label: Nombre étages
                 documentation: Nombre d'étages
                 labelProperties:
@@ -728,7 +718,7 @@ formTabs:
             content:
               - _type: TextField
                 _name: SurperficieHabitable
-                value: case when (FID_Usage = 'HAB' or  FID_Usage = 'MIXTE') and (lookup sum (SuperficieHabitable) from Batiment.Etage.Lot end) is not null  then (lookup sum (SuperficieHabitable) from Batiment.Etage.Lot end) || ' m²' else
+                value: case when (FID_Usage = 'RESI' or  FID_Usage = 'MIX') and (lookup sum (SuperficieHabitable) from Batiment.Etage.Lot end) is not null  then (lookup sum (SuperficieHabitable) from Batiment.Etage.Lot end) || ' m²' else
                       null end
                 
                 label: Superficie habitable (SHAB)
@@ -739,7 +729,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: FID_Usage = 'HAB' or  FID_Usage = 'MIXTE'
+                visibleValue: FID_Usage = 'HAB' or  FID_Usage = 'MIX'
                 visibleValueInterpreter: SEMQL
                 dataType: STRING
 
@@ -793,7 +783,7 @@ formTabs:
 
               - _type: TextField
                 _name: SurperficieTaxableStockage
-                value: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LD' end) || ' m²'                
+                value: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_DestinationTaxable = 'IDS' end) || ' m²'                
                 label: Superficie taxable locaux stockage
                 documentation: Superficie taxable locaux stockage
                 labelProperties:
@@ -802,7 +792,7 @@ formTabs:
                   typography: body-2
                   color: md:black
                 useCustomLabel: true
-                visibleValue: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_TypologieLot = 'LD' end) is not null
+                visibleValue: (lookup sum (SuperficieTaxable) from Batiment.Etage.Lot where FID_DestinationTaxable = 'IDS' end) is not null
                 visibleValueInterpreter: SEMQL
                 dataType: STRING 
 
@@ -897,6 +887,31 @@ formTabs:
         - enabled: true 
           searchType: TEXT
     
+      - _type: FormContainer
+        _name: InformationGestion
+        layoutDirection: ROW
+        content:
+          - _type: FormSection
+            _name: InformationGestion
+            label: Informations Gestion
+            layoutDirection: COLUMN
+            visibleValue: "1"
+            visibleValueInterpreter: LITERAL
+            labelWidth: 300px
+            content:
+              - _type: TextField
+                _name: FlagQPIncluse
+                value: FlagQPIncluse
+                label: Gestion QP incluse
+                documentation: Indique si la gestion locative inclus ou non la QP dans la surface
+                labelProperties:
+                  alignment: left
+                  typographyValueInterpreter: LITERAL
+                  typography: body-2
+                  color: md:black
+                useCustomLabel: true
+                dataType: BOOLEAN
+
   - _type: FormTab
     _name: CycleVieImmeuble
     label: Cycle de vie
@@ -918,8 +933,8 @@ formTabs:
             content:
 
                       - _type: FormSection
-                        _name: Phase
-                        label: Phase
+                        _name: Etat
+                        label: Etat
                         layoutDirection: COLUMN
                         visibleValue: "1"
                         visibleValueInterpreter: LITERAL
@@ -928,8 +943,8 @@ formTabs:
                           - _type: ReferenceField
                             _name: FDN_Phase
                             value: FDN_Phase
-                            label: Phase
-                            documentation: Statut du bien dans son cycle de vie (initiale, active, terminée).
+                            label: Etat
+                            documentation: Etat du bien dans son cycle de vie (initiale, active, terminée).
                             labelProperties:
                               alignment: left
                               typography: body-2
@@ -937,6 +952,7 @@ formTabs:
                             useCustomLabel: true
                             dataType: STRING
                             referencedEntity: Batiments.entities.Phase.Phase
+
 
 
                       - _type: FormSection

@@ -25,7 +25,7 @@ rootStep:
   childSteps:
     - _type: FormStep
       _name: Immeuble
-      label: Immeuble
+      label: Fiche Immeuble
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
@@ -146,6 +146,12 @@ rootStep:
         #   validationType: MANDATORY
         #   attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
 
+        - validator: Batiments.entities.Immeuble.validations.CheckCoherenceOrgaPortef
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.ImmeubleToSousPortefeuille.SousPortefeuille
+
         - validator: Batiments.entities.Immeuble.validations.CheckZoneOrga
           executedOnDataChange: true
           executedOnFormOpen: true
@@ -161,7 +167,6 @@ rootStep:
           executedOnFormOpen: true
           validationType: CHECK
           attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
-
         - validator: Batiments.entities.Immeuble.validations.CheckCoherenceSecteur_Zone
           executedOnDataChange: true
           executedOnFormOpen: true
@@ -172,6 +177,7 @@ rootStep:
           executedOnFormOpen: true
           validationType: CHECK
           attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
+
         - validator: Batiments.entities.Immeuble.validations.CheckLongLibelle
           executedOnDataChange: true
           executedOnFormOpen: true
@@ -188,6 +194,27 @@ rootStep:
           validationType: CHECK
           attribute: Batiments.references.ImmeubleToQuartierParis.QuartierParis
 
+        - validator: Batiments.entities.Immeuble.validations.CheckZoneOrga_DR
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.ImmeubleToZoneImmostat.ZoneImmostat
+        - validator: Batiments.entities.Immeuble.validations.CheckSecteurOrga_DR
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.ImmeubleToSecteurImmostat.SecteurImmostat
+        - validator: Batiments.entities.Immeuble.validations.CheckSsSecteurOrga_DR
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
+        - validator: Batiments.entities.Immeuble.validations.CheckQuartierParis_DR
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.ImmeubleToQuartierParis.QuartierParis
+      
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: MANDATORY
@@ -231,7 +258,9 @@ rootStep:
         # - onStepExit: BLOCK
         #   validationType: MANDATORY
         #   attribute:  Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
-
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckCoherenceOrgaPortef
         - onStepExit: BLOCK
           validationType: CHECK
           validator: Batiments.entities.Immeuble.validations.CheckZoneOrga
@@ -261,6 +290,19 @@ rootStep:
           validationType: DETECT_DUPS
           matcher: Batiments.entities.Immeuble.Immeuble.Matcher
 
+        - onStepExit: WARN
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckZoneOrga_DR
+        - onStepExit: WARN
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckSecteurOrga_DR
+        - onStepExit: WARN
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckSsSecteurOrga_DR
+        - onStepExit: WARN
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckQuartierParis_DR
+      
     - _type: FormStep
       _name: Composition
       label: Composition
@@ -273,7 +315,7 @@ rootStep:
 
     - _type: FormStep
       _name: CycleDeVie
-      label: Cycle de vie de l'immeuble
+      label: Cycle de vie
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
@@ -286,10 +328,7 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
-        - enricher: Batiments.entities.Immeuble.enrichers.DefautDtDebPhase
-          executedOnButtonClick: false
-          executedOnDataChange: false
-          executedOnFormOpen: true
+
         - enricher: Batiments.entities.Immeuble.enrichers.DefautPeriodConstruct
           executedOnButtonClick: false
           executedOnDataChange: true
@@ -339,7 +378,7 @@ rootStep:
 
     - _type: FormStep
       _name: FiscaliteJuridique
-      label: Fiscalité et Juridique
+      label: Juridique et propriété
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
@@ -348,11 +387,11 @@ rootStep:
       formTab: Batiments.entities.Immeuble.forms.ImmeubleCreation.FiscaliteJuridique
 
 
-      formStepEnrichers:   
-        - enricher: Batiments.entities.Immeuble.enrichers.DefautRegimeTVA
-          executedOnButtonClick: false
-          executedOnDataChange: false
-          executedOnFormOpen: true
+      # formStepEnrichers:   
+      #   - enricher: Batiments.entities.Immeuble.enrichers.DefautRegimeTVA
+      #     executedOnButtonClick: false
+      #     executedOnDataChange: false
+      #     executedOnFormOpen: true
 
       formStepValidations:  
         - executedOnDataChange: true
@@ -417,6 +456,30 @@ rootStep:
           formTab: Batiments.entities.RelImmSoc.forms.RelImmSocForm.RelImmSoc
 
 
+          formStepEnrichers:   
+            - enricher: Batiments.entities.RelImmSoc.enrichers.DefautDateDebSociete
+              executedOnButtonClick: false
+              executedOnDataChange: false
+              executedOnFormOpen: true
+
+          formStepValidations:  
+            - executedOnDataChange: true
+              executedOnFormOpen: true
+              validationType: MANDATORY
+              attribute:  Batiments.references.RelImmSocToSociete.Societe
+            - executedOnDataChange: true
+              executedOnFormOpen: true
+              validationType: MANDATORY
+              attribute:  Batiments.references.RelImmSocToTypeSociete.TypeSociete
+
+          stepTransitionValidations:
+            - onStepExit: BLOCK
+              validationType: MANDATORY
+              attribute: Batiments.references.RelImmSocToSociete.Societe
+            - onStepExit: BLOCK
+              validationType: MANDATORY
+              attribute: Batiments.references.RelImmSocToTypeSociete.TypeSociete
+
 
 stepperFinishValidations:
   - onStepperFinish: WARN
@@ -478,7 +541,9 @@ stepperFinishValidations:
   #   validationType: MANDATORY
   #   attribute: Batiments.references.ImmeubleToSousSecteurImmostat.SousSecteurImmostat
 
-
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Immeuble.validations.CheckCoherenceOrgaPortef
   - onStepperFinish: BLOCK
     validationType: CHECK
     validator: Batiments.entities.Immeuble.validations.CheckZoneOrga
@@ -513,3 +578,17 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: CHECK
     validator: Batiments.entities.Immeuble.validations.CheckPeriodeConstruction
+
+
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.references.RelImmSocToSociete.Societe
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.references.RelImmSocToTypeSociete.TypeSociete
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Immeuble.validations.CheckSocieteProprio
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Immeuble.validations.CheckSocieteExploit

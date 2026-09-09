@@ -6,7 +6,7 @@ label: Sous-lot
 rootStep:
   _type: CollectionStep
   _name: SousLots
-  label: Sous-lot
+  label: Fiche Sous-lot
   canFinishSubLevel: true
   enabledOnParentCreate: true
   enabledOnParentEdit: true
@@ -120,32 +120,22 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
-        - enricher: Batiments.entities.SousLot.enrichers.DefautDtDebPhase
-          executedOnButtonClick: false
-          executedOnDataChange: false
-          executedOnFormOpen: true
+
 
       formStepValidations:  
         - executedOnDataChange: true
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute:  Batiments.references.SousLotToPhase.Phase
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.entities.SousLot.SousLot.DateDebPhase
-
+ 
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute:  Batiments.references.SousLotToPhase.Phase
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.entities.SousLot.SousLot.DateDebPhase
 
     - _type: FormStep
       _name: FiscaliteJuridique
-      label: Fiscalité et Juridique
+      label: Juridique et propriété
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
@@ -172,16 +162,11 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.SousLot.SousLot.DateDebStatut
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.entities.SousLot.SousLot.SuperficieHabitable
+
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute:  Batiments.references.SousLotToPhase.Phase
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.entities.SousLot.SousLot.DateDebPhase
 
   - onStepperFinish: BLOCK
     validationType: CHECK

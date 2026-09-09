@@ -24,7 +24,7 @@ rootStep:
   childSteps:
     - _type: FormStep
       _name: Lot
-      label: Lot
+      label: Fiche Lot
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
@@ -37,11 +37,27 @@ rootStep:
           enableUserSort: true
           referencePickerType: AUTO_COMPLETE
           fdnFormField: Batiments.entities.Lot.forms.LotCreation.Lot.Identite.haut.Usage.FDN_Usage
-          # referenceFilter: Referenced.FID_Usage = 'ENT' or Referenced.FID_Usage = 'HAB'
-          referenceFilter: Referenced.UsageCode = 'ENT' or Referenced.UsageCode = 'HAB'
+          referenceFilter: Referenced.UsageCode = 'BUR' or Referenced.UsageCode = 'RESI'
           referencePickerCollectionView: Batiments.entities.Usage.collection_views.UsageCollectionView
           # referencePickerSearchTypeConfigs: []
 
+
+        - enableCreateReference: false
+          enableUserSort: true
+          referencePickerType: AUTO_COMPLETE
+          fdnFormField: Batiments.entities.Lot.forms.LotCreation.Lot.Identite.haut.IdentiteLot.FDN_LotOrigine
+          referenceFilter: Referenced.Etage.FID_Batiment = Record.Etage.FID_Batiment
+          referencePickerCollectionView: Batiments.entities.Lot.collection_views.LotCollectionView
+          # referencePickerSearchTypeConfigs: []
+
+        - enableCreateReference: false
+          enableUserSort: true
+          referencePickerType: AUTO_COMPLETE
+          fdnFormField: Batiments.entities.Lot.forms.LotCreation.Lot.Identite.haut.Usage.FDN_GenreLot
+          referenceFilter: Referenced.FID_TypologieLot = Record.FID_TypologieLot
+          referencePickerCollectionView: Batiments.entities.GenreLot.collection_views.GenreLotCollectionView
+          # referencePickerSearchTypeConfigs: []
+          
       formStepEnrichers:   
         - enricher: Batiments.entities.Lot.enrichers.DefautDtDebUsage
           executedOnButtonClick: false
@@ -90,12 +106,23 @@ rootStep:
           validationType: MANDATORY
           attribute: Batiments.references.LotToGenreLot.GenreLot
 
+        - validator: Batiments.entities.Lot.validations.CheckUsage
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.LotToUsage.Usage
 
         - validator: Batiments.entities.Lot.validations.CheckRaisonNonLouable
           executedOnDataChange: true
           executedOnFormOpen: true
           validationType: CHECK
           attribute: Batiments.references.LotToRaison.RaisonNonLouable
+
+        - validator: Batiments.entities.Lot.validations.CheckCoherenceTypo_Genre
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.LotToGenreLot.GenreLot
 
       stepTransitionValidations:
         - onStepExit: BLOCK
@@ -107,6 +134,11 @@ rootStep:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.references.LotToUsage.Usage
+        - onStepExit: WARN
+          validationType: CHECK
+          validator: Batiments.entities.Lot.validations.CheckUsage
+
+
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.entities.Lot.Lot.DateDebUsage
@@ -125,6 +157,10 @@ rootStep:
           validationType: CHECK
           validator: Batiments.entities.Lot.validations.CheckRaisonNonLouable
 
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Lot.validations.CheckCoherenceTypo_Genre
+
 
 
     - _type: FormStep
@@ -141,7 +177,7 @@ rootStep:
       formStepEnrichers:   
         - enricher: Batiments.entities.Lot.enrichers.DefautDestinationTax
           executedOnButtonClick: false
-          executedOnDataChange: false
+          executedOnDataChange: true
           executedOnFormOpen: true
 
       formStepValidations:  
@@ -241,28 +277,19 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
-        - enricher: Batiments.entities.Lot.enrichers.DefautDtDebPhase
-          executedOnButtonClick: false
-          executedOnDataChange: false
-          executedOnFormOpen: true
 
       formStepValidations:  
         - executedOnDataChange: true
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute:  Batiments.references.LotToPhase.Phase
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.entities.Lot.Lot.DateDebPhase
+
 
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute:  Batiments.references.LotToPhase.Phase
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.entities.Lot.Lot.DateDebPhase
+
 
     - _type: FormStep
       _name: FiscaliteJuridique
@@ -279,62 +306,79 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
+        - enricher: Batiments.entities.Lot.enrichers.DefautSociete
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true  
+        - enricher: Batiments.entities.Lot.enrichers.DefautStatutSousLocation
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false
 
       formStepValidations:  
         - executedOnDataChange: true
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute:  Batiments.references.LotToFiscaliteCible.FiscaliteCible
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute:  Batiments.references.LotToSocieteExploitante.SocieteExploitante
 
 
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.references.LotToFiscaliteCible.FiscaliteCible
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.references.LotToSocieteExploitante.SocieteExploitante
 
 
-    - _type: CollectionStep
-      enableChildImportOnParentCreate: true
-      enableChildImportOnParentEdit: true 
-      childImportModeOnParentEdit: CREATE_ONLY 
-      enableChildCopyOnParentCreate: true
-      enableChildCopyOnParentEdit: true
-      enableChildCreationOnParentCreate: true
-      enableChildCreationOnParentEdit: true 
-      enableChildDeleteOnParentEdit: true
-      enableChildEditOnParentCreate: true
-      enableChildEditOnParentEdit: true
-      enableChildRemoveOnParentCreate: true
-      enableChildRemoveOnParentEdit: true
-      skipToChildCreationOnParentCreate: false
-      skipToChildEditingOnParentEdit: false
-      linear: false
-      _name: Societes
-      label: Sociétés
-      canFinishSubLevel: true
-      enabledOnParentCreate: true
-      enabledOnParentEdit: true
-      formFieldsMode: AUTO
-      childDeleteType: HARD_DELETE
-      oneToManyReference: Batiments.references.RelLotSocToLot
-      collectionView: Batiments.entities.RelLotSoc.collection_views.RelLotSocCollectionView
-      defaultDisplayType: TABLE
-      customSortEnabled: false
-      userDefinedSortEnabled: true
-      displayGridAllowed: false
-      displayListAllowed: true
-      displayTableAllowed: true
-      useCustomCollectionLabel: false
-      childSteps:
-        - _type: FormStep
-          _name: Societes_form
-          label: Sociétés
-          canFinishSubLevel: true
-          enabledOnParentCreate: true
-          enabledOnParentEdit: true
-          formFieldsMode: AUTO
-          enableMasterValuePicking: false
-          formTab: Batiments.entities.RelLotSoc.forms.RelLotSocForm.RelLotSoc
+
+
+    # - _type: CollectionStep
+    #   enableChildImportOnParentCreate: true
+    #   enableChildImportOnParentEdit: true 
+    #   childImportModeOnParentEdit: CREATE_ONLY 
+    #   enableChildCopyOnParentCreate: true
+    #   enableChildCopyOnParentEdit: true
+    #   enableChildCreationOnParentCreate: true
+    #   enableChildCreationOnParentEdit: true 
+    #   enableChildDeleteOnParentEdit: true
+    #   enableChildEditOnParentCreate: true
+    #   enableChildEditOnParentEdit: true
+    #   enableChildRemoveOnParentCreate: true
+    #   enableChildRemoveOnParentEdit: true
+    #   skipToChildCreationOnParentCreate: false
+    #   skipToChildEditingOnParentEdit: false
+    #   linear: false
+    #   _name: Societes
+    #   label: Sociétés
+    #   canFinishSubLevel: true
+    #   enabledOnParentCreate: true
+    #   enabledOnParentEdit: true
+    #   formFieldsMode: AUTO
+    #   childDeleteType: HARD_DELETE
+    #   oneToManyReference: Batiments.references.RelLotSocToLot
+    #   collectionView: Batiments.entities.RelLotSoc.collection_views.RelLotSocCollectionView
+    #   defaultDisplayType: TABLE
+    #   customSortEnabled: false
+    #   userDefinedSortEnabled: true
+    #   displayGridAllowed: false
+    #   displayListAllowed: true
+    #   displayTableAllowed: true
+    #   useCustomCollectionLabel: false
+    #   childSteps:
+    #     - _type: FormStep
+    #       _name: Societes_form
+    #       label: Sociétés
+    #       canFinishSubLevel: true
+    #       enabledOnParentCreate: true
+    #       enabledOnParentEdit: true
+    #       formFieldsMode: AUTO
+    #       enableMasterValuePicking: false
+    #       formTab: Batiments.entities.RelLotSoc.forms.RelLotSocForm.RelLotSoc
 
 
 
@@ -357,6 +401,11 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.Lot.Lot.DateDebStatut
+
+  - onStepperFinish: WARN
+    validationType: CHECK
+    validator: Batiments.entities.Lot.validations.CheckUsage
+
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY
@@ -384,15 +433,20 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute:  Batiments.references.LotToPhase.Phase
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.entities.Lot.Lot.DateDebPhase
+
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.references.LotToFiscaliteCible.FiscaliteCible
 
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.references.LotToSocieteExploitante.SocieteExploitante
 
   - onStepperFinish: BLOCK
     validationType: CHECK
     validator: Batiments.entities.Lot.validations.CheckRaisonNonLouable
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Lot.validations.CheckCoherenceTypo_Genre
+

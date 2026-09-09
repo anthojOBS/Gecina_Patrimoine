@@ -6,7 +6,7 @@ label: Sous-lot
 rootStep:
   _type: CollectionStep
   _name: Lots
-  label: Sous-lot
+  label: Fiche Sous-lot
   canFinishSubLevel: true
   enabledOnParentCreate: true
   enabledOnParentEdit: true
@@ -39,14 +39,8 @@ rootStep:
           executedOnFormOpen: true
 
 
+
       formStepValidations:  
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.entities.SousLot.SousLot.DateDebStatut
-
-
-
         - validator: Batiments.entities.SousLot.validations.CheckRaisonNonLouable
           executedOnDataChange: true
           executedOnFormOpen: true
@@ -54,14 +48,20 @@ rootStep:
           attribute: Batiments.references.SousLotToRaison.RaisonNonLouable
 
 
-      stepTransitionValidations:
-        - onStepExit: BLOCK
+        - executedOnDataChange: true
+          executedOnFormOpen: true
           validationType: MANDATORY
           attribute: Batiments.entities.SousLot.SousLot.DateDebStatut
 
+      stepTransitionValidations:
+       
         - onStepExit: BLOCK
           validationType: CHECK
           validator: Batiments.entities.SousLot.validations.CheckRaisonNonLouable
+
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.entities.SousLot.SousLot.DateDebStatut
 
 
     - _type: FormStep
@@ -103,39 +103,22 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
-        - enricher: Batiments.entities.SousLot.enrichers.DefautDtDebPhase
-          executedOnButtonClick: false
-          executedOnDataChange: false
-          executedOnFormOpen: true
+
 
       formStepValidations:  
         - executedOnDataChange: true
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute:  Batiments.references.SousLotToPhase.Phase
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.entities.SousLot.SousLot.DateDebPhase
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.entities.SousLot.SousLot.DateDebStatut
 
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute:  Batiments.references.SousLotToPhase.Phase
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.entities.SousLot.SousLot.DateDebPhase
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.entities.SousLot.SousLot.DateDebStatut
 
     - _type: FormStep
       _name: FiscaliteJuridique
-      label: Fiscalité et Juridique
+      label: Juridique et propriété
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
@@ -157,21 +140,15 @@ stepperFinishValidations:
     validationType: MANDATORY
     attribute: Batiments.entities.SousLot.SousLot.DateDebStatut
   - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.entities.SousLot.SousLot.SuperficieHabitable
+    validationType: CHECK
+    validator: Batiments.entities.SousLot.validations.CheckRaisonNonLouable
+
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute:  Batiments.references.SousLotToPhase.Phase
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.entities.SousLot.SousLot.DateDebPhase
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.entities.SousLot.SousLot.DateDebStatut
-  - onStepperFinish: BLOCK
-    validationType: CHECK
-    validator: Batiments.entities.SousLot.validations.CheckRaisonNonLouable
+
+
   - onStepperFinish: BLOCK
     validationType: CHECK
     validator: Batiments.entities.SousLot.validations.CheckSuperficieHabitable

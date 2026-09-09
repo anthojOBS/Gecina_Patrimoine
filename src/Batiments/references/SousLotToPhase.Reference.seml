@@ -1,12 +1,12 @@
 _package: Batiments.references
 _type: Reference
 _name: SousLotToPhase
-label: Sous Lot Phase
-description: Référence Lot vers Phase
+label: Sous Lot Etat
+description: Référence Lot vers État
 fromRoleDocumentation: |
-  Cette référence associe un **Lot** à sa **Phase** dans le cycle de vie.
+  Cette référence associe un **Lot** à son **État** dans le cycle de vie.
   
-  La phase permet de suivre l'état d'avancement du lot dans le projet immobilier.
+  L'état permet de suivre l'état d'avancement du lot dans le projet immobilier.
 physicalName: SOUS_LOT_PHASE_REF
 
 fromEntity: Batiments.entities.SousLot.SousLot
@@ -15,20 +15,20 @@ fromRoleName: SousLot
 fromRolePluralLabel: SousLots
 
 toEntity: Batiments.entities.Phase.Phase
-toRoleLabel: Phase
+toRoleLabel: État
 toRoleName: Phase
 toRolePhysicalName: PHASE_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
 validationScope: POST_CONSO
-mandatoryValidationLabel: La phase est obligatoire pour un lot
-brokenValidationLabel: La phase sélectionnée est invalide pour ce lot
+mandatoryValidationLabel: L'état est obligatoire pour un lot
+brokenValidationLabel: L'état sélectionné est invalide pour ce lot
 
 foreignAttribute:
   _type: ForeignAttribute
   _name: Phase
-  label: Phase
+  label: Etat
   physicalName: PHASE_ID
   searchable: true
   entity: Batiments.entities.SousLot.SousLot

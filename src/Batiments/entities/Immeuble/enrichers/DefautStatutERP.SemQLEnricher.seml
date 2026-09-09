@@ -1,0 +1,12 @@
+_package: Batiments.entities.Immeuble.enrichers
+_name: DefautStatutERP
+_type: SemQLEnricher
+entity: Batiments.entities.Immeuble.Immeuble
+label: Defaut Statut ERP
+enricherExecutionScope: POST_CONSO
+
+semQlEnricherExpressions: 
+
+  - attributeName: ERP
+    expression: case  when (any Batiment.Etage.Lot has ( StatutERP = '1') )   then '1'  else '0' end
+# condition: FID_Usage is null

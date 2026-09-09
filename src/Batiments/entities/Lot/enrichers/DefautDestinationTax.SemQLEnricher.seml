@@ -6,5 +6,4 @@ label: Default Destination taxable
 enricherExecutionScope: NONE
 semQlEnricherExpressions: 
   - attributeName: FID_DestinationTaxable
-    expression: case when FID_TypologieLot = 'PL' then 'IDN' when FID_TypologieLot = 'LC' then 'IDC' when FID_TypologieLot = 'PK' then 'IDQ' else NULL end
-condition: FID_TypologieLot <> 'LD'
+    expression: case when FID_TypologieLot = 'PL' then 'IDN' when FID_TypologieLot = 'LC' then 'IDC' when FID_TypologieLot = 'PK' then 'IDQ' else GoldenRecord.FID_DestinationTaxable end

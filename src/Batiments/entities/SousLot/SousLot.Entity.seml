@@ -103,16 +103,15 @@ attributes:
     scale: 2
     mandatory: false
 
+
+    
   - _type: EntityAttribute
-    _name: DateDebPhase
-    label: Date début phase
-    physicalName: DATE_DEB_PHASE
+    _name: DateFinPhase
+    label: Date fin gestion
+    physicalName: DATE_FIN_PHASE
     dataType: Date
-    mandatory: true
-    mandatoryValidationLabel: "Date début phase est obligatoire"
-    mandatoryValidationScope: POST_CONSO
-
-
+    mandatory: false
+    
   - _type: EntityAttribute
     _name: DateRegimeTVA
     label: Date régime TVA
@@ -120,7 +119,13 @@ attributes:
     dataType: Date
     mandatory: false
 
-
+  - _type: EntityAttribute
+    _name: Commentaire
+    label: Commentaires
+    physicalName: COMMENTAIRE
+    dataType: String
+    length: 250
+    mandatory: false
 sourceIdGeneration:
   mode: MANUAL
 

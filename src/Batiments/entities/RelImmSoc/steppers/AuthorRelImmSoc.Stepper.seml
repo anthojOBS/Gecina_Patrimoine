@@ -23,12 +23,18 @@ rootStep:
   useCustomCollectionLabel: false
   childSteps:
     - _type: FormStep
-      _name: Lot
-      label: Lot
+      _name: RelImmSoc_form
+      label: Relation immeuble société
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
       formFieldsMode: AUTO
       enableMasterValuePicking: false
       formTab: Batiments.entities.RelImmSoc.forms.RelImmSocForm.RelImmSoc
+
+      formStepEnrichers:   
+        - enricher: Batiments.entities.RelImmSoc.enrichers.DefautDateDebSociete
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
 

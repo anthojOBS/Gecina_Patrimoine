@@ -7,4 +7,4 @@ enricherExecutionScope: NONE
 semQlEnricherExpressions: 
   - attributeName: DateRegimeTVA
     expression: CURRENT_DATE()
-condition: FID_FiscaliteCible <> GoldenRecord.FID_FiscaliteCible
+condition: DateRegimeTVA is null or FID_FiscaliteCible <> GoldenRecord.FID_FiscaliteCible

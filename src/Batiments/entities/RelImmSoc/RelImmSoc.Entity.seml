@@ -20,7 +20,24 @@ attributes:
     precision: 38
     mandatory: true
     searchable: true
-    
+
+
+  - _type: EntityAttribute
+    _name: DateDebSociete
+    label: Date début société
+    physicalName: DATE_DEB_SOCIETE
+    dataType: Date
+    mandatory: true
+    mandatoryValidationLabel: "Date début sciété est obligatoire"
+    mandatoryValidationScope: POST_CONSO
+
+  - _type: EntityAttribute
+    _name: DateFinSociete
+    label: Date fin société
+    physicalName: DATE_FIN_SOCIETE
+    dataType: Date
+    mandatory: false
+
 sourceIdGeneration:
   mode: MANUAL
 

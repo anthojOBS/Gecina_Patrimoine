@@ -20,8 +20,8 @@ toRolePhysicalName: TYPE_SOCIETE_ID
 oneToMany: true
 deletePropagation: RESTRICT
 validationScope: POST_CONSO
-mandatoryValidationLabel: L'Type Societe est obligatoire pour une société
-brokenValidationLabel: L'Type Societe sélectionné est invalide pour cette société
+mandatoryValidationLabel: Le type de société est obligatoire.
+brokenValidationLabel: Le type de societe sélectionné est invalide.
 
 foreignAttribute:
   _type: ForeignAttribute

@@ -1,11 +1,11 @@
 _package: Batiments.references
 _type: Reference
 _name: ImmeubleToPhase
-label: Immeuble Phase
-description: Référence Immeuble vers Phase
+label: Immeuble État
+description: Référence Immeuble vers État
 fromRoleDocumentation: |
-  Cette référence détermine la **Phase** d'un **Immeuble** dans son cycle de vie.
-  La phase indique l'état d'avancement du projet immobilier (en construction, livré, etc.).
+  Cette référence détermine l'**État** d'un **Immeuble** dans son cycle de vie.
+  L'état indique l'état d'avancement du projet immobilier (en construction, livré, etc.).
 physicalName: IMMEUBLE_PHASE_REF
 
 fromEntity: Batiments.entities.Immeuble.Immeuble
@@ -14,20 +14,20 @@ fromRoleName: Immeuble
 fromRolePluralLabel: Immeubles
 
 toEntity: Batiments.entities.Phase.Phase
-toRoleLabel: Phase
+toRoleLabel: Etat
 toRoleName: Phase
 toRolePhysicalName: PHASE_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
 validationScope: POST_CONSO
-mandatoryValidationLabel: La phase est obligatoire pour un immeuble
-brokenValidationLabel: La phase sélectionnée est invalide pour cet immeuble
+mandatoryValidationLabel: L'état est obligatoire pour un immeuble
+brokenValidationLabel: L'état sélectionné est invalide pour cet immeuble
 
 foreignAttribute:
   _type: ForeignAttribute
   _name: Phase
-  label: Phase
+  label: Etat
   physicalName: PHASE_ID
   searchable: true
   entity: Batiments.entities.Immeuble.Immeuble

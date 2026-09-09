@@ -1,0 +1,8 @@
+_package: Batiments.publishers
+_type: Publisher
+_name: DATA_RESI
+label: DATA RESI
+description: DATA RESI Publisher
+active: true
+code: DATARESI
+color: md:blue

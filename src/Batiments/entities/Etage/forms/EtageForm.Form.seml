@@ -13,11 +13,26 @@ formTabs:
     displayFormTabAs: ICON_LABEL
     labelWidth: 200px
     content:
+      # - _type: TextField
+      #   _name: Libelle
+      #   value: Libelle
+      #   label: Libellé
+      #   useCustomLabel: false
+      #   dataType: STRING
+      #   labelProperties:
+      #     typographyValueInterpreter: LITERAL
+      #     typography: body-2
+      #     color: md:black
+
       - _type: TextField
-        _name: Libelle
-        value: Libelle
+        _name: FDN_TypeEtage
+        value: FDN_TypeEtage
         label: Libellé
-        useCustomLabel: false
+        authoringMode: case when FID_TypeEtage is null then 'auto' else 'force-read-only' end
+        authoringModeValueInterpreter: SEMQL
+        visibleValue: '1'
+        visibleValueInterpreter: LITERAL
+        useCustomLabel: true
         dataType: STRING
         labelProperties:
           typographyValueInterpreter: LITERAL
@@ -27,6 +42,8 @@ formTabs:
       - _type: TextField
         _name: SuperficieBalcons
         value: SuperficieBalcons
+        visibleValue: Batiment.Immeuble.FID_OrgaResp = 'DB'
+        visibleValueInterpreter: SEMQL
         useCustomLabel: false
         dataType: DECIMAL
         labelProperties:
@@ -37,6 +54,8 @@ formTabs:
       - _type: TextField
         _name: SuperficieTerrasses
         value: SuperficieTerrasses
+        visibleValue: Batiment.Immeuble.FID_OrgaResp = 'DB'
+        visibleValueInterpreter: SEMQL
         useCustomLabel: false
         dataType: DECIMAL
         labelProperties:
@@ -47,6 +66,8 @@ formTabs:
       - _type: TextField
         _name: SuperficieJardins
         value: SuperficieJardins
+        visibleValue: Batiment.Immeuble.FID_OrgaResp = 'DB'
+        visibleValueInterpreter: SEMQL
         useCustomLabel: false
         dataType: DECIMAL
         labelProperties:

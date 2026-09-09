@@ -30,3 +30,12 @@ formTabs:
           typographyValueInterpreter: LITERAL
           typography: body-2
           color: md:black
+      - _type: TextField
+        _name: EtageNum
+        value: EtageNum
+        useCustomLabel: false
+        dataType: SHORT_INTEGER
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

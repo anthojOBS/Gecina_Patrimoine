@@ -219,6 +219,25 @@ formTabs:
                           referencedEntity: Batiments.entities.Pays.Pays
 
               - _type: FormSection
+                _name: Commentaires
+                label: Commentaires
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
+                        - _type: TextField
+                          _name: Commentaire
+                          value: Commentaire
+                          label: Commentaires
+                          labelProperties:
+                            alignment: left
+                            typography: body-2
+                            color: md:black
+                          useCustomLabel: false
+                          dataType: STRING
+                          
+              - _type: FormSection
                 _name: SituationLocative
                 label: Situation locative
                 layoutDirection: COLUMN
@@ -525,8 +544,8 @@ formTabs:
                   searchType: TEXT
 
               - _type: FormSection
-                _name: Phase
-                label: Phase
+                _name: Etat
+                label: Etat
                 layoutDirection: COLUMN
                 visibleValue: '1'
                 visibleValueInterpreter: LITERAL
@@ -535,7 +554,7 @@ formTabs:
                   - _type: ReferenceField
                     _name: FDN_Phase
                     value: FDN_Phase
-                    label: Phase
+                    label: Etat
                     labelProperties:
                       alignment: left
                       typographyValueInterpreter: LITERAL
@@ -545,10 +564,11 @@ formTabs:
                     dataType: STRING
                     referencedEntity: Batiments.entities.Phase.Phase
 
+
                   - _type: TextField
-                    _name: DateDebPhase
-                    value: DateDebPhase
-                    label: Date début phase
+                    _name: DateFinPhase
+                    value: DateFinPhase
+                    label: Date fin gestion
                     labelProperties:
                       alignment: left
                       typographyValueInterpreter: LITERAL
@@ -691,27 +711,6 @@ formTabs:
                     useCustomLabel: true
                     dataType: BOOLEAN
 
-              - _type: FormCollection
-                _name: Societes
-                label: Sociétés
-                pluralLabel: Sociétés
-                useCustomLabel: true
-                collection: Batiments.entities.RelLotSoc.collection_views.Societe
-                actionSet: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet
-                tableAllowed: true
-                listAllowed: false
-                gridAllowed: false
-                displayRecordCount: ALWAYS
-                enableUserDefinedSort: true
-                transitionPath: RelLotSoc
-                sortExpression: 1 DESC
-                filter: 1=1
-                # filter: FID_TypeSociete = '1'
-                targetEntity: Batiments.entities.RelLotSoc.RelLotSoc
-                height: 300
-                formCollectionSearchConfigs:
-                  - enabled: true 
-                    searchType: TEXT
 
               - _type: FormSection
                 _name: Pieces

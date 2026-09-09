@@ -31,6 +31,14 @@ attributes:
     length: 255
     mandatory: false
     searchable: true
+  - _type: EntityAttribute
+    _name: EtageNum
+    label: Code Etage en numérique
+    physicalName: ETAGE_NUM
+    dataType: ShortInteger
+    precision: 3
+    mandatory: false
+
 sourceIdGeneration:
   mode: MANUAL
 primaryKey: Batiments.entities.TypeEtage.TypeEtage.EtageCode

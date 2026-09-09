@@ -24,7 +24,7 @@ rootStep:
   childSteps:
     - _type: FormStep
       _name: Batiment
-      label: Batiment
+      label: Fiche bâtiment
       canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
@@ -124,10 +124,7 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
-        - enricher: Batiments.entities.Batiment.enrichers.DefautDtDebPhase
-          executedOnButtonClick: false
-          executedOnDataChange: false
-          executedOnFormOpen: true
+
         - enricher: Batiments.entities.Batiment.enrichers.DefautConstruction
           executedOnButtonClick: false
           executedOnDataChange: false

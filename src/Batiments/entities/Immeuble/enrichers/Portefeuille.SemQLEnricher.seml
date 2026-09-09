@@ -36,4 +36,4 @@ pluginOutputs:
   - attributeName: FID_Portefeuille
     outputName: OUT_RESULT1
 
-condition: FID_Portefeuille is NULL and FID_SousPortefeuille is not NULL
+condition:  FID_SousPortefeuille is not NULL

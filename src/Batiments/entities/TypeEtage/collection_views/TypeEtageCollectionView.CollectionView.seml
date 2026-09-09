@@ -35,6 +35,14 @@ tableColumns:
     visibleByDefault: true
 
   - _type: TextColumn
+    _name: EtageNum
+    value: EtageNum
+    useCustomLabel: false
+    dataType: SHORT_INTEGER
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
     _name: UpdateDate
     value: UpdateDate
     useCustomLabel: false

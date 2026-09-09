@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: EtageDisplayCard
 entity: Batiments.entities.Etage.Etage
 default: true
-primaryTextExpression: Libelle
+primaryTextExpression: FDN_TypeEtage
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER

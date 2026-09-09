@@ -1,0 +1,9 @@
+_package: Batiments.entities.Immeuble.validations
+_name: CheckQuartierParis_DR
+_type: SemQLValidation
+entity: Batiments.entities.Immeuble.Immeuble
+label: Quartier Paris facultatif pour la direction résidentiel 
+condition:  (FID_OrgaResp = 'DR' and Ville = 'Paris' and  (FID_Usage = 'RESI' OR FID_Usage = 'MIX') and FID_QuartierParis is not null) 
+  or Ville != 'Paris' or FID_Usage = 'BUR' or FID_OrgaResp = 'DB'
+validationScope: POST_CONSO
+validationLabel: Attention le quartier Paris n'est pas renseigné 

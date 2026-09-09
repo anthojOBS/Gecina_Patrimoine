@@ -134,12 +134,12 @@ attributes:
     physicalName: DATE_DEB_USAGE
     dataType: Date
     mandatory: false
-  - _type: EntityAttribute
-    _name: DateDebPhase
-    label: Date début phase 
-    physicalName: DATE_DEB_PHASE
-    dataType: Date
-    mandatory: false
+  # - _type: EntityAttribute
+  #   _name: DateDebPhase
+  #   label: Date début gestion 
+  #   physicalName: DATE_DEB_PHASE
+  #   dataType: Date
+  #   mandatory: false
 
   - _type: EntityAttribute
     _name: DateAcquisition
@@ -191,6 +191,14 @@ attributes:
     dataType: Boolean
     mandatory: false
 
+  - _type: EntityAttribute
+    _name: Commentaire
+    label: Commentaires
+    physicalName: COMMENTAIRE
+    dataType: String
+    length: 250
+    mandatory: false
+    
 sourceIdGeneration:
   mode: MANUAL
 

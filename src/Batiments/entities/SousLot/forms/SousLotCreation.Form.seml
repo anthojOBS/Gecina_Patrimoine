@@ -150,8 +150,28 @@ formTabs:
                     dataType: STRING
                     referencedEntity: Batiments.entities.RaisonNonLouable.RaisonNonLouable
 
-
-
+          - _type: FormContainer
+            _name: bas
+            layoutDirection: ROW
+            content:
+              - _type: FormSection
+                _name: Commentaires
+                label: Commentaires
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+                content:
+                        - _type: TextField
+                          _name: Commentaire
+                          value: Commentaire
+                          label: Commentaires
+                          labelProperties:
+                            alignment: left
+                            typography: body-2
+                            color: md:black
+                          useCustomLabel: false
+                          dataType: STRING
 
   - _type: FormTab
     _name: Composition
@@ -224,8 +244,8 @@ formTabs:
       content:
 
       - _type: FormSection
-        _name: Phase
-        label: Phase
+        _name: Etat
+        label: Etat
         layoutDirection: COLUMN
         visibleValue: '1'
         visibleValueInterpreter: LITERAL
@@ -234,7 +254,7 @@ formTabs:
           - _type: ReferenceField
             _name: FDN_Phase
             value: FDN_Phase
-            label: Phase
+            label: Etat
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL
@@ -244,10 +264,12 @@ formTabs:
             dataType: STRING
             referencedEntity: Batiments.entities.Phase.Phase
 
+
+
           - _type: DateField
-            _name: DateDebPhase
-            value: DateDebPhase
-            label: Date début phase
+            _name: DateFinPhase
+            value: DateFinPhase
+            label: Date fin gestion
             labelProperties:
               alignment: left
               typographyValueInterpreter: LITERAL
@@ -257,7 +279,7 @@ formTabs:
               displayFormat: dd/MM/yyyy                
               displayFormatValueInterpreter: LITERAL            
               editingFormat: dd/MM/yyyy                 
-              editingFormatValueInterpreter: LITERAL
+              editingFormatValueInterpreter: LITERAL 
             useCustomLabel: true
             dataType: DATE
 

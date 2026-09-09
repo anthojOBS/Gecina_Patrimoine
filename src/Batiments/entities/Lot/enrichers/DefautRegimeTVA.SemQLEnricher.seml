@@ -6,5 +6,5 @@ label: Alimentation par défaut du régime de TVA
 enricherExecutionScope: NONE
 semQlEnricherExpressions: 
   - attributeName: FID_FiscaliteCible
-    expression: case when FID_Usage ='ENT' then '1' else '2' end
+    expression: case when FID_Usage ='BUR' then '2' else '1' end
 condition: FID_FiscaliteCible is NULL 

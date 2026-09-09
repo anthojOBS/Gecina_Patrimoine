@@ -33,7 +33,7 @@ rootBusinessViewEntity:
       searchType: SEMQL
   overrideDefaultSort: false
   enableUserDefinedSort: true
-  sortExpression: Libelle ASC
+  sortExpression: TypeEtage.EtageNum DESC
   listAllowed: true
   tableAllowed: true
   gridAllowed: true

@@ -126,14 +126,14 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: false
 
+
   - _type: TextColumn
-    _name: DateDebPhase
-    value: DateDebPhase
+    _name: DateFinPhase
+    value: DateFinPhase
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
     visibleByDefault: false
-
 
   - _type: ReferenceColumn
     _name: FDN_FiscaliteCible
@@ -167,7 +167,15 @@ tableColumns:
     useCustomLabel: false
     dataType: DECIMAL
     columnAlign: LEFT
-    visibleByDefault: true
+    visibleByDefault: false
+ 
+  - _type: TextColumn
+    _name: Commentaire
+    value: Commentaire
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: false
 
   - _type: TextColumn
     _name: ConfirmationStatus

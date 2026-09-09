@@ -172,9 +172,9 @@ tableColumns:
 
   - _type: TextColumn
     _name: UsageDetail
-    value: case  when (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'Mixte'
-      when (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'HAB' end) = 0  then 'Tertiaire'
-      when (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'ENT' end) = 0  and (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'Résidentiel'
+    value: case  when (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'BUR' end) > 0  and (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'RESI' end) > 0  then 'Mixte'
+      when (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'BUR' end) > 0  and (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'RESI' end) = 0  then 'Tertiaire'
+      when (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'BUR' end) = 0  and (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'RESI' end) > 0  then 'Résidentiel'
       else Null end
     useCustomLabel: true
     label: Usage
@@ -208,13 +208,13 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
 
-  - _type: TextColumn
-    _name: DateDebPhase
-    value: DateDebPhase
-    useCustomLabel: false
-    dataType: DATE
-    columnAlign: LEFT
-    visibleByDefault: true
+  # - _type: TextColumn
+  #   _name: DateDebPhase
+  #   value: DateDebPhase
+  #   useCustomLabel: false
+  #   dataType: DATE
+  #   columnAlign: LEFT
+  #   visibleByDefault: true
 
   - _type: TextColumn
     _name: DateAcquisition
@@ -267,6 +267,14 @@ tableColumns:
     visibleByDefault: true
     referencedEntity: Batiments.entities.Immeuble.Immeuble
 
+ 
+  - _type: TextColumn
+    _name: Commentaire
+    value: Commentaire
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
 
   - _type: TextColumn
     _name: ConfirmationStatus

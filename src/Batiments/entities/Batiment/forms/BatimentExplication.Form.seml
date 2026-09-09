@@ -175,9 +175,9 @@ formTabs:
 
                         - _type: TextField
                           _name: UsageDetail
-                          value: case  when (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'Mixte'
-                            when (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'ENT' end) > 0  and (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'HAB' end) = 0  then 'Tertiaire'
-                            when (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'ENT' end) = 0  and (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'HAB' end) > 0  then 'Résidentiel'
+                          value: case  when (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'BUR' end) > 0  and (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'RESI' end) > 0  then 'Mixte'
+                            when (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'BUR' end) > 0  and (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'RESI' end) = 0  then 'Tertiaire'
+                            when (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'BUR' end) = 0  and (lookup count(FID_Usage) from Etage.Lot where FID_Usage = 'RESI' end) > 0  then 'Résidentiel'
                             else Null end
                           
                           label: Usage
@@ -251,6 +251,25 @@ formTabs:
                         dataType: STRING
 
                   - _type: FormSection
+                    _name: Commentaires
+                    label: Commentaires
+                    layoutDirection: COLUMN
+                    visibleValue: "1"
+                    visibleValueInterpreter: LITERAL
+                    labelWidth: 200px
+                    content:
+                            - _type: TextField
+                              _name: Commentaire
+                              value: Commentaire
+                              label: Commentaires
+                              labelProperties:
+                                alignment: left
+                                typography: body-2
+                                color: md:black
+                              useCustomLabel: false
+                              dataType: STRING
+                              
+                  - _type: FormSection
                     _name: Lots
                     label: Composition des lots
                     layoutDirection: COLUMN
@@ -260,7 +279,7 @@ formTabs:
                     content:
                       - _type: TextField
                         _name: NombreEtages
-                        value: lookup first (substr(Libelle, 1, 1)) from Etage where substr(CodeEtage, 1, 1) = 'E' order by CodeEtage desc  end 
+                        value: lookup first (EtageNum) from Etage.TypeEtage order by EtageNum desc  end 
                         label: Nombre étages
                         documentation: Nombre d'étages
                         labelProperties:
@@ -380,8 +399,8 @@ formTabs:
                         dataType: STRING 
         
                   - _type: FormSection
-                    _name: Phase
-                    label: Phase
+                    _name: Etat
+                    label: Etat
                     layoutDirection: COLUMN
                     visibleValue: '1'
                     visibleValueInterpreter: LITERAL
@@ -390,8 +409,8 @@ formTabs:
                       - _type: ReferenceField
                         _name: FDN_Phase
                         value: FDN_Phase
-                        label: Phase
-                        documentation: Statut du bien dans son cycle de vie (initiale, active, terminée).
+                        label: Etat
+                        documentation: Etat du bien dans son cycle de vie (initiale, active, terminée).
                         labelProperties:
                           alignment: left
                           typographyValueInterpreter: LITERAL
@@ -400,6 +419,7 @@ formTabs:
                         useCustomLabel: true
                         dataType: STRING
                         referencedEntity: Batiments.entities.Phase.Phase
+
 
                   - _type: FormSection
                     _name: Construction

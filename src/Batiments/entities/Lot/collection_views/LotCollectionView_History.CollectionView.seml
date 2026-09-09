@@ -142,9 +142,10 @@ tableColumns:
     visibleByDefault: true
     referencedEntity: Batiments.entities.Phase.Phase
 
+
   - _type: TextColumn
-    _name: DateDebPhase
-    value: DateDebPhase
+    _name: DateFinPhase
+    value: DateFinPhase
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT
@@ -376,6 +377,36 @@ tableColumns:
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
+
+
+  - _type: ReferenceColumn
+    _name: FDN_SocieteProprietaire
+    value: FDN_SocieteProprietaire
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Societe.Societe
+
+
+  - _type: ReferenceColumn
+    _name: FDN_SocieteExploitante
+    value: FDN_SocieteExploitante
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Societe.Societe
+
+ 
+  - _type: TextColumn
+    _name: Commentaire
+    value: Commentaire
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
 
   - _type: TextColumn
     _name: ConfirmationStatus

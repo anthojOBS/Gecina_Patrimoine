@@ -1,0 +1,8 @@
+_package: Batiments.entities.Immeuble.validations
+_name: CheckZoneOrga_DR
+_type: SemQLValidation
+entity: Batiments.entities.Immeuble.Immeuble
+label: Zone immostat facultatif pour la direction résidentiel
+condition: (FID_OrgaResp ='DR' and FID_ZoneImmostat is not null) or (FID_OrgaResp ='DB')
+validationScope: POST_CONSO
+validationLabel: Attention la zone immostat n'est pas renseignée
