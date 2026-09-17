@@ -1,16 +1,25 @@
 _package: Batiments.entities.SousLot.survivorship_rules
 _type: StandardSurvivorshipRule
-_name: PreferredPublisherFDN_RaisonNonLouable
+_name: PreferredEnricher
 entity: Batiments.entities.SousLot.SousLot
-label: Preferred Publisher RaisonNonLouable Survivorship Rule
+label: Preferred Publisher DateRegimeTVA Survivorship Rule
 description: ""
 documentation: ""
 defaultRule: false
 consolidationStrategy: PREFERRED_PUBLISHER
-consolidationSkipNulls: true
+consolidationSkipNulls: false
 overrideStrategy: UNTIL_CONSOLIDATED_VAL_CHANGE
 attributes:
+  - attributeName: DateRegimeTVA
+  - attributeName: FiscaliteCible
+  - attributeName: Phase
+  - attributeName: DateFinPhase
+  - attributeName: GenreLot
+  - attributeName: TypologieLot
+  - attributeName: DateDebStatut
+  - attributeName: StatutLouable
   - attributeName: RaisonNonLouable
+  
 publisherRankings:
   - _type: ConsoPublisherRanking
     publisher: Batiments.publishers.KSIOP

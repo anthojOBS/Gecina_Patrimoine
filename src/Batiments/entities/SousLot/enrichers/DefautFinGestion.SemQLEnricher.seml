@@ -6,7 +6,7 @@ label: Default Country
 enricherExecutionScope: NONE
 semQlEnricherExpressions: 
   - attributeName: DateFinPhase
-    expression: case when FID_Phase <> GoldenRecord.FID_Phase and GoldenRecord.FID_Phase is not null 
-     and GoldenRecord.DateFinPhase is null and DateFinPhase is null
+    expression: case when FID_Phase = 'TER' and GoldenRecord.DateFinPhase is null and DateFinPhase is null
      then CURRENT_DATE() 
-     when GoldenRecord.DateFinPhase  is not null  and GoldenRecord.DateFinPhase <> DateFinPhase then GoldenRecord.DateFinPhase  else DateFinPhase end
+     when GoldenRecord.DateFinPhase  is not null  and GoldenRecord.DateFinPhase <> DateFinPhase 
+     then GoldenRecord.DateFinPhase  else DateFinPhase end

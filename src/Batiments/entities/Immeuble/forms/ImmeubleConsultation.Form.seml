@@ -1113,7 +1113,7 @@ formTabs:
                               color: md:black
                             useCustomLabel: true
                             dataType: STRING
-                            visibleValue: FID_OrgaResp = 'DR' 
+                            visibleValue: FID_OrgaResp = 'DR' and  FID_TypeVente is not null
                             visibleValueInterpreter: SEMQL
                             referencedEntity: Batiments.entities.TypeVente.TypeVente
                           - _type: DateField
@@ -1235,7 +1235,7 @@ formTabs:
         filter: 1=1
         # filter: FID_TypeSociete = '1'
         targetEntity: Batiments.entities.RelImmSoc.RelImmSoc
-        height: 300
+        height: 500
         formCollectionSearchConfigs:
           - enabled: true 
             searchType: TEXT

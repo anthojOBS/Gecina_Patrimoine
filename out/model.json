@@ -3224,7 +3224,7 @@
                 "toEntity": "Batiments.entities.FiscaliteCible.FiscaliteCible",
                 "toRoleName": "FiscaliteCible",
                 "toRolePhysicalName": "FISCALITE_CIBLE_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers FiscaliteCible",
                 "fromRoleDocumentation": "Cette référence détermine la **FiscaliteCible** d'un **Immeuble** dans son cycle de vie.\nLa FiscaliteCible indique l'état d'avancement du projet immobilier (en construction, livré, etc.).\n",
                 "fromRoleLabel": "Immeuble",
@@ -3253,7 +3253,7 @@
                 "toEntity": "Batiments.entities.ModeChauffage.ModeChauffage",
                 "toRoleName": "ModeChauffage",
                 "toRolePhysicalName": "MODECHAUFFAGE_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers ModeChauffage",
                 "fromRoleDocumentation": "Cette référence détermine la **ModeChauffage** d'un **Immeuble** dans son cycle de vie.\nLa ModeChauffage indique l'état d'avancement du projet immobilier (en construction, livré, etc.).\n",
                 "fromRoleLabel": "Immeuble",
@@ -3282,7 +3282,7 @@
                 "toEntity": "Batiments.entities.OrganisationResponsable.OrganisationResponsable",
                 "toRoleName": "OrgaResp",
                 "toRolePhysicalName": "ORGARESP_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers OrgaResp",
                 "fromRoleDocumentation": "Cette référence détermine la **OrgaResp** d'un **Immeuble** dans son cycle de vie.\nLa OrgaResp indique l'état d'avancement du projet immobilier (en construction, livré, etc.).\n",
                 "fromRoleLabel": "Immeuble",
@@ -3311,7 +3311,7 @@
                 "toEntity": "Batiments.entities.Pays.Pays",
                 "toRoleName": "Pays",
                 "toRolePhysicalName": "PAYS_ID_ISO3",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers Pays",
                 "fromRoleDocumentation": "Cette référence détermine le **Pays** dans lequel est situé un **Immeuble**.\nLe pays permet d'identifier la localisation géographique au niveau national de l'actif immobilier\net facilite le reporting et l'analyse par zone géographique.\n",
                 "fromRoleLabel": "Immeuble",
@@ -3340,7 +3340,7 @@
                 "toEntity": "Batiments.entities.PerimetreGestion.PerimetreGestion",
                 "toRoleName": "PerimetreGestion",
                 "toRolePhysicalName": "PERIMETRE_GESTION_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers Perimetre gestion",
                 "fromRoleDocumentation": "Cette référence détermine la **PerimetreGestion** d'un **Immeuble** dans son cycle de vie.\nLa Perimetre gestion indique l'état d'avancement du projet immobilier (en construction, livré, etc.).\n",
                 "fromRoleLabel": "Immeuble",
@@ -3369,7 +3369,7 @@
                 "toEntity": "Batiments.entities.PeriodeConstruction.PeriodeConstruction",
                 "toRoleName": "PeriodeConstruction",
                 "toRolePhysicalName": "PERIODECONSTRUCTION_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers PeriodeConstruction",
                 "fromRoleDocumentation": "Cette référence détermine la **PeriodeConstruction** d'un **Immeuble** dans son cycle de vie.\nLa PeriodeConstruction indique l'état d'avancement du projet immobilier (en construction, livré, etc.).\n",
                 "fromRoleLabel": "Immeuble",
@@ -3398,7 +3398,7 @@
                 "toEntity": "Batiments.entities.Phase.Phase",
                 "toRoleName": "Phase",
                 "toRolePhysicalName": "PHASE_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers État",
                 "fromRoleDocumentation": "Cette référence détermine l'**État** d'un **Immeuble** dans son cycle de vie.\nL'état indique l'état d'avancement du projet immobilier (en construction, livré, etc.).\n",
                 "fromRoleLabel": "Immeuble",
@@ -3427,7 +3427,7 @@
                 "toEntity": "Batiments.entities.Portefeuille.Portefeuille",
                 "toRoleName": "Portefeuille",
                 "toRolePhysicalName": "PORTEFEUILLE_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers Portefeuille",
                 "fromRoleDocumentation": "Cette référence détermine le **Portefeuille** auquel appartient un **Immeuble**.\nLe portefeuille représente un regroupement stratégique d'actifs immobiliers pour faciliter \nla gestion et le reporting par segments d'activité ou zones de marché.\n",
                 "fromRoleLabel": "Immeuble",
@@ -3456,7 +3456,7 @@
                 "toEntity": "Batiments.entities.QuartierParis.QuartierParis",
                 "toRoleName": "QuartierParis",
                 "toRolePhysicalName": "QUARTIER_PARIS_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers QuartierParis",
                 "fromRoleDocumentation": "Cette référence détermine la **QuartierParis** d'un **Immeuble** dans son cycle de vie.\nLa QuartierParis indique l'état d'avancement du projet immobilier (en construction, livré, etc.).\n",
                 "fromRoleLabel": "Immeuble",
@@ -3485,7 +3485,7 @@
                 "toEntity": "Batiments.entities.RegimeJuridique.RegimeJuridique",
                 "toRoleName": "RegimeJuridique",
                 "toRolePhysicalName": "REGIME_JURIDIQUE_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers Régime Juridique",
                 "fromRoleDocumentation": "Cette référence associe un **Immeuble** à son **Régime Juridique**.\nLe régime juridique définit le statut légal et les modalités de gestion de l'immeuble.\n",
                 "fromRoleLabel": "Immeuble",
@@ -3514,7 +3514,7 @@
                 "toEntity": "Batiments.entities.SecteurImmostat.SecteurImmostat",
                 "toRoleName": "SecteurImmostat",
                 "toRolePhysicalName": "SECTEUR_IMMOSTAT_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers SecteurImmostat",
                 "fromRoleDocumentation": "Cette référence détermine la **SecteurImmostat** d'un **Immeuble** dans son cycle de vie.\nLa SecteurImmostat indique l'état d'avancement du projet immobilier (en construction, livré, etc.).\n",
                 "fromRoleLabel": "Immeuble",
@@ -3543,7 +3543,7 @@
                 "toEntity": "Batiments.entities.SousPortefeuille.SousPortefeuille",
                 "toRoleName": "SousPortefeuille",
                 "toRolePhysicalName": "SOUS_PORTEFEUILLE_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers Sous Portefeuille",
                 "fromRoleDocumentation": "Cette référence détermine le **Sous Portefeuille** auquel appartient un **Immeuble**.\nLe Sous Portefeuille représente un regroupement stratégique d'actifs immobiliers pour faciliter \nla gestion et le reporting par segments d'activité ou zones de marché.\n",
                 "fromRoleLabel": "Immeuble",
@@ -3572,7 +3572,7 @@
                 "toEntity": "Batiments.entities.SousSecteurImmostat.SousSecteurImmostat",
                 "toRoleName": "SousSecteurImmostat",
                 "toRolePhysicalName": "SS_SECTEUR_IMMOSTAT_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers Sous Secteur Immostat",
                 "fromRoleDocumentation": "Cette référence détermine la **SousSecteurImmostat** d'un **Immeuble** dans son cycle de vie.\nLa SousSecteurImmostat indique l'état d'avancement du projet immobilier (en construction, livré, etc.).\n",
                 "fromRoleLabel": "Immeuble",
@@ -3601,7 +3601,7 @@
                 "toEntity": "Batiments.entities.TypeCompteur.TypeCompteur",
                 "toRoleName": "TypeCompteur",
                 "toRolePhysicalName": "TYPE_COMPTEUR_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers Type compteur",
                 "fromRoleDocumentation": "Cette référence détermine la **TypeCompteur** d'un **Immeuble** dans son cycle de vie.\nLa TypeCompteur indique le type de compteur associé à l'immeuble.\n",
                 "fromRoleLabel": "Immeuble",
@@ -3630,7 +3630,7 @@
                 "toEntity": "Batiments.entities.TypeEnergie.TypeEnergie",
                 "toRoleName": "TypeEnergie",
                 "toRolePhysicalName": "TYPEENERGIE_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers TypeEnergie",
                 "fromRoleDocumentation": "Cette référence détermine la **TypeEnergie** d'un **Immeuble** dans son cycle de vie.\nLa TypeEnergie indique l'état d'avancement du projet immobilier (en construction, livré, etc.).\n",
                 "fromRoleLabel": "Immeuble",
@@ -3659,7 +3659,7 @@
                 "toEntity": "Batiments.entities.TypeVente.TypeVente",
                 "toRoleName": "TypeVente",
                 "toRolePhysicalName": "TYPE_VENTE_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers TypeVente",
                 "fromRoleDocumentation": "Cette référence détermine la **TypeVente** d'un **Immeuble** dans son cycle de vie.\nLa TypeVente indique l'état d'avancement du projet immobilier (en construction, livré, etc.).\n",
                 "fromRoleLabel": "Immeuble",
@@ -3688,7 +3688,7 @@
                 "toEntity": "Batiments.entities.Usage.Usage",
                 "toRoleName": "Usage",
                 "toRolePhysicalName": "USAGE_ID",
-                "validationScope": "POST_CONSO",
+                "validationScope": "NONE",
                 "description": "Référence Immeuble vers Usage",
                 "fromRoleDocumentation": "Cette référence relie un **Immeuble** à une **Société Autre**.\n",
                 "fromRoleLabel": "Immeuble",
@@ -14132,6 +14132,16 @@
                                 "formTab": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie",
                                 "label": "Cycle de vie",
                                 "parentCollectionStep": "Batiments.entities.SousLot.steppers.SousLotsCreation.SousLots",
+                                "referenceFormFieldConfigs": [
+                                    {
+                                        "enableCreateReference": false,
+                                        "enableUserSort": true,
+                                        "referencePickerType": "AUTO_COMPLETE",
+                                        "fdnFormField": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Etat.FDN_Phase",
+                                        "referenceFilter": "Referenced.PhaseCode <> 'VENDU'",
+                                        "referencePickerCollectionView": "Batiments.entities.Phase.collection_views.PhaseCollectionView"
+                                    }
+                                ],
                                 "stepTransitionValidations": [
                                     {
                                         "_type": "StepTransitionValidation",
@@ -14412,6 +14422,63 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
+                        "qualifiedName": "Batiments.entities.SousLot.survivorship_rules.PreferredEnricher",
+                        "_type": "StandardSurvivorshipRule",
+                        "consolidationSkipNulls": false,
+                        "label": "Preferred Publisher DateRegimeTVA Survivorship Rule",
+                        "consolidationStrategy": "PREFERRED_PUBLISHER",
+                        "description": "",
+                        "documentation": "",
+                        "publisherRankings": [
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "Batiments.publishers.KSIOP",
+                                "rank": 0
+                            },
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "Batiments.publishers.VisionReelle",
+                                "rank": 1
+                            },
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "Batiments.publishers.SOLARE",
+                                "rank": 2
+                            }
+                        ],
+                        "defaultRule": false,
+                        "attributes": [
+                            {
+                                "attributeName": "DateRegimeTVA"
+                            },
+                            {
+                                "attributeName": "FiscaliteCible"
+                            },
+                            {
+                                "attributeName": "Phase"
+                            },
+                            {
+                                "attributeName": "DateFinPhase"
+                            },
+                            {
+                                "attributeName": "GenreLot"
+                            },
+                            {
+                                "attributeName": "TypologieLot"
+                            },
+                            {
+                                "attributeName": "DateDebStatut"
+                            },
+                            {
+                                "attributeName": "StatutLouable"
+                            },
+                            {
+                                "attributeName": "RaisonNonLouable"
+                            }
+                        ],
+                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
+                    },
+                    {
                         "qualifiedName": "Batiments.entities.SousLot.survivorship_rules.PreferredPublisherCommentaire",
                         "_type": "StandardSurvivorshipRule",
                         "consolidationSkipNulls": true,
@@ -14445,171 +14512,6 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.SousLot.survivorship_rules.PreferredPublisherDateDebStatut",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher DateDebStatut Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "DateDebStatut"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.SousLot.survivorship_rules.PreferredPublisherDateFinPhase",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher DateFinPhase Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "DateFinPhase"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.SousLot.survivorship_rules.PreferredPublisherDateRegimeTVA",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher DateRegimeTVA Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "DateRegimeTVA"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.SousLot.survivorship_rules.PreferredPublisherFDN_FiscaliteCible",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher FiscaliteCible Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "FiscaliteCible"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.SousLot.survivorship_rules.PreferredPublisherFDN_GenreLot",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher GenreLot Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "GenreLot"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
                         "qualifiedName": "Batiments.entities.SousLot.survivorship_rules.PreferredPublisherFDN_Lot",
                         "_type": "StandardSurvivorshipRule",
                         "consolidationSkipNulls": true,
@@ -14638,105 +14540,6 @@
                         "attributes": [
                             {
                                 "attributeName": "Lot"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.SousLot.survivorship_rules.PreferredPublisherFDN_Phase",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher Phase Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "Phase"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.SousLot.survivorship_rules.PreferredPublisherFDN_RaisonNonLouable",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher RaisonNonLouable Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "RaisonNonLouable"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.SousLot.survivorship_rules.PreferredPublisherFDN_TypologieLot",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher TypologieLot Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "TypologieLot"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -14836,39 +14639,6 @@
                         "attributes": [
                             {
                                 "attributeName": "Libelle"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.SousLot.survivorship_rules.PreferredPublisherStatutLouable",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher StatutLouable Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "StatutLouable"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -16879,7 +16649,7 @@
                                 "posInParent": 5,
                                 "useCustomLabel": false,
                                 "value": "DateFinSociete",
-                                "visibleByDefault": false,
+                                "visibleByDefault": true,
                                 "valueDataType": "DATE",
                                 "componentProperties": [
                                     {
@@ -17086,6 +16856,7 @@
                                 "visibleValueInterpreter": "LITERAL",
                                 "displayFormTabAs": "LABEL",
                                 "label": "Société",
+                                "labelWidth": "200px",
                                 "visibleValue": "1"
                             }
                         ],
@@ -22680,7 +22451,7 @@
                     "matchRules": [
                         {
                             "qualifiedName": "Batiments.entities.Lot.Lot.Matcher.NewRule",
-                            "condition": "Record1.IdentifiantsERP = Record2.IdentifiantsERP and ( (Record1.FID_Etage = Record2.FID_Etage) or ( Record1.FID_Etage is null ) or ( Record2.FID_Etage is null ) ) and (Record1.FID_Batiment = Record2.FID_Batiment )",
+                            "condition": "Record1.IdentifiantsERP = Record2.IdentifiantsERP and ( (Record1.FID_Etage = Record2.FID_Etage) or ( Record1.FID_Etage is null ) or ( Record2.FID_Etage is null ) ) and Record1.FID_Batiment = Record2.FID_Batiment",
                             "matchScore": 100,
                             "label": "NewRuleLabel",
                             "usingMatchOn": false
@@ -22741,7 +22512,7 @@
                         "_type": "CheckConstraint",
                         "condition": "(FID_Usage =  Etage.Batiment.Immeuble.FID_Usage) or Etage.Batiment.Immeuble.FID_Usage = 'MIX'  or FID_Usage is null",
                         "validationLabel": "Attention - l’usage du lot est incompatible avec celui de l’immeuble. Vérifiez l’usage de l’immeuble",
-                        "validationScope": "PRE_CONSO",
+                        "validationScope": "NONE",
                         "label": "Cohérence usage immeuble et lot"
                     },
                     {
@@ -24615,7 +24386,7 @@
                         "semQlEnricherExpressions": [
                             {
                                 "attributeName": "FID_DestinationTaxable",
-                                "expression": "case when FID_TypologieLot = 'PL' then 'IDN' when FID_TypologieLot = 'LC' then 'IDC' when FID_TypologieLot = 'PK' then 'IDQ' else GoldenRecord.FID_DestinationTaxable end"
+                                "expression": "case when FID_TypologieLot = 'PL' then 'IDN' when FID_TypologieLot = 'LC' then 'IDC' when FID_TypologieLot = 'PK' then 'IDP'  when FID_TypologieLot = 'CL' then 'IDS' else GoldenRecord.FID_DestinationTaxable end"
                             }
                         ]
                     },
@@ -24668,6 +24439,23 @@
                             {
                                 "attributeName": "FID_GenreLot",
                                 "expression": "case when FID_TypologieLot = 'SNI' then 'SNI' else FID_GenreLot end"
+                            }
+                        ]
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Lot.enrichers.DefautLotDivision",
+                        "_type": "SemQLEnricher",
+                        "condition": "FID_Phase ='TER'",
+                        "enricherExecutionScope": "POST_CONSO",
+                        "label": "Defaut Lot Division",
+                        "semQlEnricherExpressions": [
+                            {
+                                "attributeName": "StatutLouable",
+                                "expression": "case when 1=1 then '0'  else '1' end"
+                            },
+                            {
+                                "attributeName": "FID_RaisonNonLouable",
+                                "expression": "case when 1=1 then 'RESTRUCTU'  end"
                             }
                         ]
                     },
@@ -33723,6 +33511,16 @@
                                 "formTab": "Batiments.entities.Lot.forms.LotCreation.CycleVie",
                                 "label": "Cycle de vie",
                                 "parentCollectionStep": "Batiments.entities.Lot.steppers.LotsCreation.Lots",
+                                "referenceFormFieldConfigs": [
+                                    {
+                                        "enableCreateReference": false,
+                                        "enableUserSort": true,
+                                        "referencePickerType": "AUTO_COMPLETE",
+                                        "fdnFormField": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat.FDN_Phase",
+                                        "referenceFilter": "Referenced.PhaseCode <> 'VENDU'",
+                                        "referencePickerCollectionView": "Batiments.entities.Phase.collection_views.PhaseCollectionView"
+                                    }
+                                ],
                                 "stepTransitionValidations": [
                                     {
                                         "_type": "StepTransitionValidation",
@@ -33953,7 +33751,7 @@
                             {
                                 "qualifiedName": "Batiments.entities.Lot.steppers.LotsEdition.Lots.Lot",
                                 "_type": "FormStep",
-                                "canFinishSubLevel": false,
+                                "canFinishSubLevel": true,
                                 "enabledOnParentCreate": true,
                                 "enabledOnParentEdit": true,
                                 "enableMasterValuePicking": false,
@@ -34130,7 +33928,7 @@
                             {
                                 "qualifiedName": "Batiments.entities.Lot.steppers.LotsEdition.Lots.Composition",
                                 "_type": "FormStep",
-                                "canFinishSubLevel": false,
+                                "canFinishSubLevel": true,
                                 "enabledOnParentCreate": true,
                                 "enabledOnParentEdit": true,
                                 "enableMasterValuePicking": false,
@@ -34216,7 +34014,7 @@
                             {
                                 "qualifiedName": "Batiments.entities.Lot.steppers.LotsEdition.Lots.CycleDeVie",
                                 "_type": "FormStep",
-                                "canFinishSubLevel": false,
+                                "canFinishSubLevel": true,
                                 "enabledOnParentCreate": true,
                                 "enabledOnParentEdit": true,
                                 "enableMasterValuePicking": false,
@@ -34233,6 +34031,12 @@
                                         "executedOnButtonClick": false,
                                         "executedOnDataChange": true,
                                         "executedOnFormOpen": false
+                                    },
+                                    {
+                                        "enricher": "Batiments.entities.Lot.enrichers.DefautLotDivision",
+                                        "executedOnButtonClick": false,
+                                        "executedOnDataChange": true,
+                                        "executedOnFormOpen": true
                                     }
                                 ],
                                 "formStepValidations": [
@@ -34269,7 +34073,7 @@
                             {
                                 "qualifiedName": "Batiments.entities.Lot.steppers.LotsEdition.Lots.FiscaliteJuridique",
                                 "_type": "FormStep",
-                                "canFinishSubLevel": false,
+                                "canFinishSubLevel": true,
                                 "enabledOnParentCreate": true,
                                 "enabledOnParentEdit": true,
                                 "enableMasterValuePicking": false,
@@ -34349,6 +34153,102 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
+                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredEnricher",
+                        "_type": "StandardSurvivorshipRule",
+                        "consolidationSkipNulls": false,
+                        "label": "Preferred Publisher DateRegimeTVA Survivorship Rule",
+                        "consolidationStrategy": "PREFERRED_PUBLISHER",
+                        "description": "",
+                        "documentation": "",
+                        "publisherRankings": [
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "Batiments.publishers.KSIOP",
+                                "rank": 0
+                            },
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "Batiments.publishers.VisionReelle",
+                                "rank": 1
+                            },
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "Batiments.publishers.SOLARE",
+                                "rank": 2
+                            }
+                        ],
+                        "defaultRule": false,
+                        "attributes": [
+                            {
+                                "attributeName": "DateRegimeTVA"
+                            },
+                            {
+                                "attributeName": "FiscaliteCible"
+                            },
+                            {
+                                "attributeName": "Usage"
+                            },
+                            {
+                                "attributeName": "UsageLot"
+                            },
+                            {
+                                "attributeName": "DateDebStatut"
+                            },
+                            {
+                                "attributeName": "StatutLouable"
+                            },
+                            {
+                                "attributeName": "RaisonNonLouable"
+                            },
+                            {
+                                "attributeName": "Phase"
+                            },
+                            {
+                                "attributeName": "DateFinPhase"
+                            },
+                            {
+                                "attributeName": "GenreLot"
+                            },
+                            {
+                                "attributeName": "TypologieLot"
+                            },
+                            {
+                                "attributeName": "SuperficieComm"
+                            },
+                            {
+                                "attributeName": "SuperficieHabitable"
+                            },
+                            {
+                                "attributeName": "SuperficieHall"
+                            },
+                            {
+                                "attributeName": "SuperficiePal"
+                            },
+                            {
+                                "attributeName": "SuperficieQPCirculation"
+                            },
+                            {
+                                "attributeName": "SuperficieQPPalier"
+                            },
+                            {
+                                "attributeName": "SuperficieUtilePonderee"
+                            },
+                            {
+                                "attributeName": "SuperficieUtileQP"
+                            },
+                            {
+                                "attributeName": "SuperficieUtileSansQP"
+                            },
+                            {
+                                "attributeName": "SuperficieTaxable"
+                            },
+                            {
+                                "attributeName": "DestinationTaxable"
+                            }
+                        ],
+                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
+                    },
+                    {
                         "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherCommentaire",
                         "_type": "StandardSurvivorshipRule",
                         "consolidationSkipNulls": true,
@@ -34377,39 +34277,6 @@
                         "attributes": [
                             {
                                 "attributeName": "Commentaire"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherDateDebStatut",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher DateDebStatut Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "DateDebStatut"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -34448,72 +34315,6 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherDateFinPhase",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher DateFinPhase Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "DateFinPhase"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherDateRegimeTVA",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher DateRegimeTVA Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "DateRegimeTVA"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
                         "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherFDN_Batiment",
                         "_type": "StandardSurvivorshipRule",
                         "consolidationSkipNulls": true,
@@ -34547,39 +34348,6 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherFDN_DestinationTaxable",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher DestinationTaxable Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "DestinationTaxable"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
                         "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherFDN_Etage",
                         "_type": "StandardSurvivorshipRule",
                         "consolidationSkipNulls": true,
@@ -34608,270 +34376,6 @@
                         "attributes": [
                             {
                                 "attributeName": "Etage"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherFDN_FiscaliteCible",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher FiscaliteCible Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "FiscaliteCible"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherFDN_GenreLot",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher GenreLot Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "GenreLot"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherFDN_Phase",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher Phase Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "Phase"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherFDN_RaisonNonLouable",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher RaisonNonLouable Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "RaisonNonLouable"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherFDN_SocieteExploitante",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher SocieteExploitante Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "SocieteExploitante"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherFDN_SocieteProprietaire",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher SocieteProprietaire Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "SocieteProprietaire"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherFDN_TypologieLot",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher TypologieLot Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "TypologieLot"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherFDN_Usage",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher Usage Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "Usage"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -35141,39 +34645,6 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherStatutLouable",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher StatutLouable Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "StatutLouable"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
                         "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherStatutMeuble",
                         "_type": "StandardSurvivorshipRule",
                         "consolidationSkipNulls": true,
@@ -35240,10 +34711,10 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherStatutSousLocation",
+                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredSociete",
                         "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher StatutSousLocation Survivorship Rule",
+                        "consolidationSkipNulls": false,
+                        "label": "Preferred Publisher SocieteExploitante Survivorship Rule",
                         "consolidationStrategy": "PREFERRED_PUBLISHER",
                         "description": "",
                         "documentation": "",
@@ -35266,371 +34737,14 @@
                         ],
                         "defaultRule": false,
                         "attributes": [
+                            {
+                                "attributeName": "SocieteExploitante"
+                            },
+                            {
+                                "attributeName": "SocieteProprietaire"
+                            },
                             {
                                 "attributeName": "StatutSousLocation"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherSuperficieComm",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher SuperficieComm Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "SuperficieComm"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherSuperficieHabitable",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher SuperficieHabitable Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "SuperficieHabitable"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherSuperficieHall",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher SuperficieHall Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "SuperficieHall"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherSuperficiePal",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher SuperficiePal Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "SuperficiePal"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherSuperficieQPCirculation",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher SuperficieQPCirculation Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "SuperficieQPCirculation"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherSuperficieQPPalier",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher SuperficieQPPalier Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "SuperficieQPPalier"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherSuperficieTaxable",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher SuperficieTaxable Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "SuperficieTaxable"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherSuperficieUtilePonderee",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher SuperficieUtilePonderee Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "SuperficieUtilePonderee"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherSuperficieUtileQP",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher SuperficieUtileQP Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "SuperficieUtileQP"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherSuperficieUtileSansQP",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher SuperficieUtileSansQP Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "SuperficieUtileSansQP"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Lot.survivorship_rules.PreferredPublisherUsageLot",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher UsageLot Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "UsageLot"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -39952,7 +39066,7 @@
                         "qualifiedName": "Batiments.entities.Immeuble.enrichers.DefautPeriodConstruct",
                         "_type": "SemQLEnricher",
                         "condition": "FID_PeriodeConstruction is NULL and DateFinConstruction is not null",
-                        "enricherExecutionScope": "POST_CONSO",
+                        "enricherExecutionScope": "NONE",
                         "label": "Enrichissement période de construction",
                         "semQlEnricherExpressions": [
                             {
@@ -40228,7 +39342,7 @@
                                         "searchType": "TEXT"
                                     }
                                 ],
-                                "height": 300,
+                                "height": 500,
                                 "label": "Sociétés",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.FiscaliteJuridique",
                                 "pluralLabel": "Sociétés",
@@ -42677,7 +41791,7 @@
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieB.AcquisitionCession",
                                 "referencedEntity": "Batiments.entities.TypeVente.TypeVente",
                                 "valueDataType": "STRING",
-                                "visibleValue": "FID_OrgaResp = 'DR'",
+                                "visibleValue": "FID_OrgaResp = 'DR' and  FID_TypeVente is not null",
                                 "visibleValueInterpreter": "SEMQL",
                                 "componentProperties": [
                                     {
@@ -51950,6 +51064,16 @@
                                 "formTab": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble",
                                 "label": "Cycle de vie",
                                 "parentCollectionStep": "Batiments.entities.Immeuble.steppers.ImmeublesCreation.Immeubles",
+                                "referenceFormFieldConfigs": [
+                                    {
+                                        "enableCreateReference": false,
+                                        "enableUserSort": true,
+                                        "referencePickerType": "AUTO_COMPLETE",
+                                        "fdnFormField": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Phase",
+                                        "referenceFilter": "Referenced.PhaseCode <> 'VENDU'",
+                                        "referencePickerCollectionView": "Batiments.entities.Phase.collection_views.PhaseCollectionView"
+                                    }
+                                ],
                                 "stepTransitionValidations": [
                                     {
                                         "_type": "StepTransitionValidation",
@@ -52368,9 +51492,69 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
+                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredEnricher",
+                        "_type": "StandardSurvivorshipRule",
+                        "consolidationSkipNulls": false,
+                        "label": "Preferred Publisher DateRestructuration Survivorship Rule",
+                        "consolidationStrategy": "PREFERRED_PUBLISHER",
+                        "description": "",
+                        "documentation": "",
+                        "publisherRankings": [
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "Batiments.publishers.KSIOP",
+                                "rank": 0
+                            },
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "Batiments.publishers.VisionReelle",
+                                "rank": 1
+                            },
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "Batiments.publishers.SOLARE",
+                                "rank": 2
+                            }
+                        ],
+                        "defaultRule": false,
+                        "attributes": [
+                            {
+                                "attributeName": "DateRestructuration"
+                            },
+                            {
+                                "attributeName": "FlagRestructuration"
+                            },
+                            {
+                                "attributeName": "PeriodeConstruction"
+                            },
+                            {
+                                "attributeName": "DateFinConstruction"
+                            },
+                            {
+                                "attributeName": "NbAscenseur"
+                            },
+                            {
+                                "attributeName": "FlagAscenseur"
+                            },
+                            {
+                                "attributeName": "FiscaliteCible"
+                            },
+                            {
+                                "attributeName": "Usage"
+                            },
+                            {
+                                "attributeName": "Portefeuille"
+                            },
+                            {
+                                "attributeName": "SousPortefeuille"
+                            }
+                        ],
+                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
+                    },
+                    {
                         "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherAdresse",
                         "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
+                        "consolidationSkipNulls": false,
                         "label": "Preferred Publisher Adresse Survivorship Rule",
                         "consolidationStrategy": "PREFERRED_PUBLISHER",
                         "description": "",
@@ -52396,72 +51580,30 @@
                         "attributes": [
                             {
                                 "attributeName": "Adresse"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherAdresseEnrichie",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher AdresseEnrichie Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 0
                             },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
                             {
                                 "attributeName": "AdresseEnrichie"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherAdresseStandardise",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher AdresseStandardise Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
                             },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
                             {
                                 "attributeName": "AdresseStandardise"
+                            },
+                            {
+                                "attributeName": "CodePostal"
+                            },
+                            {
+                                "attributeName": "CodePostalEnrichi"
+                            },
+                            {
+                                "attributeName": "Pays"
+                            },
+                            {
+                                "attributeName": "PaysEnrichie"
+                            },
+                            {
+                                "attributeName": "Ville"
+                            },
+                            {
+                                "attributeName": "VilleEnrichie"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -52528,72 +51670,6 @@
                         "attributes": [
                             {
                                 "attributeName": "CapaciteAccueil"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherCodePostal",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher CodePostal Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "CodePostal"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherCodePostalEnrichi",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher CodePostalEnrichi Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "CodePostalEnrichi"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -52731,39 +51807,6 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherDateFinConstruction",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher DateFinConstruction Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "DateFinConstruction"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
                         "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherDateFinValidite",
                         "_type": "StandardSurvivorshipRule",
                         "consolidationSkipNulls": true,
@@ -52825,39 +51868,6 @@
                         "attributes": [
                             {
                                 "attributeName": "DateLivraison"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherDateRestructuration",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher DateRestructuration Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "DateRestructuration"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -52929,39 +51939,6 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherFDN_FiscaliteCible",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher FDN_FiscaliteCible Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "FiscaliteCible"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
                         "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherFDN_ModeChauffage",
                         "_type": "StandardSurvivorshipRule",
                         "consolidationSkipNulls": true,
@@ -53028,39 +52005,6 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherFDN_Pays",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher FDN_Pays Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "Pays"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
                         "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherFDN_PerimetreGestion",
                         "_type": "StandardSurvivorshipRule",
                         "consolidationSkipNulls": true,
@@ -53094,39 +52038,6 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherFDN_PeriodeConstruction",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher FDN_PeriodeConstruction Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "PeriodeConstruction"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
                         "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherFDN_Phase",
                         "_type": "StandardSurvivorshipRule",
                         "consolidationSkipNulls": true,
@@ -53155,39 +52066,6 @@
                         "attributes": [
                             {
                                 "attributeName": "Phase"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherFDN_Portefeuille",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher FDN_Portefeuille Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "Portefeuille"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -53287,39 +52165,6 @@
                         "attributes": [
                             {
                                 "attributeName": "SecteurImmostat"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherFDN_SousPortefeuille",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher FDN_SousPortefeuille Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "SousPortefeuille"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -53457,39 +52302,6 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherFDN_Usage",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher FDN_Usage Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "Usage"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
                         "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherFDN_ZoneImmostat",
                         "_type": "StandardSurvivorshipRule",
                         "consolidationSkipNulls": true,
@@ -53523,39 +52335,6 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherFlagAscenseur",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher FlagAscenseur Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "FlagAscenseur"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
                         "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherFlagQPIncluse",
                         "_type": "StandardSurvivorshipRule",
                         "consolidationSkipNulls": true,
@@ -53584,39 +52363,6 @@
                         "attributes": [
                             {
                                 "attributeName": "FlagQPIncluse"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherFlagRestructuration",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher FlagRestructuration Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "FlagRestructuration"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -53754,39 +52500,6 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherNbAscenseur",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher NbAscenseur Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "NbAscenseur"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
                         "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherNbLotInitial",
                         "_type": "StandardSurvivorshipRule",
                         "consolidationSkipNulls": true,
@@ -53815,39 +52528,6 @@
                         "attributes": [
                             {
                                 "attributeName": "NbLotInitial"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherPaysEnrichie",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher PaysEnrichie Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "PaysEnrichie"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -54178,72 +52858,6 @@
                         "attributes": [
                             {
                                 "attributeName": "SuperficieToitures"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherVille",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher Ville Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "Ville"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Immeuble.survivorship_rules.PreferredPublisherVilleEnrichie",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher VilleEnrichie Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "VilleEnrichie"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -58409,7 +57023,7 @@
                     "matchRules": [
                         {
                             "qualifiedName": "Batiments.entities.Batiment.Batiment.Matcher.NewRule",
-                            "condition": "Record1.IdentifiantsERP = Record2.IdentifiantsERP and Record1.FID_Immeuble = Record2.FID_Immeuble",
+                            "condition": "((Record1.IdentifiantsERP = Record2.IdentifiantsERP) or ( Record1.Libelle_Batiment like '%unique%' or Record2.Libelle_Batiment like '%unique%' ) or ( Record1.IdentifiantsERP = 'PK' and Record2.AccesParking = '1' and  Record1.AdresseStandardise = Record2.AdresseStandardise)) and Record1.FID_Immeuble = Record2.FID_Immeuble",
                             "matchScore": 100,
                             "label": "NewRuleLabel",
                             "usingMatchOn": false
@@ -61820,7 +60434,7 @@
                                 "label": "Type de vente",
                                 "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentConsultation.CycleVieBatiment.Global.Droite.AcquisitionCession",
                                 "valueDataType": "STRING",
-                                "visibleValue": "Immeuble.FID_OrgaResp = 'DR'  and Immeuble.FDN_TypeVente is not null",
+                                "visibleValue": "Immeuble.FID_OrgaResp = 'DR'  and Immeuble.FID_TypeVente is not null",
                                 "visibleValueInterpreter": "SEMQL",
                                 "componentProperties": [
                                     {
@@ -65438,6 +64052,16 @@
                                 "formTab": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment",
                                 "label": "Cycle de vie",
                                 "parentCollectionStep": "Batiments.entities.Batiment.steppers.BatimentCreation.Batiments",
+                                "referenceFormFieldConfigs": [
+                                    {
+                                        "enableCreateReference": false,
+                                        "enableUserSort": true,
+                                        "referencePickerType": "AUTO_COMPLETE",
+                                        "fdnFormField": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche.Etat.FDN_Phase",
+                                        "referenceFilter": "Referenced.PhaseCode <> 'VENDU'",
+                                        "referencePickerCollectionView": "Batiments.entities.Phase.collection_views.PhaseCollectionView"
+                                    }
+                                ],
                                 "stepTransitionValidations": [
                                     {
                                         "_type": "StepTransitionValidation",
@@ -65820,6 +64444,42 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
+                        "qualifiedName": "Batiments.entities.Batiment.survivorship_rules.PreferredEnricher",
+                        "_type": "StandardSurvivorshipRule",
+                        "consolidationSkipNulls": false,
+                        "label": "Preferred Publisher Date fin et période de construction Survivorship Rule",
+                        "consolidationStrategy": "PREFERRED_PUBLISHER",
+                        "description": "",
+                        "documentation": "",
+                        "publisherRankings": [
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "Batiments.publishers.KSIOP",
+                                "rank": 0
+                            },
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "Batiments.publishers.VisionReelle",
+                                "rank": 1
+                            },
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "Batiments.publishers.SOLARE",
+                                "rank": 2
+                            }
+                        ],
+                        "defaultRule": false,
+                        "attributes": [
+                            {
+                                "attributeName": "PeriodeConstruction"
+                            },
+                            {
+                                "attributeName": "DateFinConstruction"
+                            }
+                        ],
+                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
+                    },
+                    {
                         "qualifiedName": "Batiments.entities.Batiment.survivorship_rules.PreferredPublisherAccesParking",
                         "_type": "StandardSurvivorshipRule",
                         "consolidationSkipNulls": true,
@@ -65855,7 +64515,7 @@
                     {
                         "qualifiedName": "Batiments.entities.Batiment.survivorship_rules.PreferredPublisherAdresse",
                         "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
+                        "consolidationSkipNulls": false,
                         "label": "Preferred Publisher Adresse Survivorship Rule",
                         "consolidationStrategy": "PREFERRED_PUBLISHER",
                         "description": "",
@@ -65881,72 +64541,30 @@
                         "attributes": [
                             {
                                 "attributeName": "Adresse"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Batiment.survivorship_rules.PreferredPublisherAdresseEnrichie",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher AdresseEnrichie Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 0
                             },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
                             {
                                 "attributeName": "AdresseEnrichie"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Batiment.survivorship_rules.PreferredPublisherAdresseStandardise",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher AdresseStandardise Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 0
                             },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
                             {
                                 "attributeName": "AdresseStandardise"
+                            },
+                            {
+                                "attributeName": "CodePostal"
+                            },
+                            {
+                                "attributeName": "CodePostalEnrichi"
+                            },
+                            {
+                                "attributeName": "Pays"
+                            },
+                            {
+                                "attributeName": "PaysEnrichie"
+                            },
+                            {
+                                "attributeName": "Ville"
+                            },
+                            {
+                                "attributeName": "VilleEnrichie"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -65980,72 +64598,6 @@
                         "attributes": [
                             {
                                 "attributeName": "BatimentPrincipal"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Batiment.survivorship_rules.PreferredPublisherCodePostal",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher CodePostal Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "CodePostal"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Batiment.survivorship_rules.PreferredPublisherCodePostalEnrichi",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher CodePostalEnrichi Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "CodePostalEnrichi"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -66183,39 +64735,6 @@
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Batiment.survivorship_rules.PreferredPublisherDateFinConstruction",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher DateFinConstruction Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "DateFinConstruction"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
                         "qualifiedName": "Batiments.entities.Batiment.survivorship_rules.PreferredPublisherDateLivraison",
                         "_type": "StandardSurvivorshipRule",
                         "consolidationSkipNulls": true,
@@ -66310,72 +64829,6 @@
                         "attributes": [
                             {
                                 "attributeName": "Immeuble"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Batiment.survivorship_rules.PreferredPublisherFDN_Pays",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher Pays Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "Pays"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Batiment.survivorship_rules.PreferredPublisherFDN_PeriodeConstruction",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher PeriodeConstruction Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "PeriodeConstruction"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
@@ -66541,105 +64994,6 @@
                         "attributes": [
                             {
                                 "attributeName": "Libelle_Batiment"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Batiment.survivorship_rules.PreferredPublisherPaysEnrichie",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher PaysEnrichie Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "PaysEnrichie"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Batiment.survivorship_rules.PreferredPublisherVille",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher Ville Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "Ville"
-                            }
-                        ],
-                        "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"
-                    },
-                    {
-                        "qualifiedName": "Batiments.entities.Batiment.survivorship_rules.PreferredPublisherVilleEnrichie",
-                        "_type": "StandardSurvivorshipRule",
-                        "consolidationSkipNulls": true,
-                        "label": "Preferred Publisher VilleEnrichie Survivorship Rule",
-                        "consolidationStrategy": "PREFERRED_PUBLISHER",
-                        "description": "",
-                        "documentation": "",
-                        "publisherRankings": [
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.VisionReelle",
-                                "rank": 0
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.KSIOP",
-                                "rank": 1
-                            },
-                            {
-                                "_type": "ConsoPublisherRanking",
-                                "publisher": "Batiments.publishers.SOLARE",
-                                "rank": 2
-                            }
-                        ],
-                        "defaultRule": false,
-                        "attributes": [
-                            {
-                                "attributeName": "VilleEnrichie"
                             }
                         ],
                         "overrideStrategy": "UNTIL_CONSOLIDATED_VAL_CHANGE"

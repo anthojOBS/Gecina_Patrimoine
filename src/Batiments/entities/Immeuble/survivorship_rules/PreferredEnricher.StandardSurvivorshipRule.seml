@@ -1,16 +1,30 @@
 _package: Batiments.entities.Immeuble.survivorship_rules
 _type: StandardSurvivorshipRule
-_name: PreferredPublisherCodePostalEnrichi
+_name: PreferredEnricher
 entity: Batiments.entities.Immeuble.Immeuble
-label: Preferred Publisher CodePostalEnrichi Survivorship Rule
+label: Preferred Publisher DateRestructuration Survivorship Rule
 description: ""
 documentation: ""
 defaultRule: false
 consolidationStrategy: PREFERRED_PUBLISHER
-consolidationSkipNulls: true
+consolidationSkipNulls: false
 overrideStrategy: UNTIL_CONSOLIDATED_VAL_CHANGE
 attributes:
-  - attributeName: CodePostalEnrichi
+  - attributeName: DateRestructuration
+  - attributeName: FlagRestructuration
+
+  - attributeName: PeriodeConstruction
+  - attributeName: DateFinConstruction
+
+  - attributeName: NbAscenseur
+  - attributeName: FlagAscenseur
+
+  - attributeName: FiscaliteCible
+  - attributeName: Usage
+
+  - attributeName: Portefeuille
+  - attributeName: SousPortefeuille
+
 publisherRankings:
   - _type: ConsoPublisherRanking
     publisher: Batiments.publishers.KSIOP

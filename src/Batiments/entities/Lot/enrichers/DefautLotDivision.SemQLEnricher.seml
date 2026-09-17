@@ -1,0 +1,12 @@
+_package: Batiments.entities.Lot.enrichers
+_name: DefautLotDivision
+_type: SemQLEnricher
+entity: Batiments.entities.Lot.Lot
+label: Defaut Lot Division
+enricherExecutionScope: POST_CONSO
+semQlEnricherExpressions: 
+  - attributeName: StatutLouable
+    expression: case when 1=1 then '0'  else '1' end
+  - attributeName: FID_RaisonNonLouable
+    expression: case when 1=1 then 'RESTRUCTU'  end
+condition: FID_Phase ='TER' or FID_Phase ='TERERR'

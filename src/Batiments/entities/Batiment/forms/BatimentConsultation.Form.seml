@@ -634,7 +634,7 @@ formTabs:
                             color: md:black
                           useCustomLabel: true
                           dataType: STRING
-                          visibleValue: Immeuble.FID_OrgaResp = 'DR'  and Immeuble.FDN_TypeVente is not null
+                          visibleValue: Immeuble.FID_OrgaResp = 'DR'  and Immeuble.FID_TypeVente is not null
                           visibleValueInterpreter: SEMQL
                           
                         - _type: TextField

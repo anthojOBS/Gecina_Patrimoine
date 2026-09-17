@@ -71,4 +71,4 @@ tableColumns:
           displayFormatValueInterpreter: LITERAL            
     dataType: DATE
     columnAlign: LEFT
-    visibleByDefault: false
+    visibleByDefault: true

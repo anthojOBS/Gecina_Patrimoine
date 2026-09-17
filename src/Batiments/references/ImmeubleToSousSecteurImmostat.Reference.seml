@@ -20,7 +20,7 @@ toRolePhysicalName: SS_SECTEUR_IMMOSTAT_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: POST_CONSO
+validationScope: NONE
 mandatoryValidationLabel: La SousSecteurImmostat est obligatoire pour un immeuble
 brokenValidationLabel: La SousSecteurImmostat sélectionnée est invalide pour cet immeuble
 

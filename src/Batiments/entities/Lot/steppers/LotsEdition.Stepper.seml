@@ -29,7 +29,7 @@ rootStep:
     - _type: FormStep
       _name: Lot
       label: Fiche Lot
-      canFinishSubLevel: false
+      canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
       formFieldsMode: AUTO
@@ -160,7 +160,7 @@ rootStep:
     - _type: FormStep
       _name: Composition
       label: Composition
-      canFinishSubLevel: false
+      canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
       formFieldsMode: AUTO
@@ -278,7 +278,7 @@ rootStep:
     - _type: FormStep
       _name: CycleDeVie
       label: Cycle de vie
-      canFinishSubLevel: false
+      canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
       formFieldsMode: AUTO
@@ -302,7 +302,12 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: true
           executedOnFormOpen: false
-          
+        - enricher: Batiments.entities.Lot.enrichers.DefautLotDivision
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: true
+
+
       formStepValidations:  
         - executedOnDataChange: true
           executedOnFormOpen: true
@@ -318,7 +323,7 @@ rootStep:
     - _type: FormStep
       _name: FiscaliteJuridique
       label: Juridique et propriété
-      canFinishSubLevel: false
+      canFinishSubLevel: true
       enabledOnParentCreate: true
       enabledOnParentEdit: true
       formFieldsMode: AUTO

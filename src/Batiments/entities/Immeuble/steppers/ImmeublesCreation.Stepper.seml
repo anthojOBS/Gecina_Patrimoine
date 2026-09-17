@@ -303,6 +303,16 @@ rootStep:
       enableMasterValuePicking: false
       formTab: Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble
 
+
+      referenceFormFieldConfigs:
+        - enableCreateReference: false
+          enableUserSort: true
+          referencePickerType: AUTO_COMPLETE
+          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Phase        
+          referenceFilter: Referenced.PhaseCode <> 'VENDU'
+          referencePickerCollectionView: Batiments.entities.Phase.collection_views.PhaseCollectionView
+          # referencePickerSearchTypeConfigs: []
+
       formStepEnrichers:   
         - enricher: Batiments.entities.Immeuble.enrichers.DefautPhase
           executedOnButtonClick: false

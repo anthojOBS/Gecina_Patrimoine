@@ -7,10 +7,18 @@ description: ""
 documentation: ""
 defaultRule: false
 consolidationStrategy: PREFERRED_PUBLISHER
-consolidationSkipNulls: true
+consolidationSkipNulls: false
 overrideStrategy: UNTIL_CONSOLIDATED_VAL_CHANGE
 attributes:
   - attributeName: Adresse
+  - attributeName: AdresseEnrichie
+  - attributeName: AdresseStandardise
+  - attributeName: CodePostal
+  - attributeName: CodePostalEnrichi
+  - attributeName: Pays
+  - attributeName: PaysEnrichie
+  - attributeName: Ville
+  - attributeName: VilleEnrichie
 publisherRankings:
   - _type: ConsoPublisherRanking
     publisher: Batiments.publishers.VisionReelle

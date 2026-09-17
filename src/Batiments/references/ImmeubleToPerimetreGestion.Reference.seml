@@ -20,7 +20,7 @@ toRolePhysicalName: PERIMETRE_GESTION_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: POST_CONSO
+validationScope: NONE
 mandatoryValidationLabel: La Périmètre gestion est obligatoire pour un immeuble
 brokenValidationLabel: La Périmètre gestion sélectionnée est invalide pour cet immeuble
 

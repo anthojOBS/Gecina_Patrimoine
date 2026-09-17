@@ -301,6 +301,15 @@ rootStep:
       enableMasterValuePicking: false
       formTab: Batiments.entities.Lot.forms.LotCreation.CycleVie
 
+      referenceFormFieldConfigs:
+        - enableCreateReference: false
+          enableUserSort: true
+          referencePickerType: AUTO_COMPLETE
+          fdnFormField: Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat.FDN_Phase          
+          referenceFilter: Referenced.PhaseCode <> 'VENDU'
+          referencePickerCollectionView: Batiments.entities.Phase.collection_views.PhaseCollectionView
+          # referencePickerSearchTypeConfigs: []
+
       formStepEnrichers:   
         - enricher: Batiments.entities.Lot.enrichers.DefautPhase
           executedOnButtonClick: false

@@ -35,6 +35,7 @@ actions:
     waitDialogEnabled: false
     availableForGoldenData: true
     availableForMasterData: true
+    requiredRole: semarchyAdmin
   - _type: ExportAction
     _name: Export
     label: Exporter

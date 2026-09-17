@@ -11,6 +11,7 @@ formTabs:
     visibleValue: "1"
     visibleValueInterpreter: LITERAL
     displayFormTabAs: LABEL
+    labelWidth: 200px
     content:
       - _type: ReferenceField
         _name: FDN_TypeSociete
