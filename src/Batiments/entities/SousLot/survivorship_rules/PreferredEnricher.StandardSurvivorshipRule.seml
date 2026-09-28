@@ -12,8 +12,8 @@ overrideStrategy: UNTIL_CONSOLIDATED_VAL_CHANGE
 attributes:
   - attributeName: DateRegimeTVA
   - attributeName: FiscaliteCible
-  - attributeName: Phase
-  - attributeName: DateFinPhase
+  - attributeName: Etat
+  - attributeName: DateFinGestion
   - attributeName: GenreLot
   - attributeName: TypologieLot
   - attributeName: DateDebStatut

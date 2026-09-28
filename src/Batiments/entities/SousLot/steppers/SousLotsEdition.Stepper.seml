@@ -102,13 +102,13 @@ rootStep:
         - enableCreateReference: false
           enableUserSort: true
           referencePickerType: AUTO_COMPLETE
-          fdnFormField: Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Etat.FDN_Phase          
-          referenceFilter: Referenced.PhaseCode <> 'VENDU'
-          referencePickerCollectionView: Batiments.entities.Phase.collection_views.PhaseCollectionView
+          fdnFormField: Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Etat.FDN_Etat          
+          referenceFilter: Referenced.EtatCode <> 'VENDU'
+          referencePickerCollectionView: Batiments.entities.Etat.collection_views.EtatCollectionView
           # referencePickerSearchTypeConfigs: []
 
       formStepEnrichers:   
-        - enricher: Batiments.entities.SousLot.enrichers.DefautPhase
+        - enricher: Batiments.entities.SousLot.enrichers.DefautEtat
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
@@ -121,12 +121,12 @@ rootStep:
         - executedOnDataChange: true
           executedOnFormOpen: true
           validationType: MANDATORY
-          attribute:  Batiments.references.SousLotToPhase.Phase
+          attribute:  Batiments.references.SousLotToEtat.Etat
 
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: MANDATORY
-          attribute:  Batiments.references.SousLotToPhase.Phase
+          attribute:  Batiments.references.SousLotToEtat.Etat
 
     - _type: FormStep
       _name: FiscaliteJuridique
@@ -158,7 +158,7 @@ stepperFinishValidations:
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY
-    attribute:  Batiments.references.SousLotToPhase.Phase
+    attribute:  Batiments.references.SousLotToEtat.Etat
 
 
   - onStepperFinish: BLOCK

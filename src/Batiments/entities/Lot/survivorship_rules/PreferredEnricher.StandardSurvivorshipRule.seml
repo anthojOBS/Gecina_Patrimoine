@@ -17,8 +17,8 @@ attributes:
   - attributeName: DateDebStatut
   - attributeName: StatutLouable
   - attributeName: RaisonNonLouable
-  - attributeName: Phase
-  - attributeName: DateFinPhase
+  - attributeName: Etat
+  - attributeName: DateFinGestion
 
   - attributeName: GenreLot
   - attributeName: TypologieLot

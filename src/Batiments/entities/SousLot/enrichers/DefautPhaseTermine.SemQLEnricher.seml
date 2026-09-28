@@ -5,5 +5,5 @@ entity: Batiments.entities.SousLot.SousLot
 label: Phase Terminé
 enricherExecutionScope: POST_CONSO
 semQlEnricherExpressions: 
-  - attributeName: FID_Phase
-    expression: case when Lot.FID_Phase = 'TER'  then 'TER' else FID_Phase end
+  - attributeName: FID_Etat
+    expression: case when Lot.FID_Etat = 'TER'  then 'TER' else FID_Etat end

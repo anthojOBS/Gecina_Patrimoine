@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: BatimentToEtat
+label: Batiment État
+description: Référence Batiment vers État
+fromRoleDocumentation: |
+  Cette référence détermine l'**État** d'un **Bâtiment** dans son cycle de vie.
+  
+  L'état indique l'état d'avancement du projet (en construction, livré, rénové, etc.).
+physicalName: BATIMENT_ETAT_REF
+
+fromEntity: Batiments.entities.Batiment.Batiment
+fromRoleLabel: Batiment
+fromRoleName: Batiment
+fromRolePluralLabel: Batiments
+
+toEntity: Batiments.entities.Etat.Etat
+toRoleLabel: Etat
+toRoleName: Etat
+toRolePhysicalName: ETAT_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: NONE
+mandatoryValidationLabel: L'état est obligatoire pour un bâtiment
+brokenValidationLabel: L'état sélectionné est invalide pour ce bâtiment
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Etat
+  label: Etat
+  physicalName: ETAT_ID
+  searchable: true
+  entity: Batiments.entities.Batiment.Batiment

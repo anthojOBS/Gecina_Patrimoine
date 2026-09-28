@@ -1,0 +1,33 @@
+_package: Batiments.references
+_type: Reference
+_name: ImmeubleToEtat
+label: Immeuble État
+description: Référence Immeuble vers État
+fromRoleDocumentation: |
+  Cette référence détermine l'**État** d'un **Immeuble** dans son cycle de vie.
+  L'état indique l'état d'avancement du projet immobilier (en construction, livré, etc.).
+physicalName: IMMEUBLE_ETAT_REF
+
+fromEntity: Batiments.entities.Immeuble.Immeuble
+fromRoleLabel: Immeuble
+fromRoleName: Immeuble
+fromRolePluralLabel: Immeubles
+
+toEntity: Batiments.entities.Etat.Etat
+toRoleLabel: Etat
+toRoleName: Etat
+toRolePhysicalName: ETAT_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: NONE
+mandatoryValidationLabel: L'état est obligatoire pour un immeuble
+brokenValidationLabel: L'état sélectionné est invalide pour cet immeuble
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Etat
+  label: Etat
+  physicalName: ETAT_ID
+  searchable: true
+  entity: Batiments.entities.Immeuble.Immeuble

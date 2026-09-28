@@ -1,0 +1,33 @@
+_package: Batiments.entities.Etat.steppers
+_type: Stepper
+_name: AuthorEtats
+entity: Batiments.entities.Etat.Etat
+label: Etats
+rootStep:
+  _type: CollectionStep
+  _name: Etats
+  label: Etats
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.Etat.collection_views.EtatCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Etat
+      label: Etat
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Etat.forms.EtatForm.Etat

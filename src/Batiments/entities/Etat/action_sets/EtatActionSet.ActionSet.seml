@@ -1,0 +1,59 @@
+_package: Batiments.entities.Etat.action_sets
+_type: ActionSet
+_name: EtatActionSet
+entity: Batiments.entities.Etat.Etat
+label: Etat Action Set
+defaultActionSet: true
+actions:
+  - _type: CreateAction
+    _name: CreateAuthorEtats
+    label: Create
+    useCustomLabel: true
+    stepper: Batiments.entities.Etat.steppers.AuthorEtats
+    createMultiple: false
+    createdRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: EditAction
+    _name: EditAuthorEtats
+    label: Edit
+    useCustomLabel: true
+    stepper: Batiments.entities.Etat.steppers.AuthorEtats
+    multipleSelectionAllowed: true
+    availableForGoldenData: true
+    availableForMasterData: false
+    availableForErrorData: true
+    waitDialogEnabled: false
+  - _type: MassUpdateAction
+    _name: MassUpdateAuthorEtats
+    label: Mass Update
+    useCustomLabel: true
+    stepper: Batiments.entities.Etat.steppers.AuthorEtats
+    availableForGoldenData: true
+    availableForErrorData: true
+    availableForMasterData: false
+    waitDialogEnabled: false
+  - _type: DeleteAction
+    _name: Delete
+    label: Delete
+    useCustomLabel: true
+    multipleSelectionAllowed: true
+    deleteType: HARD_DELETE
+    waitDialogEnabled: false
+    availableForGoldenData: true
+    availableForMasterData: false
+    requiredRole: semarchyAdmin
+  - _type: ExportAction
+    _name: Export
+    label: Export
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: ImportAuthorEtats
+    label: Import
+    useCustomLabel: true
+    importMode: CREATE_AND_UPDATE
+    stepper: Batiments.entities.Etat.steppers.AuthorEtats
+    importedRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true

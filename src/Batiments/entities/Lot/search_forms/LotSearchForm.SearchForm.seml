@@ -5,7 +5,7 @@ label: Critères
 entity: Batiments.entities.Lot.Lot
 semQlCondition:  (:SEARCH_PARAM_IDENTIFIANTS_ERP is null OR IdentifiantsERP = :SEARCH_PARAM_IDENTIFIANTS_ERP)
   AND (:SEARCH_PARAM_TYPOLIE_LOT is null OR FID_TypologieLot = :SEARCH_PARAM_TYPOLIE_LOT)
-  AND (:SEARCH_PARAM_ETAT is null OR FID_Phase = :SEARCH_PARAM_ETAT)
+  AND (:SEARCH_PARAM_ETAT is null OR FID_Etat = :SEARCH_PARAM_ETAT)
   AND (:SEARCH_PARAM_GENRE_LOT is null OR FID_GenreLot = :SEARCH_PARAM_GENRE_LOT)
   AND (:SEARCH_PARAM_STATUT_LOUABLE is null OR (:SEARCH_PARAM_STATUT_LOUABLE = '1' AND StatutLouable = '1') OR (:SEARCH_PARAM_STATUT_LOUABLE = '0' AND (StatutLouable = '0' or StatutLouable is null)))
   AND (:SEARCH_PARAM_STATUT_LOGEMENT_SOCIAL is null OR (:SEARCH_PARAM_STATUT_LOGEMENT_SOCIAL = '1' AND StatutLogementSocial = '1') OR (:SEARCH_PARAM_STATUT_LOGEMENT_SOCIAL = '0' AND (StatutLogementSocial = '0' or StatutLogementSocial is null)))
@@ -55,15 +55,15 @@ searchParameters:
     useDistinct: true
     displayCount: false
     lookupEntity: Batiments.entities.Lot.Lot
-  - _name: FDN_Phase
+  - _name: FDN_Etat
     _type: SearchParameter
     bindVariableName: SEARCH_PARAM_ETAT
     label: Etat
     dataType: String
     length: 255
     displayType: VALUE_PICKER
-    boundSelectExpression: FID_Phase
-    primaryTextExpression: FDN_Phase
+    boundSelectExpression: FID_Etat
+    primaryTextExpression: FDN_Etat
     useDistinct: true
     displayCount: false
     lookupEntity: Batiments.entities.Lot.Lot 

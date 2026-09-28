@@ -1,0 +1,24 @@
+_package: Batiments.data_product_priv_grants
+_name: AssetManager
+_type: DataProductPrivGrant
+roleName: AssetManager
+label: Asset Manager
+entityPrivGrants:
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.Immeuble.Immeuble
+    _name: Immeuble
+    checkoutAllowed: false
+    createAllowed: true
+    deleteAllowed: false
+    exportAllowed: true
+    removeAllowed: false
+    defaultAccessType: READ_WRITE
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.Batiment.Batiment
+    _name: Batiment
+    checkoutAllowed: false
+    createAllowed: true
+    deleteAllowed: false
+    exportAllowed: true
+    removeAllowed: false
+    defaultAccessType: READ_WRITE

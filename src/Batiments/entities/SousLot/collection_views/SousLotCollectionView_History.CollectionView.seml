@@ -76,13 +76,13 @@ tableColumns:
 
 
   - _type: ReferenceColumn
-    _name: FDN_Phase
-    value: FDN_Phase
+    _name: FDN_Etat
+    value: FDN_Etat
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
-    referencedEntity: Batiments.entities.Phase.Phase
+    referencedEntity: Batiments.entities.Etat.Etat
 
   - _type: ReferenceColumn
     _name: FDN_RaisonNonLouable
@@ -128,8 +128,8 @@ tableColumns:
     visibleByDefault: true
 
   - _type: TextColumn
-    _name: DateFinPhase
-    value: DateFinPhase
+    _name: DateFinGestion
+    value: DateFinGestion
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT

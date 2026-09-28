@@ -1,0 +1,9 @@
+_package: Batiments.entities.Lot.enrichers
+_name: DefautEtat
+_type: SemQLEnricher
+entity: Batiments.entities.Lot.Lot
+label: Default Etat
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: FID_Etat
+    expression: case when FID_Etat is NULL then 'EXP' else FID_Etat end

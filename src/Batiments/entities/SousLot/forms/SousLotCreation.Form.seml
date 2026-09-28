@@ -252,8 +252,8 @@ formTabs:
         labelWidth: 300px
         content:
           - _type: ReferenceField
-            _name: FDN_Phase
-            value: FDN_Phase
+            _name: FDN_Etat
+            value: FDN_Etat
             label: Etat
             labelProperties:
               alignment: left
@@ -262,13 +262,13 @@ formTabs:
               color: md:black
             useCustomLabel: true
             dataType: STRING
-            referencedEntity: Batiments.entities.Phase.Phase
+            referencedEntity: Batiments.entities.Etat.Etat
 
 
 
           # - _type: DateField
-          #   _name: DateFinPhase
-          #   value: DateFinPhase
+          #   _name: DateFinEtat
+          #   value: DateFinEtat
           #   label: Date fin gestion
           #   labelProperties:
           #     alignment: left

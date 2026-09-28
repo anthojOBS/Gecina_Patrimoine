@@ -318,13 +318,13 @@ rootStep:
         - enableCreateReference: false
           enableUserSort: true
           referencePickerType: AUTO_COMPLETE
-          fdnFormField: Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat.FDN_Phase          
-          referenceFilter: Referenced.PhaseCode <> 'VENDU'
-          referencePickerCollectionView: Batiments.entities.Phase.collection_views.PhaseCollectionView
+          fdnFormField: Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat.FDN_Etat          
+          referenceFilter: Referenced.EtatCode <> 'VENDU'
+          referencePickerCollectionView: Batiments.entities.Etat.collection_views.EtatCollectionView
           # referencePickerSearchTypeConfigs: []
 
       formStepEnrichers:   
-        - enricher: Batiments.entities.Lot.enrichers.DefautPhase
+        - enricher: Batiments.entities.Lot.enrichers.DefautEtat
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
@@ -333,13 +333,13 @@ rootStep:
         - executedOnDataChange: true
           executedOnFormOpen: true
           validationType: MANDATORY
-          attribute:  Batiments.references.LotToPhase.Phase
+          attribute:  Batiments.references.LotToEtat.Etat
 
 
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: MANDATORY
-          attribute:  Batiments.references.LotToPhase.Phase
+          attribute:  Batiments.references.LotToEtat.Etat
 
 
     - _type: FormStep
@@ -510,7 +510,7 @@ stepperFinishValidations:
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY
-    attribute:  Batiments.references.LotToPhase.Phase
+    attribute:  Batiments.references.LotToEtat.Etat
 
 
   - onStepperFinish: BLOCK

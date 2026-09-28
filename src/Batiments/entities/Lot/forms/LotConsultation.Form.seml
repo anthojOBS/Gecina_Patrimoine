@@ -641,8 +641,8 @@ formTabs:
         labelWidth: 300px
         content:
           - _type: ReferenceField
-            _name: FDN_Phase
-            value: FDN_Phase
+            _name: FDN_Etat
+            value: FDN_Etat
             label: Etat
             labelProperties:
               alignment: left
@@ -651,15 +651,15 @@ formTabs:
               color: md:black
             useCustomLabel: true
             dataType: STRING
-            referencedEntity: Batiments.entities.Phase.Phase
+            referencedEntity: Batiments.entities.Etat.Etat
 
 
 
           - _type: TextField
-            _name: DateFinPhase
-            value: DateFinPhase
+            _name: DateFinGestion
+            value: DateFinGestion
             label: Date fin gestion
-            visibleValue: DateFinPhase is not null
+            visibleValue: DateFinGestion is not null
             visibleValueInterpreter: SEMQL
             labelProperties:
               alignment: left

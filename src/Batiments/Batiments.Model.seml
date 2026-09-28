@@ -1,6 +1,0 @@
-_type: Model
-_package: Batiments
-_name: Batiments
-label: Batiments
-modelConfiguration:
-  type: POSTGRESQL

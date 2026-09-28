@@ -297,12 +297,12 @@ rootStep:
         - enableCreateReference: false
           enableUserSort: true
           referencePickerType: AUTO_COMPLETE
-          fdnFormField: Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Etat.FDN_Phase          
-          referenceFilter: Referenced.PhaseCode <> 'VENDU'
-          referencePickerCollectionView: Batiments.entities.Phase.collection_views.PhaseCollectionView
+          fdnFormField: Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Etat.FDN_Etat          
+          referenceFilter: Referenced.EtatCode <> 'VENDU'
+          referencePickerCollectionView: Batiments.entities.Etat.collection_views.EtatCollectionView
           # referencePickerSearchTypeConfigs: []
       formStepEnrichers:   
-        - enricher: Batiments.entities.Lot.enrichers.DefautPhase
+        - enricher: Batiments.entities.Lot.enrichers.DefautEtat
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
@@ -320,13 +320,13 @@ rootStep:
         - executedOnDataChange: true
           executedOnFormOpen: true
           validationType: MANDATORY
-          attribute:  Batiments.references.LotToPhase.Phase
+          attribute:  Batiments.references.LotToEtat.Etat
 
 
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: MANDATORY
-          attribute:  Batiments.references.LotToPhase.Phase
+          attribute:  Batiments.references.LotToEtat.Etat
 
     - _type: FormStep
       _name: FiscaliteJuridique
@@ -413,8 +413,8 @@ rootStep:
     #   useCustomCollectionLabel: false
     #   stepTriggers:
     #     - _type: StepEnricherTrigger
-    #       _name: Phase  
-    #       enricher: Batiments.entities.SousLot.enrichers.DefautPhaseTermine
+    #       _name: Etat  
+    #       enricher: Batiments.entities.SousLot.enrichers.DefautEtatTermine
     #       event: ON_STEP_EXIT_POST_VALID
 
 stepperFinishValidations:
@@ -462,7 +462,7 @@ stepperFinishValidations:
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY
-    attribute:  Batiments.references.LotToPhase.Phase
+    attribute:  Batiments.references.LotToEtat.Etat
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY

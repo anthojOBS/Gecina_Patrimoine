@@ -1,0 +1,15 @@
+_package: Batiments.certification_jobs
+_name: Lot_API
+_type: CertificationJob
+jobType: INTEGRATION
+queueName: Default
+modelTasks:
+  - _type: ModelJobTask
+    entity: Batiments.entities.Lot.Lot
+    _name: Lot
+    consolidatedDataEnrichmentEnabled: true
+    consolidationEnabled: true
+    matchEnabled: true
+    postConsoValidationEnabled: true
+    sourceDataEnrichmentEnabled: true
+    sourceValidationEnabled: true

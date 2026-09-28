@@ -76,10 +76,10 @@ entityShapes:
     position:
       x: 2400
       y: 200
-  # Phase - à droite des entités principales
+  # Etat - à droite des entités principales
   - _type: EntityShape
-    _name: PhaseShape
-    entity: Batiments.entities.Phase.Phase
+    _name: EtatShape
+    entity: Batiments.entities.Etat.Etat
     borderColor: "#673ab7"
     fontTitleColor: ""
     width: -1
@@ -338,21 +338,21 @@ entityShapes:
       x: 800
       y: 1000
 referenceLinks:
-  - reference: Batiments.references.ImmeubleToPhase
+  - reference: Batiments.references.ImmeubleToEtat
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
-    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.PhaseShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.EtatShape
     bendPoints: []
-  - reference: Batiments.references.BatimentToPhase
+  - reference: Batiments.references.BatimentToEtat
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.BatimentShape
-    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.PhaseShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.EtatShape
     bendPoints: []
-  - reference: Batiments.references.LotToPhase
+  - reference: Batiments.references.LotToEtat
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
-    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.PhaseShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.EtatShape
     bendPoints: []
-  - reference: Batiments.references.SousLotToPhase
+  - reference: Batiments.references.SousLotToEtat
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.SousLotShape
-    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.PhaseShape
+    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.EtatShape
     bendPoints: []
   - reference: Batiments.references.ImmeubleToRegimeJuridique
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape

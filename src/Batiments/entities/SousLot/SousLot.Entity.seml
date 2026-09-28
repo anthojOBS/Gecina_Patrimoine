@@ -106,9 +106,9 @@ attributes:
 
     
   - _type: EntityAttribute
-    _name: DateFinPhase
+    _name: DateFinGestion
     label: Date fin gestion
-    physicalName: DATE_FIN_PHASE
+    physicalName: DATE_FIN_GESTION
     dataType: Date
     mandatory: false
     

@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: SousLotToEtat
+label: Sous Lot Etat
+description: Référence Lot vers État
+fromRoleDocumentation: |
+  Cette référence associe un **Lot** à son **État** dans le cycle de vie.
+  
+  L'état permet de suivre l'état d'avancement du lot dans le projet immobilier.
+physicalName: SOUS_LOT_ETAT_REF
+
+fromEntity: Batiments.entities.SousLot.SousLot
+fromRoleLabel: SousLot
+fromRoleName: SousLot
+fromRolePluralLabel: SousLots
+
+toEntity: Batiments.entities.Etat.Etat
+toRoleLabel: État
+toRoleName: Etat
+toRolePhysicalName: ETAT_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: NONE
+mandatoryValidationLabel: L'état est obligatoire pour un sous-lot
+brokenValidationLabel: L'état sélectionné est invalide pour ce sous-lot
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Etat
+  label: Etat
+  physicalName: ETAT_ID
+  searchable: true
+  entity: Batiments.entities.SousLot.SousLot
