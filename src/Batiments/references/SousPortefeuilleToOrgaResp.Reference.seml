@@ -21,7 +21,7 @@ toRolePhysicalName: ORGA_RESP_ID
 
 oneToMany: false
 deletePropagation: RESTRICT
-validationScope: NONE  #pour alimenter sans etage
+validationScope: NONE
 mandatoryValidationLabel: L'organisation responsable est obligatoire pour un sous-portefeuille
 brokenValidationLabel: L'organisation responsable sélectionnée est invalide pour ce sous-portefeuille
 

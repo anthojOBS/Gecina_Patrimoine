@@ -75,6 +75,7 @@ rootStep:
           executedOnDataChange: true
           executedOnFormOpen: true
 
+
       formStepValidations:  
         - executedOnDataChange: true
           executedOnFormOpen: true
@@ -254,13 +255,13 @@ rootStep:
         - enableCreateReference: false
           enableUserSort: true
           referencePickerType: AUTO_COMPLETE
-          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Phase          
-          referenceFilter: Referenced.PhaseCode <> 'VENDU'
-          referencePickerCollectionView: Batiments.entities.Phase.collection_views.PhaseCollectionView
+          fdnFormField: Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat          
+          referenceFilter: Referenced.EtatCode <> 'VENDU'
+          referencePickerCollectionView: Batiments.entities.Etat.collection_views.EtatCollectionView
           # referencePickerSearchTypeConfigs: []
 
       formStepEnrichers:   
-        - enricher: Batiments.entities.Immeuble.enrichers.DefautPhase
+        - enricher: Batiments.entities.Immeuble.enrichers.DefautEtat
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
@@ -272,8 +273,16 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: true
           executedOnFormOpen: false
-
+        - enricher: Batiments.entities.Immeuble.enrichers.DefautDtLivraison
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: true
       formStepValidations: 
+        - validator: Batiments.entities.Immeuble.validations.CheckDtLivraisonAcquisition
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.entities.Immeuble.Immeuble.DateLivraison
         - validator: Batiments.entities.Immeuble.validations.CheckDtLivraison
           executedOnDataChange: true
           executedOnFormOpen: true
@@ -290,6 +299,9 @@ rootStep:
           validationType: CHECK
           attribute:  Batiments.references.ImmeubleToPeriodeConstruction.PeriodeConstruction
       stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Immeuble.validations.CheckDtLivraisonAcquisition
         - onStepExit: BLOCK
           validationType: CHECK
           validator: Batiments.entities.Immeuble.validations.CheckDtLivraison
@@ -484,6 +496,9 @@ stepperFinishValidations:
       - onStepperFinish: BLOCK
         validationType: CHECK
         validator: Batiments.entities.Immeuble.validations.CheckCoherenceDtConstruction
+      - onStepperFinish: BLOCK
+        validationType: CHECK
+        validator: Batiments.entities.Immeuble.validations.CheckDtLivraisonAcquisition
       - onStepperFinish: BLOCK
         validationType: CHECK
         validator: Batiments.entities.Immeuble.validations.CheckDtLivraison

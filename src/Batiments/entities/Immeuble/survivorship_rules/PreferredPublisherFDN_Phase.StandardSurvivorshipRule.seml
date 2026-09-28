@@ -1,8 +1,8 @@
 _package: Batiments.entities.Immeuble.survivorship_rules
 _type: StandardSurvivorshipRule
-_name: PreferredPublisherFDN_Phase
+_name: PreferredPublisherFDN_Etat
 entity: Batiments.entities.Immeuble.Immeuble
-label: Preferred Publisher FDN_Phase Survivorship Rule
+label: Preferred Publisher FDN_Etat Survivorship Rule
 description: ""
 documentation: ""
 defaultRule: false
@@ -10,7 +10,7 @@ consolidationStrategy: PREFERRED_PUBLISHER
 consolidationSkipNulls: true
 overrideStrategy: UNTIL_CONSOLIDATED_VAL_CHANGE
 attributes:
-  - attributeName: Phase
+  - attributeName: Etat
 publisherRankings:
   - _type: ConsoPublisherRanking
     publisher: Batiments.publishers.KSIOP

@@ -10,8 +10,7 @@ consolidationStrategy: PREFERRED_PUBLISHER
 consolidationSkipNulls: false
 overrideStrategy: UNTIL_CONSOLIDATED_VAL_CHANGE
 attributes:
-  - attributeName: SocieteExploitante
-  - attributeName: SocieteProprietaire
+
   - attributeName: StatutSousLocation
 publisherRankings:
   - _type: ConsoPublisherRanking

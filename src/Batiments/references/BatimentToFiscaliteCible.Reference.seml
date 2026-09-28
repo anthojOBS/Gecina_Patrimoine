@@ -20,9 +20,9 @@ toRolePhysicalName: FISCALITE_CIBLE_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: POST_CONSO
-mandatoryValidationLabel: La fiscalite cible est obligatoire pour un Batiment
-brokenValidationLabel: La fiscalite cible sélectionnée est invalide pour cet Batiment
+validationScope: NONE
+mandatoryValidationLabel: La fiscalite cible est obligatoire pour un bâtiment
+brokenValidationLabel: La fiscalite cible sélectionnée est invalide pour ce bâtiment
 
 foreignAttribute:
   _type: ForeignAttribute

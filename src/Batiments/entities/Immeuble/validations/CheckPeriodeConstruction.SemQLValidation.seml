@@ -8,7 +8,7 @@ condition: (DateFinConstruction is  null ) or
           (DATE_PART('year',DateFinConstruction) > '1945' and DATE_PART('year',DateFinConstruction) < '1971' and FID_PeriodeConstruction = '2') or
           (DATE_PART('year',DateFinConstruction) > '1970' and DATE_PART('year',DateFinConstruction) < '1991' and FID_PeriodeConstruction = '3') or
           (DATE_PART('year',DateFinConstruction) > '1990' and FID_PeriodeConstruction = '4' ) 
-validationScope: POST_CONSO
+validationScope: NONE
 validationLabel: La période de construction n'est pas cohérent avec les dates de construction.
 
 

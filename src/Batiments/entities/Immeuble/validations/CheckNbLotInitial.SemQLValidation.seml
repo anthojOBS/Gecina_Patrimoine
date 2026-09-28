@@ -4,5 +4,5 @@ _type: SemQLValidation
 entity: Batiments.entities.Immeuble.Immeuble
 label: Nombre de lots initial obligatoire
 condition: (NbLotInitial is not null and FID_OrgaResp = 'DR') or FID_OrgaResp != 'DR'
-validationScope: POST_CONSO
+validationScope: NONE
 validationLabel: Nombre de lots initial doit être renseigné 

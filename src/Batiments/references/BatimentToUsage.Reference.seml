@@ -20,9 +20,9 @@ toRolePhysicalName: USAGE_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: POST_CONSO
-mandatoryValidationLabel: L'usage est obligatoire pour un batiment
-brokenValidationLabel: L'usage sélectionné est invalide pour ce batiment
+validationScope: NONE
+mandatoryValidationLabel: L'usage est obligatoire pour un bâtiment
+brokenValidationLabel: L'usage sélectionné est invalide pour ce bâtiment
 
 foreignAttribute:
   _type: ForeignAttribute

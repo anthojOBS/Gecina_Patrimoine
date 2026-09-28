@@ -7,7 +7,6 @@ semQlCondition:  (:SEARCH_PARAM_IDENTIFIANTS_ERP is null OR IdentifiantsERP = :S
   AND (:SEARCH_PARAM_TYPOLIE_LOT is null OR FID_TypologieLot = :SEARCH_PARAM_TYPOLIE_LOT)
   AND (:SEARCH_PARAM_ETAT is null OR FID_Phase = :SEARCH_PARAM_ETAT)
   AND (:SEARCH_PARAM_GENRE_LOT is null OR FID_GenreLot = :SEARCH_PARAM_GENRE_LOT)
-  AND (:SEARCH_PARAM_SOCIETE_EXPLOITANTE is null OR FID_SocieteExploitante = :SEARCH_PARAM_SOCIETE_EXPLOITANTE)
   AND (:SEARCH_PARAM_STATUT_LOUABLE is null OR (:SEARCH_PARAM_STATUT_LOUABLE = '1' AND StatutLouable = '1') OR (:SEARCH_PARAM_STATUT_LOUABLE = '0' AND (StatutLouable = '0' or StatutLouable is null)))
   AND (:SEARCH_PARAM_STATUT_LOGEMENT_SOCIAL is null OR (:SEARCH_PARAM_STATUT_LOGEMENT_SOCIAL = '1' AND StatutLogementSocial = '1') OR (:SEARCH_PARAM_STATUT_LOGEMENT_SOCIAL = '0' AND (StatutLogementSocial = '0' or StatutLogementSocial is null)))
   AND (:SEARCH_PARAM_STATUT_ERP is null OR (:SEARCH_PARAM_STATUT_ERP = '1' AND StatutERP = '1') OR (:SEARCH_PARAM_STATUT_ERP = '0' AND (StatutERP = '0' or StatutERP is null)))
@@ -17,6 +16,8 @@ semQlCondition:  (:SEARCH_PARAM_IDENTIFIANTS_ERP is null OR IdentifiantsERP = :S
   AND (:SEARCH_PARAM_ETAGE is null OR (   FDN_Etage = :SEARCH_PARAM_ETAGE) ) 
   AND (:SEARCH_PARAM_BATIMENT is null OR (  Etage.FDN_Batiment = :SEARCH_PARAM_BATIMENT) ) 
 
+  # AND (:SEARCH_PARAM_SOCIETE_EXPLOITANTE is null OR FID_SocieteExploitante = :SEARCH_PARAM_SOCIETE_EXPLOITANTE)
+ 
 searchParameters:
   - _name: IdentifiantsERP
     _type: SearchParameter
@@ -102,18 +103,18 @@ searchParameters:
     useDistinct: true
     displayCount: false
     lookupEntity: Batiments.entities.Lot.Lot 
-  - _name: SocieteExploitante
-    _type: SearchParameter
-    bindVariableName: SEARCH_PARAM_SOCIETE_EXPLOITANTE
-    label: Société exploitante
-    dataType: String
-    length: 255
-    displayType: VALUE_PICKER
-    boundSelectExpression: FID_SocieteExploitante
-    primaryTextExpression: FDN_SocieteExploitante
-    useDistinct: true
-    displayCount: false
-    lookupEntity: Batiments.entities.Lot.Lot
+  # - _name: SocieteExploitante
+  #   _type: SearchParameter
+  #   bindVariableName: SEARCH_PARAM_SOCIETE_EXPLOITANTE
+  #   label: Société exploitante
+  #   dataType: String
+  #   length: 255
+  #   displayType: VALUE_PICKER
+  #   boundSelectExpression: FID_SocieteExploitante
+  #   primaryTextExpression: FDN_SocieteExploitante
+  #   useDistinct: true
+  #   displayCount: false
+  #   lookupEntity: Batiments.entities.Lot.Lot
     
   - _name: StatutLouable
     _type: SearchParameter

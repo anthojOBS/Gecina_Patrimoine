@@ -83,10 +83,10 @@ rootStep:
         #   executedOnButtonClick: false
         #   executedOnDataChange: true
         #   executedOnFormOpen: false
-        - enricher: Batiments.entities.Lot.enrichers.AlimSocExploitante
-          executedOnButtonClick: false
-          executedOnDataChange: true
-          executedOnFormOpen: true
+        # - enricher: Batiments.entities.Lot.enrichers.AlimSocExploitante
+        #   executedOnButtonClick: false
+        #   executedOnDataChange: true
+        #   executedOnFormOpen: true
           
       formStepValidations:  
         - executedOnDataChange: true
@@ -136,7 +136,16 @@ rootStep:
           validationType: CHECK
           attribute: Batiments.references.LotToGenreLot.GenreLot
 
+        - validator: Batiments.entities.Lot.validations.CheckLotOrigine
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.references.LotToLot.LotOrigine
+
       stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: DETECT_DUPS
+          matcher: Batiments.entities.Lot.Lot.Matcher
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.entities.Lot.Lot.Libelle
@@ -149,6 +158,10 @@ rootStep:
         - onStepExit: WARN
           validationType: CHECK
           validator: Batiments.entities.Lot.validations.CheckUsage
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Lot.validations.CheckLotOrigine
+
 
 
         - onStepExit: BLOCK
@@ -338,23 +351,20 @@ rootStep:
       formFieldsMode: AUTO
       enableMasterValuePicking: false
       formTab: Batiments.entities.Lot.forms.LotCreation.JuridiquePropriete
-      referenceFormFieldConfigs:
-        - enableCreateReference: false
-          enableUserSort: true
-          referencePickerType: AUTO_COMPLETE
-          fdnFormField: Batiments.entities.Lot.forms.LotCreation.JuridiquePropriete.Societes.FDN_SocieteExploitante
-          referenceFilter: SEM_INSTR(',' || Record.SocieteExploitanteIDs || ',' , ',' || Referenced.SocieteCode || ',') > 0
-          referencePickerCollectionView: Batiments.entities.Societe.collection_views.SocieteCollectionView
-          # referencePickerSearchTypeConfigs: []
+      # referenceFormFieldConfigs:
+      #   - enableCreateReference: false
+      #     enableUserSort: true
+      #     referencePickerType: AUTO_COMPLETE
+      #     fdnFormField: Batiments.entities.Lot.forms.LotCreation.JuridiquePropriete.Societes.FDN_SocieteExploitante
+      #     referenceFilter: SEM_INSTR(',' || Record.SocieteExploitanteIDs || ',' , ',' || Referenced.SocieteCode || ',') > 0
+      #     referencePickerCollectionView: Batiments.entities.Societe.collection_views.SocieteCollectionView
+      #     # referencePickerSearchTypeConfigs: []
       formStepEnrichers:   
         - enricher: Batiments.entities.Lot.enrichers.DefautRegimeTVA
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
-        - enricher: Batiments.entities.Lot.enrichers.DefautSociete
-          executedOnButtonClick: false
-          executedOnDataChange: false
-          executedOnFormOpen: true  
+
         - enricher: Batiments.entities.Lot.enrichers.DefautStatutSousLocation
           executedOnButtonClick: false
           executedOnDataChange: true
@@ -365,72 +375,92 @@ rootStep:
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute:  Batiments.references.LotToFiscaliteCible.FiscaliteCible
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute:  Batiments.references.LotToSocieteExploitante.SocieteExploitante
+        # - executedOnDataChange: true
+        #   executedOnFormOpen: true
+        #   validationType: MANDATORY
+        #   attribute:  Batiments.references.LotToSocieteExploitante.SocieteExploitante
 
 
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.references.LotToFiscaliteCible.FiscaliteCible
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.references.LotToSocieteExploitante.SocieteExploitante
+        # - onStepExit: BLOCK
+        #   validationType: MANDATORY
+        #   attribute: Batiments.references.LotToSocieteExploitante.SocieteExploitante
 
 
 
 
-    # - _type: CollectionStep
-    #   enableChildImportOnParentCreate: true
-    #   enableChildImportOnParentEdit: true 
-    #   childImportModeOnParentEdit: CREATE_ONLY 
-    #   enableChildCopyOnParentCreate: true
-    #   enableChildCopyOnParentEdit: true
-    #   enableChildCreationOnParentCreate: true
-    #   enableChildCreationOnParentEdit: true 
-    #   enableChildDeleteOnParentEdit: true
-    #   enableChildEditOnParentCreate: true
-    #   enableChildEditOnParentEdit: true
-    #   enableChildRemoveOnParentCreate: true
-    #   enableChildRemoveOnParentEdit: true
-    #   skipToChildCreationOnParentCreate: false
-    #   skipToChildEditingOnParentEdit: false
-    #   linear: false
-    #   _name: Societes
-    #   label: Sociétés
-    #   canFinishSubLevel: true
-    #   enabledOnParentCreate: true
-    #   enabledOnParentEdit: true
-    #   formFieldsMode: AUTO
-    #   childDeleteType: HARD_DELETE
-    #   oneToManyReference: Batiments.references.RelLotSocToLot
-    #   collectionView: Batiments.entities.RelLotSoc.collection_views.RelLotSocCollectionView
-    #   defaultDisplayType: TABLE
-    #   customSortEnabled: false
-    #   userDefinedSortEnabled: true
-    #   displayGridAllowed: false
-    #   displayListAllowed: true
-    #   displayTableAllowed: true
-    #   useCustomCollectionLabel: false
-    #   childSteps:
-    #     - _type: FormStep
-    #       _name: Societes_form
-    #       label: Sociétés
-    #       canFinishSubLevel: true
-    #       enabledOnParentCreate: true
-    #       enabledOnParentEdit: true
-    #       formFieldsMode: AUTO
-    #       enableMasterValuePicking: false
-    #       formTab: Batiments.entities.RelLotSoc.forms.RelLotSocForm.RelLotSoc
+    - _type: CollectionStep
+      enableChildImportOnParentCreate: true
+      enableChildImportOnParentEdit: true 
+      childImportModeOnParentEdit: CREATE_ONLY 
+      enableChildCopyOnParentCreate: true
+      enableChildCopyOnParentEdit: true
+      enableChildCreationOnParentCreate: true
+      enableChildCreationOnParentEdit: true 
+      enableChildDeleteOnParentEdit: true
+      enableChildEditOnParentCreate: true
+      enableChildEditOnParentEdit: true
+      enableChildRemoveOnParentCreate: true
+      enableChildRemoveOnParentEdit: true
+      skipToChildCreationOnParentCreate: false
+      skipToChildEditingOnParentEdit: false
+      linear: false
+      _name: Societes
+      label: Sociétés
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      childDeleteType: HARD_DELETE
+      oneToManyReference: Batiments.references.RelLotSocToLot
+      collectionView: Batiments.entities.RelLotSoc.collection_views.RelLotSocCollectionView
+      defaultDisplayType: TABLE
+      customSortEnabled: false
+      userDefinedSortEnabled: true
+      displayGridAllowed: false
+      displayListAllowed: true
+      displayTableAllowed: true
+      useCustomCollectionLabel: false
+      childSteps:
+        - _type: FormStep
+          _name: Societes_form
+          label: Sociétés
+          canFinishSubLevel: true
+          enabledOnParentCreate: true
+          enabledOnParentEdit: true
+          formFieldsMode: AUTO
+          enableMasterValuePicking: false
+          formTab: Batiments.entities.RelLotSoc.forms.RelLotSocForm.RelLotSoc
+
+          formStepValidations:  
+            - executedOnDataChange: true
+              executedOnFormOpen: true
+              validationType: MANDATORY
+              attribute:  Batiments.references.RelLotSocToSociete.Societe
+            - executedOnDataChange: true
+              executedOnFormOpen: true
+              validationType: MANDATORY
+              attribute:  Batiments.references.RelLotSocToTypeSociete.TypeSociete
+
+          stepTransitionValidations:
+            - onStepExit: BLOCK
+              validationType: DETECT_DUPS
+              matcher: Batiments.entities.RelLotSoc.RelLotSoc.Matcher
+            - onStepExit: BLOCK
+              validationType: MANDATORY
+              attribute: Batiments.references.RelLotSocToSociete.Societe
+            - onStepExit: BLOCK
+              validationType: MANDATORY
+              attribute: Batiments.references.RelLotSocToTypeSociete.TypeSociete
 
 
 
 stepperFinishValidations:
-  - onStepperFinish: WARN
+  - onStepperFinish: BLOCK
     validationType: DETECT_DUPS
-
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.Lot.Lot.Libelle
@@ -450,6 +480,9 @@ stepperFinishValidations:
   - onStepperFinish: WARN
     validationType: CHECK
     validator: Batiments.entities.Lot.validations.CheckUsage
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Lot.validations.CheckLotOrigine
 
 
   - onStepperFinish: BLOCK
@@ -484,9 +517,9 @@ stepperFinishValidations:
     validationType: MANDATORY
     attribute: Batiments.references.LotToFiscaliteCible.FiscaliteCible
 
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.references.LotToSocieteExploitante.SocieteExploitante
+  # - onStepperFinish: BLOCK
+  #   validationType: MANDATORY
+  #   attribute: Batiments.references.LotToSocieteExploitante.SocieteExploitante
 
   - onStepperFinish: BLOCK
     validationType: CHECK
@@ -495,3 +528,9 @@ stepperFinishValidations:
     validationType: CHECK
     validator: Batiments.entities.Lot.validations.CheckCoherenceTypo_Genre
 
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.references.RelImmSocToSociete.Societe
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.references.RelImmSocToTypeSociete.TypeSociete

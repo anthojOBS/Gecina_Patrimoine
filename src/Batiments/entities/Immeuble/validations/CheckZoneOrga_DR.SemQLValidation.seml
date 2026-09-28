@@ -4,5 +4,5 @@ _type: SemQLValidation
 entity: Batiments.entities.Immeuble.Immeuble
 label: Zone immostat facultatif pour la direction résidentiel
 condition: (FID_OrgaResp ='DR' and FID_ZoneImmostat is not null) or (FID_OrgaResp ='DB')
-validationScope: POST_CONSO
+validationScope: NONE
 validationLabel: Attention la zone immostat n'est pas renseignée

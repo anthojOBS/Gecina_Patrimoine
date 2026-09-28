@@ -361,8 +361,8 @@ rootFolder:
           nbRecordsBadgeVisible: false
 
         - _type: BrowseBusinessViewAction
-          _name: Phases
-          businessView: Batiments.entities.Phase.business_views.PhaseBusinessView
+          _name: Etats
+          businessView: Batiments.entities.Etat.business_views.EtatBusinessView
           imageAlign: MIDDLE_CENTER
           imageMode: FIT
           icon: images://mdi/timeline-text.svg
@@ -534,7 +534,14 @@ rootFolder:
         importAction: Batiments.entities.RelImmSoc.action_sets.RelImmSocActionSet.ImportAuthorRelImmSoc
         description: Importer Société depuis un fichier
         requiredRole: semarchyAdmin
-
+      - _type: ImportDataAppAction
+        _name: ImportSocieteLot
+        label: Importer relation Societés & Lots
+        imageAlign: MIDDLE_CENTER
+        imageMode: FIT
+        importAction: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet.ImportAuthorRelLotSoc
+        description: Importer Société depuis un fichier
+        requiredRole: semarchyAdmin
       # - _type: ImportDataAppAction
       #   _name: Importcompteur
       #   label: Importer Compteur

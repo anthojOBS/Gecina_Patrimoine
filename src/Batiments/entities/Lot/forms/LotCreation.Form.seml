@@ -229,6 +229,8 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
+                    visibleValue: FID_TypologieLot  <> 'SNI'
+                    visibleValueInterpreter: SEMQL
                     dataType: BOOLEAN
 
                   - _type: CheckboxField
@@ -614,39 +616,39 @@ formTabs:
           #   dataType: BOOLEAN
 
 
-      - _type: FormSection
-        _name: Societes
-        label: Sociétés
-        layoutDirection: COLUMN
-        visibleValue: '1'
-        visibleValueInterpreter: LITERAL
-        labelWidth: 200px
-        content:
-          - _type: ReferenceField
-            _name: FDN_SocieteProprietaire
-            value: FDN_SocieteProprietaire
-            label: Société propriétaire
-            authoringMode: force-read-only
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: STRING
-            referencedEntity: Batiments.entities.Societe.Societe
-          - _type: ReferenceField
-            _name: FDN_SocieteExploitante
-            value: FDN_SocieteExploitante
-            label: Société exploitante
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: STRING
-            referencedEntity: Batiments.entities.Societe.Societe
+      # - _type: FormSection
+      #   _name: Societes
+      #   label: Sociétés
+      #   layoutDirection: COLUMN
+      #   visibleValue: '1'
+      #   visibleValueInterpreter: LITERAL
+      #   labelWidth: 200px
+      #   content:
+      #     - _type: ReferenceField
+      #       _name: FDN_SocieteProprietaire
+      #       value: FDN_SocieteProprietaire
+      #       label: Société propriétaire
+      #       authoringMode: force-read-only
+      #       labelProperties:
+      #         alignment: left
+      #         typographyValueInterpreter: LITERAL
+      #         typography: body-2
+      #         color: md:black
+      #       useCustomLabel: true
+      #       dataType: STRING
+      #       referencedEntity: Batiments.entities.Societe.Societe
+      #     - _type: ReferenceField
+      #       _name: FDN_SocieteExploitante
+      #       value: FDN_SocieteExploitante
+      #       label: Société exploitante
+      #       labelProperties:
+      #         alignment: left
+      #         typographyValueInterpreter: LITERAL
+      #         typography: body-2
+      #         color: md:black
+      #       useCustomLabel: true
+      #       dataType: STRING
+      #       referencedEntity: Batiments.entities.Societe.Societe
 
           # - _type: MenuField
           #   _name: FDN_SocieteExploitante

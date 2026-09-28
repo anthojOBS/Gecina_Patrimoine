@@ -195,8 +195,8 @@ formTabs:
                     labelWidth: 300px
                     content:
                       - _type: ReferenceField
-                        _name: FDN_Phase
-                        value: FDN_Phase
+                        _name: FDN_Etat
+                        value: FDN_Etat
                         label: Etat
                         authoringMode: force-read-only
                         documentation: Statut du bien dans son cycle de vie (initiale, active, terminée).
@@ -207,7 +207,7 @@ formTabs:
                           color: md:black
                         useCustomLabel: true
                         dataType: STRING
-                        referencedEntity: Batiments.entities.Phase.Phase
+                        referencedEntity: Batiments.entities.Etat.Etat
 
 
                   - _type: FormSection

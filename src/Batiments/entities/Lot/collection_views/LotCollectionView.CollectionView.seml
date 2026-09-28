@@ -378,24 +378,24 @@ tableColumns:
     visibleByDefault: false
 
 
-  - _type: ReferenceColumn
-    _name: FDN_SocieteProprietaire
-    value: FDN_SocieteProprietaire
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: false
-    referencedEntity: Batiments.entities.Societe.Societe
+  # - _type: ReferenceColumn
+  #   _name: FDN_SocieteProprietaire
+  #   value: FDN_SocieteProprietaire
+  #   useCustomLabel: false
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: false
+  #   referencedEntity: Batiments.entities.Societe.Societe
 
 
-  - _type: ReferenceColumn
-    _name: FDN_SocieteExploitante
-    value: FDN_SocieteExploitante
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: false
-    referencedEntity: Batiments.entities.Societe.Societe
+  # - _type: ReferenceColumn
+  #   _name: FDN_SocieteExploitante
+  #   value: FDN_SocieteExploitante
+  #   useCustomLabel: false
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: false
+  #   referencedEntity: Batiments.entities.Societe.Societe
 
  
   - _type: TextColumn

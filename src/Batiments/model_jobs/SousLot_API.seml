@@ -1,18 +1,9 @@
 _package: Batiments.model_jobs
-_name: Lot_immeuble
+_name: SousLot_API
 _type: ModelJob
 jobType: INTEGRATION
 queueName: Default
 modelTasks:
-  - _type: ModelJobTask
-    entity: Batiments.entities.Lot.Lot
-    _name: Lot
-    consolidatedDataEnrichmentEnabled: true
-    consolidationEnabled: true
-    matchEnabled: true
-    postConsoValidationEnabled: true
-    sourceDataEnrichmentEnabled: true
-    sourceValidationEnabled: true
   - _type: ModelJobTask
     entity: Batiments.entities.SousLot.SousLot
     _name: SousLot
@@ -22,4 +13,3 @@ modelTasks:
     postConsoValidationEnabled: true
     sourceDataEnrichmentEnabled: true
     sourceValidationEnabled: true
-

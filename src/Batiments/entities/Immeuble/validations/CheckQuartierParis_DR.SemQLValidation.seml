@@ -5,5 +5,5 @@ entity: Batiments.entities.Immeuble.Immeuble
 label: Quartier Paris facultatif pour la direction résidentiel 
 condition:  (FID_OrgaResp = 'DR' and Ville = 'Paris' and  (FID_Usage = 'RESI' OR FID_Usage = 'MIX') and FID_QuartierParis is not null) 
   or Ville != 'Paris' or FID_Usage = 'BUR' or FID_OrgaResp = 'DB'
-validationScope: POST_CONSO
+validationScope: NONE
 validationLabel: Attention le quartier Paris n'est pas renseigné 

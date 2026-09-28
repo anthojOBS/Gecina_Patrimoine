@@ -353,6 +353,8 @@ formTabs:
                       typography: body-2
                       color: md:black
                     useCustomLabel: true
+                    visibleValue: FID_TypologieLot <> 'SNI'
+                    visibleValueInterpreter: SEMQL
                     dataType: BOOLEAN
 
                   - _type: CheckboxField
@@ -814,61 +816,61 @@ formTabs:
             useCustomLabel: true
             dataType: BOOLEAN
 
-      - _type: FormSection
-        _name: Societes
-        label: Sociétés
-        layoutDirection: COLUMN
-        visibleValue: '1'
-        visibleValueInterpreter: LITERAL
-        labelWidth: 200px
-        content:
-          - _type: ReferenceField
-            _name: FDN_SocieteProprietaire
-            value: FDN_SocieteProprietaire
-            label: Société propriétaire
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: STRING
-            referencedEntity: Batiments.entities.Societe.Societe
-          - _type: ReferenceField
-            _name: FDN_SocieteExploitante
-            value: FDN_SocieteExploitante
-            label: Société exploitante
-            labelProperties:
-              alignment: left
-              typographyValueInterpreter: LITERAL
-              typography: body-2
-              color: md:black
-            useCustomLabel: true
-            dataType: STRING
-            referencedEntity: Batiments.entities.Societe.Societe
-
-
-      # - _type: FormCollection
+      # - _type: FormSection
       #   _name: Societes
       #   label: Sociétés
-      #   pluralLabel: Sociétés
-      #   useCustomLabel: true
-      #   collection: Batiments.entities.RelLotSoc.collection_views.Societe
-      #   actionSet: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet
-      #   tableAllowed: true
-      #   listAllowed: false
-      #   gridAllowed: false
-      #   displayRecordCount: ALWAYS
-      #   enableUserDefinedSort: true
-      #   transitionPath: RelLotSoc
-      #   sortExpression: 1 DESC
-      #   filter: 1=1
-      #   # filter: FID_TypeSociete = '1'
-      #   targetEntity: Batiments.entities.RelLotSoc.RelLotSoc
-      #   height: 300
-      #   formCollectionSearchConfigs:
-      #     - enabled: true 
-      #       searchType: TEXT
+      #   layoutDirection: COLUMN
+      #   visibleValue: '1'
+      #   visibleValueInterpreter: LITERAL
+      #   labelWidth: 200px
+      #   content:
+      #     - _type: ReferenceField
+      #       _name: FDN_SocieteProprietaire
+      #       value: FDN_SocieteProprietaire
+      #       label: Société propriétaire
+      #       labelProperties:
+      #         alignment: left
+      #         typographyValueInterpreter: LITERAL
+      #         typography: body-2
+      #         color: md:black
+      #       useCustomLabel: true
+      #       dataType: STRING
+      #       referencedEntity: Batiments.entities.Societe.Societe
+      #     - _type: ReferenceField
+      #       _name: FDN_SocieteExploitante
+      #       value: FDN_SocieteExploitante
+      #       label: Société exploitante
+      #       labelProperties:
+      #         alignment: left
+      #         typographyValueInterpreter: LITERAL
+      #         typography: body-2
+      #         color: md:black
+      #       useCustomLabel: true
+      #       dataType: STRING
+      #       referencedEntity: Batiments.entities.Societe.Societe
+
+
+      - _type: FormCollection
+        _name: Societes
+        label: Sociétés
+        pluralLabel: Sociétés
+        useCustomLabel: true
+        collection: Batiments.entities.RelLotSoc.collection_views.Societe
+        actionSet: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet
+        tableAllowed: true
+        listAllowed: false
+        gridAllowed: false
+        displayRecordCount: ALWAYS
+        enableUserDefinedSort: true
+        transitionPath: RelLotSoc
+        sortExpression: 1 DESC
+        filter: 1=1
+        # filter: FID_TypeSociete = '1'
+        targetEntity: Batiments.entities.RelLotSoc.RelLotSoc
+        height: 300
+        formCollectionSearchConfigs:
+          - enabled: true 
+            searchType: TEXT
 
 
   - _type: FormTab
@@ -1119,8 +1121,6 @@ formTabs:
                   color: md:black
                 useCustomLabel: true
                 dataType: STRING
-
-
 
           - _type: FormSection
             _name: EspacesExterieurs

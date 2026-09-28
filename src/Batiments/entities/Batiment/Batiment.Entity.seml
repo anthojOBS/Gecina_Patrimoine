@@ -135,9 +135,9 @@ attributes:
     dataType: Date
     mandatory: false
   # - _type: EntityAttribute
-  #   _name: DateDebPhase
+  #   _name: DateDebEtat
   #   label: Date début gestion 
-  #   physicalName: DATE_DEB_PHASE
+  #   physicalName: DATE_DEB_ETAT
   #   dataType: Date
   #   mandatory: false
 

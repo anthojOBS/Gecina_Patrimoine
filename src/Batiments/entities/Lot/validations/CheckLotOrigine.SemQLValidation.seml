@@ -1,0 +1,8 @@
+_package: Batiments.entities.Lot.validations
+_name: CheckLotOrigine
+_type: SemQLValidation
+entity: Batiments.entities.Lot.Lot
+label: Lot origine obligatoire 
+condition:  (StatutNewLot = '1'  and FID_LotOrigine is not null) or StatutNewLot = '0'  or StatutNewLot is null
+validationScope: NONE
+validationLabel: Lot origine doit être renseigné si le statut new lot est coché

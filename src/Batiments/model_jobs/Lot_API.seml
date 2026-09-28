@@ -10,7 +10,6 @@ modelTasks:
     consolidatedDataEnrichmentEnabled: true
     consolidationEnabled: true
     matchEnabled: true
-    postConsoValidationEnabled: false
+    postConsoValidationEnabled: true
     sourceDataEnrichmentEnabled: true
-    sourceValidationEnabled: false
-
+    sourceValidationEnabled: true

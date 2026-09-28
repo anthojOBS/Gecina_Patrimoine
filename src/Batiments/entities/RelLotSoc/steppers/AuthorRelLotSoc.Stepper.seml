@@ -1,0 +1,64 @@
+_package: Batiments.entities.RelLotSoc.steppers
+_type: Stepper
+_name: AuthorRelLotSoc
+entity: Batiments.entities.RelLotSoc.RelLotSoc
+label: RelLotSocs
+rootStep:
+  _type: CollectionStep
+  _name: RelLotSoc
+  label: Relation lot société
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.RelLotSoc.collection_views.RelLotSocCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Lot
+      label: Relation lot société
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.RelLotSoc.forms.RelLotSocForm.RelLotSoc
+
+      formStepValidations:  
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute:  Batiments.references.RelLotSocToSociete.Societe
+        - executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: MANDATORY
+          attribute:  Batiments.references.RelLotSocToTypeSociete.TypeSociete
+
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: DETECT_DUPS
+          matcher: Batiments.entities.RelLotSoc.RelLotSoc.Matcher
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.references.RelLotSocToSociete.Societe
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute: Batiments.references.RelLotSocToTypeSociete.TypeSociete
+
+stepperFinishValidations:
+  - onStepperFinish: BLOCK
+    validationType: DETECT_DUPS
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.references.RelLotSocToSociete.Societe
+  - onStepperFinish: BLOCK
+    validationType: MANDATORY
+    attribute: Batiments.references.RelLotSocToTypeSociete.TypeSociete

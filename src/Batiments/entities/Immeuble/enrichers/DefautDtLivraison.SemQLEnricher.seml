@@ -1,0 +1,10 @@
+_package: Batiments.entities.Immeuble.enrichers
+_name: DefautDtLivraison
+_type: SemQLEnricher
+entity: Batiments.entities.Immeuble.Immeuble
+label: Alimentation de la date de livraison
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: DateLivraison
+    expression: DateAcquisition
+condition: DateLivraison is null

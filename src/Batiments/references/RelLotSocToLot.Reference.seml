@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: RelLotSocToLot
+label: Societe Lot
+description: Lien hiérarchique Lot vers Societe
+fromRoleDocumentation: |
+  Cette référence établit le lien hiérarchique entre un **Bâtiment** et son **Immeuble** parent.
+  
+  Un bâtiment fait partie d'un immeuble dans la structure du patrimoine immobilier.
+physicalName: REL_LOT_REF
+
+fromEntity: Batiments.entities.RelLotSoc.RelLotSoc
+fromRoleLabel: Relation lot société
+fromRoleName: RelLotSoc
+fromRolePluralLabel: Relation lot société
+
+toEntity: Batiments.entities.Lot.Lot
+toRoleLabel: Lot
+toRoleName: Lot
+toRolePhysicalName: LOT_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: NONE
+mandatoryValidationLabel: Le lot est obligatoire pour une société
+brokenValidationLabel: Le lot sélectionné est invalide pour cette société
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Lot
+  label: Lot
+  physicalName: LOT_ID
+  searchable: true
+  entity: Batiments.entities.RelLotSoc.RelLotSoc

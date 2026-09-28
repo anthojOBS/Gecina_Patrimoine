@@ -4,5 +4,5 @@ _type: SemQLValidation
 entity: Batiments.entities.Immeuble.Immeuble
 label: Coherence date de construction
 condition: (DateFinConstruction >= DateDebutConstruction) or DateDebutConstruction is null or DateFinConstruction is null
-validationScope: POST_CONSO
+validationScope: NONE
 validationLabel: Les dates de construction doivent être cohérentes 

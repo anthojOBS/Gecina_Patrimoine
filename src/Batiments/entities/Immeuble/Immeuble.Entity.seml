@@ -455,21 +455,21 @@ attributes:
     mandatory: false
 
 
-  - _type: EntityAttribute
-    _name: ReleveGeometre
-    label: Relevé géomètre
-    physicalName: RELEVE_GEOMETRE
-    dataType: String
-    length: 150
-    mandatory: false
+  # - _type: EntityAttribute
+  #   _name: ReleveGeometre
+  #   label: Relevé géomètre
+  #   physicalName: RELEVE_GEOMETRE
+  #   dataType: String
+  #   length: 150
+  #   mandatory: false
 
-  - _type: EntityAttribute
-    _name: BinaryContent
-    label: Binary Content
-    physicalName: BINARY_CONTENT
-    dataType: Binary
-    mandatory: false
-    searchable: true
+  # - _type: EntityAttribute
+  #   _name: BinaryContent
+  #   label: Binary Content
+  #   physicalName: BINARY_CONTENT
+  #   dataType: Binary
+  #   mandatory: false
+  #   searchable: true
 
   - _type: EntityAttribute
     _name: FlagQPIncluse

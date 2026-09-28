@@ -328,23 +328,55 @@ formTabs:
                     _name: BlocGeometre
                     layoutDirection: COLUMN
                     content:
+                        # - _type: ObjectField
+                        #   _name: ReleveGeometre_objet
+                        #   value: ReleveGeometre
+                        #   useCustomLabel: true
+                        #   label: Relevé géomètre objet
+                        #   labelProperties:
+                        #     isVisible: "1"
+                        #     alignment: left
+                        #     typography: body-2
+                        #     color: md:black
+                        #   dataType: STRING
+                        #   componentProperties:
+                        #     sourceType: url
+                        #     sourceTypeValueInterpreter: LITERAL
+                        # - _type: HyperlinkField
+                        #   _name: ReleveGeometre
+                        #   value: ReleveGeometre
+                        #   useCustomLabel: true
+                        #   label: Relevé géomètre
+                        #   labelProperties:
+                        #     isVisible: "1"
+                        #     alignment: left
+                        #     typography: body-2
+                        #     color: md:black
+                        #   dataType: STRING
+                        #   componentProperties:
+                        #     linkDisplayText: Télécharger le relevé géomètre
+                        #     linkSourceType: url
+                        #     textTypography: headline
+                        #     textTypographyValueInterpreter: LITERAL    
+
                         - _type: HyperlinkField
-                          _name: BinaryContent
-                          value: BinaryContent
+                          _name: ReleveGeometre
+                          value: concat( 'https://gecinadwfp.gecina.fr/redirect/dwlink.htm?a=[ID_TYPE_DOCUMENT]="251" AND [NO_IMMEUBLE]="',IdentifiantsERP,'"')
                           useCustomLabel: true
-                          label: Relevé géomètre
+                          label: Relevé géomètre 
                           labelProperties:
                             isVisible: "1"
                             alignment: left
                             typography: body-2
                             color: md:black
-                          dataType: BINARY
+                          dataType: STRING
                           componentProperties:
-                            linkDisplayText: Télécharger le relevé géomètre
+                            linkDisplayText: Cliquer ici
                             linkSourceType: url
-                            textTypography: headline
-                            textTypographyValueInterpreter: LITERAL
-                     
+                            textTypography: title
+                            textTypographyValueInterpreter: LITERAL 
+
+                      
       - _type: FormContainer
         _name: SectionBas
         layoutDirection: ROW

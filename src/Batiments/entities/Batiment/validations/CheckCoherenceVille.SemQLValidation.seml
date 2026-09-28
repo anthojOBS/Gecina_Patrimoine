@@ -4,6 +4,6 @@ _type: SemQLValidation
 entity: Batiments.entities.Batiment.Batiment
 label: Coherence ville
 condition: (Upper(Immeuble.VilleEnrichie) = Upper(VilleEnrichie) and VilleEnrichie is not null) or VilleEnrichie is null
-validationScope: POST_CONSO
+validationScope: NONE
 validationLabel: La ville est différente de celle de immeuble
 

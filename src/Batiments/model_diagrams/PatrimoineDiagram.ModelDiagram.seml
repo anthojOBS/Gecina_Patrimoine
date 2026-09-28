@@ -414,10 +414,10 @@ referenceLinks:
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape
     toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.ZoneImmostatShape
     bendPoints: []
-  - reference: Batiments.references.LotToSocieteProprietaire
-    fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
-    toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.SocieteShape
-    bendPoints: []
+  # - reference: Batiments.references.LotToSocieteProprietaire
+  #   fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
+  #   toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.SocieteShape
+  #   bendPoints: []
   - reference: Batiments.references.LotToTypologieLot
     fromEntityShape: Batiments.model_diagrams.PatrimoineDiagram.LotShape
     toEntityShape: Batiments.model_diagrams.PatrimoineDiagram.TypologieLotShape

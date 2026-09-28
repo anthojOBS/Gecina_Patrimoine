@@ -574,11 +574,11 @@
                         "imageMode": "FIT"
                     },
                     {
-                        "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.Phases",
+                        "qualifiedName": "Batiments.applications.Patrimoine.Root.ReferenceData.Etats",
                         "posInFolder": 10,
                         "parentFolder": "Batiments.applications.Patrimoine.Root.ReferenceData",
                         "_type": "BrowseBusinessViewAction",
-                        "businessObjectView": "Batiments.entities.Phase.business_views.PhaseBusinessView",
+                        "businessObjectView": "Batiments.entities.Etat.business_views.EtatBusinessView",
                         "nbRecordsBadgeVisible": false,
                         "useCustomLabel": false,
                         "icon": "images://mdi/timeline-text.svg",
@@ -966,8 +966,8 @@
                         "fontTitleColor": ""
                     },
                     {
-                        "qualifiedName": "Batiments.model_diagrams.PatrimoineDiagram.PhaseShape",
-                        "entity": "Batiments.entities.Phase.Phase",
+                        "qualifiedName": "Batiments.model_diagrams.PatrimoineDiagram.EtatShape",
+                        "entity": "Batiments.entities.Etat.Etat",
                         "position": {
                             "x": 400,
                             "y": 400
@@ -1257,21 +1257,21 @@
                 "inheritLinks": [],
                 "referenceLinks": [
                     {
-                        "reference": "Batiments.references.ImmeubleToPhase",
+                        "reference": "Batiments.references.ImmeubleToEtat",
                         "fromEntityShape": "Batiments.model_diagrams.PatrimoineDiagram.ImmeubleShape",
-                        "toEntityShape": "Batiments.model_diagrams.PatrimoineDiagram.PhaseShape",
+                        "toEntityShape": "Batiments.model_diagrams.PatrimoineDiagram.EtatShape",
                         "bendPoints": []
                     },
                     {
-                        "reference": "Batiments.references.BatimentToPhase",
+                        "reference": "Batiments.references.BatimentToEtat",
                         "fromEntityShape": "Batiments.model_diagrams.PatrimoineDiagram.BatimentShape",
-                        "toEntityShape": "Batiments.model_diagrams.PatrimoineDiagram.PhaseShape",
+                        "toEntityShape": "Batiments.model_diagrams.PatrimoineDiagram.EtatShape",
                         "bendPoints": []
                     },
                     {
-                        "reference": "Batiments.references.LotToPhase",
+                        "reference": "Batiments.references.LotToEtat",
                         "fromEntityShape": "Batiments.model_diagrams.PatrimoineDiagram.LotShape",
-                        "toEntityShape": "Batiments.model_diagrams.PatrimoineDiagram.PhaseShape",
+                        "toEntityShape": "Batiments.model_diagrams.PatrimoineDiagram.EtatShape",
                         "bendPoints": []
                     },
                     {
@@ -1528,8 +1528,8 @@
                         "sourceValidationEnabled": true
                     },
                     {
-                        "qualifiedName": "Batiments.model_jobs.INTEGRATE_ALL_REFS.Phase",
-                        "entity": "Batiments.entities.Phase.Phase",
+                        "qualifiedName": "Batiments.model_jobs.INTEGRATE_ALL_REFS.Etat",
+                        "entity": "Batiments.entities.Etat.Etat",
                         "consolidatedDataEnrichmentEnabled": true,
                         "consolidationEnabled": true,
                         "matchEnabled": true,
@@ -1699,8 +1699,8 @@
                         "removeAllowed": false
                     },
                     {
-                        "qualifiedName": "Batiments.model_priv_grants.Reader.Phase",
-                        "entity": "Batiments.entities.Phase.Phase",
+                        "qualifiedName": "Batiments.model_priv_grants.Reader.Etat",
+                        "entity": "Batiments.entities.Etat.Etat",
                         "checkoutAllowed": false,
                         "createAllowed": false,
                         "defaultAccessType": "READ",
@@ -2068,31 +2068,31 @@
                 }
             },
             {
-                "qualifiedName": "Batiments.references.BatimentToPhase",
+                "qualifiedName": "Batiments.references.BatimentToEtat",
                 "brokenValidationLabel": "La phase sélectionnée est invalide pour ce batiment",
                 "deletePropagation": "RESTRICT",
                 "fromEntity": "Batiments.entities.Batiment.Batiment",
                 "fromRoleName": "Batiment",
                 "mandatoryValidationLabel": "La phase est obligatoire pour un batiment",
                 "oneToMany": true,
-                "physicalName": "BATIMENT_PHASE_REF",
+                "physicalName": "BATIMENT_ETAT_REF",
                 "splitDuplicatePropagation": "NONE",
-                "toEntity": "Batiments.entities.Phase.Phase",
-                "toRoleName": "Phase",
-                "toRolePhysicalName": "PHASE_ID",
+                "toEntity": "Batiments.entities.Etat.Etat",
+                "toRoleName": "Etat",
+                "toRolePhysicalName": "ETAT_ID",
                 "validationScope": "POST_CONSO",
-                "description": "Référence Batiment vers Phase",
-                "fromRoleDocumentation": "Cette référence détermine la **Phase** d'un **Bâtiment** dans son cycle de vie.\n\nLa phase indique l'état d'avancement du projet (en construction, livré, rénové, etc.).\n",
+                "description": "Référence Batiment vers Etat",
+                "fromRoleDocumentation": "Cette référence détermine la **Etat** d'un **Bâtiment** dans son cycle de vie.\n\nLa phase indique l'état d'avancement du projet (en construction, livré, rénové, etc.).\n",
                 "fromRoleLabel": "Batiment",
                 "fromRolePluralLabel": "Batiments",
-                "label": "Batiment Phase",
-                "toRoleLabel": "Phase",
+                "label": "Batiment Etat",
+                "toRoleLabel": "Etat",
                 "foreignAttribute": {
-                    "qualifiedName": "Batiments.references.BatimentToPhase.Phase",
+                    "qualifiedName": "Batiments.references.BatimentToEtat.Etat",
                     "_type": "ForeignAttribute",
-                    "physicalName": "PHASE_ID",
+                    "physicalName": "ETAT_ID",
                     "entity": "Batiments.entities.Batiment.Batiment",
-                    "label": "Phase",
+                    "label": "Etat",
                     "searchable": true
                 }
             },
@@ -2532,31 +2532,31 @@
                 }
             },
             {
-                "qualifiedName": "Batiments.references.ImmeubleToPhase",
+                "qualifiedName": "Batiments.references.ImmeubleToEtat",
                 "brokenValidationLabel": "La phase sélectionnée est invalide pour cet immeuble",
                 "deletePropagation": "RESTRICT",
                 "fromEntity": "Batiments.entities.Immeuble.Immeuble",
                 "fromRoleName": "Immeuble",
                 "mandatoryValidationLabel": "La phase est obligatoire pour un immeuble",
                 "oneToMany": true,
-                "physicalName": "IMMEUBLE_PHASE_REF",
+                "physicalName": "IMMEUBLE_ETAT_REF",
                 "splitDuplicatePropagation": "NONE",
-                "toEntity": "Batiments.entities.Phase.Phase",
-                "toRoleName": "Phase",
-                "toRolePhysicalName": "PHASE_ID",
+                "toEntity": "Batiments.entities.Etat.Etat",
+                "toRoleName": "Etat",
+                "toRolePhysicalName": "ETAT_ID",
                 "validationScope": "POST_CONSO",
-                "description": "Référence Immeuble vers Phase",
-                "fromRoleDocumentation": "Cette référence détermine la **Phase** d'un **Immeuble** dans son cycle de vie.\nLa phase indique l'état d'avancement du projet immobilier (en construction, livré, etc.).\n",
+                "description": "Référence Immeuble vers Etat",
+                "fromRoleDocumentation": "Cette référence détermine la **Etat** d'un **Immeuble** dans son cycle de vie.\nLa phase indique l'état d'avancement du projet immobilier (en construction, livré, etc.).\n",
                 "fromRoleLabel": "Immeuble",
                 "fromRolePluralLabel": "Immeubles",
-                "label": "Immeuble Phase",
-                "toRoleLabel": "Phase",
+                "label": "Immeuble Etat",
+                "toRoleLabel": "Etat",
                 "foreignAttribute": {
-                    "qualifiedName": "Batiments.references.ImmeubleToPhase.Phase",
+                    "qualifiedName": "Batiments.references.ImmeubleToEtat.Etat",
                     "_type": "ForeignAttribute",
-                    "physicalName": "PHASE_ID",
+                    "physicalName": "ETAT_ID",
                     "entity": "Batiments.entities.Immeuble.Immeuble",
-                    "label": "Phase",
+                    "label": "Etat",
                     "searchable": true
                 }
             },
@@ -3055,31 +3055,31 @@
                 }
             },
             {
-                "qualifiedName": "Batiments.references.LotToPhase",
+                "qualifiedName": "Batiments.references.LotToEtat",
                 "brokenValidationLabel": "La phase sélectionnée est invalide pour ce lot",
                 "deletePropagation": "RESTRICT",
                 "fromEntity": "Batiments.entities.Lot.Lot",
                 "fromRoleName": "Lot",
                 "mandatoryValidationLabel": "La phase est obligatoire pour un lot",
                 "oneToMany": true,
-                "physicalName": "LOT_PHASE_REF",
+                "physicalName": "LOT_ETAT_REF",
                 "splitDuplicatePropagation": "NONE",
-                "toEntity": "Batiments.entities.Phase.Phase",
-                "toRoleName": "Phase",
-                "toRolePhysicalName": "PHASE_ID",
+                "toEntity": "Batiments.entities.Etat.Etat",
+                "toRoleName": "Etat",
+                "toRolePhysicalName": "ETAT_ID",
                 "validationScope": "POST_CONSO",
-                "description": "Référence Lot vers Phase",
-                "fromRoleDocumentation": "Cette référence associe un **Lot** à sa **Phase** dans le cycle de vie.\n\nLa phase permet de suivre l'état d'avancement du lot dans le projet immobilier.\n",
+                "description": "Référence Lot vers Etat",
+                "fromRoleDocumentation": "Cette référence associe un **Lot** à sa **Etat** dans le cycle de vie.\n\nLa phase permet de suivre l'état d'avancement du lot dans le projet immobilier.\n",
                 "fromRoleLabel": "Lot",
                 "fromRolePluralLabel": "Lots",
-                "label": "Lot Phase",
-                "toRoleLabel": "Phase",
+                "label": "Lot Etat",
+                "toRoleLabel": "Etat",
                 "foreignAttribute": {
-                    "qualifiedName": "Batiments.references.LotToPhase.Phase",
+                    "qualifiedName": "Batiments.references.LotToEtat.Etat",
                     "_type": "ForeignAttribute",
-                    "physicalName": "PHASE_ID",
+                    "physicalName": "ETAT_ID",
                     "entity": "Batiments.entities.Lot.Lot",
-                    "label": "Phase",
+                    "label": "Etat",
                     "searchable": true
                 }
             },
@@ -3606,31 +3606,31 @@
                 }
             },
             {
-                "qualifiedName": "Batiments.references.SousLotToPhase",
+                "qualifiedName": "Batiments.references.SousLotToEtat",
                 "brokenValidationLabel": "La phase sélectionnée est invalide pour ce lot",
                 "deletePropagation": "RESTRICT",
                 "fromEntity": "Batiments.entities.SousLot.SousLot",
                 "fromRoleName": "SousLot",
                 "mandatoryValidationLabel": "La phase est obligatoire pour un lot",
                 "oneToMany": true,
-                "physicalName": "SOUS_LOT_PHASE_REF",
+                "physicalName": "SOUS_LOT_ETAT_REF",
                 "splitDuplicatePropagation": "NONE",
-                "toEntity": "Batiments.entities.Phase.Phase",
-                "toRoleName": "Phase",
-                "toRolePhysicalName": "PHASE_ID",
+                "toEntity": "Batiments.entities.Etat.Etat",
+                "toRoleName": "Etat",
+                "toRolePhysicalName": "ETAT_ID",
                 "validationScope": "POST_CONSO",
-                "description": "Référence Lot vers Phase",
-                "fromRoleDocumentation": "Cette référence associe un **Lot** à sa **Phase** dans le cycle de vie.\n\nLa phase permet de suivre l'état d'avancement du lot dans le projet immobilier.\n",
+                "description": "Référence Lot vers Etat",
+                "fromRoleDocumentation": "Cette référence associe un **Lot** à sa **Etat** dans le cycle de vie.\n\nLa phase permet de suivre l'état d'avancement du lot dans le projet immobilier.\n",
                 "fromRoleLabel": "SousLot",
                 "fromRolePluralLabel": "SousLots",
-                "label": "Sous Lot Phase",
-                "toRoleLabel": "Phase",
+                "label": "Sous Lot Etat",
+                "toRoleLabel": "Etat",
                 "foreignAttribute": {
-                    "qualifiedName": "Batiments.references.SousLotToPhase.Phase",
+                    "qualifiedName": "Batiments.references.SousLotToEtat.Etat",
                     "_type": "ForeignAttribute",
-                    "physicalName": "PHASE_ID",
+                    "physicalName": "ETAT_ID",
                     "entity": "Batiments.entities.SousLot.SousLot",
-                    "label": "Phase",
+                    "label": "Etat",
                     "searchable": true
                 }
             },
@@ -8135,7 +8135,7 @@
                                 "stepper": "Batiments.entities.TypeEnergie.steppers.AuthorTypeEnergie"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.TypeEnergie.action_sets.TypeEnergieActionSet.EditAuthorPhases",
+                                "qualifiedName": "Batiments.entities.TypeEnergie.action_sets.TypeEnergieActionSet.EditAuthorEtats",
                                 "_type": "EditAction",
                                 "description": "",
                                 "label": "Edit",
@@ -8180,7 +8180,7 @@
                                 "waitDialogEnabled": false
                             },
                             {
-                                "qualifiedName": "Batiments.entities.TypeEnergie.action_sets.TypeEnergieActionSet.ImportAuthorPhases",
+                                "qualifiedName": "Batiments.entities.TypeEnergie.action_sets.TypeEnergieActionSet.ImportAuthorEtats",
                                 "_type": "ImportAction",
                                 "description": "",
                                 "label": "Import",
@@ -8431,10 +8431,10 @@
                     {
                         "qualifiedName": "Batiments.entities.TypeEnergie.steppers.AuthorTypeEnergie",
                         "label": "Type d'énergie",
-                        "rootCollectionStep": "Batiments.entities.TypeEnergie.steppers.AuthorTypeEnergie.Phases",
+                        "rootCollectionStep": "Batiments.entities.TypeEnergie.steppers.AuthorTypeEnergie.Etats",
                         "steps": [
                             {
-                                "qualifiedName": "Batiments.entities.TypeEnergie.steppers.AuthorTypeEnergie.Phases",
+                                "qualifiedName": "Batiments.entities.TypeEnergie.steppers.AuthorTypeEnergie.Etats",
                                 "_type": "CollectionStep",
                                 "canFinishSubLevel": true,
                                 "childDeleteType": "HARD_DELETE",
@@ -8472,10 +8472,10 @@
                                 "skipToChildEditingOnParentEdit": false,
                                 "useCustomCollectionLabel": false,
                                 "userDefinedSortEnabled": true,
-                                "label": "Phases"
+                                "label": "Etats"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.TypeEnergie.steppers.AuthorTypeEnergie.Phases.TypeEnergie",
+                                "qualifiedName": "Batiments.entities.TypeEnergie.steppers.AuthorTypeEnergie.Etats.TypeEnergie",
                                 "_type": "FormStep",
                                 "canFinishSubLevel": true,
                                 "enabledOnParentCreate": true,
@@ -8484,7 +8484,7 @@
                                 "formFieldsMode": "AUTO",
                                 "formTab": "Batiments.entities.TypeEnergie.forms.TypeEnergieForm.TypeEnergie",
                                 "label": "Type d'énergie",
-                                "parentCollectionStep": "Batiments.entities.TypeEnergie.steppers.AuthorTypeEnergie.Phases"
+                                "parentCollectionStep": "Batiments.entities.TypeEnergie.steppers.AuthorTypeEnergie.Etats"
                             }
                         ]
                     }
@@ -10078,7 +10078,7 @@
                         "scale": 2
                     },
                     {
-                        "qualifiedName": "Batiments.entities.SousLot.SousLot.DateDebPhase",
+                        "qualifiedName": "Batiments.entities.SousLot.SousLot.DateDebEtat",
                         "_type": "AtomicAttribute",
                         "abstractAtomicType": "Date",
                         "goldenAttribute": true,
@@ -10088,7 +10088,7 @@
                         "mandatoryValidationLabel": "Date début phase est obligatoire",
                         "mandatoryValidationScope": "POST_CONSO",
                         "multiValued": false,
-                        "physicalColName": "DATE_DEB_PHASE",
+                        "physicalColName": "DATE_DEB_ETAT",
                         "valueSeparator": "",
                         "label": "Date début phase"
                     },
@@ -10493,16 +10493,16 @@
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.SousLot.collection_views.SousLotCollectionView.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.SousLot.collection_views.SousLotCollectionView.FDN_Etat",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 6,
                                 "useCustomLabel": false,
-                                "value": "FDN_Phase",
+                                "value": "FDN_Etat",
                                 "visibleByDefault": false,
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -10573,14 +10573,14 @@
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.SousLot.collection_views.SousLotCollectionView.DateDebPhase",
+                                "qualifiedName": "Batiments.entities.SousLot.collection_views.SousLotCollectionView.DateDebEtat",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 12,
                                 "useCustomLabel": false,
-                                "value": "DateDebPhase",
+                                "value": "DateDebEtat",
                                 "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
@@ -10741,14 +10741,14 @@
                 ],
                 "enrichers": [
                     {
-                        "qualifiedName": "Batiments.entities.SousLot.enrichers.DefautDtDebPhase",
+                        "qualifiedName": "Batiments.entities.SousLot.enrichers.DefautDtDebEtat",
                         "_type": "SemQLEnricher",
-                        "condition": "DateDebPhase is NULL",
+                        "condition": "DateDebEtat is NULL",
                         "enricherExecutionScope": "NONE",
                         "label": "Default date début phase",
                         "semQlEnricherExpressions": [
                             {
-                                "attributeName": "DateDebPhase",
+                                "attributeName": "DateDebEtat",
                                 "expression": "CURRENT_DATE()"
                             }
                         ]
@@ -10780,15 +10780,15 @@
                         ]
                     },
                     {
-                        "qualifiedName": "Batiments.entities.SousLot.enrichers.DefautPhase",
+                        "qualifiedName": "Batiments.entities.SousLot.enrichers.DefautEtat",
                         "_type": "SemQLEnricher",
-                        "condition": "FID_Phase is NULL",
+                        "condition": "FID_Etat is NULL",
                         "enricherExecutionScope": "NONE",
-                        "label": "Default Phase",
+                        "label": "Default Etat",
                         "semQlEnricherExpressions": [
                             {
-                                "attributeName": "FID_Phase",
-                                "expression": "case when FID_Phase is NULL then 'ACTIVE' else FID_Phase end"
+                                "attributeName": "FID_Etat",
+                                "expression": "case when FID_Etat is NULL then 'ACTIVE' else FID_Etat end"
                             }
                         ]
                     }
@@ -10936,13 +10936,13 @@
                                 "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Phase",
+                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Etat",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Phase",
+                                "label": "Etat",
                                 "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle",
                                 "visibleValue": "1"
@@ -11423,34 +11423,34 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Phase.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Etat.FDN_Etat",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": true,
-                                "value": "FDN_Phase",
-                                "label": "Phase",
-                                "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Phase",
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "value": "FDN_Etat",
+                                "label": "Etat",
+                                "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Etat",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Phase.FDN_Phase.labelColor",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Etat.FDN_Etat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Phase.FDN_Phase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Etat.FDN_Etat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Phase.FDN_Phase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Etat.FDN_Etat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -11458,33 +11458,33 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Phase.DateDebPhase",
+                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Etat.DateDebEtat",
                                 "_type": "FormField",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 1,
                                 "useCustomLabel": true,
-                                "value": "DateDebPhase",
+                                "value": "DateDebEtat",
                                 "label": "Date début phase",
-                                "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Phase",
+                                "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Etat",
                                 "valueDataType": "DATE",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Phase.DateDebPhase.labelColor",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Etat.DateDebEtat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Phase.DateDebPhase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Etat.DateDebEtat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Phase.DateDebPhase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotConsultation.CycleVie.Cycle.Etat.DateDebEtat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -11665,13 +11665,13 @@
                                 "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Phase",
+                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Etat",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Phase",
+                                "label": "Etat",
                                 "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle",
                                 "visibleValue": "1"
@@ -12072,34 +12072,34 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Phase.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Etat.FDN_Etat",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": true,
-                                "value": "FDN_Phase",
-                                "label": "Phase",
-                                "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Phase",
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "value": "FDN_Etat",
+                                "label": "Etat",
+                                "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Etat",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Phase.FDN_Phase.labelColor",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Etat.FDN_Etat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Phase.FDN_Phase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Etat.FDN_Etat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Phase.FDN_Phase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Etat.FDN_Etat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -12107,33 +12107,33 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Phase.DateDebPhase",
+                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Etat.DateDebEtat",
                                 "_type": "FormField",
                                 "componentName": "semDatepickerField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 1,
                                 "useCustomLabel": true,
-                                "value": "DateDebPhase",
+                                "value": "DateDebEtat",
                                 "label": "Date début phase",
-                                "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Phase",
+                                "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Etat",
                                 "valueDataType": "DATE",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Phase.DateDebPhase.labelColor",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Etat.DateDebEtat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Phase.DateDebPhase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Etat.DateDebEtat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Phase.DateDebPhase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotCreation.CycleVie.Cycle.Etat.DateDebEtat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -12320,13 +12320,13 @@
                                 "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Phase",
+                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Etat",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Phase",
+                                "label": "Etat",
                                 "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle",
                                 "visibleValue": "1"
@@ -12739,34 +12739,34 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Phase.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Etat.FDN_Etat",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": true,
-                                "value": "FDN_Phase",
-                                "label": "Phase",
-                                "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Phase",
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "value": "FDN_Etat",
+                                "label": "Etat",
+                                "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Etat",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Phase.FDN_Phase.labelColor",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Etat.FDN_Etat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Phase.FDN_Phase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Etat.FDN_Etat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Phase.FDN_Phase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Etat.FDN_Etat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -12774,33 +12774,33 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Phase.DateDebPhase",
+                                "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Etat.DateDebEtat",
                                 "_type": "FormField",
                                 "componentName": "semDatepickerField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 1,
                                 "useCustomLabel": true,
-                                "value": "DateDebPhase",
+                                "value": "DateDebEtat",
                                 "label": "Date début phase",
-                                "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Phase",
+                                "parentFormContainer": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Etat",
                                 "valueDataType": "DATE",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Phase.DateDebPhase.labelColor",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Etat.DateDebEtat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Phase.DateDebPhase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Etat.DateDebEtat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Phase.DateDebPhase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.SousLot.forms.SousLotEdition.CycleVie.Cycle.Etat.DateDebEtat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -13036,13 +13036,13 @@
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
-                                "attribute": "Batiments.references.SousLotToPhase.Phase"
+                                "attribute": "Batiments.references.SousLotToEtat.Etat"
                             },
                             {
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
-                                "attribute": "Batiments.entities.SousLot.SousLot.DateDebPhase"
+                                "attribute": "Batiments.entities.SousLot.SousLot.DateDebEtat"
                             },
                             {
                                 "_type": "StepperFinishValidation",
@@ -13228,13 +13228,13 @@
                                 "formFieldsMode": "AUTO",
                                 "formStepEnrichers": [
                                     {
-                                        "enricher": "Batiments.entities.SousLot.enrichers.DefautPhase",
+                                        "enricher": "Batiments.entities.SousLot.enrichers.DefautEtat",
                                         "executedOnButtonClick": false,
                                         "executedOnDataChange": false,
                                         "executedOnFormOpen": true
                                     },
                                     {
-                                        "enricher": "Batiments.entities.SousLot.enrichers.DefautDtDebPhase",
+                                        "enricher": "Batiments.entities.SousLot.enrichers.DefautDtDebEtat",
                                         "executedOnButtonClick": false,
                                         "executedOnDataChange": false,
                                         "executedOnFormOpen": true
@@ -13244,14 +13244,14 @@
                                     {
                                         "_type": "FormStepValidation",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.references.SousLotToPhase.Phase",
+                                        "attribute": "Batiments.references.SousLotToEtat.Etat",
                                         "executedOnDataChange": true,
                                         "executedOnFormOpen": true
                                     },
                                     {
                                         "_type": "FormStepValidation",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.entities.SousLot.SousLot.DateDebPhase",
+                                        "attribute": "Batiments.entities.SousLot.SousLot.DateDebEtat",
                                         "executedOnDataChange": true,
                                         "executedOnFormOpen": true
                                     }
@@ -13264,13 +13264,13 @@
                                         "_type": "StepTransitionValidation",
                                         "onStepExit": "BLOCK",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.references.SousLotToPhase.Phase"
+                                        "attribute": "Batiments.references.SousLotToEtat.Etat"
                                     },
                                     {
                                         "_type": "StepTransitionValidation",
                                         "onStepExit": "BLOCK",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.entities.SousLot.SousLot.DateDebPhase"
+                                        "attribute": "Batiments.entities.SousLot.SousLot.DateDebEtat"
                                     }
                                 ]
                             }
@@ -13309,13 +13309,13 @@
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
-                                "attribute": "Batiments.references.SousLotToPhase.Phase"
+                                "attribute": "Batiments.references.SousLotToEtat.Etat"
                             },
                             {
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
-                                "attribute": "Batiments.entities.SousLot.SousLot.DateDebPhase"
+                                "attribute": "Batiments.entities.SousLot.SousLot.DateDebEtat"
                             },
                             {
                                 "_type": "StepperFinishValidation",
@@ -13475,13 +13475,13 @@
                                 "formFieldsMode": "AUTO",
                                 "formStepEnrichers": [
                                     {
-                                        "enricher": "Batiments.entities.SousLot.enrichers.DefautPhase",
+                                        "enricher": "Batiments.entities.SousLot.enrichers.DefautEtat",
                                         "executedOnButtonClick": false,
                                         "executedOnDataChange": false,
                                         "executedOnFormOpen": true
                                     },
                                     {
-                                        "enricher": "Batiments.entities.SousLot.enrichers.DefautDtDebPhase",
+                                        "enricher": "Batiments.entities.SousLot.enrichers.DefautDtDebEtat",
                                         "executedOnButtonClick": false,
                                         "executedOnDataChange": false,
                                         "executedOnFormOpen": true
@@ -13491,14 +13491,14 @@
                                     {
                                         "_type": "FormStepValidation",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.references.SousLotToPhase.Phase",
+                                        "attribute": "Batiments.references.SousLotToEtat.Etat",
                                         "executedOnDataChange": true,
                                         "executedOnFormOpen": true
                                     },
                                     {
                                         "_type": "FormStepValidation",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.entities.SousLot.SousLot.DateDebPhase",
+                                        "attribute": "Batiments.entities.SousLot.SousLot.DateDebEtat",
                                         "executedOnDataChange": true,
                                         "executedOnFormOpen": true
                                     }
@@ -13511,13 +13511,13 @@
                                         "_type": "StepTransitionValidation",
                                         "onStepExit": "BLOCK",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.references.SousLotToPhase.Phase"
+                                        "attribute": "Batiments.references.SousLotToEtat.Etat"
                                     },
                                     {
                                         "_type": "StepTransitionValidation",
                                         "onStepExit": "BLOCK",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.entities.SousLot.SousLot.DateDebPhase"
+                                        "attribute": "Batiments.entities.SousLot.SousLot.DateDebEtat"
                                     }
                                 ]
                             }
@@ -18738,38 +18738,38 @@
                 "fuzzyLookupRules": []
             },
             {
-                "qualifiedName": "Batiments.entities.Phase.Phase",
+                "qualifiedName": "Batiments.entities.Etat.Etat",
                 "dataEntryAllowed": true,
                 "historizeGolden": true,
                 "historizeMaster": false,
                 "description": "",
-                "documentation": "La **Phase** représente l'état d'avancement d'un actif immobilier dans son cycle de vie.\n\nUne phase permet de suivre l'évolution d'un immeuble, d'un bâtiment ou d'un lot depuis sa conception jusqu'à son exploitation (en projet, en construction, livré, en exploitation, etc.).\n\nCette entité est essentielle pour le pilotage des projets immobiliers et la gestion du portefeuille.\n",
+                "documentation": "La **Etat** représente l'état d'avancement d'un actif immobilier dans son cycle de vie.\n\nUne phase permet de suivre l'évolution d'un immeuble, d'un bâtiment ou d'un lot depuis sa conception jusqu'à son exploitation (en projet, en construction, livré, en exploitation, etc.).\n\nCette entité est essentielle pour le pilotage des projets immobiliers et la gestion du portefeuille.\n",
                 "enableDelete": true,
                 "entityType": "BASIC",
                 "iconUrl": "images://mdi/timeline-text.svg",
-                "label": "Phase",
-                "physicalTableName": "PHASE",
-                "pluralLabel": "Phases",
+                "label": "Etat",
+                "physicalTableName": "ETAT",
+                "pluralLabel": "Etats",
                 "pkAttributes": [
                     {
-                        "qualifiedName": "Batiments.entities.Phase.Phase.PhaseCode",
+                        "qualifiedName": "Batiments.entities.Etat.Etat.EtatCode",
                         "_type": "PKAttribute",
                         "abstractAtomicType": "String",
                         "goldenAttribute": true,
                         "i18ned": false,
                         "mandatory": true,
                         "multiValued": false,
-                        "physicalColName": "PHASE_ID",
+                        "physicalColName": "ETAT_ID",
                         "valueSeparator": "",
                         "idGenerationType": "MANUAL",
-                        "label": "Code Phase",
+                        "label": "Code Etat",
                         "length": 50,
                         "searchable": true
                     }
                 ],
                 "atomicAttributes": [
                     {
-                        "qualifiedName": "Batiments.entities.Phase.Phase.PhaseLibelle",
+                        "qualifiedName": "Batiments.entities.Etat.Etat.EtatLibelle",
                         "_type": "AtomicAttribute",
                         "abstractAtomicType": "String",
                         "goldenAttribute": true,
@@ -18781,7 +18781,7 @@
                         "multiValued": false,
                         "physicalColName": "LIBELLE",
                         "valueSeparator": "",
-                        "label": "Libellé Phase",
+                        "label": "Libellé Etat",
                         "length": 255,
                         "searchable": true
                     }
@@ -18790,13 +18790,13 @@
                 "abstractRowCheckConstraints": [],
                 "actionSets": [
                     {
-                        "qualifiedName": "Batiments.entities.Phase.action_sets.PhaseActionSet",
+                        "qualifiedName": "Batiments.entities.Etat.action_sets.EtatActionSet",
                         "defaultActionSet": true,
                         "description": "",
-                        "label": "Phase Action Set",
+                        "label": "Etat Action Set",
                         "actions": [
                             {
-                                "qualifiedName": "Batiments.entities.Phase.action_sets.PhaseActionSet.CreateAuthorPhases",
+                                "qualifiedName": "Batiments.entities.Etat.action_sets.EtatActionSet.CreateAuthorEtats",
                                 "_type": "CreateAction",
                                 "description": "",
                                 "label": "Create",
@@ -18805,10 +18805,10 @@
                                 "allowOtherPublishers": true,
                                 "createdRecordType": "GOLDEN",
                                 "createMultiple": false,
-                                "stepper": "Batiments.entities.Phase.steppers.AuthorPhases"
+                                "stepper": "Batiments.entities.Etat.steppers.AuthorEtats"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Phase.action_sets.PhaseActionSet.EditAuthorPhases",
+                                "qualifiedName": "Batiments.entities.Etat.action_sets.EtatActionSet.EditAuthorEtats",
                                 "_type": "EditAction",
                                 "description": "",
                                 "label": "Edit",
@@ -18818,22 +18818,22 @@
                                 "availableForErrorData": true,
                                 "availableForGoldenData": true,
                                 "availableForMasterData": false,
-                                "stepper": "Batiments.entities.Phase.steppers.AuthorPhases"
+                                "stepper": "Batiments.entities.Etat.steppers.AuthorEtats"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Phase.action_sets.PhaseActionSet.MassUpdateAuthorPhases",
+                                "qualifiedName": "Batiments.entities.Etat.action_sets.EtatActionSet.MassUpdateAuthorEtats",
                                 "_type": "MassUpdateAction",
                                 "description": "",
                                 "label": "Mass Update",
                                 "useCustomLabel": true,
                                 "waitDialogEnabled": false,
-                                "stepper": "Batiments.entities.Phase.steppers.AuthorPhases",
+                                "stepper": "Batiments.entities.Etat.steppers.AuthorEtats",
                                 "availableForErrorData": true,
                                 "availableForGoldenData": true,
                                 "availableForMasterData": false
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Phase.action_sets.PhaseActionSet.Delete",
+                                "qualifiedName": "Batiments.entities.Etat.action_sets.EtatActionSet.Delete",
                                 "_type": "DeleteAction",
                                 "description": "",
                                 "label": "Delete",
@@ -18845,7 +18845,7 @@
                                 "availableForMasterData": false
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Phase.action_sets.PhaseActionSet.Export",
+                                "qualifiedName": "Batiments.entities.Etat.action_sets.EtatActionSet.Export",
                                 "_type": "ExportAction",
                                 "description": "",
                                 "label": "Export",
@@ -18853,7 +18853,7 @@
                                 "waitDialogEnabled": false
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Phase.action_sets.PhaseActionSet.ImportAuthorPhases",
+                                "qualifiedName": "Batiments.entities.Etat.action_sets.EtatActionSet.ImportAuthorEtats",
                                 "_type": "ImportAction",
                                 "description": "",
                                 "label": "Import",
@@ -18862,10 +18862,10 @@
                                 "allowOtherPublishers": true,
                                 "importedRecordType": "GOLDEN",
                                 "importMode": "CREATE_AND_UPDATE",
-                                "stepper": "Batiments.entities.Phase.steppers.AuthorPhases"
+                                "stepper": "Batiments.entities.Etat.steppers.AuthorEtats"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Phase.action_sets.PhaseActionSet.BrowseGraph",
+                                "qualifiedName": "Batiments.entities.Etat.action_sets.EtatActionSet.BrowseGraph",
                                 "_type": "BrowseGraphAction",
                                 "description": "",
                                 "label": "Browse Graph",
@@ -18877,66 +18877,66 @@
                 ],
                 "businessObjectViews": [
                     {
-                        "qualifiedName": "Batiments.entities.Phase.business_views.PhaseBusinessView",
+                        "qualifiedName": "Batiments.entities.Etat.business_views.EtatBusinessView",
                         "displayRootNodeAs": "ICON_LABEL",
                         "enableHierarchyView": false,
                         "filter": "1 = 1",
-                        "rootBoViewEntity": "Batiments.entities.Phase.business_views.PhaseBusinessView.Phase",
+                        "rootBoViewEntity": "Batiments.entities.Etat.business_views.EtatBusinessView.Etat",
                         "rootDescription": "",
-                        "rootLabel": "Phase",
-                        "rootPluralLabel": "Phase",
+                        "rootLabel": "Etat",
+                        "rootPluralLabel": "Etat",
                         "useHierarchyOnOpen": false,
                         "visible": true,
-                        "label": "Phase",
+                        "label": "Etat",
                         "boViewEntities": [
                             {
-                                "qualifiedName": "Batiments.entities.Phase.business_views.PhaseBusinessView.Phase",
-                                "collection": "Batiments.entities.Phase.collection_views.PhaseCollectionView",
+                                "qualifiedName": "Batiments.entities.Etat.business_views.EtatBusinessView.Etat",
+                                "collection": "Batiments.entities.Etat.collection_views.EtatCollectionView",
                                 "displayRecordCount": "ALWAYS",
                                 "enableUserDefinedSort": true,
-                                "entity": "Batiments.entities.Phase.Phase",
-                                "form": "Batiments.entities.Phase.forms.PhaseForm",
+                                "entity": "Batiments.entities.Etat.Etat",
+                                "form": "Batiments.entities.Etat.forms.EtatForm",
                                 "gridAllowed": true,
                                 "listAllowed": true,
                                 "outlineVisible": false,
                                 "overrideDefaultSort": false,
                                 "sortExpression": "",
                                 "tableAllowed": true,
-                                "actionSet": "Batiments.entities.Phase.action_sets.PhaseActionSet",
+                                "actionSet": "Batiments.entities.Etat.action_sets.EtatActionSet",
                                 "businessEntitySearchConfigs": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Phase.business_views.PhaseBusinessView.Phase.TextConfig",
+                                        "qualifiedName": "Batiments.entities.Etat.business_views.EtatBusinessView.Etat.TextConfig",
                                         "searchTypeConfig": {
                                             "searchType": "TEXT"
                                         }
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Phase.business_views.PhaseBusinessView.Phase.FormConfig",
+                                        "qualifiedName": "Batiments.entities.Etat.business_views.EtatBusinessView.Etat.FormConfig",
                                         "searchTypeConfig": {
                                             "searchType": "BY_FORM"
                                         }
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Phase.business_views.PhaseBusinessView.Phase.AdvancedConfig",
+                                        "qualifiedName": "Batiments.entities.Etat.business_views.EtatBusinessView.Etat.AdvancedConfig",
                                         "searchTypeConfig": {
                                             "searchType": "ADVANCED"
                                         }
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Phase.business_views.PhaseBusinessView.Phase.SemqlConfig",
+                                        "qualifiedName": "Batiments.entities.Etat.business_views.EtatBusinessView.Etat.SemqlConfig",
                                         "searchTypeConfig": {
                                             "searchType": "SEMQL"
                                         }
                                     }
                                 ],
-                                "displayCard": "Batiments.entities.Phase.display_cards.PhaseDisplayCard",
+                                "displayCard": "Batiments.entities.Etat.display_cards.EtatDisplayCard",
                                 "transitions": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Phase.business_views.PhaseBusinessView.Phase.GoldenHistoryRecords",
+                                        "qualifiedName": "Batiments.entities.Etat.business_views.EtatBusinessView.Etat.GoldenHistoryRecords",
                                         "enableHierarchyInterpreter": "LITERAL",
                                         "expandHierarchyByDefault": false,
                                         "filter": "1 = 1",
-                                        "targetBoViewEntity": "Batiments.entities.Phase.business_views.PhaseBusinessView.Phase",
+                                        "targetBoViewEntity": "Batiments.entities.Etat.business_views.EtatBusinessView.Etat",
                                         "transitionPath": "GoldenHistoryRecords",
                                         "useCustomLabel": true,
                                         "displayFormTabAs": "ICON_LABEL",
@@ -18956,7 +18956,7 @@
                 ],
                 "collections": [
                     {
-                        "qualifiedName": "Batiments.entities.Phase.collection_views.PhaseCollectionView",
+                        "qualifiedName": "Batiments.entities.Etat.collection_views.EtatCollectionView",
                         "default": true,
                         "gridAllowed": false,
                         "gridColumns": 4,
@@ -18968,39 +18968,39 @@
                         "listShowDisplayCardAvatar": false,
                         "listShowDivider": true,
                         "tableAllowed": true,
-                        "tableDisplayCardColumnLabel": "Phase",
+                        "tableDisplayCardColumnLabel": "Etat",
                         "tableRowLines": 1,
                         "tableShowDisplayCard": false,
-                        "displayCard": "Batiments.entities.Phase.display_cards.PhaseDisplayCard",
+                        "displayCard": "Batiments.entities.Etat.display_cards.EtatDisplayCard",
                         "tableColumns": [
                             {
-                                "qualifiedName": "Batiments.entities.Phase.collection_views.PhaseCollectionView.PhaseCode",
+                                "qualifiedName": "Batiments.entities.Etat.collection_views.EtatCollectionView.EtatCode",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semIdField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": false,
-                                "value": "PhaseCode",
+                                "value": "EtatCode",
                                 "visibleByDefault": true,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Phase.collection_views.PhaseCollectionView.PhaseLibelle",
+                                "qualifiedName": "Batiments.entities.Etat.collection_views.EtatCollectionView.EtatLibelle",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 1,
                                 "useCustomLabel": false,
-                                "value": "PhaseLibelle",
+                                "value": "EtatLibelle",
                                 "visibleByDefault": true,
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Phase.collection_views.PhaseCollectionView.UpdateDate",
+                                "qualifiedName": "Batiments.entities.Etat.collection_views.EtatCollectionView.UpdateDate",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
@@ -19013,7 +19013,7 @@
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Phase.collection_views.PhaseCollectionView.Updator",
+                                "qualifiedName": "Batiments.entities.Etat.collection_views.EtatCollectionView.Updator",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
@@ -19030,7 +19030,7 @@
                 ],
                 "displayCards": [
                     {
-                        "qualifiedName": "Batiments.entities.Phase.display_cards.PhaseDisplayCard",
+                        "qualifiedName": "Batiments.entities.Etat.display_cards.EtatDisplayCard",
                         "avatarImageValueInterpreter": "LITERAL",
                         "default": true,
                         "primaryImageFallbackValueInterpreter": "LITERAL",
@@ -19042,7 +19042,7 @@
                         "primaryImageFallbackSourceType": "URL",
                         "primaryImageMode": "FIT",
                         "primaryImageSourceType": "URL",
-                        "primaryTextExpression": "PhaseLibelle"
+                        "primaryTextExpression": "EtatLibelle"
                     }
                 ],
                 "dupsManagers": [],
@@ -19050,44 +19050,44 @@
                 "forms": [
                     {
                         "default": true,
-                        "qualifiedName": "Batiments.entities.Phase.forms.PhaseForm",
+                        "qualifiedName": "Batiments.entities.Etat.forms.EtatForm",
                         "formCharts": [],
                         "formCollections": [],
                         "formContainers": [
                             {
-                                "qualifiedName": "Batiments.entities.Phase.forms.PhaseForm.Phase",
+                                "qualifiedName": "Batiments.entities.Etat.forms.EtatForm.Etat",
                                 "_type": "FormTab",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
                                 "displayFormTabAs": "LABEL",
-                                "label": "Phase",
+                                "label": "Etat",
                                 "visibleValue": "1"
                             }
                         ],
                         "formDashboards": [],
                         "formFields": [
                             {
-                                "qualifiedName": "Batiments.entities.Phase.forms.PhaseForm.Phase.PhaseCode",
+                                "qualifiedName": "Batiments.entities.Etat.forms.EtatForm.Etat.EtatCode",
                                 "_type": "FormField",
                                 "componentName": "semIdField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": false,
-                                "value": "PhaseCode",
-                                "parentFormContainer": "Batiments.entities.Phase.forms.PhaseForm.Phase",
+                                "value": "EtatCode",
+                                "parentFormContainer": "Batiments.entities.Etat.forms.EtatForm.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Phase.forms.PhaseForm.Phase.PhaseCode.labelColor",
+                                        "qualifiedName": "Batiments.entities.Etat.forms.EtatForm.Etat.EtatCode.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Phase.forms.PhaseForm.Phase.PhaseCode.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Etat.forms.EtatForm.Etat.EtatCode.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -19095,26 +19095,26 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Phase.forms.PhaseForm.Phase.PhaseLibelle",
+                                "qualifiedName": "Batiments.entities.Etat.forms.EtatForm.Etat.EtatLibelle",
                                 "_type": "FormField",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 1,
                                 "useCustomLabel": false,
-                                "value": "PhaseLibelle",
-                                "parentFormContainer": "Batiments.entities.Phase.forms.PhaseForm.Phase",
+                                "value": "EtatLibelle",
+                                "parentFormContainer": "Batiments.entities.Etat.forms.EtatForm.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Phase.forms.PhaseForm.Phase.PhaseLibelle.labelColor",
+                                        "qualifiedName": "Batiments.entities.Etat.forms.EtatForm.Etat.EtatLibelle.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Phase.forms.PhaseForm.Phase.PhaseLibelle.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Etat.forms.EtatForm.Etat.EtatLibelle.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -19127,17 +19127,17 @@
                 "searchForms": [],
                 "steppers": [
                     {
-                        "qualifiedName": "Batiments.entities.Phase.steppers.AuthorPhases",
-                        "label": "Phases",
-                        "rootCollectionStep": "Batiments.entities.Phase.steppers.AuthorPhases.Phases",
+                        "qualifiedName": "Batiments.entities.Etat.steppers.AuthorEtats",
+                        "label": "Etats",
+                        "rootCollectionStep": "Batiments.entities.Etat.steppers.AuthorEtats.Etats",
                         "steps": [
                             {
-                                "qualifiedName": "Batiments.entities.Phase.steppers.AuthorPhases.Phases",
+                                "qualifiedName": "Batiments.entities.Etat.steppers.AuthorEtats.Etats",
                                 "_type": "CollectionStep",
                                 "canFinishSubLevel": true,
                                 "childDeleteType": "HARD_DELETE",
                                 "childImportModeOnParentEdit": "CREATE_AND_UPDATE",
-                                "collectionView": "Batiments.entities.Phase.collection_views.PhaseCollectionView",
+                                "collectionView": "Batiments.entities.Etat.collection_views.EtatCollectionView",
                                 "createChildUsingManyToManyPicker": false,
                                 "customSortEnabled": false,
                                 "defaultDisplayType": "TABLE",
@@ -19170,19 +19170,19 @@
                                 "skipToChildEditingOnParentEdit": false,
                                 "useCustomCollectionLabel": false,
                                 "userDefinedSortEnabled": true,
-                                "label": "Phases"
+                                "label": "Etats"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Phase.steppers.AuthorPhases.Phases.Phase",
+                                "qualifiedName": "Batiments.entities.Etat.steppers.AuthorEtats.Etats.Etat",
                                 "_type": "FormStep",
                                 "canFinishSubLevel": true,
                                 "enabledOnParentCreate": true,
                                 "enabledOnParentEdit": true,
                                 "enableMasterValuePicking": false,
                                 "formFieldsMode": "AUTO",
-                                "formTab": "Batiments.entities.Phase.forms.PhaseForm.Phase",
-                                "label": "Phase",
-                                "parentCollectionStep": "Batiments.entities.Phase.steppers.AuthorPhases.Phases"
+                                "formTab": "Batiments.entities.Etat.forms.EtatForm.Etat",
+                                "label": "Etat",
+                                "parentCollectionStep": "Batiments.entities.Etat.steppers.AuthorEtats.Etats"
                             }
                         ]
                     }
@@ -20684,7 +20684,7 @@
                                 "stepper": "Batiments.entities.OrganisationResponsable.steppers.AuthorOrganisationResponsable"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.OrganisationResponsable.action_sets.OrganisationResponsableActionSet.EditAuthorPhases",
+                                "qualifiedName": "Batiments.entities.OrganisationResponsable.action_sets.OrganisationResponsableActionSet.EditAuthorEtats",
                                 "_type": "EditAction",
                                 "description": "",
                                 "label": "Edit",
@@ -20729,7 +20729,7 @@
                                 "waitDialogEnabled": false
                             },
                             {
-                                "qualifiedName": "Batiments.entities.OrganisationResponsable.action_sets.OrganisationResponsableActionSet.ImportAuthorPhases",
+                                "qualifiedName": "Batiments.entities.OrganisationResponsable.action_sets.OrganisationResponsableActionSet.ImportAuthorEtats",
                                 "_type": "ImportAction",
                                 "description": "",
                                 "label": "Import",
@@ -21668,7 +21668,7 @@
                         "label": "Date début statut"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Lot.Lot.DateDebPhase",
+                        "qualifiedName": "Batiments.entities.Lot.Lot.DateDebEtat",
                         "_type": "AtomicAttribute",
                         "abstractAtomicType": "Date",
                         "goldenAttribute": true,
@@ -21678,7 +21678,7 @@
                         "mandatoryValidationLabel": "Date début phase est obligatoire",
                         "mandatoryValidationScope": "POST_CONSO",
                         "multiValued": false,
-                        "physicalColName": "DATE_DEB_PHASE",
+                        "physicalColName": "DATE_DEB_ETAT",
                         "valueSeparator": "",
                         "label": "Date début phase"
                     },
@@ -22820,28 +22820,28 @@
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.FDN_Etat",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 11,
                                 "useCustomLabel": false,
-                                "value": "FDN_Phase",
+                                "value": "FDN_Etat",
                                 "visibleByDefault": false,
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.DateDebPhase",
+                                "qualifiedName": "Batiments.entities.Lot.collection_views.LotCollectionView.DateDebEtat",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 12,
                                 "useCustomLabel": false,
-                                "value": "DateDebPhase",
+                                "value": "DateDebEtat",
                                 "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
@@ -23238,14 +23238,14 @@
                         ]
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Lot.enrichers.DefautDtDebPhase",
+                        "qualifiedName": "Batiments.entities.Lot.enrichers.DefautDtDebEtat",
                         "_type": "SemQLEnricher",
-                        "condition": "DateDebPhase is NULL",
+                        "condition": "DateDebEtat is NULL",
                         "enricherExecutionScope": "NONE",
                         "label": "Default date début phase",
                         "semQlEnricherExpressions": [
                             {
-                                "attributeName": "DateDebPhase",
+                                "attributeName": "DateDebEtat",
                                 "expression": "CURRENT_DATE()"
                             }
                         ]
@@ -23290,15 +23290,15 @@
                         ]
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Lot.enrichers.DefautPhase",
+                        "qualifiedName": "Batiments.entities.Lot.enrichers.DefautEtat",
                         "_type": "SemQLEnricher",
-                        "condition": "FID_Phase is NULL",
+                        "condition": "FID_Etat is NULL",
                         "enricherExecutionScope": "NONE",
                         "label": "Default Country",
                         "semQlEnricherExpressions": [
                             {
-                                "attributeName": "FID_Phase",
-                                "expression": "case when FID_Phase is NULL then 'ACTIVE' else FID_Phase end"
+                                "attributeName": "FID_Etat",
+                                "expression": "case when FID_Etat is NULL then 'ACTIVE' else FID_Etat end"
                             }
                         ]
                     },
@@ -23565,13 +23565,13 @@
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.CycleVie"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase",
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Etat",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Phase",
+                                "label": "Etat",
                                 "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle",
                                 "visibleValue": "1"
@@ -24783,34 +24783,34 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Etat.FDN_Etat",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": true,
-                                "value": "FDN_Phase",
-                                "label": "Phase",
-                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase",
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "value": "FDN_Etat",
+                                "label": "Etat",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Etat",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase.FDN_Phase.labelColor",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Etat.FDN_Etat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase.FDN_Phase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Etat.FDN_Etat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase.FDN_Phase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Etat.FDN_Etat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -24818,45 +24818,45 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase.DateDebPhase",
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Etat.DateDebEtat",
                                 "_type": "FormField",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 1,
                                 "useCustomLabel": true,
-                                "value": "DateDebPhase",
+                                "value": "DateDebEtat",
                                 "label": "Date début phase",
-                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Etat",
                                 "valueDataType": "DATE",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase.DateDebPhase.displayFormat",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Etat.DateDebEtat.displayFormat",
                                         "dataType": "STRING",
                                         "value": "dd/MM/yyyy",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase.DateDebPhase.editingFormat",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Etat.DateDebEtat.editingFormat",
                                         "dataType": "STRING",
                                         "value": "dd/MM/yyyy",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase.DateDebPhase.labelColor",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Etat.DateDebEtat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase.DateDebPhase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Etat.DateDebEtat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Phase.DateDebPhase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotConsultation.CycleVie.Cycle.Etat.DateDebEtat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -26241,13 +26241,13 @@
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotCreation.CycleVie"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Phase",
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Phase",
+                                "label": "Etat",
                                 "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle",
                                 "visibleValue": "1"
@@ -27085,34 +27085,34 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Phase.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat.FDN_Etat",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": true,
-                                "value": "FDN_Phase",
-                                "label": "Phase",
-                                "parentFormContainer": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Phase",
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "value": "FDN_Etat",
+                                "label": "Etat",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Phase.FDN_Phase.labelColor",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat.FDN_Etat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Phase.FDN_Phase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat.FDN_Etat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Phase.FDN_Phase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat.FDN_Etat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -27120,45 +27120,45 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Phase.DateDebPhase",
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat.DateDebEtat",
                                 "_type": "FormField",
                                 "componentName": "semDatepickerField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 1,
                                 "useCustomLabel": true,
-                                "value": "DateDebPhase",
+                                "value": "DateDebEtat",
                                 "label": "Date début phase",
-                                "parentFormContainer": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Phase",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat",
                                 "valueDataType": "DATE",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Phase.DateDebPhase.displayFormat",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat.DateDebEtat.displayFormat",
                                         "dataType": "STRING",
                                         "value": "dd/MM/yyyy",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Phase.DateDebPhase.editingFormat",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat.DateDebEtat.editingFormat",
                                         "dataType": "STRING",
                                         "value": "dd/MM/yyyy",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Phase.DateDebPhase.labelColor",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat.DateDebEtat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Phase.DateDebPhase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat.DateDebEtat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Phase.DateDebPhase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotCreation.CycleVie.Cycle.Etat.DateDebEtat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -27545,13 +27545,13 @@
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotEdition.CycleVie"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Phase",
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Etat",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Phase",
+                                "label": "Etat",
                                 "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle",
                                 "visibleValue": "1"
@@ -28401,34 +28401,34 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Phase.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Etat.FDN_Etat",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": true,
-                                "value": "FDN_Phase",
-                                "label": "Phase",
-                                "parentFormContainer": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Phase",
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "value": "FDN_Etat",
+                                "label": "Etat",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Etat",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Phase.FDN_Phase.labelColor",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Etat.FDN_Etat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Phase.FDN_Phase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Etat.FDN_Etat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Phase.FDN_Phase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Etat.FDN_Etat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -28436,33 +28436,33 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Phase.DateDebPhase",
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Etat.DateDebEtat",
                                 "_type": "FormField",
                                 "componentName": "semDatepickerField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 1,
                                 "useCustomLabel": true,
-                                "value": "DateDebPhase",
+                                "value": "DateDebEtat",
                                 "label": "Date début phase",
-                                "parentFormContainer": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Phase",
+                                "parentFormContainer": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Etat",
                                 "valueDataType": "DATE",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Phase.DateDebPhase.labelColor",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Etat.DateDebEtat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Phase.DateDebPhase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Etat.DateDebEtat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Phase.DateDebPhase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotEdition.CycleVie.Cycle.Etat.DateDebEtat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -28931,33 +28931,33 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden.FDN_PhaseGolden",
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden.FDN_EtatGolden",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 6,
                                 "useCustomLabel": false,
-                                "value": "FDN_Phase",
+                                "value": "FDN_Etat",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden",
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden.FDN_PhaseGolden.authoringMode",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden.FDN_EtatGolden.authoringMode",
                                         "dataType": "STRING",
                                         "value": "force_read_only",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden.FDN_PhaseGolden.labelColor",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden.FDN_EtatGolden.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden.FDN_PhaseGolden.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.CurrentGolden.FDN_EtatGolden.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -29165,33 +29165,33 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.FDN_Etat",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 6,
                                 "useCustomLabel": false,
-                                "value": "FDN_Phase",
+                                "value": "FDN_Etat",
                                 "parentFormContainer": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden",
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.FDN_Phase.contentBackgroundColor",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.FDN_Etat.contentBackgroundColor",
                                         "dataType": "STRING",
-                                        "value": "case when FDN_Phase != GoldenRecord.FDN_Phase or (GoldenRecord.FDN_Phase is null and FDN_Phase is not null) then 'css:yellow' else 'css:white' end",
+                                        "value": "case when FDN_Etat != GoldenRecord.FDN_Etat or (GoldenRecord.FDN_Etat is null and FDN_Etat is not null) then 'css:yellow' else 'css:white' end",
                                         "valueInterpreter": "SEMQL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.FDN_Phase.labelColor",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.FDN_Etat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.FDN_Phase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Lot.forms.LotFormValidation.Lot.Container1.NewGolden.FDN_Etat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -29452,13 +29452,13 @@
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
-                                "attribute": "Batiments.references.LotToPhase.Phase"
+                                "attribute": "Batiments.references.LotToEtat.Etat"
                             },
                             {
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
-                                "attribute": "Batiments.entities.Lot.Lot.DateDebPhase"
+                                "attribute": "Batiments.entities.Lot.Lot.DateDebEtat"
                             },
                             {
                                 "_type": "StepperFinishValidation",
@@ -29763,13 +29763,13 @@
                                 "formFieldsMode": "AUTO",
                                 "formStepEnrichers": [
                                     {
-                                        "enricher": "Batiments.entities.Lot.enrichers.DefautPhase",
+                                        "enricher": "Batiments.entities.Lot.enrichers.DefautEtat",
                                         "executedOnButtonClick": false,
                                         "executedOnDataChange": false,
                                         "executedOnFormOpen": true
                                     },
                                     {
-                                        "enricher": "Batiments.entities.Lot.enrichers.DefautDtDebPhase",
+                                        "enricher": "Batiments.entities.Lot.enrichers.DefautDtDebEtat",
                                         "executedOnButtonClick": false,
                                         "executedOnDataChange": false,
                                         "executedOnFormOpen": true
@@ -29779,14 +29779,14 @@
                                     {
                                         "_type": "FormStepValidation",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.references.LotToPhase.Phase",
+                                        "attribute": "Batiments.references.LotToEtat.Etat",
                                         "executedOnDataChange": true,
                                         "executedOnFormOpen": true
                                     },
                                     {
                                         "_type": "FormStepValidation",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.entities.Lot.Lot.DateDebPhase",
+                                        "attribute": "Batiments.entities.Lot.Lot.DateDebEtat",
                                         "executedOnDataChange": true,
                                         "executedOnFormOpen": true
                                     }
@@ -29799,13 +29799,13 @@
                                         "_type": "StepTransitionValidation",
                                         "onStepExit": "BLOCK",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.references.LotToPhase.Phase"
+                                        "attribute": "Batiments.references.LotToEtat.Etat"
                                     },
                                     {
                                         "_type": "StepTransitionValidation",
                                         "onStepExit": "BLOCK",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.entities.Lot.Lot.DateDebPhase"
+                                        "attribute": "Batiments.entities.Lot.Lot.DateDebEtat"
                                     }
                                 ]
                             },
@@ -29985,13 +29985,13 @@
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
-                                "attribute": "Batiments.references.LotToPhase.Phase"
+                                "attribute": "Batiments.references.LotToEtat.Etat"
                             },
                             {
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
-                                "attribute": "Batiments.entities.Lot.Lot.DateDebPhase"
+                                "attribute": "Batiments.entities.Lot.Lot.DateDebEtat"
                             },
                             {
                                 "_type": "StepperFinishValidation",
@@ -30262,13 +30262,13 @@
                                 "formFieldsMode": "AUTO",
                                 "formStepEnrichers": [
                                     {
-                                        "enricher": "Batiments.entities.Lot.enrichers.DefautPhase",
+                                        "enricher": "Batiments.entities.Lot.enrichers.DefautEtat",
                                         "executedOnButtonClick": false,
                                         "executedOnDataChange": false,
                                         "executedOnFormOpen": true
                                     },
                                     {
-                                        "enricher": "Batiments.entities.Lot.enrichers.DefautDtDebPhase",
+                                        "enricher": "Batiments.entities.Lot.enrichers.DefautDtDebEtat",
                                         "executedOnButtonClick": false,
                                         "executedOnDataChange": false,
                                         "executedOnFormOpen": true
@@ -30278,14 +30278,14 @@
                                     {
                                         "_type": "FormStepValidation",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.references.LotToPhase.Phase",
+                                        "attribute": "Batiments.references.LotToEtat.Etat",
                                         "executedOnDataChange": true,
                                         "executedOnFormOpen": true
                                     },
                                     {
                                         "_type": "FormStepValidation",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.entities.Lot.Lot.DateDebPhase",
+                                        "attribute": "Batiments.entities.Lot.Lot.DateDebEtat",
                                         "executedOnDataChange": true,
                                         "executedOnFormOpen": true
                                     }
@@ -30298,13 +30298,13 @@
                                         "_type": "StepTransitionValidation",
                                         "onStepExit": "BLOCK",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.references.LotToPhase.Phase"
+                                        "attribute": "Batiments.references.LotToEtat.Etat"
                                     },
                                     {
                                         "_type": "StepTransitionValidation",
                                         "onStepExit": "BLOCK",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.entities.Lot.Lot.DateDebPhase"
+                                        "attribute": "Batiments.entities.Lot.Lot.DateDebEtat"
                                     }
                                 ]
                             },
@@ -31204,7 +31204,7 @@
                         "label": "Date dernière restructuration"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Immeuble.Immeuble.DateDebPhase",
+                        "qualifiedName": "Batiments.entities.Immeuble.Immeuble.DateDebEtat",
                         "_type": "AtomicAttribute",
                         "abstractAtomicType": "Date",
                         "goldenAttribute": true,
@@ -31214,7 +31214,7 @@
                         "mandatoryValidationLabel": "Date début phase est obligatoire",
                         "mandatoryValidationScope": "POST_CONSO",
                         "multiValued": false,
-                        "physicalColName": "DATE_DEBUT_PHASE",
+                        "physicalColName": "DATE_DEBUT_ETAT",
                         "valueSeparator": "",
                         "label": "Date début phase"
                     },
@@ -32800,28 +32800,28 @@
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView.FDN_Etat",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 21,
                                 "useCustomLabel": false,
-                                "value": "FDN_Phase",
+                                "value": "FDN_Etat",
                                 "visibleByDefault": false,
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView.DateDebPhase",
+                                "qualifiedName": "Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView.DateDebEtat",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 22,
                                 "useCustomLabel": false,
-                                "value": "DateDebPhase",
+                                "value": "DateDebEtat",
                                 "visibleByDefault": false,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
@@ -33649,28 +33649,28 @@
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView_history.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView_history.FDN_Etat",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 24,
                                 "useCustomLabel": false,
-                                "value": "FDN_Phase",
+                                "value": "FDN_Etat",
                                 "visibleByDefault": true,
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView_history.DateDebPhase",
+                                "qualifiedName": "Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView_history.DateDebEtat",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 25,
                                 "useCustomLabel": false,
-                                "value": "DateDebPhase",
+                                "value": "DateDebEtat",
                                 "visibleByDefault": true,
                                 "valueDataType": "DATE",
                                 "componentProperties": []
@@ -34171,14 +34171,14 @@
                         ]
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Immeuble.enrichers.DefautDtDebPhase",
+                        "qualifiedName": "Batiments.entities.Immeuble.enrichers.DefautDtDebEtat",
                         "_type": "SemQLEnricher",
-                        "condition": "DateDebPhase is NULL",
+                        "condition": "DateDebEtat is NULL",
                         "enricherExecutionScope": "NONE",
                         "label": "Default date début phase",
                         "semQlEnricherExpressions": [
                             {
-                                "attributeName": "DateDebPhase",
+                                "attributeName": "DateDebEtat",
                                 "expression": "CURRENT_DATE()"
                             }
                         ]
@@ -34223,15 +34223,15 @@
                         ]
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Immeuble.enrichers.DefautPhase",
+                        "qualifiedName": "Batiments.entities.Immeuble.enrichers.DefautEtat",
                         "_type": "SemQLEnricher",
-                        "condition": "FID_Phase is NULL",
+                        "condition": "FID_Etat is NULL",
                         "enricherExecutionScope": "NONE",
                         "label": "Default Country",
                         "semQlEnricherExpressions": [
                             {
-                                "attributeName": "FID_Phase",
-                                "expression": "case when FID_Phase is NULL then 'ACTIVE' else FID_Phase end"
+                                "attributeName": "FID_Etat",
+                                "expression": "case when FID_Etat is NULL then 'ACTIVE' else FID_Etat end"
                             }
                         ]
                     },
@@ -34679,13 +34679,13 @@
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.CycleVieImmeuble.ContainerCycleVie"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Phase",
+                                "label": "Etat",
                                 "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut",
                                 "visibleValue": "1"
@@ -36459,35 +36459,35 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": true,
-                                "value": "FDN_Phase",
+                                "value": "FDN_Etat",
                                 "documentation": "Statut du bien dans son cycle de vie (initiale, active, terminée).",
-                                "label": "Phase",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase",
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "label": "Etat",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase.labelColor",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleConsultation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -37602,13 +37602,13 @@
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Phase",
+                                "label": "Etat",
                                 "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut",
                                 "visibleValue": "1"
@@ -38722,41 +38722,41 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": true,
-                                "value": "FDN_Phase",
+                                "value": "FDN_Etat",
                                 "documentation": "Statut du bien dans son cycle de vie (initiale, active, terminée).",
-                                "label": "Phase",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase",
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "label": "Etat",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase.authoringMode",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat.authoringMode",
                                         "dataType": "STRING",
                                         "value": "force-read-only",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase.labelColor",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleCreation.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -39174,13 +39174,13 @@
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Phase",
+                                "label": "Etat",
                                 "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut",
                                 "visibleValue": "1"
@@ -39220,41 +39220,41 @@
                         "formDashboards": [],
                         "formFields": [
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": true,
-                                "value": "FDN_Phase",
+                                "value": "FDN_Etat",
                                 "documentation": "Statut du bien dans son cycle de vie (initiale, active, terminée).",
-                                "label": "Phase",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase",
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "label": "Etat",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase.authoringMode",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat.authoringMode",
                                         "dataType": "STRING",
                                         "value": "force-read-only",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase.labelColor",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEditCycleVie.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -39829,13 +39829,13 @@
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Phase",
+                                "label": "Etat",
                                 "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut",
                                 "visibleValue": "1"
@@ -41080,41 +41080,41 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": true,
-                                "value": "FDN_Phase",
+                                "value": "FDN_Etat",
                                 "documentation": "Statut du bien dans son cycle de vie (initiale, active, terminée).",
-                                "label": "Phase",
-                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase",
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "label": "Etat",
+                                "parentFormContainer": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase.authoringMode",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat.authoringMode",
                                         "dataType": "STRING",
                                         "value": "force-read-only",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase.labelColor",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Phase.FDN_Phase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Immeuble.forms.ImmeubleEdition.CycleVieImmeuble.ContainerCycleVie.ContainerCycleVieHaut.Etat.FDN_Etat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -41820,7 +41820,7 @@
                                 "formFieldsMode": "AUTO",
                                 "formStepEnrichers": [
                                     {
-                                        "enricher": "Batiments.entities.Immeuble.enrichers.DefautPhase",
+                                        "enricher": "Batiments.entities.Immeuble.enrichers.DefautEtat",
                                         "executedOnButtonClick": false,
                                         "executedOnDataChange": false,
                                         "executedOnFormOpen": true
@@ -42094,7 +42094,7 @@
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
-                                "attribute": "Batiments.references.ImmeubleToPhase.Phase"
+                                "attribute": "Batiments.references.ImmeubleToEtat.Etat"
                             },
                             {
                                 "_type": "StepperFinishValidation",
@@ -42584,13 +42584,13 @@
                                 "formFieldsMode": "AUTO",
                                 "formStepEnrichers": [
                                     {
-                                        "enricher": "Batiments.entities.Immeuble.enrichers.DefautPhase",
+                                        "enricher": "Batiments.entities.Immeuble.enrichers.DefautEtat",
                                         "executedOnButtonClick": false,
                                         "executedOnDataChange": false,
                                         "executedOnFormOpen": true
                                     },
                                     {
-                                        "enricher": "Batiments.entities.Immeuble.enrichers.DefautDtDebPhase",
+                                        "enricher": "Batiments.entities.Immeuble.enrichers.DefautDtDebEtat",
                                         "executedOnButtonClick": false,
                                         "executedOnDataChange": false,
                                         "executedOnFormOpen": true
@@ -42600,7 +42600,7 @@
                                     {
                                         "_type": "FormStepValidation",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.references.ImmeubleToPhase.Phase",
+                                        "attribute": "Batiments.references.ImmeubleToEtat.Etat",
                                         "executedOnDataChange": true,
                                         "executedOnFormOpen": true
                                     },
@@ -42636,7 +42636,7 @@
                                         "_type": "StepTransitionValidation",
                                         "onStepExit": "BLOCK",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.references.ImmeubleToPhase.Phase"
+                                        "attribute": "Batiments.references.ImmeubleToEtat.Etat"
                                     },
                                     {
                                         "_type": "StepTransitionValidation",
@@ -46881,7 +46881,7 @@
                         "label": "Date début usage"
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Batiment.Batiment.DateDebPhase",
+                        "qualifiedName": "Batiments.entities.Batiment.Batiment.DateDebEtat",
                         "_type": "AtomicAttribute",
                         "abstractAtomicType": "Date",
                         "goldenAttribute": true,
@@ -46891,7 +46891,7 @@
                         "mandatoryValidationLabel": "",
                         "mandatoryValidationScope": "NONE",
                         "multiValued": false,
-                        "physicalColName": "DATE_DEB_PHASE",
+                        "physicalColName": "DATE_DEB_ETAT",
                         "valueSeparator": "",
                         "label": "Date début phase"
                     },
@@ -47715,16 +47715,16 @@
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Batiment.collection_views.BatimentCollectionView.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Batiment.collection_views.BatimentCollectionView.FDN_Etat",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 11,
                                 "useCustomLabel": false,
-                                "value": "FDN_Phase",
+                                "value": "FDN_Etat",
                                 "visibleByDefault": false,
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -47826,7 +47826,7 @@
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Batiment.collection_views.BatimentCollectionView.DateDebPhase",
+                                "qualifiedName": "Batiments.entities.Batiment.collection_views.BatimentCollectionView.DateDebEtat",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
@@ -48148,16 +48148,16 @@
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Batiment.collection_views.BatimentCollectionView_history.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Batiment.collection_views.BatimentCollectionView_history.FDN_Etat",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 11,
                                 "useCustomLabel": false,
-                                "value": "FDN_Phase",
+                                "value": "FDN_Etat",
                                 "visibleByDefault": true,
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "componentProperties": []
                             },
@@ -48245,7 +48245,7 @@
                                 "componentProperties": []
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Batiment.collection_views.BatimentCollectionView_history.DateDebPhase",
+                                "qualifiedName": "Batiments.entities.Batiment.collection_views.BatimentCollectionView_history.DateDebEtat",
                                 "_type": "TableColumn",
                                 "columnAlign": "LEFT",
                                 "componentName": "semTextField",
@@ -48484,14 +48484,14 @@
                         ]
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Batiment.enrichers.DefautDtDebPhase",
+                        "qualifiedName": "Batiments.entities.Batiment.enrichers.DefautDtDebEtat",
                         "_type": "SemQLEnricher",
-                        "condition": "DateDebPhase is NULL",
+                        "condition": "DateDebEtat is NULL",
                         "enricherExecutionScope": "NONE",
                         "label": "Default date début phase",
                         "semQlEnricherExpressions": [
                             {
-                                "attributeName": "DateDebPhase",
+                                "attributeName": "DateDebEtat",
                                 "expression": "CURRENT_DATE()"
                             }
                         ]
@@ -48523,15 +48523,15 @@
                         ]
                     },
                     {
-                        "qualifiedName": "Batiments.entities.Batiment.enrichers.DefautPhase",
+                        "qualifiedName": "Batiments.entities.Batiment.enrichers.DefautEtat",
                         "_type": "SemQLEnricher",
-                        "condition": "FID_Phase is NULL",
+                        "condition": "FID_Etat is NULL",
                         "enricherExecutionScope": "NONE",
-                        "label": "Default Phase",
+                        "label": "Default Etat",
                         "semQlEnricherExpressions": [
                             {
-                                "attributeName": "FID_Phase",
-                                "expression": "case when FID_Phase is NULL then 'ACTIVE' else FID_Phase end"
+                                "attributeName": "FID_Etat",
+                                "expression": "case when FID_Etat is NULL then 'ACTIVE' else FID_Etat end"
                             }
                         ]
                     },
@@ -48838,13 +48838,13 @@
                                 "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentConsultation.CycleVieBatiment.Global"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentConsultation.CycleVieBatiment.Global.Gauche.Phase",
+                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentConsultation.CycleVieBatiment.Global.Gauche.Etat",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Phase",
+                                "label": "Etat",
                                 "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentConsultation.CycleVieBatiment.Global.Gauche",
                                 "visibleValue": "1"
@@ -49649,35 +49649,35 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentConsultation.CycleVieBatiment.Global.Gauche.Phase.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentConsultation.CycleVieBatiment.Global.Gauche.Etat.FDN_Etat",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": true,
-                                "value": "FDN_Phase",
+                                "value": "FDN_Etat",
                                 "documentation": "Statut du bien dans son cycle de vie (initiale, active, terminée).",
-                                "label": "Phase",
-                                "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentConsultation.CycleVieBatiment.Global.Gauche.Phase",
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "label": "Etat",
+                                "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentConsultation.CycleVieBatiment.Global.Gauche.Etat",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentConsultation.CycleVieBatiment.Global.Gauche.Phase.FDN_Phase.labelColor",
+                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentConsultation.CycleVieBatiment.Global.Gauche.Etat.FDN_Etat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentConsultation.CycleVieBatiment.Global.Gauche.Phase.FDN_Phase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentConsultation.CycleVieBatiment.Global.Gauche.Etat.FDN_Etat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentConsultation.CycleVieBatiment.Global.Gauche.Phase.FDN_Phase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentConsultation.CycleVieBatiment.Global.Gauche.Etat.FDN_Etat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -50242,13 +50242,13 @@
                                 "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche.Phase",
+                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche.Etat",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Phase",
+                                "label": "Etat",
                                 "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche",
                                 "visibleValue": "1"
@@ -50588,41 +50588,41 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche.Phase.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche.Etat.FDN_Etat",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": true,
-                                "value": "FDN_Phase",
+                                "value": "FDN_Etat",
                                 "documentation": "Statut du bien dans son cycle de vie (initiale, active, terminée).",
-                                "label": "Phase",
-                                "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche.Phase",
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "label": "Etat",
+                                "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche.Etat",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche.Phase.FDN_Phase.authoringMode",
+                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche.Etat.FDN_Etat.authoringMode",
                                         "dataType": "STRING",
                                         "value": "force-read-only",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche.Phase.FDN_Phase.labelColor",
+                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche.Etat.FDN_Etat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche.Phase.FDN_Phase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche.Etat.FDN_Etat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche.Phase.FDN_Phase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentCreation.CycleVieBatiment.Global.Gauche.Etat.FDN_Etat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -50977,13 +50977,13 @@
                                 "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global"
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global.Gauche.Phase",
+                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global.Gauche.Etat",
                                 "_type": "FormSection2",
                                 "documentationInterpreter": "LITERAL",
                                 "layoutDirection": "COLUMN",
                                 "posInParent": 0,
                                 "visibleValueInterpreter": "LITERAL",
-                                "label": "Phase",
+                                "label": "Etat",
                                 "labelWidth": "300px",
                                 "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global.Gauche",
                                 "visibleValue": "1"
@@ -51347,41 +51347,41 @@
                                 ]
                             },
                             {
-                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global.Gauche.Phase.FDN_Phase",
+                                "qualifiedName": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global.Gauche.Etat.FDN_Etat",
                                 "_type": "FormField",
                                 "componentName": "semReferenceField",
                                 "documentationInterpreter": "LITERAL",
                                 "posInParent": 0,
                                 "useCustomLabel": true,
-                                "value": "FDN_Phase",
+                                "value": "FDN_Etat",
                                 "documentation": "Statut du bien dans son cycle de vie (initiale, active, terminée).",
-                                "label": "Phase",
-                                "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global.Gauche.Phase",
-                                "referencedEntity": "Batiments.entities.Phase.Phase",
+                                "label": "Etat",
+                                "parentFormContainer": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global.Gauche.Etat",
+                                "referencedEntity": "Batiments.entities.Etat.Etat",
                                 "valueDataType": "STRING",
                                 "visibleValue": "1",
                                 "visibleValueInterpreter": "LITERAL",
                                 "componentProperties": [
                                     {
-                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global.Gauche.Phase.FDN_Phase.authoringMode",
+                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global.Gauche.Etat.FDN_Etat.authoringMode",
                                         "dataType": "STRING",
                                         "value": "force-read-only",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global.Gauche.Phase.FDN_Phase.labelColor",
+                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global.Gauche.Etat.FDN_Etat.labelColor",
                                         "dataType": "STRING",
                                         "value": "md:black",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global.Gauche.Phase.FDN_Phase.labelTextAlign",
+                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global.Gauche.Etat.FDN_Etat.labelTextAlign",
                                         "dataType": "STRING",
                                         "value": "left",
                                         "valueInterpreter": "LITERAL"
                                     },
                                     {
-                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global.Gauche.Phase.FDN_Phase.labelTypography",
+                                        "qualifiedName": "Batiments.entities.Batiment.forms.BatimentEdition.CycleVieBatiment.Global.Gauche.Etat.FDN_Etat.labelTypography",
                                         "dataType": "STRING",
                                         "value": "body-2",
                                         "valueInterpreter": "LITERAL"
@@ -51632,7 +51632,7 @@
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
-                                "attribute": "Batiments.references.BatimentToPhase.Phase"
+                                "attribute": "Batiments.references.BatimentToEtat.Etat"
                             },
                             {
                                 "_type": "StepperFinishValidation",
@@ -51855,13 +51855,13 @@
                                 "formFieldsMode": "AUTO",
                                 "formStepEnrichers": [
                                     {
-                                        "enricher": "Batiments.entities.Batiment.enrichers.DefautPhase",
+                                        "enricher": "Batiments.entities.Batiment.enrichers.DefautEtat",
                                         "executedOnButtonClick": false,
                                         "executedOnDataChange": false,
                                         "executedOnFormOpen": true
                                     },
                                     {
-                                        "enricher": "Batiments.entities.Batiment.enrichers.DefautDtDebPhase",
+                                        "enricher": "Batiments.entities.Batiment.enrichers.DefautDtDebEtat",
                                         "executedOnButtonClick": false,
                                         "executedOnDataChange": false,
                                         "executedOnFormOpen": true
@@ -51877,7 +51877,7 @@
                                     {
                                         "_type": "FormStepValidation",
                                         "type": "MANDATORY",
-                                        "attribute": "Batiments.references.BatimentToPhase.Phase",
+                                        "attribute": "Batiments.references.BatimentToEtat.Etat",
                                         "executedOnDataChange": true,
                                         "executedOnFormOpen": true
                                     },
@@ -52054,7 +52054,7 @@
                                 "formFieldsMode": "AUTO",
                                 "formStepEnrichers": [
                                     {
-                                        "enricher": "Batiments.entities.Batiment.enrichers.DefautPhase",
+                                        "enricher": "Batiments.entities.Batiment.enrichers.DefautEtat",
                                         "executedOnButtonClick": false,
                                         "executedOnDataChange": false,
                                         "executedOnFormOpen": true

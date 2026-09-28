@@ -507,8 +507,8 @@ formTabs:
                     labelWidth: 300px
                     content:
                       - _type: ReferenceField
-                        _name: FDN_Phase
-                        value: FDN_Phase
+                        _name: FDN_Etat
+                        value: FDN_Etat
                         label: Etat
                         documentation: Etat du bien dans son cycle de vie (initiale, active, terminée).
                         labelProperties:
@@ -518,7 +518,7 @@ formTabs:
                           color: md:black
                         useCustomLabel: true
                         dataType: STRING
-                        referencedEntity: Batiments.entities.Phase.Phase
+                        referencedEntity: Batiments.entities.Etat.Etat
 
                         
                   - _type: FormSection
@@ -748,55 +748,64 @@ formTabs:
 
 
 
-        - _type: FormSection
-          _name: Societes_test
-          label: Société 
-          layoutDirection: COLUMN
-          visibleValue: "1"
-          visibleValueInterpreter: LITERAL
-          labelWidth: 300px
-          content:
-                        - _type: TextField
-                          _name: SocProprio
-                          value: lookup distinct_string_agg (FDN_SocieteProprietaire) separated by ', ' from Etage.Lot end
-                          label: Société propriétaire
-                          labelProperties:
-                            alignment: left
-                            typography: body-2
-                            color: md:black
-                          useCustomLabel: true
-                          dataType: STRING
-                        - _type: TextField
-                          _name: SocExploit
-                          value: lookup distinct_string_agg (FDN_SocieteExploitante) separated by ', ' from Etage.Lot end
-                          label: Société exploitante
-                          labelProperties:
-                            alignment: left
-                            typography: body-2
-                            color: md:black
-                          useCustomLabel: true
-                          dataType: STRING
+        # - _type: FormSection
+        #   _name: Societes_test
+        #   label: Société 
+        #   layoutDirection: COLUMN
+        #   visibleValue: "1"
+        #   visibleValueInterpreter: LITERAL
+        #   labelWidth: 300px
+        #   content:
+        #                 - _type: TextField
+        #                   _name: SocProprio
+        #                   value: lookup distinct_string_agg (FDN_SocieteProprietaire) separated by ', ' from Etage.Lot end
+        #                   label: Société propriétaire
+        #                   labelProperties:
+        #                     alignment: left
+        #                     typography: body-2
+        #                     color: md:black
+        #                   useCustomLabel: true
+        #                   dataType: STRING
+        #                 - _type: TextField
+        #                   _name: SocExploit
+        #                   value: lookup distinct_string_agg (FDN_SocieteExploitante) separated by ', ' from Etage.Lot end
+        #                   label: Société exploitante
+        #                   labelProperties:
+        #                     alignment: left
+        #                     typography: body-2
+        #                     color: md:black
+        #                   useCustomLabel: true
+        #                   dataType: STRING
 
 
-      # - _type: FormSection
-      #   _name: Societes
-      #   label: Société 
-      #   layoutDirection: COLUMN
-      #   visibleValue: "1"
-      #   visibleValueInterpreter: LITERAL
-      #   labelWidth: 300px
-      #   content:
-      #     - _type: FormCollection
-      #       _name: Societes
-      #       label: Société 
-      #       useCustomLabel: true
-      #       collection: Batiments.entities.Lot.collection_views.LotSociete
-      #       tableAllowed: true
-      #       listAllowed: false
-      #       gridAllowed: false
-      #       displayRecordCount: ALWAYS
-      #       enableUserDefinedSort: true
-      #       transitionPath: Etage.Lot
-      #       sortExpression: 1 DESC
-      #       filter:  1=1
-      #       targetEntity: Batiments.entities.Lot.Lot
+          - _type: FormSection
+            _name: Societes
+            label: Société 
+            layoutDirection: COLUMN
+            visibleValue: "1"
+            visibleValueInterpreter: LITERAL
+            labelWidth: 300px
+            content:
+              - _type: FormCollection
+                _name: Societes
+                label: Sociétés
+                pluralLabel: Sociétés
+                useCustomLabel: true
+                collection: Batiments.entities.RelLotSoc.collection_views.Societe
+                actionSet: Batiments.entities.RelLotSoc.action_sets.RelLotSocExport
+                tableAllowed: true
+                listAllowed: false
+                gridAllowed: false
+                displayRecordCount: ALWAYS
+                enableUserDefinedSort: true
+                transitionPath: Etage.Lot.RelLotSoc
+                sortExpression: 1 DESC
+                filter: 1=1
+                # filter: FID_TypeSociete = '1'
+                targetEntity: Batiments.entities.RelLotSoc.RelLotSoc
+                height: 300
+                formCollectionSearchConfigs:
+                  - enabled: true 
+                    searchType: TEXT
+
+

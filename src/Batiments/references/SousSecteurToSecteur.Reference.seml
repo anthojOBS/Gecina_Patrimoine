@@ -21,7 +21,7 @@ toRolePhysicalName: SECTEUR_ID
 
 oneToMany: false
 deletePropagation: RESTRICT
-validationScope: NONE  #pour alimenter sans etage
+validationScope: NONE
 mandatoryValidationLabel: Le Secteur est obligatoire pour un sous-Secteur
 brokenValidationLabel: Le Secteur sélectionné est invalide pour ce sous-Secteur
 

@@ -72,6 +72,9 @@ rootStep:
 
       stepTransitionValidations:
         - onStepExit: BLOCK
+          validationType: DETECT_DUPS
+          matcher: Batiments.entities.SousLot.SousLot.Matcher
+        - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.entities.SousLot.SousLot.Libelle
         - onStepExit: BLOCK
@@ -164,7 +167,7 @@ rootStep:
           executedOnFormOpen: true
 
 stepperFinishValidations:
-  - onStepperFinish: WARN
+  - onStepperFinish: BLOCK
     validationType: DETECT_DUPS
 
   - onStepperFinish: BLOCK

@@ -21,9 +21,9 @@ toRolePhysicalName: PAYS_ID_ISO3
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: POST_CONSO
-mandatoryValidationLabel: Le pays est obligatoire pour un Batiment
-brokenValidationLabel: Le pays sélectionné est invalide pour cet Batiment
+validationScope: NONE
+mandatoryValidationLabel: Le pays est obligatoire pour un bâtiment
+brokenValidationLabel: Le pays sélectionné est invalide pour ce bâtiment
 
 foreignAttribute:
   _type: ForeignAttribute

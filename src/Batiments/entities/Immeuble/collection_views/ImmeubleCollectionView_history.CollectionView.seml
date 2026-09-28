@@ -248,13 +248,13 @@ tableColumns:
     visibleByDefault: true
 
   - _type: ReferenceColumn
-    _name: FDN_Phase
-    value: FDN_Phase
+    _name: FDN_Etat
+    value: FDN_Etat
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
-    referencedEntity: Batiments.entities.Phase.Phase
+    referencedEntity: Batiments.entities.Etat.Etat
     
 
 
@@ -532,17 +532,17 @@ tableColumns:
     visibleByDefault: true
 
 
-  - _type: HyperlinkColumn
-    _name: BinaryContent
-    value: BinaryContent
-    label: Relevé géomètre
-    useCustomLabel: true
-    dataType: BINARY
-    columnAlign: LEFT
-    visibleByDefault: true
-    componentProperties:
-      linkSourceType: url
-      linkDisplayText: Télécharger le document
+  # - _type: HyperlinkColumn
+  #   _name: BinaryContent
+  #   value: BinaryContent
+  #   label: Relevé géomètre
+  #   useCustomLabel: true
+  #   dataType: BINARY
+  #   columnAlign: LEFT
+  #   visibleByDefault: true
+  #   componentProperties:
+  #     linkSourceType: url
+  #     linkDisplayText: Télécharger le document
 
 
   - _type: TextColumn

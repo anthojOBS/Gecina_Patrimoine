@@ -85,7 +85,7 @@ rootBusinessViewEntity:
           enableHierarchy: '1'
           enableHierarchyInterpreter: LITERAL
           expandHierarchyByDefault: true
-          iconUrl: images://mdi/file-tree.svg
+          iconUrl: images://mdi/floor-plan.svg
           transitionPath: Lot
           transitionType: FULLY_QUALIFIED
           transitionVisible: '0'
@@ -106,6 +106,15 @@ rootBusinessViewEntity:
             entity: Batiments.entities.Lot.Lot
             form: Batiments.entities.Lot.forms.LotConsultation
             collection: Batiments.entities.Lot.collection_views.LotCollectionView
+            businessEntitySearchConfigs:
+
+              - _name: FormConfig1
+                _type: BusinessEntitySearchTypeConfig
+                searchType: CUSTOM_FORM
+                customForm: Batiments.entities.Lot.search_forms.LotSearchForm
+              - _name: TextConfig
+                _type: BusinessEntitySearchTypeConfig
+                searchType: TEXT
 
             transitions:
 
@@ -313,18 +322,13 @@ rootBusinessViewEntity:
         form: Batiments.entities.Lot.forms.LotConsultation
         collection: Batiments.entities.Lot.collection_views.LotCollectionView
         businessEntitySearchConfigs:
-          - _name: TextConfig
-            _type: BusinessEntitySearchTypeConfig
-            searchType: TEXT
-          - _name: FormConfig
-            _type: BusinessEntitySearchTypeConfig
-            searchType: BY_FORM
-          - _name: AdvancedConfig
-            _type: BusinessEntitySearchTypeConfig
-            searchType: ADVANCED
-          - _name: SemqlConfig
-            _type: BusinessEntitySearchTypeConfig
-            searchType: SEMQL
+                    - _name: FormConfig1
+                      _type: BusinessEntitySearchTypeConfig
+                      searchType: CUSTOM_FORM
+                      customForm: Batiments.entities.Lot.search_forms.LotSearchForm
+                    - _name: TextConfig
+                      _type: BusinessEntitySearchTypeConfig
+                      searchType: TEXT 
 
         transitions:
 

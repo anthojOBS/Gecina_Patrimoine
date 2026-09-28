@@ -22,8 +22,8 @@ toRolePhysicalName: IMMEUBLE_ID
 oneToMany: false
 deletePropagation: RESTRICT
 validationScope: PRE_CONSO
-mandatoryValidationLabel: L'immeuble est obligatoire pour un batiment
-brokenValidationLabel: L'immeuble sélectionné est invalide pour ce batiment
+mandatoryValidationLabel: L'immeuble est obligatoire pour un bâtiment
+brokenValidationLabel: L'immeuble sélectionné est invalide pour ce bâtiment
 
 foreignAttribute:
   _type: ForeignAttribute

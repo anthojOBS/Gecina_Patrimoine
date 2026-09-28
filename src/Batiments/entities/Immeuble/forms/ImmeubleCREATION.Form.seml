@@ -485,34 +485,34 @@ formTabs:
             _name: SectionD3
             layoutDirection: COLUMN
             content:
-              - _type: FormSection
-                _name: Geometre
-                label: Relevés géomètres
-                layoutDirection: ROW
-                visibleValue: "1"
-                visibleValueInterpreter: LITERAL
-                labelWidth: 200px
-                content:
-                  - _type: FormContainer
-                    _name: BlocGeometre
-                    layoutDirection: COLUMN
-                    content:
-                        - _type: HyperlinkField
-                          _name: BinaryContent
-                          value: BinaryContent
-                          useCustomLabel: true
-                          label: Relevé géomètre
-                          labelProperties:
-                            isVisible: "1"
-                            alignment: left
-                            typography: body-2
-                            color: md:black
-                          dataType: BINARY
-                          componentProperties:
-                            linkDisplayText: Télécharger le relevé géomètre
-                            linkSourceType: url
-                            textTypography: headline
-                            textTypographyValueInterpreter: LITERAL
+              # - _type: FormSection
+              #   _name: Geometre
+              #   label: Relevés géomètres
+              #   layoutDirection: ROW
+              #   visibleValue: "1"
+              #   visibleValueInterpreter: LITERAL
+              #   labelWidth: 200px
+              #   content:
+              #     - _type: FormContainer
+              #       _name: BlocGeometre
+              #       layoutDirection: COLUMN
+              #       content:
+              #           - _type: HyperlinkField
+              #             _name: BinaryContent
+              #             value: BinaryContent
+              #             useCustomLabel: true
+              #             label: Relevé géomètre
+              #             labelProperties:
+              #               isVisible: "1"
+              #               alignment: left
+              #               typography: body-2
+              #               color: md:black
+              #             dataType: BINARY
+              #             componentProperties:
+              #               linkDisplayText: Télécharger le relevé géomètre
+              #               linkSourceType: url
+              #               textTypography: headline
+              #               textTypographyValueInterpreter: LITERAL
                      
 
               - _type: FormSection

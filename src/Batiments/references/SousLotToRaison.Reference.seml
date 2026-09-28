@@ -21,9 +21,9 @@ toRolePhysicalName: RAISON_NON_LOUABLE_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: POST_CONSO
-mandatoryValidationLabel: La raison est obligatoire pour un lot
-brokenValidationLabel: La raison sélectionnée est invalide pour ce lot
+validationScope: NONE
+mandatoryValidationLabel: La raison est obligatoire pour un sous-lot
+brokenValidationLabel: La raison sélectionnée est invalide pour ce sous-lot
 
 foreignAttribute:
   _type: ForeignAttribute

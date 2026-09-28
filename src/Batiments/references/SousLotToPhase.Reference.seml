@@ -21,9 +21,9 @@ toRolePhysicalName: PHASE_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: POST_CONSO
-mandatoryValidationLabel: L'état est obligatoire pour un lot
-brokenValidationLabel: L'état sélectionné est invalide pour ce lot
+validationScope: NONE
+mandatoryValidationLabel: L'état est obligatoire pour un sous-lot
+brokenValidationLabel: L'état sélectionné est invalide pour ce sous-lot
 
 foreignAttribute:
   _type: ForeignAttribute

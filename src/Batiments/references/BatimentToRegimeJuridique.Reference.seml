@@ -20,9 +20,9 @@ toRolePhysicalName: REGIME_JURIDIQUE_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: POST_CONSO
-mandatoryValidationLabel: Le régime juridique est obligatoire pour un Batiment
-brokenValidationLabel: Le régime juridique sélectionné est invalide pour cet Batiment
+validationScope: NONE
+mandatoryValidationLabel: Le régime juridique est obligatoire pour un bâtiment
+brokenValidationLabel: Le régime juridique sélectionné est invalide pour ce bâtiment
 
 foreignAttribute:
   _type: ForeignAttribute

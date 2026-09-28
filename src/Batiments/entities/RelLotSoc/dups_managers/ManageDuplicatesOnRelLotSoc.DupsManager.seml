@@ -1,0 +1,14 @@
+_package: Batiments.entities.RelLotSoc.dups_managers
+_type: DupsManager
+_name: ManageDuplicatesOnRelLotSoc
+entity: Batiments.entities.RelLotSoc.RelLotSoc
+enableMasterValuePicking: true
+displayCard: Batiments.entities.RelLotSoc.display_cards.RelLotSocDisplayCard
+formTab: Batiments.entities.RelLotSoc.forms.RelLotSocForm.RelLotSoc
+collectionView: Batiments.entities.RelLotSoc.collection_views.RelLotSocCollectionView
+checkoutCustomSortEnabled: false
+checkoutUserDefinedSortEnabled: true
+checkoutDefaultDisplayType: TABLE
+checkoutDisplayGridAllowed: false
+checkoutDisplayListAllowed: true
+checkoutDisplayTableAllowed: true

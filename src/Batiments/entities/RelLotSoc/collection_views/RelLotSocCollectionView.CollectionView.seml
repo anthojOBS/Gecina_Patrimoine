@@ -1,0 +1,53 @@
+_package: Batiments.entities.RelLotSoc.collection_views
+_type: CollectionView
+_name: RelLotSocCollectionView
+entity: Batiments.entities.RelLotSoc.RelLotSoc
+default: true
+displayCard: Batiments.entities.RelLotSoc.display_cards.RelLotSocDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Relation lot société
+tableRowLines: 1
+tableShowDisplayCard: false
+tableColumns:
+  - _type: IdColumn
+    _name: RelLotSocCode
+    value: RelLotSocCode
+    useCustomLabel: false
+    dataType: LONG_INTEGER
+    columnAlign: LEFT
+    visibleByDefault: false
+  - _type: ReferenceColumn
+    _name: FDN_Lot
+    value: FDN_Lot
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: false
+    referencedEntity: Batiments.entities.Lot.Lot
+  - _type: ReferenceColumn
+    _name: FDN_TypeSociete
+    value: FDN_TypeSociete
+    useCustomLabel: true
+    label: Type société
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.TypeSociete.TypeSociete
+  - _type: ReferenceColumn
+    _name: FDN_Societe 
+    value: FDN_Societe
+    useCustomLabel: true
+    label: société
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Societe.Societe

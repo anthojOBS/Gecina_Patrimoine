@@ -6,4 +6,7 @@ label: Default Country
 enricherExecutionScope: NONE
 semQlEnricherExpressions: 
   - attributeName: StatutSousLocation
-    expression: case when FID_SocieteProprietaire = FID_SocieteExploitante then '0' else '1' end
+    # expression: case when FID_SocieteProprietaire = FID_SocieteExploitante then '0' else '1' end
+    expression: case when 1=1 then '0' else '1' end
+
+    # expression: case  when (any RelLotSoc has ( FID_Societe = '1') )   then '1'  else '0' end

@@ -4,5 +4,5 @@ _type: SemQLValidation
 entity: Batiments.entities.Batiment.Batiment
 label: Cohérence date de livraison
 condition: (DateLivraison >= DateDebutConstruction) or DateDebutConstruction is null or DateLivraison is null
-validationScope: POST_CONSO
+validationScope: NONE
 validationLabel: La date de livraison doivent être cohérente avec la date de début de construction

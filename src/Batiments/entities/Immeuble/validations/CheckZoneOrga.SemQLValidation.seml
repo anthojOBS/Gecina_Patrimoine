@@ -4,5 +4,5 @@ _type: SemQLValidation
 entity: Batiments.entities.Immeuble.Immeuble
 label: Zone immostat obligatoire pour la direction bureaux
 condition: (FID_OrgaResp ='DB' and FID_ZoneImmostat is not null) or (FID_OrgaResp ='DR')
-validationScope: POST_CONSO
+validationScope: NONE
 validationLabel: Zone immostat obligatoire pour la direction bureaux

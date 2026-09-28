@@ -142,13 +142,13 @@ tableColumns:
     visibleByDefault: true
 
   - _type: ReferenceColumn
-    _name: FDN_Phase
-    value: FDN_Phase
+    _name: FDN_Etat
+    value: FDN_Etat
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
-    referencedEntity: Batiments.entities.Phase.Phase
+    referencedEntity: Batiments.entities.Etat.Etat
 
   - _type: TextColumn
     _name: SousPortefeuille
@@ -209,8 +209,8 @@ tableColumns:
     visibleByDefault: true
 
   # - _type: TextColumn
-  #   _name: DateDebPhase
-  #   value: DateDebPhase
+  #   _name: DateDebEtat
+  #   value: DateDebEtat
   #   useCustomLabel: false
   #   dataType: DATE
   #   columnAlign: LEFT

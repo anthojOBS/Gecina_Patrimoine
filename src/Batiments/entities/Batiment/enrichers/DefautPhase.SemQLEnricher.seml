@@ -1,10 +1,10 @@
 _package: Batiments.entities.Batiment.enrichers
-_name: DefautPhase
+_name: DefautEtat
 _type: SemQLEnricher
 entity: Batiments.entities.Batiment.Batiment
-label: Default Phase
+label: Default Etat
 enricherExecutionScope: NONE
 semQlEnricherExpressions: 
-  - attributeName: FID_Phase
-    expression: case when FID_Phase is NULL then 'EXP' else FID_Phase end
-condition: FID_Phase is NULL 
+  - attributeName: FID_Etat
+    expression: case when FID_Etat is NULL then 'EXP' else FID_Etat end
+condition: FID_Etat is NULL 

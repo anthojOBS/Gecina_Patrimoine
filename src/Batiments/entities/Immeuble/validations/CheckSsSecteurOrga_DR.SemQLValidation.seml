@@ -4,5 +4,5 @@ _type: SemQLValidation
 entity: Batiments.entities.Immeuble.Immeuble
 label: Sous secteur immostat facultatif pour la direction résidentiel
 condition: (FID_OrgaResp ='DR' and FID_SousSecteurImmostat is not null) or (FID_OrgaResp ='DB')
-validationScope: POST_CONSO
+validationScope: NONE
 validationLabel: Attention le sous secteur immostat n'est pas renseigné
