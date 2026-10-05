@@ -20,7 +20,7 @@ toRolePhysicalName: ORGARESP_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: NONE
+validationScope: POST_CONSO
 mandatoryValidationLabel: L'organisation responsable est obligatoire pour un immeuble
 brokenValidationLabel: L'organisation responsable est invalide pour cet immeuble
 

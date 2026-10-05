@@ -229,40 +229,7 @@ formTabs:
                             useCustomLabel: true
                             dataType: STRING
                             referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
-                          - _type: DateField
-                            _name: DateDebutConstruction
-                            value: DateDebutConstruction
-                            label: Date début construction
-                            documentation: Date de démarrage des travaux de construction de l’actif.
-                            labelProperties:
-                              alignment: left
-                              typographyValueInterpreter: LITERAL
-                              typography: body-2
-                              color: md:black
-                            componentProperties:                 
-                              displayFormat: dd/MM/yyyy                
-                              displayFormatValueInterpreter: LITERAL            
-                              editingFormat: dd/MM/yyyy                 
-                              editingFormatValueInterpreter: LITERAL 
-                            useCustomLabel: true
-                            dataType: DATE
-                          - _type: DateField
-                            _name: DateFinConstruction
-                            value: DateFinConstruction
-                            label: Date fin construction
-                            documentation: Date de fin des travaux de construction.
-                            labelProperties:
-                              alignment: left
-                              typographyValueInterpreter: LITERAL
-                              typography: body-2
-                              color: md:black
-                            componentProperties:                 
-                              displayFormat: dd/MM/yyyy                
-                              displayFormatValueInterpreter: LITERAL            
-                              editingFormat: dd/MM/yyyy                 
-                              editingFormatValueInterpreter: LITERAL 
-                            useCustomLabel: true
-                            dataType: DATE
+                      
                           - _type: DateField
                             _name: DateLivraison
                             value: DateLivraison

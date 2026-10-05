@@ -1,0 +1,59 @@
+_package: Batiments.entities.Affectation.action_sets
+_type: ActionSet
+_name: AffectationActionSet
+entity: Batiments.entities.Affectation.Affectation
+label: Affectation Action Set
+defaultActionSet: true
+actions:
+  - _type: CreateAction
+    _name: CreateAuthorAffectation
+    label: Création d'une affectation
+    useCustomLabel: true
+    stepper: Batiments.entities.Affectation.steppers.AuthorAffectation
+    createMultiple: false
+    createdRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: EditAction
+    _name: EditAuthorAffectation
+    label: Modification d'une affectation
+    useCustomLabel: true
+    stepper: Batiments.entities.Affectation.steppers.AuthorAffectation
+    multipleSelectionAllowed: true
+    availableForGoldenData: true
+    availableForMasterData: false
+    availableForErrorData: true
+    waitDialogEnabled: false
+  - _type: MassUpdateAction
+    _name: MassUpdateAuthorAffectations
+    label: Mise à jour de masse d'affectations
+    useCustomLabel: true
+    stepper: Batiments.entities.Affectation.steppers.AuthorAffectation
+    availableForGoldenData: true
+    availableForErrorData: true
+    availableForMasterData: false
+    waitDialogEnabled: false
+  - _type: DeleteAction
+    _name: Delete
+    label: Suppression d'une affectation
+    useCustomLabel: true
+    multipleSelectionAllowed: true
+    deleteType: HARD_DELETE
+    waitDialogEnabled: false
+    availableForGoldenData: true
+    availableForMasterData: false
+    requiredRole: semarchyAdmin
+  - _type: ExportAction
+    _name: Export
+    label: Exporter
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: ImportAuthorAffectation
+    label: Importer
+    useCustomLabel: true
+    importMode: CREATE_AND_UPDATE
+    stepper: Batiments.entities.Affectation.steppers.AuthorAffectation
+    importedRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true

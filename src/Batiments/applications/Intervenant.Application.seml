@@ -1,0 +1,170 @@
+_package: Batiments.applications
+_type: Application
+_name: Intervenant
+label: Intervenant
+visibility: VISIBLE
+avatarImageUrl: images://GECINA/pr-default.jpg
+logoUrl: images://GECINA/Gecina_logo-RVB.png
+coverImageUrl: images://GECINA/Image_accueil.png
+favIcon: images://GECINA/gecina-logo-whiteblue.png
+sortStrategy: POSITION
+historyBrowsingEnabled: true
+historyBrowsingRequiredRole: ""
+
+titleBarDefaultColor: "#122843"
+
+defaultAction: Batiments.applications.Intervenant.Root.GlobalSearch
+
+# documentationConfig:
+#   documentation: ""
+#   documentationConfigDiagrams:
+#     - _type: DocumentationConfigDiagram
+#       _name: Diagram
+#       label: Intervenant Diagram
+#       modelDiagram: Batiments.model_diagrams.IntervenantDiagram
+
+globalSearchConfig:
+  displaySearchForDropdown: true
+  sortBusinessViewsAlphabetically: false
+  globalSearchBusinessViews:
+    - _type: GlobalSearchBoView
+      _name: Intervenants
+      viewType: GD
+      businessView: Batiments.entities.Intervenant.business_views.IntervenantBusinessView
+      searchTypeConfig: Batiments.entities.Intervenant.business_views.IntervenantBusinessView.Intervenant.TextConfig
+      maxResults: 10
+      
+navDrawer:
+  - _type: NavigationGroup
+    _name: RootFolder
+    label: Root Folder
+    dividerVisible: false
+    labelVisible: false
+    actions:
+      - appAction: Batiments.applications.Intervenant.Root.MyTasks
+      # - appAction: Batiments.applications.Intervenant.Root.GlobalSearch
+      - appAction: Batiments.applications.Intervenant.Root.Entities
+      - appAction: Batiments.applications.Intervenant.Root.Dashboard
+      # - appAction: Batiments.applications.Intervenant.Root.OpenModelDoc
+
+  - _type: NavigationGroup
+    _name: Intervenant
+    label: Intervenant
+    dividerVisible: true
+    labelVisible: false
+    actions:
+      - appAction: Batiments.applications.Intervenant.Root.Intervenant
+  
+
+  - _type: NavigationGroup
+    _name: ReferenceData
+    label: Reference Data
+    dividerVisible: false 
+    labelVisible: false
+    actions:
+      - appAction: Batiments.applications.Intervenant.Root.ReferenceData
+
+  - _type: NavigationGroup
+    _name: QuickActions
+    label: Quick Actions
+    dividerVisible: false 
+    labelVisible: false
+    actions:
+      - appAction: Batiments.applications.Intervenant.Root.QuickActions
+
+
+rootFolder:
+  _type: FolderAction
+  _name: Root
+  label: Root Folder
+  image: images://mdi/folder.svg
+  imageAlign: MIDDLE_CENTER
+  imageMode: FIT
+  appActions:
+    - _type: GlobalSearchAction
+      _name: GlobalSearch
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+
+    - _type: MyTasksAction
+      _name: MyTasks
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      badgeVisible: true
+      requiredRole: semarchyAdmin
+      
+    - _type: BrowseEntitiesFolderAction
+      _name: Entities
+      lineageEnabled: true
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      label: Entities (database view)
+      requiredRole: semarchyAdmin
+
+    - _type: OpenDashboardAction
+      _name: Dashboard
+      label: Dashboard
+      dashboardApplication: SuiviErreurs
+      dashboard: TableauDeBord
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      icon: images://mdi/view-dashboard.svg
+      iconColor: '#3F51B5'
+      requiredRole: semarchyAdmin
+
+    # - _type: OpenDocumentationAction
+    #   _name: OpenModelDoc
+    #   iconColor: md:grey
+    #   label: Documentation
+    #   requiredRole: semarchyAdmin
+
+            
+    - _type: BrowseBusinessViewAction
+      _name: Intervenant
+      businessView: Batiments.entities.Intervenant.business_views.IntervenantBusinessView
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      nbRecordsBadgeVisible: false
+      nbRecordsBadgeBackgroundColor: "#FF9800"
+      icon: images://mdi/office-building-marker.svg
+      label: Intervenants
+
+    - _type: FolderAction
+      _name: ReferenceData
+      label: Données de Référence
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      icon: images://mdi/database.svg
+      appActions:
+        - _type: BrowseBusinessViewAction
+          _name: RoleImmeubles
+          businessView: Batiments.entities.RoleImmeuble.business_views.RoleImmeubleBusinessView 
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/timeline-text.svg
+          nbRecordsBadgeVisible: false
+        - _type: BrowseBusinessViewAction
+          _name: TypeAffectations
+          businessView: Batiments.entities.TypeAffectation.business_views.TypeAffectationBusinessView
+          imageAlign: MIDDLE_CENTER
+          imageMode: FIT
+          icon: images://mdi/timeline-text.svg
+          nbRecordsBadgeVisible: false
+ 
+    - _type: FolderAction
+      _name: QuickActions
+      label: Actions
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      icon: images://mdi/folder.svg
+      appActions:
+      - _type: ImportDataAppAction
+        _name: ImportIntervenants
+        label: Importer Intervenants
+        imageAlign: MIDDLE_CENTER
+        imageMode: FIT
+        importAction: Batiments.entities.Intervenant.action_sets.IntervenantActionSet.ImportAuthorIntervenant
+        description: Importer Intervenant depuis un fichier
+        requiredRole: semarchyAdmin
+
+applicationTitle: Référentiel Intervenants

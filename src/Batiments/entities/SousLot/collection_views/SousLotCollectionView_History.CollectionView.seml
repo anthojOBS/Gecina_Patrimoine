@@ -56,16 +56,6 @@ tableColumns:
     referencedEntity: Batiments.entities.Etage.Etage
 
 
-
-
-  - _type: TextColumn
-    _name: Libelle
-    value: Libelle
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: true
-
   - _type: TextColumn
     _name: IdentifiantPhysique
     value: IdentifiantPhysique
@@ -122,6 +112,15 @@ tableColumns:
   - _type: TextColumn
     _name: DateDebStatut
     value: DateDebStatut
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+
+
+  - _type: TextColumn
+    _name: DateDebUsage
+    value: DateDebUsage
     useCustomLabel: false
     dataType: DATE
     columnAlign: LEFT

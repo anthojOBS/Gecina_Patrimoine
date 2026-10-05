@@ -32,19 +32,8 @@ formTabs:
                       color: md:black
                     useCustomLabel: true
                     dataType: STRING
-                    
-                  - _type: TextField
-                    _name: Libelle
-                    value: Libelle
-                    label: Libellé lot
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
-
+                  
+                  
                   - _type: ReferenceField
                     _name: FDN_Batiment
                     # value: CASE WHEN Etage.FDN_Batiment is null THEN FDN_Batiment ELSE Etage.FDN_Batiment END

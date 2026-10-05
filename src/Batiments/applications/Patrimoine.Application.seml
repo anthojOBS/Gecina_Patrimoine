@@ -75,12 +75,13 @@ navDrawer:
       # - appAction: Batiments.applications.Patrimoine.Root.Batiments
       # - appAction: Batiments.applications.Patrimoine.Root.Etages
       # - appAction: Batiments.applications.Patrimoine.Root.Lots
-      - appAction: Batiments.applications.Patrimoine.Root.ImmeublesErrors
+      # - appAction: Batiments.applications.Patrimoine.Root.ImmeublesErrors
       - appAction: Batiments.applications.Patrimoine.Root.ImmeublesErrorsGolden
       - appAction: Batiments.applications.Patrimoine.Root.ImmeublesSuggestedMatches
-      - appAction: Batiments.applications.Patrimoine.Root.BatimentsErrors
+      # - appAction: Batiments.applications.Patrimoine.Root.BatimentsErrors
       - appAction: Batiments.applications.Patrimoine.Root.BatimentsErrorsGolden
       - appAction: Batiments.applications.Patrimoine.Root.BatimentsSuggestedMatches
+      - appAction: Batiments.applications.Patrimoine.Root.LotsErrorsGolden
 
   - _type: NavigationGroup
     _name: ReferenceData
@@ -280,6 +281,20 @@ rootFolder:
       imageMode: FIT
       nbRecordsBadgeVisible: true
       icon: images://mdi/domain-plus.svg
+      requiredRole: semarchyAdmin
+
+    - _type: BrowseBusinessViewAction
+      _name: LotsErrorsGolden
+      label: Lots Erreurs Golden
+      businessView: Batiments.entities.Lot.business_views.LotBusinessView
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      nbRecordsBadgeVisible: true
+      iconColor: red
+      icon: images://mdi/floor-plan.svg
+      viewType: GDWE
+      labelColor: red
+      nbRecordsBadgeBackgroundColor: md:red
       requiredRole: semarchyAdmin
 
     - _type: FolderAction

@@ -21,7 +21,7 @@ toRolePhysicalName: ETAT_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: NONE
+validationScope: POST_CONSO
 mandatoryValidationLabel: L'état est obligatoire pour un bâtiment
 brokenValidationLabel: L'état sélectionné est invalide pour ce bâtiment
 

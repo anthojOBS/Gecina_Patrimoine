@@ -175,19 +175,19 @@ attributes:
 
 
 
-  - _type: EntityAttribute
-    _name: DateDebutConstruction
-    label: Date de début de construction
-    physicalName: DATE_DEBUT_CONSTRUCTION
-    dataType: Date
-    mandatory: false
+  # - _type: EntityAttribute
+  #   _name: DateDebutConstruction
+  #   label: Date de début de construction
+  #   physicalName: DATE_DEBUT_CONSTRUCTION
+  #   dataType: Date
+  #   mandatory: false
 
-  - _type: EntityAttribute
-    _name: DateFinConstruction
-    label: Date de fin de construction
-    physicalName: DATE_FIN_CONSTRUCTION
-    dataType: Date
-    mandatory: false
+  # - _type: EntityAttribute
+  #   _name: DateFinConstruction
+  #   label: Date de fin de construction
+  #   physicalName: DATE_FIN_CONSTRUCTION
+  #   dataType: Date
+  #   mandatory: false
 
   - _type: EntityAttribute
     _name: DateLivraison

@@ -39,3 +39,12 @@ formTabs:
           typographyValueInterpreter: LITERAL
           typography: body-2
           color: md:black
+      - _type: TextField
+        _name: EtageSolare
+        value: EtageSolare
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black

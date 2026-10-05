@@ -38,7 +38,14 @@ attributes:
     dataType: ShortInteger
     precision: 3
     mandatory: false
-
+  - _type: EntityAttribute
+    _name: EtageSolare
+    label: Code Etage pour SOLARE
+    physicalName: ETAGE_SOLARE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
 sourceIdGeneration:
   mode: MANUAL
 primaryKey: Batiments.entities.TypeEtage.TypeEtage.EtageCode

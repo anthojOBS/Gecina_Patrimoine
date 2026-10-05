@@ -49,6 +49,14 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: true
           executedOnFormOpen: false 
+        - enricher: Batiments.entities.Batiment.enrichers.DefautRegimeTVA
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false 
+        - enricher: Batiments.entities.Batiment.enrichers.DefautEtat
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false 
         - enricher: Batiments.entities.Batiment.enrichers.DefautDtLivraison
           executedOnButtonClick: false
           executedOnDataChange: true

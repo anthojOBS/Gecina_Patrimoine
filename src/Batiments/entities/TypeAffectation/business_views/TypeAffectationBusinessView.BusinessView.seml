@@ -1,0 +1,51 @@
+_package: Batiments.entities.TypeAffectation.business_views
+_type: BusinessView
+_name: TypeAffectationBusinessView
+entity: Batiments.entities.TypeAffectation.TypeAffectation
+rootLabel: Type d'affectation
+rootPluralLabel: Type d'affectation
+displayRootNodeAs: ICON_LABEL
+label: Type d'affectation
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: TypeAffectation
+  displayCard: Batiments.entities.TypeAffectation.display_cards.TypeAffectationDisplayCard
+  entity: Batiments.entities.TypeAffectation.TypeAffectation
+  actionSet: Batiments.entities.TypeAffectation.action_sets.TypeAffectationActionSet
+  collection: Batiments.entities.TypeAffectation.collection_views.TypeAffectationCollectionView
+  form: Batiments.entities.TypeAffectation.forms.TypeAffectationForm
+  outlineVisible: false
+  displayRecordCount: ALWAYS
+  businessEntitySearchConfigs:
+    - _name: TextConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: TEXT
+
+  overrideDefaultSort: false
+  enableUserDefinedSort: true
+  listAllowed: true
+  tableAllowed: true
+  gridAllowed: true
+
+  transitions:
+    - _name: GoldenHistoryRecords
+      _type: BusinessViewTransition
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      enableHierarchy: '0'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: false
+      iconUrl: images://mdi/history.svg
+      label: History
+      pluralLabel: History
+      transitionPath: GoldenHistoryRecords
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '1'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      businessViewEntity: 
+        _type: BusinessViewEntityReference
+        ref: Batiments.entities.TypeAffectation.business_views.TypeAffectationBusinessView.TypeAffectation
+      filter: 1 = 1
+enableHierarchyView: false
+useHierarchyOnOpen: false

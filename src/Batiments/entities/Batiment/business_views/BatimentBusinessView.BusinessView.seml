@@ -148,7 +148,7 @@ rootBusinessViewEntity:
                   listAllowed: true
                   overrideDefaultSort: false
                   tableAllowed: true
-                  sortExpression: Libelle ASC
+                  sortExpression: IdentifiantsERP ASC
 
               - _type: BusinessViewTransition
                 _name: MasterRecordsLots
@@ -251,7 +251,7 @@ rootBusinessViewEntity:
                         listAllowed: true
                         overrideDefaultSort: false
                         tableAllowed: true
-                        sortExpression: Libelle ASC
+                        sortExpression: IdentifiantsERP ASC
                         
                     - _type: BusinessViewTransition
                       _name: MasterRecordsLots
@@ -363,7 +363,7 @@ rootBusinessViewEntity:
               listAllowed: true
               overrideDefaultSort: false
               tableAllowed: true
-              sortExpression: Libelle ASC
+              sortExpression: IdentifiantsERP ASC
 
           - _type: BusinessViewTransition
             _name: MasterRecordsLots
@@ -465,7 +465,7 @@ rootBusinessViewEntity:
                     listAllowed: true
                     overrideDefaultSort: false
                     tableAllowed: true
-                    sortExpression: Libelle ASC
+                    sortExpression: IdentifiantsERP ASC
                     
                 - _type: BusinessViewTransition
                   _name: MasterRecordsLots

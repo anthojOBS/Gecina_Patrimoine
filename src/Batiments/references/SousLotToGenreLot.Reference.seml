@@ -21,7 +21,7 @@ toRolePhysicalName: GENRE_SSLOT_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: NONE
+validationScope: POST_CONSO
 mandatoryValidationLabel: Le genre de Sous-lot est obligatoire pour un Sous-lot
 brokenValidationLabel: Le genre de Sous-lot sélectionné est invalide pour ce Sous-lot
 

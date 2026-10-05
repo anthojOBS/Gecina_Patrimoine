@@ -2,8 +2,8 @@ _package: Batiments.entities.Batiment.enrichers
 _name: DefautRegimeTVA
 _type: SemQLEnricher
 entity: Batiments.entities.Batiment.Batiment
-label: Default Country
-enricherExecutionScope: NONE
+label: Default Regime TVA
+enricherExecutionScope: POST_CONSO
 semQlEnricherExpressions: 
   - attributeName: FID_FiscaliteCible
     expression: Immeuble.FID_FiscaliteCible

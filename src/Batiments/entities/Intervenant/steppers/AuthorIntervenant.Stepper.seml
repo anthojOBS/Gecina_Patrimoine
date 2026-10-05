@@ -1,0 +1,33 @@
+_package: Batiments.entities.Intervenant.steppers
+_type: Stepper
+_name: AuthorIntervenant
+entity: Batiments.entities.Intervenant.Intervenant
+label: Intervenant
+rootStep:
+  _type: CollectionStep
+  _name: Intervenant_collection
+  label: Intervenant
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.Intervenant.collection_views.IntervenantCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Intervenant
+      label: Intervenant
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Intervenant.forms.IntervenantForm.Intervenant

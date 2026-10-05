@@ -5,5 +5,5 @@ entity: Batiments.entities.Immeuble.Immeuble
 label: Coherence organisation responsable / portefeuille
 condition: FID_OrgaResp is null or FID_SousPortefeuille is null or (FID_SousPortefeuille is not null and FID_OrgaResp is not null
  and FID_OrgaResp = SousPortefeuille.FID_OrgaResp and FID_SousPortefeuille = SousPortefeuille.SousPortefeuille)
-validationScope: NONE
+validationScope: POST_CONSO
 validationLabel: organisation responsable / portefeuille non cohérent

@@ -34,16 +34,7 @@ attributes:
     mandatory: true
     mandatoryValidationLabel: "Numéro lot est obligatoire"
     mandatoryValidationScope: POST_CONSO
-  - _type: EntityAttribute
-    _name: Libelle
-    label: Libellé lot
-    physicalName: LIBELLE
-    dataType: String
-    length: 255
-    mandatory: true
-    mandatoryValidationLabel: "Le libellé est obligatoire"
-    mandatoryValidationScope: POST_CONSO
-    searchable: true
+
   - _type: EntityAttribute
     _name: SuperficieHabitable
     label: Superficie Habitable
@@ -156,7 +147,7 @@ attributes:
     dataType: Date
     mandatory: true
     mandatoryValidationLabel: "Date début statut est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: NONE
 
 
   - _type: EntityAttribute

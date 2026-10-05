@@ -1,0 +1,18 @@
+_package: Batiments.entities.RoleImmeuble.display_cards
+_type: DisplayCard
+_name: RoleImmeubleDisplayCard
+entity: Batiments.entities.RoleImmeuble.RoleImmeuble
+default: true
+primaryTextExpression: Libelle
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageValue: images://mdi/domain.svg
+

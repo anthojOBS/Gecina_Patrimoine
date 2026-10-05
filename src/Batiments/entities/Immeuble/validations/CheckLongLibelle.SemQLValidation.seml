@@ -4,5 +4,5 @@ _type: SemQLValidation
 entity: Batiments.entities.Immeuble.Immeuble
 label: verifier la longueur du libellé
 condition: Length(Libelle) > 1
-validationScope: NONE
+validationScope: POST_CONSO
 validationLabel: Le libellé doit contenir au moins 2 caractères

@@ -1,0 +1,52 @@
+_package: Batiments.entities.Intervenant
+_type: Entity
+_name: Intervenant
+label: Intervenant
+pluralLabel: Intervenants
+entityType: BASIC
+physicalTableName: INTERVENANT
+description: Intervenant
+documentation: Intervenant
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: Matricule
+    label: Matricule
+    physicalName: MATRICULE
+    dataType: String
+    length: 50
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: NomPrenom
+    label: Nom, prénom
+    physicalName: NOM_PRENOM
+    dataType: String
+    length: 100
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: Email
+    label: Email
+    physicalName: EMAIL
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
+
+
+  # booleen
+  - _type: EntityAttribute
+    _name: StatutFinEmploi
+    label: Statut fin emploi
+    physicalName: STATUT_FIN_EMPLOI
+    dataType: Boolean
+    mandatory: false
+
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.Intervenant.Intervenant.Matricule

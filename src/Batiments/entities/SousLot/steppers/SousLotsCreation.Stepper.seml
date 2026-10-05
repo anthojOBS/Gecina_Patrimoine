@@ -37,7 +37,10 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
- 
+        - enricher: Batiments.entities.SousLot.enrichers.DefautDtDebUsage
+          executedOnButtonClick: false
+          executedOnDataChange: false
+          executedOnFormOpen: true
         - enricher: Batiments.entities.SousLot.enrichers.DefautLouable
           executedOnButtonClick: false
           executedOnDataChange: false
@@ -48,10 +51,7 @@ rootStep:
           executedOnFormOpen: true
 
       formStepValidations:  
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute: Batiments.entities.SousLot.SousLot.Libelle
+
         - executedOnDataChange: true
           executedOnFormOpen: true
           validationType: MANDATORY
@@ -74,9 +74,7 @@ rootStep:
         - onStepExit: BLOCK
           validationType: DETECT_DUPS
           matcher: Batiments.entities.SousLot.SousLot.Matcher
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.entities.SousLot.SousLot.Libelle
+
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.entities.SousLot.SousLot.IdentifiantsERP
@@ -170,9 +168,7 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: DETECT_DUPS
 
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.entities.SousLot.SousLot.Libelle
+
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.SousLot.SousLot.IdentifiantsERP

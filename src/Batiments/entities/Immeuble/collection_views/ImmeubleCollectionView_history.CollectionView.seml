@@ -169,20 +169,7 @@ tableColumns:
     visibleByDefault: true
     referencedEntity: Batiments.entities.TypeVente.TypeVente
 
-  - _type: TextColumn
-    _name: DateDebutConstruction
-    value: DateDebutConstruction
-    useCustomLabel: false
-    dataType: DATE
-    columnAlign: LEFT
-    visibleByDefault: true
-  - _type: TextColumn
-    _name: DateFinConstruction
-    value: DateFinConstruction
-    useCustomLabel: false
-    dataType: DATE
-    columnAlign: LEFT
-    visibleByDefault: true
+
   - _type: TextColumn
     _name: DateLivraison
     value: DateLivraison

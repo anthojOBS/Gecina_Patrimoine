@@ -43,17 +43,6 @@ formTabs:
                     useCustomLabel: true
                     dataType: STRING
                     
-                  - _type: TextField
-                    _name: Libelle
-                    value: Libelle
-                    label: Libellé sous-lot
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
 
 
                   - _type: ReferenceField

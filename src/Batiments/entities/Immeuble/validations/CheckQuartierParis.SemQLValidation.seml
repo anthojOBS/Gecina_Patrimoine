@@ -5,5 +5,5 @@ entity: Batiments.entities.Immeuble.Immeuble
 label: Quartier Paris obligatoire 
 condition:  (FID_OrgaResp = 'DB' and Ville = 'Paris' and  (FID_Usage = 'RESI' OR FID_Usage = 'MIX') and FID_QuartierParis is not null) 
   or Ville != 'Paris' or FID_Usage = 'BUR' or FID_OrgaResp = 'DR'
-validationScope: NONE
+validationScope: POST_CONSO
 validationLabel: Quartier Paris doit être renseigné 

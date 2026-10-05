@@ -1,0 +1,51 @@
+_package: Batiments.entities.Intervenant.business_views
+_type: BusinessView
+_name: IntervenantBusinessView
+entity: Batiments.entities.Intervenant.Intervenant
+rootLabel: Intervenant
+rootPluralLabel: Intervenants
+displayRootNodeAs: ICON_LABEL
+label: Intervenant
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: Intervenant
+  displayCard: Batiments.entities.Intervenant.display_cards.IntervenantDisplayCard
+  entity: Batiments.entities.Intervenant.Intervenant
+  actionSet: Batiments.entities.Intervenant.action_sets.IntervenantActionSet
+  collection: Batiments.entities.Intervenant.collection_views.IntervenantCollectionView
+  form: Batiments.entities.Intervenant.forms.IntervenantForm
+  outlineVisible: false
+  displayRecordCount: ALWAYS
+  businessEntitySearchConfigs:
+    - _name: TextConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: TEXT
+
+  overrideDefaultSort: false
+  enableUserDefinedSort: true
+  listAllowed: true
+  tableAllowed: true
+  gridAllowed: true
+
+  transitions:
+    - _name: GoldenHistoryRecords
+      _type: BusinessViewTransition
+      displayFormTabAs: ICON_LABEL
+      displayTransitionNodeAs: ICON_LABEL
+      enableHierarchy: '0'
+      enableHierarchyInterpreter: LITERAL
+      expandHierarchyByDefault: false
+      iconUrl: images://mdi/history.svg
+      label: History
+      pluralLabel: History
+      transitionPath: GoldenHistoryRecords
+      transitionType: FULLY_QUALIFIED
+      transitionVisible: '1'
+      transitionVisibleInterpreter: LITERAL
+      useCustomLabel: true
+      businessViewEntity: 
+        _type: BusinessViewEntityReference
+        ref: Batiments.entities.Intervenant.business_views.IntervenantBusinessView.Intervenant
+      filter: 1 = 1
+enableHierarchyView: false
+useHierarchyOnOpen: false

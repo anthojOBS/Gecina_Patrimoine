@@ -19,7 +19,7 @@ toRolePhysicalName: USAGE_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: NONE
+validationScope: NONE # alim via le lot
 mandatoryValidationLabel: L'usage est obligatoire pour un immeuble
 brokenValidationLabel: L'usage sélectionnée est invalide pour cet immeuble
 

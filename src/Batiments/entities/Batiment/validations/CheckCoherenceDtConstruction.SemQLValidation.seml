@@ -1,8 +1,0 @@
-_package: Batiments.entities.Batiment.validations
-_name: CheckCoherenceDtConstruction
-_type: SemQLValidation
-entity: Batiments.entities.Batiment.Batiment
-label: Coherence date de construction
-condition: (DateFinConstruction >= DateDebutConstruction) or DateDebutConstruction is null or DateFinConstruction is null
-validationScope: NONE
-validationLabel: Les dates de construction doivent être cohérentes 

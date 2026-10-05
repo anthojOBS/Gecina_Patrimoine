@@ -1,0 +1,33 @@
+_package: Batiments.entities.RoleImmeuble.steppers
+_type: Stepper
+_name: AuthorRoleImmeuble
+entity: Batiments.entities.RoleImmeuble.RoleImmeuble
+label: Type d'énergie
+rootStep:
+  _type: CollectionStep
+  _name: Phases
+  label: Phases
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.RoleImmeuble.collection_views.RoleImmeubleCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: RoleImmeuble
+      label: Type d'énergie
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.RoleImmeuble.forms.RoleImmeubleForm.RoleImmeuble

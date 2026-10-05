@@ -1,0 +1,126 @@
+_package: Batiments.entities.Intervenant.forms
+_type: Form
+_name: IntervenantForm
+entity: Batiments.entities.Intervenant.Intervenant
+default: true
+formTabs:
+  - _type: FormTab
+    _name: Intervenant
+    label: Fiche Intervenants
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: FormContainer
+        _name: Global
+        layoutDirection: COLUMN
+        content:
+          - _type: FormContainer
+            _name: Haut
+            layoutDirection: ROW
+            content:
+              - _type: FormSection
+                _name: IdentiteImmeuble
+                label: Identité intervenant
+                layoutDirection: COLUMN
+                visibleValue: "1"
+                visibleValueInterpreter: LITERAL
+                labelWidth: 200px
+
+                content:
+                  - _type: TextField
+                    _name: NomPrenom
+                    value: NomPrenom
+                    useCustomLabel: false
+                    dataType: STRING
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                  - _type: TextField
+                    _name: Email
+                    value: Email
+                    useCustomLabel: false
+                    dataType: STRING
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+
+                  - _type: ReferenceField
+                    _name: FDN_RoleImmeuble
+                    value: FDN_RoleImmeuble
+                    label: Rôle Immeuble
+                    documentation: Rôle de l'intervenant dans l'immeuble.
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.RoleImmeuble.RoleImmeuble
+
+
+                  - _type: TextField
+                    _name: StatutFinEmploi
+                    value: StatutFinEmploi
+                    label: Statut fin emploi
+                    documentation: Indique si l'intervenant est en fin de contrat.
+                    labelProperties:
+                      alignment: left
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: BOOLEAN
+
+              - _type: FormSection
+                _name: IdentiteManager
+                label: Identité manager
+                layoutDirection: COLUMN
+                visibleValue: FDN_MatriculeManager is not null
+                visibleValueInterpreter: SEMQL
+                labelWidth: 200px
+
+                content:
+                  - _type: ReferenceField
+                    _name: FDN_MatriculeManager
+                    # value: lookup first (Email) from Intervenant where FDN_Intervenant = FDN_MatriculeManager  end
+                    value: FDN_MatriculeManager
+                    label: Manager
+                    documentation: Manager de l'intervenant.
+                    useCustomLabel: true
+                    dataType: STRING
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    referencedEntity: Batiments.entities.Intervenant.Intervenant
+
+
+          - _type: FormCollection
+            _name: Affectation
+            label: Affectation
+            pluralLabel: Affectation
+            useCustomLabel: true
+            collection: Batiments.entities.Affectation.collection_views.AffectationCollectionView
+            actionSet: Batiments.entities.Affectation.action_sets.AffectationActionSet
+            tableAllowed: true
+            listAllowed: false
+            gridAllowed: false
+            displayRecordCount: ALWAYS
+            enableUserDefinedSort: true
+            transitionPath: Affectation
+            sortExpression: 1 DESC
+            filter: 1=1
+            targetEntity: Batiments.entities.Affectation.Affectation
+            height: 500
+            formCollectionSearchConfigs:
+              - enabled: true 
+                searchType: TEXT
+
+
+         

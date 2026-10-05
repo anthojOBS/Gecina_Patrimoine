@@ -17,6 +17,7 @@ attributes:
   - attributeName: GenreLot
   - attributeName: TypologieLot
   - attributeName: DateDebStatut
+  - attributeName: DateDebUsage
   - attributeName: StatutLouable
   - attributeName: RaisonNonLouable
   

@@ -7,10 +7,12 @@ description: ""
 documentation: ""
 defaultRule: false
 consolidationStrategy: PREFERRED_PUBLISHER
-consolidationSkipNulls: true
+consolidationSkipNulls: false
 overrideStrategy: UNTIL_CONSOLIDATED_VAL_CHANGE
 attributes:
   - attributeName: DateAcquisition
+  - attributeName: DateDebUsage
+  - attributeName: DateLivraison
 publisherRankings:
   - _type: ConsoPublisherRanking
     publisher: Batiments.publishers.KSIOP

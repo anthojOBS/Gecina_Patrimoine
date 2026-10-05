@@ -5,5 +5,5 @@ entity: Batiments.entities.Lot.Lot
 label: "Validation de la surface"
 description: "Vérifie que la superficie du lot n'est pas nulle."
 condition: SuperficieHabitable > 0
-validationScope: NONE
+validationScope: POST_CONSO
 validationLabel: "Superficie du lot en m² doit être positive (format 0.0)"

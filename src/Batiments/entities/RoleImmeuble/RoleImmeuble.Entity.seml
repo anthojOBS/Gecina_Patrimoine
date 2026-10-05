@@ -1,0 +1,34 @@
+_package: Batiments.entities.RoleImmeuble
+_type: Entity
+_name: RoleImmeuble
+label: Rôle Immeuble
+pluralLabel: Rôles Immeuble
+entityType: BASIC
+physicalTableName: ROLE_IMMEUBLE
+description: Rôle Immeuble
+documentation: Rôle Immeuble
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: Code
+    label: Rôle Immeuble
+    physicalName: CODE
+    dataType: String
+    length: 50
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: Libelle
+    label: Libellé Rôle Immeuble
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
+
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.RoleImmeuble.RoleImmeuble.Code

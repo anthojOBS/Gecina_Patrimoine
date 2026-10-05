@@ -116,6 +116,12 @@ rootStep:
           validationType: CHECK
           attribute: Batiments.references.LotToUsage.Usage
 
+        - validator: Batiments.entities.Lot.validations.CheckDateUsgAcquisition
+          executedOnDataChange: true
+          executedOnFormOpen: true
+          validationType: CHECK
+          attribute: Batiments.entities.Lot.Lot.DateDebUsage
+
         - validator: Batiments.entities.Lot.validations.CheckRaisonNonLouable
           executedOnDataChange: true
           executedOnFormOpen: true
@@ -145,6 +151,10 @@ rootStep:
         - onStepExit: WARN
           validationType: CHECK
           validator: Batiments.entities.Lot.validations.CheckUsage
+        - onStepExit: BLOCK
+          validationType: CHECK
+          validator: Batiments.entities.Lot.validations.CheckDateUsgAcquisition
+
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.references.LotToTypologieLot.TypologieLot
@@ -435,6 +445,9 @@ stepperFinishValidations:
   - onStepperFinish: WARN
     validationType: CHECK
     validator: Batiments.entities.Lot.validations.CheckUsage
+  - onStepperFinish: BLOCK
+    validationType: CHECK
+    validator: Batiments.entities.Lot.validations.CheckDateUsgAcquisition
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY

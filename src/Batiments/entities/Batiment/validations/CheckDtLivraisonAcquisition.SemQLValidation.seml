@@ -1,8 +1,0 @@
-_package: Batiments.entities.Batiment.validations
-_name: CheckDtLivraisonAcquisition
-_type: SemQLValidation
-entity: Batiments.entities.Batiment.Batiment
-label: Coherence date de livraison
-condition: (DateLivraison >= DateAcquisition) or DateLivraison is null
-validationScope: NONE
-validationLabel: La date de livraison doit être postérieure à la date d'acquisition

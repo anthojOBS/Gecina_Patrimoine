@@ -14,7 +14,6 @@ attributes:
   - attributeName: FlagRestructuration
 
   - attributeName: PeriodeConstruction
-  - attributeName: DateFinConstruction
 
   - attributeName: NbAscenseur
   - attributeName: FlagAscenseur

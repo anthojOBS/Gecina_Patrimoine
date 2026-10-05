@@ -21,7 +21,7 @@ toRolePhysicalName: USAGE_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: NONE
+validationScope: POST_CONSO
 mandatoryValidationLabel: L'usage est obligatoire pour un lot
 brokenValidationLabel: L'usage sélectionné est invalide pour ce lot
 

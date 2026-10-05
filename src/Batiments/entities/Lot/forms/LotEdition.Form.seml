@@ -44,34 +44,6 @@ formTabs:
                     useCustomLabel: true
                     dataType: STRING
                     
-                  - _type: TextField
-                    _name: Libelle
-                    value: Libelle
-                    label: Libellé lot
-                    authoringMode: force-read-only
-                    labelProperties:
-                      alignment: left
-                      typographyValueInterpreter: LITERAL
-                      typography: body-2
-                      color: md:black
-                    useCustomLabel: true
-                    dataType: STRING
-
-                  # - _type: ReferenceField
-                  #   _name: FDN_Batiment
-                  #   # value: CASE WHEN Etage.FDN_Batiment is null THEN FDN_Batiment ELSE Etage.FDN_Batiment END
-                  #   value: Etage.FDN_Batiment
-                  #   label: Bâtiment parent
-                  #   authoringMode: auto
-                  #   labelProperties:
-                  #     alignment: left
-                  #     typographyValueInterpreter: LITERAL
-                  #     typography: body-2
-                  #     color: md:black
-                  #   useCustomLabel: true
-                  #   dataType: STRING
-                  #   referencedEntity: Batiments.entities.Batiment.Batiment
-
                   - _type: ReferenceField
                     _name: FDN_Etage
                     value: FDN_Etage

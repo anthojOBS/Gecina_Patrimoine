@@ -1,0 +1,33 @@
+_package: Batiments.references
+_type: Reference
+_name: AffectationToIntervenant
+label: Affectation To Intervenant
+description: Référence Affectation vers Intervenant
+fromRoleDocumentation: |
+  Cette référence détermine le **Intervenant** d'une **Affectation** dans son cycle de vie.
+  L'intervenant indique la personne ou l'entité responsable de l'affectation (par exemple, un locataire, un vendeur, etc.).
+physicalName: AFFECT_TO_INTERVENANT
+
+fromEntity: Batiments.entities.Affectation.Affectation
+fromRoleLabel: Affectation
+fromRoleName: Affectation
+fromRolePluralLabel: Affectations
+
+toEntity: Batiments.entities.Intervenant.Intervenant
+toRoleLabel: Intervenant
+toRoleName: Intervenant
+toRolePhysicalName: INTERVENANT_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: NONE
+mandatoryValidationLabel: L'intervenant est obligatoire pour une Affectation
+brokenValidationLabel: L'intervenant sélectionné est invalide pour cette Affectation
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: Intervenant
+  label: Intervenant
+  physicalName: INTERVENANT_ID
+  searchable: true
+  entity: Batiments.entities.Affectation.Affectation

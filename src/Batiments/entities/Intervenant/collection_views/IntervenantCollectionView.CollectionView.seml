@@ -1,0 +1,58 @@
+_package: Batiments.entities.Intervenant.collection_views
+_type: CollectionView
+_name: IntervenantCollectionView
+entity: Batiments.entities.Intervenant.Intervenant
+default: true
+displayCard: Batiments.entities.Intervenant.display_cards.IntervenantDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Intervenant
+tableRowLines: 1
+tableShowDisplayCard: false
+tableColumns:
+  - _type: TextColumn
+    _name: NomPrenom
+    value: NomPrenom
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: Email
+    value: Email
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: ReferenceColumn
+    _name: FDN_RoleImmeuble
+    value: FDN_RoleImmeuble
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.RoleImmeuble.RoleImmeuble
+  - _type: ReferenceColumn
+    _name: FDN_MatriculeManager
+    value: FDN_MatriculeManager
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Intervenant.Intervenant
+  - _type: CheckboxColumn
+    _name: StatutFinEmploi
+    value: StatutFinEmploi
+    useCustomLabel: false
+    dataType: BOOLEAN
+    columnAlign: LEFT
+    visibleByDefault: true
+

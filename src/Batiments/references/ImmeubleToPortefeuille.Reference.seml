@@ -21,7 +21,7 @@ toRolePhysicalName: PORTEFEUILLE_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: NONE
+validationScope: POST_CONSO
 mandatoryValidationLabel: Le portefeuille est obligatoire pour un immeuble
 brokenValidationLabel: Le portefeuille sélectionné est invalide pour cet immeuble
 

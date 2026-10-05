@@ -1,0 +1,39 @@
+_package: Batiments.entities.Affectation
+_type: Entity
+_name: Affectation
+label: Affectation
+pluralLabel: Affectations
+entityType: BASIC
+physicalTableName: AFFECTATION
+description: Affectation
+documentation: |
+  Affectation
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: AffectationID
+    label: Affectation ID
+    physicalName: AFFECTATION_ID
+    dataType: String
+    length: 50
+    mandatory: false
+    searchable: true
+
+  - _type: EntityAttribute
+    _name: DateDebAffectation
+    label: Date de début affectation
+    physicalName: DATE_DEB_AFFECTATION
+    dataType: Date
+    mandatory: false
+  - _type: EntityAttribute
+    _name: DateFinAffectation
+    label: Date de fin affectation
+    physicalName: DATE_FIN_AFFECTATION
+    dataType: Date
+    mandatory: false
+
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.Affectation.Affectation.AffectationID

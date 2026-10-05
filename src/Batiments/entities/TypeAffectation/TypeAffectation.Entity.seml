@@ -1,0 +1,35 @@
+_package: Batiments.entities.TypeAffectation
+_type: Entity
+_name: TypeAffectation
+label: Type d'affectation
+pluralLabel: Type d'affectation
+entityType: BASIC
+physicalTableName: TYPE_AFFECTATION
+description: Type d'affectation
+documentation: |
+  Type d'affectation
+historizeGolden: true
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: Code
+    label: Type d'affectation
+    physicalName: CODE
+    dataType: String
+    length: 50
+    mandatory: false
+    searchable: false
+
+  - _type: EntityAttribute
+    _name: Libelle
+    label: Libellé Type d'affectation
+    physicalName: LIBELLE
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: false
+
+sourceIdGeneration:
+  mode: MANUAL
+primaryKey: Batiments.entities.TypeAffectation.TypeAffectation.Code

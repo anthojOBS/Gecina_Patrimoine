@@ -1,8 +1,0 @@
-_package: Batiments.entities.Batiment.validations
-_name: CheckDtLivraison
-_type: SemQLValidation
-entity: Batiments.entities.Batiment.Batiment
-label: Cohérence date de livraison
-condition: (DateLivraison >= DateDebutConstruction) or DateDebutConstruction is null or DateLivraison is null
-validationScope: NONE
-validationLabel: La date de livraison doivent être cohérente avec la date de début de construction

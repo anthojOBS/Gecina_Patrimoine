@@ -6,5 +6,5 @@ label: Default date début usage
 enricherExecutionScope: NONE
 semQlEnricherExpressions: 
   - attributeName: DateDebUsage
-    expression: CURRENT_DATE()
-condition: DateDebUsage is NULL 
+    expression: DateAcquisition
+condition: DateAcquisition is not NULL and DateDebUsage is NULL

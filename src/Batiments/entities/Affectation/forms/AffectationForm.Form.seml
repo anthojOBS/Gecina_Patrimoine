@@ -1,0 +1,103 @@
+_package: Batiments.entities.Affectation.forms
+_type: Form
+_name: AffectationForm
+entity: Batiments.entities.Affectation.Affectation
+default: true
+formTabs:
+  - _type: FormTab
+    _name: Affectation
+    label: Affectation
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: TextField
+        _name: AffectationID
+        value: AffectationID
+        useCustomLabel: false
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: TextField
+        _name: NomPrenom
+        value: Intervenant.NomPrenom
+        label: Intervenant
+        useCustomLabel: true
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+      - _type: ReferenceField
+        _name: Role
+        value: Intervenant.FDN_RoleImmeuble
+        label: Rôle
+        useCustomLabel: true
+        dataType: STRING
+        labelProperties:
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+        referencedEntity: Batiments.entities.RoleImmeuble.RoleImmeuble
+
+      - _type: ReferenceField
+        _name: FDN_Immeuble
+        value: FDN_Immeuble
+        label: Immeuble
+        labelProperties:
+          alignment: left
+          typography: body-2
+          color: md:black
+        useCustomLabel: true
+        dataType: STRING
+        referencedEntity: Batiments.entities.Immeuble.Immeuble
+      - _type: ReferenceField
+        _name: FDN_TypeAffectation
+        value: FDN_TypeAffectation
+        label: Type d'affectation
+        labelProperties:
+          alignment: left
+          typography: body-2
+          color: md:black
+        useCustomLabel: true
+        dataType: STRING
+        referencedEntity: Batiments.entities.TypeAffectation.TypeAffectation
+
+
+      - _type: DateField
+        _name: DateDebAffectation
+        value: DateDebAffectation
+        labelProperties:
+          alignment: left
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+        componentProperties:                 
+          displayFormat: dd/MM/yyyy                
+          displayFormatValueInterpreter: LITERAL            
+          editingFormat: dd/MM/yyyy                 
+          editingFormatValueInterpreter: LITERAL
+        useCustomLabel: false
+        dataType: DATE
+                      
+
+
+      - _type: DateField
+        _name: DateFinAffectation
+        value: DateFinAffectation
+        labelProperties:
+          alignment: left
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+        componentProperties:                 
+          displayFormat: dd/MM/yyyy                
+          displayFormatValueInterpreter: LITERAL            
+          editingFormat: dd/MM/yyyy                 
+          editingFormatValueInterpreter: LITERAL
+        useCustomLabel: false
+        dataType: DATE
+                      

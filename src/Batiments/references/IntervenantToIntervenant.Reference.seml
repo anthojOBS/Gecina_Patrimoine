@@ -1,0 +1,34 @@
+_package: Batiments.references
+_type: Reference
+_name: IntervenantToIntervenant
+label: Intervenant Intervenant
+description: Référence Intervenant vers Intervenant de Intervenant
+fromRoleDocumentation: |
+  Cette référence définit le **Intervenant** d'un **Intervenant**.
+  
+  L'Intervenant caractérise la destination fonctionnelle du Intervenant (habitation, bureau, commerce, etc.).
+physicalName: INTERVENANT_REF
+
+fromEntity: Batiments.entities.Intervenant.Intervenant
+fromRoleLabel: Intervenant
+fromRoleName: Intervenant
+fromRolePluralLabel: Intervenants
+
+toEntity: Batiments.entities.Intervenant.Intervenant
+toRoleLabel: MatriculeManager
+toRoleName: MatriculeManager
+toRolePhysicalName: INTERVENANT_ID
+
+oneToMany: true
+deletePropagation: RESTRICT
+validationScope: NONE
+mandatoryValidationLabel: Le Matricule du Manager est obligatoire pour un Intervenant
+brokenValidationLabel: Le Matricule du Manager sélectionné est invalide pour ce Intervenant
+
+foreignAttribute:
+  _type: ForeignAttribute
+  _name: MatriculeManager
+  label: MatriculeManager
+  physicalName: INTERVENANT_ID
+  searchable: true
+  entity: Batiments.entities.Intervenant.Intervenant

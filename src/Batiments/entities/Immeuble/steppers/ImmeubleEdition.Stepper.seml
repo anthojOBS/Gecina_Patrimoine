@@ -265,10 +265,7 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true
-        - enricher: Batiments.entities.Immeuble.enrichers.DefautPeriodConstruct
-          executedOnButtonClick: false
-          executedOnDataChange: true
-          executedOnFormOpen: true
+
         - enricher: Batiments.entities.Immeuble.enrichers.DefautDtRestructuration
           executedOnButtonClick: false
           executedOnDataChange: true
@@ -277,41 +274,6 @@ rootStep:
           executedOnButtonClick: false
           executedOnDataChange: true
           executedOnFormOpen: true
-      formStepValidations: 
-        - validator: Batiments.entities.Immeuble.validations.CheckDtLivraisonAcquisition
-          executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: CHECK
-          attribute: Batiments.entities.Immeuble.Immeuble.DateLivraison
-        - validator: Batiments.entities.Immeuble.validations.CheckDtLivraison
-          executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: CHECK
-          attribute: Batiments.entities.Immeuble.Immeuble.DateLivraison
-        - validator: Batiments.entities.Immeuble.validations.CheckCoherenceDtConstruction
-          executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: CHECK
-          attribute: Batiments.entities.Immeuble.Immeuble.DateFinConstruction
-        - validator: Batiments.entities.Immeuble.validations.CheckPeriodeConstruction
-          executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: CHECK
-          attribute:  Batiments.references.ImmeubleToPeriodeConstruction.PeriodeConstruction
-      stepTransitionValidations:
-        - onStepExit: BLOCK
-          validationType: CHECK
-          validator: Batiments.entities.Immeuble.validations.CheckDtLivraisonAcquisition
-        - onStepExit: BLOCK
-          validationType: CHECK
-          validator: Batiments.entities.Immeuble.validations.CheckDtLivraison
-        - onStepExit: BLOCK
-          validationType: CHECK
-          validator: Batiments.entities.Immeuble.validations.CheckCoherenceDtConstruction
-        - onStepExit: BLOCK
-          validationType: CHECK
-          validator: Batiments.entities.Immeuble.validations.CheckPeriodeConstruction
-
 
     - _type: FormStep
       _name: FiscaliteJuridique
@@ -493,18 +455,6 @@ stepperFinishValidations:
         validationType: CHECK
         validator: Batiments.entities.Immeuble.validations.CheckQuartierParis
 
-      - onStepperFinish: BLOCK
-        validationType: CHECK
-        validator: Batiments.entities.Immeuble.validations.CheckCoherenceDtConstruction
-      - onStepperFinish: BLOCK
-        validationType: CHECK
-        validator: Batiments.entities.Immeuble.validations.CheckDtLivraisonAcquisition
-      - onStepperFinish: BLOCK
-        validationType: CHECK
-        validator: Batiments.entities.Immeuble.validations.CheckDtLivraison
-      - onStepperFinish: BLOCK
-        validationType: CHECK
-        validator: Batiments.entities.Immeuble.validations.CheckPeriodeConstruction
       - onStepperFinish: BLOCK
         validationType: MANDATORY
         attribute: Batiments.references.RelImmSocToSociete.Societe

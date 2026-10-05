@@ -154,20 +154,7 @@ tableColumns:
     referencedEntity: Batiments.entities.PeriodeConstruction.PeriodeConstruction
 
 
-  - _type: TextColumn
-    _name: DateDebutConstruction
-    value: DateDebutConstruction
-    useCustomLabel: false
-    dataType: DATE
-    columnAlign: LEFT
-    visibleByDefault: false
-  - _type: TextColumn
-    _name: DateFinConstruction
-    value: DateFinConstruction
-    useCustomLabel: false
-    dataType: DATE
-    columnAlign: LEFT
-    visibleByDefault: false
+
   - _type: TextColumn
     _name: DateLivraison
     value: DateLivraison

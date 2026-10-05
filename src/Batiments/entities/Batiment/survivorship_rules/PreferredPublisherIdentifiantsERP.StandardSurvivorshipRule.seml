@@ -13,8 +13,8 @@ attributes:
   - attributeName: IdentifiantsERP
 publisherRankings:
   - _type: ConsoPublisherRanking
-    publisher: Batiments.publishers.KSIOP
-  - _type: ConsoPublisherRanking
     publisher: Batiments.publishers.VisionReelle
+  - _type: ConsoPublisherRanking
+    publisher: Batiments.publishers.KSIOP
   - _type: ConsoPublisherRanking
     publisher: Batiments.publishers.SOLARE

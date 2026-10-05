@@ -92,10 +92,6 @@ rootStep:
         - executedOnDataChange: true
           executedOnFormOpen: true
           validationType: MANDATORY
-          attribute: Batiments.entities.Lot.Lot.Libelle
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
           attribute: Batiments.entities.Lot.Lot.IdentifiantsERP
         - executedOnDataChange: true
           executedOnFormOpen: true
@@ -146,9 +142,6 @@ rootStep:
         - onStepExit: BLOCK
           validationType: DETECT_DUPS
           matcher: Batiments.entities.Lot.Lot.Matcher
-        - onStepExit: BLOCK
-          validationType: MANDATORY
-          attribute: Batiments.entities.Lot.Lot.Libelle
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.entities.Lot.Lot.IdentifiantsERP
@@ -461,9 +454,6 @@ rootStep:
 stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: DETECT_DUPS
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.entities.Lot.Lot.Libelle
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.Lot.Lot.IdentifiantsERP

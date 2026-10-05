@@ -20,7 +20,7 @@ toRolePhysicalName: REGIME_JURIDIQUE_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: NONE
+validationScope: POST_CONSO
 mandatoryValidationLabel: Le régime juridique est obligatoire pour un immeuble
 brokenValidationLabel: Le régime juridique sélectionné est invalide pour cet immeuble
 

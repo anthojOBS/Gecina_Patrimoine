@@ -43,6 +43,14 @@ tableColumns:
     visibleByDefault: true
 
   - _type: TextColumn
+    _name: EtageSolare
+    value: EtageSolare
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
     _name: UpdateDate
     value: UpdateDate
     useCustomLabel: false

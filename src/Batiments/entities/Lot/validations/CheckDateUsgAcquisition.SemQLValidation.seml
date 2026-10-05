@@ -1,0 +1,8 @@
+_package: Batiments.entities.Lot.validations
+_name: CheckDateUsgAcquisition
+_type: SemQLValidation
+entity: Batiments.entities.Lot.Lot
+label: Coherence date d'usage / acquisition
+condition: (DateDebUsage >= Etage.Batiment.Immeuble.DateAcquisition) or DateDebUsage is null
+validationScope: NONE
+validationLabel: La date de début d'usage doit être postérieure à la date d'acquisition de l'immeuble. Vérifiez la date d'acquisition de l'immeuble.

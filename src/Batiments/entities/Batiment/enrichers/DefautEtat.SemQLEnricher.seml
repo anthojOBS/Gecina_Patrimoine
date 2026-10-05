@@ -3,7 +3,7 @@ _name: DefautEtat
 _type: SemQLEnricher
 entity: Batiments.entities.Batiment.Batiment
 label: Default Etat
-enricherExecutionScope: NONE
+enricherExecutionScope: POST_CONSO
 semQlEnricherExpressions: 
   - attributeName: FID_Etat
     expression: case when FID_Etat is NULL then 'EXP' else FID_Etat end

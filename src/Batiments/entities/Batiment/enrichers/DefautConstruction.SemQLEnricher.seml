@@ -7,10 +7,6 @@ enricherExecutionScope: NONE
 semQlEnricherExpressions: 
   - attributeName: DateAcquisition
     expression: Immeuble.DateAcquisition
-  - attributeName: DateDebutConstruction
-    expression: Immeuble.DateDebutConstruction
-  - attributeName: DateFinConstruction
-    expression: Immeuble.DateFinConstruction
   - attributeName: DateLivraison
     expression: Immeuble.DateLivraison
   - attributeName: FID_PeriodeConstruction

@@ -1,0 +1,51 @@
+_package: Batiments.entities.RoleImmeuble.action_sets
+_type: ActionSet
+_name: RoleImmeubleActionSet
+entity: Batiments.entities.RoleImmeuble.RoleImmeuble
+label: Rôle Immeuble Action Set
+defaultActionSet: true
+actions:
+  - _type: CreateAction
+    _name: CreateAuthorRoleImmeuble
+    label: Création
+    useCustomLabel: true
+    stepper: Batiments.entities.RoleImmeuble.steppers.AuthorRoleImmeuble
+    createMultiple: false
+    createdRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: EditAction
+    _name: EditAuthorPhases
+    label: Modification
+    useCustomLabel: true
+    stepper: Batiments.entities.RoleImmeuble.steppers.AuthorRoleImmeuble
+    multipleSelectionAllowed: true
+    availableForGoldenData: true
+    availableForMasterData: false
+    availableForErrorData: true
+    waitDialogEnabled: false
+
+  - _type: DeleteAction
+    _name: Delete
+    label: Suppression
+    useCustomLabel: true
+    multipleSelectionAllowed: true
+    deleteType: HARD_DELETE
+    waitDialogEnabled: false
+    availableForGoldenData: true
+    availableForMasterData: false
+    requiredRole: semarchyAdmin
+  - _type: ExportAction
+    _name: Export
+    label: Exporter
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: ImportAuthorPhases
+    label: Importer
+    useCustomLabel: true
+    importMode: CREATE_AND_UPDATE
+    stepper: Batiments.entities.RoleImmeuble.steppers.AuthorRoleImmeuble
+    importedRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true

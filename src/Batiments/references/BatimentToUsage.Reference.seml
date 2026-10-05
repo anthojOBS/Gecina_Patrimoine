@@ -20,7 +20,7 @@ toRolePhysicalName: USAGE_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: NONE
+validationScope: NONE # calcul via immeuble
 mandatoryValidationLabel: L'usage est obligatoire pour un bâtiment
 brokenValidationLabel: L'usage sélectionné est invalide pour ce bâtiment
 

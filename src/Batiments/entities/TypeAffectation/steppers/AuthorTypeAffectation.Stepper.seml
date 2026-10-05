@@ -1,0 +1,33 @@
+_package: Batiments.entities.TypeAffectation.steppers
+_type: Stepper
+_name: AuthorTypeAffectation
+entity: Batiments.entities.TypeAffectation.TypeAffectation
+label: Type d'énergie
+rootStep:
+  _type: CollectionStep
+  _name: TypeAffectation_collection
+  label: Types d'affectation
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.TypeAffectation.collection_views.TypeAffectationCollectionView
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: TypeAffectation
+      label: Type d'affectation
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.TypeAffectation.forms.TypeAffectationForm.TypeAffectation

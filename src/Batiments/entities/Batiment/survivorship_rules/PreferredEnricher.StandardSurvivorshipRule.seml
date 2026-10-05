@@ -7,11 +7,10 @@ description: ""
 documentation: ""
 defaultRule: false
 consolidationStrategy: PREFERRED_PUBLISHER
-consolidationSkipNulls: false
+consolidationSkipNulls: true
 overrideStrategy: UNTIL_CONSOLIDATED_VAL_CHANGE
 attributes:
   - attributeName: PeriodeConstruction
-  - attributeName: DateFinConstruction
 publisherRankings:
   - _type: ConsoPublisherRanking
     publisher: Batiments.publishers.KSIOP
