@@ -138,28 +138,28 @@ primaryKey: Batiments.entities.SousLot.SousLot.SousLotCode
 #   mode: SEQUENCE
 #   startWith: 1
 
-matcher:
-  _type: SemQLMatcher
-  _name: Matcher
-  description: BatimentSemQLMatcher
-  matchRules:
-    - _type: SemQLMatchRule
-      _name: NewRule
-      label: NewRuleLabel
-      condition:   Record1.IdentifiantsERP = Record2.IdentifiantsERP
-       and Record1.FID_Lot = Record2.FID_Lot
-      #  and ( (Record1.Lot.FID_Etage = Record2.Lot.FID_Etage) or ( Record1.Lot.FID_Etage is null ) or ( Record2.Lot.FID_Etage is null ) )
-      #  and Record1.Lot.Etage.FID_Batiment = Record2.Lot.Etage.FID_Batiment
-      matchScore: 100
-      usingMatchOn: false
-  useTransitiveMatchScore: true
-  useMultiIterationGrouping: true
-  mergeThresholdNewGroup: 90
-  mergeThresholdMergingUnconfirmed: 90
-  mergeThresholdMergingConfirmed: 90
-  mergeThresholdMergingConfirmedWithUnconfirmed: 90
-  mergeThresholdMergingUnconfirmedWithNewMasters: 90
-  mergeThresholdMergingConfirmedWithNewMasters: 90
-  mergeThresholdRemergingPreviouslySplit: 100
-  autoConfirmGoldenThreshold: 99
-  autoConfirmSingletons: false
+# matcher:
+#   _type: SemQLMatcher
+#   _name: Matcher
+#   description: BatimentSemQLMatcher
+#   matchRules:
+#     - _type: SemQLMatchRule
+#       _name: NewRule
+#       label: NewRuleLabel
+#       condition:   Record1.IdentifiantsERP = Record2.IdentifiantsERP
+#        and Record1.FID_Lot = Record2.FID_Lot
+#       #  and ( (Record1.Lot.FID_Etage = Record2.Lot.FID_Etage) or ( Record1.Lot.FID_Etage is null ) or ( Record2.Lot.FID_Etage is null ) )
+#       #  and Record1.Lot.Etage.FID_Batiment = Record2.Lot.Etage.FID_Batiment
+#       matchScore: 100
+#       usingMatchOn: false
+#   useTransitiveMatchScore: true
+#   useMultiIterationGrouping: true
+#   mergeThresholdNewGroup: 90
+#   mergeThresholdMergingUnconfirmed: 90
+#   mergeThresholdMergingConfirmed: 90
+#   mergeThresholdMergingConfirmedWithUnconfirmed: 90
+#   mergeThresholdMergingUnconfirmedWithNewMasters: 90
+#   mergeThresholdMergingConfirmedWithNewMasters: 90
+#   mergeThresholdRemergingPreviouslySplit: 100
+#   autoConfirmGoldenThreshold: 99
+#   autoConfirmSingletons: false

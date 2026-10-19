@@ -145,8 +145,8 @@ rootStep:
           executedOnFormOpen: true
 
 stepperFinishValidations:
-  - onStepperFinish: WARN
-    validationType: DETECT_DUPS
+  # - onStepperFinish: WARN
+  #   validationType: DETECT_DUPS
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY

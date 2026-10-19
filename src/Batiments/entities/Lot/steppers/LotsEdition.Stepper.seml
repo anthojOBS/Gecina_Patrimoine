@@ -428,8 +428,8 @@ rootStep:
     #       event: ON_STEP_EXIT_POST_VALID
 
 stepperFinishValidations:
-  - onStepperFinish: WARN
-    validationType: DETECT_DUPS
+  # - onStepperFinish: WARN
+  #   validationType: DETECT_DUPS
 
 
   - onStepperFinish: BLOCK

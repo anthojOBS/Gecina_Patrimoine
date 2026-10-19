@@ -20,15 +20,15 @@ historizeGolden: true
 historizeMaster: false
 enableDelete: true
 attributes:
-  # - _type: EntityAttribute
-  #   _name: ImmeubleID
-  #   label: Immeuble ID
-  #   physicalName: IMMEUBLE_ID
-  #   dataType: LongInteger
-  #   precision: 38
-  #   mandatory: true
-  #   searchable: true
-  #   description: "Identifiant unique de l'immeuble"
+  - _type: EntityAttribute
+    _name: ImmeubleID
+    label: Immeuble ID
+    physicalName: IMMEUBLE_ID
+    dataType: LongInteger
+    precision: 38
+    mandatory: true
+    searchable: true
+    description: "Identifiant unique de l'immeuble"
 
   - _type: EntityAttribute
     _name: IdentifiantREF
@@ -500,38 +500,38 @@ sourceIdGeneration:
   # idExpression: IdentifiantsERP
 
 
-primaryKey: Batiments.entities.Immeuble.Immeuble.IdentifiantsERP
+primaryKey: Batiments.entities.Immeuble.Immeuble.ImmeubleID
 
 # goldenIdGeneration:
 #   mode: SEQUENCE
 #   startWith: 1
 
-matcher:
-  _type: SemQLMatcher
-  _name: Matcher
-  description: ImmeubleSemQLMatcher
-  matchRules:
-    - _type: SemQLMatchRule
-      _name: NewRule
-      label: NewRuleLabel
-      condition: Record1.IdentifiantsERP = Record2.IdentifiantsERP
-      #  or (Record1.IdentifiantREF = Record2.IdentifiantREF and Record1.IdentifiantREF is not null )
-      matchScore: 100
-      usingMatchOn: false
-    - _type: SemQLMatchRule
-      _name: Address
-      label: NewRuleLabel
-      condition: Record1.AdresseEnrichie = Record2.AdresseEnrichie
-      matchScore: 80
-      usingMatchOn: false
-  useTransitiveMatchScore: true
-  useMultiIterationGrouping: true
-  mergeThresholdNewGroup: 90
-  mergeThresholdMergingUnconfirmed: 90
-  mergeThresholdMergingConfirmed: 90
-  mergeThresholdMergingConfirmedWithUnconfirmed: 90
-  mergeThresholdMergingUnconfirmedWithNewMasters: 90
-  mergeThresholdMergingConfirmedWithNewMasters: 90
-  mergeThresholdRemergingPreviouslySplit: 100
-  autoConfirmGoldenThreshold: 99
-  autoConfirmSingletons: true
+# matcher:
+#   _type: SemQLMatcher
+#   _name: Matcher
+#   description: ImmeubleSemQLMatcher
+#   matchRules:
+#     - _type: SemQLMatchRule
+#       _name: NewRule
+#       label: NewRuleLabel
+#       condition: Record1.IdentifiantsERP = Record2.IdentifiantsERP
+#       #  or (Record1.IdentifiantREF = Record2.IdentifiantREF and Record1.IdentifiantREF is not null )
+#       matchScore: 100
+#       usingMatchOn: false
+#     - _type: SemQLMatchRule
+#       _name: Address
+#       label: NewRuleLabel
+#       condition: Record1.AdresseEnrichie = Record2.AdresseEnrichie
+#       matchScore: 80
+#       usingMatchOn: false
+#   useTransitiveMatchScore: true
+#   useMultiIterationGrouping: true
+#   mergeThresholdNewGroup: 90
+#   mergeThresholdMergingUnconfirmed: 90
+#   mergeThresholdMergingConfirmed: 90
+#   mergeThresholdMergingConfirmedWithUnconfirmed: 90
+#   mergeThresholdMergingUnconfirmedWithNewMasters: 90
+#   mergeThresholdMergingConfirmedWithNewMasters: 90
+#   mergeThresholdRemergingPreviouslySplit: 100
+#   autoConfirmGoldenThreshold: 99
+#   autoConfirmSingletons: true

@@ -387,9 +387,9 @@ rootStep:
             - onStepExit: BLOCK
               validationType: MANDATORY
               attribute: Batiments.references.RelImmSocToTypeSociete.TypeSociete
-            - onStepExit: BLOCK
-              validationType: DETECT_DUPS
-              matcher: Batiments.entities.RelImmSoc.RelImmSoc.Matcher
+            # - onStepExit: BLOCK
+            #   validationType: DETECT_DUPS
+            #   matcher: Batiments.entities.RelImmSoc.RelImmSoc.Matcher
             - onStepExit: BLOCK
               validationType: CHECK
               validator: Batiments.entities.RelImmSoc.validations.CheckSocieteProprio_count

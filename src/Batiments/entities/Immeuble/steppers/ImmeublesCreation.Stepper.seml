@@ -267,9 +267,9 @@ rootStep:
           validationType: CHECK
           validator: Batiments.entities.Immeuble.validations.CheckQuartierParis
 
-        - onStepExit: WARN
-          validationType: DETECT_DUPS
-          matcher: Batiments.entities.Immeuble.Immeuble.Matcher
+        # - onStepExit: WARN
+        #   validationType: DETECT_DUPS
+        #   matcher: Batiments.entities.Immeuble.Immeuble.Matcher
 
         - onStepExit: WARN
           validationType: CHECK
@@ -463,8 +463,8 @@ rootStep:
     #           validator: Batiments.entities.RelImmSoc.validations.CheckSocieteProprio_count
 
 stepperFinishValidations:
-  - onStepperFinish: WARN
-    validationType: DETECT_DUPS
+  # - onStepperFinish: WARN
+  #   validationType: DETECT_DUPS
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY

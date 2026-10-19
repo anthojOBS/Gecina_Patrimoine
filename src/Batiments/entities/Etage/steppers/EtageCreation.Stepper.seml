@@ -43,18 +43,18 @@ rootStep:
         #   validationType: MANDATORY
         #   attribute: Batiments.references.EtageToBatiment.Batiment
 
-      stepTransitionValidations:
+      # stepTransitionValidations:
 
-        - onStepExit: BLOCK
-          validationType: DETECT_DUPS
-          matcher: Batiments.entities.Etage.Etage.Matcher
+      #   - onStepExit: BLOCK
+      #     validationType: DETECT_DUPS
+      #     matcher: Batiments.entities.Etage.Etage.Matcher
 
 stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.references.EtageToTypeEtage.TypeEtage
-  - onStepperFinish: BLOCK
-    validationType: DETECT_DUPS
+  # - onStepperFinish: BLOCK
+  #   validationType: DETECT_DUPS
 
   # - onStepperFinish: BLOCK
   #   validationType: MANDATORY

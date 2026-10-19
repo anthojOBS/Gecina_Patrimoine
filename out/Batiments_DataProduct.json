@@ -9531,31 +9531,6 @@
                     }
                 ],
                 "complexAttributes": [],
-                "matcher": {
-                    "_type": "SemQLMatcher",
-                    "qualifiedName": "Batiments.entities.SousLot.SousLot.Matcher",
-                    "autoConfirmGoldenThreshold": 99,
-                    "autoConfirmSingletons": false,
-                    "mergeThresholdMergingConfirmed": 90,
-                    "mergeThresholdMergingConfirmedWithNewMasters": 90,
-                    "mergeThresholdMergingConfirmedWithUnconfirmed": 90,
-                    "mergeThresholdMergingUnconfirmed": 90,
-                    "mergeThresholdMergingUnconfirmedWithNewMasters": 90,
-                    "mergeThresholdNewGroup": 90,
-                    "mergeThresholdRemergingPreviouslySplit": 100,
-                    "useMultiIterationGrouping": true,
-                    "useTransitiveMatchScore": true,
-                    "description": "BatimentSemQLMatcher",
-                    "matchRules": [
-                        {
-                            "qualifiedName": "Batiments.entities.SousLot.SousLot.Matcher.NewRule",
-                            "condition": "Record1.IdentifiantsERP = Record2.IdentifiantsERP and Record1.FID_Lot = Record2.FID_Lot",
-                            "matchScore": 100,
-                            "label": "NewRuleLabel",
-                            "usingMatchOn": false
-                        }
-                    ]
-                },
                 "abstractRowCheckConstraints": [
                     {
                         "qualifiedName": "Batiments.entities.SousLot.validations.CheckRaisonNonLouable",
@@ -13515,12 +13490,6 @@
                             {
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
-                                "type": "DETECT_DUPS",
-                                "matcher": "Batiments.entities.SousLot.SousLot.Matcher"
-                            },
-                            {
-                                "_type": "StepperFinishValidation",
-                                "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
                                 "attribute": "Batiments.entities.SousLot.SousLot.IdentifiantsERP"
                             },
@@ -13656,12 +13625,6 @@
                                     {
                                         "_type": "StepTransitionValidation",
                                         "onStepExit": "BLOCK",
-                                        "type": "DETECT_DUPS",
-                                        "matcher": "Batiments.entities.SousLot.SousLot.Matcher"
-                                    },
-                                    {
-                                        "_type": "StepTransitionValidation",
-                                        "onStepExit": "BLOCK",
                                         "type": "MANDATORY",
                                         "attribute": "Batiments.entities.SousLot.SousLot.IdentifiantsERP"
                                     },
@@ -13783,12 +13746,6 @@
                         "label": "Sous-lot",
                         "rootCollectionStep": "Batiments.entities.SousLot.steppers.SousLotsEdition.Lots",
                         "stepperFinishValidations": [
-                            {
-                                "_type": "StepperFinishValidation",
-                                "onStepperFinish": "WARN",
-                                "type": "DETECT_DUPS",
-                                "matcher": "Batiments.entities.SousLot.SousLot.Matcher"
-                            },
                             {
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
@@ -15314,31 +15271,6 @@
                 ],
                 "atomicAttributes": [],
                 "complexAttributes": [],
-                "matcher": {
-                    "_type": "SemQLMatcher",
-                    "qualifiedName": "Batiments.entities.RelLotSoc.RelLotSoc.Matcher",
-                    "autoConfirmGoldenThreshold": 99,
-                    "autoConfirmSingletons": false,
-                    "mergeThresholdMergingConfirmed": 90,
-                    "mergeThresholdMergingConfirmedWithNewMasters": 90,
-                    "mergeThresholdMergingConfirmedWithUnconfirmed": 90,
-                    "mergeThresholdMergingUnconfirmed": 90,
-                    "mergeThresholdMergingUnconfirmedWithNewMasters": 90,
-                    "mergeThresholdNewGroup": 90,
-                    "mergeThresholdRemergingPreviouslySplit": 100,
-                    "useMultiIterationGrouping": true,
-                    "useTransitiveMatchScore": true,
-                    "description": "BatimentSemQLMatcher",
-                    "matchRules": [
-                        {
-                            "qualifiedName": "Batiments.entities.RelLotSoc.RelLotSoc.Matcher.NewRule",
-                            "condition": "Record1.FID_Lot = Record2.FID_Lot and Record1.FID_TypeSociete = Record2.FID_TypeSociete and Record1.FID_Societe = Record2.FID_Societe",
-                            "matchScore": 100,
-                            "label": "NewRuleLabel",
-                            "usingMatchOn": false
-                        }
-                    ]
-                },
                 "abstractRowCheckConstraints": [],
                 "actionSets": [
                     {
@@ -15762,12 +15694,6 @@
                             {
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
-                                "type": "DETECT_DUPS",
-                                "matcher": "Batiments.entities.RelLotSoc.RelLotSoc.Matcher"
-                            },
-                            {
-                                "_type": "StepperFinishValidation",
-                                "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
                                 "attribute": "Batiments.references.RelLotSocToSociete.Societe"
                             },
@@ -15848,12 +15774,6 @@
                                 "label": "Relation lot société",
                                 "parentCollectionStep": "Batiments.entities.RelLotSoc.steppers.AuthorRelLotSoc.RelLotSoc",
                                 "stepTransitionValidations": [
-                                    {
-                                        "_type": "StepTransitionValidation",
-                                        "onStepExit": "BLOCK",
-                                        "type": "DETECT_DUPS",
-                                        "matcher": "Batiments.entities.RelLotSoc.RelLotSoc.Matcher"
-                                    },
                                     {
                                         "_type": "StepTransitionValidation",
                                         "onStepExit": "BLOCK",
@@ -15954,31 +15874,6 @@
                     }
                 ],
                 "complexAttributes": [],
-                "matcher": {
-                    "_type": "SemQLMatcher",
-                    "qualifiedName": "Batiments.entities.RelImmSoc.RelImmSoc.Matcher",
-                    "autoConfirmGoldenThreshold": 99,
-                    "autoConfirmSingletons": false,
-                    "mergeThresholdMergingConfirmed": 90,
-                    "mergeThresholdMergingConfirmedWithNewMasters": 90,
-                    "mergeThresholdMergingConfirmedWithUnconfirmed": 90,
-                    "mergeThresholdMergingUnconfirmed": 90,
-                    "mergeThresholdMergingUnconfirmedWithNewMasters": 90,
-                    "mergeThresholdNewGroup": 90,
-                    "mergeThresholdRemergingPreviouslySplit": 100,
-                    "useMultiIterationGrouping": true,
-                    "useTransitiveMatchScore": true,
-                    "description": "BatimentSemQLMatcher",
-                    "matchRules": [
-                        {
-                            "qualifiedName": "Batiments.entities.RelImmSoc.RelImmSoc.Matcher.NewRule",
-                            "condition": "Record1.FID_Immeuble = Record2.FID_Immeuble and Record1.FID_TypeSociete = Record2.FID_TypeSociete\nand ((Record1.FID_TypeSociete ='1' and (Record1.DateDebSociete = Record2.DateDebSociete or Record1.FID_Societe = Record2.FID_Societe)) or ( Record1.FID_TypeSociete ='2' and Record1.FID_Societe = Record2.FID_Societe ))",
-                            "matchScore": 100,
-                            "label": "NewRuleLabel",
-                            "usingMatchOn": false
-                        }
-                    ]
-                },
                 "abstractRowCheckConstraints": [
                     {
                         "qualifiedName": "Batiments.entities.RelImmSoc.validations.CheckSocieteProprio_count",
@@ -16605,12 +16500,6 @@
                             {
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
-                                "type": "DETECT_DUPS",
-                                "matcher": "Batiments.entities.RelImmSoc.RelImmSoc.Matcher"
-                            },
-                            {
-                                "_type": "StepperFinishValidation",
-                                "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
                                 "attribute": "Batiments.references.RelImmSocToSociete.Societe"
                             },
@@ -16725,12 +16614,6 @@
                                 "label": "Relation immeuble société",
                                 "parentCollectionStep": "Batiments.entities.RelImmSoc.steppers.AuthorRelImmSoc.RelImmSoc",
                                 "stepTransitionValidations": [
-                                    {
-                                        "_type": "StepTransitionValidation",
-                                        "onStepExit": "BLOCK",
-                                        "type": "DETECT_DUPS",
-                                        "matcher": "Batiments.entities.RelImmSoc.RelImmSoc.Matcher"
-                                    },
                                     {
                                         "_type": "StepTransitionValidation",
                                         "onStepExit": "BLOCK",
@@ -21544,31 +21427,6 @@
                     }
                 ],
                 "complexAttributes": [],
-                "matcher": {
-                    "_type": "SemQLMatcher",
-                    "qualifiedName": "Batiments.entities.Lot.Lot.Matcher",
-                    "autoConfirmGoldenThreshold": 99,
-                    "autoConfirmSingletons": false,
-                    "mergeThresholdMergingConfirmed": 90,
-                    "mergeThresholdMergingConfirmedWithNewMasters": 90,
-                    "mergeThresholdMergingConfirmedWithUnconfirmed": 90,
-                    "mergeThresholdMergingUnconfirmed": 90,
-                    "mergeThresholdMergingUnconfirmedWithNewMasters": 90,
-                    "mergeThresholdNewGroup": 90,
-                    "mergeThresholdRemergingPreviouslySplit": 100,
-                    "useMultiIterationGrouping": true,
-                    "useTransitiveMatchScore": true,
-                    "description": "LotSemQLMatcher",
-                    "matchRules": [
-                        {
-                            "qualifiedName": "Batiments.entities.Lot.Lot.Matcher.NewRule",
-                            "condition": "Record1.IdentifiantsERP = Record2.IdentifiantsERP and ((Record1.FID_Batiment = Record2.FID_Batiment) or   ( Record1.Etage.FID_Batiment = Record2.Etage.FID_Batiment) or   ( Record1.Etage.Batiment.FID_Immeuble = Record2.Etage.Batiment.FID_Immeuble))",
-                            "matchScore": 100,
-                            "label": "NewRuleLabel",
-                            "usingMatchOn": false
-                        }
-                    ]
-                },
                 "abstractRowCheckConstraints": [
                     {
                         "qualifiedName": "Batiments.entities.Lot.validations.CheckCoherenceTypo_Genre",
@@ -31388,12 +31246,6 @@
                             {
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
-                                "type": "DETECT_DUPS",
-                                "matcher": "Batiments.entities.Lot.Lot.Matcher"
-                            },
-                            {
-                                "_type": "StepperFinishValidation",
-                                "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
                                 "attribute": "Batiments.entities.Lot.Lot.IdentifiantsERP"
                             },
@@ -31677,12 +31529,6 @@
                                     {
                                         "_type": "StepTransitionValidation",
                                         "onStepExit": "BLOCK",
-                                        "type": "DETECT_DUPS",
-                                        "matcher": "Batiments.entities.Lot.Lot.Matcher"
-                                    },
-                                    {
-                                        "_type": "StepTransitionValidation",
-                                        "onStepExit": "BLOCK",
                                         "type": "MANDATORY",
                                         "attribute": "Batiments.entities.Lot.Lot.IdentifiantsERP"
                                     },
@@ -31913,12 +31759,6 @@
                         "label": "Lots",
                         "rootCollectionStep": "Batiments.entities.Lot.steppers.LotsEdition.Lots",
                         "stepperFinishValidations": [
-                            {
-                                "_type": "StepperFinishValidation",
-                                "onStepperFinish": "WARN",
-                                "type": "DETECT_DUPS",
-                                "matcher": "Batiments.entities.Lot.Lot.Matcher"
-                            },
                             {
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
@@ -33629,20 +33469,20 @@
                 "pluralLabel": "Immeuble",
                 "pkAttributes": [
                     {
-                        "qualifiedName": "Batiments.entities.Immeuble.Immeuble.IdentifiantsERP",
+                        "qualifiedName": "Batiments.entities.Immeuble.Immeuble.ImmeubleID",
                         "_type": "PKAttribute",
-                        "abstractAtomicType": "String",
+                        "abstractAtomicType": "LongInteger",
                         "goldenAttribute": true,
                         "i18ned": false,
                         "mandatory": true,
                         "multiValued": false,
-                        "physicalColName": "IDENTIFIANTS_ERP",
+                        "physicalColName": "IMMEUBLE_ID",
                         "valueSeparator": "",
-                        "description": "Numéro de l'immeuble",
-                        "documentation": "Identifiant fonctionnel utilisé au quotidien par les équipes opérationnelles.",
+                        "description": "Identifiant unique de l'immeuble",
                         "idGenerationType": "MANUAL",
-                        "label": "Numéro immeuble",
-                        "length": 100
+                        "label": "Immeuble ID",
+                        "precision": 38,
+                        "searchable": true
                     }
                 ],
                 "atomicAttributes": [
@@ -33661,6 +33501,24 @@
                         "valueSeparator": "",
                         "description": "Identifiant de référence de l'immeuble",
                         "label": "Identifiant REF",
+                        "length": 100
+                    },
+                    {
+                        "qualifiedName": "Batiments.entities.Immeuble.Immeuble.IdentifiantsERP",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": true,
+                        "mandatoryValidationLabel": "Numéro immeuble est obligatoire",
+                        "mandatoryValidationScope": "PRE_CONSO",
+                        "multiValued": false,
+                        "physicalColName": "IDENTIFIANTS_ERP",
+                        "valueSeparator": "",
+                        "description": "Numéro de l'immeuble",
+                        "documentation": "Identifiant fonctionnel utilisé au quotidien par les équipes opérationnelles.",
+                        "label": "Numéro immeuble",
                         "length": 100
                     },
                     {
@@ -34422,38 +34280,6 @@
                     }
                 ],
                 "complexAttributes": [],
-                "matcher": {
-                    "_type": "SemQLMatcher",
-                    "qualifiedName": "Batiments.entities.Immeuble.Immeuble.Matcher",
-                    "autoConfirmGoldenThreshold": 99,
-                    "autoConfirmSingletons": true,
-                    "mergeThresholdMergingConfirmed": 90,
-                    "mergeThresholdMergingConfirmedWithNewMasters": 90,
-                    "mergeThresholdMergingConfirmedWithUnconfirmed": 90,
-                    "mergeThresholdMergingUnconfirmed": 90,
-                    "mergeThresholdMergingUnconfirmedWithNewMasters": 90,
-                    "mergeThresholdNewGroup": 90,
-                    "mergeThresholdRemergingPreviouslySplit": 100,
-                    "useMultiIterationGrouping": true,
-                    "useTransitiveMatchScore": true,
-                    "description": "ImmeubleSemQLMatcher",
-                    "matchRules": [
-                        {
-                            "qualifiedName": "Batiments.entities.Immeuble.Immeuble.Matcher.NewRule",
-                            "condition": "Record1.IdentifiantsERP = Record2.IdentifiantsERP",
-                            "matchScore": 100,
-                            "label": "NewRuleLabel",
-                            "usingMatchOn": false
-                        },
-                        {
-                            "qualifiedName": "Batiments.entities.Immeuble.Immeuble.Matcher.Address",
-                            "condition": "Record1.AdresseEnrichie = Record2.AdresseEnrichie",
-                            "matchScore": 80,
-                            "label": "NewRuleLabel",
-                            "usingMatchOn": false
-                        }
-                    ]
-                },
                 "abstractRowCheckConstraints": [
                     {
                         "qualifiedName": "Batiments.entities.Immeuble.validations.CheckAscenseur",
@@ -47091,12 +46917,6 @@
                                     {
                                         "_type": "StepTransitionValidation",
                                         "onStepExit": "BLOCK",
-                                        "type": "DETECT_DUPS",
-                                        "matcher": "Batiments.entities.RelImmSoc.RelImmSoc.Matcher"
-                                    },
-                                    {
-                                        "_type": "StepTransitionValidation",
-                                        "onStepExit": "BLOCK",
                                         "type": "CHECK",
                                         "validator": "Batiments.entities.RelImmSoc.validations.CheckSocieteProprio_count"
                                     }
@@ -47213,12 +47033,6 @@
                         "label": "Immeubles",
                         "rootCollectionStep": "Batiments.entities.Immeuble.steppers.ImmeublesCreation.Immeubles",
                         "stepperFinishValidations": [
-                            {
-                                "_type": "StepperFinishValidation",
-                                "onStepperFinish": "WARN",
-                                "type": "DETECT_DUPS",
-                                "matcher": "Batiments.entities.Immeuble.Immeuble.Matcher"
-                            },
                             {
                                 "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
@@ -47729,12 +47543,6 @@
                                         "onStepExit": "BLOCK",
                                         "type": "CHECK",
                                         "validator": "Batiments.entities.Immeuble.validations.CheckQuartierParis"
-                                    },
-                                    {
-                                        "_type": "StepTransitionValidation",
-                                        "onStepExit": "WARN",
-                                        "type": "DETECT_DUPS",
-                                        "matcher": "Batiments.entities.Immeuble.Immeuble.Matcher"
                                     },
                                     {
                                         "_type": "StepTransitionValidation",
@@ -49399,31 +49207,6 @@
                     }
                 ],
                 "complexAttributes": [],
-                "matcher": {
-                    "_type": "SemQLMatcher",
-                    "qualifiedName": "Batiments.entities.Etage.Etage.Matcher",
-                    "autoConfirmGoldenThreshold": 99,
-                    "autoConfirmSingletons": true,
-                    "mergeThresholdMergingConfirmed": 90,
-                    "mergeThresholdMergingConfirmedWithNewMasters": 90,
-                    "mergeThresholdMergingConfirmedWithUnconfirmed": 90,
-                    "mergeThresholdMergingUnconfirmed": 90,
-                    "mergeThresholdMergingUnconfirmedWithNewMasters": 90,
-                    "mergeThresholdNewGroup": 90,
-                    "mergeThresholdRemergingPreviouslySplit": 100,
-                    "useMultiIterationGrouping": true,
-                    "useTransitiveMatchScore": true,
-                    "description": "EtageSemQLMatcher",
-                    "matchRules": [
-                        {
-                            "qualifiedName": "Batiments.entities.Etage.Etage.Matcher.NewRule",
-                            "condition": "Record1.FID_Batiment = Record2.FID_Batiment AND Record1.FID_TypeEtage = Record2.FID_TypeEtage",
-                            "matchScore": 100,
-                            "label": "NewRuleLabel",
-                            "usingMatchOn": false
-                        }
-                    ]
-                },
                 "abstractRowCheckConstraints": [],
                 "actionSets": [
                     {
@@ -50191,12 +49974,6 @@
                                 "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
                                 "attribute": "Batiments.references.EtageToTypeEtage.TypeEtage"
-                            },
-                            {
-                                "_type": "StepperFinishValidation",
-                                "onStepperFinish": "BLOCK",
-                                "type": "DETECT_DUPS",
-                                "matcher": "Batiments.entities.Etage.Etage.Matcher"
                             }
                         ],
                         "steps": [
@@ -50260,15 +50037,7 @@
                                 ],
                                 "formTab": "Batiments.entities.Etage.forms.EtageForm.Etage",
                                 "label": "Etage",
-                                "parentCollectionStep": "Batiments.entities.Etage.steppers.EtageCreation.Etages",
-                                "stepTransitionValidations": [
-                                    {
-                                        "_type": "StepTransitionValidation",
-                                        "onStepExit": "BLOCK",
-                                        "type": "DETECT_DUPS",
-                                        "matcher": "Batiments.entities.Etage.Etage.Matcher"
-                                    }
-                                ]
+                                "parentCollectionStep": "Batiments.entities.Etage.steppers.EtageCreation.Etages"
                             }
                         ]
                     },
@@ -50282,12 +50051,6 @@
                                 "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
                                 "attribute": "Batiments.references.EtageToTypeEtage.TypeEtage"
-                            },
-                            {
-                                "_type": "StepperFinishValidation",
-                                "onStepperFinish": "BLOCK",
-                                "type": "DETECT_DUPS",
-                                "matcher": "Batiments.entities.Etage.Etage.Matcher"
                             }
                         ],
                         "steps": [
@@ -50351,15 +50114,7 @@
                                 ],
                                 "formTab": "Batiments.entities.Etage.forms.EtageSuperficie.Etage",
                                 "label": "Etage",
-                                "parentCollectionStep": "Batiments.entities.Etage.steppers.EtageSuperficie.Etages",
-                                "stepTransitionValidations": [
-                                    {
-                                        "_type": "StepTransitionValidation",
-                                        "onStepExit": "BLOCK",
-                                        "type": "DETECT_DUPS",
-                                        "matcher": "Batiments.entities.Etage.Etage.Matcher"
-                                    }
-                                ]
+                                "parentCollectionStep": "Batiments.entities.Etage.steppers.EtageSuperficie.Etages"
                             }
                         ]
                     },
@@ -50862,6 +50617,23 @@
                 ],
                 "atomicAttributes": [
                     {
+                        "qualifiedName": "Batiments.entities.Batiment.Batiment.BatimentID",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "LongInteger",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "BATIMENT_ID",
+                        "valueSeparator": "",
+                        "label": "Batiment ID",
+                        "precision": 38,
+                        "searchable": true
+                    },
+                    {
                         "qualifiedName": "Batiments.entities.Batiment.Batiment.IdentifiantREF",
                         "_type": "AtomicAttribute",
                         "abstractAtomicType": "String",
@@ -51184,31 +50956,6 @@
                     }
                 ],
                 "complexAttributes": [],
-                "matcher": {
-                    "_type": "SemQLMatcher",
-                    "qualifiedName": "Batiments.entities.Batiment.Batiment.Matcher",
-                    "autoConfirmGoldenThreshold": 99,
-                    "autoConfirmSingletons": false,
-                    "mergeThresholdMergingConfirmed": 90,
-                    "mergeThresholdMergingConfirmedWithNewMasters": 90,
-                    "mergeThresholdMergingConfirmedWithUnconfirmed": 90,
-                    "mergeThresholdMergingUnconfirmed": 90,
-                    "mergeThresholdMergingUnconfirmedWithNewMasters": 90,
-                    "mergeThresholdNewGroup": 90,
-                    "mergeThresholdRemergingPreviouslySplit": 100,
-                    "useMultiIterationGrouping": true,
-                    "useTransitiveMatchScore": true,
-                    "description": "BatimentSemQLMatcher",
-                    "matchRules": [
-                        {
-                            "qualifiedName": "Batiments.entities.Batiment.Batiment.Matcher.NewRule",
-                            "condition": "((Record1.IdentifiantsERP = Record2.IdentifiantsERP) or ( Record1.Libelle_Batiment like '%unique%' or Record2.Libelle_Batiment like '%unique%' ) or ( Record1.IdentifiantsERP = 'PK' and Record2.AccesParking = '1' and  Record1.AdresseStandardise = Record2.AdresseStandardise)) and Record1.FID_Immeuble = Record2.FID_Immeuble",
-                            "matchScore": 100,
-                            "label": "NewRuleLabel",
-                            "usingMatchOn": false
-                        }
-                    ]
-                },
                 "abstractRowCheckConstraints": [
                     {
                         "qualifiedName": "Batiments.entities.Batiment.validations.CheckCoherenceVille",
@@ -57058,12 +56805,6 @@
                         "stepperFinishValidations": [
                             {
                                 "_type": "StepperFinishValidation",
-                                "onStepperFinish": "WARN",
-                                "type": "DETECT_DUPS",
-                                "matcher": "Batiments.entities.Batiment.Batiment.Matcher"
-                            },
-                            {
-                                "_type": "StepperFinishValidation",
                                 "onStepperFinish": "BLOCK",
                                 "type": "MANDATORY",
                                 "attribute": "Batiments.entities.Batiment.Batiment.Libelle_Batiment"
@@ -57296,12 +57037,6 @@
                                         "onStepExit": "BLOCK",
                                         "type": "CHECK",
                                         "validator": "Batiments.entities.Batiment.validations.CheckCoherenceVille"
-                                    },
-                                    {
-                                        "_type": "StepTransitionValidation",
-                                        "onStepExit": "WARN",
-                                        "type": "DETECT_DUPS",
-                                        "matcher": "Batiments.entities.Batiment.Batiment.Matcher"
                                     }
                                 ]
                             },

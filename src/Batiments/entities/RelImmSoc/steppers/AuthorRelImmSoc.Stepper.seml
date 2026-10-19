@@ -65,16 +65,16 @@ rootStep:
           attribute: Batiments.references.RelImmSocToTypeSociete.TypeSociete
 
       stepTransitionValidations:
-        - onStepExit: BLOCK
-          validationType: DETECT_DUPS
-          matcher: Batiments.entities.RelImmSoc.RelImmSoc.Matcher
+        # - onStepExit: BLOCK
+        #   validationType: DETECT_DUPS
+        #   matcher: Batiments.entities.RelImmSoc.RelImmSoc.Matcher
         - onStepExit: BLOCK
           validationType: CHECK
           validator: Batiments.entities.RelImmSoc.validations.CheckSocieteProprio_count
 
 stepperFinishValidations:
-  - onStepperFinish: BLOCK
-    validationType: DETECT_DUPS
+  # - onStepperFinish: BLOCK
+  #   validationType: DETECT_DUPS
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.references.RelImmSocToSociete.Societe

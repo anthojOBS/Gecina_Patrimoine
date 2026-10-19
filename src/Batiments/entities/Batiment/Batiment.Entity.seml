@@ -17,14 +17,14 @@ historizeGolden: true
 historizeMaster: false
 enableDelete: true
 attributes:
-  # - _type: EntityAttribute
-  #   _name: BatimentID
-  #   label: Batiment ID
-  #   physicalName: BATIMENT_ID
-  #   dataType: LongInteger
-  #   precision: 38
-  #   mandatory: true
-  #   searchable: true
+  - _type: EntityAttribute
+    _name: BatimentID
+    label: Batiment ID
+    physicalName: BATIMENT_ID
+    dataType: LongInteger
+    precision: 38
+    mandatory: false
+    searchable: true
 
   - _type: EntityAttribute
     _name: IdentifiantREF
@@ -221,28 +221,28 @@ primaryKey: Batiments.entities.Batiment.Batiment.IdentifiantsERP
 #   mode: SEQUENCE
 #   startWith: 1
 
-matcher:
-  _type: SemQLMatcher
-  _name: Matcher
-  description: BatimentSemQLMatcher
-  matchRules:
-    - _type: SemQLMatchRule
-      _name: NewRule
-      label: NewRuleLabel
-      condition: ((Record1.IdentifiantsERP = Record2.IdentifiantsERP) or 
-       ( Record1.Libelle_Batiment like '%unique%' or Record2.Libelle_Batiment like '%unique%' )
-        or ( Record1.IdentifiantsERP = 'PK' and Record2.AccesParking = '1' and  Record1.AdresseStandardise = Record2.AdresseStandardise)) 
-       and Record1.FID_Immeuble = Record2.FID_Immeuble
-      matchScore: 100
-      usingMatchOn: false
-  useTransitiveMatchScore: true
-  useMultiIterationGrouping: true
-  mergeThresholdNewGroup: 90
-  mergeThresholdMergingUnconfirmed: 90
-  mergeThresholdMergingConfirmed: 90
-  mergeThresholdMergingConfirmedWithUnconfirmed: 90
-  mergeThresholdMergingUnconfirmedWithNewMasters: 90
-  mergeThresholdMergingConfirmedWithNewMasters: 90
-  mergeThresholdRemergingPreviouslySplit: 100
-  autoConfirmGoldenThreshold: 99
-  autoConfirmSingletons: false
+# matcher:
+#   _type: SemQLMatcher
+#   _name: Matcher
+#   description: BatimentSemQLMatcher
+#   matchRules:
+#     - _type: SemQLMatchRule
+#       _name: NewRule
+#       label: NewRuleLabel
+#       condition: ((Record1.IdentifiantsERP = Record2.IdentifiantsERP) or 
+#        ( Record1.Libelle_Batiment like '%unique%' or Record2.Libelle_Batiment like '%unique%' )
+#         or ( Record1.IdentifiantsERP = 'PK' and Record2.AccesParking = '1' and  Record1.AdresseStandardise = Record2.AdresseStandardise)) 
+#        and Record1.FID_Immeuble = Record2.FID_Immeuble
+#       matchScore: 100
+#       usingMatchOn: false
+#   useTransitiveMatchScore: true
+#   useMultiIterationGrouping: true
+#   mergeThresholdNewGroup: 90
+#   mergeThresholdMergingUnconfirmed: 90
+#   mergeThresholdMergingConfirmed: 90
+#   mergeThresholdMergingConfirmedWithUnconfirmed: 90
+#   mergeThresholdMergingUnconfirmedWithNewMasters: 90
+#   mergeThresholdMergingConfirmedWithNewMasters: 90
+#   mergeThresholdRemergingPreviouslySplit: 100
+#   autoConfirmGoldenThreshold: 99
+#   autoConfirmSingletons: false

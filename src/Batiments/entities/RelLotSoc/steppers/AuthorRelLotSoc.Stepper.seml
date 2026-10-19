@@ -43,9 +43,9 @@ rootStep:
           attribute:  Batiments.references.RelLotSocToTypeSociete.TypeSociete
 
       stepTransitionValidations:
-        - onStepExit: BLOCK
-          validationType: DETECT_DUPS
-          matcher: Batiments.entities.RelLotSoc.RelLotSoc.Matcher
+        # - onStepExit: BLOCK
+        #   validationType: DETECT_DUPS
+        #   matcher: Batiments.entities.RelLotSoc.RelLotSoc.Matcher
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.references.RelLotSocToSociete.Societe
@@ -54,8 +54,8 @@ rootStep:
           attribute: Batiments.references.RelLotSocToTypeSociete.TypeSociete
 
 stepperFinishValidations:
-  - onStepperFinish: BLOCK
-    validationType: DETECT_DUPS
+  # - onStepperFinish: BLOCK
+  #   validationType: DETECT_DUPS
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.references.RelLotSocToSociete.Societe

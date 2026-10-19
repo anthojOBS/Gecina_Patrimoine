@@ -120,9 +120,9 @@ rootStep:
         - onStepExit: BLOCK
           validationType: CHECK
           validator: Batiments.entities.Batiment.validations.CheckCoherenceVille
-        - onStepExit: WARN
-          validationType: DETECT_DUPS
-          matcher: Batiments.entities.Batiment.Batiment.Matcher
+        # - onStepExit: WARN
+        #   validationType: DETECT_DUPS
+        #   matcher: Batiments.entities.Batiment.Batiment.Matcher
 
     - _type: FormStep
       _name: CycleDeVie
@@ -206,8 +206,8 @@ rootStep:
 
 stepperFinishValidations:
 
-  - onStepperFinish: WARN
-    validationType: DETECT_DUPS
+  # - onStepperFinish: WARN
+  #   validationType: DETECT_DUPS
 
   - onStepperFinish: BLOCK
     validationType: MANDATORY

@@ -71,9 +71,9 @@ rootStep:
 
 
       stepTransitionValidations:
-        - onStepExit: BLOCK
-          validationType: DETECT_DUPS
-          matcher: Batiments.entities.SousLot.SousLot.Matcher
+        # - onStepExit: BLOCK
+        #   validationType: DETECT_DUPS
+        #   matcher: Batiments.entities.SousLot.SousLot.Matcher
 
         - onStepExit: BLOCK
           validationType: MANDATORY
@@ -165,8 +165,8 @@ rootStep:
           executedOnFormOpen: true
 
 stepperFinishValidations:
-  - onStepperFinish: BLOCK
-    validationType: DETECT_DUPS
+  # - onStepperFinish: BLOCK
+  #   validationType: DETECT_DUPS
 
 
   - onStepperFinish: BLOCK

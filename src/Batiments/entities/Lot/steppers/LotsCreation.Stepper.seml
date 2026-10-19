@@ -146,9 +146,9 @@ rootStep:
           attribute: Batiments.references.LotToLot.LotOrigine
 
       stepTransitionValidations:
-        - onStepExit: BLOCK
-          validationType: DETECT_DUPS
-          matcher: Batiments.entities.Lot.Lot.Matcher
+        # - onStepExit: BLOCK
+        #   validationType: DETECT_DUPS
+        #   matcher: Batiments.entities.Lot.Lot.Matcher
         - onStepExit: BLOCK
           validationType: MANDATORY
           attribute: Batiments.entities.Lot.Lot.IdentifiantsERP
@@ -459,8 +459,8 @@ rootStep:
 
 
 stepperFinishValidations:
-  - onStepperFinish: BLOCK
-    validationType: DETECT_DUPS
+  # - onStepperFinish: BLOCK
+  #   validationType: DETECT_DUPS
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute: Batiments.entities.Lot.Lot.IdentifiantsERP
