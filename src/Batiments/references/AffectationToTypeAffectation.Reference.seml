@@ -6,7 +6,7 @@ description: Référence Affectation vers Type Affectation
 fromRoleDocumentation: |
   Cette référence détermine le **Type** d'une **Affectation** dans son cycle de vie.
   Le type indique la catégorie ou la nature de l'affectation (par exemple, location, vente, etc.).
-physicalName: AFFECTATION_TO_TYPE_REF
+physicalName: AFFECT_TO_TYPE_REF
 
 fromEntity: Batiments.entities.Affectation.Affectation
 fromRoleLabel: Affectation
@@ -16,7 +16,7 @@ fromRolePluralLabel: Affectations
 toEntity: Batiments.entities.TypeAffectation.TypeAffectation
 toRoleLabel: Type d'affectation
 toRoleName: TypeAffectation
-toRolePhysicalName: TYPE_AFFECTATION_ID
+toRolePhysicalName: TYPE_AFFECT_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
@@ -28,6 +28,6 @@ foreignAttribute:
   _type: ForeignAttribute
   _name: TypeAffectation
   label: Type d'affectation
-  physicalName: TYPE_AFFECTATION_ID
+  physicalName: TYPE_AFFECT_ID
   searchable: true
   entity: Batiments.entities.Affectation.Affectation

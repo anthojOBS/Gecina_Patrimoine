@@ -610,6 +610,43 @@ formTabs:
                           useCustomLabel: false
                           dataType: STRING
 
+  - _type: FormTab
+    _name: Intervenants
+    label: Intervenants
+    iconUrl: images://mdi/account-group.svg
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: ICON_LABEL
+    content:
+          # - _type: FormSection
+          #   _name: Intervenants
+          #   label: Intervenants
+          #   layoutDirection: COLUMN
+          #   visibleValue: "1"
+          #   visibleValueInterpreter: LITERAL
+
+            # content:
+              - _type: FormCollection
+                _name: Intervenants
+                label: Intervenants
+                pluralLabel: Intervenants
+                useCustomLabel: true
+                collection: Batiments.entities.Affectation.collection_views.AffectationImmeuble
+                actionSet: Batiments.entities.Affectation.action_sets.AffectationImmeuble
+                tableAllowed: true
+                listAllowed: false
+                gridAllowed: false
+                displayRecordCount: ALWAYS
+                enableUserDefinedSort: true
+                transitionPath: Affectation
+                sortExpression: 1 DESC
+                filter: 1=1
+                # filter: FID_TypeSociete = '1'
+                targetEntity: Batiments.entities.Affectation.Affectation
+                height: 600
+                formCollectionSearchConfigs:
+                  - enabled: true 
+                    searchType: TEXT
 
 
   - _type: FormTab

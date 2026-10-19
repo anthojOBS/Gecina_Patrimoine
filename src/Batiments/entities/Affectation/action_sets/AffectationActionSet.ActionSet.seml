@@ -9,37 +9,37 @@ actions:
     _name: CreateAuthorAffectation
     label: Création d'une affectation
     useCustomLabel: true
-    stepper: Batiments.entities.Affectation.steppers.AuthorAffectation
+    stepper: Batiments.entities.Affectation.steppers.Affectation
     createMultiple: false
     createdRecordType: GOLDEN
-    waitDialogEnabled: false
+    waitDialogEnabled: true
     allowOtherPublishers: true
   - _type: EditAction
     _name: EditAuthorAffectation
     label: Modification d'une affectation
     useCustomLabel: true
-    stepper: Batiments.entities.Affectation.steppers.AuthorAffectation
+    stepper: Batiments.entities.Affectation.steppers.Affectation
     multipleSelectionAllowed: true
     availableForGoldenData: true
     availableForMasterData: false
     availableForErrorData: true
-    waitDialogEnabled: false
+    waitDialogEnabled: true
   - _type: MassUpdateAction
     _name: MassUpdateAuthorAffectations
     label: Mise à jour de masse d'affectations
     useCustomLabel: true
-    stepper: Batiments.entities.Affectation.steppers.AuthorAffectation
+    stepper: Batiments.entities.Affectation.steppers.Affectation
     availableForGoldenData: true
     availableForErrorData: true
     availableForMasterData: false
-    waitDialogEnabled: false
+    waitDialogEnabled: true
   - _type: DeleteAction
     _name: Delete
     label: Suppression d'une affectation
     useCustomLabel: true
     multipleSelectionAllowed: true
     deleteType: HARD_DELETE
-    waitDialogEnabled: false
+    waitDialogEnabled: true
     availableForGoldenData: true
     availableForMasterData: false
     requiredRole: semarchyAdmin
@@ -47,13 +47,13 @@ actions:
     _name: Export
     label: Exporter
     useCustomLabel: true
-    waitDialogEnabled: false
+    waitDialogEnabled: true
   - _type: ImportAction
     _name: ImportAuthorAffectation
     label: Importer
     useCustomLabel: true
     importMode: CREATE_AND_UPDATE
-    stepper: Batiments.entities.Affectation.steppers.AuthorAffectation
+    stepper: Batiments.entities.Affectation.steppers.AffectationImport
     importedRecordType: GOLDEN
-    waitDialogEnabled: false
+    waitDialogEnabled: true
     allowOtherPublishers: true

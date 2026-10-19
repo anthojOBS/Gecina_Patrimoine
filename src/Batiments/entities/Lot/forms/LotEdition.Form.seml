@@ -2,7 +2,7 @@ _package: Batiments.entities.Lot.forms
 _type: Form
 _name: LotEdition
 entity: Batiments.entities.Lot.Lot
-default: true
+default: false
 formTabs:
   - _type: FormTab
     _name: Lot

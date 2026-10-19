@@ -3,7 +3,7 @@ _name: DefautConstruction
 _type: SemQLEnricher
 entity: Batiments.entities.Batiment.Batiment
 label: Defaut donnée construction
-enricherExecutionScope: NONE
+enricherExecutionScope: PRE_CONSO
 semQlEnricherExpressions: 
   - attributeName: DateAcquisition
     expression: Immeuble.DateAcquisition

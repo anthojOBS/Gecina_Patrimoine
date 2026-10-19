@@ -1,0 +1,9 @@
+_package: Batiments.entities.Batiment.enrichers
+_name: PrerequisImmeuble
+_type: SemQLEnricher
+entity: Batiments.entities.Batiment.Batiment
+label: Recuperation identifiant immeuble pour la pre alimentation
+enricherExecutionScope: PRE_CONSO
+semQlEnricherExpressions: 
+  - attributeName: IdentifiantsERP_immeuble
+    expression:  Immeuble.IdentifiantsERP

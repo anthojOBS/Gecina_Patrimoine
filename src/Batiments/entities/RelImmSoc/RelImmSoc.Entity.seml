@@ -3,13 +3,13 @@ _type: Entity
 _name: RelImmSoc
 label: Relation immeuble société
 pluralLabel: Relation immeuble société
-entityType: FUZZY_MATCHED
+entityType: BASIC
 physicalTableName: REL_IMM_SOC
 iconUrl: images://mdi/floor-plan.svg
 description: ""
 documentation: ""
 historizeGolden: true
-historizeMaster: true
+historizeMaster: false
 enableDelete: true
 attributes:
   - _type: EntityAttribute
@@ -29,7 +29,7 @@ attributes:
     dataType: Date
     mandatory: true
     mandatoryValidationLabel: "Date début sciété est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: PRE_CONSO
 
   - _type: EntityAttribute
     _name: DateFinSociete
@@ -43,7 +43,7 @@ attributes:
     label: Nombre de société proprietaire
     physicalName: NB_SOCIETE_PROPRIO
     dataType: ShortInteger
-    precision: 1
+    precision: 5
     mandatory: false
 
 sourceIdGeneration:
@@ -51,9 +51,9 @@ sourceIdGeneration:
 
 primaryKey: Batiments.entities.RelImmSoc.RelImmSoc.RelImmSocCode
 
-goldenIdGeneration:
-  mode: SEQUENCE
-  startWith: 1
+# goldenIdGeneration:
+#   mode: SEQUENCE
+#   startWith: 1
 
 matcher:
   _type: SemQLMatcher

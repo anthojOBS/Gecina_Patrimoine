@@ -3,7 +3,7 @@ _type: Entity
 _name: Lot
 label: Lot
 pluralLabel: Lots
-entityType: FUZZY_MATCHED
+entityType: BASIC
 physicalTableName: LOT
 iconUrl: images://mdi/floor-plan.svg
 description: ""
@@ -14,7 +14,7 @@ documentation: |
   
   Cette entité permet de gérer finement les espaces locatifs et de suivre leur occupation et leur rentabilité.
 historizeGolden: true
-historizeMaster: true
+historizeMaster: false
 enableDelete: true
 attributes:
   - _type: EntityAttribute
@@ -33,7 +33,7 @@ attributes:
     length: 100
     mandatory: true
     mandatoryValidationLabel: "Numéro lot est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: NONE
 
   - _type: EntityAttribute
     _name: SuperficieHabitable
@@ -138,7 +138,7 @@ attributes:
     dataType: Date
     mandatory: true
     mandatoryValidationLabel: "Date début usage est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: NONE
 
   - _type: EntityAttribute
     _name: DateDebStatut
@@ -170,6 +170,7 @@ attributes:
     label: Statut SNI
     physicalName: STATUT_SNI
     dataType: Boolean
+    length: 1
     mandatory: false
 
   - _type: EntityAttribute
@@ -177,6 +178,7 @@ attributes:
     label: Statut new lot
     physicalName: STATUT_NEW_LOT
     dataType: Boolean
+    length: 1
     mandatory: false
 
   - _type: EntityAttribute
@@ -184,6 +186,7 @@ attributes:
     label: Statut ERP
     physicalName: STATUT_ERP
     dataType: Boolean
+    length: 1
     mandatory: false
 
   - _type: EntityAttribute
@@ -191,6 +194,7 @@ attributes:
     label: Statut louable
     physicalName: STATUT_LOUABLE
     dataType: Boolean
+    length: 1
     mandatory: false
 
   - _type: EntityAttribute
@@ -198,6 +202,7 @@ attributes:
     label: Statut sous-location
     physicalName: STATUT_SOUS_LOCATION
     dataType: Boolean
+    length: 1
     mandatory: false
 
   - _type: EntityAttribute
@@ -205,6 +210,7 @@ attributes:
     label: Statut logement social
     physicalName: STATUT_LOGEMENT_SOCIAL
     dataType: Boolean
+    length: 1
     mandatory: false
 
   - _type: EntityAttribute
@@ -212,6 +218,7 @@ attributes:
     label: Statut meuble
     physicalName: STATUT_MEUBLE
     dataType: Boolean
+    length: 1
     mandatory: false
 
 
@@ -220,6 +227,7 @@ attributes:
     label: Statut PMR
     physicalName: STATUT_PMR
     dataType: Boolean
+    length: 1
     mandatory: false
 
   # - _type: EntityAttribute
@@ -305,6 +313,7 @@ attributes:
     label: Statut séjour
     physicalName: STATUT_SEJOUR
     dataType: Boolean
+    length: 1
     mandatory: false
   - _type: EntityAttribute
     _name: SuperficieSejour
@@ -318,6 +327,7 @@ attributes:
     label: Statut entrée
     physicalName: STATUT_ENTREE
     dataType: Boolean
+    length: 1
     mandatory: false
   - _type: EntityAttribute
     _name: Placards
@@ -352,24 +362,28 @@ attributes:
     label: Statut aménagement cuisine
     physicalName: STATUT_AMENAG_CUISINE
     dataType: Boolean
+    length: 1
     mandatory: false
   - _type: EntityAttribute
     _name: StatutPlaque
     label: Statut plaque
     physicalName: STATUT_PLAQUE
     dataType: Boolean
+    length: 1
     mandatory: false
   - _type: EntityAttribute
     _name: StatutHotte
     label: Statut hotte
     physicalName: STATUT_HOTTE
     dataType: Boolean
+    length: 1
     mandatory: false
   - _type: EntityAttribute
     _name: StatutRefrigerateur
     label: Statut réfrigérateur
     physicalName: STATUT_REFRIGERATEUR
     dataType: Boolean
+    length: 1
     mandatory: false
   - _type: EntityAttribute
     _name: PlanTravail
@@ -399,6 +413,7 @@ attributes:
     label: Statut terrasse
     physicalName: STATUT_TERRASSE
     dataType: Boolean
+    length: 1
     mandatory: false
   - _type: EntityAttribute
     _name: SuperficieTerrasse
@@ -412,6 +427,7 @@ attributes:
     label: Statut balcon
     physicalName: STATUT_BALCON
     dataType: Boolean
+    length: 1
     mandatory: false
   - _type: EntityAttribute
     _name: SuperficieBalcon
@@ -425,6 +441,7 @@ attributes:
     label: Statut loggia
     physicalName: STATUT_LOGGIA
     dataType: Boolean
+    length: 1
     mandatory: false
   - _type: EntityAttribute
     _name: SuperficieLoggia
@@ -438,6 +455,7 @@ attributes:
     label: Statut jardin
     physicalName: STATUT_JARDIN
     dataType: Boolean
+    length: 1
     mandatory: false
   - _type: EntityAttribute
     _name: SuperficieJardin
@@ -472,12 +490,14 @@ attributes:
 
 sourceIdGeneration:
   mode: MANUAL
+  # idExpression: Etage.EtageCode || '_' ||  Batiment.BatimentID || '_' || IdentifiantsERP
+  
 
 primaryKey: Batiments.entities.Lot.Lot.LotCode
 
-goldenIdGeneration:
-  mode: SEQUENCE
-  startWith: 1
+# goldenIdGeneration:
+#   mode: SEQUENCE
+#   startWith: 1
 
 matcher:
   _type: SemQLMatcher

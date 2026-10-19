@@ -5,5 +5,5 @@ entity: Batiments.entities.Immeuble.Immeuble
 label: Coherence secteur / zone immostat
 condition: FID_ZoneImmostat is null or (FID_SecteurImmostat is not null and FID_ZoneImmostat is not null
  and FID_ZoneImmostat = SecteurImmostat.FID_ZoneImmostat and FID_SecteurImmostat = SecteurImmostat.SecteurImmostatCode)
-validationScope: POST_CONSO
+validationScope: PRE_CONSO
 validationLabel: secteur / zone immostat non cohérent

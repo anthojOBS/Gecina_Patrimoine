@@ -148,15 +148,7 @@ entityPrivGrants:
     exportAllowed: false
     removeAllowed: false
     defaultAccessType: READ
-  - _type: EntityPrivGrant
-    entity: Batiments.entities.Service.Service
-    _name: Service
-    checkoutAllowed: false
-    createAllowed: false
-    deleteAllowed: false
-    exportAllowed: false
-    removeAllowed: false
-    defaultAccessType: READ
+
   - _type: EntityPrivGrant
     entity: Batiments.entities.DestinationTaxable.DestinationTaxable
     _name: DestinationTaxable
@@ -166,15 +158,15 @@ entityPrivGrants:
     exportAllowed: false
     removeAllowed: false
     defaultAccessType: READ
-  - _type: EntityPrivGrant
-    entity: Batiments.entities.Compteur.Compteur
-    _name: Compteur
-    checkoutAllowed: false
-    createAllowed: false
-    deleteAllowed: false
-    exportAllowed: false
-    removeAllowed: false
-    defaultAccessType: READ
+  # - _type: EntityPrivGrant
+  #   entity: Batiments.entities.Compteur.Compteur
+  #   _name: Compteur
+  #   checkoutAllowed: false
+  #   createAllowed: false
+  #   deleteAllowed: false
+  #   exportAllowed: false
+  #   removeAllowed: false
+  #   defaultAccessType: READ
   - _type: EntityPrivGrant
     entity: Batiments.entities.LocalisationCompteur.LocalisationCompteur
     _name: LocalisationCompteur
@@ -184,24 +176,8 @@ entityPrivGrants:
     exportAllowed: false
     removeAllowed: false
     defaultAccessType: READ
-  - _type: EntityPrivGrant
-    entity: Batiments.entities.Equipementier.Equipementier
-    _name: Equipementier
-    checkoutAllowed: false
-    createAllowed: false
-    deleteAllowed: false
-    exportAllowed: false
-    removeAllowed: false
-    defaultAccessType: READ
-  - _type: EntityPrivGrant
-    entity: Batiments.entities.TypeService.TypeService
-    _name: TypeService
-    checkoutAllowed: false
-    createAllowed: false
-    deleteAllowed: false
-    exportAllowed: false
-    removeAllowed: false
-    defaultAccessType: READ
+
+
   - _type: EntityPrivGrant
     entity: Batiments.entities.TypeVente.TypeVente
     _name: TypeVente
@@ -313,6 +289,48 @@ entityPrivGrants:
   - _type: EntityPrivGrant
     entity: Batiments.entities.Pays.Pays
     _name: Pays
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+
+# Intervenant
+
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.Intervenant.Intervenant
+    _name: Intervenant
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+    
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.Affectation.Affectation
+    _name: Affectation
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+    
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.RoleImmeuble.RoleImmeuble
+    _name: RoleImmeuble
+    checkoutAllowed: false
+    createAllowed: false
+    deleteAllowed: false
+    exportAllowed: false
+    removeAllowed: false
+    defaultAccessType: READ
+    
+  - _type: EntityPrivGrant
+    entity: Batiments.entities.TypeAffectation.TypeAffectation
+    _name: TypeAffectation
     checkoutAllowed: false
     createAllowed: false
     deleteAllowed: false

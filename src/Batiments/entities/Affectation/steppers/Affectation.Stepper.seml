@@ -1,0 +1,55 @@
+_package: Batiments.entities.Affectation.steppers
+_type: Stepper
+_name: Affectation
+entity: Batiments.entities.Affectation.Affectation
+label: Affectation
+rootStep:
+  _type: CollectionStep
+  _name: Affectation_collection
+  label: Affectation
+  canFinishSubLevel: true
+  enabledOnParentCreate: true
+  enabledOnParentEdit: true
+  formFieldsMode: AUTO
+  linear: false
+  childDeleteType: HARD_DELETE
+  collectionView: Batiments.entities.Affectation.collection_views.Affectation
+  defaultDisplayType: TABLE
+  customSortEnabled: false
+  userDefinedSortEnabled: true
+  displayGridAllowed: false
+  displayListAllowed: true
+  displayTableAllowed: true
+  useCustomCollectionLabel: false
+  childSteps:
+    - _type: FormStep
+      _name: Affectation
+      label: Affectation
+      canFinishSubLevel: true
+      enabledOnParentCreate: true
+      enabledOnParentEdit: true
+      formFieldsMode: AUTO
+      enableMasterValuePicking: false
+      formTab: Batiments.entities.Affectation.forms.AffectationForm.Affectation
+
+
+      formStepEnrichers:  
+        - enricher: Batiments.entities.Affectation.enrichers.PluginImmeuble
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false
+        - enricher: Batiments.entities.Affectation.enrichers.Immeuble_import
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false  
+
+      # stepTriggers:
+      #   - _type: StepEnricherTrigger
+      #     _name: AlimImmeuble  
+      #     enricher: Batiments.entities.Affectation.enrichers.PluginImmeuble
+      #     event: ON_STEP_CLOSE
+      #   - _type: StepEnricherTrigger
+      #     _name: Immeuble_import  
+      #     enricher: Batiments.entities.Affectation.enrichers.Immeuble_import
+      #     event: ON_STEP_CLOSE
+    

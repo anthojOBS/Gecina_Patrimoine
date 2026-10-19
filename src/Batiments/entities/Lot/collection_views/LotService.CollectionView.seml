@@ -2,7 +2,7 @@ _package: Batiments.entities.Lot.collection_views
 _type: CollectionView
 _name: LotService
 entity: Batiments.entities.Lot.Lot
-default: true
+default: false
 displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
 gridAllowed: false
 gridColumns: 4

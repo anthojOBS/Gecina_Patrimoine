@@ -3,13 +3,13 @@ _type: Entity
 _name: RelLotSoc
 label: Relation lot société
 pluralLabel: Relation lot société
-entityType: FUZZY_MATCHED
+entityType: BASIC
 physicalTableName: REL_LOT_SOCIETE
 iconUrl: images://mdi/floor-plan.svg
 description: ""
 documentation: ""
 historizeGolden: true
-historizeMaster: true
+historizeMaster: false
 enableDelete: true
 attributes:
   - _type: EntityAttribute
@@ -26,9 +26,9 @@ sourceIdGeneration:
 
 primaryKey: Batiments.entities.RelLotSoc.RelLotSoc.RelLotSocCode
 
-goldenIdGeneration:
-  mode: SEQUENCE
-  startWith: 1
+# goldenIdGeneration:
+#   mode: SEQUENCE
+#   startWith: 1
 
 matcher:
   _type: SemQLMatcher

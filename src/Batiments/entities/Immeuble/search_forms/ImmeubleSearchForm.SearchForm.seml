@@ -21,7 +21,6 @@ semQlCondition: (:SEARCH_PARAM_IDENTIFIANTS_ERP is null OR IdentifiantsERP = :SE
  AND (:SEARCH_PARAM_REGIME_JURIDIQUE is null OR FID_RegimeJuridique = :SEARCH_PARAM_REGIME_JURIDIQUE) 
  AND (:SEARCH_PARAM_SOCIETE_PROPRIETAIRE is null OR (  any RelImmSoc has ( FID_Societe = :SEARCH_PARAM_SOCIETE_PROPRIETAIRE) ) )
  AND (:SEARCH_PARAM_SOCIETE_EXPLOITANTE is null OR (  any RelImmSoc has ( FID_Societe = :SEARCH_PARAM_SOCIETE_EXPLOITANTE) ) )
- AND (:SEARCH_PARAM_SERVICE is null OR (  any Batiment.Etage.Lot.Service has ( FID_TypeService = :SEARCH_PARAM_SERVICE) ) )
 
 searchParameters:
   - _name: IdentifiantsERP
@@ -180,6 +179,7 @@ searchParameters:
     bindVariableName: SEARCH_PARAM_IGH
     label: Statut IGH
     dataType: Boolean
+    length: 1
     displayType: VALUE_PICKER
     boundSelectExpression: IGH
     primaryTextExpression: case when IGH = '0' or IGH is null then 'Inactif' else 'Actif' end
@@ -194,6 +194,7 @@ searchParameters:
     bindVariableName: SEARCH_PARAM_ERP
     label: Statut ERP
     dataType: Boolean
+    length: 1
     displayType: VALUE_PICKER
     boundSelectExpression: ERP
     primaryTextExpression: case when ERP = '0' or ERP is null then 'Inactif' else 'Actif' end
@@ -205,24 +206,14 @@ searchParameters:
     displayCount: false
     lookupEntity: Batiments.entities.Immeuble.Immeuble
     
-  - _name: Service
-    _type: SearchParameter
-    bindVariableName: SEARCH_PARAM_SERVICE
-    label: Services
-    dataType: String
-    length: 255
-    displayType: VALUE_PICKER
-    boundSelectExpression: FID_TypeService
-    primaryTextExpression: FDN_TypeService
-    useDistinct: true
-    displayCount: false
-    lookupEntity: Batiments.entities.Service.Service
+
 
   - _name: FlagRestructuration
     _type: SearchParameter
     bindVariableName: SEARCH_PARAM_FLAG_RESTRUCTURATION
     label: Flag restructuration
     dataType: Boolean
+    length: 1
     filterExpression: (:SEARCH_PARAM_ORGARESP is null OR FID_OrgaResp = :SEARCH_PARAM_ORGARESP) 
       AND (:SEARCH_PARAM_PORTEFEUILLE is null OR FID_Portefeuille = :SEARCH_PARAM_PORTEFEUILLE) 
       AND (:SEARCH_PARAM_SSPORTEFEUILLE is null OR FID_SousPortefeuille = :SEARCH_PARAM_SSPORTEFEUILLE)

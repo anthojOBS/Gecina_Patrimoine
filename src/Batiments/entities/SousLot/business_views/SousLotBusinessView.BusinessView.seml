@@ -59,30 +59,30 @@ rootBusinessViewEntity:
         ref: Batiments.entities.SousLot.business_views.SousLotBusinessView.SousLot
       filter: 1 = 1
 
-    - _type: BusinessViewTransition
-      _name: MasterRecords
-      displayFormTabAs: ICON_LABEL
-      useCustomLabel: false
-      enableHierarchyInterpreter: LITERAL
-      filter: 1=1
-      iconUrl: images://mdi/puzzle.svg
-      label: Masters Records
-      pluralLabel: Masters Records
-      transitionType: FULLY_QUALIFIED
-      transitionPath:  MasterRecords
-      visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
-      businessViewEntity:
-        _type: BusinessViewEntity
-        _name: MasterRecord
-        displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
-        entity: Batiments.entities.SousLot.SousLot
-        actionSet: Batiments.entities.SousLot.action_sets.SousLotActionSet
-        collection: Batiments.entities.SousLot.collection_views.SousLotCollectionView
-        form: Batiments.entities.SousLot.forms.SousLotConsultation
-        displayRecordCount: ALWAYS
-        outlineVisible: false
-        enableUserDefinedSort: true
-        gridAllowed: true
-        listAllowed: true
-        overrideDefaultSort: false
-        tableAllowed: true
+    # - _type: BusinessViewTransition
+    #   _name: MasterRecords
+    #   displayFormTabAs: ICON_LABEL
+    #   useCustomLabel: false
+    #   enableHierarchyInterpreter: LITERAL
+    #   filter: 1=1
+    #   iconUrl: images://mdi/puzzle.svg
+    #   label: Masters Records
+    #   pluralLabel: Masters Records
+    #   transitionType: FULLY_QUALIFIED
+    #   transitionPath:  MasterRecords
+    #   visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
+    #   businessViewEntity:
+    #     _type: BusinessViewEntity
+    #     _name: MasterRecord
+    #     displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
+    #     entity: Batiments.entities.SousLot.SousLot
+    #     actionSet: Batiments.entities.SousLot.action_sets.SousLotActionSet
+    #     collection: Batiments.entities.SousLot.collection_views.SousLotCollectionView
+    #     form: Batiments.entities.SousLot.forms.SousLotConsultation
+    #     displayRecordCount: ALWAYS
+    #     outlineVisible: false
+    #     enableUserDefinedSort: true
+    #     gridAllowed: true
+    #     listAllowed: true
+    #     overrideDefaultSort: false
+    #     tableAllowed: true

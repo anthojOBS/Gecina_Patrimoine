@@ -2,7 +2,7 @@ _package: Batiments.entities.Lot.forms
 _type: Form
 _name: LotCreation
 entity: Batiments.entities.Lot.Lot
-default: true
+default: false
 formTabs:
   - _type: FormTab
     _name: Lot
@@ -43,11 +43,27 @@ formTabs:
                     useCustomLabel: true
                     dataType: STRING
                     
+                  - _type: ReferenceField
+                    _name: Batment
+                    value: FDN_Batiment
+                    label: Batment
+                    displayCard: Batiments.entities.Batiment.display_cards.BatimentImm
+                    authoringMode: auto
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+                    useCustomLabel: true
+                    dataType: STRING
+                    referencedEntity: Batiments.entities.Batiment.Batiment
+
 
                   - _type: ReferenceField
                     _name: FDN_Etage
                     value: FDN_Etage
                     label: Etage
+                    displayCard: Batiments.entities.Etage.display_cards.EtageLot
                     authoringMode: auto
                     labelProperties:
                       alignment: left

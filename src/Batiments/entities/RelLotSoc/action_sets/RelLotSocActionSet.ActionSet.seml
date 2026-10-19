@@ -21,7 +21,7 @@ actions:
     stepper: Batiments.entities.RelLotSoc.steppers.AuthorRelLotSoc
     multipleSelectionAllowed: true
     availableForGoldenData: true
-    availableForMasterData: true
+    availableForMasterData: false
     availableForErrorData: true
     waitDialogEnabled: false
   - _type: DeleteAction
@@ -44,7 +44,7 @@ actions:
     useCustomLabel: true
     importMode: CREATE_AND_UPDATE
     stepper: Batiments.entities.RelLotSoc.steppers.AuthorRelLotSoc
-    importedRecordType: MASTER
+    importedRecordType: GOLDEN
     waitDialogEnabled: false
     allowOtherPublishers: true
   - _type: BrowseGraphAction
@@ -52,39 +52,39 @@ actions:
     label: Browse Graph
     useCustomLabel: true
     waitDialogEnabled: false
-  - _type: DirectConfirmDupsAction
-    _name: DirectConfirmDuplicates
-    label: Direct Confirm Duplicates
-    useCustomLabel: false
-    waitDialogEnabled: false
-  - _type: ReviewAndConfirm
-    _name: ReviewAndConfirmDuplicatesManageDuplicatesOnRelLotSoc
-    label: Review and Confirm Duplicates
-    useCustomLabel: true
-    dupsManager: Batiments.entities.RelLotSoc.dups_managers.ManageDuplicatesOnRelLotSoc
-    enableEdit: true
-    mandateConfirmAll: false
-    waitDialogEnabled: false
-  - _type: MergeOrSplit
-    _name: MergeOrSplitDuplicatesManageDuplicatesOnRelLotSoc
-    label: Merge Or Split Duplicates
-    useCustomLabel: true
-    dupsManager: Batiments.entities.RelLotSoc.dups_managers.ManageDuplicatesOnRelLotSoc
-    enableEdit: true
-    waitDialogEnabled: false
-  - _type: ReviewSuggestions
-    _name: ReviewSuggestionsDuplicatesManageDuplicatesOnRelLotSoc
-    label: Review Duplicates Suggestions
-    useCustomLabel: true
-    dupsManager: Batiments.entities.RelLotSoc.dups_managers.ManageDuplicatesOnRelLotSoc
-    enableEdit: true
-    waitDialogEnabled: false
-    onAcceptPromptGoldenId: false
-    mandateResolveAllSuggestions: false
-  - _type: ExplainRecordAction
-    _name: ExplainRecord
-    label: Explain Record
-    useCustomLabel: true
-    displayCard: Batiments.entities.RelLotSoc.display_cards.RelLotSocDisplayCard
-    formTab: Batiments.entities.RelLotSoc.forms.RelLotSocForm.RelLotSoc
-    waitDialogEnabled: false
+  # - _type: DirectConfirmDupsAction
+  #   _name: DirectConfirmDuplicates
+  #   label: Direct Confirm Duplicates
+  #   useCustomLabel: false
+  #   waitDialogEnabled: false
+  # - _type: ReviewAndConfirm
+  #   _name: ReviewAndConfirmDuplicatesManageDuplicatesOnRelLotSoc
+  #   label: Review and Confirm Duplicates
+  #   useCustomLabel: true
+  #   dupsManager: Batiments.entities.RelLotSoc.dups_managers.ManageDuplicatesOnRelLotSoc
+  #   enableEdit: true
+  #   mandateConfirmAll: false
+  #   waitDialogEnabled: false
+  # - _type: MergeOrSplit
+  #   _name: MergeOrSplitDuplicatesManageDuplicatesOnRelLotSoc
+  #   label: Merge Or Split Duplicates
+  #   useCustomLabel: true
+  #   dupsManager: Batiments.entities.RelLotSoc.dups_managers.ManageDuplicatesOnRelLotSoc
+  #   enableEdit: true
+  #   waitDialogEnabled: false
+  # - _type: ReviewSuggestions
+  #   _name: ReviewSuggestionsDuplicatesManageDuplicatesOnRelLotSoc
+  #   label: Review Duplicates Suggestions
+  #   useCustomLabel: true
+  #   dupsManager: Batiments.entities.RelLotSoc.dups_managers.ManageDuplicatesOnRelLotSoc
+  #   enableEdit: true
+  #   waitDialogEnabled: false
+  #   onAcceptPromptGoldenId: false
+  #   mandateResolveAllSuggestions: false
+  # - _type: ExplainRecordAction
+  #   _name: ExplainRecord
+  #   label: Explain Record
+  #   useCustomLabel: true
+  #   displayCard: Batiments.entities.RelLotSoc.display_cards.RelLotSocDisplayCard
+  #   formTab: Batiments.entities.RelLotSoc.forms.RelLotSocForm.RelLotSoc
+  #   waitDialogEnabled: false

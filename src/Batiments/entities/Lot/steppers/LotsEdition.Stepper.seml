@@ -70,7 +70,7 @@ rootStep:
           # referencePickerSearchTypeConfigs: []
 
       formStepEnrichers:   
-        - enricher: Batiments.entities.Lot.enrichers.DefautDtDebUsage
+        - enricher: Batiments.entities.Lot.enrichers.Init_date
           executedOnButtonClick: false
           executedOnDataChange: false
           executedOnFormOpen: true

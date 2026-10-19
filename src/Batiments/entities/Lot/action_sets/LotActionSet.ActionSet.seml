@@ -13,7 +13,8 @@ actions:
     createMultiple: false
     createdRecordType: GOLDEN
     waitDialogEnabled: false
-    allowOtherPublishers: true
+    allowOtherPublishers: false
+    defaultPublisher: Batiments.publishers.IHM
   - _type: EditAction
     _name: EditAuthorLots
     label: Modification lot
@@ -21,7 +22,7 @@ actions:
     stepper: Batiments.entities.Lot.steppers.LotsEdition
     multipleSelectionAllowed: true
     availableForGoldenData: true
-    availableForMasterData: true
+    availableForMasterData: false
     availableForErrorData: true
     waitDialogEnabled: false
 
@@ -32,7 +33,7 @@ actions:
     stepper: Batiments.entities.Lot.steppers.LotsEdition
     availableForGoldenData: true
     availableForErrorData: true
-    availableForMasterData: true
+    availableForMasterData: false
     waitDialogEnabled: false
   - _type: DeleteAction
     _name: Delete
@@ -55,7 +56,7 @@ actions:
     useCustomLabel: true
     importMode: CREATE_AND_UPDATE
     stepper: Batiments.entities.Lot.steppers.LotsConsultation
-    importedRecordType: MASTER
+    importedRecordType: GOLDEN
     waitDialogEnabled: false
     allowOtherPublishers: true
   - _type: BrowseGraphAction
@@ -64,39 +65,39 @@ actions:
     useCustomLabel: true
     waitDialogEnabled: false
     requiredRole: semarchyAdmin
-  - _type: DirectConfirmDupsAction
-    _name: DirectConfirmDuplicates
-    label: Confirmer doublons directement
-    useCustomLabel: false
-    waitDialogEnabled: false
-  - _type: ReviewAndConfirm
-    _name: ReviewAndConfirmDuplicatesManageDuplicatesOnLot
-    label: Revue and Validation doublons
-    useCustomLabel: true
-    dupsManager: Batiments.entities.Lot.dups_managers.ManageDuplicatesOnLot
-    enableEdit: true
-    mandateConfirmAll: false
-    waitDialogEnabled: false
-  - _type: MergeOrSplit
-    _name: MergeOrSplitDuplicatesManageDuplicatesOnLot
-    label: Fusion et défusion
-    useCustomLabel: true
-    dupsManager: Batiments.entities.Lot.dups_managers.ManageDuplicatesOnLot
-    enableEdit: true
-    waitDialogEnabled: false
-  - _type: ReviewSuggestions
-    _name: ReviewSuggestionsDuplicatesManageDuplicatesOnLot
-    label: Suggestions de doublons
-    useCustomLabel: true
-    dupsManager: Batiments.entities.Lot.dups_managers.ManageDuplicatesOnLot
-    enableEdit: true
-    waitDialogEnabled: false
-    onAcceptPromptGoldenId: false
-    mandateResolveAllSuggestions: false
-  - _type: ExplainRecordAction
-    _name: ExplainRecord
-    label: Expliquer l'enregistrement
-    useCustomLabel: true
-    displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
-    formTab: Batiments.entities.Lot.forms.LotExplication.Lot
-    waitDialogEnabled: false
+  # - _type: DirectConfirmDupsAction
+  #   _name: DirectConfirmDuplicates
+  #   label: Confirmer doublons directement
+  #   useCustomLabel: false
+  #   waitDialogEnabled: false
+  # - _type: ReviewAndConfirm
+  #   _name: ReviewAndConfirmDuplicatesManageDuplicatesOnLot
+  #   label: Revue and Validation doublons
+  #   useCustomLabel: true
+  #   dupsManager: Batiments.entities.Lot.dups_managers.ManageDuplicatesOnLot
+  #   enableEdit: true
+  #   mandateConfirmAll: false
+  #   waitDialogEnabled: false
+  # - _type: MergeOrSplit
+  #   _name: MergeOrSplitDuplicatesManageDuplicatesOnLot
+  #   label: Fusion et défusion
+  #   useCustomLabel: true
+  #   dupsManager: Batiments.entities.Lot.dups_managers.ManageDuplicatesOnLot
+  #   enableEdit: true
+  #   waitDialogEnabled: false
+  # - _type: ReviewSuggestions
+  #   _name: ReviewSuggestionsDuplicatesManageDuplicatesOnLot
+  #   label: Suggestions de doublons
+  #   useCustomLabel: true
+  #   dupsManager: Batiments.entities.Lot.dups_managers.ManageDuplicatesOnLot
+  #   enableEdit: true
+  #   waitDialogEnabled: false
+  #   onAcceptPromptGoldenId: false
+  #   mandateResolveAllSuggestions: false
+  # - _type: ExplainRecordAction
+  #   _name: ExplainRecord
+  #   label: Expliquer l'enregistrement
+  #   useCustomLabel: true
+  #   displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
+  #   formTab: Batiments.entities.Lot.forms.LotExplication.Lot
+  #   waitDialogEnabled: false

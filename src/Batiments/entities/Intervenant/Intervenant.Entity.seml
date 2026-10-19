@@ -5,6 +5,7 @@ label: Intervenant
 pluralLabel: Intervenants
 entityType: BASIC
 physicalTableName: INTERVENANT
+iconUrl: images://mdi/account.svg
 description: Intervenant
 documentation: Intervenant
 historizeGolden: true
@@ -20,14 +21,34 @@ attributes:
     mandatory: false
     searchable: false
 
+  # - _type: EntityAttribute
+  #   _name: NomPrenom
+  #   label: Nom, prénom
+  #   physicalName: NOM_PRENOM
+  #   dataType: String
+  #   length: 100
+  #   mandatory: false
+  #   searchable: false
+
+
   - _type: EntityAttribute
-    _name: NomPrenom
-    label: Nom, prénom
-    physicalName: NOM_PRENOM
+    _name: Nom
+    label: Nom
+    physicalName: NOM
     dataType: String
     length: 100
     mandatory: false
-    searchable: false
+    searchable: true
+
+
+  - _type: EntityAttribute
+    _name: Prenom
+    label: Prénom
+    physicalName: PRENOM
+    dataType: String
+    length: 100
+    mandatory: false
+    searchable: true
 
   - _type: EntityAttribute
     _name: Email
@@ -38,6 +59,18 @@ attributes:
     mandatory: false
     searchable: false
 
+  - _type: EntityAttribute
+    _name: DateDebContrat
+    label: Date de début contrat
+    physicalName: DATE_DEB_CONTRAT
+    dataType: Date
+    mandatory: false
+  - _type: EntityAttribute
+    _name: DateFinContrat
+    label: Date de fin contrat
+    physicalName: DATE_FIN_CONTRAT
+    dataType: Date
+    mandatory: false
 
   # booleen
   - _type: EntityAttribute
@@ -45,6 +78,7 @@ attributes:
     label: Statut fin emploi
     physicalName: STATUT_FIN_EMPLOI
     dataType: Boolean
+    length: 1
     mandatory: false
 
 sourceIdGeneration:

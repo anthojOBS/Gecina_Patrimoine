@@ -38,34 +38,34 @@ rootBusinessViewEntity:
   tableAllowed: true
   gridAllowed: true
   transitions:
-    - _type: BusinessViewTransition
-      _name: MasterRecords
-      displayFormTabAs: ICON_LABEL
-      useCustomLabel: false
-      enableHierarchyInterpreter: LITERAL
-      filter: 1=1
-      iconUrl: images://mdi/puzzle.svg
-      label: Masters Records
-      pluralLabel: Masters Records
-      transitionType: FULLY_QUALIFIED
-      transitionPath:  MasterRecords 
-      transitionVisible: :V_USER_ROLES like '%semarchyAdmin%'
-      transitionVisibleInterpreter: SEMQL
-      businessViewEntity: 
-        _type: BusinessViewEntity
-        _name: MasterRecord
-        displayCard: Batiments.entities.Etage.display_cards.EtageDisplayCard
-        entity: Batiments.entities.Etage.Etage
-        actionSet: Batiments.entities.Etage.action_sets.EtageActionSet
-        collection: Batiments.entities.Etage.collection_views.EtageCollectionView
-        form: Batiments.entities.Etage.forms.EtageForm
-        displayRecordCount: ALWAYS
-        outlineVisible: false
-        enableUserDefinedSort: true
-        gridAllowed: true
-        listAllowed: true
-        overrideDefaultSort: false
-        tableAllowed: true
+    # - _type: BusinessViewTransition
+    #   _name: MasterRecords
+    #   displayFormTabAs: ICON_LABEL
+    #   useCustomLabel: false
+    #   enableHierarchyInterpreter: LITERAL
+    #   filter: 1=1
+    #   iconUrl: images://mdi/puzzle.svg
+    #   label: Masters Records
+    #   pluralLabel: Masters Records
+    #   transitionType: FULLY_QUALIFIED
+    #   transitionPath:  MasterRecords 
+    #   transitionVisible: :V_USER_ROLES like '%semarchyAdmin%'
+    #   transitionVisibleInterpreter: SEMQL
+    #   businessViewEntity: 
+    #     _type: BusinessViewEntity
+    #     _name: MasterRecord
+    #     displayCard: Batiments.entities.Etage.display_cards.EtageDisplayCard
+    #     entity: Batiments.entities.Etage.Etage
+    #     actionSet: Batiments.entities.Etage.action_sets.EtageActionSet
+    #     collection: Batiments.entities.Etage.collection_views.EtageCollectionView
+    #     form: Batiments.entities.Etage.forms.EtageForm
+    #     displayRecordCount: ALWAYS
+    #     outlineVisible: false
+    #     enableUserDefinedSort: true
+    #     gridAllowed: true
+    #     listAllowed: true
+    #     overrideDefaultSort: false
+    #     tableAllowed: true
 
     - _name: GoldenHistoryRecords
       _type: BusinessViewTransition

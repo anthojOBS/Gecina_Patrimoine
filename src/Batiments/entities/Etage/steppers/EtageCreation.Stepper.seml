@@ -37,6 +37,12 @@ rootStep:
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute: Batiments.references.EtageToTypeEtage.TypeEtage
+
+        # - executedOnDataChange: true
+        #   executedOnFormOpen: true
+        #   validationType: MANDATORY
+        #   attribute: Batiments.references.EtageToBatiment.Batiment
+
       stepTransitionValidations:
 
         - onStepExit: BLOCK
@@ -49,3 +55,8 @@ stepperFinishValidations:
     attribute: Batiments.references.EtageToTypeEtage.TypeEtage
   - onStepperFinish: BLOCK
     validationType: DETECT_DUPS
+
+  # - onStepperFinish: BLOCK
+  #   validationType: MANDATORY
+  #   attribute: Batiments.references.EtageToBatiment.Batiment
+       

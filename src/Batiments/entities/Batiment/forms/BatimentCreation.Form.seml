@@ -2,7 +2,7 @@ _package: Batiments.entities.Batiment.forms
 _type: Form
 _name: BatimentCreation
 entity: Batiments.entities.Batiment.Batiment
-default: true
+default: false
 formTabs:
   - _type: FormTab
     _name: Batiment
@@ -65,6 +65,29 @@ formTabs:
                         useCustomLabel: true
                         dataType: STRING
                         referencedEntity: Batiments.entities.Immeuble.Immeuble
+
+                      # - _type: TextField
+                      #   _name: ImmeubleID
+                      #   value: Immeuble.ImmeubleID
+                      #   label: test
+                      #   labelProperties:
+                      #     alignment: left
+                      #     typographyValueInterpreter: LITERAL
+                      #     typography: body-2
+                      #     color: md:black
+                      #   useCustomLabel: true
+                      #   dataType: STRING
+                      # - _type: TextField
+                      #   _name: Identifiants
+                      #   value: Immeuble.IdentifiantsERP
+                      #   label: IdentifiantsERP
+                      #   labelProperties:
+                      #     alignment: left
+                      #     typographyValueInterpreter: LITERAL
+                      #     typography: body-2
+                      #     color: md:black
+                      #   useCustomLabel: true
+                      #   dataType: STRING
 
                       - _type: CheckboxField
                         _name: AccesParking
@@ -168,6 +191,7 @@ formTabs:
                         color: md:black
                       useCustomLabel: false
                       dataType: STRING
+
 
   - _type: FormTab
     _name: CycleVieBatiment
@@ -280,7 +304,6 @@ formTabs:
                           useCustomLabel: true
                           dataType: DATE
 
-                              
   - _type: FormTab
     _name: FiscaliteJuridique
     label: Juridique et propriété
@@ -299,7 +322,7 @@ formTabs:
         labelWidth: 300px
         content:
 
-          - _type: TextField
+          - _type: ReferenceField
             _name: Juridique
             value: FDN_RegimeJuridique
             label: Régime juridique           
@@ -313,3 +336,15 @@ formTabs:
             dataType: STRING
             referencedEntity: Batiments.entities.RegimeJuridique.RegimeJuridique
 
+          # - _type: ReferenceField
+          #   _name: TVA
+          #   value: FDN_FiscaliteCible
+          #   label: Fiscalite           
+          #   labelProperties:
+          #     alignment: left
+          #     typographyValueInterpreter: LITERAL
+          #     typography: body-2
+          #     color: md:black
+          #   useCustomLabel: true
+          #   dataType: STRING
+          #   referencedEntity: Batiments.entities.FiscaliteCible.FiscaliteCible

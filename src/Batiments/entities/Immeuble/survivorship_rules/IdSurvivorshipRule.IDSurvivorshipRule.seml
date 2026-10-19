@@ -1,9 +1,0 @@
-_package: Batiments.entities.Immeuble.survivorship_rules
-_type: IDSurvivorshipRule
-_name: IdSurvivorshipRule
-entity: Batiments.entities.Immeuble.Immeuble
-label: Id Survivorship Rule
-description: ""
-documentation: ""
-consolidationStrategy: CUSTOM_RANKING
-consolidationSkipNulls: false

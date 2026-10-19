@@ -56,30 +56,30 @@ rootBusinessViewEntity:
         ref: Batiments.entities.Lot.business_views.LotBusinessView.Lot
       filter: 1 = 1
 
-    - _type: BusinessViewTransition
-      _name: MasterRecords
-      displayFormTabAs: ICON_LABEL
-      useCustomLabel: false
-      enableHierarchyInterpreter: LITERAL
-      filter: 1=1
-      iconUrl: images://mdi/puzzle.svg
-      label: Masters Records
-      pluralLabel: Masters Records
-      transitionType: FULLY_QUALIFIED
-      transitionPath:  MasterRecords
-      visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
-      businessViewEntity:
-        _type: BusinessViewEntity
-        _name: MasterRecord
-        displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
-        entity: Batiments.entities.Lot.Lot
-        actionSet: Batiments.entities.Lot.action_sets.LotActionSet
-        collection: Batiments.entities.Lot.collection_views.LotCollectionView
-        form: Batiments.entities.Lot.forms.LotConsultation
-        displayRecordCount: ALWAYS
-        outlineVisible: false
-        enableUserDefinedSort: true
-        gridAllowed: true
-        listAllowed: true
-        overrideDefaultSort: false
-        tableAllowed: true
+    # - _type: BusinessViewTransition
+    #   _name: MasterRecords
+    #   displayFormTabAs: ICON_LABEL
+    #   useCustomLabel: false
+    #   enableHierarchyInterpreter: LITERAL
+    #   filter: 1=1
+    #   iconUrl: images://mdi/puzzle.svg
+    #   label: Masters Records
+    #   pluralLabel: Masters Records
+    #   transitionType: FULLY_QUALIFIED
+    #   transitionPath:  MasterRecords
+    #   visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
+    #   businessViewEntity:
+    #     _type: BusinessViewEntity
+    #     _name: MasterRecord
+    #     displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
+    #     entity: Batiments.entities.Lot.Lot
+    #     actionSet: Batiments.entities.Lot.action_sets.LotActionSet
+    #     collection: Batiments.entities.Lot.collection_views.LotCollectionView
+    #     form: Batiments.entities.Lot.forms.LotConsultation
+    #     displayRecordCount: ALWAYS
+    #     outlineVisible: false
+    #     enableUserDefinedSort: true
+    #     gridAllowed: true
+    #     listAllowed: true
+    #     overrideDefaultSort: false
+    #     tableAllowed: true

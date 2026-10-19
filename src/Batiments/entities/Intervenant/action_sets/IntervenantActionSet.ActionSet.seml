@@ -33,16 +33,16 @@ actions:
   #   availableForErrorData: true
   #   availableForMasterData: false
   #   waitDialogEnabled: false
-  # - _type: DeleteAction
-  #   _name: Delete
-  #   label: Delete
-  #   useCustomLabel: true
-  #   multipleSelectionAllowed: true
-  #   deleteType: HARD_DELETE
-  #   waitDialogEnabled: false
-  #   availableForGoldenData: true
-  #   availableForMasterData: false
-  #   requiredRole: semarchyAdmin
+  - _type: DeleteAction
+    _name: Delete
+    label: Delete
+    useCustomLabel: true
+    multipleSelectionAllowed: true
+    deleteType: HARD_DELETE
+    waitDialogEnabled: false
+    availableForGoldenData: true
+    availableForMasterData: false
+    requiredRole: semarchyAdmin
   - _type: ExportAction
     _name: Export
     label: Export

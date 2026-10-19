@@ -32,7 +32,7 @@ globalSearchConfig:
       viewType: GD
       businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
       searchTypeConfig: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView.Immeuble.TextConfig
-      maxResults: 5
+      maxResults: 10
     - _type: GlobalSearchBoView
       _name: Batiments
       viewType: GD
@@ -72,16 +72,21 @@ navDrawer:
     labelVisible: false
     actions:
       - appAction: Batiments.applications.Patrimoine.Root.Immeubles
+      - appAction: Batiments.applications.Patrimoine.Root.CreaImmeubles
+
+      - appAction: Batiments.applications.Patrimoine.Root.CreaBatiment
+      # - appAction: Batiments.applications.Patrimoine.Root.CreaEtage  
+      # - appAction: Batiments.applications.Patrimoine.Root.CreaLot
       # - appAction: Batiments.applications.Patrimoine.Root.Batiments
       # - appAction: Batiments.applications.Patrimoine.Root.Etages
       # - appAction: Batiments.applications.Patrimoine.Root.Lots
       # - appAction: Batiments.applications.Patrimoine.Root.ImmeublesErrors
-      - appAction: Batiments.applications.Patrimoine.Root.ImmeublesErrorsGolden
-      - appAction: Batiments.applications.Patrimoine.Root.ImmeublesSuggestedMatches
+      # - appAction: Batiments.applications.Patrimoine.Root.ImmeublesErrorsGolden
+      # - appAction: Batiments.applications.Patrimoine.Root.ImmeublesSuggestedMatches
       # - appAction: Batiments.applications.Patrimoine.Root.BatimentsErrors
-      - appAction: Batiments.applications.Patrimoine.Root.BatimentsErrorsGolden
-      - appAction: Batiments.applications.Patrimoine.Root.BatimentsSuggestedMatches
-      - appAction: Batiments.applications.Patrimoine.Root.LotsErrorsGolden
+      # - appAction: Batiments.applications.Patrimoine.Root.BatimentsErrorsGolden
+      # - appAction: Batiments.applications.Patrimoine.Root.BatimentsSuggestedMatches
+      # - appAction: Batiments.applications.Patrimoine.Root.LotsErrorsGolden
 
   - _type: NavigationGroup
     _name: ReferenceData
@@ -156,6 +161,44 @@ rootFolder:
       icon: images://mdi/office-building-marker.svg
       label: Immeubles
 
+    - _type: CreateDataAppAction
+      _name: CreaImmeubles
+      createAction: Batiments.entities.Immeuble.action_sets.ImmeubleActionSet.CreateAuthorImmeubles
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      icon: images://mdi/office-building-plus.svg
+      label: Création immeuble
+
+
+    - _type: CreateDataAppAction
+      _name: CreaBatiment
+      createAction: Batiments.entities.Batiment.action_sets.BatimentActionSet.CreateAuthorBatiments
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      icon: images://mdi/domain-plus.svg
+      label: Création bâtiment
+
+
+    # - _type: CreateDataAppAction
+    #   _name: CreaEtage
+    #   createAction: Batiments.entities.Etage.action_sets.EtageActionSet.CreateAuthorEtages
+    #   imageAlign: MIDDLE_CENTER
+    #   imageMode: FIT
+    #   icon: images://mdi/stairs.svg
+    #   label: Création étage
+
+    # - _type: CreateDataAppAction
+    #   _name: CreaLot
+    #   createAction: Batiments.entities.Lot.action_sets.LotActionSet.CreateAuthorLots
+    #   imageAlign: MIDDLE_CENTER
+    #   imageMode: FIT
+    #   icon: images://mdi/floor-plan.svg
+    #   label: Création lot
+
+                                     
+
+
+
     - _type: BrowseBusinessViewAction
       _name: Batiments
       businessView: Batiments.entities.Batiment.business_views.BatimentBusinessView
@@ -166,35 +209,35 @@ rootFolder:
       icon: images://mdi/domain.svg
       requiredRole: semarchyAdmin
       
-    - _type: BrowseBusinessViewAction
-      _name: Etages
-      businessView: Batiments.entities.Etage.business_views.EtageBusinessView
-      imageAlign: MIDDLE_CENTER
-      imageMode: FIT
-      label: Etages
-      nbRecordsBadgeVisible: false
-      icon: images://mdi/stairs.svg
-      requiredRole: semarchyAdmin
+    # - _type: BrowseBusinessViewAction
+    #   _name: Etages
+    #   businessView: Batiments.entities.Etage.business_views.EtageBusinessView
+    #   imageAlign: MIDDLE_CENTER
+    #   imageMode: FIT
+    #   label: Etages
+    #   nbRecordsBadgeVisible: false
+    #   icon: images://mdi/stairs.svg
+    #   requiredRole: semarchyAdmin
 
-    - _type: BrowseBusinessViewAction
-      _name: Lots
-      businessView: Batiments.entities.Lot.business_views.LotBusinessView
-      imageAlign: MIDDLE_CENTER
-      imageMode: FIT
-      label: Lots
-      nbRecordsBadgeVisible: false
-      icon: images://mdi/floor-plan.svg
-      requiredRole: semarchyAdmin
+    # - _type: BrowseBusinessViewAction
+    #   _name: Lots
+    #   businessView: Batiments.entities.Lot.business_views.LotBusinessView
+    #   imageAlign: MIDDLE_CENTER
+    #   imageMode: FIT
+    #   label: Lots
+    #   nbRecordsBadgeVisible: false
+    #   icon: images://mdi/floor-plan.svg
+    #   requiredRole: semarchyAdmin
 
-    - _type: BrowseBusinessViewAction
-      _name: SousLots
-      businessView: Batiments.entities.SousLot.business_views.SousLotBusinessView
-      imageAlign: MIDDLE_CENTER
-      imageMode: FIT
-      label: Sous-lots
-      nbRecordsBadgeVisible: false
-      icon: images://mdi/floor-plan.svg
-      requiredRole: semarchyAdmin
+    # - _type: BrowseBusinessViewAction
+    #   _name: SousLots
+    #   businessView: Batiments.entities.SousLot.business_views.SousLotBusinessView
+    #   imageAlign: MIDDLE_CENTER
+    #   imageMode: FIT
+    #   label: Sous-lots
+    #   nbRecordsBadgeVisible: false
+    #   icon: images://mdi/floor-plan.svg
+    #   requiredRole: semarchyAdmin
 
     # - _type: BrowseBusinessViewAction
     #   _name: Compteur
@@ -207,95 +250,95 @@ rootFolder:
     #   requiredRole: semarchyAdmin
 
 
-    - _type: BrowseBusinessViewAction
-      _name: ImmeublesErrors
-      label: Immeubles Erreurs
-      businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
-      imageAlign: MIDDLE_CENTER
-      imageMode: FIT
-      nbRecordsBadgeVisible: true
-      iconColor: red
-      icon: images://mdi/office-building-marker.svg
-      viewType: SDWE
-      labelColor: red
-      nbRecordsBadgeBackgroundColor: md:red
-      requiredRole: semarchyAdmin
+    # - _type: BrowseBusinessViewAction
+    #   _name: ImmeublesErrors
+    #   label: Immeubles Erreurs
+    #   businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
+    #   imageAlign: MIDDLE_CENTER
+    #   imageMode: FIT
+    #   nbRecordsBadgeVisible: true
+    #   iconColor: red
+    #   icon: images://mdi/office-building-marker.svg
+    #   viewType: SDWE
+    #   labelColor: red
+    #   nbRecordsBadgeBackgroundColor: md:red
+    #   requiredRole: semarchyAdmin
 
-    - _type: BrowseBusinessViewAction
-      _name: ImmeublesErrorsGolden
-      label: Immeubles Erreurs Golden
-      businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
-      imageAlign: MIDDLE_CENTER
-      imageMode: FIT
-      nbRecordsBadgeVisible: true
-      iconColor: red
-      icon: images://mdi/office-building-marker.svg
-      viewType: GDWE
-      labelColor: red
-      nbRecordsBadgeBackgroundColor: md:red
-      requiredRole: semarchyAdmin
+    # - _type: BrowseBusinessViewAction
+    #   _name: ImmeublesErrorsGolden
+    #   label: Immeubles Erreurs Golden
+    #   businessView: Batiments.entities.Immeuble.business_views.ImmeubleBusinessView
+    #   imageAlign: MIDDLE_CENTER
+    #   imageMode: FIT
+    #   nbRecordsBadgeVisible: true
+    #   iconColor: red
+    #   icon: images://mdi/office-building-marker.svg
+    #   viewType: SDWE
+    #   labelColor: red
+    #   nbRecordsBadgeBackgroundColor: md:red
+    #   requiredRole: semarchyAdmin
 
-    - _type: BrowseBusinessViewAction
-      _name: ImmeublesSuggestedMatches
-      label: Immeubles Suggestions
-      businessView: Batiments.entities.Immeuble.business_views.ImmeubleSuggestedMatchesBusinessView
-      imageAlign: MIDDLE_CENTER
-      imageMode: FIT
-      nbRecordsBadgeVisible: true
-      icon: images://mdi/office-building-marker-outline.svg
-      requiredRole: semarchyAdmin
+    # - _type: BrowseBusinessViewAction
+    #   _name: ImmeublesSuggestedMatches
+    #   label: Immeubles Suggestions
+    #   businessView: Batiments.entities.Immeuble.business_views.ImmeubleSuggestedMatchesBusinessView
+    #   imageAlign: MIDDLE_CENTER
+    #   imageMode: FIT
+    #   nbRecordsBadgeVisible: true
+    #   icon: images://mdi/office-building-marker-outline.svg
+    #   requiredRole: semarchyAdmin
 
-    - _type: BrowseBusinessViewAction
-      _name: BatimentsErrors
-      label: Bâtiments Erreurs
-      businessView: Batiments.entities.Batiment.business_views.BatimentBusinessView
-      imageAlign: MIDDLE_CENTER
-      imageMode: FIT
-      nbRecordsBadgeVisible: true
-      iconColor: red
-      icon: images://mdi/domain.svg
-      viewType: SDWE
-      labelColor: red
-      nbRecordsBadgeBackgroundColor: md:red
-      requiredRole: semarchyAdmin
+    # - _type: BrowseBusinessViewAction
+    #   _name: BatimentsErrors
+    #   label: Bâtiments Erreurs
+    #   businessView: Batiments.entities.Batiment.business_views.BatimentBusinessView
+    #   imageAlign: MIDDLE_CENTER
+    #   imageMode: FIT
+    #   nbRecordsBadgeVisible: true
+    #   iconColor: red
+    #   icon: images://mdi/domain.svg
+    #   viewType: SDWE
+    #   labelColor: red
+    #   nbRecordsBadgeBackgroundColor: md:red
+    #   requiredRole: semarchyAdmin
 
-    - _type: BrowseBusinessViewAction
-      _name: BatimentsErrorsGolden
-      label: Bâtiments Erreurs Golden
-      businessView: Batiments.entities.Batiment.business_views.BatimentBusinessView
-      imageAlign: MIDDLE_CENTER
-      imageMode: FIT
-      nbRecordsBadgeVisible: true
-      iconColor: red
-      icon: images://mdi/domain.svg
-      viewType: GDWE
-      labelColor: red
-      nbRecordsBadgeBackgroundColor: md:red
-      requiredRole: semarchyAdmin
+    # - _type: BrowseBusinessViewAction
+    #   _name: BatimentsErrorsGolden
+    #   label: Bâtiments Erreurs Golden
+    #   businessView: Batiments.entities.Batiment.business_views.BatimentBusinessView
+    #   imageAlign: MIDDLE_CENTER
+    #   imageMode: FIT
+    #   nbRecordsBadgeVisible: true
+    #   iconColor: red
+    #   icon: images://mdi/domain.svg
+    #   viewType: GDWE
+    #   labelColor: red
+    #   nbRecordsBadgeBackgroundColor: md:red
+    #   requiredRole: semarchyAdmin
 
-    - _type: BrowseBusinessViewAction
-      _name: BatimentsSuggestedMatches
-      label: Bâtiments Suggestions
-      businessView: Batiments.entities.Batiment.business_views.BatimentSuggestedMatchesBusinessView
-      imageAlign: MIDDLE_CENTER
-      imageMode: FIT
-      nbRecordsBadgeVisible: true
-      icon: images://mdi/domain-plus.svg
-      requiredRole: semarchyAdmin
+    # - _type: BrowseBusinessViewAction
+    #   _name: BatimentsSuggestedMatches
+    #   label: Bâtiments Suggestions
+    #   businessView: Batiments.entities.Batiment.business_views.BatimentSuggestedMatchesBusinessView
+    #   imageAlign: MIDDLE_CENTER
+    #   imageMode: FIT
+    #   nbRecordsBadgeVisible: true
+    #   icon: images://mdi/domain-plus.svg
+    #   requiredRole: semarchyAdmin
 
-    - _type: BrowseBusinessViewAction
-      _name: LotsErrorsGolden
-      label: Lots Erreurs Golden
-      businessView: Batiments.entities.Lot.business_views.LotBusinessView
-      imageAlign: MIDDLE_CENTER
-      imageMode: FIT
-      nbRecordsBadgeVisible: true
-      iconColor: red
-      icon: images://mdi/floor-plan.svg
-      viewType: GDWE
-      labelColor: red
-      nbRecordsBadgeBackgroundColor: md:red
-      requiredRole: semarchyAdmin
+    # - _type: BrowseBusinessViewAction
+    #   _name: LotsErrorsGolden
+    #   label: Lots Erreurs Golden
+    #   businessView: Batiments.entities.Lot.business_views.LotBusinessView
+    #   imageAlign: MIDDLE_CENTER
+    #   imageMode: FIT
+    #   nbRecordsBadgeVisible: true
+    #   iconColor: red
+    #   icon: images://mdi/floor-plan.svg
+    #   viewType: SAWE
+    #   labelColor: red
+    #   nbRecordsBadgeBackgroundColor: md:red
+    #   requiredRole: semarchyAdmin
 
     - _type: FolderAction
       _name: ReferenceData
@@ -442,13 +485,7 @@ rootFolder:
           icon: images://mdi/office-building.svg
           nbRecordsBadgeVisible: false
 
-        - _type: BrowseBusinessViewAction
-          _name: TypeService
-          businessView: Batiments.entities.TypeService.business_views.TypeServiceBusinessView
-          imageAlign: MIDDLE_CENTER
-          imageMode: FIT
-          icon: images://mdi/office-building.svg
-          nbRecordsBadgeVisible: false
+
         - _type: BrowseBusinessViewAction
           _name: TypeEnergie
           businessView: Batiments.entities.TypeEnergie.business_views.TypeEnergieBusinessView
@@ -517,6 +554,7 @@ rootFolder:
         importAction: Batiments.entities.Batiment.action_sets.BatimentActionSet.ImportAuthorBatiments
         description: Importer Bâtiment depuis un fichier
         requiredRole: semarchyAdmin
+
       - _type: ImportDataAppAction
         _name: ImportEtages
         label: Importer Etages
@@ -557,20 +595,6 @@ rootFolder:
         importAction: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet.ImportAuthorRelLotSoc
         description: Importer Société depuis un fichier
         requiredRole: semarchyAdmin
-      # - _type: ImportDataAppAction
-      #   _name: Importcompteur
-      #   label: Importer Compteur
-      #   imageAlign: MIDDLE_CENTER
-      #   imageMode: FIT
-      #   importAction: Batiments.entities.Compteur.action_sets.CompteurActionSet.ImportAuthorCompteur
-      #   description: Importer Compteur depuis un fichier
-      # - _type: ImportDataAppAction
-      #   _name: ImportService
-      #   label: Importer service
-      #   imageAlign: MIDDLE_CENTER
-      #   imageMode: FIT
-      #   importAction: Batiments.entities.Service.action_sets.ServiceActionSet.ImportAuthorService
-      #   description: Importer service depuis un fichier
-      #   requiredRole: semarchyAdmin
+
 
 applicationTitle: Référentiel Patrimoine

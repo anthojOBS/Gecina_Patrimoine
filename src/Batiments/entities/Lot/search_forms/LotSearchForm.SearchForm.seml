@@ -121,6 +121,7 @@ searchParameters:
     bindVariableName: SEARCH_PARAM_STATUT_LOUABLE
     label: Statut louable
     dataType: Boolean
+    length: 1
     displayType: VALUE_PICKER
     boundSelectExpression: StatutLouable
     primaryTextExpression: case when StatutLouable = '0' or StatutLouable is null then 'Inactif' else 'Actif' end
@@ -132,6 +133,7 @@ searchParameters:
     bindVariableName: SEARCH_PARAM_STATUT_LOGEMENT_SOCIAL
     label: Statut logement social
     dataType: Boolean
+    length: 1
     displayType: VALUE_PICKER
     boundSelectExpression: StatutLogementSocial
     primaryTextExpression: case when StatutLogementSocial = '0' or StatutLogementSocial is null then 'Inactif' else 'Actif' end
@@ -143,6 +145,7 @@ searchParameters:
     bindVariableName: SEARCH_PARAM_STATUT_ERP
     label: Statut ERP
     dataType: Boolean
+    length: 1
     displayType: VALUE_PICKER
     boundSelectExpression: StatutERP
     primaryTextExpression: case when StatutERP = '0' or StatutERP is null then 'Inactif' else 'Actif' end
@@ -154,6 +157,7 @@ searchParameters:
     bindVariableName: SEARCH_PARAM_STATUT_MEUBLE
     label: Statut meuble
     dataType: Boolean
+    length: 1
     displayType: VALUE_PICKER
     boundSelectExpression: StatutMeuble
     primaryTextExpression: case when StatutMeuble = '0' or StatutMeuble is null then 'Inactif' else 'Actif' end
@@ -165,6 +169,7 @@ searchParameters:
     bindVariableName: SEARCH_PARAM_STATUT_PMR
     label: Statut PMR
     dataType: Boolean
+    length: 1
     displayType: VALUE_PICKER
     boundSelectExpression: StatutPMR
     primaryTextExpression: case when StatutPMR = '0' or StatutPMR is null then 'Inactif' else 'Actif' end

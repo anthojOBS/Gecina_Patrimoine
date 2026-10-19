@@ -18,9 +18,23 @@ tableDisplayCardColumnLabel: Intervenant
 tableRowLines: 1
 tableShowDisplayCard: false
 tableColumns:
+  # - _type: TextColumn
+  #   _name: NomPrenom
+  #   value: Nom || ' ' || Prenom
+  #   useCustomLabel: false
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: true
   - _type: TextColumn
-    _name: NomPrenom
-    value: NomPrenom
+    _name: Nom
+    value: Nom 
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: Prenom
+    value: Prenom
     useCustomLabel: false
     dataType: STRING
     columnAlign: LEFT
@@ -35,7 +49,8 @@ tableColumns:
   - _type: ReferenceColumn
     _name: FDN_RoleImmeuble
     value: FDN_RoleImmeuble
-    useCustomLabel: false
+    label: Rôle Immeuble
+    useCustomLabel: true
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true
@@ -43,7 +58,8 @@ tableColumns:
   - _type: ReferenceColumn
     _name: FDN_MatriculeManager
     value: FDN_MatriculeManager
-    useCustomLabel: false
+    label: Matricule du Manager
+    useCustomLabel: true
     dataType: STRING
     columnAlign: LEFT
     visibleByDefault: true

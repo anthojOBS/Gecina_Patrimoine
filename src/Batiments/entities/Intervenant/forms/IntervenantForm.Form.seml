@@ -6,11 +6,13 @@ default: true
 formTabs:
   - _type: FormTab
     _name: Intervenant
-    label: Fiche Intervenants
+    label: Fiche Intervenant
     documentationInterpreter: LITERAL
     visibleValue: "1"
     visibleValueInterpreter: LITERAL
-    displayFormTabAs: LABEL
+    displayFormTabAs: ICON_LABEL
+    iconUrl: images://mdi/account.svg
+    labelWidth: 300px
     content:
       - _type: FormContainer
         _name: Global
@@ -31,8 +33,9 @@ formTabs:
                 content:
                   - _type: TextField
                     _name: NomPrenom
-                    value: NomPrenom
-                    useCustomLabel: false
+                    value: Nom || ' ' || Prenom
+                    label: Nom, prénom
+                    useCustomLabel: true
                     dataType: STRING
                     labelProperties:
                       alignment: left
@@ -85,11 +88,13 @@ formTabs:
                 labelWidth: 200px
 
                 content:
+
                   - _type: ReferenceField
-                    _name: FDN_MatriculeManager
+                    _name: Manager
                     # value: lookup first (Email) from Intervenant where FDN_Intervenant = FDN_MatriculeManager  end
                     value: FDN_MatriculeManager
-                    label: Manager
+                    label: Nom, prénom
+                    displayCard: Batiments.entities.Intervenant.display_cards.ManagerDisplayCard
                     documentation: Manager de l'intervenant.
                     useCustomLabel: true
                     dataType: STRING
@@ -100,13 +105,28 @@ formTabs:
                       color: md:black
                     referencedEntity: Batiments.entities.Intervenant.Intervenant
 
+                  - _type: TextField
+                    _name: Email_manager
+                    # value: lookup first (Email) from Intervenant where FDN_Intervenant = FDN_MatriculeManager  end
+                    value: MatriculeManager.Email
+                    label: Email
+                    documentation: Email du manager de l'intervenant.
+                    useCustomLabel: true
+                    dataType: STRING
+                    labelProperties:
+                      alignment: left
+                      typographyValueInterpreter: LITERAL
+                      typography: body-2
+                      color: md:black
+
+
 
           - _type: FormCollection
             _name: Affectation
             label: Affectation
             pluralLabel: Affectation
             useCustomLabel: true
-            collection: Batiments.entities.Affectation.collection_views.AffectationCollectionView
+            collection: Batiments.entities.Affectation.collection_views.AffectationIntervenant
             actionSet: Batiments.entities.Affectation.action_sets.AffectationActionSet
             tableAllowed: true
             listAllowed: false

@@ -1,0 +1,8 @@
+_package: Batiments.publishers
+_type: Publisher
+_name: IHM
+label: IHM
+description: IHM Publisher
+active: true
+code: IHM
+color: md::orange

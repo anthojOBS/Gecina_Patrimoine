@@ -2,7 +2,7 @@ _package: Batiments.entities.Immeuble.forms
 _type: Form
 _name: ImmeubleEditFiscaliteJuridique
 entity: Batiments.entities.Immeuble.Immeuble
-default: true
+default: false
 formTabs:
   - _type: FormTab
     _name: FiscaliteJuridique

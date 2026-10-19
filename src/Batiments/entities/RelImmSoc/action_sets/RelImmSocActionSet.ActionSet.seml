@@ -21,7 +21,7 @@ actions:
     stepper: Batiments.entities.RelImmSoc.steppers.AuthorRelImmSoc
     multipleSelectionAllowed: true
     availableForGoldenData: true
-    availableForMasterData: true
+    availableForMasterData: false
     availableForErrorData: true
     waitDialogEnabled: false
   - _type: DeleteAction
@@ -45,7 +45,7 @@ actions:
     useCustomLabel: true
     importMode: CREATE_AND_UPDATE
     stepper: Batiments.entities.RelImmSoc.steppers.AuthorRelImmSoc
-    importedRecordType: MASTER
+    importedRecordType: GOLDEN
     waitDialogEnabled: false
     allowOtherPublishers: true
   - _type: BrowseGraphAction
@@ -54,10 +54,10 @@ actions:
     useCustomLabel: true
     waitDialogEnabled: false
     requiredRole: semarchyAdmin
-  - _type: ExplainRecordAction
-    _name: ExplainRecord
-    label: Expliquer l'enrigistrement
-    useCustomLabel: true
-    displayCard: Batiments.entities.RelImmSoc.display_cards.RelImmSocDisplayCard
-    formTab: Batiments.entities.RelImmSoc.forms.RelImmSocForm.RelImmSoc
-    waitDialogEnabled: false
+  # - _type: ExplainRecordAction
+  #   _name: ExplainRecord
+  #   label: Expliquer l'enrigistrement
+  #   useCustomLabel: true
+  #   displayCard: Batiments.entities.RelImmSoc.display_cards.RelImmSocDisplayCard
+  #   formTab: Batiments.entities.RelImmSoc.forms.RelImmSocForm.RelImmSoc
+  #   waitDialogEnabled: false

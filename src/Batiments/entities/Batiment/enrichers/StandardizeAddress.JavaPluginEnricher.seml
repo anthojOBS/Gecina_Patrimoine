@@ -3,7 +3,7 @@ _name: StandardizeAddress
 _type: JavaPluginEnricher
 entity: Batiments.entities.Batiment.Batiment
 label: Standardize Address Enricher
-afterEnrichers: Batiments.entities.Batiment.enrichers.PreAlimAddress
+afterEnrichers: Batiments.entities.Batiment.enrichers.PluginImmeuble
 enricherExecutionScope: PRE_CONSO
 batchUpdateSize: 1000
 processingBatchSize: 1

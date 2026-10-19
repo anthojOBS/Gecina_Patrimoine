@@ -26,14 +26,14 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: false
 
-  - _type: TextColumn
-    _name: CodeEtage
-    value: CodeEtage
-    label: Etage
-    useCustomLabel: false
-    dataType: STRING
-    columnAlign: LEFT
-    visibleByDefault: false
+  # - _type: TextColumn
+  #   _name: CodeEtage
+  #   value: CodeEtage
+  #   label: Etage
+  #   useCustomLabel: false
+  #   dataType: STRING
+  #   columnAlign: LEFT
+  #   visibleByDefault: false
 
   # - _type: TextColumn
   #   _name: Libelle
@@ -65,41 +65,41 @@ tableColumns:
     referencedEntity: Batiments.entities.Batiment.Batiment
 
 
-  - _type: TextColumn
-    _name: ConfirmationStatus
-    columnAlign: LEFT
-    dataType: STRING
-    documentationInterpreter: LITERAL
-    useCustomLabel: false
-    value: ConfirmationStatus
-    visibleByDefault: false
+  # - _type: TextColumn
+  #   _name: ConfirmationStatus
+  #   columnAlign: LEFT
+  #   dataType: STRING
+  #   documentationInterpreter: LITERAL
+  #   useCustomLabel: false
+  #   value: ConfirmationStatus
+  #   visibleByDefault: false
 
-  - _type: TextColumn
-    _name: ConfidenceScore
-    columnAlign: LEFT
-    dataType: LONG_INTEGER
-    documentationInterpreter: LITERAL
-    useCustomLabel: false
-    value: ConfidenceScore
-    visibleByDefault: false
+  # - _type: TextColumn
+  #   _name: ConfidenceScore
+  #   columnAlign: LEFT
+  #   dataType: LONG_INTEGER
+  #   documentationInterpreter: LITERAL
+  #   useCustomLabel: false
+  #   value: ConfidenceScore
+  #   visibleByDefault: false
 
-  - _type: TextColumn
-    _name: MastersCount
-    columnAlign: LEFT
-    dataType: LONG_INTEGER
-    documentationInterpreter: LITERAL
-    useCustomLabel: false
-    value: MastersCount
-    visibleByDefault: false
+  # - _type: TextColumn
+  #   _name: MastersCount
+  #   columnAlign: LEFT
+  #   dataType: LONG_INTEGER
+  #   documentationInterpreter: LITERAL
+  #   useCustomLabel: false
+  #   value: MastersCount
+  #   visibleByDefault: false
     
-  - _type: CheckboxColumn
-    _name: HasSuggestedMerge
-    columnAlign: LEFT
-    dataType: BOOLEAN
-    documentationInterpreter: LITERAL
-    useCustomLabel: false
-    value: HasSuggestedMerge
-    visibleByDefault: false
+  # - _type: CheckboxColumn
+  #   _name: HasSuggestedMerge
+  #   columnAlign: LEFT
+  #   dataType: BOOLEAN
+  #   documentationInterpreter: LITERAL
+  #   useCustomLabel: false
+  #   value: HasSuggestedMerge
+  #   visibleByDefault: false
   
   - _type: TextColumn
     _name: UpdateDate

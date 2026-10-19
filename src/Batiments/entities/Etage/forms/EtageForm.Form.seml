@@ -14,6 +14,20 @@ formTabs:
     labelWidth: 200px
     content:
 
+      - _type: ReferenceField
+        _name: FDN_Batiment
+        value: FDN_Batiment
+        label: Batiment parent
+        displayCard: Batiments.entities.Batiment.display_cards.BatimentImm
+        labelProperties:
+          alignment: left
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+        useCustomLabel: true
+        dataType: STRING
+        referencedEntity: Batiments.entities.Batiment.Batiment
+
       - _type: TextField
         _name: FDN_TypeEtage
         value: FDN_TypeEtage

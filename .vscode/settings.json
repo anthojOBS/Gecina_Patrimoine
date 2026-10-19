@@ -6,6 +6,6 @@
     "semarchy.dm.instanceUrl": "https://semarchy-gecina-poc.eu.semarchy.net/dm",
     "semarchy.sdp.overwriteDeploymentUrl": "https://gecina-non-prod.eu.semarchy.net/dpc",
     "semarchy.sdp.instanceUrl": "https://gecina-non-prod.eu.semarchy.net",
-    "semarchy.sdp.datasource": "datasource1",
-    "semarchy.sdp.dataLocation": "GecinaBatiments_DEV"
+    "semarchy.sdp.datasource": "datasource2",
+    "semarchy.sdp.dataLocation": "GecinaBatiments_AJA"
 }

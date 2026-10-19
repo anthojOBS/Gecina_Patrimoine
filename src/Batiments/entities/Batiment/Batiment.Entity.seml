@@ -3,7 +3,7 @@ _type: Entity
 _name: Batiment
 label: Batiment
 pluralLabel: Batiments
-entityType: FUZZY_MATCHED
+entityType: BASIC
 physicalTableName: BATIMENT
 iconUrl: images://mdi/domain.svg
 description: ""
@@ -14,17 +14,17 @@ documentation: |
   
   Cette entité permet de gérer la structure physique du patrimoine immobilier et d'organiser les espaces de manière hiérarchique.
 historizeGolden: true
-historizeMaster: true
+historizeMaster: false
 enableDelete: true
 attributes:
-  - _type: EntityAttribute
-    _name: BatimentID
-    label: Batiment ID
-    physicalName: BATIMENT_ID
-    dataType: LongInteger
-    precision: 38
-    mandatory: true
-    searchable: true
+  # - _type: EntityAttribute
+  #   _name: BatimentID
+  #   label: Batiment ID
+  #   physicalName: BATIMENT_ID
+  #   dataType: LongInteger
+  #   precision: 38
+  #   mandatory: true
+  #   searchable: true
 
   - _type: EntityAttribute
     _name: IdentifiantREF
@@ -43,7 +43,15 @@ attributes:
     length: 100
     mandatory: true
     mandatoryValidationLabel: "Numéro bâtiment est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: PRE_CONSO
+
+  - _type: EntityAttribute
+    _name: IdentifiantsERP_immeuble
+    label: Numéro bâtiment
+    physicalName: IDENTIFIANTS_ERP_IMMEUBLE
+    dataType: String
+    length: 100
+    mandatory: false
 
   - _type: EntityAttribute
     _name: Libelle_Batiment
@@ -53,7 +61,7 @@ attributes:
     length: 255
     mandatory: true
     mandatoryValidationLabel: "Le libellé du bâtiment est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: PRE_CONSO
     searchable: true
 
   - _type: EntityAttribute
@@ -64,7 +72,7 @@ attributes:
     length: 255
     mandatory: true
     mandatoryValidationLabel: "Adresse du bâtiment est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: PRE_CONSO
 
   - _type: EntityAttribute
     _name: AdresseStandardise
@@ -82,7 +90,7 @@ attributes:
     length: 255
     mandatory: true
     mandatoryValidationLabel: "Le code postal du bâtiment est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: PRE_CONSO
 
   - _type: EntityAttribute
     _name: Ville
@@ -92,7 +100,7 @@ attributes:
     length: 255
     mandatory: true
     mandatoryValidationLabel: "La ville du bâtiment est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: PRE_CONSO
 
   - _type: EntityAttribute
     _name: AdresseEnrichie
@@ -134,12 +142,7 @@ attributes:
     physicalName: DATE_DEB_USAGE
     dataType: Date
     mandatory: false
-  # - _type: EntityAttribute
-  #   _name: DateDebEtat
-  #   label: Date début gestion 
-  #   physicalName: DATE_DEB_ETAT
-  #   dataType: Date
-  #   mandatory: false
+
 
   - _type: EntityAttribute
     _name: DateAcquisition
@@ -149,20 +152,6 @@ attributes:
     mandatory: false
 
 
-  # - _type: EntityAttribute
-  #   _name: DateDebutConstruction
-  #   label: Date début de construction
-  #   physicalName: DATE_DEBUT_CONSTRUCTION
-  #   dataType: Date
-  #   mandatory: false
-
-  # - _type: EntityAttribute
-  #   _name: DateFinConstruction
-  #   label: Date fin de construction
-  #   physicalName: DATE_FIN_CONSTRUCTION
-  #   dataType: Date
-  #   mandatory: false
-
   - _type: EntityAttribute
     _name: DateLivraison
     label: Date livraison
@@ -171,10 +160,29 @@ attributes:
     mandatory: false
 
   - _type: EntityAttribute
+    _name: DateAcquisition_Immeuble
+    label: Date acquisition
+    physicalName: DATE_ACQUISITION_IMM
+    dataType: String
+    length: 10
+    mandatory: false
+
+
+  - _type: EntityAttribute
+    _name: DateLivraison_Immeuble
+    label: Date livraison
+    physicalName: DATE_LIVRAISON_IMM
+    dataType: String
+    length: 10
+    mandatory: false
+
+
+  - _type: EntityAttribute
     _name: BatimentPrincipal
     label: Flag batiment principal
     physicalName: BATIMENT_PRINCIPAL
     dataType: Boolean
+    length: 1
     mandatory: false
 
     
@@ -183,12 +191,14 @@ attributes:
     label: Flag Ascenseur
     physicalName: FLAG_ASCENSEUR
     dataType: Boolean
+    length: 1
     mandatory: false
   - _type: EntityAttribute
     _name: AccesParking
     label: Accès parking
     physicalName: ACCES_PARKING
     dataType: Boolean
+    length: 1
     mandatory: false
 
   - _type: EntityAttribute
@@ -198,15 +208,18 @@ attributes:
     dataType: String
     length: 250
     mandatory: false
-    
+
+
+
 sourceIdGeneration:
   mode: MANUAL
+  # idExpression: Immeuble.IdentifiantsERP || '_' || IdentifiantsERP
 
-primaryKey: Batiments.entities.Batiment.Batiment.BatimentID
+primaryKey: Batiments.entities.Batiment.Batiment.IdentifiantsERP
 
-goldenIdGeneration:
-  mode: SEQUENCE
-  startWith: 1
+# goldenIdGeneration:
+#   mode: SEQUENCE
+#   startWith: 1
 
 matcher:
   _type: SemQLMatcher

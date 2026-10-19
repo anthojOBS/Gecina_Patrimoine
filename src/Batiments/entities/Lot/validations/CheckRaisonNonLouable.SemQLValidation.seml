@@ -4,5 +4,5 @@ _type: SemQLValidation
 entity: Batiments.entities.Lot.Lot
 label: Raison non louable obligatoire 
 condition:  (StatutLouable = '0'  and FID_RaisonNonLouable is not null) or StatutLouable ='1'
-validationScope: POST_CONSO
+validationScope: PRE_CONSO
 validationLabel: Raison non louable doit être renseigné si le statut louable est décoché.

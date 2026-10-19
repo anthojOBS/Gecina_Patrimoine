@@ -6,7 +6,7 @@ description: Référence Affectation vers Intervenant
 fromRoleDocumentation: |
   Cette référence détermine le **Intervenant** d'une **Affectation** dans son cycle de vie.
   L'intervenant indique la personne ou l'entité responsable de l'affectation (par exemple, un locataire, un vendeur, etc.).
-physicalName: AFFECT_TO_INTERVENANT
+physicalName: AFFECT_TO_INTERV
 
 fromEntity: Batiments.entities.Affectation.Affectation
 fromRoleLabel: Affectation
@@ -16,7 +16,7 @@ fromRolePluralLabel: Affectations
 toEntity: Batiments.entities.Intervenant.Intervenant
 toRoleLabel: Intervenant
 toRoleName: Intervenant
-toRolePhysicalName: INTERVENANT_ID
+toRolePhysicalName: INTERVENANT
 
 oneToMany: true
 deletePropagation: RESTRICT
@@ -28,6 +28,6 @@ foreignAttribute:
   _type: ForeignAttribute
   _name: Intervenant
   label: Intervenant
-  physicalName: INTERVENANT_ID
+  physicalName: INTERVENANT
   searchable: true
   entity: Batiments.entities.Affectation.Affectation

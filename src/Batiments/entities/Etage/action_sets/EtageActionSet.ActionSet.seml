@@ -13,7 +13,8 @@ actions:
     createMultiple: true
     createdRecordType: GOLDEN
     waitDialogEnabled: false
-    allowOtherPublishers: true
+    allowOtherPublishers: false
+    defaultPublisher: Batiments.publishers.IHM
   - _type: EditAction
     _name: EditAuthorEtages
     label: Modification étage
@@ -21,7 +22,7 @@ actions:
     stepper: Batiments.entities.Etage.steppers.EtageSuperficie
     multipleSelectionAllowed: true
     availableForGoldenData: true
-    availableForMasterData: true
+    availableForMasterData: false
     availableForErrorData: true
     waitDialogEnabled: false
  
@@ -46,13 +47,13 @@ actions:
     useCustomLabel: true
     importMode: CREATE_AND_UPDATE
     stepper: Batiments.entities.Etage.steppers.Etage_import
-    importedRecordType: MASTER
+    importedRecordType: GOLDEN
     waitDialogEnabled: false
     allowOtherPublishers: true
-  - _type: ExplainRecordAction
-    _name: ExplainRecord
-    label: Expliquer l'enregistrement
-    useCustomLabel: true
-    displayCard: Batiments.entities.Etage.display_cards.EtageDisplayCard
-    formTab: Batiments.entities.Etage.forms.EtageForm.Etage
-    waitDialogEnabled: false
+  # - _type: ExplainRecordAction
+  #   _name: ExplainRecord
+  #   label: Expliquer l'enregistrement
+  #   useCustomLabel: true
+  #   displayCard: Batiments.entities.Etage.display_cards.EtageDisplayCard
+  #   formTab: Batiments.entities.Etage.forms.EtageForm.Etage
+  #   waitDialogEnabled: false

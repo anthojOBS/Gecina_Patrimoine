@@ -1,0 +1,21 @@
+_package: Batiments.entities.Immeuble.display_cards
+_type: DisplayCard
+_name: NumeroImmeuble
+entity: Batiments.entities.Immeuble.Immeuble
+default: false
+
+primaryTextExpression: IdentifiantsERP
+
+primaryImageValueInterpreter: SEMQL
+primaryImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: CONTAIN
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+primaryImageValue: "'images://GECINA/' || IdentifiantsERP || '.png'"
+
+avatarImageValueInterpreter: SEMQL
+avatarImageValue: "'images://GECINA/' || IdentifiantsERP || '.png'"
+avatarImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: CONTAIN

@@ -36,7 +36,7 @@ attributes:
     label: Code Etage en numérique
     physicalName: ETAGE_NUM
     dataType: ShortInteger
-    precision: 3
+    precision: 5
     mandatory: false
   - _type: EntityAttribute
     _name: EtageSolare

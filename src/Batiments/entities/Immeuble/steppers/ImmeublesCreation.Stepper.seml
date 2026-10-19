@@ -66,6 +66,10 @@ rootStep:
           # referencePickerSearchTypeConfigs: []
 
       formStepEnrichers:
+        # - enricher: Batiments.entities.Immeuble.enrichers.SourceID_IHM
+        #   executedOnButtonClick: false
+        #   executedOnDataChange: true
+        #   executedOnFormOpen: true
         - enricher: Batiments.entities.Immeuble.enrichers.StandardizeAddress
           executedOnButtonClick: false
           executedOnDataChange: true
@@ -370,93 +374,93 @@ rootStep:
           attribute: Batiments.references.ImmeubleToRegimeJuridique.RegimeJuridique
 
 
-    - _type: CollectionStep
-      enableChildImportOnParentCreate: true
-      enableChildImportOnParentEdit: true 
-      childImportModeOnParentEdit: CREATE_ONLY 
-      enableChildCopyOnParentCreate: true
-      enableChildCopyOnParentEdit: true
-      enableChildCreationOnParentCreate: true
-      enableChildCreationOnParentEdit: true 
-      enableChildDeleteOnParentEdit: true
-      enableChildEditOnParentCreate: true
-      enableChildEditOnParentEdit: true
-      enableChildRemoveOnParentCreate: true
-      enableChildRemoveOnParentEdit: true
-      skipToChildCreationOnParentCreate: false
-      skipToChildEditingOnParentEdit: false
-      linear: false
-      _name: Societes
-      label: Sociétés
-      canFinishSubLevel: true
-      enabledOnParentCreate: true
-      enabledOnParentEdit: true
-      formFieldsMode: AUTO
-      childDeleteType: HARD_DELETE
-      oneToManyReference: Batiments.references.RelImmSocToImmeuble
-      collectionView: Batiments.entities.RelImmSoc.collection_views.RelImmSocCollectionView
-      defaultDisplayType: TABLE
-      customSortEnabled: false
-      userDefinedSortEnabled: true
-      displayGridAllowed: false
-      displayListAllowed: true
-      displayTableAllowed: true
-      useCustomCollectionLabel: false
-      childSteps:
-        - _type: FormStep
-          _name: Societes_form
-          label: Sociétés
-          canFinishSubLevel: true
-          enabledOnParentCreate: true
-          enabledOnParentEdit: true
-          formFieldsMode: AUTO
-          enableMasterValuePicking: false
-          formTab: Batiments.entities.RelImmSoc.forms.RelImmSocForm.RelImmSoc
+    # - _type: CollectionStep
+    #   enableChildImportOnParentCreate: true
+    #   enableChildImportOnParentEdit: true 
+    #   childImportModeOnParentEdit: CREATE_ONLY 
+    #   enableChildCopyOnParentCreate: true
+    #   enableChildCopyOnParentEdit: true
+    #   enableChildCreationOnParentCreate: true
+    #   enableChildCreationOnParentEdit: true 
+    #   enableChildDeleteOnParentEdit: true
+    #   enableChildEditOnParentCreate: true
+    #   enableChildEditOnParentEdit: true
+    #   enableChildRemoveOnParentCreate: true
+    #   enableChildRemoveOnParentEdit: true
+    #   skipToChildCreationOnParentCreate: false
+    #   skipToChildEditingOnParentEdit: false
+    #   linear: false
+    #   _name: Societes
+    #   label: Sociétés
+    #   canFinishSubLevel: true
+    #   enabledOnParentCreate: true
+    #   enabledOnParentEdit: true
+    #   formFieldsMode: AUTO
+    #   childDeleteType: HARD_DELETE
+    #   oneToManyReference: Batiments.references.RelImmSocToImmeuble
+    #   collectionView: Batiments.entities.RelImmSoc.collection_views.RelImmSocCollectionView
+    #   defaultDisplayType: TABLE
+    #   customSortEnabled: false
+    #   userDefinedSortEnabled: true
+    #   displayGridAllowed: false
+    #   displayListAllowed: true
+    #   displayTableAllowed: true
+    #   useCustomCollectionLabel: false
+    #   childSteps:
+    #     - _type: FormStep
+    #       _name: Societes_form
+    #       label: Sociétés
+    #       canFinishSubLevel: true
+    #       enabledOnParentCreate: true
+    #       enabledOnParentEdit: true
+    #       formFieldsMode: AUTO
+    #       enableMasterValuePicking: false
+    #       formTab: Batiments.entities.RelImmSoc.forms.RelImmSocForm.RelImmSoc
 
 
-          formStepEnrichers:   
-            - enricher: Batiments.entities.RelImmSoc.enrichers.DefautDateDebSociete
-              executedOnButtonClick: false
-              executedOnDataChange: true
-              executedOnFormOpen: false
-            - enricher: Batiments.entities.RelImmSoc.enrichers.DefautDateDebSociete_NewProprio
-              executedOnButtonClick: false
-              executedOnDataChange: true
-              executedOnFormOpen: false
-            - enricher: Batiments.entities.RelImmSoc.enrichers.NbSocProprio
-              executedOnButtonClick: false
-              executedOnDataChange: true
-              executedOnFormOpen: false
+    #       formStepEnrichers:   
+    #         - enricher: Batiments.entities.RelImmSoc.enrichers.DefautDateDebSociete
+    #           executedOnButtonClick: false
+    #           executedOnDataChange: true
+    #           executedOnFormOpen: false
+    #         - enricher: Batiments.entities.RelImmSoc.enrichers.DefautDateDebSociete_NewProprio
+    #           executedOnButtonClick: false
+    #           executedOnDataChange: true
+    #           executedOnFormOpen: false
+    #         - enricher: Batiments.entities.RelImmSoc.enrichers.NbSocProprio
+    #           executedOnButtonClick: false
+    #           executedOnDataChange: true
+    #           executedOnFormOpen: false
 
-          formStepValidations:  
-            - executedOnDataChange: true
-              executedOnFormOpen: true
-              validationType: MANDATORY
-              attribute:  Batiments.references.RelImmSocToSociete.Societe
-            - executedOnDataChange: true
-              executedOnFormOpen: true
-              validationType: MANDATORY
-              attribute:  Batiments.references.RelImmSocToTypeSociete.TypeSociete
-            - validator: Batiments.entities.RelImmSoc.validations.CheckSocieteProprio_count
-              executedOnDataChange: true
-              executedOnFormOpen: false
-              validationType: CHECK
-              attribute: Batiments.references.RelImmSocToTypeSociete.TypeSociete
+    #       formStepValidations:  
+    #         - executedOnDataChange: true
+    #           executedOnFormOpen: true
+    #           validationType: MANDATORY
+    #           attribute:  Batiments.references.RelImmSocToSociete.Societe
+    #         - executedOnDataChange: true
+    #           executedOnFormOpen: true
+    #           validationType: MANDATORY
+    #           attribute:  Batiments.references.RelImmSocToTypeSociete.TypeSociete
+    #         - validator: Batiments.entities.RelImmSoc.validations.CheckSocieteProprio_count
+    #           executedOnDataChange: true
+    #           executedOnFormOpen: false
+    #           validationType: CHECK
+    #           attribute: Batiments.references.RelImmSocToTypeSociete.TypeSociete
 
-          stepTransitionValidations:
-            - onStepExit: BLOCK
-              validationType: MANDATORY
-              attribute: Batiments.references.RelImmSocToSociete.Societe
-            - onStepExit: BLOCK
-              validationType: MANDATORY
-              attribute: Batiments.references.RelImmSocToTypeSociete.TypeSociete
+    #       stepTransitionValidations:
+    #         - onStepExit: BLOCK
+    #           validationType: MANDATORY
+    #           attribute: Batiments.references.RelImmSocToSociete.Societe
+    #         - onStepExit: BLOCK
+    #           validationType: MANDATORY
+    #           attribute: Batiments.references.RelImmSocToTypeSociete.TypeSociete
 
-            - onStepExit: BLOCK
-              validationType: DETECT_DUPS
-              matcher: Batiments.entities.RelImmSoc.RelImmSoc.Matcher
-            - onStepExit: BLOCK
-              validationType: CHECK
-              validator: Batiments.entities.RelImmSoc.validations.CheckSocieteProprio_count
+    #         - onStepExit: BLOCK
+    #           validationType: DETECT_DUPS
+    #           matcher: Batiments.entities.RelImmSoc.RelImmSoc.Matcher
+    #         - onStepExit: BLOCK
+    #           validationType: CHECK
+    #           validator: Batiments.entities.RelImmSoc.validations.CheckSocieteProprio_count
 
 stepperFinishValidations:
   - onStepperFinish: WARN
@@ -544,20 +548,20 @@ stepperFinishValidations:
     validationType: CHECK
     validator: Batiments.entities.Immeuble.validations.CheckQuartierParis
 
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.references.RelImmSocToSociete.Societe
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute: Batiments.references.RelImmSocToTypeSociete.TypeSociete
-  - onStepperFinish: BLOCK
-    validationType: CHECK
-    validator: Batiments.entities.RelImmSoc.validations.CheckSocieteProprio_count
+  # - onStepperFinish: BLOCK
+  #   validationType: MANDATORY
+  #   attribute: Batiments.references.RelImmSocToSociete.Societe
+  # - onStepperFinish: BLOCK
+  #   validationType: MANDATORY
+  #   attribute: Batiments.references.RelImmSocToTypeSociete.TypeSociete
+  # - onStepperFinish: BLOCK
+  #   validationType: CHECK
+  #   validator: Batiments.entities.RelImmSoc.validations.CheckSocieteProprio_count
 
 
-  - onStepperFinish: BLOCK
-    validationType: CHECK
-    validator: Batiments.entities.Immeuble.validations.CheckSocieteProprio
-  - onStepperFinish: BLOCK
-    validationType: CHECK
-    validator: Batiments.entities.Immeuble.validations.CheckSocieteExploit
+  # - onStepperFinish: BLOCK
+  #   validationType: CHECK
+  #   validator: Batiments.entities.Immeuble.validations.CheckSocieteProprio
+  # - onStepperFinish: BLOCK
+  #   validationType: CHECK
+  #   validator: Batiments.entities.Immeuble.validations.CheckSocieteExploit

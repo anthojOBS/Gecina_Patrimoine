@@ -3,7 +3,7 @@ _type: DisplayCard
 _name: AffectationDisplayCard
 entity: Batiments.entities.Affectation.Affectation
 default: true
-primaryTextExpression: FDN_Intervenant
+primaryTextExpression: FDN_Intervenant || ' - ' || FDN_Immeuble
 primaryImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER
@@ -14,5 +14,5 @@ avatarImageValueInterpreter: LITERAL
 primaryImageSourceType: URL
 avatarImageAlign: MIDDLE_CENTER
 avatarImageMode: FIT
-avatarImageValue: images://mdi/domain.svg
+avatarImageValue: images://mdi/link-variant.svg
 

@@ -38,32 +38,32 @@ rootBusinessViewEntity:
   gridAllowed: true
 
   transitions:
-    - _type: BusinessViewTransition
-      _name: MasterRecords
-      displayFormTabAs: ICON_LABEL
-      useCustomLabel: false
-      enableHierarchyInterpreter: LITERAL
-      filter: 1=1
-      iconUrl: images://mdi/puzzle.svg
-      label: Masters Records
-      pluralLabel: Masters Records
-      transitionType: FULLY_QUALIFIED
-      transitionPath:  MasterRecords 
-      businessViewEntity: 
-        _type: BusinessViewEntity
-        _name: MasterRecord
-        displayCard: Batiments.entities.RelLotSoc.display_cards.RelLotSocDisplayCard
-        entity: Batiments.entities.RelLotSoc.RelLotSoc
-        actionSet: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet
-        collection: Batiments.entities.RelLotSoc.collection_views.RelLotSocCollectionView
-        form: Batiments.entities.RelLotSoc.forms.RelLotSocForm
-        displayRecordCount: ALWAYS
-        outlineVisible: false
-        enableUserDefinedSort: true
-        gridAllowed: true
-        listAllowed: true
-        overrideDefaultSort: false
-        tableAllowed: true
+    # - _type: BusinessViewTransition
+    #   _name: MasterRecords
+    #   displayFormTabAs: ICON_LABEL
+    #   useCustomLabel: false
+    #   enableHierarchyInterpreter: LITERAL
+    #   filter: 1=1
+    #   iconUrl: images://mdi/puzzle.svg
+    #   label: Masters Records
+    #   pluralLabel: Masters Records
+    #   transitionType: FULLY_QUALIFIED
+    #   transitionPath:  MasterRecords 
+    #   businessViewEntity: 
+    #     _type: BusinessViewEntity
+    #     _name: MasterRecord
+    #     displayCard: Batiments.entities.RelLotSoc.display_cards.RelLotSocDisplayCard
+    #     entity: Batiments.entities.RelLotSoc.RelLotSoc
+    #     actionSet: Batiments.entities.RelLotSoc.action_sets.RelLotSocActionSet
+    #     collection: Batiments.entities.RelLotSoc.collection_views.RelLotSocCollectionView
+    #     form: Batiments.entities.RelLotSoc.forms.RelLotSocForm
+    #     displayRecordCount: ALWAYS
+    #     outlineVisible: false
+    #     enableUserDefinedSort: true
+    #     gridAllowed: true
+    #     listAllowed: true
+    #     overrideDefaultSort: false
+    #     tableAllowed: true
 
     - _name: GoldenHistoryRecords
       _type: BusinessViewTransition

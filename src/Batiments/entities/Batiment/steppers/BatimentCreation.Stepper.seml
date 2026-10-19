@@ -32,11 +32,26 @@ rootStep:
       enableMasterValuePicking: false
       formTab: Batiments.entities.Batiment.forms.BatimentCreation.Batiment
 
+      # referenceFormFieldConfigs:
+      #   - enableCreateReference: false
+      #     enableUserSort: true
+      #     referencePickerType: AUTO_COMPLETE
+      #     fdnFormField: Batiments.entities.Batiment.forms.BatimentCreation.Batiment.SectionHaut.SectionHautGauche.IdentiteBatiment.FDN_Immeuble         
+      #     referenceFilter: PublisherID = 'IHM' or PublisherID = 'KSIOP' 
+      #     referencePickerCollectionView: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView
+      #     # referencePickerSearchTypeConfigs: []
+
+
       formStepEnrichers:
-        - enricher: Batiments.entities.Batiment.enrichers.PreAlimAddress
+
+        - enricher: Batiments.entities.Batiment.enrichers.PrerequisImmeuble
           executedOnButtonClick: false
-          executedOnDataChange: false
-          executedOnFormOpen: true
+          executedOnDataChange: true
+          executedOnFormOpen: false
+        - enricher: Batiments.entities.Batiment.enrichers.PluginImmeuble
+          executedOnButtonClick: false
+          executedOnDataChange: true
+          executedOnFormOpen: false
         - enricher: Batiments.entities.Batiment.enrichers.StandardizeAddress
           executedOnButtonClick: false
           executedOnDataChange: true
@@ -82,6 +97,7 @@ rootStep:
           validationType: CHECK
           attribute: Batiments.entities.Batiment.Batiment.Ville
 
+
       stepTransitionValidations:
         - onStepExit: BLOCK
           validationType: MANDATORY
@@ -107,7 +123,6 @@ rootStep:
         - onStepExit: WARN
           validationType: DETECT_DUPS
           matcher: Batiments.entities.Batiment.Batiment.Matcher
-
 
     - _type: FormStep
       _name: CycleDeVie
@@ -135,9 +150,9 @@ rootStep:
           executedOnDataChange: false
           executedOnFormOpen: true
 
-        - enricher: Batiments.entities.Batiment.enrichers.DefautConstruction
+        - enricher: Batiments.entities.Batiment.enrichers.Formatage_Date
           executedOnButtonClick: false
-          executedOnDataChange: false
+          executedOnDataChange: true
           executedOnFormOpen: true
 
         - enricher: Batiments.entities.Batiment.enrichers.DefautDtDebUsage
@@ -156,6 +171,12 @@ rootStep:
           validationType: MANDATORY
           attribute:  Batiments.references.BatimentToEtat.Etat 
 
+
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.BatimentToEtat.Etat 
+        
     - _type: FormStep
       _name: JuridiquePropriete
       label: Juridique et propriété 
@@ -167,26 +188,21 @@ rootStep:
       formTab: Batiments.entities.Batiment.forms.BatimentCreation.FiscaliteJuridique
 
 
-      formStepEnrichers:   
-        - enricher: Batiments.entities.Batiment.enrichers.DefautRegimeTVA
-          executedOnButtonClick: false
-          executedOnDataChange: false
-          executedOnFormOpen: true
-        - enricher: Batiments.entities.Batiment.enrichers.DefautRegimeJuridique
-          executedOnButtonClick: false
-          executedOnDataChange: false
-          executedOnFormOpen: true
 
       formStepValidations:  
         - executedOnDataChange: true
           executedOnFormOpen: true
           validationType: MANDATORY
           attribute:  Batiments.references.BatimentToRegimeJuridique.RegimeJuridique
-        - executedOnDataChange: true
-          executedOnFormOpen: true
-          validationType: MANDATORY
-          attribute:  Batiments.references.BatimentToFiscaliteCible.FiscaliteCible
+        # - executedOnDataChange: true
+        #   executedOnFormOpen: true
+        #   validationType: MANDATORY
+        #   attribute:  Batiments.references.BatimentToFiscaliteCible.FiscaliteCible
 
+      stepTransitionValidations:
+        - onStepExit: BLOCK
+          validationType: MANDATORY
+          attribute:  Batiments.references.BatimentToRegimeJuridique.RegimeJuridique
 
 stepperFinishValidations:
 
@@ -200,6 +216,7 @@ stepperFinishValidations:
     validationType: MANDATORY
     attribute: Batiments.entities.Batiment.Batiment.IdentifiantsERP
 
+    
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute:  Batiments.references.BatimentToEtat.Etat
@@ -223,6 +240,6 @@ stepperFinishValidations:
   - onStepperFinish: BLOCK
     validationType: MANDATORY
     attribute:  Batiments.references.BatimentToRegimeJuridique.RegimeJuridique
-  - onStepperFinish: BLOCK
-    validationType: MANDATORY
-    attribute:  Batiments.references.BatimentToFiscaliteCible.FiscaliteCible
+  # - onStepperFinish: BLOCK
+  #   validationType: MANDATORY
+  #   attribute:  Batiments.references.BatimentToFiscaliteCible.FiscaliteCible

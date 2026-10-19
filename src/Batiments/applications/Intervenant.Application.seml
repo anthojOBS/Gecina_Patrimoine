@@ -13,7 +13,7 @@ historyBrowsingRequiredRole: ""
 
 titleBarDefaultColor: "#122843"
 
-defaultAction: Batiments.applications.Intervenant.Root.GlobalSearch
+defaultAction: Batiments.applications.Intervenant.Root.Affectation
 
 # documentationConfig:
 #   documentation: ""
@@ -33,7 +33,13 @@ globalSearchConfig:
       businessView: Batiments.entities.Intervenant.business_views.IntervenantBusinessView
       searchTypeConfig: Batiments.entities.Intervenant.business_views.IntervenantBusinessView.Intervenant.TextConfig
       maxResults: 10
-      
+    - _type: GlobalSearchBoView
+      _name: Affectations
+      viewType: GD
+      businessView: Batiments.entities.Affectation.business_views.AffectationBusinessView
+      searchTypeConfig: Batiments.entities.Affectation.business_views.AffectationBusinessView.Affectation.TextConfig
+      maxResults: 10
+
 navDrawer:
   - _type: NavigationGroup
     _name: RootFolder
@@ -54,7 +60,7 @@ navDrawer:
     labelVisible: false
     actions:
       - appAction: Batiments.applications.Intervenant.Root.Intervenant
-  
+      - appAction: Batiments.applications.Intervenant.Root.Affectation
 
   - _type: NavigationGroup
     _name: ReferenceData
@@ -126,8 +132,18 @@ rootFolder:
       imageMode: FIT
       nbRecordsBadgeVisible: false
       nbRecordsBadgeBackgroundColor: "#FF9800"
-      icon: images://mdi/office-building-marker.svg
+      icon: images://mdi/account.svg
       label: Intervenants
+
+    - _type: BrowseBusinessViewAction
+      _name: Affectation
+      businessView: Batiments.entities.Affectation.business_views.AffectationBusinessView
+      imageAlign: MIDDLE_CENTER
+      imageMode: FIT
+      nbRecordsBadgeVisible: false
+      nbRecordsBadgeBackgroundColor: "#FF9800"
+      icon: images://mdi/link-variant.svg
+      label: Affectations
 
     - _type: FolderAction
       _name: ReferenceData
@@ -166,5 +182,14 @@ rootFolder:
         importAction: Batiments.entities.Intervenant.action_sets.IntervenantActionSet.ImportAuthorIntervenant
         description: Importer Intervenant depuis un fichier
         requiredRole: semarchyAdmin
+      - _type: ImportDataAppAction
+        _name: ImportAffectation
+        label: Importer Affectations
+        imageAlign: MIDDLE_CENTER
+        imageMode: FIT
+        importAction: Batiments.entities.Affectation.action_sets.AffectationActionSet.ImportAuthorAffectation
+        description: Importer affectation depuis un fichier
+        requiredRole: semarchyAdmin
+
 
 applicationTitle: Référentiel Intervenants

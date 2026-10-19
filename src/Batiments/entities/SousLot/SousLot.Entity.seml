@@ -3,7 +3,7 @@ _type: Entity
 _name: SousLot
 label: Sous-lot
 pluralLabel: SousLots
-entityType: FUZZY_MATCHED
+entityType: BASIC
 physicalTableName: SOUS_LOT
 iconUrl: images://mdi/door-sliding-open.svg
 description: ""
@@ -14,7 +14,7 @@ documentation: |
   
   Cette entité permet de gérer finement les espaces locatifs et de suivre leur occupation et leur rentabilité.
 historizeGolden: true
-historizeMaster: true
+historizeMaster: false
 enableDelete: true
 attributes:
   - _type: EntityAttribute
@@ -33,7 +33,7 @@ attributes:
     length: 100
     mandatory: true
     mandatoryValidationLabel: "Numéro sous-lot est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: NONE
 
 
   - _type: EntityAttribute
@@ -50,6 +50,7 @@ attributes:
     label: Statut meuble
     physicalName: STATUT_MEUBLE
     dataType: Boolean
+    length: 1
     mandatory: false
 
 
@@ -58,6 +59,7 @@ attributes:
     label: Statut PMR
     physicalName: STATUT_PMR
     dataType: Boolean
+    length: 1
     mandatory: false
 
   - _type: EntityAttribute
@@ -65,6 +67,7 @@ attributes:
     label: Statut louable
     physicalName: STATUT_LOUABLE
     dataType: Boolean
+    length: 1
     mandatory: false
 
   - _type: EntityAttribute
@@ -131,9 +134,9 @@ sourceIdGeneration:
 
 primaryKey: Batiments.entities.SousLot.SousLot.SousLotCode
 
-goldenIdGeneration:
-  mode: SEQUENCE
-  startWith: 1
+# goldenIdGeneration:
+#   mode: SEQUENCE
+#   startWith: 1
 
 matcher:
   _type: SemQLMatcher

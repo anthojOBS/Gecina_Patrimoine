@@ -63,6 +63,7 @@ rootBusinessViewEntity:
   gridAllowed: true
 
   transitions:
+
     - _name: RelatedBatiments
       _type: BusinessViewTransition
       displayFormTabAs: ICON_LABEL
@@ -141,34 +142,34 @@ rootBusinessViewEntity:
               tableAllowed: true
             filter: 1 = 1
           
-          - _type: BusinessViewTransition
-            _name: MasterRecordsBatiments
-            displayFormTabAs: ICON_LABEL
-            useCustomLabel: false
-            enableHierarchyInterpreter: LITERAL
-            filter: 1=1
-            iconUrl: images://mdi/puzzle.svg
-            label: Masters Records
-            pluralLabel: Masters Records
-            transitionType: FULLY_QUALIFIED
-            transitionPath:  MasterRecords 
-            visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
-            businessViewEntity: 
-              _type: BusinessViewEntity
-              _name: MasterRecordsBatiments
-              displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
-              entity: Batiments.entities.Batiment.Batiment
-              actionSet: Batiments.entities.Batiment.action_sets.BatimentActionSet
-              collection: Batiments.entities.Batiment.collection_views.BatimentCollectionView_history
-              form: Batiments.entities.Batiment.forms.BatimentConsultation
-              displayRecordCount: ALWAYS
-              outlineVisible: false
-              enableUserDefinedSort: true
-              gridAllowed: true
-              listAllowed: true
-              overrideDefaultSort: false
-              tableAllowed: true
-              sortExpression: Libelle_Batiment ASC
+          # - _type: BusinessViewTransition
+          #   _name: MasterRecordsBatiments
+          #   displayFormTabAs: ICON_LABEL
+          #   useCustomLabel: false
+          #   enableHierarchyInterpreter: LITERAL
+          #   filter: 1=1
+          #   iconUrl: images://mdi/puzzle.svg
+          #   label: Masters Records
+          #   pluralLabel: Masters Records
+          #   transitionType: FULLY_QUALIFIED
+          #   transitionPath:  MasterRecords 
+          #   visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
+          #   businessViewEntity: 
+          #     _type: BusinessViewEntity
+          #     _name: MasterRecordsBatiments
+          #     displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
+          #     entity: Batiments.entities.Batiment.Batiment
+          #     actionSet: Batiments.entities.Batiment.action_sets.BatimentActionSet
+          #     collection: Batiments.entities.Batiment.collection_views.BatimentCollectionView_history
+          #     form: Batiments.entities.Batiment.forms.BatimentConsultation
+          #     displayRecordCount: ALWAYS
+          #     outlineVisible: false
+          #     enableUserDefinedSort: true
+          #     gridAllowed: true
+          #     listAllowed: true
+          #     overrideDefaultSort: false
+          #     tableAllowed: true
+          #     sortExpression: Libelle_Batiment ASC
 
 
 
@@ -210,33 +211,33 @@ rootBusinessViewEntity:
               transitions:
 
 
-              - _type: BusinessViewTransition
-                _name: MasterRecordsEtages
-                displayFormTabAs: ICON_LABEL
-                useCustomLabel: false
-                enableHierarchyInterpreter: LITERAL
-                filter: 1=1
-                iconUrl: images://mdi/puzzle.svg
-                label: Masters Records
-                pluralLabel: Masters Records
-                transitionType: FULLY_QUALIFIED
-                transitionPath:  MasterRecords 
-                visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
-                businessViewEntity: 
-                  _type: BusinessViewEntity
-                  _name: MasterRecordsEtages
-                  displayCard: Batiments.entities.Etage.display_cards.EtageDisplayCard
-                  entity: Batiments.entities.Etage.Etage  
-                  actionSet: Batiments.entities.Etage.action_sets.EtageActionSet
-                  collection: Batiments.entities.Etage.collection_views.EtageCollectionView
-                  form: Batiments.entities.Etage.forms.EtageForm
-                  displayRecordCount: ALWAYS
-                  outlineVisible: false
-                  enableUserDefinedSort: true
-                  gridAllowed: true
-                  listAllowed: true
-                  overrideDefaultSort: false
-                  tableAllowed: true
+              # - _type: BusinessViewTransition
+              #   _name: MasterRecordsEtages
+              #   displayFormTabAs: ICON_LABEL
+              #   useCustomLabel: false
+              #   enableHierarchyInterpreter: LITERAL
+              #   filter: 1=1
+              #   iconUrl: images://mdi/puzzle.svg
+              #   label: Masters Records
+              #   pluralLabel: Masters Records
+              #   transitionType: FULLY_QUALIFIED
+              #   transitionPath:  MasterRecords 
+              #   visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
+              #   businessViewEntity: 
+              #     _type: BusinessViewEntity
+              #     _name: MasterRecordsEtages
+              #     displayCard: Batiments.entities.Etage.display_cards.EtageDisplayCard
+              #     entity: Batiments.entities.Etage.Etage  
+              #     actionSet: Batiments.entities.Etage.action_sets.EtageActionSet
+              #     collection: Batiments.entities.Etage.collection_views.EtageCollectionView
+              #     form: Batiments.entities.Etage.forms.EtageForm
+              #     displayRecordCount: ALWAYS
+              #     outlineVisible: false
+              #     enableUserDefinedSort: true
+              #     gridAllowed: true
+              #     listAllowed: true
+              #     overrideDefaultSort: false
+              #     tableAllowed: true
 
 
               - _type: BusinessViewTransition
@@ -315,33 +316,33 @@ rootBusinessViewEntity:
                         tableAllowed: true
                         sortExpression: IdentifiantsERP ASC
 
-                    - _type: BusinessViewTransition
-                      _name: MasterRecordsLots
-                      displayFormTabAs: ICON_LABEL
-                      useCustomLabel: false
-                      enableHierarchyInterpreter: LITERAL
-                      filter: 1=1
-                      iconUrl: images://mdi/puzzle.svg
-                      label: Masters Records
-                      pluralLabel: Masters Records
-                      transitionType: FULLY_QUALIFIED
-                      transitionPath:  MasterRecords 
-                      visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
-                      businessViewEntity: 
-                        _type: BusinessViewEntity
-                        _name: MasterRecordsLots
-                        displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
-                        entity: Batiments.entities.Lot.Lot
-                        actionSet: Batiments.entities.Lot.action_sets.LotActionSet
-                        collection: Batiments.entities.Lot.collection_views.LotCollectionView_History
-                        form: Batiments.entities.Lot.forms.LotConsultation
-                        displayRecordCount: ALWAYS
-                        outlineVisible: false
-                        enableUserDefinedSort: true
-                        gridAllowed: true
-                        listAllowed: true
-                        overrideDefaultSort: false
-                        tableAllowed: true
+                    # - _type: BusinessViewTransition
+                    #   _name: MasterRecordsLots
+                    #   displayFormTabAs: ICON_LABEL
+                    #   useCustomLabel: false
+                    #   enableHierarchyInterpreter: LITERAL
+                    #   filter: 1=1
+                    #   iconUrl: images://mdi/puzzle.svg
+                    #   label: Masters Records
+                    #   pluralLabel: Masters Records
+                    #   transitionType: FULLY_QUALIFIED
+                    #   transitionPath:  MasterRecords 
+                    #   visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
+                    #   businessViewEntity: 
+                    #     _type: BusinessViewEntity
+                    #     _name: MasterRecordsLots
+                    #     displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
+                    #     entity: Batiments.entities.Lot.Lot
+                    #     actionSet: Batiments.entities.Lot.action_sets.LotActionSet
+                    #     collection: Batiments.entities.Lot.collection_views.LotCollectionView_History
+                    #     form: Batiments.entities.Lot.forms.LotConsultation
+                    #     displayRecordCount: ALWAYS
+                    #     outlineVisible: false
+                    #     enableUserDefinedSort: true
+                    #     gridAllowed: true
+                    #     listAllowed: true
+                    #     overrideDefaultSort: false
+                    #     tableAllowed: true
 
 
                     - _type: BusinessViewTransition
@@ -414,33 +415,33 @@ rootBusinessViewEntity:
                               tableAllowed: true
                               sortExpression: IdentifiantsERP ASC
                               
-                          - _type: BusinessViewTransition
-                            _name: MasterRecordsLots
-                            displayFormTabAs: ICON_LABEL
-                            useCustomLabel: false
-                            enableHierarchyInterpreter: LITERAL
-                            filter: 1=1
-                            iconUrl: images://mdi/puzzle.svg
-                            label: Masters Records
-                            pluralLabel: Masters Records
-                            transitionType: FULLY_QUALIFIED
-                            transitionPath:  MasterRecords 
-                            visibleInFormTabCondition: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' and :V_USER_ROLES like '%semarchyAdmin%'
-                            businessViewEntity: 
-                              _type: BusinessViewEntity
-                              _name: MasterRecordsSousLots
-                              displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
-                              entity: Batiments.entities.SousLot.SousLot
-                              actionSet: Batiments.entities.SousLot.action_sets.SousLotActionSet
-                              collection: Batiments.entities.SousLot.collection_views.SousLotCollectionView_History
-                              form: Batiments.entities.SousLot.forms.SousLotConsultation
-                              displayRecordCount: ALWAYS
-                              outlineVisible: false
-                              enableUserDefinedSort: true
-                              gridAllowed: true
-                              listAllowed: true
-                              overrideDefaultSort: false
-                              tableAllowed: true
+                          # - _type: BusinessViewTransition
+                          #   _name: MasterRecordsLots
+                          #   displayFormTabAs: ICON_LABEL
+                          #   useCustomLabel: false
+                          #   enableHierarchyInterpreter: LITERAL
+                          #   filter: 1=1
+                          #   iconUrl: images://mdi/puzzle.svg
+                          #   label: Masters Records
+                          #   pluralLabel: Masters Records
+                          #   transitionType: FULLY_QUALIFIED
+                          #   transitionPath:  MasterRecords 
+                          #   visibleInFormTabCondition: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' and :V_USER_ROLES like '%semarchyAdmin%'
+                          #   businessViewEntity: 
+                          #     _type: BusinessViewEntity
+                          #     _name: MasterRecordsSousLots
+                          #     displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
+                          #     entity: Batiments.entities.SousLot.SousLot
+                          #     actionSet: Batiments.entities.SousLot.action_sets.SousLotActionSet
+                          #     collection: Batiments.entities.SousLot.collection_views.SousLotCollectionView_History
+                          #     form: Batiments.entities.SousLot.forms.SousLotConsultation
+                          #     displayRecordCount: ALWAYS
+                          #     outlineVisible: false
+                          #     enableUserDefinedSort: true
+                          #     gridAllowed: true
+                          #     listAllowed: true
+                          #     overrideDefaultSort: false
+                          #     tableAllowed: true
 
 
 
@@ -525,33 +526,33 @@ rootBusinessViewEntity:
               tableAllowed: true
               sortExpression: IdentifiantsERP ASC
 
-          - _type: BusinessViewTransition
-            _name: MasterRecordsLots
-            displayFormTabAs: ICON_LABEL
-            useCustomLabel: false
-            enableHierarchyInterpreter: LITERAL
-            filter: 1=1
-            iconUrl: images://mdi/puzzle.svg
-            label: Masters Records
-            pluralLabel: Masters Records
-            transitionType: FULLY_QUALIFIED
-            transitionPath:  MasterRecords 
-            visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
-            businessViewEntity: 
-              _type: BusinessViewEntity
-              _name: MasterRecordsLotsGlobal
-              displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
-              entity: Batiments.entities.Lot.Lot
-              actionSet: Batiments.entities.Lot.action_sets.LotActionSet
-              collection: Batiments.entities.Lot.collection_views.LotCollectionView_History
-              form: Batiments.entities.Lot.forms.LotConsultation
-              displayRecordCount: ALWAYS
-              outlineVisible: false
-              enableUserDefinedSort: true
-              gridAllowed: true
-              listAllowed: true
-              overrideDefaultSort: false
-              tableAllowed: true
+          # - _type: BusinessViewTransition
+          #   _name: MasterRecordsLots
+          #   displayFormTabAs: ICON_LABEL
+          #   useCustomLabel: false
+          #   enableHierarchyInterpreter: LITERAL
+          #   filter: 1=1
+          #   iconUrl: images://mdi/puzzle.svg
+          #   label: Masters Records
+          #   pluralLabel: Masters Records
+          #   transitionType: FULLY_QUALIFIED
+          #   transitionPath:  MasterRecords 
+          #   visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
+          #   businessViewEntity: 
+          #     _type: BusinessViewEntity
+          #     _name: MasterRecordsLotsGlobal
+          #     displayCard: Batiments.entities.Lot.display_cards.LotDisplayCard
+          #     entity: Batiments.entities.Lot.Lot
+          #     actionSet: Batiments.entities.Lot.action_sets.LotActionSet
+          #     collection: Batiments.entities.Lot.collection_views.LotCollectionView_History
+          #     form: Batiments.entities.Lot.forms.LotConsultation
+          #     displayRecordCount: ALWAYS
+          #     outlineVisible: false
+          #     enableUserDefinedSort: true
+          #     gridAllowed: true
+          #     listAllowed: true
+          #     overrideDefaultSort: false
+          #     tableAllowed: true
 
 
           - _type: BusinessViewTransition
@@ -626,42 +627,40 @@ rootBusinessViewEntity:
                     tableAllowed: true
                     sortExpression: IdentifiantsERP ASC
                     
-                - _type: BusinessViewTransition
-                  _name: MasterRecordsLots
-                  displayFormTabAs: ICON_LABEL
-                  useCustomLabel: false
-                  enableHierarchyInterpreter: LITERAL
-                  iconUrl: images://mdi/puzzle.svg
-                  label: Masters Records
-                  pluralLabel: Masters Records
-                  transitionType: FULLY_QUALIFIED
-                  transitionPath:  MasterRecords 
-                  # transitionVisible: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
-                  # transitionVisibleInterpreter: SEMQL
-                  transitionVisible: '0'
-                  transitionVisibleInterpreter: LITERAL
+                # - _type: BusinessViewTransition
+                #   _name: MasterRecordsLots
+                #   displayFormTabAs: ICON_LABEL
+                #   useCustomLabel: false
+                #   enableHierarchyInterpreter: LITERAL
+                #   iconUrl: images://mdi/puzzle.svg
+                #   label: Masters Records
+                #   pluralLabel: Masters Records
+                #   transitionType: FULLY_QUALIFIED
+                #   transitionPath:  MasterRecords 
+                #   # transitionVisible: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR' 
+                #   # transitionVisibleInterpreter: SEMQL
+                #   transitionVisible: '0'
+                #   transitionVisibleInterpreter: LITERAL
 
-                  filter: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'
-                  visibleInFormTabCondition: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'  and :V_USER_ROLES like '%semarchyAdmin%'
+                #   filter: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'
+                #   visibleInFormTabCondition: Lot.Etage.Batiment.Immeuble.FID_OrgaResp = 'DR'  and :V_USER_ROLES like '%semarchyAdmin%'
 
-                  businessViewEntity: 
-                    _type: BusinessViewEntity
-                    _name: MasterRecordsSousLotsglobal
-                    displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
-                    entity: Batiments.entities.SousLot.SousLot
-                    actionSet: Batiments.entities.SousLot.action_sets.SousLotActionSet
-                    collection: Batiments.entities.SousLot.collection_views.SousLotCollectionView_History
-                    form: Batiments.entities.SousLot.forms.SousLotConsultation
-                    displayRecordCount: ALWAYS
-                    outlineVisible: false
-                    enableUserDefinedSort: true
-                    gridAllowed: true
-                    listAllowed: true
-                    overrideDefaultSort: false
-                    tableAllowed: true
-
-
-
+                #   businessViewEntity: 
+                #     _type: BusinessViewEntity
+                #     _name: MasterRecordsSousLotsglobal
+                #     displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
+                #     entity: Batiments.entities.SousLot.SousLot
+                #     actionSet: Batiments.entities.SousLot.action_sets.SousLotActionSet
+                #     collection: Batiments.entities.SousLot.collection_views.SousLotCollectionView_History
+                #     form: Batiments.entities.SousLot.forms.SousLotConsultation
+                #     displayRecordCount: ALWAYS
+                #     outlineVisible: false
+                #     enableUserDefinedSort: true
+                #     gridAllowed: true
+                #     listAllowed: true
+                #     overrideDefaultSort: false
+                #     tableAllowed: true
+    
 
     - _name: GoldenHistoryRecords
       _type: BusinessViewTransition
@@ -695,35 +694,35 @@ rootBusinessViewEntity:
         tableAllowed: true
       filter: 1 = 1
 
-    - _type: BusinessViewTransition
-      _name: MasterRecords
-      displayFormTabAs: ICON_LABEL
-      useCustomLabel: false
-      enableHierarchyInterpreter: LITERAL
-      filter: 1=1
-      iconUrl: images://mdi/puzzle.svg
-      label: Masters Records
-      pluralLabel: Masters Records
-      transitionType: FULLY_QUALIFIED
-      transitionPath:  MasterRecords
-      visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
-      businessViewEntity:
-        _type: BusinessViewEntity
-        _name: MasterRecord
-        displayCard: Batiments.entities.Immeuble.display_cards.ImmeubleDisplayCard
-        entity: Batiments.entities.Immeuble.Immeuble
-        actionSet: Batiments.entities.Immeuble.action_sets.ImmeubleActionSet
-        collection: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView_history
-        form: Batiments.entities.Immeuble.forms.ImmeubleConsultation
-        displayRecordCount: ALWAYS
-        outlineVisible: false
-        enableUserDefinedSort: true
-        gridAllowed: true
-        listAllowed: true
-        overrideDefaultSort: false
-        tableAllowed: true
+    # - _type: BusinessViewTransition
+    #   _name: MasterRecords
+    #   displayFormTabAs: ICON_LABEL
+    #   useCustomLabel: false
+    #   enableHierarchyInterpreter: LITERAL
+    #   filter: 1=1
+    #   iconUrl: images://mdi/puzzle.svg
+    #   label: Masters Records
+    #   pluralLabel: Masters Records
+    #   transitionType: FULLY_QUALIFIED
+    #   transitionPath:  MasterRecords
+    #   visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
+    #   businessViewEntity:
+    #     _type: BusinessViewEntity
+    #     _name: MasterRecord
+    #     displayCard: Batiments.entities.Immeuble.display_cards.ImmeubleDisplayCard
+    #     entity: Batiments.entities.Immeuble.Immeuble
+    #     actionSet: Batiments.entities.Immeuble.action_sets.ImmeubleActionSet
+    #     collection: Batiments.entities.Immeuble.collection_views.ImmeubleCollectionView_history
+    #     form: Batiments.entities.Immeuble.forms.ImmeubleConsultation
+    #     displayRecordCount: ALWAYS
+    #     outlineVisible: false
+    #     enableUserDefinedSort: true
+    #     gridAllowed: true
+    #     listAllowed: true
+    #     overrideDefaultSort: false
+    #     tableAllowed: true
 
-
+    
 # rootFilter:  FID_Portefeuille in SEM_F_SPLIT(
 #   case
 #   when :V_USER_ROLES like '%Reader%' then 'P1A'

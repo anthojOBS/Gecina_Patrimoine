@@ -10,10 +10,12 @@ actions:
     label: Création bâtiment
     useCustomLabel: true
     stepper: Batiments.entities.Batiment.steppers.BatimentCreation
-    createMultiple: false
+    createMultiple: true
     createdRecordType: GOLDEN
-    waitDialogEnabled: false
-    allowOtherPublishers: true
+    waitDialogEnabled: true
+    allowOtherPublishers: false
+    defaultPublisher: Batiments.publishers.IHM
+
   - _type: EditAction
     _name: EditAuthorBatiments
     label: Modification bâtiment
@@ -21,7 +23,7 @@ actions:
     stepper: Batiments.entities.Batiment.steppers.BatimentEdition
     multipleSelectionAllowed: true
     availableForGoldenData: true
-    availableForMasterData: true
+    availableForMasterData: false
     availableForErrorData: true
     waitDialogEnabled: false
   - _type: MassUpdateAction
@@ -31,7 +33,7 @@ actions:
     stepper: Batiments.entities.Batiment.steppers.BatimentEdition
     availableForGoldenData: true
     availableForErrorData: true
-    availableForMasterData: true
+    availableForMasterData: false
     waitDialogEnabled: false
   - _type: DeleteAction
     _name: Delete
@@ -54,7 +56,7 @@ actions:
     useCustomLabel: true
     importMode: CREATE_AND_UPDATE
     stepper: Batiments.entities.Batiment.steppers.BatimentImport
-    importedRecordType: MASTER
+    importedRecordType: GOLDEN
     defaultPublisher: Batiments.publishers.VisionReelle
     waitDialogEnabled: false
     allowOtherPublishers: true
@@ -64,39 +66,39 @@ actions:
     useCustomLabel: true
     waitDialogEnabled: false
     requiredRole: semarchyAdmin
-  - _type: DirectConfirmDupsAction
-    _name: DirectConfirmDuplicates
-    label: Confirmer doublons directement
-    useCustomLabel: false
-    waitDialogEnabled: false
-  - _type: ReviewAndConfirm
-    _name: ReviewAndConfirmDuplicatesManageDuplicatesOnBatiment
-    label: Revue and Validation doublons
-    useCustomLabel: true
-    dupsManager: Batiments.entities.Batiment.dups_managers.ManageDuplicatesOnBatiment
-    enableEdit: true
-    mandateConfirmAll: false
-    waitDialogEnabled: false
-  - _type: MergeOrSplit
-    _name: MergeOrSplitDuplicatesManageDuplicatesOnBatiment
-    label: Fusion et défusion
-    useCustomLabel: true
-    dupsManager: Batiments.entities.Batiment.dups_managers.ManageDuplicatesOnBatiment
-    enableEdit: true
-    waitDialogEnabled: false
-  - _type: ReviewSuggestions
-    _name: ReviewSuggestionsDuplicatesManageDuplicatesOnBatiment
-    label: Suggestions de doublons
-    useCustomLabel: true
-    dupsManager: Batiments.entities.Batiment.dups_managers.ManageDuplicatesOnBatiment
-    enableEdit: true
-    waitDialogEnabled: false
-    onAcceptPromptGoldenId: false
-    mandateResolveAllSuggestions: false
-  - _type: ExplainRecordAction
-    _name: ExplainRecord
-    label: Expliquer l'enregistrement
-    useCustomLabel: true
-    displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
-    formTab: Batiments.entities.Batiment.forms.BatimentExplication.Batiment
-    waitDialogEnabled: false
+  # - _type: DirectConfirmDupsAction
+  #   _name: DirectConfirmDuplicates
+  #   label: Confirmer doublons directement
+  #   useCustomLabel: false
+  #   waitDialogEnabled: false
+  # - _type: ReviewAndConfirm
+  #   _name: ReviewAndConfirmDuplicatesManageDuplicatesOnBatiment
+  #   label: Revue and Validation doublons
+  #   useCustomLabel: true
+  #   dupsManager: Batiments.entities.Batiment.dups_managers.ManageDuplicatesOnBatiment
+  #   enableEdit: true
+  #   mandateConfirmAll: false
+  #   waitDialogEnabled: false
+  # - _type: MergeOrSplit
+  #   _name: MergeOrSplitDuplicatesManageDuplicatesOnBatiment
+  #   label: Fusion et défusion
+  #   useCustomLabel: true
+  #   dupsManager: Batiments.entities.Batiment.dups_managers.ManageDuplicatesOnBatiment
+  #   enableEdit: true
+  #   waitDialogEnabled: false
+  # - _type: ReviewSuggestions
+  #   _name: ReviewSuggestionsDuplicatesManageDuplicatesOnBatiment
+  #   label: Suggestions de doublons
+  #   useCustomLabel: true
+  #   dupsManager: Batiments.entities.Batiment.dups_managers.ManageDuplicatesOnBatiment
+  #   enableEdit: true
+  #   waitDialogEnabled: false
+  #   onAcceptPromptGoldenId: false
+  #   mandateResolveAllSuggestions: false
+  # - _type: ExplainRecordAction
+  #   _name: ExplainRecord
+  #   label: Expliquer l'enregistrement
+  #   useCustomLabel: true
+  #   displayCard: Batiments.entities.Batiment.display_cards.BatimentDisplayCard
+  #   formTab: Batiments.entities.Batiment.forms.BatimentExplication.Batiment
+  #   waitDialogEnabled: false

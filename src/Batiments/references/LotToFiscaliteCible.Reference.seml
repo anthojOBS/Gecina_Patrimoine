@@ -20,7 +20,7 @@ toRolePhysicalName: FISCALITE_CIBLE_ID
 
 oneToMany: true
 deletePropagation: RESTRICT
-validationScope: POST_CONSO
+validationScope: NONE
 mandatoryValidationLabel: La fiscalite cible est obligatoire pour un immeuble
 brokenValidationLabel: La fiscalite cible sélectionnée est invalide pour cet immeuble
 

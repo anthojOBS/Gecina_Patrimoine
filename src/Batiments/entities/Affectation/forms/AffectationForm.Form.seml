@@ -2,7 +2,7 @@ _package: Batiments.entities.Affectation.forms
 _type: Form
 _name: AffectationForm
 entity: Batiments.entities.Affectation.Affectation
-default: true
+default: false
 formTabs:
   - _type: FormTab
     _name: Affectation
@@ -10,27 +10,33 @@ formTabs:
     documentationInterpreter: LITERAL
     visibleValue: "1"
     visibleValueInterpreter: LITERAL
-    displayFormTabAs: LABEL
+    displayFormTabAs: ICON_LABEL
+    iconUrl: images://mdi/link-variant.svg
+    labelWidth: 300px
     content:
-      - _type: TextField
-        _name: AffectationID
-        value: AffectationID
-        useCustomLabel: false
-        dataType: STRING
-        labelProperties:
-          typographyValueInterpreter: LITERAL
-          typography: body-2
-          color: md:black
-      - _type: TextField
+      # - _type: TextField
+      #   _name: AffectID
+      #   value: AffectID
+      #   useCustomLabel: false
+      #   dataType: STRING
+      #   labelProperties:
+      #     alignment: left
+      #     typographyValueInterpreter: LITERAL
+      #     typography: body-2
+      #     color: md:black
+      - _type: ReferenceField
         _name: NomPrenom
-        value: Intervenant.NomPrenom
+        value: FDN_Intervenant
         label: Intervenant
         useCustomLabel: true
         dataType: STRING
         labelProperties:
+          alignment: left
           typographyValueInterpreter: LITERAL
           typography: body-2
           color: md:black
+        referencedEntity: Batiments.entities.Intervenant.Intervenant
+
       - _type: ReferenceField
         _name: Role
         value: Intervenant.FDN_RoleImmeuble
@@ -38,6 +44,7 @@ formTabs:
         useCustomLabel: true
         dataType: STRING
         labelProperties:
+          alignment: left
           typographyValueInterpreter: LITERAL
           typography: body-2
           color: md:black
@@ -54,6 +61,19 @@ formTabs:
         useCustomLabel: true
         dataType: STRING
         referencedEntity: Batiments.entities.Immeuble.Immeuble
+
+      - _type: TextField
+        _name: IdentifiantsERP
+        value: IdentifiantsERP
+        label: Identifiants ERP
+        useCustomLabel: true
+        dataType: STRING
+        labelProperties:
+          alignment: left
+          typographyValueInterpreter: LITERAL
+          typography: body-2
+          color: md:black
+
       - _type: ReferenceField
         _name: FDN_TypeAffectation
         value: FDN_TypeAffectation

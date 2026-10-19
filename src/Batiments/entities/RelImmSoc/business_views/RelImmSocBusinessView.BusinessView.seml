@@ -38,33 +38,33 @@ rootBusinessViewEntity:
   gridAllowed: true
 
   transitions:
-    - _type: BusinessViewTransition
-      _name: MasterRecords
-      displayFormTabAs: ICON_LABEL
-      useCustomLabel: false
-      enableHierarchyInterpreter: LITERAL
-      filter: 1=1
-      iconUrl: images://mdi/puzzle.svg
-      label: Masters Records
-      pluralLabel: Masters Records
-      transitionType: FULLY_QUALIFIED
-      transitionPath:  MasterRecords 
-      visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
-      businessViewEntity: 
-        _type: BusinessViewEntity
-        _name: MasterRecord
-        displayCard: Batiments.entities.RelImmSoc.display_cards.RelImmSocDisplayCard
-        entity: Batiments.entities.RelImmSoc.RelImmSoc
-        actionSet: Batiments.entities.RelImmSoc.action_sets.RelImmSocActionSet
-        collection: Batiments.entities.RelImmSoc.collection_views.RelImmSocCollectionView
-        form: Batiments.entities.RelImmSoc.forms.RelImmSocForm
-        displayRecordCount: ALWAYS
-        outlineVisible: false
-        enableUserDefinedSort: true
-        gridAllowed: true
-        listAllowed: true
-        overrideDefaultSort: false
-        tableAllowed: true
+    # - _type: BusinessViewTransition
+    #   _name: MasterRecords
+    #   displayFormTabAs: ICON_LABEL
+    #   useCustomLabel: false
+    #   enableHierarchyInterpreter: LITERAL
+    #   filter: 1=1
+    #   iconUrl: images://mdi/puzzle.svg
+    #   label: Masters Records
+    #   pluralLabel: Masters Records
+    #   transitionType: FULLY_QUALIFIED
+    #   transitionPath:  MasterRecords 
+    #   visibleInFormTabCondition: :V_USER_ROLES like '%semarchyAdmin%'
+    #   businessViewEntity: 
+    #     _type: BusinessViewEntity
+    #     _name: MasterRecord
+    #     displayCard: Batiments.entities.RelImmSoc.display_cards.RelImmSocDisplayCard
+    #     entity: Batiments.entities.RelImmSoc.RelImmSoc
+    #     actionSet: Batiments.entities.RelImmSoc.action_sets.RelImmSocActionSet
+    #     collection: Batiments.entities.RelImmSoc.collection_views.RelImmSocCollectionView
+    #     form: Batiments.entities.RelImmSoc.forms.RelImmSocForm
+    #     displayRecordCount: ALWAYS
+    #     outlineVisible: false
+    #     enableUserDefinedSort: true
+    #     gridAllowed: true
+    #     listAllowed: true
+    #     overrideDefaultSort: false
+    #     tableAllowed: true
 
     - _name: GoldenHistoryRecords
       _type: BusinessViewTransition

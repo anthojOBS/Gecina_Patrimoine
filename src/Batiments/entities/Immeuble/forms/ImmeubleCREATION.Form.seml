@@ -2,7 +2,7 @@ _package: Batiments.entities.Immeuble.forms
 _type: Form
 _name: ImmeubleCreation
 entity: Batiments.entities.Immeuble.Immeuble
-default: true
+default: false
 formTabs:
   - _type: FormTab
     _name: Immeuble
@@ -28,6 +28,7 @@ formTabs:
                 visibleValueInterpreter: LITERAL
                 labelWidth: 200px
                 content:
+
                   - _type: TextField
                     _name: IdentifiantsERP
                     value: IdentifiantsERP

@@ -4,5 +4,5 @@ _type: SemQLValidation
 entity: Batiments.entities.Lot.Lot
 label: Superficie habitable obligatoire
 condition:  (FID_TypologieLot = 'AP'  and SuperficieHabitable is not null) or FID_TypologieLot != 'AP'  or FID_TypologieLot is null
-validationScope: POST_CONSO
+validationScope: PRE_CONSO
 validationLabel: Superficie habitable doit être renseignée si la typologie du lot est un appartement.

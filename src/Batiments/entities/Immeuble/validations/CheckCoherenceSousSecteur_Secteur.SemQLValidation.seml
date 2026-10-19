@@ -6,5 +6,5 @@ label: Coherence sous-secteur / secteur immostat
 condition: (FID_SecteurImmostat is not null and FID_SousSecteurImmostat is not null 
  and FID_SecteurImmostat = SousSecteurImmostat.FID_SecteurImmostat and FID_SousSecteurImmostat = SousSecteurImmostat.SousSecteurImmostatCode) 
  or (FID_ZoneImmostat is null)
-validationScope: POST_CONSO
+validationScope: PRE_CONSO
 validationLabel: secteur / sous-secteur non cohérent

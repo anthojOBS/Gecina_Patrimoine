@@ -13,7 +13,8 @@ actions:
     createMultiple: false
     createdRecordType: GOLDEN
     waitDialogEnabled: false
-    allowOtherPublishers: true
+    allowOtherPublishers: false
+    defaultPublisher: Batiments.publishers.IHM
   - _type: EditAction
     _name: EditAuthorImmeubles
     label: Modification immeuble
@@ -21,7 +22,7 @@ actions:
     stepper: Batiments.entities.Immeuble.steppers.ImmeubleEdition
     multipleSelectionAllowed: true
     availableForGoldenData: true
-    availableForMasterData: true
+    availableForMasterData: false
     availableForErrorData: true
     waitDialogEnabled: false
   - _type: MassUpdateAction
@@ -31,7 +32,7 @@ actions:
     stepper: Batiments.entities.Immeuble.steppers.ImmeubleEdition
     availableForGoldenData: true
     availableForErrorData: true
-    availableForMasterData: true
+    availableForMasterData: false
     waitDialogEnabled: false
   - _type: DeleteAction
     _name: Delete
@@ -54,7 +55,7 @@ actions:
     useCustomLabel: false
     importMode: CREATE_AND_UPDATE
     stepper: Batiments.entities.Immeuble.steppers.ImmeubleImport
-    importedRecordType: MASTER
+    importedRecordType: GOLDEN
     defaultPublisher: Batiments.publishers.VisionReelle
     waitDialogEnabled: false
     allowOtherPublishers: true
@@ -64,39 +65,39 @@ actions:
     useCustomLabel: true
     waitDialogEnabled: false
     requiredRole: semarchyAdmin
-  - _type: DirectConfirmDupsAction
-    _name: DirectConfirmDuplicates
-    label: Confirmer doublons directement
-    useCustomLabel: false
-    waitDialogEnabled: false
-  - _type: ReviewAndConfirm
-    _name: ReviewAndConfirmDuplicatesManageDuplicatesOnImmeuble
-    label: Revue and Validation doublons
-    useCustomLabel: true
-    dupsManager: Batiments.entities.Immeuble.dups_managers.ManageDuplicatesOnImmeuble
-    enableEdit: true
-    mandateConfirmAll: false
-    waitDialogEnabled: false
-  - _type: MergeOrSplit
-    _name: MergeOrSplitDuplicatesManageDuplicatesOnImmeuble
-    label: Fusion et défusion
-    useCustomLabel: true
-    dupsManager: Batiments.entities.Immeuble.dups_managers.ManageDuplicatesOnImmeuble
-    enableEdit: true
-    waitDialogEnabled: false
-  - _type: ReviewSuggestions
-    _name: ReviewSuggestionsDuplicatesManageDuplicatesOnImmeuble
-    label: Suggestions de doublons
-    useCustomLabel: true
-    dupsManager: Batiments.entities.Immeuble.dups_managers.ManageDuplicatesOnImmeuble
-    enableEdit: true
-    waitDialogEnabled: false
-    onAcceptPromptGoldenId: false
-    mandateResolveAllSuggestions: false
-  - _type: ExplainRecordAction
-    _name: ExplainRecord
-    label: Expliquer l'enregistrement
-    useCustomLabel: true
-    displayCard: Batiments.entities.Immeuble.display_cards.ImmeubleDisplayCard
-    formTab: Batiments.entities.Immeuble.forms.ImmeubleExplication.Immeuble
-    waitDialogEnabled: false
+  # - _type: DirectConfirmDupsAction
+  #   _name: DirectConfirmDuplicates
+  #   label: Confirmer doublons directement
+  #   useCustomLabel: false
+  #   waitDialogEnabled: false
+  # - _type: ReviewAndConfirm
+  #   _name: ReviewAndConfirmDuplicatesManageDuplicatesOnImmeuble
+  #   label: Revue and Validation doublons
+  #   useCustomLabel: true
+  #   dupsManager: Batiments.entities.Immeuble.dups_managers.ManageDuplicatesOnImmeuble
+  #   enableEdit: true
+  #   mandateConfirmAll: false
+  #   waitDialogEnabled: false
+  # - _type: MergeOrSplit
+  #   _name: MergeOrSplitDuplicatesManageDuplicatesOnImmeuble
+  #   label: Fusion et défusion
+  #   useCustomLabel: true
+  #   dupsManager: Batiments.entities.Immeuble.dups_managers.ManageDuplicatesOnImmeuble
+  #   enableEdit: true
+  #   waitDialogEnabled: false
+  # - _type: ReviewSuggestions
+  #   _name: ReviewSuggestionsDuplicatesManageDuplicatesOnImmeuble
+  #   label: Suggestions de doublons
+  #   useCustomLabel: true
+  #   dupsManager: Batiments.entities.Immeuble.dups_managers.ManageDuplicatesOnImmeuble
+  #   enableEdit: true
+  #   waitDialogEnabled: false
+  #   onAcceptPromptGoldenId: false
+  #   mandateResolveAllSuggestions: false
+  # - _type: ExplainRecordAction
+  #   _name: ExplainRecord
+  #   label: Expliquer l'enregistrement
+  #   useCustomLabel: true
+  #   displayCard: Batiments.entities.Immeuble.display_cards.ImmeubleDisplayCard
+  #   formTab: Batiments.entities.Immeuble.forms.ImmeubleExplication.Immeuble
+  #   waitDialogEnabled: false

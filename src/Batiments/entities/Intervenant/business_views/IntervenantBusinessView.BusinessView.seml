@@ -6,6 +6,9 @@ rootLabel: Intervenant
 rootPluralLabel: Intervenants
 displayRootNodeAs: ICON_LABEL
 label: Intervenant
+rootIconUrl: images://mdi/account.svg
+
+
 rootBusinessViewEntity:
   _type: BusinessViewEntity
   _name: Intervenant
@@ -16,6 +19,7 @@ rootBusinessViewEntity:
   form: Batiments.entities.Intervenant.forms.IntervenantForm
   outlineVisible: false
   displayRecordCount: ALWAYS
+
   businessEntitySearchConfigs:
     - _name: TextConfig
       _type: BusinessEntitySearchTypeConfig

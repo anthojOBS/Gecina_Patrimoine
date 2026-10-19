@@ -1,0 +1,12 @@
+_package: Batiments.entities.Affectation.enrichers
+_name: Immeuble_import
+_type: SemQLEnricher
+afterEnrichers: 
+  - Batiments.entities.Affectation.enrichers.PluginImmeuble
+entity: Batiments.entities.Affectation.Affectation
+label: Default Etat
+enricherExecutionScope: PRE_CONSO
+semQlEnricherExpressions: 
+  - attributeName: FID_Immeuble
+    expression: IdentifiantImmeuble
+condition:  IdentifiantImmeuble is not null 

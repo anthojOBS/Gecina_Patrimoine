@@ -1,0 +1,14 @@
+_package: Batiments.entities.Lot.enrichers
+_name: Init_date
+_type: SemQLEnricher
+entity: Batiments.entities.Lot.Lot
+label: Initialisation des dates début usage, statut et regime tva
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: DateDebUsage
+    expression: case when DateDebUsage is NULL  then CURRENT_DATE() end
+  - attributeName: DateDebStatut
+    expression: case when DateDebStatut is NULL  then CURRENT_DATE() end
+  - attributeName: DateRegimeTVA
+    expression: case when DateRegimeTVA is NULL  then CURRENT_DATE() end
+ 

@@ -21,7 +21,7 @@ actions:
     stepper: Batiments.entities.SousLot.steppers.SousLotsEdition
     multipleSelectionAllowed: true
     availableForGoldenData: true
-    availableForMasterData: true
+    availableForMasterData: false
     availableForErrorData: true
     waitDialogEnabled: false
   # - _type: StartWorkflowEntityAction
@@ -38,7 +38,7 @@ actions:
     stepper: Batiments.entities.SousLot.steppers.SousLotsEdition
     availableForGoldenData: true
     availableForErrorData: true
-    availableForMasterData: true
+    availableForMasterData: false
     waitDialogEnabled: false
   - _type: DeleteAction
     _name: Delete
@@ -61,7 +61,7 @@ actions:
     useCustomLabel: true
     importMode: CREATE_AND_UPDATE
     stepper: Batiments.entities.SousLot.steppers.SousLotsConsultation
-    importedRecordType: MASTER
+    importedRecordType: GOLDEN
     waitDialogEnabled: false
     allowOtherPublishers: true
   - _type: BrowseGraphAction
@@ -70,39 +70,39 @@ actions:
     useCustomLabel: true
     waitDialogEnabled: false
     requiredRole: semarchyAdmin
-  - _type: DirectConfirmDupsAction
-    _name: DirectConfirmDuplicates
-    label: Confirmer doublons directement
-    useCustomLabel: false
-    waitDialogEnabled: false
-  - _type: ReviewAndConfirm
-    _name: ReviewAndConfirmDuplicatesManageDuplicatesOnLot
-    label: Revue and Validation doublons
-    useCustomLabel: true
-    dupsManager: Batiments.entities.SousLot.dups_managers.ManageDuplicatesOnSousLot
-    enableEdit: true
-    mandateConfirmAll: false
-    waitDialogEnabled: false
-  - _type: MergeOrSplit
-    _name: MergeOrSplitDuplicatesManageDuplicatesOnLot
-    label: Fusion et défusion
-    useCustomLabel: true
-    dupsManager: Batiments.entities.SousLot.dups_managers.ManageDuplicatesOnSousLot
-    enableEdit: true
-    waitDialogEnabled: false
-  - _type: ReviewSuggestions
-    _name: ReviewSuggestionsDuplicatesManageDuplicatesOnLot
-    label: Suggestions de doublons
-    useCustomLabel: true
-    dupsManager: Batiments.entities.SousLot.dups_managers.ManageDuplicatesOnSousLot
-    enableEdit: true
-    waitDialogEnabled: false
-    onAcceptPromptGoldenId: false
-    mandateResolveAllSuggestions: false
-  - _type: ExplainRecordAction
-    _name: ExplainRecord
-    label: Expliquer l'enregistrement
-    useCustomLabel: true
-    displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
-    formTab: Batiments.entities.SousLot.forms.SousLotExplication.SousLot
-    waitDialogEnabled: false
+  # - _type: DirectConfirmDupsAction
+  #   _name: DirectConfirmDuplicates
+  #   label: Confirmer doublons directement
+  #   useCustomLabel: false
+  #   waitDialogEnabled: false
+  # - _type: ReviewAndConfirm
+  #   _name: ReviewAndConfirmDuplicatesManageDuplicatesOnLot
+  #   label: Revue and Validation doublons
+  #   useCustomLabel: true
+  #   dupsManager: Batiments.entities.SousLot.dups_managers.ManageDuplicatesOnSousLot
+  #   enableEdit: true
+  #   mandateConfirmAll: false
+  #   waitDialogEnabled: false
+  # - _type: MergeOrSplit
+  #   _name: MergeOrSplitDuplicatesManageDuplicatesOnLot
+  #   label: Fusion et défusion
+  #   useCustomLabel: true
+  #   dupsManager: Batiments.entities.SousLot.dups_managers.ManageDuplicatesOnSousLot
+  #   enableEdit: true
+  #   waitDialogEnabled: false
+  # - _type: ReviewSuggestions
+  #   _name: ReviewSuggestionsDuplicatesManageDuplicatesOnLot
+  #   label: Suggestions de doublons
+  #   useCustomLabel: true
+  #   dupsManager: Batiments.entities.SousLot.dups_managers.ManageDuplicatesOnSousLot
+  #   enableEdit: true
+  #   waitDialogEnabled: false
+  #   onAcceptPromptGoldenId: false
+  #   mandateResolveAllSuggestions: false
+  # - _type: ExplainRecordAction
+  #   _name: ExplainRecord
+  #   label: Expliquer l'enregistrement
+  #   useCustomLabel: true
+  #   displayCard: Batiments.entities.SousLot.display_cards.SousLotDisplayCard
+  #   formTab: Batiments.entities.SousLot.forms.SousLotExplication.SousLot
+  #   waitDialogEnabled: false

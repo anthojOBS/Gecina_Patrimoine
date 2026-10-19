@@ -3,7 +3,7 @@ _type: Entity
 _name: Immeuble
 label: Immeuble
 pluralLabel: Immeuble
-entityType: FUZZY_MATCHED
+entityType: BASIC
 physicalTableName: IMMEUBLE
 iconUrl: images://mdi/office-building-marker.svg
 #description: |
@@ -17,18 +17,18 @@ iconUrl: images://mdi/office-building-marker.svg
   
 #   Cette entité est centrale dans la gestion du patrimoine immobilier et permet de suivre l'évolution des actifs de leur acquisition à leur exploitation.
 historizeGolden: true
-historizeMaster: true
+historizeMaster: false
 enableDelete: true
 attributes:
-  - _type: EntityAttribute
-    _name: ImmeubleID
-    label: Immeuble ID
-    physicalName: IMMEUBLE_ID
-    dataType: LongInteger
-    precision: 38
-    mandatory: true
-    searchable: true
-    description: "Identifiant unique de l'immeuble"
+  # - _type: EntityAttribute
+  #   _name: ImmeubleID
+  #   label: Immeuble ID
+  #   physicalName: IMMEUBLE_ID
+  #   dataType: LongInteger
+  #   precision: 38
+  #   mandatory: true
+  #   searchable: true
+  #   description: "Identifiant unique de l'immeuble"
 
   - _type: EntityAttribute
     _name: IdentifiantREF
@@ -50,7 +50,7 @@ attributes:
     description: "Numéro de l'immeuble"
     mandatory: true
     mandatoryValidationLabel: "Numéro immeuble est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: PRE_CONSO
 
   - _type: EntityAttribute
     _name: Libelle
@@ -61,7 +61,7 @@ attributes:
     length: 255
     mandatory: true
     mandatoryValidationLabel: "Libellé de l'immeuble est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: PRE_CONSO
     
   - _type: EntityAttribute
     _name: Adresse
@@ -72,7 +72,7 @@ attributes:
     length: 255
     mandatory: true
     mandatoryValidationLabel: "Adresse de l'immeuble est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: PRE_CONSO
 
   - _type: EntityAttribute
     _name: CodePostal
@@ -83,7 +83,7 @@ attributes:
     length: 20
     mandatory: true 
     mandatoryValidationLabel: "Code postal de l'immeuble est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: PRE_CONSO
 
 
   - _type: EntityAttribute
@@ -104,7 +104,7 @@ attributes:
     length: 150
     mandatory: true
     mandatoryValidationLabel: "Ville de l'immeuble est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: PRE_CONSO
 
   - _type: EntityAttribute
     _name: VilleEnrichie
@@ -154,7 +154,7 @@ attributes:
     dataType: Date
     mandatory: true
     mandatoryValidationLabel: "Date acquisition est obligatoire"
-    mandatoryValidationScope: POST_CONSO
+    mandatoryValidationScope: PRE_CONSO
 
 
 
@@ -227,6 +227,7 @@ attributes:
     label: Flag Ascenseur
     physicalName: FLAG_ASCENSEUR
     dataType: Boolean
+    length: 1
     mandatory: false
 
   - _type: EntityAttribute
@@ -234,14 +235,15 @@ attributes:
     label: Statut IRVE
     physicalName: STATUT_IRVE
     dataType: Boolean
+    length: 1
     mandatory: false
 
   - _type: EntityAttribute
     _name: NbAscenseur
     label: Nombre ascenceurs
     physicalName: NBR_ASCENSEUR
-    dataType: LongInteger
-    precision: 2
+    dataType: ShortInteger
+    precision: 5
     mandatory: false
 
   - _type: EntityAttribute
@@ -256,16 +258,16 @@ attributes:
     _name: CapaciteAccueil
     label: Capacité d'accueil
     physicalName: CAPA_ACCUEIL
-    dataType: LongInteger
-    precision: 20
+    dataType: ShortInteger
+    precision: 5
     mandatory: false
 
   - _type: EntityAttribute
     _name: PosteTravail
     label: Postes de travail
     physicalName: POST_TRAVAIL
-    dataType: LongInteger
-    precision: 20
+    dataType: ShortInteger
+    precision: 5
     mandatory: false
 
 
@@ -281,8 +283,8 @@ attributes:
     _name: NbLotInitial
     label: Nombre lots initial
     physicalName: NB_LOT_INITIAL
-    dataType: LongInteger
-    precision: 20
+    dataType: ShortInteger
+    precision: 5
     mandatory: false
 
   - _type: EntityAttribute
@@ -359,6 +361,7 @@ attributes:
     label: Statut IGH 
     physicalName: IGH
     dataType: Boolean
+    length: 1
     mandatory: false
 
   - _type: EntityAttribute
@@ -366,6 +369,7 @@ attributes:
     label: Statut ERP 
     physicalName: STATUT_ERP
     dataType: Boolean
+    length: 1
     mandatory: false  
 
   - _type: EntityAttribute
@@ -373,6 +377,7 @@ attributes:
     label: Flag Restructuration
     physicalName: FLAG_RESTRUCTURATION
     dataType: Boolean
+    length: 1
     mandatory: false	
 
   - _type: EntityAttribute
@@ -389,6 +394,7 @@ attributes:
     label: Statut espace vert
     physicalName: STATUT_ESPACE_VERT
     dataType: Boolean
+    length: 1
     mandatory: false
 
 
@@ -397,6 +403,7 @@ attributes:
     label: Statut aire de jeux
     physicalName: STATUT_AIRE_JEUX
     dataType: Boolean
+    length: 1
     mandatory: false
 
   - _type: EntityAttribute
@@ -404,6 +411,7 @@ attributes:
     label: Statut digicode
     physicalName: STATUT_DIGICODE
     dataType: Boolean
+    length: 1
     mandatory: false
 
 
@@ -412,6 +420,7 @@ attributes:
     label: Statut interphone
     physicalName: STATUT_INTERPHONE
     dataType: Boolean
+    length: 1
     mandatory: false
 
 
@@ -420,6 +429,7 @@ attributes:
     label: Statut vidéosurveillance
     physicalName: STATUT_VIDEOSURVEILLANCE
     dataType: Boolean
+    length: 1
     mandatory: false
 
 
@@ -428,6 +438,7 @@ attributes:
     label: Statut gardiennage
     physicalName: STATUT_GARDIENNAGE
     dataType: Boolean
+    length: 1
     mandatory: false
 
 
@@ -436,6 +447,7 @@ attributes:
     label: Statut local poubelle
     physicalName: STATUT_LOCAL_POUBELLE
     dataType: Boolean
+    length: 1
     mandatory: false
 
 
@@ -444,6 +456,7 @@ attributes:
     label: Statut tri sélectif
     physicalName: STATUT_TRI_SELECTIF
     dataType: Boolean
+    length: 1
     mandatory: false
 
 
@@ -452,6 +465,7 @@ attributes:
     label: Statut local vélos
     physicalName: STATUT_LOCAL_VELO
     dataType: Boolean
+    length: 1
     mandatory: false
 
 
@@ -476,18 +490,21 @@ attributes:
     label: Flag QP incluse
     physicalName: FLAG_QP_INCLUSE
     dataType: Boolean
+    length: 1
     mandatory: false
 
 
 
 sourceIdGeneration:
   mode: MANUAL
+  # idExpression: IdentifiantsERP
 
-primaryKey: Batiments.entities.Immeuble.Immeuble.ImmeubleID
 
-goldenIdGeneration:
-  mode: SEQUENCE
-  startWith: 1
+primaryKey: Batiments.entities.Immeuble.Immeuble.IdentifiantsERP
+
+# goldenIdGeneration:
+#   mode: SEQUENCE
+#   startWith: 1
 
 matcher:
   _type: SemQLMatcher
@@ -497,7 +514,8 @@ matcher:
     - _type: SemQLMatchRule
       _name: NewRule
       label: NewRuleLabel
-      condition: (Record1.IdentifiantsERP = Record2.IdentifiantsERP ) or (Record1.IdentifiantREF = Record2.IdentifiantREF and Record1.IdentifiantREF is not null )
+      condition: Record1.IdentifiantsERP = Record2.IdentifiantsERP
+      #  or (Record1.IdentifiantREF = Record2.IdentifiantREF and Record1.IdentifiantREF is not null )
       matchScore: 100
       usingMatchOn: false
     - _type: SemQLMatchRule

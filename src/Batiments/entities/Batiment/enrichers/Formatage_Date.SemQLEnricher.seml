@@ -1,0 +1,13 @@
+_package: Batiments.entities.Batiment.enrichers
+_name: Formatage_Date
+_type: SemQLEnricher
+entity: Batiments.entities.Batiment.Batiment
+afterEnrichers: Batiments.entities.Batiment.enrichers.PluginImmeuble
+label: Formatge des dates livraison et acquisition
+enricherExecutionScope: NONE
+semQlEnricherExpressions: 
+  - attributeName: DateLivraison
+    expression: case when DateLivraison_Immeuble is not null then to_date(DateLivraison_Immeuble,'YYYY-MM-DD') end
+
+  - attributeName: DateAcquisition
+    expression: case when DateAcquisition_Immeuble is not null then to_date(DateAcquisition_Immeuble,'YYYY-MM-DD') end

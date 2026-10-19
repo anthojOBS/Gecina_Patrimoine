@@ -2,7 +2,7 @@ _package: Batiments.entities.Etage.collection_views
 _type: CollectionView
 _name: EtageCompositionConsultation
 entity: Batiments.entities.Etage.Etage
-default: true
+default: false
 displayCard: Batiments.entities.Etage.display_cards.EtageDisplayCard
 gridAllowed: false
 gridColumns: 4

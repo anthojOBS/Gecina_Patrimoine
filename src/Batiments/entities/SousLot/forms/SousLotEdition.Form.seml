@@ -2,7 +2,7 @@ _package: Batiments.entities.SousLot.forms
 _type: Form
 _name: SousLotEdition
 entity: Batiments.entities.SousLot.SousLot
-default: true
+default: false
 formTabs:
   - _type: FormTab
     _name: SousLot

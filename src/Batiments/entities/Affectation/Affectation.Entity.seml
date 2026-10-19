@@ -4,7 +4,8 @@ _name: Affectation
 label: Affectation
 pluralLabel: Affectations
 entityType: BASIC
-physicalTableName: AFFECTATION
+physicalTableName: AFFECTATION_IMM
+iconUrl: images://mdi/link-variant.svg
 description: Affectation
 documentation: |
   Affectation
@@ -13,11 +14,11 @@ historizeMaster: false
 enableDelete: true
 attributes:
   - _type: EntityAttribute
-    _name: AffectationID
+    _name: AffectID
     label: Affectation ID
-    physicalName: AFFECTATION_ID
-    dataType: String
-    length: 50
+    physicalName: AFFECT_ID
+    dataType: LongInteger
+    precision: 38
     mandatory: false
     searchable: true
 
@@ -34,6 +35,29 @@ attributes:
     dataType: Date
     mandatory: false
 
+  - _type: EntityAttribute
+    _name: IdentifiantsERP
+    label: Numéro immeuble
+    documentation: Identifiant fonctionnel utilisé au quotidien par les équipes opérationnelles.
+    physicalName: IDENTIFIANTS_ERP
+    dataType: String
+    length: 100
+    description: "Numéro de l'immeuble"
+    mandatory: false
+
+  - _type: EntityAttribute
+    _name: IdentifiantImmeuble
+    label: Identifiant immeuble
+    documentation: Identifiant fonctionnel utilisé au quotidien par les équipes opérationnelles.
+    physicalName: IDENTIFIANTS_IMM_TECH
+    dataType: String
+    length: 100
+    description: "Identifiant de l'immeuble"
+    mandatory: false
+
+
 sourceIdGeneration:
-  mode: MANUAL
-primaryKey: Batiments.entities.Affectation.Affectation.AffectationID
+  mode: SEQUENCE
+  startWith: 1
+
+primaryKey: Batiments.entities.Affectation.Affectation.AffectID

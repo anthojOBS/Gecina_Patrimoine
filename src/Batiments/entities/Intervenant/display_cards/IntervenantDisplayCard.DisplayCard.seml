@@ -3,8 +3,9 @@ _type: DisplayCard
 _name: IntervenantDisplayCard
 entity: Batiments.entities.Intervenant.Intervenant
 default: true
-primaryTextExpression: NomPrenom || ' - ' || FDN_RoleImmeuble
-primaryImageValueInterpreter: LITERAL
+primaryTextExpression: case when FDN_RoleImmeuble is not null then (Nom || ' ' || Prenom || ' - ' || FDN_RoleImmeuble) 
+                        else (Nom || ' ' || Prenom) end
+primaryImageValueInterpreter: SEMQL
 avatarImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER
 primaryImageMode: FIT
@@ -14,5 +15,5 @@ avatarImageValueInterpreter: LITERAL
 primaryImageSourceType: URL
 avatarImageAlign: MIDDLE_CENTER
 avatarImageMode: FIT
-avatarImageValue: images://mdi/domain.svg
+avatarImageValue: images://mdi/account.svg
 

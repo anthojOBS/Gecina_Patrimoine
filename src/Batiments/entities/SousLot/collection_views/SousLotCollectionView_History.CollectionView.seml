@@ -194,41 +194,41 @@ tableColumns:
     columnAlign: LEFT
     visibleByDefault: true
 
-  - _type: TextColumn
-    _name: ConfirmationStatus
-    columnAlign: LEFT
-    dataType: STRING
-    documentationInterpreter: LITERAL
-    useCustomLabel: false
-    value: ConfirmationStatus
-    visibleByDefault: true
+  # - _type: TextColumn
+  #   _name: ConfirmationStatus
+  #   columnAlign: LEFT
+  #   dataType: STRING
+  #   documentationInterpreter: LITERAL
+  #   useCustomLabel: false
+  #   value: ConfirmationStatus
+  #   visibleByDefault: true
 
-  - _type: TextColumn
-    _name: ConfidenceScore
-    columnAlign: LEFT
-    dataType: LONG_INTEGER
-    documentationInterpreter: LITERAL
-    useCustomLabel: false
-    value: ConfidenceScore
-    visibleByDefault: true
+  # - _type: TextColumn
+  #   _name: ConfidenceScore
+  #   columnAlign: LEFT
+  #   dataType: LONG_INTEGER
+  #   documentationInterpreter: LITERAL
+  #   useCustomLabel: false
+  #   value: ConfidenceScore
+  #   visibleByDefault: true
 
-  - _type: TextColumn
-    _name: MastersCount
-    columnAlign: LEFT
-    dataType: LONG_INTEGER
-    documentationInterpreter: LITERAL
-    useCustomLabel: false
-    value: MastersCount
-    visibleByDefault: true
+  # - _type: TextColumn
+  #   _name: MastersCount
+  #   columnAlign: LEFT
+  #   dataType: LONG_INTEGER
+  #   documentationInterpreter: LITERAL
+  #   useCustomLabel: false
+  #   value: MastersCount
+  #   visibleByDefault: true
     
-  - _type: CheckboxColumn
-    _name: HasSuggestedMerge
-    columnAlign: LEFT
-    dataType: BOOLEAN
-    documentationInterpreter: LITERAL
-    useCustomLabel: false
-    value: HasSuggestedMerge
-    visibleByDefault: true
+  # - _type: CheckboxColumn
+  #   _name: HasSuggestedMerge
+  #   columnAlign: LEFT
+  #   dataType: BOOLEAN
+  #   documentationInterpreter: LITERAL
+  #   useCustomLabel: false
+  #   value: HasSuggestedMerge
+  #   visibleByDefault: true
   
   - _type: TextColumn
     _name: UpdateDate

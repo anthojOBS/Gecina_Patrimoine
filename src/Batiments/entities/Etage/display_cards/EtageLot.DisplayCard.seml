@@ -1,0 +1,17 @@
+_package: Batiments.entities.Etage.display_cards
+_type: DisplayCard
+_name: EtageLot
+entity: Batiments.entities.Etage.Etage
+default: false
+primaryTextExpression: Batiment.Immeuble.IdentifiantsERP || '_' || Batiment.Libelle_Batiment || '_' || FDN_TypeEtage
+primaryImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
+avatarImageValue: images://mdi/stairs.svg

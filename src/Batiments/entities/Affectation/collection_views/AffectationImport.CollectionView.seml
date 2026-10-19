@@ -1,0 +1,111 @@
+_package: Batiments.entities.Affectation.collection_views
+_type: CollectionView
+_name: AffectationImport
+entity: Batiments.entities.Affectation.Affectation
+default: false
+displayCard: Batiments.entities.Affectation.display_cards.AffectationDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Affectation
+tableRowLines: 1
+tableShowDisplayCard: false
+tableColumns:
+  - _type: TextColumn
+    _name: AffectID
+    value: AffectID
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: false
+
+  - _type: ReferenceColumn
+    _name: FDN_Intervenant
+    value: FDN_Intervenant
+    label: Intervenant
+    useCustomLabel: true
+    dataType: STRING
+    columnAlign: LEFT
+    displayCard: Batiments.entities.Intervenant.display_cards.Matricule
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Intervenant.Intervenant  
+
+  - _type: ReferenceColumn
+    _name: FDN_Immeuble
+    value: FDN_Immeuble
+    label: Immeuble
+    useCustomLabel: true
+    dataType: STRING
+    columnAlign: LEFT
+    displayCard: Batiments.entities.Immeuble.display_cards.NumeroImmeuble
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.Immeuble.Immeuble  
+
+
+
+  - _type: TextColumn
+    _name: IdentifiantsERP
+    value: IdentifiantsERP
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+  - _type: TextColumn
+    _name: IdentifiantImmeuble
+    value: IdentifiantImmeuble
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+
+
+
+  - _type: ReferenceColumn
+    _name: FDN_RoleImmeuble
+    value: Intervenant.FDN_RoleImmeuble
+    label: Rôle
+    useCustomLabel: true
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.RoleImmeuble.RoleImmeuble
+
+  - _type: ReferenceColumn
+    _name: FDN_TypeAffectation
+    value: FDN_TypeAffectation
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+    referencedEntity: Batiments.entities.TypeAffectation.TypeAffectation
+
+
+  - _type: TextColumn
+    _name: DateDebAffectation
+    value: DateDebAffectation
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+    componentProperties:                 
+          displayFormat: dd/MM/yyyy                
+          displayFormatValueInterpreter: LITERAL            
+
+  - _type: TextColumn
+    _name: DateFinAffectation
+    value: DateFinAffectation
+    useCustomLabel: false
+    dataType: DATE
+    columnAlign: LEFT
+    visibleByDefault: true
+    componentProperties:                 
+          displayFormat: dd/MM/yyyy                
+          displayFormatValueInterpreter: LITERAL  
